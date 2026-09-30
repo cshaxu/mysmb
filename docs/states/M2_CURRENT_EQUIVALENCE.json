@@ -1489,7 +1489,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00078",
@@ -1505,7 +1508,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00079",
@@ -1521,7 +1527,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00080",
@@ -1537,7 +1546,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00081",
@@ -1553,7 +1565,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00082",
@@ -1569,7 +1584,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00083",
@@ -1585,7 +1603,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00084",
@@ -1601,7 +1622,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00085",
@@ -1617,7 +1641,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00086",
@@ -1633,7 +1660,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00087",
@@ -1649,7 +1679,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00088",
@@ -1665,7 +1698,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "F",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "id": "material-00089",
@@ -18745,7 +18781,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "ProcMove",
@@ -18758,7 +18797,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "MoveSubs",
@@ -18771,7 +18813,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "NoMoveSub",
@@ -18784,7 +18829,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "OnGroundStateSub",
@@ -18797,7 +18845,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "GndMove",
@@ -18810,7 +18861,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "FallingSub",
@@ -18823,7 +18877,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "JumpSwimSub",
@@ -18836,7 +18893,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "DumpFall",
@@ -18849,7 +18909,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "ProcSwim",
@@ -18862,7 +18925,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "LRWater",
@@ -18875,7 +18941,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "LRAir",
@@ -18888,7 +18957,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "JSMove",
@@ -18901,7 +18973,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "ExitMov1",
@@ -18914,7 +18989,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "label": "ClimbAdderLow",
@@ -18927,7 +19005,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ClimbAdderHigh",
@@ -18940,7 +19021,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ClimbingSub",
@@ -18953,7 +19037,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "MoveOnVine",
@@ -18966,7 +19053,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ClimbFD",
@@ -18979,7 +19069,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "CSetFDir",
@@ -18992,7 +19085,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ExitCSub",
@@ -19005,7 +19101,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "InitCSTimer",
@@ -19018,7 +19117,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "JumpMForceData",
@@ -19031,7 +19133,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "FallMForceData",
@@ -19044,7 +19149,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "PlayerYSpdData",
@@ -19057,7 +19165,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "InitMForceData",
@@ -19070,7 +19181,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "MaxLeftXSpdData",
@@ -19083,7 +19197,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "MaxRightXSpdData",
@@ -19096,7 +19213,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "FrictionData",
@@ -19109,7 +19229,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "Climb_Y_SpeedData",
@@ -19122,7 +19245,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "Climb_Y_MForceData",
@@ -19135,7 +19261,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "PlayerPhysicsSub",
@@ -19148,7 +19277,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ProcClimb",
@@ -19161,7 +19293,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "SetCAnim",
@@ -19174,7 +19309,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "CheckForJumping",
@@ -19187,7 +19325,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "NoJump",
@@ -19200,7 +19341,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ProcJumping",
@@ -19213,7 +19357,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "InitJS",
@@ -19226,7 +19373,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ChkWtr",
@@ -19239,7 +19389,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "GetYPhy",
@@ -19252,7 +19405,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "PJumpSnd",
@@ -19265,7 +19421,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves PlayerSize selection of big versus small jump sound before the common queue store."
+      "semanticContract": "Preserves PlayerSize selection of big versus small jump sound before the common queue store.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "SJumpSnd",
@@ -19278,7 +19437,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Stores the selected dry-jump sound in Square1SoundQueue before horizontal physics."
+      "semanticContract": "Stores the selected dry-jump sound in Square1SoundQueue before horizontal physics.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "X_Physics",
@@ -19291,7 +19453,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Initializes the X-physics selectors and chooses grounded, fast-airborne or slow-airborne parameter flow."
+      "semanticContract": "Initializes the X-physics selectors and chooses grounded, fast-airborne or slow-airborne parameter flow.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ProcPRun",
@@ -19304,7 +19469,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves water, direction, B-button and RunningTimer ordering before the ChkRFast path."
+      "semanticContract": "Preserves water, direction, B-button and RunningTimer ordering before the ChkRFast path.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ChkRFast",
@@ -19317,7 +19485,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the running-speed and absolute-speed threshold that adds the fast friction table index."
+      "semanticContract": "Preserves the running-speed and absolute-speed threshold that adds the fast friction table index.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "FastXSp",
@@ -19330,7 +19501,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Adds exactly one friction-table index before the common limits/table loads."
+      "semanticContract": "Adds exactly one friction-table index before the common limits/table loads.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "SetRTmr",
@@ -19343,7 +19517,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Writes RunningTimer value $0a only on the grounded same-direction B-button route."
+      "semanticContract": "Writes RunningTimer value $0a only on the grounded same-direction B-button route.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "GetXPhy",
@@ -19356,7 +19533,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Loads MaximumLeftSpeed from the current speed index, then substitutes index three only for entrance routine seven."
+      "semanticContract": "Loads MaximumLeftSpeed from the current speed index, then substitutes index three only for entrance routine seven.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "GetXPhy2",
@@ -19369,7 +19549,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Loads MaximumRightSpeed and FrictionAdder bytes from their independently selected source indices."
+      "semanticContract": "Loads MaximumRightSpeed and FrictionAdder bytes from their independently selected source indices.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ExitPhy",
@@ -19382,7 +19565,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Leaves unshifted friction for matching directions and shifts low/high exactly once for a mismatch."
+      "semanticContract": "Leaves unshifted friction for matching directions and shifts low/high exactly once for a mismatch.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "PlayerAnimTmrData",
@@ -19395,7 +19581,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Binds animation-speed indices 0, 1 and 2 to timer values $02, $04 and $07."
+      "semanticContract": "Binds animation-speed indices 0, 1 and 2 to timer values $02, $04 and $07.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "GetPlayerAnimSpeed",
@@ -19408,7 +19597,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Partitions absolute speed at $1c and $0e before the SavedJoypadBits skid/run logic."
+      "semanticContract": "Partitions absolute speed at $1c and $0e before the SavedJoypadBits skid/run logic.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ChkSkid",
@@ -19421,7 +19613,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Masks SavedJoypadBits with $7f, then compares only direction bits with Player_MovingDir."
+      "semanticContract": "Masks SavedJoypadBits with $7f, then compares only direction bits with Player_MovingDir.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "SetRunSpd",
@@ -19434,7 +19629,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Stores either current absolute speed or zero to RunningSpeed before the common animation table load."
+      "semanticContract": "Stores either current absolute speed or zero to RunningSpeed before the common animation table load.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ProcSkid",
@@ -19447,7 +19645,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Only below $0b changes moving direction and clears horizontal speed and move force."
+      "semanticContract": "Only below $0b changes moving direction and clears horizontal speed and move force.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "SetAnimSpd",
@@ -19460,7 +19661,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Writes the selected PlayerAnimTmrData byte to PlayerAnimTimerSet."
+      "semanticContract": "Writes the selected PlayerAnimTmrData byte to PlayerAnimTimerSet.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ImposeFriction",
@@ -19473,7 +19677,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "With no collision-filtered direction, chooses the source friction branch by Player_X_Speed sign; a held direction uses the LSR right-bit precedence."
+      "semanticContract": "With no collision-filtered direction, chooses the source friction branch by Player_X_Speed sign; a held direction uses the LSR right-bit precedence.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "JoypFrict",
@@ -19486,7 +19693,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves right-bit carry selection: left routes to subtraction and right routes to addition."
+      "semanticContract": "Preserves right-bit carry selection: left routes to subtraction and right routes to addition.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "LeftFrict",
@@ -19499,7 +19709,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Adds force and carry to speed, clamps at MaximumRightSpeed with the source CMP/BMI condition, then preserves the direct absolute-speed store."
+      "semanticContract": "Adds force and carry to speed, clamps at MaximumRightSpeed with the source CMP/BMI condition, then preserves the direct absolute-speed store.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "RghtFrict",
@@ -19512,7 +19725,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Subtracts force and borrow from speed, clamps at MaximumLeftSpeed with the source CMP/BPL condition."
+      "semanticContract": "Subtracts force and borrow from speed, clamps at MaximumLeftSpeed with the source CMP/BPL condition.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "XSpdSign",
@@ -19525,7 +19741,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Keeps nonnegative speed and forms the two-complement absolute value for negative speed."
+      "semanticContract": "Keeps nonnegative speed and forms the two-complement absolute value for negative speed.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "SetAbsSpd",
@@ -19538,7 +19757,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Stores Player_XSpeedAbsolute and returns to the invoking movement state without additional state changes."
+      "semanticContract": "Stores Player_XSpeedAbsolute and returns to the invoking movement state without additional state changes.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "label": "ProcFireball_Bubble",
@@ -54490,7 +54712,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ProcMove",
@@ -54507,7 +54732,11 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ProcMove",
@@ -54524,7 +54753,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ProcMove",
@@ -54541,7 +54773,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ProcMove",
@@ -54558,7 +54793,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "MoveSubs",
@@ -54575,7 +54813,11 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/dispatcher.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "MoveSubs",
@@ -54592,7 +54834,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "OnGroundStateSub",
@@ -54609,7 +54854,11 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "OnGroundStateSub",
@@ -54626,7 +54875,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "OnGroundStateSub",
@@ -54643,7 +54895,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "GndMove",
@@ -54660,7 +54915,11 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "GndMove",
@@ -54677,7 +54936,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "FallingSub",
@@ -54693,7 +54955,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "JumpSwimSub",
@@ -54709,7 +54974,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "JumpSwimSub",
@@ -54725,7 +54993,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "JumpSwimSub",
@@ -54741,7 +55012,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "JumpSwimSub",
@@ -54757,7 +55031,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "DumpFall",
@@ -54773,7 +55050,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ProcSwim",
@@ -54789,7 +55069,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ProcSwim",
@@ -54805,7 +55088,11 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ProcSwim",
@@ -54821,7 +55108,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ProcSwim",
@@ -54837,7 +55127,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "LRWater",
@@ -54853,7 +55146,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "LRWater",
@@ -54869,7 +55165,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "LRAir",
@@ -54885,7 +55184,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "LRAir",
@@ -54901,7 +55203,11 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "LRAir",
@@ -54917,7 +55223,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "JSMove",
@@ -54933,7 +55242,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "JSMove",
@@ -54949,7 +55261,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "JSMove",
@@ -54965,7 +55280,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ExitMov1",
@@ -54981,7 +55299,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ClimbingSub",
@@ -54997,7 +55318,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ClimbingSub",
@@ -55013,7 +55337,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "MoveOnVine",
@@ -55029,7 +55356,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "MoveOnVine",
@@ -55045,7 +55375,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "MoveOnVine",
@@ -55061,7 +55394,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "MoveOnVine",
@@ -55077,7 +55413,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ClimbFD",
@@ -55093,7 +55432,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ClimbFD",
@@ -55109,7 +55451,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "CSetFDir",
@@ -55125,7 +55470,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "PlayerPhysicsSub",
@@ -55141,7 +55489,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "PlayerPhysicsSub",
@@ -55157,7 +55508,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "PlayerPhysicsSub",
@@ -55173,7 +55527,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "PlayerPhysicsSub",
@@ -55189,7 +55546,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcClimb",
@@ -55205,7 +55565,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcClimb",
@@ -55221,7 +55584,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "CheckForJumping",
@@ -55237,7 +55603,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "CheckForJumping",
@@ -55253,7 +55622,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "CheckForJumping",
@@ -55269,7 +55641,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "CheckForJumping",
@@ -55285,7 +55660,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "NoJump",
@@ -55301,7 +55679,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcJumping",
@@ -55317,7 +55698,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcJumping",
@@ -55333,7 +55717,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcJumping",
@@ -55349,7 +55736,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcJumping",
@@ -55365,7 +55755,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcJumping",
@@ -55381,7 +55774,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "InitJS",
@@ -55397,7 +55793,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "InitJS",
@@ -55413,7 +55812,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "InitJS",
@@ -55429,7 +55831,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "InitJS",
@@ -55445,7 +55850,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "InitJS",
@@ -55461,7 +55869,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkWtr",
@@ -55477,7 +55888,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkWtr",
@@ -55493,7 +55907,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkWtr",
@@ -55509,7 +55926,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetYPhy",
@@ -55525,7 +55945,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetYPhy",
@@ -55541,7 +55964,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetYPhy",
@@ -55557,7 +55983,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "PJumpSnd",
@@ -55573,7 +56002,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "PJumpSnd",
@@ -55589,7 +56021,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "SJumpSnd",
@@ -55605,7 +56040,10 @@
         "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "X_Physics",
@@ -55621,7 +56059,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Player_State == 0 enters the grounded selector before all grounded speed/index decisions."
+      "semanticContract": "Player_State == 0 enters the grounded selector before all grounded speed/index decisions.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "X_Physics",
@@ -55637,7 +56078,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Airborne absolute speed >= $19 bypasses ChkRFast and retains the initial friction index."
+      "semanticContract": "Airborne absolute speed >= $19 bypasses ChkRFast and retains the initial friction index.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "X_Physics",
@@ -55653,7 +56097,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Airborne absolute speed < $19 enters ChkRFast."
+      "semanticContract": "Airborne absolute speed < $19 enters ChkRFast.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "X_Physics",
@@ -55669,7 +56116,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The non-branch continuation reaches the grounded selector."
+      "semanticContract": "The non-branch continuation reaches the grounded selector.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcPRun",
@@ -55685,7 +56135,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Water areas bypass the non-water direction/run decision and enter ChkRFast."
+      "semanticContract": "Water areas bypass the non-water direction/run decision and enter ChkRFast.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcPRun",
@@ -55701,7 +56154,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "A direction mismatch bypasses the grounded run timer route and enters ChkRFast."
+      "semanticContract": "A direction mismatch bypasses the grounded run timer route and enters ChkRFast.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcPRun",
@@ -55717,7 +56173,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "A held B button after the same-direction gate sets RunningTimer before common limits."
+      "semanticContract": "A held B button after the same-direction gate sets RunningTimer before common limits.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcPRun",
@@ -55733,7 +56192,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "A nonzero RunningTimer reaches limits without the ChkRFast increment."
+      "semanticContract": "A nonzero RunningTimer reaches limits without the ChkRFast increment.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcPRun",
@@ -55749,7 +56211,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The ordinary grounded non-running continuation enters ChkRFast."
+      "semanticContract": "The ordinary grounded non-running continuation enters ChkRFast.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkRFast",
@@ -55765,7 +56230,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Nonzero RunningSpeed selects FastXSp."
+      "semanticContract": "Nonzero RunningSpeed selects FastXSp.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkRFast",
@@ -55781,7 +56249,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Absolute speed below $21 reaches common limits without the fast index increment."
+      "semanticContract": "Absolute speed below $21 reaches common limits without the fast index increment.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkRFast",
@@ -55797,7 +56268,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The remaining ChkRFast continuation reaches FastXSp."
+      "semanticContract": "The remaining ChkRFast continuation reaches FastXSp.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "FastXSp",
@@ -55813,7 +56287,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "FastXSp adds its index then reaches common limit/table setup."
+      "semanticContract": "FastXSp adds its index then reaches common limit/table setup.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "SetRTmr",
@@ -55829,7 +56306,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "SetRTmr falls through to common limit/table setup after writing $0a."
+      "semanticContract": "SetRTmr falls through to common limit/table setup after writing $0a.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetXPhy",
@@ -55845,7 +56325,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Non-entrance routines retain the current index for maximum-right selection."
+      "semanticContract": "Non-entrance routines retain the current index for maximum-right selection.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetXPhy",
@@ -55861,7 +56344,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Entrance routine seven substitutes index three before maximum-right selection."
+      "semanticContract": "Entrance routine seven substitutes index three before maximum-right selection.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetXPhy2",
@@ -55877,7 +56363,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Matching facing/moving direction leaves friction unshifted and exits."
+      "semanticContract": "Matching facing/moving direction leaves friction unshifted and exits.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetXPhy2",
@@ -55893,7 +56382,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Direction mismatch shifts friction low into high then exits."
+      "semanticContract": "Direction mismatch shifts friction low into high then exits.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetPlayerAnimSpeed",
@@ -55909,7 +56401,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Absolute speed >= $1c stores RunningSpeed then reaches common animation timing."
+      "semanticContract": "Absolute speed >= $1c stores RunningSpeed then reaches common animation timing.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetPlayerAnimSpeed",
@@ -55925,7 +56420,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Speed $0e through $1b enters the SavedJoypadBits skid gate with index one."
+      "semanticContract": "Speed $0e through $1b enters the SavedJoypadBits skid gate with index one.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "GetPlayerAnimSpeed",
@@ -55941,7 +56439,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Speed below $0e reaches the skid gate with index two."
+      "semanticContract": "Speed below $0e reaches the skid gate with index two.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkSkid",
@@ -55957,7 +56458,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "No non-A saved button reaches the common animation timer store."
+      "semanticContract": "No non-A saved button reaches the common animation timer store.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkSkid",
@@ -55973,7 +56477,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Direction bits different from Player_MovingDir enter the skid branch."
+      "semanticContract": "Direction bits different from Player_MovingDir enter the skid branch.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ChkSkid",
@@ -55989,7 +56496,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Matching direction falls through to zero RunningSpeed."
+      "semanticContract": "Matching direction falls through to zero RunningSpeed.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "SetRunSpd",
@@ -56005,7 +56515,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "SetRunSpd reaches the common animation timer store."
+      "semanticContract": "SetRunSpd reaches the common animation timer store.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcSkid",
@@ -56021,7 +56534,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Skid speed >= $0b preserves speed/force and reaches common timing."
+      "semanticContract": "Skid speed >= $0b preserves speed/force and reaches common timing.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcSkid",
@@ -56037,7 +56553,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Low-speed skid reset reaches common timing after the three source writes."
+      "semanticContract": "Low-speed skid reset reaches common timing after the three source writes.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ImposeFriction",
@@ -56053,7 +56572,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Collision-filtered direction input enters JoypFrict."
+      "semanticContract": "Collision-filtered direction input enters JoypFrict.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ImposeFriction",
@@ -56069,7 +56591,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Zero horizontal speed stores zero absolute speed directly."
+      "semanticContract": "Zero horizontal speed stores zero absolute speed directly.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ImposeFriction",
@@ -56085,7 +56610,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Released nonnegative speed enters the subtractive branch toward zero."
+      "semanticContract": "Released nonnegative speed enters the subtractive branch toward zero.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ImposeFriction",
@@ -56101,7 +56629,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Released negative speed enters the additive branch toward zero."
+      "semanticContract": "Released negative speed enters the additive branch toward zero.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ImposeFriction",
@@ -56117,7 +56648,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source fallthrough identity is retained although BMI covers both signed outcomes."
+      "semanticContract": "The source fallthrough identity is retained although BMI covers both signed outcomes.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "JoypFrict",
@@ -56133,7 +56667,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "A cleared right bit selects the subtractive left-input branch."
+      "semanticContract": "A cleared right bit selects the subtractive left-input branch.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "JoypFrict",
@@ -56149,7 +56686,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "A set right bit falls through to the additive right-input branch."
+      "semanticContract": "A set right bit falls through to the additive right-input branch.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "LeftFrict",
@@ -56165,7 +56705,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The additive branch avoids maximum-right clamping only when CMP remains negative."
+      "semanticContract": "The additive branch avoids maximum-right clamping only when CMP remains negative.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "LeftFrict",
@@ -56181,7 +56724,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Additive maximum-right clamp stores the limit then directly stores absolute speed."
+      "semanticContract": "Additive maximum-right clamp stores the limit then directly stores absolute speed.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "RghtFrict",
@@ -56197,7 +56743,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The subtractive branch avoids maximum-left clamping only when CMP remains nonnegative."
+      "semanticContract": "The subtractive branch avoids maximum-left clamping only when CMP remains nonnegative.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "RghtFrict",
@@ -56213,7 +56762,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The subtractive clamp/store continuation reaches sign conversion."
+      "semanticContract": "The subtractive clamp/store continuation reaches sign conversion.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "XSpdSign",
@@ -56229,7 +56781,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Nonnegative speed bypasses two-complement conversion."
+      "semanticContract": "Nonnegative speed bypasses two-complement conversion.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "XSpdSign",
@@ -56245,7 +56800,10 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Negative speed falls through the exact EOR/ADC absolute conversion."
+      "semanticContract": "Negative speed falls through the exact EOR/ADC absolute conversion.",
+      "currentSourcePaths": [
+        "src/game/player.c"
+      ]
     },
     {
       "from": "ProcFireball_Bubble",
@@ -98486,7 +99044,11 @@
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation PlayerPhysicsSub \u2192 ProcMove: child completion restores the caller\u2019s next source phase without an extra dispatch."
+      "semanticContract": "Preserves the original return continuation PlayerPhysicsSub \u2192 ProcMove: child completion restores the caller\u2019s next source phase without an extra dispatch.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "JumpEngine",
@@ -98502,7 +99064,11 @@
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation JumpEngine \u2192 MoveSubs: child completion restores the caller\u2019s next source phase without an extra dispatch."
+      "semanticContract": "Preserves the original return continuation JumpEngine \u2192 MoveSubs: child completion restores the caller\u2019s next source phase without an extra dispatch.",
+      "currentSourcePaths": [
+        "src/game/dispatcher.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "GetPlayerAnimSpeed",
@@ -98518,7 +99084,11 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Animation timing returns to OnGroundStateSub before its direction/facing and friction work."
+      "semanticContract": "Animation timing returns to OnGroundStateSub before its direction/facing and friction work.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ImposeFriction",
@@ -98534,7 +99104,11 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Friction returns to GndMove before horizontal object movement."
+      "semanticContract": "Friction returns to GndMove before horizontal object movement.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "MovePlayerHorizontally",
@@ -98550,7 +99124,10 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlayerHorizontally -> GndMove with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MovePlayerHorizontally -> GndMove with source predicate, carry/order handoff and return semantics.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "GetPlayerAnimSpeed",
@@ -98566,7 +99143,11 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Animation timing returns to ProcSwim before its direction/facing and air friction work."
+      "semanticContract": "Animation timing returns to ProcSwim before its direction/facing and air friction work.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "ImposeFriction",
@@ -98582,7 +99163,11 @@
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Friction returns to LRAir before horizontal object movement."
+      "semanticContract": "Friction returns to LRAir before horizontal object movement.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "MovePlayerHorizontally",
@@ -98598,7 +99183,10 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlayerHorizontally -> JSMove with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MovePlayerHorizontally -> JSMove with source predicate, carry/order handoff and return semantics.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "FireballObjCore",
@@ -107642,7 +108230,10 @@
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original JumpEngine selector 0 dispatch MoveSubs \u2192 OnGroundStateSub, including the selected target and continuation convention."
+      "semanticContract": "Preserves the original JumpEngine selector 0 dispatch MoveSubs \u2192 OnGroundStateSub, including the selected target and continuation convention.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "MoveSubs",
@@ -107659,7 +108250,10 @@
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original JumpEngine selector 1 dispatch MoveSubs \u2192 JumpSwimSub, including the selected target and continuation convention."
+      "semanticContract": "Preserves the original JumpEngine selector 1 dispatch MoveSubs \u2192 JumpSwimSub, including the selected target and continuation convention.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "MoveSubs",
@@ -107676,7 +108270,10 @@
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original JumpEngine selector 2 dispatch MoveSubs \u2192 FallingSub, including the selected target and continuation convention."
+      "semanticContract": "Preserves the original JumpEngine selector 2 dispatch MoveSubs \u2192 FallingSub, including the selected target and continuation convention.",
+      "currentSourcePaths": [
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "MoveSubs",
@@ -107693,7 +108290,11 @@
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original JumpEngine selector 3 dispatch MoveSubs \u2192 ClimbingSub, including the selected target and continuation convention."
+      "semanticContract": "Preserves the original JumpEngine selector 3 dispatch MoveSubs \u2192 ClimbingSub, including the selected target and continuation convention.",
+      "currentSourcePaths": [
+        "src/game/player.c",
+        "src/game/player_movement.c"
+      ]
     },
     {
       "from": "BlockCode",
