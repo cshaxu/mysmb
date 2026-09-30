@@ -1056,3 +1056,8 @@ branches.
 ### Cohort J — B15r Bowser front/rear OAM and collision integration
 
 `BowserGfxHandler` through `ProcessBowserHalf` now has four node contracts, every incident child call, direction branch, fall-through, state exit, collision tail and return relation, plus five feasible OAM/state handoffs. Static review matches front-before-rear processing, `$10/$f0` rear placement, duplicate-slot/current-slot restoration, normal-state-only `$0a` bounding box, collision tail and final graphics-flag clear. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 front/rear, normal/non-normal and collision routes.
+
+
+### Cohort J — B15s Bowser flame-timer integration
+
+`FlameTimerData`, `SetFlameTimer` and `ExFl` now have node contracts, all incident call, return, fall-through and common-exit relations, plus two feasible table/state handoffs. Static review matches the eight bytes and the essential old-index-read before increment-and-mask ordering. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 counter-wrap and both caller routes.

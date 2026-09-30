@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 270,
+    "enumeratedCount": 272,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3793,6 +3793,34 @@
       "semanticContract": "Preserves source producer-to-consumer OAM/state handoff, predicate and ordering.",
       "semanticEvidence": [
         "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00271",
+      "producer": "FlameTimerData",
+      "consumer": "SetFlameTimer",
+      "storage": "old BowserFlameTimerCtrl index to eight-byte timing table",
+      "feasiblePath": "Timer selection reads the old counter before the new counter is masked and stored.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/frenzy.c timer_data[index]",
+      "semanticContract": "Preserves source table/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00272",
+      "producer": "SetFlameTimer",
+      "consumer": "SpawnFBr",
+      "storage": "returned normal/hard-adjusted table byte to BowserFireBreathTimer",
+      "feasiblePath": "Closing-mouth fire route consumes the old-index timer result after its source return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/bowser.c value = mysmb_enemy_set_flame_timer",
+      "semanticContract": "Preserves source table/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -19709,31 +19737,40 @@
       "label": "FlameTimerData",
       "asmLine": 10337,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/frenzy.c",
+      "currentCounterpart": "src/game/enemy/frenzy.c:mysmb_enemy_set_flame_timer",
+      "semanticEvidence": [
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves all eight ROM timing bytes in source order: $bf,$40,$bf,$bf,$bf,$40,$40,$bf."
     },
     {
       "label": "SetFlameTimer",
       "asmLine": 10340,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/frenzy.c",
+      "currentCounterpart": "src/game/enemy/frenzy.c:mysmb_enemy_set_flame_timer",
+      "semanticEvidence": [
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads the old BowserFlameTimerCtrl as table index, increments it, masks only the stored new value to three bits, then returns the old-index table byte."
     },
     {
       "label": "ExFl",
       "asmLine": 10347,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/frenzy.c",
+      "currentCounterpart": "src/game/enemy/frenzy.c:mysmb_enemy_set_flame_timer",
+      "semanticEvidence": [
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Is the common return endpoint for timer selection and non-normal Bowser-flame state exit; it adds no state mutation."
     },
     {
       "label": "ProcBowserFlame",
@@ -52902,12 +52939,12 @@
       "id": "control-01580",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared enemy/frenzy.c:mysmb_enemy_set_flame_timer and named callers",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation InitBowserFlame -> SetFlameTimer with timer, front-slot, random/table, carry and activation handoff."
+      "semanticContract": "Preserves original call relation InitBowserFlame -> SetFlameTimer with old-index table read, masked counter update and source return/fall-through ordering."
     },
     {
       "from": "InitBowserFlame",
@@ -59526,12 +59563,12 @@
       "id": "control-01994",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "currentCounterpart": "shared enemy/frenzy.c:mysmb_enemy_set_flame_timer and named callers",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SpawnFBr -> SetFlameTimer with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order."
+      "semanticContract": "Preserves original call relation SpawnFBr -> SetFlameTimer with old-index table read, masked counter update and source return/fall-through ordering."
     },
     {
       "from": "SpawnFBr",
@@ -59733,10 +59770,13 @@
       "instruction": "lda",
       "id": "control-02007",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/frenzy.c:mysmb_enemy_set_flame_timer and named callers",
+      "semanticEvidence": [
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetFlameTimer -> ExFl with old-index table read, masked counter update and source return/fall-through ordering."
     },
     {
       "from": "ProcBowserFlame",
@@ -59824,10 +59864,13 @@
       "instruction": "bne",
       "id": "control-02014",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/frenzy.c:mysmb_enemy_set_flame_timer and named callers",
+      "semanticEvidence": [
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetGfxF -> ExFl with old-index table read, masked counter update and source return/fall-through ordering."
     },
     {
       "from": "SetGfxF",
@@ -83555,12 +83598,12 @@
       "id": "control-03781",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared enemy/frenzy.c:mysmb_enemy_set_flame_timer and named callers",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetFlameTimer -> InitBowserFlame with timer, front-slot, random/table, carry and activation handoff."
+      "semanticContract": "Preserves original return relation SetFlameTimer -> InitBowserFlame with old-index table read, masked counter update and source return/fall-through ordering."
     },
     {
       "from": "PutAtRightExtent",
@@ -84803,12 +84846,12 @@
       "id": "control-03859",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "currentCounterpart": "shared enemy/frenzy.c:mysmb_enemy_set_flame_timer and named callers",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetFlameTimer -> SpawnFBr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order."
+      "semanticContract": "Preserves original return relation SetFlameTimer -> SpawnFBr with old-index table read, masked counter update and source return/fall-through ordering."
     },
     {
       "from": "ProcessBowserHalf",
