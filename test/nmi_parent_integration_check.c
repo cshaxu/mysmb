@@ -1,0 +1,109 @@
+#include "game/frame_root.h"
+
+static mysmb_u8 rotate_first_byte(mysmb_u8 first, mysmb_u8 second)
+{
+    mysmb_u8 carry;
+
+    carry = ((first & 2U) ^ (second & 2U)) != 0U ? 1U : 0U;
+    return (mysmb_u8)((first >> 1U) | (carry != 0U ? 0x80U : 0U));
+}
+
+static int check_unpaused_nmi_order(void)
+{
+    struct mysmb_game game;
+    struct mysmb_input input;
+    mysmb_u8 mode;
+    mysmb_u8 task;
+    mysmb_u8 index;
+
+    mysmb_game_power_on(&game);
+    mysmb_game_reset(&game);
+    game.ppu_control_0 = 0x95U;
+    game.ram[0x0778U] = 0x15U;
+    game.ram[0x0779U] = 0x01U;
+    game.ram[0x0774U] = 0U;
+    game.ram[0x073fU] = 0x34U;
+    game.ram[0x0740U] = 0x56U;
+    game.ram[0x0009U] = 0x24U;
+    game.ram[0x077fU] = 1U;
+    game.ram[0x0780U] = 3U;
+    game.ram[0x0794U] = 5U;
+    game.ram[0x07a7U] = 0x03U;
+    game.ram[0x07a8U] = 0x02U;
+    game.ram[0x0722U] = 1U;
+    for (index = 0U; index < 64U; ++index) {
+        game.ram[(mysmb_u16)(0x0200U + index * 4U)] =
+            (mysmb_u8)(0x20U + index);
+    }
+    game.ram[0x0773U] = 0U;
+    game.ram[0x0300U] = 5U;
+    game.ram[0x0301U] = 0x20U;
+    game.ram[0x0302U] = 0x00U;
+    game.ram[0x0303U] = 0x43U;
+    game.ram[0x0304U] = 0x29U;
+    game.ram[0x0305U] = 0U;
+    input.buttons = 0U;
+    input.buttons2 = 0U;
+
+    (void)mysmb_frame_root_begin(&game, &input, &mode, &task);
+
+    /* $4014 observes old OAM before MoveSpritesOffscreen clears slots 1-63. */
+    if (game.visible_oam[0U] != 0x20U || game.visible_oam[4U] != 0x21U ||
+        game.ram[0x0200U] != 0x20U || game.ram[0x0204U] != 0xf8U) return 1;
+    /* UpdateScreen precedes InitBuffer, preserving the packet then clearing it. */
+    if (game.name_table[0U][0U] != 0x29U ||
+        game.name_table[0U][1U] != 0x29U ||
+        game.name_table[0U][2U] != 0x29U || game.ram[0x0300U] != 0U ||
+        game.ram[0x0301U] != 0U || game.ram[0x0773U] != 0U) return 2;
+    /* Display commit and post-vblank sprite/scroll work retain the NMI values. */
+    /* The horizontal VRAM packet clears the $2000 increment bit before
+     * WritePPUReg1 restores the mirror and NMI-enable bit at RTI. */
+    if (game.ram[0x0778U] != 0x11U || game.ram[0x0779U] != 0x1fU ||
+        game.ppu_mask != 0x1fU || game.visible_ppu_control_0 != 0x91U ||
+        game.visible_ppu_name_table != 1U || game.visible_scroll_x != 0x34U ||
+        game.visible_scroll_y != 0x56U) return 3;
+    if (game.ram[0x0009U] != 0x25U || game.ram[0x0780U] != 2U ||
+        game.ram[0x0794U] != 4U ||
+        game.ram[0x07a7U] != rotate_first_byte(0x03U, 0x02U)) return 4;
+    return 0;
+}
+
+static int check_pause_gate_order(void)
+{
+    struct mysmb_game game;
+    struct mysmb_input input;
+    mysmb_u8 mode;
+    mysmb_u8 task;
+
+    mysmb_game_power_on(&game);
+    mysmb_game_reset(&game);
+    game.ram[0x0770U] = 2U;
+    game.ram[0x0776U] = 0U;
+    game.ram[0x0009U] = 0x44U;
+    game.ram[0x077fU] = 3U;
+    game.ram[0x0780U] = 7U;
+    game.ram[0x07a7U] = 0x03U;
+    game.ram[0x07a8U] = 0x02U;
+    input.buttons = MYSMB_BUTTON_START;
+    input.buttons2 = 0U;
+
+    if (mysmb_frame_root_begin(&game, &input, &mode, &task) == 0U) return 5;
+    /* ReadJoypads and PauseRoutine precede the timer gate; LFSR still runs. */
+    if (game.ram[0x06fcU] != MYSMB_BUTTON_START || game.ram[0x0776U] != 0x81U ||
+        game.ram[0x0777U] != 0x2bU || game.ram[0x00faU] != 1U ||
+        game.ram[0x0009U] != 0x44U || game.ram[0x077fU] != 3U ||
+        game.ram[0x0780U] != 7U ||
+        game.ram[0x07a7U] != rotate_first_byte(0x03U, 0x02U)) return 6;
+    return 0;
+}
+
+int main(void)
+{
+    int result;
+
+    result = check_unpaused_nmi_order();
+    if (result != 0) return 10 + result;
+    result = check_pause_gate_order();
+    if (result != 0) return 20 + result;
+    return 0;
+}

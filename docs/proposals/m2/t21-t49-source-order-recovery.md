@@ -60,7 +60,7 @@ boundary.
 | T48 | Sound-effect queue and square/noise handlers | 15070–15500 | 74 |
 | T49 | Music engine, channel handlers and event switching | 15501–16050 | 101 |
 | T50 | Music data, tables and audio-data consumers | 16051–16368 | 28 |
-| T51 | Cross-route ROM equivalence and three-target certification | integration | 0 |
+| T51 | Residual source-order equivalence and three-target certification | residual + integration | 40 + 0-credit integration |
 
 ## Identifier reconciliation (M2 Td S7)
 

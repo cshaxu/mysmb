@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1952 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| ROM-match complete | 1953 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 35 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
 | Open / unmatched | 4 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1952 / 1,992 (97.99%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1953 / 1,992 (98.04%)**. The 35 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T50 S3 closure](../proposals/m2/t50-music-data-and-audio-consumers.md#s3-closure-noise-envelope-consumers) closes the two shared noise-envelope labels through direct owner-ROM table reads, source branch/write comparison, x86/x64 focused checks and the OpenNT DOS16 link.
+Latest task review: [T51 S1 closure](../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s1-closure-nmi-parent-integration) closes the shared NMI parent through source-order audit, controlled normal/pause boundaries, x86/x64 checks and the OpenNT DOS16 link.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1950)
+## Completed matches (1953)
 
 | ROM line | Node |
 | ---: | --- |
@@ -42,6 +42,7 @@ of equivalent native nodes. No product repair is part of this audit.
 | 743 | `VRAM_AddrTable_Low` |
 | 752 | `VRAM_AddrTable_High` |
 | 761 | `VRAM_Buffer_Offset` |
+| 764 | `NonMaskableInterrupt` |
 | 776 | `ScreenOff` |
 | 796 | `InitBuffer` |
 | 814 | `DecTimers` |
@@ -1986,11 +1987,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 16362 | `BowserFlameEnvData` |
 | 16368 | `BrickShatterEnvData` |
 
-## Mapped but not yet matched (36)
+## Mapped but not yet matched (35)
 
 | ROM line | Node |
 | ---: | --- |
-| 764 | `NonMaskableInterrupt` |
 | 3615 | `KillEnemies` |
 | 4550 | `E_CastleArea1` |
 | 4558 | `E_CastleArea2` |

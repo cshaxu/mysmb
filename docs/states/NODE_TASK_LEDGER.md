@@ -27,7 +27,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
 | M2 T22 S9 | 1 | `ScreenOff` |
-| M2 T24 S2 | 5 | `NonMaskableInterrupt`, `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
+| M2 T24 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
 | M2 T25 S10 | 1 | `ChkSelect` |
 | M2 T25 S11 | 1 | `ChkWorldSel` |
 | M2 T25 S12 | 1 | `SelectBLogic` |
@@ -223,6 +223,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T50 S1 | 21 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` |
 | M2 T50 S2 | 5 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` |
 | M2 T50 S3 | 2 | `BowserFlameEnvData`, `BrickShatterEnvData` |
+| M2 T51 S1 | 1 | `NonMaskableInterrupt` |
 
 ## Future admission packages and queued plans
 
@@ -252,7 +253,7 @@ transfer existing ownership or allocate a numeric T.
 | 743 | `VRAM_AddrTable_Low` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
 | 752 | `VRAM_AddrTable_High` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
 | 761 | `VRAM_Buffer_Offset` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
-| 764 | `NonMaskableInterrupt` | M2 T24 S2 | existing closure backlog; T22/S22 dependency audit returned final NMI-parent custody until every direct dependency has independent ROM-match evidence. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
+| 764 | `NonMaskableInterrupt` | M2 T51 S1 | existing closure backlog; Accepted T51 S1 final NMI-parent integration transfer. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
 | 776 | `ScreenOff` | M2 T22 S9 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
 | 796 | `InitBuffer` | M2 T22 S23 | existing closure backlog; T22/S16 completed the InitBuffer source branch/write contract; T22/S23 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S16; M2 T22 S23; M2 T24 S1 |
 | 814 | `DecTimers` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
@@ -2339,7 +2340,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T23 S5 | 0 | 0 | declared-plan, declared-closure-plan; [record](../../docs/proposals/m2/player-route.md) |
 | M2 T24 | 1992 | - | [record](../../docs/history/M2-T24-S1-node-evidence-audit.md); [record](../../docs/proposals/m2/mapped-node-verification.md); [record](../../docs/proposals/m2/node-task-ledger.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
 | M2 T24 S1 | 1992 | 0 | explicit-reference, historical-record, closed-evidence-audit; [record](../../docs/history/M2-T24-S1-node-evidence-audit.md); [record](../../docs/proposals/m2/mapped-node-verification.md); [record](../../docs/states/QUEUE.md) |
-| M2 T24 S2 | 0 | 5 | explicit-reference, owner-authorized-ledger; [record](../../docs/proposals/m2/node-task-ledger.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
+| M2 T24 S2 | 0 | 4 | explicit-reference, owner-authorized-ledger; [record](../../docs/proposals/m2/node-task-ledger.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
 | M2 T25 | 26 | - | [record](../../docs/proposals/m2/t25-title-menu-demo.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T25 S1 | 26 | 0 | source-order-node-contract; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S2 | 26 | 0 | planned-shared-c-migration; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
@@ -2578,6 +2579,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T50 S1 | 0 | 21 | owner-approved-source-order, music-stream-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T50 S2 | 0 | 5 | declared-plan, music-lookup-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T50 S3 | 0 | 2 | declared-plan, noise-envelope-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
+| M2 T51 | 0 | - | [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
+| M2 T51 S1 | 0 | 1 | owner-approved-completion, nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2900,6 +2903,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-276-to-t50-s1 | M2 Td S4 | M2 T50 S1 | 21 | Coordinator accepts the 21-label music-stream payload chain under the continuing owner-approved M2 source-order mandate.; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | transfer-277-to-t50-s2 | M2 Td S4 | M2 T50 S2 | 5 | Coordinator; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | transfer-278-to-t50-s3 | M2 Td S4 | M2 T50 S3 | 2 | Coordinator under the continuing owner-approved M2 source-order mandate; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
+| transfer-279-to-t51-s1 | M2 T24 S2 | M2 T51 S1 | 1 | Coordinator under the continuing owner-approved M2 completion mandate; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3161,3 +3165,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T50 S1 | 21 | 1924 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` / 21 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` / 21 | closed-rom-match-complete; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T50 S2 | 5 | 1945 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` / 5 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` / 5 | closed-music-lookup-envelope-chain; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T50 S3 | 2 | 1950 | `BowserFlameEnvData`, `BrickShatterEnvData` / 2 | `BowserFlameEnvData`, `BrickShatterEnvData` / 2 | closed-noise-envelope-chain; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
+| M2 T51 S1 | 1 | 1952 | `NonMaskableInterrupt` / 1 | `NonMaskableInterrupt` / 1 | closed-nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
