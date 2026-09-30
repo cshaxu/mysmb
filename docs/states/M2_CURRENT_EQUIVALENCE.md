@@ -1292,3 +1292,9 @@ branches.
 - Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering size adjustment, growth/shrink frame selection, graphics-table offset construction, and death/crouch/intermediate OAM attribute correction.
 - Independent integration result: 25 outgoing control relations and the feasible `ChangeSizeOffsetAdder → HandleChangeSize` material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K20 — relative-object-position audit
+
+- Source range: `RelativePlayerPosition` through `GetObjRelativePosition` (`SMBDIS.ASM` lines 14786–14841).
+- Node-semantics result: nine labels moved from `unclassified` to `needs-evidence`: all player/bubble/fireball/misc/enemy/block position wrappers and their common helpers.
+- Independent integration result: 42 outgoing control relations and the feasible `ObjOffsetData → GetProperObjOffset` material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

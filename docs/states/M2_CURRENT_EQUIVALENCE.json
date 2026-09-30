@@ -6049,6 +6049,20 @@
         "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00432",
+      "producer": "ObjOffsetData",
+      "consumer": "GetProperObjOffset",
+      "storage": "ROM ObjOffsetData indexed object-family displacement to SprObject source-slot selection",
+      "feasiblePath": "Bubble, fireball and misc relative-position wrappers select one ObjOffsetData entry before the common relative-coordinate routine.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c mysmb_obj_offset_data and mysmb_oam_proper_source_offset",
+      "semanticContract": "Each source object-family selector yields the same ordered SprObject array displacement before coordinate reads.",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -28550,91 +28564,118 @@
       "label": "RelativePlayerPosition",
       "asmLine": 14786,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes source and relative-result offsets to zero, then tail-transfers to the common relative-coordinate routine."
     },
     {
       "label": "RelativeBubblePosition",
       "asmLine": 14791,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses ObjOffsetData bubble displacement and writes the selected SprObject coordinates into the bubble relative-result cells."
     },
     {
       "label": "RelativeFireballPosition",
       "asmLine": 14797,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses ObjOffsetData fireball displacement and writes the selected SprObject coordinates into the fireball relative-result cells."
     },
     {
       "label": "RelWOfs",
       "asmLine": 14801,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls the common coordinate calculation and restores ObjectOffset for its caller."
     },
     {
       "label": "RelativeMiscPosition",
       "asmLine": 14805,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses ObjOffsetData misc displacement and writes the selected SprObject coordinates into the misc relative-result cells."
     },
     {
       "label": "RelativeEnemyPosition",
       "asmLine": 14811,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells."
     },
     {
       "label": "RelativeBlockPosition",
       "asmLine": 14816,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Performs two relative-coordinate calculations for the selected block object and its paired object at source slot plus two."
     },
     {
       "label": "VariableObjOfsRelPos",
       "asmLine": 14825,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ObjectOffset in scratch, adds the supplied array displacement, calls the common coordinate routine and restores ObjectOffset."
     },
     {
       "label": "GetObjRelativePosition",
       "asmLine": 14834,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies source Y to destination relative Y and stores source X minus ScreenLeft_X_Pos as destination relative X."
     },
     {
       "label": "GetPlayerOffscreenBits",
@@ -80086,10 +80127,13 @@
       "instruction": "jmp",
       "id": "control-03115",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer RelativePlayerPosition → RelWOfs preserves the prepared slot/result offset without a local continuation."
     },
     {
       "from": "RelativeBubblePosition",
@@ -80099,10 +80143,13 @@
       "instruction": "jsr",
       "id": "control-03116",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RelativeBubblePosition → GetProperObjOffset receives the prepared source slot/result offset and completes before the caller continuation."
     },
     {
       "from": "RelativeBubblePosition",
@@ -80112,10 +80159,13 @@
       "instruction": "jmp",
       "id": "control-03117",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer RelativeBubblePosition → RelWOfs preserves the prepared slot/result offset without a local continuation."
     },
     {
       "from": "RelativeFireballPosition",
@@ -80125,10 +80175,13 @@
       "instruction": "jsr",
       "id": "control-03118",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RelativeFireballPosition → GetProperObjOffset receives the prepared source slot/result offset and completes before the caller continuation."
     },
     {
       "from": "RelativeFireballPosition",
@@ -80138,10 +80191,13 @@
       "instruction": "ldy",
       "id": "control-03119",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through RelativeFireballPosition → RelWOfs preserves the selected slot and result-offset setup before entering the successor."
     },
     {
       "from": "RelWOfs",
@@ -80151,10 +80207,13 @@
       "instruction": "jsr",
       "id": "control-03120",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RelWOfs → GetObjRelativePosition receives the prepared source slot/result offset and completes before the caller continuation."
     },
     {
       "from": "RelativeMiscPosition",
@@ -80164,10 +80223,13 @@
       "instruction": "jsr",
       "id": "control-03121",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RelativeMiscPosition → GetProperObjOffset receives the prepared source slot/result offset and completes before the caller continuation."
     },
     {
       "from": "RelativeMiscPosition",
@@ -80177,10 +80239,13 @@
       "instruction": "jmp",
       "id": "control-03122",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer RelativeMiscPosition → RelWOfs preserves the prepared slot/result offset without a local continuation."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -80190,10 +80255,13 @@
       "instruction": "jmp",
       "id": "control-03123",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer RelativeEnemyPosition → VariableObjOfsRelPos preserves the prepared slot/result offset without a local continuation."
     },
     {
       "from": "RelativeBlockPosition",
@@ -80203,10 +80271,13 @@
       "instruction": "jsr",
       "id": "control-03124",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RelativeBlockPosition → VariableObjOfsRelPos receives the prepared source slot/result offset and completes before the caller continuation."
     },
     {
       "from": "RelativeBlockPosition",
@@ -80216,10 +80287,13 @@
       "instruction": "iny",
       "id": "control-03125",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through RelativeBlockPosition → VariableObjOfsRelPos preserves the selected slot and result-offset setup before entering the successor."
     },
     {
       "from": "VariableObjOfsRelPos",
@@ -80229,10 +80303,13 @@
       "instruction": "jsr",
       "id": "control-03126",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call VariableObjOfsRelPos → GetObjRelativePosition receives the prepared source slot/result offset and completes before the caller continuation."
     },
     {
       "from": "GetPlayerOffscreenBits",
@@ -85251,12 +85328,12 @@
       "id": "control-03506",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step calls render only after relative-player helper completes",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original return RelativePlayerPosition -> AutoPlayer preserves relative-coordinate writes before the PlayerGfxHandler tail."
+      "semanticContract": "The source return relation RelativePlayerPosition → AutoPlayer restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "JumpEngine",
@@ -87025,10 +87102,13 @@
       "instruction": "rts/rti",
       "id": "control-03622",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation RelativePlayerPosition → ProcELoop restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "PlayerGfxHandler",
@@ -87367,10 +87447,13 @@
       "instruction": "rts/rti",
       "id": "control-03646",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation RelativePlayerPosition → PlayerSubs restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "BoundingBoxCore",
@@ -87713,12 +87796,12 @@
       "id": "control-03670",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeBubblePosition -> BublLoop with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeBubblePosition → BublLoop restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetBubbleOffscreenBits",
@@ -87793,12 +87876,12 @@
       "id": "control-03675",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeFireballPosition -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeFireballPosition → RunFB restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetFireballOffscreenBits",
@@ -87873,12 +87956,12 @@
       "id": "control-03680",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeFireballPosition -> FireballExplosion with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeFireballPosition → FireballExplosion restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "DigitsMathRoutine",
@@ -87953,12 +88036,12 @@
       "id": "control-03685",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> FPGfx with its source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeEnemyPosition → FPGfx restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "FlagpoleGfxHandler",
@@ -88001,12 +88084,12 @@
       "id": "control-03688",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> DrawJSpr with its source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeEnemyPosition → DrawJSpr restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "EnemyGfxHandler",
@@ -88049,12 +88132,12 @@
       "id": "control-03691",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunVSubs with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunVSubs restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -88241,12 +88324,12 @@
       "id": "control-03703",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunBBSubs with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunBBSubs restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -88369,12 +88452,12 @@
       "id": "control-03711",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeMiscPosition -> RunHSubs with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeMiscPosition → RunHSubs restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetMiscBoundBox",
@@ -88497,12 +88580,12 @@
       "id": "control-03719",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeMiscPosition -> RunJCSubs with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeMiscPosition → RunJCSubs restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetMiscOffscreenBits",
@@ -88673,12 +88756,12 @@
       "id": "control-03730",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunPUSubs restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -89057,12 +89140,12 @@
       "id": "control-03754",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeBlockPosition -> BlockObjectsCore with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeBlockPosition → BlockObjectsCore restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetBlockOffscreenBits",
@@ -89121,12 +89204,12 @@
       "id": "control-03758",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeBlockPosition -> BouncingBlockHandler with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation RelativeBlockPosition → BouncingBlockHandler restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetBlockOffscreenBits",
@@ -89681,12 +89764,12 @@
       "id": "control-03793",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunRetainerObj with object selector, slot and source call/return ordering."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunRetainerObj restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -89713,12 +89796,12 @@
       "id": "control-03795",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunNormalEnemies with object selector, slot and source call/return ordering."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunNormalEnemies restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "EnemyGfxHandler",
@@ -89873,12 +89956,12 @@
       "id": "control-03805",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunBowserFlame with object selector, slot and source call/return ordering."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunBowserFlame restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -89953,12 +90036,12 @@
       "id": "control-03810",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunSmallPlatform restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "SmallPlatformBoundBox",
@@ -90001,12 +90084,12 @@
       "id": "control-03813",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunSmallPlatform restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "DrawSmallPlatform",
@@ -90065,12 +90148,12 @@
       "id": "control-03817",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "The source return relation RelativeEnemyPosition → RunLargePlatform restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "LargePlatformBoundBox",
@@ -90129,12 +90212,12 @@
       "id": "control-03821",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> SkipPT with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "The source return relation RelativeEnemyPosition → SkipPT restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "DrawLargePlatform",
@@ -90417,12 +90500,12 @@
       "id": "control-03839",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> SetupGFB with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "The source return relation RelativeEnemyPosition → SetupGFB restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetFirebarPosition",
@@ -90817,12 +90900,12 @@
       "id": "control-03864",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> SetGfxF with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
+      "semanticContract": "The source return relation RelativeEnemyPosition → SetGfxF restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -90849,12 +90932,12 @@
       "id": "control-03866",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> SetupExpl with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
+      "semanticContract": "The source return relation RelativeEnemyPosition → SetupExpl restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "DrawExplosion_Fireworks",
@@ -90929,12 +91012,12 @@
       "id": "control-03871",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
+      "semanticContract": "The source return relation RelativeEnemyPosition → DrawStarFlag restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "DrawStarFlag",
@@ -91441,12 +91524,12 @@
       "id": "control-03903",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> HandleEnemyFBallCol with its source predicate, selected slot and state/table handoff ordering."
+      "semanticContract": "The source return relation RelativeEnemyPosition → HandleEnemyFBallCol restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "InitVStf",
@@ -93672,10 +93755,13 @@
       "instruction": "rts/rti",
       "id": "control-04050",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetObjRelativePosition → RelWOfs restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetProperObjOffset",
@@ -93698,10 +93784,13 @@
       "instruction": "rts/rti",
       "id": "control-04052",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation VariableObjOfsRelPos → RelativeBlockPosition restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetObjRelativePosition",
@@ -93711,10 +93800,13 @@
       "instruction": "rts/rti",
       "id": "control-04053",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "semanticEvidence": [
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetObjRelativePosition → VariableObjOfsRelPos restores the caller-visible ObjectOffset and relative coordinates after completion."
     },
     {
       "from": "GetProperObjOffset",
