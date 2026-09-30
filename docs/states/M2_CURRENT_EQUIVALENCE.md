@@ -1076,3 +1076,8 @@ branches.
 ### Cohort J — B15v fireworks actor integration
 
 `RunFireworks` through `FireworksSoundScore` now has three node contracts, all incident actor dispatch, timer branches, child calls, score tail and return relations, plus four feasible timer/OAM/score handoffs. Static review matches byte-wrap decrement behavior, zero reload `$08`, terminal frame `>=3`, Y-then-X scratch copy, actor clear, blast queue and 500-point modifier before the common area-points tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 timer, frame and terminal-score routes.
+
+
+### Cohort J — B15w star-flag dispatcher-front integration
+
+`StarFlagYPosAdder` through `StarFlagExit` now has eight node contracts, all incident task-gate, digit-selection, dispatch, fall-through and return relations, plus five feasible table/state handoffs. Static review matches all three OAM tables, frenzy clear, task `>=5` exit and last-digit `1/3/6` selection. Two graph-only mismatches were found: the extractor represents both a sequential fall-through and a normal return across the `JumpEngine` vector table. Candidate H8 records this extractor repair; shared C has no discrepancy. All remaining entries stay `needs-evidence` pending controlled original-ROM/x86/x64 task and digit routes.

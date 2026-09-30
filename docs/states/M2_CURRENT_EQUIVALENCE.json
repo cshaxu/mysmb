@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 283,
+    "enumeratedCount": 288,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3975,6 +3975,76 @@
       "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
       "semanticEvidence": [
         "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00284",
+      "producer": "StarFlagYPosAdder",
+      "consumer": "RunStarFlagObj",
+      "storage": "four-entry Y-adder ROM table to later star-flag OAM draw",
+      "feasiblePath": "Each star-flag sprite index selects the corresponding Y offset after task dispatch.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c y_adder",
+      "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00285",
+      "producer": "StarFlagXPosAdder",
+      "consumer": "RunStarFlagObj",
+      "storage": "four-entry X-adder ROM table to later star-flag OAM draw",
+      "feasiblePath": "Each star-flag sprite index selects the corresponding X offset after task dispatch.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c x_adder",
+      "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00286",
+      "producer": "StarFlagTileData",
+      "consumer": "RunStarFlagObj",
+      "storage": "four-entry tile ROM table to later star-flag OAM draw",
+      "feasiblePath": "Each star-flag sprite index selects the corresponding tile after task dispatch.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c tiles",
+      "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00287",
+      "producer": "RunStarFlagObj",
+      "consumer": "GameTimerFireworks",
+      "storage": "StarFlagTaskControl selector one to timer/fireworks task",
+      "feasiblePath": "Task one dispatches only through the vector pointer, never sequential table bytes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c switch task 1",
+      "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00288",
+      "producer": "GameTimerFireworks",
+      "consumer": "SetFWC",
+      "storage": "last timer digit to fireworks counter and star-flag state",
+      "feasiblePath": "Digits 1/3/6 retain state 5/3/0; all others write $ff counter with state zero.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c case 1 digit selection",
+      "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -20086,81 +20156,105 @@
       "label": "StarFlagYPosAdder",
       "asmLine": 10468,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves four source bytes $00,$00,$08,$08 used as indexed star-flag sprite Y adders."
     },
     {
       "label": "StarFlagXPosAdder",
       "asmLine": 10471,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves four source bytes $00,$08,$00,$08 used as indexed star-flag sprite X adders."
     },
     {
       "label": "StarFlagTileData",
       "asmLine": 10474,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves four source bytes $54,$55,$56,$57 used as indexed star-flag sprite tiles."
     },
     {
       "label": "RunStarFlagObj",
       "asmLine": 10477,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears EnemyFrenzyBuffer, exits task >=5, otherwise dispatches exactly five task selectors through the source JumpEngine vector without sequential table fall-through."
     },
     {
       "label": "GameTimerFireworks",
       "asmLine": 10491,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects state five/three/zero for timer last digit 1/3/6 respectively; every other digit writes FireworksCounter $ff, then advances the star-flag task."
     },
     {
       "label": "SetFWC",
       "asmLine": 10503,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes FireworksCounter before Enemy_State, preserving the selected state Y value and fall-through task increment."
     },
     {
       "label": "IncrementSFTask1",
       "asmLine": 10506,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments StarFlagTaskControl exactly once before common return."
     },
     {
       "label": "StarFlagExit",
       "asmLine": 10509,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Is the non-mutating common task exit."
     },
     {
       "label": "AwardGameTimerPoints",
@@ -60392,10 +60486,13 @@
       "instruction": "bcs",
       "id": "control-02034",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunStarFlagObj -> StarFlagExit with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -60405,10 +60502,13 @@
       "instruction": "jsr",
       "id": "control-02035",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunStarFlagObj -> JumpEngine with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -60418,10 +60518,13 @@
       "instruction": "jsr",
       "id": "control-02036",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "no feasible shared-C relation; JumpEngine consumes return and indirect-jumps through vector data",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer."
     },
     {
       "from": "GameTimerFireworks",
@@ -60431,10 +60534,13 @@
       "instruction": "beq",
       "id": "control-02037",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GameTimerFireworks -> SetFWC with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "GameTimerFireworks",
@@ -60444,10 +60550,13 @@
       "instruction": "beq",
       "id": "control-02038",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GameTimerFireworks -> SetFWC with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "GameTimerFireworks",
@@ -60457,10 +60566,13 @@
       "instruction": "beq",
       "id": "control-02039",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GameTimerFireworks -> SetFWC with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "GameTimerFireworks",
@@ -60470,10 +60582,13 @@
       "instruction": "lda",
       "id": "control-02040",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GameTimerFireworks -> SetFWC with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "SetFWC",
@@ -60483,10 +60598,13 @@
       "instruction": "sty",
       "id": "control-02041",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetFWC -> IncrementSFTask1 with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "IncrementSFTask1",
@@ -60496,10 +60614,13 @@
       "instruction": "inc",
       "id": "control-02042",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation IncrementSFTask1 -> StarFlagExit with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "AwardGameTimerPoints",
@@ -60509,10 +60630,13 @@
       "instruction": "beq",
       "id": "control-02043",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation AwardGameTimerPoints -> IncrementSFTask1 with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "AwardGameTimerPoints",
@@ -85254,10 +85378,13 @@
       "instruction": "rts/rti",
       "id": "control-03868",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "no feasible shared-C relation; JumpEngine consumes return and indirect-jumps through vector data",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer."
     },
     {
       "from": "DigitsMathRoutine",
@@ -91774,12 +91901,12 @@
       "id": "control-04305",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunStarFlagObj with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunStarFlagObj with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "JmpEO",
@@ -92334,10 +92461,13 @@
       "selector": 0,
       "id": "control-04338",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> StarFlagExit with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -92348,10 +92478,13 @@
       "selector": 1,
       "id": "control-04339",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> GameTimerFireworks with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -92362,10 +92495,13 @@
       "selector": 2,
       "id": "control-04340",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> AwardGameTimerPoints with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -92376,10 +92512,13 @@
       "selector": 3,
       "id": "control-04341",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> RaiseFlagSetoffFWorks with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -92390,10 +92529,13 @@
       "selector": 4,
       "id": "control-04342",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "semanticEvidence": [
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> DelayToAreaEnd with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
     }
   ]
 }
