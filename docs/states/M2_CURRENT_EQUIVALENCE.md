@@ -1006,3 +1006,8 @@ branches.
 ### Cohort I — B15h Bloober integration
 
 `BlooberBitmasks` through `ChkNearPlayer` now has sixteen node contracts, all incident dispatches, branches, calls, fall-throughs, tails and returns, and six feasible table/state handoffs. Static review matches difficulty masks, slot-dependent direction, inherited carry into near-player evaluation, swim acceleration/deceleration cadence, status-bar Y limit, and bidirectional X/page carry rules. Entries remain `needs-evidence` pending controlled ROM/x86/x64 swim-cycle routes.
+
+
+### Cohort I — B15i Bullet Bill and swimming Cheep integration
+
+`MoveBulletBill` through `ExSwCC` now has nine node contracts, all incident dispatches, branches, tails and returns, plus six feasible state/table handoffs. Static review matches Bullet Bill's defeated/normal split, the Cheep type-force table, consecutive X/page borrow propagation, slot gate, vertical flag reversal and `$0f` distance threshold. Entries remain `needs-evidence` pending controlled ROM/x86/x64 movement paths.

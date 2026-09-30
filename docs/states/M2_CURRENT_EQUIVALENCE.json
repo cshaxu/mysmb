@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 210,
+    "enumeratedCount": 216,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2953,6 +2953,90 @@
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00211",
+      "producer": "SwimCCXMoveData",
+      "consumer": "CCSwim",
+      "storage": "Enemy_ID-$0a type index and horizontal force byte",
+      "feasiblePath": "Cheep type selects source force byte before horizontal SBC chain.",
+      "status": "needs-evidence",
+      "currentCounterpart": "force_data[Enemy_ID-10]",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00212",
+      "producer": "CCSwim",
+      "consumer": "CCSwimUpwards",
+      "storage": "slot gate, Cheep movement flag and vertical dummy",
+      "feasiblePath": "Only slots two and above perform vertical oscillation; flag selects upward path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_swimming_cheep_cheeps_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00213",
+      "producer": "CCSwim",
+      "consumer": "ExSwCC",
+      "storage": "X force, X/page successive borrow and low-slot predicate",
+      "feasiblePath": "All swim entries update horizontal state before low slots return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_swimming_cheep_cheeps_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00214",
+      "producer": "CCSwimUpwards",
+      "consumer": "ChkSwimYPos",
+      "storage": "Y dummy, state carry and Y/page borrow",
+      "feasiblePath": "Upward update hands final Y/page to origin-distance check.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_swimming_cheep_cheeps_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00215",
+      "producer": "ChkSwimYPos",
+      "consumer": "YPDiff",
+      "storage": "Cheep Y minus origin Y sign/magnitude",
+      "feasiblePath": "Negative difference enters two's-complement magnitude and downward direction selection.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_swimming_cheep_cheeps_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00216",
+      "producer": "YPDiff",
+      "consumer": "ExSwCC",
+      "storage": "absolute vertical difference and $0f threshold",
+      "feasiblePath": "Only distance at least fifteen changes Cheep movement flag.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_swimming_cheep_cheeps_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -17673,91 +17757,118 @@
       "label": "MoveBulletBill",
       "asmLine": 9603,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For defeated state tail-jumps to jumping vertical gravity; otherwise writes X speed $e8 and tail-jumps to horizontal movement."
     },
     {
       "label": "NotDefB",
       "asmLine": 9608,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes frenzy Bullet Bill X speed $e8 and tail-jumps to horizontal movement."
     },
     {
       "label": "SwimCCXMoveData",
       "asmLine": 9616,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds Cheep-Cheep horizontal force table {$40,$80} plus two residual {$04,$04} bytes."
     },
     {
       "label": "MoveSwimmingCheepCheep",
       "asmLine": 9620,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes defeated state to slow vertical movement; otherwise enters Cheep swim movement."
     },
     {
       "label": "CCSwim",
       "asmLine": 9625,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects type force table, subtracts it from X force then propagates successive borrows through X/page; high slots select vertical direction/update path."
     },
     {
       "label": "CCSwimUpwards",
       "asmLine": 9660,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Subtracts vertical dummy force and propagates borrow through Y/page before falling through Y-position check."
     },
     {
       "label": "ChkSwimYPos",
       "asmLine": 9671,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares current Y with origin Y, computes magnitude/direction and selects movement flag reversal threshold."
     },
     {
       "label": "YPDiff",
       "asmLine": 9682,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For a negative Y difference selects downward flag and two's-complement magnitude before threshold check."
     },
     {
       "label": "ExSwCC",
       "asmLine": 9686,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
+      "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after horizontal/optional vertical Cheep movement."
     },
     {
       "label": "FirebarPosLookupTbl",
@@ -55593,10 +55704,13 @@
       "instruction": "beq",
       "id": "control-01818",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveBulletBill -> NotDefB with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "MoveBulletBill",
@@ -55606,10 +55720,13 @@
       "instruction": "jmp",
       "id": "control-01819",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveBulletBill -> MoveJ_EnemyVertically with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "NotDefB",
@@ -55619,10 +55736,13 @@
       "instruction": "jmp",
       "id": "control-01820",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation NotDefB -> MoveEnemyHorizontally with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "MoveSwimmingCheepCheep",
@@ -55632,10 +55752,13 @@
       "instruction": "beq",
       "id": "control-01821",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveSwimmingCheepCheep -> CCSwim with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "MoveSwimmingCheepCheep",
@@ -55645,10 +55768,13 @@
       "instruction": "jmp",
       "id": "control-01822",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveSwimmingCheepCheep -> MoveEnemySlowVert with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "CCSwim",
@@ -55658,10 +55784,13 @@
       "instruction": "bcc",
       "id": "control-01823",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CCSwim -> ExSwCC with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "CCSwim",
@@ -55671,10 +55800,13 @@
       "instruction": "bcc",
       "id": "control-01824",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CCSwim -> CCSwimUpwards with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "CCSwim",
@@ -55684,10 +55816,13 @@
       "instruction": "jmp",
       "id": "control-01825",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation CCSwim -> ChkSwimYPos with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "CCSwimUpwards",
@@ -55697,10 +55832,13 @@
       "instruction": "sbc",
       "id": "control-01826",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CCSwimUpwards -> ChkSwimYPos with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "ChkSwimYPos",
@@ -55710,10 +55848,13 @@
       "instruction": "bpl",
       "id": "control-01827",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkSwimYPos -> YPDiff with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "ChkSwimYPos",
@@ -55723,10 +55864,13 @@
       "instruction": "adc",
       "id": "control-01828",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkSwimYPos -> YPDiff with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "YPDiff",
@@ -55736,10 +55880,13 @@
       "instruction": "bcc",
       "id": "control-01829",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation YPDiff -> ExSwCC with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "YPDiff",
@@ -55749,10 +55896,13 @@
       "instruction": "sta",
       "id": "control-01830",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation YPDiff -> ExSwCC with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "ProcFirebar",
@@ -89944,12 +90094,12 @@
       "id": "control-04318",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveBulletBill with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveBulletBill with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89978,12 +90128,12 @@
       "id": "control-04320",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveSwimmingCheepCheep with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveSwimmingCheepCheep with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89995,12 +90145,12 @@
       "id": "control-04321",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveSwimmingCheepCheep with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveSwimmingCheepCheep with state, force, borrow/carry and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
