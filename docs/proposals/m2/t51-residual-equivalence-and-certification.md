@@ -409,6 +409,27 @@ Refreshed artifacts are `mysmb16.exe`
 `mysmb32.exe` `363F79073255697773E8438040BF7E85D833E557BCDCE75C42313D10D34C11B2`,
 and `mysmb64.exe` `C8264B98778F7C7209E6D1C81EC824C12F929982B6C0998DEEF9CBB2102BA5BF`.
 
+### S5 P17: block-replacement VRAM high-row repair
+
+S5 P17 repairs the T37 S6 `ReplaceBlockMetatile` high-row output mismatch in
+the shared `src/game/area/block_metatile.c` owner. At `PutBlockMetatile`, the
+ROM's `ADC #$20` leaves an eight-bit A result; the following `ASL` overwrites
+that addition's carry before either `ROL $05`. The former C expression kept
+the wide addition's overflow through the two shifts, producing `$24` where
+the ROM emits `$20`, or `$28` where it emits `$24`. The corrected code stores
+the wrapped byte before the shifts. No platform source changed.
+
+All 32 retained original block-replacement snapshots now match on both x86
+and x64, including the former twelve `$0301/$0306` failures. The permanent
+shared core check now covers an overflowing high-row case. Existing exhaustive
+block-replacement checks pass on both widths, and OpenNT recompiles and links
+the same C90 source with only its established warnings.
+
+Refreshed artifacts are `mysmb16.exe`
+`4E09CEC47999ECEC0C9BA7EF3D6842F3D3285AA41C908A3FD5068F853A2639B7`,
+`mysmb32.exe` `0E7039F85B097899184561530CEA130E4508E1F1A9FAFD59DA9F8B50C213E65F`,
+and `mysmb64.exe` `855F7E7607B0AEBAC7F2BA5D39E540205B98AD0F6DFC96A6F18B2B13B2481432`.
+
 S5 remains open despite the complete native matrix. The review ledger still
 contains independently recorded original-ROM discrepancies and the DOS16
 resource-binding gap. Passing a project-owned regression suite does not

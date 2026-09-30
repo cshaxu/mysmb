@@ -1086,6 +1086,17 @@ int main(void)
         game.name_table[0][0x014bU] != 0x58U ||
         game.name_table[0][0x016aU] != 0x59U ||
         game.name_table[0][0x016bU] != 0x5aU) return 1;
+    /* PutBlockMetatile discards the carry from ADC #$20 before its ASL/ROL
+     * pair.  A high-row source byte must therefore stay in nametable $20,
+     * rather than inheriting a C-wide addition carry into $24. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, area_prg, (mysmb_u16)sizeof(area_prg));
+    game.ram[0x03e4U] = 0xf0U;
+    game.ram[0x03e6U] = 4U;
+    game.ram[0x03e8U] = 0x61U;
+    mysmb_area_replace_block_metatile(&game, 0U);
+    if (game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x48U ||
+        game.ram[0x0306U] != 0x20U || game.ram[0x0307U] != 0x68U) return 1;
     game.ram[0x0300U] = 0U;
     game.ram[0x0301U] = 0U;
     mysmb_area_apply_block_replacements(&game);

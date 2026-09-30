@@ -34,6 +34,7 @@ static void mysmb_area_put_block_metatile(struct mysmb_game *game,
     mysmb_u8 graphics_offset;
     mysmb_u8 address_low;
     mysmb_u8 address_high;
+    mysmb_u8 vertical_offset;
     mysmb_u16 address;
 
     if (game->area_prg == 0 || game->area_prg_size < MYSMB_BLOCK_GFX_DATA + 20U)
@@ -47,7 +48,11 @@ static void mysmb_area_put_block_metatile(struct mysmb_game *game,
     address_low = (mysmb_u8)((block_low & 0x0fU) << 1U);
     game->ram[0x0004U] = address_low;
     game->ram[0x0005U] = 0U;
-    address = (mysmb_u16)(((mysmb_u16)(vertical_high + 0x20U) << 2U) +
+    /* ADC #$20 stores an eight-bit A result.  Its carry is replaced by the
+     * following ASL before either ROL reaches $05, so the addition's wrap
+     * must not become a C-wide high-address contribution. */
+    vertical_offset = (mysmb_u8)(vertical_high + 0x20U);
+    address = (mysmb_u16)(((mysmb_u16)vertical_offset << 2U) +
                           address_low);
     address_low = (mysmb_u8)address;
     address_high = (mysmb_u8)(game->ram[0x0003U] + (address >> 8U));
