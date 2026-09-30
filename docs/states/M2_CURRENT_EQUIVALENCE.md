@@ -1234,3 +1234,7 @@ branches.
 ### Cohort K — K7 enemy graphics front-dispatch integration
 
 `EnemyGfxHandler` through `SBwsrGfxOfs` now has eight node contracts and every immediate actor selection, branch and return relation. Static review matches piranha's upward/timer early return, retainer code `$15`, cannon bullet Y/priority/state rewrite, jumpspring frame code, descending-Podoboo vertical flip, and Bowser front/rear code override. The shared C dispatch deliberately delegates the final specialized rendering to the corresponding actor owners. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 piranha, retainer, cannon, spring, Podoboo and both Bowser-half routes.
+
+### Cohort K — K8 normal-enemy, Bowser, Spiny, Lakitu and shell graphics integration
+
+`CheckForGoomba` through `CheckForDefdGoomba` now has fifteen node contracts and all local Goomba animation, Bowser front/rear, Spiny egg, Lakitu alternate-frame and shell-state control relations. Static review matches the Goomba d5/timer/d3 gate, Bowser mouth/feet frames and defeated flip/Y path, Spiny egg rewrite, Lakitu timer threshold, Buzzy versus Koopa shell selections and Goomba defeat decrement. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal, defeated, Bowser, egg, Lakitu and shell routes.

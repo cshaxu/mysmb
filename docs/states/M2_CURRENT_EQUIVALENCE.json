@@ -26907,151 +26907,196 @@
       "label": "CheckForGoomba",
       "asmLine": 13713,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects defeated Goomba state code four or the timer/state/frame gated direction-animation path."
     },
     {
       "label": "GmbaAnim",
       "asmLine": 13722,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Flips the source direction bits only when state d5, TimerControl and FrameCounter d3 are all clear."
     },
     {
       "label": "CheckBowserFront",
       "asmLine": 13732,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies code-indexed attribute/graphics tables and selects Bowser front/rear specialized rendering when BowserGfxFlag is set."
     },
     {
       "label": "ChkFrontSte",
       "asmLine": 13746,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses Bowser mouth control for front frame two and marks defeated Bowser for vertical flip."
     },
     {
       "label": "FlipBowserOver",
       "asmLine": 13750,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets the vertical flip flag and transfers to Bowser object drawing."
     },
     {
       "label": "DrawBowser",
       "asmLine": 13753,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to the common enemy-object row drawing path with selected Bowser data."
     },
     {
       "label": "CheckBowserRear",
       "asmLine": 13756,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses Bowser feet control for rear frame two and handles defeated rear Y adjustment."
     },
     {
       "label": "ChkRearSte",
       "asmLine": 13761,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes normal rear drawing or subtracts 16 Y and enables vertical flip for defeated rear."
     },
     {
       "label": "CheckForSpiny",
       "asmLine": 13770,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps Spiny egg state five to egg graphics, reverse direction and state code five."
     },
     {
       "label": "NotEgg",
       "asmLine": 13780,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Transfers the selected Spiny path to the Hammer-Bro continuation."
     },
     {
       "label": "CheckForLakitu",
       "asmLine": 13782,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects Lakitu alternate frame only when not defeated and FrenzyEnemyTimer is below $10."
     },
     {
       "label": "NoLAFr",
       "asmLine": 13792,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Transfers the Lakitu path to defeated-state handling."
     },
     {
       "label": "CheckUpsideDownShell",
       "asmLine": 13794,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects upside-down Koopa/Buzzy shell graphics for qualifying state and applies Buzzy one-pixel Y adjustment."
     },
     {
       "label": "CheckRightSideUpShell",
       "asmLine": 13807,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects right-side-up shell graphics for state code four, preserving the Buzzy/Koopa Y differences."
     },
     {
       "label": "CheckForDefdGoomba",
       "asmLine": 13819,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects normal or defeated Goomba graphics and the defeated one-pixel Y adjustment before Hammer-Bro continuation."
     },
     {
       "label": "CheckForHammerBro",
@@ -75476,10 +75521,13 @@
       "instruction": "bne",
       "id": "control-02854",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForGoomba -> CheckBowserFront with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForGoomba",
@@ -75489,10 +75537,13 @@
       "instruction": "bcc",
       "id": "control-02855",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForGoomba -> GmbaAnim with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForGoomba",
@@ -75502,10 +75553,13 @@
       "instruction": "stx",
       "id": "control-02856",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForGoomba -> GmbaAnim with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "GmbaAnim",
@@ -75515,10 +75569,13 @@
       "instruction": "bne",
       "id": "control-02857",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation GmbaAnim -> CheckBowserFront with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "GmbaAnim",
@@ -75528,10 +75585,13 @@
       "instruction": "bne",
       "id": "control-02858",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation GmbaAnim -> CheckBowserFront with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "GmbaAnim",
@@ -75541,10 +75601,13 @@
       "instruction": "sta",
       "id": "control-02859",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation GmbaAnim -> CheckBowserFront with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckBowserFront",
@@ -75554,10 +75617,13 @@
       "instruction": "beq",
       "id": "control-02860",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckBowserFront -> CheckForSpiny with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckBowserFront",
@@ -75567,10 +75633,13 @@
       "instruction": "bne",
       "id": "control-02861",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckBowserFront -> CheckBowserRear with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckBowserFront",
@@ -75580,10 +75649,13 @@
       "instruction": "bpl",
       "id": "control-02862",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckBowserFront -> ChkFrontSte with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckBowserFront",
@@ -75593,10 +75665,13 @@
       "instruction": "ldx",
       "id": "control-02863",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckBowserFront -> ChkFrontSte with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "ChkFrontSte",
@@ -75606,10 +75681,13 @@
       "instruction": "beq",
       "id": "control-02864",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ChkFrontSte -> DrawBowser with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "ChkFrontSte",
@@ -75619,10 +75697,13 @@
       "instruction": "beq",
       "id": "control-02865",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ChkFrontSte -> FlipBowserOver with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "FlipBowserOver",
@@ -75632,10 +75713,13 @@
       "instruction": "stx",
       "id": "control-02866",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation FlipBowserOver -> DrawBowser with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "DrawBowser",
@@ -75645,10 +75729,13 @@
       "instruction": "jmp",
       "id": "control-02867",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation DrawBowser -> DrawEnemyObject with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckBowserRear",
@@ -75658,10 +75745,13 @@
       "instruction": "beq",
       "id": "control-02868",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckBowserRear -> ChkRearSte with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckBowserRear",
@@ -75671,10 +75761,13 @@
       "instruction": "ldx",
       "id": "control-02869",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckBowserRear -> ChkRearSte with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "ChkRearSte",
@@ -75684,10 +75777,13 @@
       "instruction": "beq",
       "id": "control-02870",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ChkRearSte -> DrawBowser with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "ChkRearSte",
@@ -75697,10 +75793,13 @@
       "instruction": "jmp",
       "id": "control-02871",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation ChkRearSte -> FlipBowserOver with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForSpiny",
@@ -75710,10 +75809,13 @@
       "instruction": "bne",
       "id": "control-02872",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForSpiny -> CheckForLakitu with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForSpiny",
@@ -75723,10 +75825,13 @@
       "instruction": "bne",
       "id": "control-02873",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForSpiny -> NotEgg with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForSpiny",
@@ -75736,10 +75841,13 @@
       "instruction": "sta",
       "id": "control-02874",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForSpiny -> NotEgg with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "NotEgg",
@@ -75749,10 +75857,13 @@
       "instruction": "jmp",
       "id": "control-02875",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation NotEgg -> CheckForHammerBro with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForLakitu",
@@ -75762,10 +75873,13 @@
       "instruction": "bne",
       "id": "control-02876",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForLakitu -> CheckUpsideDownShell with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForLakitu",
@@ -75775,10 +75889,13 @@
       "instruction": "bne",
       "id": "control-02877",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForLakitu -> NoLAFr with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForLakitu",
@@ -75788,10 +75905,13 @@
       "instruction": "bcs",
       "id": "control-02878",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForLakitu -> NoLAFr with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForLakitu",
@@ -75801,10 +75921,13 @@
       "instruction": "ldx",
       "id": "control-02879",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForLakitu -> NoLAFr with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "NoLAFr",
@@ -75814,10 +75937,13 @@
       "instruction": "jmp",
       "id": "control-02880",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation NoLAFr -> CheckDefeatedState with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckUpsideDownShell",
@@ -75827,10 +75953,13 @@
       "instruction": "bcs",
       "id": "control-02881",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckUpsideDownShell -> CheckRightSideUpShell with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckUpsideDownShell",
@@ -75840,10 +75969,13 @@
       "instruction": "bcc",
       "id": "control-02882",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckUpsideDownShell -> CheckRightSideUpShell with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckUpsideDownShell",
@@ -75853,10 +75985,13 @@
       "instruction": "bne",
       "id": "control-02883",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckUpsideDownShell -> CheckRightSideUpShell with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckUpsideDownShell",
@@ -75866,10 +76001,13 @@
       "instruction": "inc",
       "id": "control-02884",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckUpsideDownShell -> CheckRightSideUpShell with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckRightSideUpShell",
@@ -75879,10 +76017,13 @@
       "instruction": "bne",
       "id": "control-02885",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckRightSideUpShell -> CheckForHammerBro with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckRightSideUpShell",
@@ -75892,10 +76033,13 @@
       "instruction": "beq",
       "id": "control-02886",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckRightSideUpShell -> CheckForDefdGoomba with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckRightSideUpShell",
@@ -75905,10 +76049,13 @@
       "instruction": "inc",
       "id": "control-02887",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckRightSideUpShell -> CheckForDefdGoomba with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForDefdGoomba",
@@ -75918,10 +76065,13 @@
       "instruction": "bne",
       "id": "control-02888",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForDefdGoomba -> CheckForHammerBro with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForDefdGoomba",
@@ -75931,10 +76081,13 @@
       "instruction": "bne",
       "id": "control-02889",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForDefdGoomba -> CheckForHammerBro with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForDefdGoomba",
@@ -75944,10 +76097,13 @@
       "instruction": "dec",
       "id": "control-02890",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForDefdGoomba -> CheckForHammerBro with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForHammerBro",
@@ -75983,10 +76139,13 @@
       "instruction": "beq",
       "id": "control-02893",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForHammerBro -> CheckDefeatedState with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckForHammerBro",
@@ -76243,10 +76402,13 @@
       "instruction": "beq",
       "id": "control-02913",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckDefeatedState -> DrawEnemyObject with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckDefeatedState",
@@ -76256,10 +76418,13 @@
       "instruction": "bcc",
       "id": "control-02914",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckDefeatedState -> DrawEnemyObject with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "CheckDefeatedState",
@@ -76269,10 +76434,13 @@
       "instruction": "sty",
       "id": "control-02915",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckDefeatedState -> DrawEnemyObject with source state/ID predicate, graphics selection and control handoff."
     },
     {
       "from": "DrawEnemyObject",
