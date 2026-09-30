@@ -1310,3 +1310,9 @@ branches.
 - Node-semantics result: sixteen labels moved from `unclassified` to `needs-evidence`, covering X/Y tables, boundary loops and the shared pixel-difference partition helper.
 - Independent integration result: 26 outgoing control relations plus five feasible table-to-consumer material edges received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 left/right/top/bottom and partition-boundary routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K23 — shared sprite-row OAM writer audit
+
+- Source range: `DrawSpriteObject` through `SetHFAt` (`SMBDIS.ASM` lines 15025–15061).
+- Node-semantics result: three labels moved from `unclassified` to `needs-evidence`; the shared writer's tile order, horizontal-flip attribute contribution, coordinates and caller-index advances have distinct contracts.
+- Independent integration result: 4 outgoing control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 flipped and unflipped routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

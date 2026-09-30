@@ -29102,31 +29102,40 @@
       "label": "DrawSpriteObject",
       "asmLine": 15025,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_row.c",
+      "currentCounterpart": "mysmb_oam_draw_sprite_object",
+      "semanticEvidence": [
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads scratch tile/facing/attribute/position fields, emits one two-sprite OAM row, then advances vertical position, OAM offset and graphics index for the caller."
     },
     {
       "label": "NoHFlip",
       "asmLine": 15036,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_row.c",
+      "currentCounterpart": "mysmb_oam_draw_sprite_object",
+      "semanticEvidence": [
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes first then second tile in normal order and clears the horizontal-flip contribution before common OAM attribute writes."
     },
     {
       "label": "SetHFAt",
       "asmLine": 15040,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_row.c",
+      "currentCounterpart": "mysmb_oam_draw_sprite_object",
+      "semanticEvidence": [
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Combines normal or horizontal-flip contribution with base attributes and writes both OAM attribute bytes before coordinate and index advancement."
     },
     {
       "label": "SoundEngine",
@@ -80998,10 +81007,13 @@
       "instruction": "bcc",
       "id": "control-03160",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/sprite_row.c mysmb_oam_draw_sprite_object horizontal-flip control flow",
+      "semanticEvidence": [
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DrawSpriteObject → NoHFlip preserves the horizontal-flip predicate before tile and attribute order is selected."
     },
     {
       "from": "DrawSpriteObject",
@@ -81011,10 +81023,13 @@
       "instruction": "bne",
       "id": "control-03161",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/sprite_row.c mysmb_oam_draw_sprite_object horizontal-flip control flow",
+      "semanticEvidence": [
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DrawSpriteObject → SetHFAt preserves the horizontal-flip predicate before tile and attribute order is selected."
     },
     {
       "from": "DrawSpriteObject",
@@ -81024,10 +81039,13 @@
       "instruction": "bne",
       "id": "control-03162",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/sprite_row.c mysmb_oam_draw_sprite_object horizontal-flip control flow",
+      "semanticEvidence": [
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DrawSpriteObject → NoHFlip preserves the selected tile ordering before common attribute writes."
     },
     {
       "from": "NoHFlip",
@@ -81037,10 +81055,13 @@
       "instruction": "lda",
       "id": "control-03163",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/sprite_row.c mysmb_oam_draw_sprite_object horizontal-flip control flow",
+      "semanticEvidence": [
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through NoHFlip → SetHFAt preserves the selected tile ordering before common attribute writes."
     },
     {
       "from": "SoundEngine",
