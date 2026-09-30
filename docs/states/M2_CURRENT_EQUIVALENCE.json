@@ -6021,6 +6021,20 @@
         "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00430",
+      "producer": "IntermediatePlayerData",
+      "consumer": "DrawPlayer_Intermediate",
+      "storage": "ROM IntermediatePlayerData six-byte table to zero-page scratch $02-$07",
+      "feasiblePath": "DrawPlayer_Intermediate reaches PIntLoop, which copies indices five through zero into scratch before invoking DrawPlayerLoop.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_draw_intermediate_player owner-local PRG binding",
+      "semanticContract": "The six source bytes reach the same scratch positions in descending source-index order before the fixed small-player render.",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -28119,51 +28133,66 @@
       "label": "IntermediatePlayerData",
       "asmLine": 14561,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_intermediate_player",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds six ordered bytes for the fixed world/lives intermediate-player scratch setup."
     },
     {
       "label": "DrawPlayer_Intermediate",
       "asmLine": 14564,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_intermediate_player",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies IntermediatePlayerData into scratch in descending index order, draws the small-standing four-row player at OAM offset four, then sets the bottom-right horizontal flip bit from the subsequent empty sprite attributes."
     },
     {
       "label": "PIntLoop",
       "asmLine": 14566,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_intermediate_player",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies one descending IntermediatePlayerData byte to scratch $02 through $07 and loops until all six bytes are present before DrawPlayerLoop."
     },
     {
       "label": "RenderPlayerSub",
       "asmLine": 14587,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_player_render_rows shared by mysmb_oam_render_player and mysmb_oam_draw_intermediate_player",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Publishes row count, relative coordinates, facing and attributes to source scratch, then initializes PlayerGfxOffset and Player_SprDataOffset for the shared player-row loop."
     },
     {
       "label": "DrawPlayerLoop",
       "asmLine": 14601,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_player_render_rows shared by mysmb_oam_render_player and mysmb_oam_draw_intermediate_player",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads adjacent PlayerGraphicsTable tile bytes, draws one sprite row, decrements the requested row count and repeats until zero."
     },
     {
       "label": "ProcessPlayerAction",
@@ -79085,10 +79114,13 @@
       "instruction": "ldx",
       "id": "control-03060",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DrawPlayer_Intermediate → PIntLoop preserves the completed scratch/OAM setup before entering the successor."
     },
     {
       "from": "PIntLoop",
@@ -79098,10 +79130,13 @@
       "instruction": "bpl",
       "id": "control-03061",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch PIntLoop → PIntLoop preserves its tested row/index predicate and its position after the preceding OAM work."
     },
     {
       "from": "PIntLoop",
@@ -79111,10 +79146,13 @@
       "instruction": "jsr",
       "id": "control-03062",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PIntLoop → DrawPlayerLoop transfers the prepared source scratch and returns before its caller continuation."
     },
     {
       "from": "RenderPlayerSub",
@@ -79124,10 +79162,13 @@
       "instruction": "ldy",
       "id": "control-03063",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through RenderPlayerSub → DrawPlayerLoop preserves the completed scratch/OAM setup before entering the successor."
     },
     {
       "from": "DrawPlayerLoop",
@@ -79137,10 +79178,13 @@
       "instruction": "jsr",
       "id": "control-03064",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call DrawPlayerLoop → DrawOneSpriteRow transfers the prepared source scratch and returns before its caller continuation."
     },
     {
       "from": "DrawPlayerLoop",
@@ -79150,10 +79194,13 @@
       "instruction": "bne",
       "id": "control-03065",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch DrawPlayerLoop → DrawPlayerLoop preserves its tested row/index predicate and its position after the preceding OAM work."
     },
     {
       "from": "ProcessPlayerAction",
@@ -85205,12 +85252,12 @@
       "id": "control-03521",
       "cohort": "B",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original DrawPlayer_Intermediate -> PlayerInter return relation must preserve the source predicate, predecessor writes and successor/return handoff."
+      "semanticContract": "The source return relation DrawPlayer_Intermediate → PlayerInter exposes completed player-row/OAM state to the caller continuation."
     },
     {
       "from": "WriteGameText",
@@ -93168,10 +93215,13 @@
       "instruction": "rts/rti",
       "id": "control-04036",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation RenderPlayerSub → PlayerGfxProcessing exposes completed player-row/OAM state to the caller continuation."
     },
     {
       "from": "ChkForPlayerAttrib",
@@ -93194,10 +93244,13 @@
       "instruction": "rts/rti",
       "id": "control-04038",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation RenderPlayerSub → SUpdR exposes completed player-row/OAM state to the caller continuation."
     },
     {
       "from": "DumpTwoSpr",
@@ -93220,10 +93273,13 @@
       "instruction": "rts/rti",
       "id": "control-04040",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c intermediate-player and shared player-row rendering loops",
+      "semanticEvidence": [
+        "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation DrawPlayerLoop → PIntLoop exposes completed player-row/OAM state to the caller continuation."
     },
     {
       "from": "DrawOneSpriteRow",

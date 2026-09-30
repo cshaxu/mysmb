@@ -1274,3 +1274,9 @@ branches.
 - Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`: `PlayerGfxHandler`, `CntPl`, `SwimKT`, `BigKTS`, `ExPGH`, `FindPlayerAction`, `DoChangeSize`, `PlayerKilled`, `PlayerGfxProcessing`, `SUpdR`, `PlayerOffscreenChk`, `PROfsLoop`, and `NPROffscr`. The shared owner preserves the static dispatch, throw-row and OAM-mask structure; controlled routes are required before any `exact` promotion.
 - Independent control integration result: 35 outgoing relations received `needs-evidence` contracts, including injury exits, graphics-mode dispatch, swim-kick selection, tail transfers, common render calls and the four-row offscreen loop. No discrepancy is claimed from this static pass.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K17 — intermediate-player and shared player-row rendering audit
+
+- Source range: `IntermediatePlayerData` through `DrawPlayerLoop` (`SMBDIS.ASM` lines 14561–14608).
+- Node-semantics result: five labels moved from `unclassified` to `needs-evidence`: `IntermediatePlayerData`, `DrawPlayer_Intermediate`, `PIntLoop`, `RenderPlayerSub`, and `DrawPlayerLoop`.
+- Independent integration result: 10 outgoing control relations and the feasible `IntermediatePlayerData → DrawPlayer_Intermediate` material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
