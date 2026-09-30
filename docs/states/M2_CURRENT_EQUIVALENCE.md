@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 20 | Current source audit exists but the current original-ROM route is incomplete. |
-| Mismatch | 4 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,930 | Not yet processed by this re-audit. |
+| Needs evidence | 237 | Current source audit exists but the current original-ROM route is incomplete. |
+| Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
+| Unclassified | 1,708 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 416 control; 36 material RAM/table |
-| Mismatch | 10 control; 2 material RAM/table |
-| Unclassified | 3,840 control edges; material edge denominator pending feasible-path enumeration |
+| Needs evidence | 450 control; 42 material RAM/table |
+| Mismatch | 10 control; 1 material RAM/table |
+| Unclassified | 3,806 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -458,3 +458,19 @@ The two OAM initialization tables are registered as feasible data paths. No
 new static discrepancy is confirmed; route proof must cover title startup,
 death restart, alternate entrance, halfway page, hard-mode thresholds and
 the full secondary OAM/VRAM initialization sequence.
+
+### Cohort C — B10a memory clear, area music and player entrance integration
+
+`InitializeMemory` through `SetPESub` (lines 2795–2917) now have individual
+node contracts and a separate integration record for all 34 local control and
+return relations. The audit explicitly separates the protected stack-page
+clear loop, title/pipe/cloud music selection, alternate-entrance coordinate
+tables, palette return, timer reset gates, override-driven block/vine calls,
+water-only bubble setup, and the final engine-subroutine handoff. Six feasible
+material paths are registered: music selector, X position, alternate Y-index,
+Y position, sprite attribute and game-timer tables. Static comparison found no
+new discrepancy. All 21 nodes, 34 control/return relations and six material
+relations remain `needs-evidence` until controlled original-ROM and current
+x86/x64 route records cover title/non-title music, pipe/cloud selection,
+ordinary/water/alternate entrances, timer reload/no-reload and override/vine
+paths. This is intentionally not an `exact` claim.

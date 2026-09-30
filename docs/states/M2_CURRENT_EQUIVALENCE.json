@@ -575,6 +575,90 @@
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00041",
+      "producer": "MusicSelectData",
+      "consumer": "GetAreaMusic",
+      "storage": "six-byte selector table to AreaMusicQueue",
+      "feasiblePath": "A non-title music invocation resolves pipe/area/cloud selection then reads the selected byte before queueing it.",
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
+      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00042",
+      "producer": "PlayerStarting_X_Pos",
+      "consumer": "Entrance_GameTimerSetup",
+      "storage": "AltEntranceControl-indexed X table to Player_X_Position",
+      "feasiblePath": "The common entrance path reads the alternate selector after swimming initialization and writes the selected X before palette/timer work.",
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
+      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00043",
+      "producer": "AltYPosOffset",
+      "consumer": "Entrance_GameTimerSetup",
+      "storage": "alternate entrance two/three index override to entrance-table index",
+      "feasiblePath": "Only alternate selector two or three reads this table; the resulting index selects Y and attribute entries.",
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
+      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00044",
+      "producer": "PlayerStarting_Y_Pos",
+      "consumer": "Entrance_GameTimerSetup",
+      "storage": "entrance-indexed Y table to Player_Y_Position",
+      "feasiblePath": "The selected header or alternate-derived index reads Y before the matching attribute read.",
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
+      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00045",
+      "producer": "PlayerBGPriorityData",
+      "consumer": "Entrance_GameTimerSetup",
+      "storage": "entrance-indexed attribute table to Player_SprAttrib",
+      "feasiblePath": "The same source index that selected Y reads attribute, including the contiguous dummy byte at index eight.",
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
+      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00046",
+      "producer": "GameTimerData",
+      "consumer": "Entrance_GameTimerSetup",
+      "storage": "GameTimerSetting-indexed first timer digit to GameTimerDisplay",
+      "feasiblePath": "Only nonzero setting and fetch flag select a timer byte and then write the remaining digits/flags in source order.",
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
+      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -4232,213 +4316,270 @@
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "mysmb_game_initialize_memory",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $0aeb InitializeMemory: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
+      "semanticContract": "Clears pages $0700 down through $0000 from caller-supplied Y, preserving $0160-$01ff and decrement-loop page/byte order."
     },
     {
       "label": "InitPageLoop",
       "asmLine": 2799,
       "cohort": "C",
       "status": "needs-evidence",
-      "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_memory outer page loop",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $0aef InitPageLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
+      "semanticContract": "Stores the current page high byte and repeats the byte clear after each X/page decrement through page zero."
     },
     {
       "label": "InitByteLoop",
       "asmLine": 2800,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_memory inner byte loop",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tests the stack-page protected range before each write and decrements the eight-bit offset until it wraps to $ff."
     },
     {
       "label": "InitByte",
       "asmLine": 2804,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_memory conditional RAM clear",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes zero to the selected page/offset only outside protected stack bytes."
     },
     {
       "label": "SkipByte",
       "asmLine": 2805,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_memory offset/page loop tails",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips protected stack writes while retaining identical offset decrement and page-loop termination."
     },
     {
       "label": "MusicSelectData",
       "asmLine": 2814,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_get_area_music:music_select_data",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds water, ground, underground, castle, cloud and pipe-intro music selectors in ROM order."
     },
     {
       "label": "GetAreaMusic",
       "asmLine": 2818,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_get_area_music",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns in title mode; otherwise preserves pipe-entry priority, then chooses area type or cloud override and queues one area-music selector."
     },
     {
       "label": "ChkAreaType",
       "asmLine": 2830,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_get_area_music area/cloud selection",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses AreaType unless CloudTypeOverride is nonzero, which selects the cloud table entry."
     },
     {
       "label": "StoreMusic",
       "asmLine": 2834,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_get_area_music queue store",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads the selected MusicSelectData entry and writes AreaMusicQueue before the common return."
     },
     {
       "label": "ExitGetM",
       "asmLine": 2836,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_get_area_music return",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common no-write return for title-mode and completed music selection paths."
     },
     {
       "label": "PlayerStarting_X_Pos",
       "asmLine": 2840,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance:start_x",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Four-byte alternate-entrance indexed player X-position table retains ROM order."
     },
     {
       "label": "AltYPosOffset",
       "asmLine": 2844,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance:alternate_y",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Alternate entrances two and three replace header entrance index with source values $08 and $00."
     },
     {
       "label": "PlayerStarting_Y_Pos",
       "asmLine": 2847,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance:start_y",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Nine contiguous source Y-position bytes, including the adjacent dummy-derived index eight, select player Y."
     },
     {
       "label": "PlayerBGPriorityData",
       "asmLine": 2851,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance:background_priority",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Eight priority bytes plus the adjacent GameTimerData dummy byte select Player_SprAttrib at the same source index."
     },
     {
       "label": "GameTimerData",
       "asmLine": 2854,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance:game_timer_data",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Timer-setting indices one through three select first display digits 4, 3 and 2; index zero remains the adjacent dummy byte."
     },
     {
       "label": "Entrance_GameTimerSetup",
       "asmLine": 2858,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes player page/state/swimming and delegates coordinate, palette, timer, override/vine, water-bubble and task-seven sequencing in ROM order."
     },
     {
       "label": "ChkStPos",
       "asmLine": 2874,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance swimming/entrance selection",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets SwimmingFlag from AreaType and preserves alternate-entrance zero/one header-index versus two/three override routing."
     },
     {
       "label": "SetStPos",
       "asmLine": 2881,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance coordinate/palette/timer section",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies X/Y/attribute tables, queues player palette, and only reloads timer digits when both source flags are nonzero."
     },
     {
       "label": "ChkOverR",
       "asmLine": 2900,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance override/vine section",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "When JoypadOverride is nonzero, sets climb state and calls the source-equivalent block-position then slot-five vine setup sequence."
     },
     {
       "label": "ChkSwimE",
       "asmLine": 2911,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance water-bubble section",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls SetupBubble only in water areas, using entrance index or override-selected slot five."
     },
     {
       "label": "SetPESub",
       "asmLine": 2914,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "mysmb_player_initialize_entrance task handoff",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores GameEngineSubroutine seven only after all entrance side effects and returns to its caller."
     },
     {
       "label": "HalfwayPageNybbles",
@@ -28259,10 +28400,13 @@
       "instruction": "bne",
       "id": "control-00416",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "boot.c inner loop: non-stack pages and stack offsets below $60 take the conditional write path.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "boot.c inner loop: non-stack pages and stack offsets below $60 take the conditional write path."
     },
     {
       "from": "InitByteLoop",
@@ -28272,10 +28416,13 @@
       "instruction": "bcs",
       "id": "control-00417",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "boot.c inner loop: page $01 with offset $60-$ff skips the write while preserving loop state.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "boot.c inner loop: page $01 with offset $60-$ff skips the write while preserving loop state."
     },
     {
       "from": "InitByteLoop",
@@ -28285,10 +28432,13 @@
       "instruction": "bcs",
       "id": "control-00418",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "boot.c inner loop falls from the non-protected stack check into the conditional write.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "boot.c inner loop falls from the non-protected stack check into the conditional write."
     },
     {
       "from": "InitByte",
@@ -28298,10 +28448,13 @@
       "instruction": "sta",
       "id": "control-00419",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "boot.c clear path falls to the common decrement/tail.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "boot.c clear path falls to the common decrement/tail."
     },
     {
       "from": "SkipByte",
@@ -28311,10 +28464,13 @@
       "instruction": "bne",
       "id": "control-00420",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "boot.c offset tail repeats until the eight-bit decrement wraps to $ff.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "boot.c offset tail repeats until the eight-bit decrement wraps to $ff."
     },
     {
       "from": "SkipByte",
@@ -28324,10 +28480,13 @@
       "instruction": "bpl",
       "id": "control-00421",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "boot.c page tail decrements and repeats through page zero only.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "boot.c page tail decrements and repeats through page zero only."
     },
     {
       "from": "GetAreaMusic",
@@ -28337,10 +28496,13 @@
       "instruction": "beq",
       "id": "control-00422",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "game.c returns before selection when OperMode is title mode.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "game.c returns before selection when OperMode is title mode."
     },
     {
       "from": "GetAreaMusic",
@@ -28350,10 +28512,13 @@
       "instruction": "beq",
       "id": "control-00423",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "game.c bypasses pipe-entry checks exactly when AltEntranceControl equals two.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "game.c bypasses pipe-entry checks exactly when AltEntranceControl equals two."
     },
     {
       "from": "GetAreaMusic",
@@ -28363,10 +28528,13 @@
       "instruction": "beq",
       "id": "control-00424",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "game.c queues pipe-intro music for header entrance six.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "game.c queues pipe-intro music for header entrance six."
     },
     {
       "from": "GetAreaMusic",
@@ -28376,10 +28544,13 @@
       "instruction": "beq",
       "id": "control-00425",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "game.c queues pipe-intro music for header entrance seven.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "game.c queues pipe-intro music for header entrance seven."
     },
     {
       "from": "GetAreaMusic",
@@ -28389,10 +28560,13 @@
       "instruction": "beq",
       "id": "control-00426",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "game.c non-pipe entry falls into area/cloud selection.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "game.c non-pipe entry falls into area/cloud selection."
     },
     {
       "from": "ChkAreaType",
@@ -28402,10 +28576,13 @@
       "instruction": "beq",
       "id": "control-00427",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "game.c retains AreaType selection when CloudTypeOverride is zero.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "game.c retains AreaType selection when CloudTypeOverride is zero."
     },
     {
       "from": "ChkAreaType",
@@ -28415,10 +28592,13 @@
       "instruction": "ldy",
       "id": "control-00428",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "game.c replaces AreaType with cloud selector when CloudTypeOverride is nonzero.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "game.c replaces AreaType with cloud selector when CloudTypeOverride is nonzero."
     },
     {
       "from": "StoreMusic",
@@ -28428,10 +28608,13 @@
       "instruction": "sta",
       "id": "control-00429",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "game.c table store falls to the common return without an additional state mutation.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "game.c table store falls to the common return without an additional state mutation."
     },
     {
       "from": "Entrance_GameTimerSetup",
@@ -28441,10 +28624,13 @@
       "instruction": "bne",
       "id": "control-00430",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c non-water path branches directly to entrance-index selection with SwimmingFlag zero.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c non-water path branches directly to entrance-index selection with SwimmingFlag zero."
     },
     {
       "from": "Entrance_GameTimerSetup",
@@ -28454,10 +28640,13 @@
       "instruction": "iny",
       "id": "control-00431",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c water path increments the source Y value before the common SwimmingFlag/index path.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c water path increments the source Y value before the common SwimmingFlag/index path."
     },
     {
       "from": "ChkStPos",
@@ -28467,10 +28656,13 @@
       "instruction": "beq",
       "id": "control-00432",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c preserves alternate entrance zero header-index selection.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c preserves alternate entrance zero header-index selection."
     },
     {
       "from": "ChkStPos",
@@ -28480,10 +28672,13 @@
       "instruction": "beq",
       "id": "control-00433",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c preserves alternate entrance one header-index selection.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c preserves alternate entrance one header-index selection."
     },
     {
       "from": "ChkStPos",
@@ -28493,10 +28688,13 @@
       "instruction": "ldx",
       "id": "control-00434",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c alternate entrances two/three fall from override-index selection into common coordinates.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c alternate entrances two/three fall from override-index selection into common coordinates."
     },
     {
       "from": "SetStPos",
@@ -28506,10 +28704,13 @@
       "instruction": "jsr",
       "id": "control-00435",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c calls the shared player-palette producer after X/Y/attribute stores and before timer handling.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c calls the shared player-palette producer after X/Y/attribute stores and before timer handling."
     },
     {
       "from": "SetStPos",
@@ -28519,10 +28720,13 @@
       "instruction": "beq",
       "id": "control-00436",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c bypasses timer reload when GameTimerSetting is zero.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c bypasses timer reload when GameTimerSetting is zero."
     },
     {
       "from": "SetStPos",
@@ -28532,10 +28736,13 @@
       "instruction": "beq",
       "id": "control-00437",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c bypasses timer reload when FetchNewGameTimerFlag is zero.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c bypasses timer reload when FetchNewGameTimerFlag is zero."
     },
     {
       "from": "SetStPos",
@@ -28545,10 +28752,13 @@
       "instruction": "sta",
       "id": "control-00438",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c timer reset writes all three display digits and clears fetch/star state before override handling.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c timer reset writes all three display digits and clears fetch/star state before override handling."
     },
     {
       "from": "ChkOverR",
@@ -28558,10 +28768,13 @@
       "instruction": "beq",
       "id": "control-00439",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c no-override path bypasses climbing/vine construction.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c no-override path bypasses climbing/vine construction."
     },
     {
       "from": "ChkOverR",
@@ -28571,10 +28784,13 @@
       "instruction": "jsr",
       "id": "control-00440",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "objects.c entrance-vine helper first performs InitBlock_XY_Pos for slot zero.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "objects.c entrance-vine helper first performs InitBlock_XY_Pos for slot zero."
     },
     {
       "from": "ChkOverR",
@@ -28584,10 +28800,13 @@
       "instruction": "jsr",
       "id": "control-00441",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "objects.c entrance-vine helper then invokes Setup_Vine with source slot-five/block-zero registers.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "objects.c entrance-vine helper then invokes Setup_Vine with source slot-five/block-zero registers."
     },
     {
       "from": "ChkOverR",
@@ -28597,10 +28816,13 @@
       "instruction": "jsr",
       "id": "control-00442",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c override/vine completion falls into water check.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c override/vine completion falls into water check."
     },
     {
       "from": "ChkSwimE",
@@ -28610,10 +28832,13 @@
       "instruction": "bne",
       "id": "control-00443",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c non-water path bypasses SetupBubble.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c non-water path bypasses SetupBubble."
     },
     {
       "from": "ChkSwimE",
@@ -28623,10 +28848,13 @@
       "instruction": "jsr",
       "id": "control-00444",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "fireball/bubble.c setup is called only for water area type with the selected source slot.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "fireball/bubble.c setup is called only for water area type with the selected source slot."
     },
     {
       "from": "ChkSwimE",
@@ -28636,10 +28864,13 @@
       "instruction": "jsr",
       "id": "control-00445",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player.c water setup return falls to task-seven handoff.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "player.c water setup return falls to task-seven handoff."
     },
     {
       "from": "PlayerLoseLife",
@@ -69135,10 +69366,13 @@
       "instruction": "rts/rti",
       "id": "control-03546",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_area_queue_player_palette returns to entrance setup before timer checks.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "mysmb_area_queue_player_palette returns to entrance setup before timer checks."
     },
     {
       "from": "InitBlock_XY_Pos",
@@ -69148,10 +69382,13 @@
       "instruction": "rts/rti",
       "id": "control-03547",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_blocks_initialize_position returns before source block-Y overwrite.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "mysmb_blocks_initialize_position returns before source block-Y overwrite."
     },
     {
       "from": "Setup_Vine",
@@ -69161,10 +69398,13 @@
       "instruction": "rts/rti",
       "id": "control-03548",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_start_vine returns before the common water check.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "mysmb_objects_start_vine returns before the common water check."
     },
     {
       "from": "SetupBubble",
@@ -69174,10 +69414,13 @@
       "instruction": "rts/rti",
       "id": "control-03549",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_fireball_setup_bubble returns before task-seven handoff.",
+      "semanticEvidence": [
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "mysmb_fireball_setup_bubble returns before task-seven handoff."
     },
     {
       "from": "TransposePlayers",
