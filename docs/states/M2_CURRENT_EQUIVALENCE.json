@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 150,
+    "enumeratedCount": 154,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2113,6 +2113,62 @@
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00151",
+      "producer": "HandleGroupEnemies",
+      "consumer": "SnglID",
+      "storage": "group code / selected ID scratch $01",
+      "feasiblePath": "Source classification determines exact green/Goomba/Buzzy ID before member loop.",
+      "status": "needs-evidence",
+      "currentCounterpart": "game->ram[1] group ID selection",
+      "semanticContract": "Preserves source RAM/table selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00152",
+      "producer": "SetYGp",
+      "consumer": "GSltLp",
+      "storage": "screen-right page/X scratch $02/$03 and count",
+      "feasiblePath": "Each allocated member consumes and advances the captured coordinates.",
+      "status": "needs-evidence",
+      "currentCounterpart": "game->ram[2]/[3] and GROUP_ENEMY_COUNT",
+      "semanticContract": "Preserves source RAM/table selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00153",
+      "producer": "GSltLp",
+      "consumer": "CheckpointEnemyID",
+      "storage": "per-member ID/page/X/Y/flag",
+      "feasiblePath": "Every allocated member is initialized before count decrement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_checkpoint_loaded",
+      "semanticContract": "Preserves source RAM/table selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00154",
+      "producer": "GSltLp",
+      "consumer": "NextED",
+      "storage": "depleted group count or no free regular slot",
+      "feasiblePath": "Either terminal condition tail-advances original enemy record.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_stream_advance_record",
+      "semanticContract": "Preserves source RAM/table selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -15416,81 +15472,105 @@
       "label": "HandleGroupEnemies",
       "asmLine": 8780,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared group-enemy stream core",
+      "currentCounterpart": "enemy/group.c",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Derives group code, classifies enemy ID with hard-mode Goomba/Buzzy substitution and preserves source stack-selected group bits."
     },
     {
       "label": "PullID",
       "asmLine": 8792,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared group-enemy stream core",
+      "currentCounterpart": "enemy/group.c",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores group code after hard-mode ID selection."
     },
     {
       "label": "SnglID",
       "asmLine": 8793,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared group-enemy stream core",
+      "currentCounterpart": "enemy/group.c",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected enemy ID and chooses group Y $b0/$70 from d1."
     },
     {
       "label": "SetYGp",
       "asmLine": 8798,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared group-enemy stream core",
+      "currentCounterpart": "enemy/group.c",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Captures screen-right page/X and selects two or three members from d0."
     },
     {
       "label": "CntGrp",
       "asmLine": 8808,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared group-enemy stream core",
+      "currentCounterpart": "enemy/group.c",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores member count before group allocation loop."
     },
     {
       "label": "GrLoop",
       "asmLine": 8809,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared group-enemy stream core",
+      "currentCounterpart": "enemy/group.c",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Resets regular-slot scan from -1 before each member."
     },
     {
       "label": "GSltLp",
       "asmLine": 8810,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared group-enemy stream core",
+      "currentCounterpart": "enemy/group.c",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Scans slots 0..4, fills one inactive slot with current page/X/Y, advances X by $18 with page carry, initializes it and decrements remaining count."
     },
     {
       "label": "NextED",
       "asmLine": 8835,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared group-enemy stream core",
+      "currentCounterpart": "enemy/group.c",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps the common two-byte record advance after group completion or no free slot."
     },
     {
       "label": "InitPiranhaPlant",
@@ -49211,12 +49291,12 @@
       "id": "control-01492",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation DoGroup -> HandleGroupEnemies with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump relation DoGroup -> HandleGroupEnemies with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "ParseRow0e",
@@ -51146,10 +51226,13 @@
       "instruction": "bne",
       "id": "control-01613",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FireBulletBill -> HandleGroupEnemies with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "HandleGroupEnemies",
@@ -51159,10 +51242,13 @@
       "instruction": "bcs",
       "id": "control-01614",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandleGroupEnemies -> SnglID with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "HandleGroupEnemies",
@@ -51172,10 +51258,13 @@
       "instruction": "beq",
       "id": "control-01615",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandleGroupEnemies -> PullID with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "HandleGroupEnemies",
@@ -51185,10 +51274,13 @@
       "instruction": "ldy",
       "id": "control-01616",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation HandleGroupEnemies -> PullID with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "PullID",
@@ -51198,10 +51290,13 @@
       "instruction": "pla",
       "id": "control-01617",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PullID -> SnglID with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "SnglID",
@@ -51211,10 +51306,13 @@
       "instruction": "beq",
       "id": "control-01618",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SnglID -> SetYGp with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "SnglID",
@@ -51224,10 +51322,13 @@
       "instruction": "ldy",
       "id": "control-01619",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SnglID -> SetYGp with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "SetYGp",
@@ -51237,10 +51338,13 @@
       "instruction": "bcc",
       "id": "control-01620",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetYGp -> CntGrp with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "SetYGp",
@@ -51250,10 +51354,13 @@
       "instruction": "iny",
       "id": "control-01621",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetYGp -> CntGrp with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "CntGrp",
@@ -51263,10 +51370,13 @@
       "instruction": "sty",
       "id": "control-01622",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CntGrp -> GrLoop with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "GrLoop",
@@ -51276,10 +51386,13 @@
       "instruction": "ldx",
       "id": "control-01623",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GrLoop -> GSltLp with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "GSltLp",
@@ -51289,10 +51402,13 @@
       "instruction": "bcs",
       "id": "control-01624",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GSltLp -> NextED with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "GSltLp",
@@ -51302,10 +51418,13 @@
       "instruction": "bne",
       "id": "control-01625",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GSltLp -> GSltLp with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "GSltLp",
@@ -51315,10 +51434,13 @@
       "instruction": "jsr",
       "id": "control-01626",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation GSltLp -> CheckpointEnemyID with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "GSltLp",
@@ -51328,10 +51450,13 @@
       "instruction": "bne",
       "id": "control-01627",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GSltLp -> GrLoop with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "GSltLp",
@@ -51341,10 +51466,13 @@
       "instruction": "bne",
       "id": "control-01628",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GSltLp -> NextED with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "NextED",
@@ -51354,10 +51482,13 @@
       "instruction": "jmp",
       "id": "control-01629",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation NextED -> Inc2B with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "InitPiranhaPlant",
@@ -80098,12 +80229,12 @@
       "id": "control-03783",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation CheckpointEnemyID -> GSltLp with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original return relation CheckpointEnemyID -> GSltLp with group-code, slot/page state and record-advance handoff."
     },
     {
       "from": "JumpEngine",

@@ -941,3 +941,8 @@ branches.
 ### Cohort I — B14q Bullet Bill/Cheep frenzy integration
 
 `Bitmasks` through `ExF17` now has thirteen node contracts, all incident timer, area, capacity, loop, call, tail, dispatch and return relations, plus four feasible data handoffs. The audit records water ID selection, land duplicate-bill suppression, full-filter reset, wrapped unique-height retry and final initialization. No static shared-C discrepancy was found; entries remain `needs-evidence` pending matched original-ROM/x86/x64 routes.
+
+
+### Cohort I — B14r group-enemy integration
+
+`HandleGroupEnemies` through `NextED` now has eight node contracts, all incident classification, loop, call, tail and return relations, and four feasible RAM handoffs. The audit records hard-mode substitution, d0/d1 group decoding, two/three member count, regular-slot restriction, $18 spacing with page carry and member-by-member initializer order. No static shared-C discrepancy was found; entries remain `needs-evidence` pending matched original-ROM/x86/x64 routes.
