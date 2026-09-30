@@ -6735,6 +6735,48 @@
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-k51-01",
+      "producer": "ClimbXPosAdder",
+      "consumer": "PutPlayerOnVine",
+      "storage": "ROM ClimbXPosAdder indexed climb/flag data",
+      "feasiblePath": "PutPlayerOnVine indexes ClimbXPosAdder on its source climbing/flagpole route.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c climbing_byte binding",
+      "semanticContract": "Source index selects the same ordered table value before climb/flag state write.",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k51-02",
+      "producer": "ClimbPLocAdder",
+      "consumer": "PutPlayerOnVine",
+      "storage": "ROM ClimbPLocAdder indexed climb/flag data",
+      "feasiblePath": "PutPlayerOnVine indexes ClimbPLocAdder on its source climbing/flagpole route.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c climbing_byte binding",
+      "semanticContract": "Source index selects the same ordered table value before climb/flag state write.",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k51-03",
+      "producer": "FlagpoleYPosData",
+      "consumer": "ChkFlagpoleYPosLoop",
+      "storage": "ROM FlagpoleYPosData indexed climb/flag data",
+      "feasiblePath": "ChkFlagpoleYPosLoop indexes FlagpoleYPosData on its source climbing/flagpole route.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c climbing_byte binding",
+      "semanticContract": "Source index selects the same ordered table value before climb/flag state write.",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -25555,131 +25597,170 @@
       "label": "HandleCoinMetatile",
       "asmLine": 12147,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Erases coin metatile, increments one-up tally and gives one coin."
     },
     {
       "label": "HandleAxeMetatile",
       "asmLine": 12152,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets victory operating modes and speed before common axe erase."
     },
     {
       "label": "ErACM",
       "asmLine": 12159,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Erases metatile at caller-provided block-buffer address then updates screen."
     },
     {
       "label": "ClimbXPosAdder",
       "asmLine": 12169,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies facing-indexed X alignment adjusters."
     },
     {
       "label": "ClimbPLocAdder",
       "asmLine": 12172,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies facing-indexed page adjustment."
     },
     {
       "label": "FlagpoleYPosData",
       "asmLine": 12175,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies five flagpole score height thresholds."
     },
     {
       "label": "HandleClimbing",
       "asmLine": 12178,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Requires narrow collision nibble, dispatches flagpole/vine behavior and positions player on climbable object."
     },
     {
       "label": "ExHC",
       "asmLine": 12184,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns for out-of-band collision nibble."
     },
     {
       "label": "ChkForFlagpole",
       "asmLine": 12186,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Distinguishes flag ball/shaft from vine metatile."
     },
     {
       "label": "FlagpoleCollision",
       "asmLine": 12192,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Locks scroll, silences/kills enemies, starts flag music and finds score-height index before slide routine."
     },
     {
       "label": "ChkFlagpoleYPosLoop",
       "asmLine": 12212,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Walks score thresholds downward until player Y qualifies."
     },
     {
       "label": "MtchF",
       "asmLine": 12217,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected flagpole score index."
     },
     {
       "label": "RunFR",
       "asmLine": 12218,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
+      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Starts flagpole slide and transfers to player-on-vine positioning."
     },
     {
       "label": "VineCollision",
@@ -73074,10 +73155,13 @@
       "instruction": "jsr",
       "id": "control-02527",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb call relation HandleCoinMetatile → ErACM including source metatile/state/table ordering."
     },
     {
       "from": "HandleCoinMetatile",
@@ -73087,10 +73171,13 @@
       "instruction": "jmp",
       "id": "control-02528",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb jump relation HandleCoinMetatile → GiveOneCoin including source metatile/state/table ordering."
     },
     {
       "from": "HandleAxeMetatile",
@@ -73100,10 +73187,13 @@
       "instruction": "sta",
       "id": "control-02529",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb fallthrough relation HandleAxeMetatile → ErACM including source metatile/state/table ordering."
     },
     {
       "from": "ErACM",
@@ -73113,10 +73203,13 @@
       "instruction": "jmp",
       "id": "control-02530",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb jump relation ErACM → RemoveCoin_Axe including source metatile/state/table ordering."
     },
     {
       "from": "HandleClimbing",
@@ -73126,10 +73219,13 @@
       "instruction": "bcc",
       "id": "control-02531",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb branch relation HandleClimbing → ExHC including source metatile/state/table ordering."
     },
     {
       "from": "HandleClimbing",
@@ -73139,10 +73235,13 @@
       "instruction": "bcc",
       "id": "control-02532",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb branch relation HandleClimbing → ChkForFlagpole including source metatile/state/table ordering."
     },
     {
       "from": "HandleClimbing",
@@ -73152,10 +73251,13 @@
       "instruction": "bcc",
       "id": "control-02533",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb fallthrough relation HandleClimbing → ExHC including source metatile/state/table ordering."
     },
     {
       "from": "ChkForFlagpole",
@@ -73165,10 +73267,13 @@
       "instruction": "beq",
       "id": "control-02534",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb branch relation ChkForFlagpole → FlagpoleCollision including source metatile/state/table ordering."
     },
     {
       "from": "ChkForFlagpole",
@@ -73178,10 +73283,13 @@
       "instruction": "bne",
       "id": "control-02535",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb branch relation ChkForFlagpole → VineCollision including source metatile/state/table ordering."
     },
     {
       "from": "ChkForFlagpole",
@@ -73191,10 +73299,13 @@
       "instruction": "bne",
       "id": "control-02536",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb fallthrough relation ChkForFlagpole → FlagpoleCollision including source metatile/state/table ordering."
     },
     {
       "from": "FlagpoleCollision",
@@ -73204,10 +73315,13 @@
       "instruction": "beq",
       "id": "control-02537",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb branch relation FlagpoleCollision → PutPlayerOnVine including source metatile/state/table ordering."
     },
     {
       "from": "FlagpoleCollision",
@@ -73217,10 +73331,13 @@
       "instruction": "beq",
       "id": "control-02538",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb branch relation FlagpoleCollision → RunFR including source metatile/state/table ordering."
     },
     {
       "from": "FlagpoleCollision",
@@ -73230,10 +73347,13 @@
       "instruction": "jsr",
       "id": "control-02539",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb call relation FlagpoleCollision → KillEnemies including source metatile/state/table ordering."
     },
     {
       "from": "FlagpoleCollision",
@@ -73243,10 +73363,13 @@
       "instruction": "sta",
       "id": "control-02540",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb fallthrough relation FlagpoleCollision → ChkFlagpoleYPosLoop including source metatile/state/table ordering."
     },
     {
       "from": "ChkFlagpoleYPosLoop",
@@ -73256,10 +73379,13 @@
       "instruction": "bcs",
       "id": "control-02541",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb branch relation ChkFlagpoleYPosLoop → MtchF including source metatile/state/table ordering."
     },
     {
       "from": "ChkFlagpoleYPosLoop",
@@ -73269,10 +73395,13 @@
       "instruction": "bne",
       "id": "control-02542",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb branch relation ChkFlagpoleYPosLoop → ChkFlagpoleYPosLoop including source metatile/state/table ordering."
     },
     {
       "from": "ChkFlagpoleYPosLoop",
@@ -73282,10 +73411,13 @@
       "instruction": "bne",
       "id": "control-02543",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb fallthrough relation ChkFlagpoleYPosLoop → MtchF including source metatile/state/table ordering."
     },
     {
       "from": "MtchF",
@@ -73295,10 +73427,13 @@
       "instruction": "stx",
       "id": "control-02544",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb fallthrough relation MtchF → RunFR including source metatile/state/table ordering."
     },
     {
       "from": "RunFR",
@@ -95444,10 +95579,13 @@
       "instruction": "rts/rti",
       "id": "control-03966",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb return relation ErACM → HandleCoinMetatile including source metatile/state/table ordering."
     },
     {
       "from": "KillEnemies",
@@ -95457,10 +95595,13 @@
       "instruction": "rts/rti",
       "id": "control-03967",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
+      "semanticEvidence": [
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves coin/axe/climb return relation KillEnemies → FlagpoleCollision including source metatile/state/table ordering."
     },
     {
       "from": "ChkJumpspringMetatiles",

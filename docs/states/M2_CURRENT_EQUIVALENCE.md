@@ -1475,3 +1475,9 @@ branches.
 - Node-semantics result: nine labels moved from `unclassified` to `needs-evidence`, covering side pipe entry, timer choice and movement impedance.
 - Independent integration result: 24 control relations plus one timer-table material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled side-pipe routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K51 — coin, axe and climbing audit
+
+- Source range: `HandleCoinMetatile` through `MtchF` (`SMBDIS.ASM` lines 12147–12217).
+- Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering coin/axe erase tails, vine/flag entry and flag score selection.
+- Independent integration result: 20 relations plus three climb/flag table edges received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
