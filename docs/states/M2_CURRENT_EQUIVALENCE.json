@@ -5643,6 +5643,90 @@
         "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00403",
+      "producer": "BoundBoxCtrlData",
+      "consumer": "BoundingBoxCore",
+      "storage": "control*4 selected four-byte bounding-box offsets",
+      "feasiblePath": "Valid source control selects one UL-X/UL-Y/LR-X/LR-Y record.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/bounding_box.c bound_box_ctrl_data",
+      "semanticContract": "Core adds the four source offsets in original coordinate order.",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00404",
+      "producer": "BoundingBoxCore",
+      "consumer": "PlayerCollisionCore",
+      "storage": "selected bounding box UL/LR coordinates",
+      "feasiblePath": "Callers publish generated box coordinates before rectangle comparison.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/bounding_box.c output RAM to geometry.c input",
+      "semanticContract": "Rectangle core consumes source-calculated relative-coordinate boxes.",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00405",
+      "producer": "PlayerCollisionCore",
+      "consumer": "SprObjectCollisionCore",
+      "storage": "player box offset zero and source second box offset",
+      "feasiblePath": "Player entry fixes X offset zero before shared two-object core.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/geometry.c mysmb_world_boxes_collide",
+      "semanticContract": "Shared core receives player-first box order.",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00406",
+      "producer": "SprObjectCollisionCore",
+      "consumer": "CollisionCoreLoop",
+      "storage": "$06 original second offset and $07 one-axis counter",
+      "feasiblePath": "Core initializes source scratch then compares horizontal coordinate first.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/geometry.c scratch initialization",
+      "semanticContract": "Loop restores second offset and runs exactly horizontal then vertical coordinate passes.",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00407",
+      "producer": "CollisionCoreLoop",
+      "consumer": "CollisionFound",
+      "storage": "coordinate comparison outcome and incremented box offsets",
+      "feasiblePath": "Any source overlap/equality/wrap condition advances to shared collision continuation.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/geometry.c collision_found path",
+      "semanticContract": "The second axis runs only after horizontal overlap and final carry is set after both axes.",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00408",
+      "producer": "CollisionCoreLoop",
+      "consumer": "NoCollisionFound",
+      "storage": "horizontal non-overlap outcome and saved $06",
+      "feasiblePath": "Source non-overlap returns clear carry without testing vertical axis.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/geometry.c no_collision_found path",
+      "semanticContract": "No-hit return restores second offset and terminates early.",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -5719,15 +5803,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1338,
+    "needs-evidence": 1347,
     "mismatch": 9,
-    "unclassified": 607
+    "unclassified": 598
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 2947,
+    "needs-evidence": 2969,
     "mismatch": 25,
-    "unclassified": 1294
+    "unclassified": 1272
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -25259,11 +25343,14 @@
       "label": "BoundBoxCtrlData",
       "asmLine": 12791,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the twelve four-byte source bounding-box offset records in left/top/right/bottom order."
     },
     {
       "label": "GetFireballBoundBox",
@@ -25369,11 +25456,14 @@
       "label": "BoundingBoxCore",
       "asmLine": 12878,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses unmasked control*4 to add source offsets to relative X/Y and writes UL/LR X/Y at selected box slot while restoring caller X/Y."
     },
     {
       "label": "CheckRightScreenBBox",
@@ -25439,71 +25529,92 @@
       "label": "PlayerCollisionCore",
       "asmLine": 12956,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects player box offset zero then falls through to shared sprite-object collision core."
     },
     {
       "label": "SprObjectCollisionCore",
       "asmLine": 12959,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Saves second box offset in $06, initializes $07 to one and begins horizontal then vertical comparisons."
     },
     {
       "label": "CollisionCoreLoop",
       "asmLine": 12964,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares current X then Y coordinate pairs, short-circuiting horizontal non-overlap and handling unsigned/wrapped vertical intervals."
     },
     {
       "label": "SecondBoxVerticalChk",
       "asmLine": 12979,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Handles first-upper-before-second-lower case, treating wrapped vertical intervals as collision and otherwise testing lower edge."
     },
     {
       "label": "FirstBoxGreater",
       "asmLine": 12989,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Handles second-upper-at/after-first-upper case, including equality and wrapped lower-edge collision rules."
     },
     {
       "label": "NoCollisionFound",
       "asmLine": 13002,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears carry, restores Y from $06 and returns without second-axis continuation."
     },
     {
       "label": "CollisionFound",
       "asmLine": 13007,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "semanticEvidence": [
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Advances both box offsets to vertical axis, decrements $07, loops once, then sets carry and restores Y from $06."
     },
     {
       "label": "BlockBufferChk_Enemy",
@@ -43940,12 +44051,12 @@
       "id": "control-00871",
       "cohort": "E",
       "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source call relation PlayerSubs -> BoundingBoxCore.",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
+      "semanticContract": "Preserves original call relation PlayerSubs -> BoundingBoxCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "PlayerSubs",
@@ -65266,12 +65377,12 @@
       "id": "control-02204",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation NotGoomba -> SprObjectCollisionCore with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
+      "semanticContract": "Preserves original call relation NotGoomba -> SprObjectCollisionCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "NotGoomba",
@@ -65810,12 +65921,12 @@
       "id": "control-02238",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation PlayerHammerCollision -> PlayerCollisionCore with source predicate, selected misc slot and collision/injury handoff ordering."
+      "semanticContract": "Preserves original call relation PlayerHammerCollision -> PlayerCollisionCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "PlayerHammerCollision",
@@ -66194,12 +66305,12 @@
       "id": "control-02262",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> PlayerCollisionCore with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> PlayerCollisionCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -67538,12 +67649,12 @@
       "id": "control-02346",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ECLoop -> SprObjectCollisionCore with source slot/mask/state predicate and pair collision handoff ordering."
+      "semanticContract": "Preserves original call relation ECLoop -> SprObjectCollisionCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "ECLoop",
@@ -68210,12 +68321,12 @@
       "id": "control-02388",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> PlayerCollisionCore with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> PlayerCollisionCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -68386,12 +68497,12 @@
       "id": "control-02399",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ChkSmallPlatLoop -> PlayerCollisionCore with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original call relation ChkSmallPlatLoop -> PlayerCollisionCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "ChkSmallPlatLoop",
@@ -72521,10 +72632,13 @@
       "instruction": "jsr",
       "id": "control-02710",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FBallB -> BoundingBoxCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "FBallB",
@@ -72677,10 +72791,13 @@
       "instruction": "jsr",
       "id": "control-02722",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetupEOffsetFBBox -> BoundingBoxCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "SetupEOffsetFBBox",
@@ -72833,10 +72950,13 @@
       "instruction": "ldx",
       "id": "control-02734",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PlayerCollisionCore -> SprObjectCollisionCore with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "SprObjectCollisionCore",
@@ -72846,10 +72966,13 @@
       "instruction": "sta",
       "id": "control-02735",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SprObjectCollisionCore -> CollisionCoreLoop with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "CollisionCoreLoop",
@@ -72859,10 +72982,13 @@
       "instruction": "bcs",
       "id": "control-02736",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> FirstBoxGreater with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "CollisionCoreLoop",
@@ -72872,10 +72998,13 @@
       "instruction": "bcc",
       "id": "control-02737",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> SecondBoxVerticalChk with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "CollisionCoreLoop",
@@ -72885,10 +73014,13 @@
       "instruction": "beq",
       "id": "control-02738",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "CollisionCoreLoop",
@@ -72898,10 +73030,13 @@
       "instruction": "bcc",
       "id": "control-02739",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "CollisionCoreLoop",
@@ -72911,10 +73046,13 @@
       "instruction": "bcs",
       "id": "control-02740",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "SecondBoxVerticalChk",
@@ -72924,10 +73062,13 @@
       "instruction": "bcc",
       "id": "control-02741",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SecondBoxVerticalChk -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "SecondBoxVerticalChk",
@@ -72937,10 +73078,13 @@
       "instruction": "bcs",
       "id": "control-02742",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SecondBoxVerticalChk -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "FirstBoxGreater",
@@ -72950,10 +73094,13 @@
       "instruction": "beq",
       "id": "control-02743",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirstBoxGreater -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "FirstBoxGreater",
@@ -72963,10 +73110,13 @@
       "instruction": "bcc",
       "id": "control-02744",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirstBoxGreater -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "FirstBoxGreater",
@@ -72976,10 +73126,13 @@
       "instruction": "beq",
       "id": "control-02745",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirstBoxGreater -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "FirstBoxGreater",
@@ -72989,10 +73142,13 @@
       "instruction": "bcc",
       "id": "control-02746",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirstBoxGreater -> NoCollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "FirstBoxGreater",
@@ -73002,10 +73158,13 @@
       "instruction": "beq",
       "id": "control-02747",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirstBoxGreater -> NoCollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "FirstBoxGreater",
@@ -73015,10 +73174,13 @@
       "instruction": "bcs",
       "id": "control-02748",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirstBoxGreater -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "FirstBoxGreater",
@@ -73028,10 +73190,13 @@
       "instruction": "bcs",
       "id": "control-02749",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FirstBoxGreater -> NoCollisionFound with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "CollisionFound",
@@ -73041,10 +73206,13 @@
       "instruction": "bpl",
       "id": "control-02750",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CollisionFound -> CollisionCoreLoop with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "BlockBufferChk_Enemy",
@@ -85080,10 +85248,13 @@
       "instruction": "rts/rti",
       "id": "control-03647",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BoundingBoxCore -> PlayerSubs with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "PlayerBGCollision",
@@ -89106,12 +89277,12 @@
       "id": "control-03901",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SprObjectCollisionCore -> NotGoomba with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
+      "semanticContract": "Preserves original return relation SprObjectCollisionCore -> NotGoomba with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "HandleEnemyFBallCol",
@@ -89202,12 +89373,12 @@
       "id": "control-03907",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerCollisionCore -> PlayerHammerCollision with source predicate, selected misc slot and collision/injury handoff ordering."
+      "semanticContract": "Preserves original return relation PlayerCollisionCore -> PlayerHammerCollision with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "EraseEnemyObject",
@@ -89314,12 +89485,12 @@
       "id": "control-03914",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerCollisionCore -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original return relation PlayerCollisionCore -> PlayerEnemyCollision with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "EnemyFacePlayer",
@@ -89538,12 +89709,12 @@
       "id": "control-03928",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SprObjectCollisionCore -> ECLoop with source slot/mask/state predicate and pair collision handoff ordering."
+      "semanticContract": "Preserves original return relation SprObjectCollisionCore -> ECLoop with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "ProcEnemyCollisions",
@@ -89730,12 +89901,12 @@
       "id": "control-03940",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerCollisionCore -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original return relation PlayerCollisionCore -> ChkForPlayerC_LargeP with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "ProcLPlatCollisions",
@@ -89794,12 +89965,12 @@
       "id": "control-03944",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerCollisionCore -> ChkSmallPlatLoop with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original return relation PlayerCollisionCore -> ChkSmallPlatLoop with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "ImpedePlayerMove",
@@ -90448,10 +90619,13 @@
       "instruction": "rts/rti",
       "id": "control-03993",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BoundingBoxCore -> FBallB with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "GetXOffscreenBits",
@@ -90474,10 +90648,13 @@
       "instruction": "rts/rti",
       "id": "control-03995",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "semanticEvidence": [
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BoundingBoxCore -> SetupEOffsetFBBox with source box offsets, carry and coordinate-loop handoff ordering."
     },
     {
       "from": "BlockBufferCollision",

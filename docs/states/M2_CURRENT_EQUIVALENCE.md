@@ -1186,3 +1186,8 @@ branches.
 ### Cohort J — B16r vertical and enemy-box offset integration
 
 `CheckPlayerVertical` through `GetEnemyBoundBoxOfsArg` now has four node contracts, every incident caller, carry branch, fall-through and return relation, plus three feasible vertical/box handoffs. Static review matches the non-obvious clear-carry high-Y exit, `$f0/$d0` thresholds, ObjectOffset fall-through, `slot*4+4` box offset and unindexed low-nibble offscreen comparison. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 vertical and box/offscreen carry routes.
+
+
+### Cohort J — B16s shared bounding-box and rectangle-core integration
+
+`BoundBoxCtrlData` through `CollisionFound` now has nine node contracts, every incident box-builder/caller, core fall-through, coordinate branch, two-axis loop and return relation, plus six feasible table/box/carry handoffs. Static review matches all 48 bounding offsets, source coordinate write order, player box zero entry, `$06/$07` scratch protocol, horizontal short-circuit, vertical wrap cases, equality boundaries and clear/set carry returns. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 separated, edge-touching, wrapped and two-axis overlap routes.
