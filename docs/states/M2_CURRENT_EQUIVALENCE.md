@@ -1176,3 +1176,8 @@ branches.
 ### Cohort J — B16p large and small platform collision integration
 
 `LargePlatformCollision` through `ExSPC` now has seven node contracts, every incident platform runner, timer/state/vertical/offscreen gate, balance partner call, box/geometry/response child, two-box loop and return relation, plus six feasible platform/player handoffs. Static review matches `$ff` versus zero collision initialization, balance partner-first sequencing, saved `$00` platform Y, stack/current-slot restoration, small-platform d1 offscreen gate, Y `$20` threshold and byte-wrapped two-step `$80` box displacement. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 balance partner, large/small top/side/miss and shifted-box routes.
+
+
+### Cohort J — B16q platform response and rider-position integration
+
+`ProcSPlatCollisions` through `ExPlPos` now has eleven node contracts, every incident platform collision/runner caller, underside/top/side branch, collision flag, impedance call, small-position table, vertical gate and return relation, plus seven feasible platform/player handoffs. Static review matches rising-jump cancellation, top/side thresholds, small-ID counter ownership, borrow-aware side arithmetic, `$80/$00` small height table, death/high-byte gates, 32-pixel height subtraction and motion clear. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 underside, top, left/right side, both small-box offsets, vertical platform and gated rider routes.
