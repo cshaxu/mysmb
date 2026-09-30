@@ -1887,7 +1887,7 @@ The labels and branches behind every line remain open until individually bound b
 | 14753 | `ChkForPlayerAttrib` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
 | 14767 | `KilledAtt` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
 | 14774 | `C_S_IGAtt` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
-| 14781 | `ExPlyrAt` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-explyrat) |
+| 14781 | `ExPlyrAt` | M2 T47 S1 shared `src/game/oam/player_gfx.c` | ROM-match complete | [T47 S1 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s1-closure-player-attribute-return) |
 | 14786 | `RelativePlayerPosition` | T16: `src/game/oam/object_position.c` | audited; mismatch | [T24 S1: D9](m2-t24-s1-node-verification.md#node-relativeplayerposition) |
 | 14791 | `RelativeBubblePosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativebubbleposition) |
 | 14797 | `RelativeFireballPosition` | T16: `src/game/oam/object_position.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-relativefireballposition) |
