@@ -20,7 +20,7 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 19 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 12 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 16 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -54,7 +54,7 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 41 control; 3 material RAM/table |
-| Needs evidence | 45 |
+| Needs evidence | 55 |
 | Mismatch | 2 |
 | Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
@@ -217,3 +217,12 @@ relations. Controlled routes cover master timer nonzero and expiry, interval
 timer non-expiry and expiry, zero/nonzero timer cells and loop termination.
 Timer-owned RAM and `FrameCounter` agree between ROM and current x86/x64;
 the independently confirmed NMI-prefix mismatches remain outside this proof.
+
+### Cohort A — A5 NMI mode-dispatch and OAM-tail static passes
+
+`OperModeExecutionTree`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`
+and `SprInitLoop` now have node contracts and ten owned control relations in
+the registry, all `needs-evidence`. The mode tree still requires controlled
+title/game/victory/game-over routes. The nonzero-sprite loop requires a route
+with the real sprite-zero hardware condition; ColdBoot's all-sprite pass is
+not substituted as evidence for that distinct entry.

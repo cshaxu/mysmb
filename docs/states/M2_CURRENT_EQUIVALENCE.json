@@ -673,41 +673,53 @@
       "label": "OperModeExecutionTree",
       "asmLine": 954,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_step mode_before selector",
+      "semanticEvidence": [
+        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads the source operating mode and dispatches exactly one inline JumpEngine vector: title, game, victory or game-over, returning to the NMI tail."
     },
     {
       "label": "MoveAllSpritesOffscreen",
       "asmLine": 965,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c and src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_reset OAM clear and mysmb_frame_root_begin sprite-zero path",
+      "semanticEvidence": [
+        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects OAM offset $00, uses the shared loop, and writes $f8 to every OAM Y byte including sprite zero."
     },
     {
       "label": "MoveSpritesOffscreen",
       "asmLine": 969,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects OAM offset $04 and uses the shared loop to write $f8 to every nonzero sprite Y byte while preserving sprite zero."
     },
     {
       "label": "SprInitLoop",
       "asmLine": 972,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c and src/game/frame_root.c",
+      "currentCounterpart": "shared OAM Y-byte loop",
+      "semanticEvidence": [
+        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes $f8, advances OAM offset by four, and repeats until the byte offset wraps to zero."
     },
     {
       "label": "TitleScreenMode",
@@ -21509,10 +21521,13 @@
       "instruction": "jsr",
       "id": "control-00075",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation OperModeExecutionTree -> JumpEngine at source line 956 (jsr) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "OperModeExecutionTree",
@@ -21522,10 +21537,13 @@
       "instruction": "jsr",
       "id": "control-00076",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation OperModeExecutionTree -> MoveAllSpritesOffscreen at source line 956 (jsr) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "MoveAllSpritesOffscreen",
@@ -21535,10 +21553,13 @@
       "instruction": "ldy",
       "id": "control-00077",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation MoveAllSpritesOffscreen -> MoveSpritesOffscreen at source line 966 (ldy) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "MoveSpritesOffscreen",
@@ -21548,10 +21569,13 @@
       "instruction": "lda",
       "id": "control-00078",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation MoveSpritesOffscreen -> SprInitLoop at source line 971 (lda) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "SprInitLoop",
@@ -21561,10 +21585,13 @@
       "instruction": "bne",
       "id": "control-00079",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation SprInitLoop -> SprInitLoop at source line 977 (bne) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "TitleScreenMode",
@@ -66029,10 +66056,13 @@
       "instruction": "rts/rti",
       "id": "control-03496",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation JumpEngine -> OperModeExecutionTree at source line 956 (rts/rti) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "JumpEngine",
@@ -73835,10 +73865,13 @@
       "selector": 0,
       "id": "control-04096",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original jump-engine-dispatch relation OperModeExecutionTree -> TitleScreenMode at source line 956 (jsr JumpEngine) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "OperModeExecutionTree",
@@ -73849,10 +73882,13 @@
       "selector": 1,
       "id": "control-04097",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original jump-engine-dispatch relation OperModeExecutionTree -> GameMode at source line 956 (jsr JumpEngine) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "OperModeExecutionTree",
@@ -73863,10 +73899,13 @@
       "selector": 2,
       "id": "control-04098",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original jump-engine-dispatch relation OperModeExecutionTree -> VictoryMode at source line 956 (jsr JumpEngine) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "OperModeExecutionTree",
@@ -73877,10 +73916,13 @@
       "selector": 3,
       "id": "control-04099",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
+      "semanticEvidence": [
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original jump-engine-dispatch relation OperModeExecutionTree -> GameOverMode at source line 956 (jsr JumpEngine) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
     },
     {
       "from": "TitleScreenMode",
