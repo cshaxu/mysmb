@@ -1997,10 +1997,10 @@ The labels and branches behind every line remain open until individually bound b
 | 15444 | `EmptySfx2Buffer` | M2 T48 S5 shared `src/game/audio.c` | ROM-match complete | [T48 S5 closure](../../proposals/m2/t48-sound-effects-and-channel-handlers.md#s5-closure-square-two-effect-data-and-phases) |
 | 15448 | `StopSquare2Sfx` | M2 T48 S5 shared `src/game/audio.c` | ROM-match complete | [T48 S5 closure](../../proposals/m2/t48-sound-effects-and-channel-handlers.md#s5-closure-square-two-effect-data-and-phases) |
 | 15453 | `ExSfx2` | M2 T48 S5 shared `src/game/audio.c` | ROM-match complete | [T48 S5 closure](../../proposals/m2/t48-sound-effects-and-channel-handlers.md#s5-closure-square-two-effect-data-and-phases) |
-| 15455 | `Square2SfxHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-square2sfxhandler) |
-| 15478 | `CheckSfx2Buffer` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checksfx2buffer) |
-| 15496 | `ExS2H` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exs2h) |
-| 15498 | `Cont_CGrab_TTick` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cont_cgrab_ttick) |
+| 15455 | `Square2SfxHandler` | M2 T48 S6 shared `src/game/audio.c` | ROM-match complete | [T48 S6 closure](../../proposals/m2/t48-sound-effects-and-channel-handlers.md#s6-closure-square-two-queue-dispatcher) |
+| 15478 | `CheckSfx2Buffer` | M2 T48 S6 shared `src/game/audio.c` | ROM-match complete | [T48 S6 closure](../../proposals/m2/t48-sound-effects-and-channel-handlers.md#s6-closure-square-two-queue-dispatcher) |
+| 15496 | `ExS2H` | M2 T48 S6 shared `src/game/audio.c` | ROM-match complete | [T48 S6 closure](../../proposals/m2/t48-sound-effects-and-channel-handlers.md#s6-closure-square-two-queue-dispatcher) |
+| 15498 | `Cont_CGrab_TTick` | M2 T48 S6 shared `src/game/audio.c` | ROM-match complete | [T48 S6 closure](../../proposals/m2/t48-sound-effects-and-channel-handlers.md#s6-closure-square-two-queue-dispatcher) |
 | 15501 | `JumpToDecLength2` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumptodeclength2) |
 | 15504 | `PlayBowserFall` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playbowserfall) |
 | 15509 | `BlstSJp` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blstsjp) |

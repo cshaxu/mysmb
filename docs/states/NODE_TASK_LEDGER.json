@@ -249140,9 +249140,14 @@
         "Cont_CGrab_TTick"
       ],
       "maximumComplete": 1823,
-      "actualMatches": [],
+      "actualMatches": [
+        "Square2SfxHandler",
+        "CheckSfx2Buffer",
+        "ExS2H",
+        "Cont_CGrab_TTick"
+      ],
       "evidence": "docs/proposals/m2/t48-sound-effects-and-channel-handlers.md",
-      "state": "admitted-square-two-dispatch"
+      "state": "closed-rom-match-complete"
     }
   ]
 }

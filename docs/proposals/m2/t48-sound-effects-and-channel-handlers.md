@@ -452,3 +452,66 @@ then compares PCs, queue shifts, RAM and APU output with shared C. The
 operational track reruns the focused audio/purity checks, x86/x64
 regression, Windows self-tests, DOS16 MZ link and three EXEs. Closure
 will name each of the four node dispositions before T48 can close.
+
+
+### S6 closure: square-two queue dispatcher
+
+All **four** expected labels are ROM-match complete, with no S6 deferment:
+**1,819 -> 1,823 / 1,992**. The unchanged owner ROM entered the
+`SoundEngine` square-two route on ten bounded queue/buffer cases. Across those
+routes it produced 80 dispatcher calls; current shared C matched the relevant
+RAM and APU result after every call on x86 and x64: **160 comparisons, zero
+S6-owned differences**. The raw ROM records and checker output remain under
+ignored `build/m2-t48-s5/`.
+
+| Source PC | Label | Source control and shared-C mapping |
+| --- | --- | --- |
+| `$f57c` | `Square2SfxHandler` | Tests an active `$40` one-up bit before reading `$fe`; otherwise stores the queue in `$f2`, checks negative Bowser-fall, then shifts the queue low-to-high into the source effect entries. `mysmb_audio_step_square2` preserves that priority and writes only shared game RAM/APU state. |
+| `$f5a6` | `CheckSfx2Buffer` | Reads unshifted `$f2`; zero reaches the return, negative selects the Bowser continuation, and successive accumulator shifts select coin/tick, grow, blast, power-up, or one-up continuation without changing `$f2`. The same mask order is retained by the shared dispatcher. |
+| `$f5c1` | `ExS2H` | Zero-buffer return has no game RAM or APU write. The C zero-buffer return is exercised by the empty case. |
+| `$f5c2` | `Cont_CGrab_TTick` | An unconditional jump reaches `ContinueCGrabTTick`; the shared dispatcher invokes the already matched S5 coin/timer continuation, including the `$30` `$4006` tone transition and decrement. |
+
+The selector sweep covers coin, grow-power-up, grow-vine, blast, timer tick,
+power-up grab, queue-empty, buffered continuation, and the one-up interrupt
+guard. It found no queue-selection policy in either platform adapter; every
+production hit remains in `src/game/audio.c`. Later Bowser-fall, grow-item and
+extra-life continuation bodies remain outside this four-node scope and receive
+no S6 credit.
+
+The operational track reran audio, dispatcher, platform-purity and both Win32
+self-tests successfully on x86 and x64. Full CTest is **223/234** on each
+width, with the same eleven separately registered legacy failures and no new
+failure. The repository's existing OpenNT16 CMake target rebuilt and linked a
+262,005-byte `MZ` executable from the same shared C source; its map contains
+`AUDIO_TEXT`. Existing conversion and `OLDNAMES.LIB` warnings remain recorded
+but do not prevent the valid MZ output. The three owner-authorized artifacts
+are refreshed:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `a0af2ed8ad58237f8cb313340c9f8010bf5d1467e20be4f0fdc047ec792d34c0` |
+| `assets/mysmb32.exe` | `5e6ff1742c8976fc12ea002b9808cb7d545250bcff1be7b7a885dec10b178201` |
+| `assets/mysmb64.exe` | `ffcb2049722ab6e2b4c30cd8fabbddd1904709986c7ac3dbea0262e9a0f53198` |
+
+### T48 closure: sound-effect queue and channel handlers
+
+All **74** source-order labels from `SoundEngine` through
+`Cont_CGrab_TTick` are ROM-match complete across S1-S6. The verified numerator
+advances **1,749 -> 1,823 / 1,992**. No T48 label is deferred. The next source
+label, `JumpToDecLength2`, begins T49's music/channel slice and receives no
+T48 credit.
+
+| Chain | Nodes | ROM-logic evidence | Operational result |
+| --- | ---: | --- | --- |
+| S1 SoundEngine pause/queue/DAC | 13 | Natural NMI title/game/pause routes; source PC, RAM and APU comparison | x86/x64 focused checks and self-tests pass |
+| S2 register/frequency helpers | 9 | Register order and owner-ROM frequency-table accessors | x86/x64 focused checks and purity pass |
+| S3 square-one effect phases | 14 | Source phase lengths, branch transitions and APU writes | x86/x64 focused checks and purity pass |
+| S4 square-one dispatch/lifetime | 16 | Queue priority, buffer selection and effect lifetime routes | x86/x64 focused checks and purity pass |
+| S5 square-two effects/data | 18 | 80 original calls, 160 x86/x64 comparisons, 68 table bytes | x86/x64 focused checks and purity pass |
+| S6 square-two dispatcher | 4 | 80 original calls, 160 x86/x64 comparisons | x86/x64 focused checks and purity pass |
+
+The integrated cross-chain regression is the full x86/x64 CTest run plus
+SoundEngine NMI dispatcher routes. Both Windows widths remain 223/234 with the
+same eleven documented failures, while all T48-focused tests pass. The
+existing OpenNT16 target links the same shared source to a valid MZ executable.
+No platform adapter contains queue, branch, RAM, table or APU game logic.

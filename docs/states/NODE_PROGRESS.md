@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1819 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1823 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 137 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 133 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1819 / 1,992 (91.32%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1823 / 1,992 (91.52%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T48 S5 closure](../proposals/m2/t48-sound-effects-and-channel-handlers.md#s5-closure-square-two-effect-data-and-phases) proves 18 exact square-two effect/data labels on 80 original calls and 160 x86/x64 comparisons plus 68 owner-ROM table bytes, with separate three-target operational checks.
+Latest task review: [T48 S6 closure](../proposals/m2/t48-sound-effects-and-channel-handlers.md#s6-closure-square-two-queue-dispatcher) closes the four exact square-two queue-dispatch labels on 80 original calls and 160 x86/x64 comparisons, with the original OpenNT DOS16 MZ build and all three refreshed artifacts.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1819)
+## Completed matches (1823)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1852,6 +1852,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15444 | `EmptySfx2Buffer` |
 | 15448 | `StopSquare2Sfx` |
 | 15453 | `ExSfx2` |
+| 15455 | `Square2SfxHandler` |
+| 15478 | `CheckSfx2Buffer` |
+| 15496 | `ExS2H` |
+| 15498 | `Cont_CGrab_TTick` |
 
 ## Mapped but not yet matched (36)
 
