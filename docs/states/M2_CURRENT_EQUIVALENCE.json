@@ -1717,7 +1717,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "G",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "id": "material-00090",
@@ -1733,7 +1736,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "G",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "id": "material-00091",
@@ -1749,7 +1755,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "G",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "id": "material-00092",
@@ -1765,7 +1774,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "G",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "id": "material-00093",
@@ -1781,7 +1793,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "G",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "id": "material-00094",
@@ -1797,7 +1812,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "G",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "id": "material-00095",
@@ -1813,7 +1831,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "G",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/vine.c"
+      ]
     },
     {
       "id": "material-00096",
@@ -1829,7 +1850,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "G",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/vine.c"
+      ]
     },
     {
       "id": "material-00097",
@@ -19773,7 +19797,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Partitions PlayerStatus before one-shot B eligibility, alternating-slot selection, Y-high/crouch/climb gates and creation writes."
+      "semanticContract": "Partitions PlayerStatus before one-shot B eligibility, alternating-slot selection, Y-high/crouch/climb gates and creation writes.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c"
+      ]
     },
     {
       "label": "ProcFireballs",
@@ -19786,7 +19813,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Runs fireball slots zero then one before entering the bubble gate."
+      "semanticContract": "Runs fireball slots zero then one before entering the bubble gate.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "label": "ProcAirBubbles",
@@ -19799,7 +19829,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Runs bubbles only in water areas."
+      "semanticContract": "Runs bubbles only in water areas.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "label": "BublLoop",
@@ -19812,7 +19845,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Processes slots two, one and zero in descending order: update, relative position, offscreen bits, draw."
+      "semanticContract": "Processes slots two, one and zero in descending order: update, relative position, offscreen bits, draw.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "label": "BublExit",
@@ -19825,7 +19861,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns after the area gate or final bubble slot."
+      "semanticContract": "Returns after the area gate or final bubble slot.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "label": "FireballXSpdData",
@@ -19838,7 +19877,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Binds facing indices right/left to $40/$c0 fireball speed bytes."
+      "semanticContract": "Binds facing indices right/left to $40/$c0 fireball speed bytes.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "label": "FireballObjCore",
@@ -19851,7 +19893,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves explosion/inactive/new/active state partition and ObjectOffset handoff."
+      "semanticContract": "Preserves explosion/inactive/new/active state partition and ObjectOffset handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "label": "RunFB",
@@ -19864,7 +19909,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves gravity, horizontal movement, relative-position, offscreen, bounding-box, terrain, erase, enemy and draw order."
+      "semanticContract": "Preserves gravity, horizontal movement, relative-position, offscreen, bounding-box, terrain, erase, enemy and draw order.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "label": "EraseFB",
@@ -19877,7 +19925,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Clears only the selected Fireball_State after offscreen mask $cc is nonzero."
+      "semanticContract": "Clears only the selected Fireball_State after offscreen mask $cc is nonzero.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "label": "NoFBall",
@@ -19890,7 +19941,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns without modifying inactive fireball state."
+      "semanticContract": "Returns without modifying inactive fireball state.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "label": "FireballExplosion",
@@ -19903,7 +19957,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Computes relative position before explosion drawing."
+      "semanticContract": "Computes relative position before explosion drawing.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "label": "BubbleCheck",
@@ -19916,7 +19973,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selects pseudo-random bit, moves active bubbles, blocks inactive bubbles while timer is nonzero, otherwise creates one."
+      "semanticContract": "Selects pseudo-random bit, moves active bubbles, blocks inactive bubbles while timer is nonzero, otherwise creates one.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "label": "SetupBubble",
@@ -19929,7 +19989,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves facing LSR carry into X placement, page carry, Y+8, timer selection and fallthrough movement."
+      "semanticContract": "Preserves facing LSR carry into X placement, page carry, Y+8, timer selection and fallthrough movement.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "label": "PosBubl",
@@ -19942,7 +20005,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Uses zero or eight plus retained facing carry before player X/page placement."
+      "semanticContract": "Uses zero or eight plus retained facing carry before player X/page placement.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "label": "MoveBubl",
@@ -19955,7 +20021,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Subtracts the selected fractional force and propagates its borrow to bubble Y."
+      "semanticContract": "Subtracts the selected fractional force and propagates its borrow to bubble Y.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "label": "Y_Bubl",
@@ -19968,7 +20037,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Stores moved Y or the offscreen $f8 sentinel."
+      "semanticContract": "Stores moved Y or the offscreen $f8 sentinel.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "label": "ExitBubl",
@@ -19981,7 +20053,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns after bubble update."
+      "semanticContract": "Returns after bubble update.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "label": "Bubble_MForceData",
@@ -19994,7 +20069,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Binds pseudo-random bit to movement-force bytes $ff/$50."
+      "semanticContract": "Binds pseudo-random bit to movement-force bytes $ff/$50.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "label": "BubbleTimerData",
@@ -20007,7 +20085,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Binds pseudo-random bit to timer bytes $40/$20."
+      "semanticContract": "Binds pseudo-random bit to timer bytes $40/$20.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "label": "RunGameTimer",
@@ -20020,7 +20101,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves title/engine/death/Y/timer gates, 100 music gate, BCD decrement, status update and zero-time death order."
+      "semanticContract": "Preserves title/engine/death/Y/timer gates, 100 music gate, BCD decrement, status update and zero-time death order.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "label": "ResGTCtrl",
@@ -20033,7 +20117,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Reloads control timer, writes final-digit modifier, performs BCD math then queues timer status."
+      "semanticContract": "Reloads control timer, writes final-digit modifier, performs BCD math then queues timer status.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "label": "TimeUpOn",
@@ -20046,7 +20133,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Uses zero accumulator to reset PlayerStatus, forces injury, then increments expiration flag."
+      "semanticContract": "Uses zero accumulator to reset PlayerStatus, forces injury, then increments expiration flag.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "label": "ExGTimer",
@@ -20059,7 +20149,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns without timer mutation on every source gate."
+      "semanticContract": "Returns without timer mutation on every source gate.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "label": "WarpZoneObject",
@@ -20072,7 +20165,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ScrollLock and bitwise player Y/high gate before incrementing WarpZoneControl and erasing the source object."
+      "semanticContract": "Preserves ScrollLock and bitwise player Y/high gate before incrementing WarpZoneControl and erasing the source object.",
+      "currentSourcePaths": [
+        "src/game/enemy/core.c"
+      ]
     },
     {
       "label": "ProcessWhirlpools",
@@ -20085,7 +20181,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Scans five data slots descending and compares page/position using source SBC sign semantics."
+      "semanticContract": "Scans five data slots descending and compares page/position using source SBC sign semantics.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "label": "WhLoop",
@@ -20098,7 +20197,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Builds right extent/page with low-byte carry and selects only an in-range whirlpool."
+      "semanticContract": "Builds right extent/page with low-byte carry and selects only an in-range whirlpool.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "label": "NextWh",
@@ -20111,7 +20213,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Decrements to the next slot or exits after slot zero."
+      "semanticContract": "Decrements to the next slot or exits after slot zero.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "label": "ExitWh",
@@ -20124,7 +20229,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns after non-water, timer or exhausted-slot gates."
+      "semanticContract": "Returns after non-water, timer or exhausted-slot gates.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "label": "WhirlpoolActivate",
@@ -20137,7 +20245,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Builds carry-correct center and applies horizontal pull only on alternate frames."
+      "semanticContract": "Builds carry-correct center and applies horizontal pull only on alternate frames.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "label": "LeftWh",
@@ -20150,7 +20261,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Applies rightward pull only with source collision-bit permission."
+      "semanticContract": "Applies rightward pull only with source collision-bit permission.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "label": "SetPWh",
@@ -20163,7 +20277,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Stores carry-correct player page after horizontal pull."
+      "semanticContract": "Stores carry-correct player page after horizontal pull.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "label": "WhPull",
@@ -20176,7 +20293,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Sets Whirlpool_Flag and tail-enters player gravity with force $10 and maximum $01."
+      "semanticContract": "Sets Whirlpool_Flag and tail-enters player gravity with force $10 and maximum $01.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "label": "FlagpoleScoreMods",
@@ -20189,7 +20309,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Binds flag score indices to score modifier bytes."
+      "semanticContract": "Binds flag score indices to score modifier bytes.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "label": "FlagpoleScoreDigits",
@@ -20202,7 +20325,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Binds flag score indices to score digit offsets."
+      "semanticContract": "Binds flag score indices to score digit offsets.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "label": "FlagpoleRoutine",
@@ -20215,7 +20341,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves slot-five setup, slide/climb gates, carry-sensitive flag/floatey motion, score handoff and graphics order."
+      "semanticContract": "Preserves slot-five setup, slide/climb gates, carry-sensitive flag/floatey motion, score handoff and graphics order.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "label": "SkipScore",
@@ -20228,7 +20357,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Skips score mutation and enters graphics."
+      "semanticContract": "Skips score mutation and enters graphics.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "label": "GiveFPScr",
@@ -20241,7 +20373,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Writes indexed score modifier, adds score, sets end-level subroutine then enters graphics."
+      "semanticContract": "Writes indexed score modifier, adds score, sets end-level subroutine then enters graphics.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "label": "FPGfx",
@@ -20254,7 +20389,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Computes flag offscreen bits, relative position and flag graphics in source order."
+      "semanticContract": "Computes flag offscreen bits, relative position and flag graphics in source order.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "label": "ExitFlagP",
@@ -20267,7 +20405,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns after no-flag or graphics path."
+      "semanticContract": "Returns after no-flag or graphics path.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "label": "Jumpspring_Y_PosData",
@@ -20280,7 +20421,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Binds animation frame index to fixed spring Y deltas."
+      "semanticContract": "Binds animation frame index to fixed spring Y deltas.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "label": "JumpspringHandler",
@@ -20293,7 +20437,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves timer/animation gates, frame direction, A-edge force override, bounce handoff and animation cadence."
+      "semanticContract": "Preserves timer/animation gates, frame direction, A-edge force override, bounce handoff and animation cadence.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "label": "DownJSpr",
@@ -20306,7 +20453,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Moves player Y up two then shares spring-position work."
+      "semanticContract": "Moves player Y up two then shares spring-position work.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "label": "PosJSpr",
@@ -20319,7 +20469,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Positions jumpspring from fixed Y plus frame table, and only arms force on new A press at applicable frame."
+      "semanticContract": "Positions jumpspring from fixed Y plus frame table, and only arms force on new A press at applicable frame.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "label": "BounceJS",
@@ -20332,7 +20485,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "At final frame transfers stored force to player Y speed and clears animation control."
+      "semanticContract": "At final frame transfers stored force to player Y speed and clears animation control.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "label": "DrawJSpr",
@@ -20345,7 +20501,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Draws/checks spring before timer-gated animation advance."
+      "semanticContract": "Draws/checks spring before timer-gated animation advance.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "label": "ExJSpring",
@@ -20358,7 +20517,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns after rendering/offscreen handling and conditional animation timer advance."
+      "semanticContract": "Returns after rendering/offscreen handling and conditional animation timer advance.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "label": "Setup_Vine",
@@ -20371,7 +20533,10 @@
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Copies source block page/X/Y into the selected vine enemy slot, initializes identity/flag, records first-vine start Y only at zero offset, appends the slot and queues grow-vine sound."
+      "semanticContract": "Copies source block page/X/Y into the selected vine enemy slot, initializes identity/flag, records first-vine start Y only at zero offset, appends the slot and queues grow-vine sound.",
+      "currentSourcePaths": [
+        "src/game/vine.c"
+      ]
     },
     {
       "label": "NextVO",
@@ -20384,7 +20549,10 @@
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound."
+      "semanticContract": "Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound.",
+      "currentSourcePaths": [
+        "src/game/vine.c"
+      ]
     },
     {
       "label": "VineHeightData",
@@ -20397,7 +20565,10 @@
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Binds active vine index to source growth-height limits $30 and $60."
+      "semanticContract": "Binds active vine index to source growth-height limits $30 and $60.",
+      "currentSourcePaths": [
+        "src/game/vine.c"
+      ]
     },
     {
       "label": "VineObjectHandler",
@@ -56819,7 +56990,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcAirBubbles with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcAirBubbles with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireball_Bubble",
@@ -56835,7 +57010,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireball_Bubble",
@@ -56851,7 +57030,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireball_Bubble",
@@ -56867,7 +57050,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireball_Bubble",
@@ -56883,7 +57070,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireball_Bubble",
@@ -56899,7 +57090,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireball_Bubble",
@@ -56915,7 +57110,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireball_Bubble",
@@ -56931,7 +57130,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/engine_slots.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireballs",
@@ -56947,7 +57150,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ProcFireballs -> FireballObjCore with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation ProcFireballs -> FireballObjCore with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireballs",
@@ -56963,7 +57170,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ProcFireballs -> FireballObjCore with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation ProcFireballs -> FireballObjCore with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcFireballs",
@@ -56979,7 +57190,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation ProcFireballs -> ProcAirBubbles with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation ProcFireballs -> ProcAirBubbles with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcAirBubbles",
@@ -56995,7 +57209,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcAirBubbles -> BublExit with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcAirBubbles -> BublExit with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ProcAirBubbles",
@@ -57011,7 +57228,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation ProcAirBubbles -> BublLoop with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation ProcAirBubbles -> BublLoop with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "BublLoop",
@@ -57027,7 +57247,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation BublLoop -> BubbleCheck with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation BublLoop -> BubbleCheck with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "BublLoop",
@@ -57043,7 +57267,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation BublLoop -> RelativeBubblePosition with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation BublLoop -> RelativeBubblePosition with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "BublLoop",
@@ -57059,7 +57286,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation BublLoop -> GetBubbleOffscreenBits with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation BublLoop -> GetBubbleOffscreenBits with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "BublLoop",
@@ -57075,7 +57305,10 @@
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation BublLoop -> DrawBubble with source clipping/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM call relation BublLoop -> DrawBubble with source clipping/offscreen predicate, OAM handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "BublLoop",
@@ -57091,7 +57324,10 @@
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation BublLoop -> BublLoop with source clipping/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM branch relation BublLoop -> BublLoop with source clipping/offscreen predicate, OAM handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "BublLoop",
@@ -57107,7 +57343,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation BublLoop -> BublExit with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation BublLoop -> BublExit with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "FireballObjCore",
@@ -57123,7 +57362,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FireballObjCore -> FireballExplosion with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation FireballObjCore -> FireballExplosion with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "FireballObjCore",
@@ -57139,7 +57381,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FireballObjCore -> NoFBall with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation FireballObjCore -> NoFBall with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "FireballObjCore",
@@ -57155,7 +57400,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FireballObjCore -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation FireballObjCore -> RunFB with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "FireballObjCore",
@@ -57171,7 +57419,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation FireballObjCore -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation FireballObjCore -> RunFB with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57187,7 +57438,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> ImposeGravity with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunFB -> ImposeGravity with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57203,7 +57457,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> MoveObjectHorizontally with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunFB -> MoveObjectHorizontally with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57219,7 +57476,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> RelativeFireballPosition with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunFB -> RelativeFireballPosition with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57235,7 +57495,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> GetFireballOffscreenBits with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunFB -> GetFireballOffscreenBits with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57251,7 +57514,10 @@
         "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> GetFireballBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
+      "semanticContract": "Preserves original call relation RunFB -> GetFireballBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57267,7 +57533,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> FireballBGCollision with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunFB -> FireballBGCollision with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57283,7 +57552,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunFB -> EraseFB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunFB -> EraseFB with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57299,7 +57571,10 @@
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> FireballEnemyCollision with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
+      "semanticContract": "Preserves original call relation RunFB -> FireballEnemyCollision with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RunFB",
@@ -57315,7 +57590,10 @@
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM jump relation RunFB -> DrawFireball with source frame/state predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM jump relation RunFB -> DrawFireball with source frame/state predicate, OAM handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "EraseFB",
@@ -57331,7 +57609,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation EraseFB -> NoFBall with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation EraseFB -> NoFBall with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "FireballExplosion",
@@ -57347,7 +57628,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation FireballExplosion -> RelativeFireballPosition with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation FireballExplosion -> RelativeFireballPosition with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "FireballExplosion",
@@ -57363,7 +57647,10 @@
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM jump relation FireballExplosion -> DrawExplosion_Fireball with source frame/state predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM jump relation FireballExplosion -> DrawExplosion_Fireball with source frame/state predicate, OAM handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "BubbleCheck",
@@ -57379,7 +57666,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation BubbleCheck -> MoveBubl with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation BubbleCheck -> MoveBubl with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "BubbleCheck",
@@ -57395,7 +57685,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation BubbleCheck -> ExitBubl with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation BubbleCheck -> ExitBubl with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "BubbleCheck",
@@ -57411,7 +57704,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation BubbleCheck -> SetupBubble with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation BubbleCheck -> SetupBubble with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "SetupBubble",
@@ -57427,7 +57723,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation SetupBubble -> PosBubl with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation SetupBubble -> PosBubl with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "SetupBubble",
@@ -57443,7 +57742,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SetupBubble -> PosBubl with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation SetupBubble -> PosBubl with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "PosBubl",
@@ -57459,7 +57761,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation PosBubl -> MoveBubl with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation PosBubl -> MoveBubl with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "MoveBubl",
@@ -57475,7 +57780,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation MoveBubl -> Y_Bubl with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation MoveBubl -> Y_Bubl with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "MoveBubl",
@@ -57491,7 +57799,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation MoveBubl -> Y_Bubl with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation MoveBubl -> Y_Bubl with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "Y_Bubl",
@@ -57507,7 +57818,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation Y_Bubl -> ExitBubl with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation Y_Bubl -> ExitBubl with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57523,7 +57837,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57539,7 +57856,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57555,7 +57875,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57571,7 +57894,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57587,7 +57913,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57603,7 +57932,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunGameTimer -> TimeUpOn with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunGameTimer -> TimeUpOn with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57619,7 +57951,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57635,7 +57970,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "RunGameTimer",
@@ -57651,7 +57989,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "ResGTCtrl",
@@ -57667,7 +58008,11 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ResGTCtrl -> DigitsMathRoutine with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation ResGTCtrl -> DigitsMathRoutine with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/status.c",
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "ResGTCtrl",
@@ -57683,7 +58028,11 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation ResGTCtrl -> PrintStatusBarNumbers with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original jump relation ResGTCtrl -> PrintStatusBarNumbers with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/status.c",
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "TimeUpOn",
@@ -57699,7 +58048,10 @@
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation TimeUpOn -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering."
+      "semanticContract": "Preserves original call relation TimeUpOn -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "TimeUpOn",
@@ -57715,7 +58067,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation TimeUpOn -> ExGTimer with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation TimeUpOn -> ExGTimer with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "WarpZoneObject",
@@ -57731,7 +58086,11 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation WarpZoneObject -> ExGTimer with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation WarpZoneObject -> ExGTimer with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/enemy/core.c",
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "WarpZoneObject",
@@ -57747,7 +58106,11 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation WarpZoneObject -> ExGTimer with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation WarpZoneObject -> ExGTimer with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/enemy/core.c",
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "WarpZoneObject",
@@ -57763,7 +58126,10 @@
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation WarpZoneObject -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original jump relation WarpZoneObject -> EraseEnemyObject with current slot, timer predicate and source call/return ordering.",
+      "currentSourcePaths": [
+        "src/game/enemy/core.c"
+      ]
     },
     {
       "from": "ProcessWhirlpools",
@@ -57779,7 +58145,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcessWhirlpools -> ExitWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcessWhirlpools -> ExitWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "ProcessWhirlpools",
@@ -57795,7 +58164,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcessWhirlpools -> ExitWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation ProcessWhirlpools -> ExitWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "ProcessWhirlpools",
@@ -57811,7 +58183,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation ProcessWhirlpools -> WhLoop with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation ProcessWhirlpools -> WhLoop with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "WhLoop",
@@ -57827,7 +58202,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation WhLoop -> NextWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation WhLoop -> NextWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "WhLoop",
@@ -57843,7 +58221,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation WhLoop -> NextWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation WhLoop -> NextWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "WhLoop",
@@ -57859,7 +58240,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation WhLoop -> WhirlpoolActivate with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation WhLoop -> WhirlpoolActivate with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "WhLoop",
@@ -57875,7 +58259,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation WhLoop -> NextWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation WhLoop -> NextWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "NextWh",
@@ -57891,7 +58278,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation NextWh -> WhLoop with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation NextWh -> WhLoop with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "NextWh",
@@ -57907,7 +58297,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation NextWh -> ExitWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation NextWh -> ExitWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "WhirlpoolActivate",
@@ -57923,7 +58316,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation WhirlpoolActivate -> WhPull with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation WhirlpoolActivate -> WhPull with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "WhirlpoolActivate",
@@ -57939,7 +58335,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation WhirlpoolActivate -> LeftWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation WhirlpoolActivate -> LeftWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "WhirlpoolActivate",
@@ -57955,7 +58354,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation WhirlpoolActivate -> SetPWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original jump relation WhirlpoolActivate -> SetPWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "LeftWh",
@@ -57971,7 +58373,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation LeftWh -> WhPull with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation LeftWh -> WhPull with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "LeftWh",
@@ -57987,7 +58392,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation LeftWh -> SetPWh with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation LeftWh -> SetPWh with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "SetPWh",
@@ -58003,7 +58411,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SetPWh -> WhPull with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation SetPWh -> WhPull with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "WhPull",
@@ -58019,7 +58430,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation WhPull -> ImposeGravity with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original jump relation WhPull -> ImposeGravity with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c"
+      ]
     },
     {
       "from": "FlagpoleRoutine",
@@ -58035,7 +58449,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> ExitFlagP with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> ExitFlagP with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FlagpoleRoutine",
@@ -58051,7 +58468,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FlagpoleRoutine",
@@ -58067,7 +58487,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FlagpoleRoutine",
@@ -58083,7 +58506,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> GiveFPScr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> GiveFPScr with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FlagpoleRoutine",
@@ -58099,7 +58525,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> GiveFPScr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> GiveFPScr with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FlagpoleRoutine",
@@ -58115,7 +58544,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "SkipScore",
@@ -58131,7 +58563,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation SkipScore -> FPGfx with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original jump relation SkipScore -> FPGfx with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "GiveFPScr",
@@ -58147,7 +58582,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation GiveFPScr -> AddToScore with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation GiveFPScr -> AddToScore with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "GiveFPScr",
@@ -58163,7 +58601,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation GiveFPScr -> FPGfx with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation GiveFPScr -> FPGfx with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FPGfx",
@@ -58179,7 +58620,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation FPGfx -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation FPGfx -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FPGfx",
@@ -58195,7 +58639,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation FPGfx -> RelativeEnemyPosition with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation FPGfx -> RelativeEnemyPosition with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FPGfx",
@@ -58211,7 +58658,10 @@
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation FPGfx -> FlagpoleGfxHandler with the source condition, scratch/OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM call relation FPGfx -> FlagpoleGfxHandler with the source condition, scratch/OAM handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FPGfx",
@@ -58227,7 +58677,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation FPGfx -> ExitFlagP with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation FPGfx -> ExitFlagP with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "JumpspringHandler",
@@ -58243,7 +58696,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation JumpspringHandler -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation JumpspringHandler -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "JumpspringHandler",
@@ -58259,7 +58715,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation JumpspringHandler -> DrawJSpr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation JumpspringHandler -> DrawJSpr with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "JumpspringHandler",
@@ -58275,7 +58734,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation JumpspringHandler -> DrawJSpr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation JumpspringHandler -> DrawJSpr with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "JumpspringHandler",
@@ -58291,7 +58753,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation JumpspringHandler -> DownJSpr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation JumpspringHandler -> DownJSpr with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "JumpspringHandler",
@@ -58307,7 +58772,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation JumpspringHandler -> PosJSpr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original jump relation JumpspringHandler -> PosJSpr with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "DownJSpr",
@@ -58323,7 +58791,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation DownJSpr -> PosJSpr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation DownJSpr -> PosJSpr with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "PosJSpr",
@@ -58339,7 +58810,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves jumpspring branch relation PosJSpr \u2192 BounceJS with source frame/input/timer ordering."
+      "semanticContract": "Preserves jumpspring branch relation PosJSpr \u2192 BounceJS with source frame/input/timer ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "PosJSpr",
@@ -58355,7 +58829,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves jumpspring branch relation PosJSpr \u2192 BounceJS with source frame/input/timer ordering."
+      "semanticContract": "Preserves jumpspring branch relation PosJSpr \u2192 BounceJS with source frame/input/timer ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "PosJSpr",
@@ -58371,7 +58848,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves jumpspring branch relation PosJSpr \u2192 BounceJS with source frame/input/timer ordering."
+      "semanticContract": "Preserves jumpspring branch relation PosJSpr \u2192 BounceJS with source frame/input/timer ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "PosJSpr",
@@ -58387,7 +58867,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves jumpspring fallthrough relation PosJSpr \u2192 BounceJS with source frame/input/timer ordering."
+      "semanticContract": "Preserves jumpspring fallthrough relation PosJSpr \u2192 BounceJS with source frame/input/timer ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "BounceJS",
@@ -58403,7 +58886,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves jumpspring branch relation BounceJS \u2192 DrawJSpr with source frame/input/timer ordering."
+      "semanticContract": "Preserves jumpspring branch relation BounceJS \u2192 DrawJSpr with source frame/input/timer ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "BounceJS",
@@ -58419,7 +58905,10 @@
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves jumpspring fallthrough relation BounceJS \u2192 DrawJSpr with source frame/input/timer ordering."
+      "semanticContract": "Preserves jumpspring fallthrough relation BounceJS \u2192 DrawJSpr with source frame/input/timer ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "DrawJSpr",
@@ -58435,7 +58924,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DrawJSpr -> RelativeEnemyPosition with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation DrawJSpr -> RelativeEnemyPosition with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "DrawJSpr",
@@ -58451,7 +58943,10 @@
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DrawJSpr -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering."
+      "semanticContract": "Preserves ROM call relation DrawJSpr -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "DrawJSpr",
@@ -58467,7 +58962,10 @@
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DrawJSpr -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
+      "semanticContract": "Preserves original call relation DrawJSpr -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "DrawJSpr",
@@ -58483,7 +58981,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "DrawJSpr",
@@ -58499,7 +59000,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "DrawJSpr",
@@ -58515,7 +59019,10 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "Setup_Vine",
@@ -58531,7 +59038,10 @@
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation Setup_Vine -> NextVO with source offset, ordering and state handoff."
+      "semanticContract": "Preserves original branch relation Setup_Vine -> NextVO with source offset, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/vine.c"
+      ]
     },
     {
       "from": "Setup_Vine",
@@ -58547,7 +59057,10 @@
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation Setup_Vine -> NextVO with source offset, ordering and state handoff."
+      "semanticContract": "Preserves original fallthrough relation Setup_Vine -> NextVO with source offset, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/vine.c"
+      ]
     },
     {
       "from": "VineObjectHandler",
@@ -99202,7 +99715,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation FireballObjCore -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation FireballObjCore -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "FireballObjCore",
@@ -99218,7 +99735,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation FireballObjCore -> ProcFireballs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation FireballObjCore -> ProcFireballs with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "BubbleCheck",
@@ -99234,7 +99755,11 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BubbleCheck -> BublLoop with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation BubbleCheck -> BublLoop with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/bubble.c",
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "RelativeBubblePosition",
@@ -99250,7 +99775,10 @@
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeBubblePosition \u2192 BublLoop restores the caller-visible ObjectOffset and relative coordinates after completion."
+      "semanticContract": "The source return relation RelativeBubblePosition \u2192 BublLoop restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "GetBubbleOffscreenBits",
@@ -99266,7 +99794,10 @@
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation GetBubbleOffscreenBits \u2192 BublLoop exposes the completed offscreen byte and restored caller ObjectOffset."
+      "semanticContract": "The source return relation GetBubbleOffscreenBits \u2192 BublLoop exposes the completed offscreen byte and restored caller ObjectOffset.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "DrawBubble",
@@ -99282,7 +99813,10 @@
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DrawBubble -> BublLoop with source clipping/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM return relation DrawBubble -> BublLoop with source clipping/offscreen predicate, OAM handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_spawn.c"
+      ]
     },
     {
       "from": "ImposeGravity",
@@ -99298,7 +99832,10 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ImposeGravity -> RunFB with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation ImposeGravity -> RunFB with source predicate, carry/order handoff and return semantics.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "MoveObjectHorizontally",
@@ -99314,7 +99851,10 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> RunFB with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> RunFB with source predicate, carry/order handoff and return semantics.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RelativeFireballPosition",
@@ -99330,7 +99870,10 @@
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeFireballPosition \u2192 RunFB restores the caller-visible ObjectOffset and relative coordinates after completion."
+      "semanticContract": "The source return relation RelativeFireballPosition \u2192 RunFB restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "GetFireballOffscreenBits",
@@ -99346,7 +99889,10 @@
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation GetFireballOffscreenBits \u2192 RunFB exposes the completed offscreen byte and restored caller ObjectOffset."
+      "semanticContract": "The source return relation GetFireballOffscreenBits \u2192 RunFB exposes the completed offscreen byte and restored caller ObjectOffset.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "GetFireballBoundBox",
@@ -99362,7 +99908,10 @@
         "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetFireballBoundBox -> RunFB with source offset/mask/page predicate and box-coordinate handoff ordering."
+      "semanticContract": "Preserves original return relation GetFireballBoundBox -> RunFB with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "FireballBGCollision",
@@ -99378,7 +99927,10 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation FireballBGCollision -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation FireballBGCollision -> RunFB with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "FireballEnemyCollision",
@@ -99394,7 +99946,10 @@
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation FireballEnemyCollision -> RunFB with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
+      "semanticContract": "Preserves original return relation FireballEnemyCollision -> RunFB with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "RelativeFireballPosition",
@@ -99410,7 +99965,10 @@
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeFireballPosition \u2192 FireballExplosion restores the caller-visible ObjectOffset and relative coordinates after completion."
+      "semanticContract": "The source return relation RelativeFireballPosition \u2192 FireballExplosion restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "currentSourcePaths": [
+        "src/game/fireball/fireball_core.c"
+      ]
     },
     {
       "from": "DigitsMathRoutine",
@@ -99426,7 +99984,11 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DigitsMathRoutine -> ResGTCtrl with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation DigitsMathRoutine -> ResGTCtrl with its source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/status.c",
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "ForceInjury",
@@ -99442,7 +100004,10 @@
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ForceInjury -> TimeUpOn with source signed/timer/status predicate and current-slot state handoff ordering."
+      "semanticContract": "Preserves original return relation ForceInjury -> TimeUpOn with source signed/timer/status predicate and current-slot state handoff ordering.",
+      "currentSourcePaths": [
+        "src/game/timer.c"
+      ]
     },
     {
       "from": "AddToScore",
@@ -99458,7 +100023,10 @@
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation AddToScore -> GiveFPScr with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation AddToScore -> GiveFPScr with source predicate, ordering and state handoff.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -99474,7 +100042,10 @@
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation GetEnemyOffscreenBits \u2192 FPGfx exposes the completed offscreen byte and restored caller ObjectOffset."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits \u2192 FPGfx exposes the completed offscreen byte and restored caller ObjectOffset.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "RelativeEnemyPosition",
@@ -99490,7 +100061,10 @@
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeEnemyPosition \u2192 FPGfx restores the caller-visible ObjectOffset and relative coordinates after completion."
+      "semanticContract": "The source return relation RelativeEnemyPosition \u2192 FPGfx restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FlagpoleGfxHandler",
@@ -99506,7 +100080,10 @@
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation FlagpoleGfxHandler -> FPGfx with the source condition, scratch/OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM return relation FlagpoleGfxHandler -> FPGfx with the source condition, scratch/OAM handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -99522,7 +100099,10 @@
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation GetEnemyOffscreenBits \u2192 JumpspringHandler exposes the completed offscreen byte and restored caller ObjectOffset."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits \u2192 JumpspringHandler exposes the completed offscreen byte and restored caller ObjectOffset.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "RelativeEnemyPosition",
@@ -99538,7 +100118,10 @@
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeEnemyPosition \u2192 DrawJSpr restores the caller-visible ObjectOffset and relative coordinates after completion."
+      "semanticContract": "The source return relation RelativeEnemyPosition \u2192 DrawJSpr restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "EnemyGfxHandler",
@@ -99554,7 +100137,10 @@
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation EnemyGfxHandler -> DrawJSpr with the source actor predicate, scratch-state handoff and return ordering."
+      "semanticContract": "Preserves ROM return relation EnemyGfxHandler -> DrawJSpr with the source actor predicate, scratch-state handoff and return ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -99570,7 +100156,10 @@
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> DrawJSpr with ID/carry/page-bound predicate and call/return ordering."
+      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> DrawJSpr with ID/carry/page-bound predicate and call/return ordering.",
+      "currentSourcePaths": [
+        "src/game/jumpspring.c"
+      ]
     },
     {
       "from": "RelativeEnemyPosition",
