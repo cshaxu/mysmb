@@ -51,6 +51,26 @@ node is not current-exact merely because its output matches: its owned control
 and feasible material connections must have their own source and route
 evidence.
 
+### Td S9 shared operational preflight
+
+Two fresh, owner-ROM 600-frame routes establish the current cross-width
+comparison baseline before cohort dispositions are changed.  Both use the
+shared native game core, one newly built Win32 x86 recorder and one newly
+built Win32 x64 recorder.  The recorders are byte-identical per route.
+
+| Route | Reference controller script | Native controller script | A labels reached | Comparable result |
+| --- | --- | --- | ---: | --- |
+| Idle title | no buttons | `0:0` | 47 | Work RAM, CIRAM, palette, CPU/visible OAM, audio and all PPU scalars match for 600 samples. |
+| Start/action | `0:0,200:8,201:0,240:128,310:129,340:128` | `0:0,200:16,201:0,240:1,310:129,340:1` | 52 | The same fields match for 600 samples. |
+
+The reference script represents controller serial-bit order; the native
+script represents the decoded saved-button byte.  It is therefore the
+bit-reversal of each reference byte (`08h -> 10h`, `80h -> 01h`,
+`81h -> 81h`).  The comparison excludes only ROM CPU scratch `$0000-$0007`
+and the `$01f0-$01ff` APU/6502 execution-stack window.  These routes provide
+operational evidence only for labels and edges actually reached; no
+needs-evidence status is promoted by this preflight.
+
 ### Cohort allocation
 
 The registry allocates **all 4,342 control edges** once, by the source label
