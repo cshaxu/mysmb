@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M2 T51 S5 Packet
+## M2 Td S9 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T51 S5 — audit, cross-route integration certification |
-| Admission And Approval | Continuing owner-approved M2 completion mandate; zero-credit final S of admitted T51. |
-| Objective | Independently verify the completed shared game graph across native x86/x64 and OpenNT DOS16 delivery paths. |
-| Non-goals | No new ROM-node credit, platform-owned game logic, or behavior rewrite. |
-| Reference Baseline | 1,992 / 1,992 at admission; zero nodes in scope and zero expected matches. |
-| Candidate Proposal | docs/proposals/m2/t51-residual-equivalence-and-certification.md S5. |
-| Files And ABI Surface | Shared game roots, platform adapters, build and test configuration only. |
-| Applicable Rules | Execution, architecture, coding, documentation and source/research policy. |
-| Verification | Full x86/x64 build and CTest, focused ROM routes, platform purity, OpenNT DOS16 compile/link and three artifacts. |
-| Expected Markers | 1,992 / 1,992; no inventory state change; three executable artifacts. |
-| Asset Needs | Owner-local ROM only in ignored build inputs; no raw or derived ROM source enters tracked evidence. |
-| Reporting Requirements | Record test matrix, artifact hashes, failed routes and any deferred issue. |
-| Stop Conditions | Stop on any shared-core semantic discrepancy, test failure, or platform-boundary violation. |
-| Exit Criteria | All matrix lanes pass, M2 conformance remains 1,992 / 1,992, and no unresolved governance or artifact defect remains. |
+| Identifier Mode | M2 Td S9 — current-equivalence re-audit and repair-queue governance |
+| Admission And Approval | Owner-directed re-audit after historical completion accounting proved insufficient to track present end-to-end equivalence. |
+| Objective | Establish current-build, source-order node and edge registries for the complete original ROM graph, then produce an ordered, unnumbered repair queue from confirmed discrepancies. |
+| Non-goals | No gameplay repair, node-credit promotion, platform logic, numeric implementation T allocation, or M2 closure. |
+| Reference Baseline | Historical accounting: 1,992 / 1,992. Current node registry: 0 exact, 0 needs-evidence, 0 mismatch, 1,992 unclassified. Current edge registry: edge total/dispositions are established by the ROM graph extraction before classification. Scope is all labels and extracted edges; expected match delta is zero. |
+| Candidate Proposal | docs/proposals/m2/current-equivalence-reaudit.md. |
+| Files And ABI Surface | Governance states, audit registry, queue and neutral build-local recorder outputs; no production source mutation. |
+| Applicable Rules | Execution, documentation, architecture, coding and source/research policy. |
+| Verification | Node and edge registry integrity/counts; source-order cohort allocation; fresh original-ROM/x86/x64 preflight; platform-purity and documentation governance. |
+| Expected Markers | 1,992 historical labels retained; every label and every extracted ROM graph edge assigned to one audit cohort; no node status or artifact change. |
+| Asset Needs | Owner-local ROM only under ignored build paths; no ROM, generated source, trace or executable is committed. |
+| Reporting Requirements | Report historical count, current node counts and current edge counts separately; after every cohort report exact/needs-evidence/mismatch totals, routes, covered edges, and resulting unnumbered repair candidates. |
+| Stop Conditions | Stop implementation on a node or edge mismatch; record its minimal contiguous chain and continue only independent audit cohorts. |
+| Exit Criteria | Every label and every extracted ROM graph edge has a current-equivalence disposition, every mismatch has an ordered repair candidate, and the registries and queue pass governance review. |
 | Original Owner Request | Faithful original-ROM C logic shared by DOS16 and Win32; DOS16 stays active via OpenNT, without DOSBox. |
-| Similar-Issue Sweep | Check all platform sources for game-state decisions before final closure. |
+| Similar-Issue Sweep | Audit every platform source for game-state decisions and every current mismatch for adjacent owner-chain effects. |
 
 ## Current Technical Baseline
 
@@ -29,16 +29,13 @@ One shared native C90 game implementation serves DOS16 and Win32 x86/x64.
 DOS16 stays active through the existing OpenNT toolchain. Platform adapters do
 not own game logic.
 
-## Current S5 Finding
+## Current Td S9 Preflight
 
-The prior S5 native matrix has x64 and x86 at 218 / 218 and owner-local area
-routing passing on both widths. P17 repairs the block-replacement high-row
-VRAM route: all 32 original snapshots match on each width, including the
-twelve former `$0301/$0306` differences. P18 independently revalidates the
-former jumpspring screen-origin concern through `JumpspringHandler` and the
-shared `OffscreenBoundsCheck`: a page-zero jumpspring remains live against the
-ROM-wrapped `$ff:$b8` left boundary on x86 and x64. The final full matrix must
-be rerun after the remaining shared-core repairs. S5 and M2 remain open because
-the review ledger still contains independently recorded original-ROM
-discrepancies; DOS resource binding is a separate M3 presentation delivery
-requirement.
+T51 S5 found that its historical 1,992 / 1,992 status did not itself express
+fresh full-graph behavior coverage. Its current T31 preflight replay confirms
+the previously recorded PPU and audio residuals are no longer reproducible,
+including the old pipe/vine diagnostic samples; this is retained as route
+evidence only, not a claim that every label is newly audited. Td S9 now turns
+that observation into an explicit whole-graph audit program. DOS resource
+binding remains an M3 presentation requirement and does not change the shared
+logic audit.

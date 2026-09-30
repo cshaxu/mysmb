@@ -36,6 +36,32 @@ The [M2 ROM-node progress report](../states/NODE_PROGRESS.md), its linked invent
 
 Every M2 P continues to refresh and report all three target artifacts: `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`, with their build/validation results. This delivery requirement is additive to, and cannot be substituted for, the node accounting and ordinary P evidence.
 
+### Current-equivalence re-audit
+
+Historical `ROM-match complete` accounting and a current-build equivalence
+result are distinct facts. When a milestone-wide re-audit is active, reports
+must state both values and must not call the historical completion numerator a
+current end-to-end verification result. The current-equivalence registry owns
+one of four states for every inventory label: `unclassified`, `exact`,
+`needs-evidence`, or `mismatch`. A node enters `exact` only after its current
+source audit and a current original-ROM route prove the required branch,
+read/write, table and output contract. Route equality alone is evidence for
+the executed chain; it does not classify unobserved labels.
+
+The re-audit proceeds in source-order cohorts. Each cohort first records the
+current shared-C owner and source dependency graph, then runs the original ROM
+and current x86/x64 records under the same fixture. It records every compared
+field and every explicit ABI exclusion. The graph audit is an equal acceptance
+track: every original control edge (call, tail jump, branch, fall-through,
+return and vector dispatch) and every material game-state producer-to-consumer
+edge must have a current C counterpart and a disposition. A route replay marks
+only the nodes and edges it actually observes; it never infers coverage of an
+unobserved graph connection. `mismatch` results become unnumbered queue
+candidates grouped by their smallest contiguous shared-owner chain; only an
+admitted later implementation task receives a numeric T/S identifier. No code
+repair, node promotion, or "all complete" conclusion may be made from the
+re-audit's planning pass alone.
+
 Before each M2 S, report both the number of unique labels in scope and the number expected to become complete; list both sets by exact inventory name, including incoming status. The expected set must be a subset of scope and exclude already completed nodes. The maximum closing numerator is the incoming completed count plus that expected count. A validation queue size is not an S estimate. Run `tools/Verify-NodeProgress.ps1 -AdmissionPath build/<task>/node-admission.json` and copy its named/countable result into the proposal and packet. The JSON fields are `baseline`, `total`, `scope` (label array), `expectedMatches` (label array), `maximumComplete`, `focusedTests` (test-name array), and `romRoute` (reproducible route description). Explicit empty arrays and zero expected matches are valid for mapping-only work. Closure reports expected versus actual labels/counts, explains misses and transfers, and updates the canonical rows before rerunning the gate.
 
 ## M2 Chain-Based S Delivery

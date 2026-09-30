@@ -12,6 +12,13 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
+Before any new numeric M2 repair task, the active
+[current-equivalence re-audit](../proposals/m2/current-equivalence-reaudit.md)
+classifies the present build in original ROM source order. Its confirmed
+mismatches become ordered but unnumbered repair candidates. This prevents
+historical diagnostic debt from being selected piecemeal and preserves numeric
+T allocation for accepted implementation work.
+
 [T42](../history/M2-T42-shared-collision-and-platforms.md#t42-closure) is closed:
 98/98 scoped nodes, total1,382/1,992. Its nine chains end at
 GetEnemyBoundBoxOfsArg. Final actual actor matches21,544/29,434; unresolved

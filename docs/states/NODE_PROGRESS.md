@@ -17,7 +17,11 @@ the conformance counts below.
 | Open / unmatched | 0 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,992 / 1,992 (100.00%)**. No inventory mapping remains incomplete.
+Historical node-accounting conformance is **1,992 / 1,992 (100.00%)**. This
+is not a claim that the current build has completed a fresh end-to-end audit of
+all 1,992 labels. The separate current-equivalence baseline and its
+source-order cohort results are authoritative in
+[M2 current-equivalence re-audit](M2_CURRENT_EQUIVALENCE.md).
 
 Latest task review: [T51 S5 P17](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p17-block-replacement-vram-high-row-repair) repairs the shared block-replacement high-row VRAM route. It grants no additional node credit and preserves the independently recorded ROM-route discrepancies that remain under review.
 
