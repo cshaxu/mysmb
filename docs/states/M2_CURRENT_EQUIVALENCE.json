@@ -28198,131 +28198,170 @@
       "label": "ProcessPlayerAction",
       "asmLine": 14610,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the graphics-action family by Player_State before testing swimming, crouching and ground movement."
     },
     {
       "label": "ProcOnGroundActs",
       "asmLine": 14626,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects crouch, stand, walk/run or skid using crouching, horizontal input/speed, absolute speed and moving/facing-direction relation."
     },
     {
       "label": "NonAnimatedActs",
       "asmLine": 14642,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies the size action offset, clears PlayerAnimCtrl and returns the selected PlayerGfxTblOffsets entry."
     },
     {
       "label": "ActionFalling",
       "asmLine": 14649,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects walk/run action with size adjustment and obtains the retained current animation offset without advancing it."
     },
     {
       "label": "ActionWalkRun",
       "asmLine": 14654,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects walk/run action with size adjustment and enters the four-frame animation path."
     },
     {
       "label": "ActionClimbing",
       "asmLine": 14659,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects climbing action; zero vertical speed is non-animated while nonzero speed enters the three-frame animation path."
     },
     {
       "label": "ActionSwimming",
       "asmLine": 14666,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects swimming action and advances animation only when jump/swim timer, animation control or A-button predicate requires it."
     },
     {
       "label": "GetCurrentAnimOffset",
       "asmLine": 14676,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads PlayerAnimCtrl and tail-transfers to the table-offset calculation."
     },
     {
       "label": "FourFrameExtent",
       "asmLine": 14680,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets an exclusive three-frame upper bound before common animation processing."
     },
     {
       "label": "ThreeFrameExtent",
       "asmLine": 14684,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets an exclusive two-frame upper bound before common animation processing."
     },
     {
       "label": "AnimationControl",
       "asmLine": 14687,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Obtains the current tile-table offset first, then only on expired timer reloads the timer and advances/wraps PlayerAnimCtrl."
     },
     {
       "label": "SetAnimC",
       "asmLine": 14701,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the bounded next PlayerAnimCtrl before restoring the already-selected graphics offset."
     },
     {
       "label": "ExAnimC",
       "asmLine": 14702,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the selected graphics offset without changing it after timer/animation handling."
     },
     {
       "label": "GetGfxOffsetAdder",
@@ -79210,10 +79249,13 @@
       "instruction": "beq",
       "id": "control-03066",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcessPlayerAction → ActionClimbing preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcessPlayerAction",
@@ -79223,10 +79265,13 @@
       "instruction": "beq",
       "id": "control-03067",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcessPlayerAction → ActionFalling preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcessPlayerAction",
@@ -79236,10 +79281,13 @@
       "instruction": "bne",
       "id": "control-03068",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcessPlayerAction → ProcOnGroundActs preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcessPlayerAction",
@@ -79249,10 +79297,13 @@
       "instruction": "bne",
       "id": "control-03069",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcessPlayerAction → ActionSwimming preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcessPlayerAction",
@@ -79262,10 +79313,13 @@
       "instruction": "bne",
       "id": "control-03070",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcessPlayerAction → NonAnimatedActs preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcessPlayerAction",
@@ -79275,10 +79329,13 @@
       "instruction": "jmp",
       "id": "control-03071",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer ProcessPlayerAction → NonAnimatedActs preserves the selected action and does not resume the local block."
     },
     {
       "from": "ProcOnGroundActs",
@@ -79288,10 +79345,13 @@
       "instruction": "bne",
       "id": "control-03072",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcOnGroundActs → NonAnimatedActs preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcOnGroundActs",
@@ -79301,10 +79361,13 @@
       "instruction": "beq",
       "id": "control-03073",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcOnGroundActs → NonAnimatedActs preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcOnGroundActs",
@@ -79314,10 +79377,13 @@
       "instruction": "bcc",
       "id": "control-03074",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcOnGroundActs → ActionWalkRun preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcOnGroundActs",
@@ -79327,10 +79393,13 @@
       "instruction": "bne",
       "id": "control-03075",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ProcOnGroundActs → ActionWalkRun preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ProcOnGroundActs",
@@ -79340,10 +79409,13 @@
       "instruction": "iny",
       "id": "control-03076",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ProcOnGroundActs → NonAnimatedActs preserves the preceding action/animation state writes before entering the successor."
     },
     {
       "from": "NonAnimatedActs",
@@ -79353,10 +79425,13 @@
       "instruction": "jsr",
       "id": "control-03077",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call NonAnimatedActs → GetGfxOffsetAdder obtains or processes the selected graphics state before the caller successor executes."
     },
     {
       "from": "ActionFalling",
@@ -79366,10 +79441,13 @@
       "instruction": "jsr",
       "id": "control-03078",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call ActionFalling → GetGfxOffsetAdder obtains or processes the selected graphics state before the caller successor executes."
     },
     {
       "from": "ActionFalling",
@@ -79379,10 +79457,13 @@
       "instruction": "jmp",
       "id": "control-03079",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer ActionFalling → GetCurrentAnimOffset preserves the selected action and does not resume the local block."
     },
     {
       "from": "ActionWalkRun",
@@ -79392,10 +79473,13 @@
       "instruction": "jsr",
       "id": "control-03080",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call ActionWalkRun → GetGfxOffsetAdder obtains or processes the selected graphics state before the caller successor executes."
     },
     {
       "from": "ActionWalkRun",
@@ -79405,10 +79489,13 @@
       "instruction": "jmp",
       "id": "control-03081",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer ActionWalkRun → FourFrameExtent preserves the selected action and does not resume the local block."
     },
     {
       "from": "ActionClimbing",
@@ -79418,10 +79505,13 @@
       "instruction": "beq",
       "id": "control-03082",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ActionClimbing → NonAnimatedActs preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ActionClimbing",
@@ -79431,10 +79521,13 @@
       "instruction": "jsr",
       "id": "control-03083",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call ActionClimbing → GetGfxOffsetAdder obtains or processes the selected graphics state before the caller successor executes."
     },
     {
       "from": "ActionClimbing",
@@ -79444,10 +79537,13 @@
       "instruction": "jmp",
       "id": "control-03084",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer ActionClimbing → ThreeFrameExtent preserves the selected action and does not resume the local block."
     },
     {
       "from": "ActionSwimming",
@@ -79457,10 +79553,13 @@
       "instruction": "jsr",
       "id": "control-03085",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call ActionSwimming → GetGfxOffsetAdder obtains or processes the selected graphics state before the caller successor executes."
     },
     {
       "from": "ActionSwimming",
@@ -79470,10 +79569,13 @@
       "instruction": "bne",
       "id": "control-03086",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ActionSwimming → FourFrameExtent preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ActionSwimming",
@@ -79483,10 +79585,13 @@
       "instruction": "bcs",
       "id": "control-03087",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ActionSwimming → FourFrameExtent preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "ActionSwimming",
@@ -79496,10 +79601,13 @@
       "instruction": "bcs",
       "id": "control-03088",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ActionSwimming → GetCurrentAnimOffset preserves the preceding action/animation state writes before entering the successor."
     },
     {
       "from": "GetCurrentAnimOffset",
@@ -79509,10 +79617,13 @@
       "instruction": "jmp",
       "id": "control-03089",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer GetCurrentAnimOffset → GetOffsetFromAnimCtrl preserves the selected action and does not resume the local block."
     },
     {
       "from": "FourFrameExtent",
@@ -79522,10 +79633,13 @@
       "instruction": "jmp",
       "id": "control-03090",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer FourFrameExtent → AnimationControl preserves the selected action and does not resume the local block."
     },
     {
       "from": "ThreeFrameExtent",
@@ -79535,10 +79649,13 @@
       "instruction": "lda",
       "id": "control-03091",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ThreeFrameExtent → AnimationControl preserves the preceding action/animation state writes before entering the successor."
     },
     {
       "from": "AnimationControl",
@@ -79548,10 +79665,13 @@
       "instruction": "jsr",
       "id": "control-03092",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call AnimationControl → GetCurrentAnimOffset obtains or processes the selected graphics state before the caller successor executes."
     },
     {
       "from": "AnimationControl",
@@ -79561,10 +79681,13 @@
       "instruction": "bne",
       "id": "control-03093",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch AnimationControl → ExAnimC preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "AnimationControl",
@@ -79574,10 +79697,13 @@
       "instruction": "bcc",
       "id": "control-03094",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch AnimationControl → SetAnimC preserves its action/state predicate and happens before its alternative path."
     },
     {
       "from": "AnimationControl",
@@ -79587,10 +79713,13 @@
       "instruction": "lda",
       "id": "control-03095",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through AnimationControl → SetAnimC preserves the preceding action/animation state writes before entering the successor."
     },
     {
       "from": "SetAnimC",
@@ -79600,10 +79729,13 @@
       "instruction": "sta",
       "id": "control-03096",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SetAnimC → ExAnimC preserves the preceding action/animation state writes before entering the successor."
     },
     {
       "from": "GetGfxOffsetAdder",
@@ -93189,10 +93321,13 @@
       "instruction": "rts/rti",
       "id": "control-04034",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation ProcessPlayerAction → FindPlayerAction returns the selected graphics offset after the source action/animation effects complete."
     },
     {
       "from": "HandleChangeSize",
@@ -93367,10 +93502,13 @@
       "instruction": "rts/rti",
       "id": "control-04047",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_process_player_action control flow and helper calls",
+      "semanticEvidence": [
+        "Td S9 K18 player-action graphics-selection node-semantics and independent control-edge audit: SMB1 lines 14610-14703 compared with shared src/game/oam/player_gfx.c mysmb_oam_process_player_action and helpers; controlled original-ROM/x86/x64 climbing, falling, jumping, swimming, crouching, standing, walking, skidding and animation-timer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetCurrentAnimOffset → AnimationControl returns the selected graphics offset after the source action/animation effects complete."
     },
     {
       "from": "GetProperObjOffset",

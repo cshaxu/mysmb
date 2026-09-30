@@ -1280,3 +1280,9 @@ branches.
 - Node-semantics result: five labels moved from `unclassified` to `needs-evidence`: `IntermediatePlayerData`, `DrawPlayer_Intermediate`, `PIntLoop`, `RenderPlayerSub`, and `DrawPlayerLoop`.
 - Independent integration result: 10 outgoing control relations and the feasible `IntermediatePlayerData → DrawPlayer_Intermediate` material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K18 — player-action graphics-selection audit
+
+- Source range: `ProcessPlayerAction` through `ExAnimC` (`SMBDIS.ASM` lines 14610–14703).
+- Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`: state dispatch, ground-action dispatch, non-animated selection, falling/walk/climb/swim action paths and the common animation control sequence.
+- Independent control integration result: 33 outgoing relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 route evidence remains required for every action family and timer boundary.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
