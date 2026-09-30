@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 98,
+    "enumeratedCount": 100,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1385,6 +1385,34 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00099",
+      "producer": "HammerEnemyOfsData",
+      "consumer": "SpawnHammerObj",
+      "storage": "pseudo-random selected parent-slot table",
+      "feasiblePath": "SpawnHammerObj reads HammerEnemyOfsData[Y] before testing Enemy_Flag.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_hammer_enemy_offsets[slot]",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00100",
+      "producer": "HammerXSpdData",
+      "consumer": "SetHSpd",
+      "storage": "parent-moving-direction indexed hammer speed table",
+      "feasiblePath": "SetHSpd decrements Enemy_MovingDir before reading HammerXSpdData.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_hammer_x_speeds[direction]",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -11727,101 +11755,131 @@
       "label": "HammerEnemyOfsData",
       "asmLine": 6891,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds each random hammer slot to its required parent enemy slot."
     },
     {
       "label": "HammerXSpdData",
       "asmLine": 6895,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds parent direction to hammer horizontal speed $10/$f0."
     },
     {
       "label": "SpawnHammerObj",
       "asmLine": 6898,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the source random selector, rejects occupied misc/parent slots, then preserves carry-result allocation semantics."
     },
     {
       "label": "SetMOfs",
       "asmLine": 6904,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the selected misc slot before parent-flag eligibility."
     },
     {
       "label": "NoHammer",
       "asmLine": 6919,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns the source carry-clear failure result."
     },
     {
       "label": "ProcHammerObj",
       "asmLine": 6928,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Partitions timer and masked hammer state before gravity, setup or common tail."
     },
     {
       "label": "SetHSpd",
       "asmLine": 6952,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets vertical speed, clears parent d3 and selects horizontal speed from parent direction."
     },
     {
       "label": "SetHPos",
       "asmLine": 6962,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements state and initializes carry-correct hammer position from parent coordinates."
     },
     {
       "label": "RunAllH",
       "asmLine": 6977,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs hammer-player collision after movement."
     },
     {
       "label": "RunHSubs",
       "asmLine": 6978,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared hammer, world and OAM core",
+      "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs offscreen, relative, bounding box and draw children in source order."
     },
     {
       "label": "CoinBlock",
@@ -43513,10 +43571,13 @@
       "instruction": "bne",
       "id": "control-01224",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SpawnHammerObj -> SetMOfs with source predicate, ordering and state handoff."
     },
     {
       "from": "SpawnHammerObj",
@@ -43526,10 +43587,13 @@
       "instruction": "and",
       "id": "control-01225",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SpawnHammerObj -> SetMOfs with source predicate, ordering and state handoff."
     },
     {
       "from": "SetMOfs",
@@ -43539,10 +43603,13 @@
       "instruction": "bne",
       "id": "control-01226",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetMOfs -> NoHammer with source predicate, ordering and state handoff."
     },
     {
       "from": "SetMOfs",
@@ -43552,10 +43619,13 @@
       "instruction": "bne",
       "id": "control-01227",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetMOfs -> NoHammer with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcHammerObj",
@@ -43565,10 +43635,13 @@
       "instruction": "bne",
       "id": "control-01228",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcHammerObj -> RunHSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcHammerObj",
@@ -43578,10 +43651,13 @@
       "instruction": "beq",
       "id": "control-01229",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcHammerObj -> SetHSpd with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcHammerObj",
@@ -43591,10 +43667,13 @@
       "instruction": "bcs",
       "id": "control-01230",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcHammerObj -> SetHPos with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcHammerObj",
@@ -43604,10 +43683,13 @@
       "instruction": "jsr",
       "id": "control-01231",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ProcHammerObj -> ImposeGravity with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcHammerObj",
@@ -43617,10 +43699,13 @@
       "instruction": "jsr",
       "id": "control-01232",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ProcHammerObj -> MoveObjectHorizontally with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcHammerObj",
@@ -43630,10 +43715,13 @@
       "instruction": "jmp",
       "id": "control-01233",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ProcHammerObj -> RunAllH with source predicate, ordering and state handoff."
     },
     {
       "from": "SetHSpd",
@@ -43643,10 +43731,13 @@
       "instruction": "sta",
       "id": "control-01234",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetHSpd -> SetHPos with source predicate, ordering and state handoff."
     },
     {
       "from": "SetHPos",
@@ -43656,10 +43747,13 @@
       "instruction": "bne",
       "id": "control-01235",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetHPos -> RunHSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "SetHPos",
@@ -43669,10 +43763,13 @@
       "instruction": "bne",
       "id": "control-01236",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetHPos -> RunAllH with source predicate, ordering and state handoff."
     },
     {
       "from": "RunAllH",
@@ -43682,10 +43779,13 @@
       "instruction": "jsr",
       "id": "control-01237",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunAllH -> PlayerHammerCollision with source predicate, ordering and state handoff."
     },
     {
       "from": "RunAllH",
@@ -43695,10 +43795,13 @@
       "instruction": "jsr",
       "id": "control-01238",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunAllH -> RunHSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "RunHSubs",
@@ -43708,10 +43811,13 @@
       "instruction": "jsr",
       "id": "control-01239",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunHSubs -> GetMiscOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "RunHSubs",
@@ -43721,10 +43827,13 @@
       "instruction": "jsr",
       "id": "control-01240",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunHSubs -> RelativeMiscPosition with source predicate, ordering and state handoff."
     },
     {
       "from": "RunHSubs",
@@ -43734,10 +43843,13 @@
       "instruction": "jsr",
       "id": "control-01241",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunHSubs -> GetMiscBoundBox with source predicate, ordering and state handoff."
     },
     {
       "from": "RunHSubs",
@@ -43747,10 +43859,13 @@
       "instruction": "jsr",
       "id": "control-01242",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunHSubs -> DrawHammer with source predicate, ordering and state handoff."
     },
     {
       "from": "CoinBlock",
@@ -76284,10 +76399,13 @@
       "instruction": "rts/rti",
       "id": "control-03707",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ImposeGravity -> ProcHammerObj with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -76297,10 +76415,13 @@
       "instruction": "rts/rti",
       "id": "control-03708",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> ProcHammerObj with source predicate, ordering and state handoff."
     },
     {
       "from": "PlayerHammerCollision",
@@ -76310,10 +76431,13 @@
       "instruction": "rts/rti",
       "id": "control-03709",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerHammerCollision -> RunAllH with source predicate, ordering and state handoff."
     },
     {
       "from": "GetMiscOffscreenBits",
@@ -76323,10 +76447,13 @@
       "instruction": "rts/rti",
       "id": "control-03710",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetMiscOffscreenBits -> RunHSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeMiscPosition",
@@ -76336,10 +76463,13 @@
       "instruction": "rts/rti",
       "id": "control-03711",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeMiscPosition -> RunHSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "GetMiscBoundBox",
@@ -76349,10 +76479,13 @@
       "instruction": "rts/rti",
       "id": "control-03712",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetMiscBoundBox -> RunHSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "DrawHammer",
@@ -76362,10 +76495,13 @@
       "instruction": "rts/rti",
       "id": "control-03713",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawHammer -> RunHSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "FindEmptyMiscSlot",
@@ -76414,10 +76550,13 @@
       "instruction": "rts/rti",
       "id": "control-03717",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcHammerObj -> MiscLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "ImposeGravity",
@@ -77821,10 +77960,13 @@
       "instruction": "rts/rti",
       "id": "control-03825",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SpawnHammerObj -> ChkJH with source predicate, ordering and state handoff."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -78237,10 +78379,13 @@
       "instruction": "rts/rti",
       "id": "control-03857",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SpawnHammerObj -> HammerChk with source predicate, ordering and state handoff."
     },
     {
       "from": "InitVStf",
