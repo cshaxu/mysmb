@@ -296,3 +296,13 @@ directly into `MoveBubl` at `$b713`: with this fixture's random selector one,
 the initial Y `$08` borrows under force `$50`, compares below `$20`, and writes
 the offscreen sentinel `$f8`. The old test expected the pre-fall-through `$08`.
 The corrected x86/x64 focused test passes; S5 remains open for eight failures.
+
+### S5 P4: player bounding-box initialization order
+
+No production behavior changed. The legacy smoke entered `PlayerCtrlRoutine`
+without the preceding `InitializeArea -> GetScreenPosition` route. The ROM
+`GetScreenPosition` at `$b038` derives `ScreenRight_X_Pos` and
+`ScreenRight_PageLoc`; `ChkPOffscr` reads those bytes before relative position
+and `BoundingBoxCore`. Initializing that source precondition restores the
+expected control-one box `$2b,$c4,$35,$d0`. The focused x86/x64 test passes;
+S5 remains open for seven failures.

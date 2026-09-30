@@ -14,6 +14,9 @@ int main(void)
     game.ram[0x00ceU] = 0xb0U;
     game.ram[0x0716U] = 1U;
     game.ram[0x0754U] = 1U;
+    /* InitializeArea calls GetScreenPosition before PlayerCtrlRoutine.
+     * The shared clamp route reads both derived right-edge bytes. */
+    mysmb_player_get_screen_position(&game);
     mysmb_player_step(&game, 0U);
     if (game.ram[0x0499U] != 1U || game.ram[0x04acU] != 0x2bU ||
         game.ram[0x04adU] != 0xc4U || game.ram[0x04aeU] != 0x35U ||
