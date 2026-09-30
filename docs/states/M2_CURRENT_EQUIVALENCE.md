@@ -50,24 +50,17 @@ mandatory normalization step of the source-order audit: no unresolved aggregate
 description can receive current-exact credit until its concrete shared-C
 owner/data consumer and integration counterpart are recorded.
 
-Cohorts A through J are now normalized: all 1,552 nodes, 3,512 control edges
-and 422 material edges in those source-order slices carry validated
-`currentSourcePaths` entries.  Cohort D includes the 68 `E_*` and `L_*` area
-PRG-data labels: `area_data.c` selects their ROM pointer, then `enemy/stream.c`
-consumes `E_*` enemy records and `area.c` consumes `L_*` area-object records.
-Cohort E resolves the game-loop and player-control families to their concrete
-shared owners: dispatcher, engine, scroll, entry, player-control, transition,
-mode, movement and end-level units.  Cohort F records the continuous player
-movement/physics chain in `player_movement.c` and `player.c`, including its
-force, limit, friction and animation-table consumers.  Cohort G records the
-fireball/bubble, timer, whirlpool, flagpole, jumpspring and vine chains in
-their concrete shared owners.  Cohort H maps the object-generation, block,
-score and movement/gravity families to their shared C owners.  Cohort I maps
-enemy loop/stream/init, frenzy, group and special-dispatch chains to their
-concrete shared owners.  Cohort J maps the remaining enemy-state, collision,
-player-terrain and firebar families to their concrete shared owners.  This
-records only where the current shared implementation resides; it does not
-change those cohorts' semantic dispositions or their pending route obligations.
+All source-order cohorts A through N are now normalized: every one of the
+1,992 nodes, 4,342 control edges and 487 proven material edges carries a
+validated `currentSourcePaths` entry.  Area-stream labels remain ROM data:
+`area_data.c` chooses each stream pointer, `enemy/stream.c` consumes `E_*`
+enemy records and `area.c` consumes `L_*` area-object records.  The rest map
+to their concrete shared-game owners, including dispatch, player state,
+objects, area parsing, enemy systems, OAM rendering, collision and audio.
+The registry verifier now requires a non-empty, existing `src/...` C path for
+every record.  This closes the source-resolvability metadata gap only; it does
+not change any semantic disposition or satisfy any pending ROM-route
+obligation.
 
 ## Current evidence boundary
 

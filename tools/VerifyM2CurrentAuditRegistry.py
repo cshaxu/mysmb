@@ -14,8 +14,8 @@ def require(condition, message):
 
 def source_paths(record, identity, repository_root):
     paths = record.get("currentSourcePaths")
-    if paths is None:
-        return
+    require(paths is not None,
+            "%s has no currentSourcePaths entry" % identity)
     require(isinstance(paths, list) and paths,
             "%s has an empty currentSourcePaths list" % identity)
     require(len(paths) == len(set(paths)),
