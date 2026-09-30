@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 91,
+    "enumeratedCount": 94,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1287,6 +1287,48 @@
       "semanticContract": "Preserves the source table selection and consumer write/order.",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00092",
+      "producer": "FlagpoleScoreMods",
+      "consumer": "GiveFPScr",
+      "storage": "FlagpoleScore-indexed score-modifier table",
+      "feasiblePath": "GiveFPScr indexes FlagpoleScoreMods before AddToScore.",
+      "status": "needs-evidence",
+      "currentCounterpart": "score_modifiers[score_index]",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00093",
+      "producer": "FlagpoleScoreDigits",
+      "consumer": "GiveFPScr",
+      "storage": "FlagpoleScore-indexed digit-offset table",
+      "feasiblePath": "GiveFPScr indexes FlagpoleScoreDigits before writing DigitModifier.",
+      "status": "needs-evidence",
+      "currentCounterpart": "score_digits[score_index]",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00094",
+      "producer": "Jumpspring_Y_PosData",
+      "consumer": "JumpspringHandler",
+      "storage": "animation-frame-indexed spring Y-delta table",
+      "feasiblePath": "JumpspringHandler derives Y from JumpspringAnimCtrl-1 before adding the table byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "y_position[frame]",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -10988,231 +11030,300 @@
       "label": "RunGameTimer",
       "asmLine": 6461,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves title/engine/death/Y/timer gates, 100 music gate, BCD decrement, status update and zero-time death order."
     },
     {
       "label": "ResGTCtrl",
       "asmLine": 6486,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reloads control timer, writes final-digit modifier, performs BCD math then queues timer status."
     },
     {
       "label": "TimeUpOn",
       "asmLine": 6494,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses zero accumulator to reset PlayerStatus, forces injury, then increments expiration flag."
     },
     {
       "label": "ExGTimer",
       "asmLine": 6497,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without timer mutation on every source gate."
     },
     {
       "label": "WarpZoneObject",
       "asmLine": 6501,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ScrollLock and bitwise player Y/high gate before incrementing WarpZoneControl and erasing the source object."
     },
     {
       "label": "ProcessWhirlpools",
       "asmLine": 6519,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Scans five data slots descending and compares page/position using source SBC sign semantics."
     },
     {
       "label": "WhLoop",
       "asmLine": 6526,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds right extent/page with low-byte carry and selects only an in-range whirlpool."
     },
     {
       "label": "NextWh",
       "asmLine": 6546,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements to the next slot or exits after slot zero."
     },
     {
       "label": "ExitWh",
       "asmLine": 6548,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after non-water, timer or exhausted-slot gates."
     },
     {
       "label": "WhirlpoolActivate",
       "asmLine": 6550,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds carry-correct center and applies horizontal pull only on alternate frames."
     },
     {
       "label": "LeftWh",
       "asmLine": 6577,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies rightward pull only with source collision-bit permission."
     },
     {
       "label": "SetPWh",
       "asmLine": 6586,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores carry-correct player page after horizontal pull."
     },
     {
       "label": "WhPull",
       "asmLine": 6587,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets Whirlpool_Flag and tail-enters player gravity with force $10 and maximum $01."
     },
     {
       "label": "FlagpoleScoreMods",
       "asmLine": 6598,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds flag score indices to score modifier bytes."
     },
     {
       "label": "FlagpoleScoreDigits",
       "asmLine": 6601,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds flag score indices to score digit offsets."
     },
     {
       "label": "FlagpoleRoutine",
       "asmLine": 6604,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves slot-five setup, slide/climb gates, carry-sensitive flag/floatey motion, score handoff and graphics order."
     },
     {
       "label": "SkipScore",
       "asmLine": 6635,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips score mutation and enters graphics."
     },
     {
       "label": "GiveFPScr",
       "asmLine": 6636,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes indexed score modifier, adds score, sets end-level subroutine then enters graphics."
     },
     {
       "label": "FPGfx",
       "asmLine": 6643,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes flag offscreen bits, relative position and flag graphics in source order."
     },
     {
       "label": "ExitFlagP",
       "asmLine": 6646,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after no-flag or graphics path."
     },
     {
       "label": "Jumpspring_Y_PosData",
       "asmLine": 6650,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds animation frame index to fixed spring Y deltas."
     },
     {
       "label": "JumpspringHandler",
       "asmLine": 6653,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves timer/animation gates, frame direction, A-edge force override, bounce handoff and animation cadence."
     },
     {
       "label": "DownJSpr",
       "asmLine": 6667,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves player Y up two then shares spring-position work."
     },
     {
       "label": "PosJSpr",
@@ -11238,11 +11349,14 @@
       "label": "DrawJSpr",
       "asmLine": 6688,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Draws/checks spring before timer-gated animation advance."
     },
     {
       "label": "ExJSpring",
@@ -41356,10 +41470,13 @@
       "instruction": "beq",
       "id": "control-01103",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -41369,10 +41486,13 @@
       "instruction": "bcc",
       "id": "control-01104",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -41382,10 +41502,13 @@
       "instruction": "beq",
       "id": "control-01105",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -41395,10 +41518,13 @@
       "instruction": "bcs",
       "id": "control-01106",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -41408,10 +41534,13 @@
       "instruction": "bne",
       "id": "control-01107",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -41421,10 +41550,13 @@
       "instruction": "beq",
       "id": "control-01108",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunGameTimer -> TimeUpOn with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -41434,10 +41566,13 @@
       "instruction": "bne",
       "id": "control-01109",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -41447,10 +41582,13 @@
       "instruction": "bne",
       "id": "control-01110",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -41460,10 +41598,13 @@
       "instruction": "sta",
       "id": "control-01111",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff."
     },
     {
       "from": "ResGTCtrl",
@@ -41473,10 +41614,13 @@
       "instruction": "jsr",
       "id": "control-01112",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ResGTCtrl -> DigitsMathRoutine with its source predicate, ordering and state handoff."
     },
     {
       "from": "ResGTCtrl",
@@ -41486,10 +41630,13 @@
       "instruction": "jmp",
       "id": "control-01113",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ResGTCtrl -> PrintStatusBarNumbers with its source predicate, ordering and state handoff."
     },
     {
       "from": "TimeUpOn",
@@ -41499,10 +41646,13 @@
       "instruction": "jsr",
       "id": "control-01114",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation TimeUpOn -> ForceInjury with its source predicate, ordering and state handoff."
     },
     {
       "from": "TimeUpOn",
@@ -41512,10 +41662,13 @@
       "instruction": "inc",
       "id": "control-01115",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation TimeUpOn -> ExGTimer with its source predicate, ordering and state handoff."
     },
     {
       "from": "WarpZoneObject",
@@ -41525,10 +41678,13 @@
       "instruction": "beq",
       "id": "control-01116",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WarpZoneObject -> ExGTimer with its source predicate, ordering and state handoff."
     },
     {
       "from": "WarpZoneObject",
@@ -41538,10 +41694,13 @@
       "instruction": "bne",
       "id": "control-01117",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WarpZoneObject -> ExGTimer with its source predicate, ordering and state handoff."
     },
     {
       "from": "WarpZoneObject",
@@ -41551,10 +41710,13 @@
       "instruction": "jmp",
       "id": "control-01118",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation WarpZoneObject -> EraseEnemyObject with its source predicate, ordering and state handoff."
     },
     {
       "from": "ProcessWhirlpools",
@@ -41564,10 +41726,13 @@
       "instruction": "bne",
       "id": "control-01119",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcessWhirlpools -> ExitWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "ProcessWhirlpools",
@@ -41577,10 +41742,13 @@
       "instruction": "bne",
       "id": "control-01120",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcessWhirlpools -> ExitWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "ProcessWhirlpools",
@@ -41590,10 +41758,13 @@
       "instruction": "ldy",
       "id": "control-01121",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcessWhirlpools -> WhLoop with its source predicate, ordering and state handoff."
     },
     {
       "from": "WhLoop",
@@ -41603,10 +41774,13 @@
       "instruction": "beq",
       "id": "control-01122",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WhLoop -> NextWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "WhLoop",
@@ -41616,10 +41790,13 @@
       "instruction": "bmi",
       "id": "control-01123",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WhLoop -> NextWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "WhLoop",
@@ -41629,10 +41806,13 @@
       "instruction": "bpl",
       "id": "control-01124",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WhLoop -> WhirlpoolActivate with its source predicate, ordering and state handoff."
     },
     {
       "from": "WhLoop",
@@ -41642,10 +41822,13 @@
       "instruction": "bpl",
       "id": "control-01125",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation WhLoop -> NextWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "NextWh",
@@ -41655,10 +41838,13 @@
       "instruction": "bpl",
       "id": "control-01126",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation NextWh -> WhLoop with its source predicate, ordering and state handoff."
     },
     {
       "from": "NextWh",
@@ -41668,10 +41854,13 @@
       "instruction": "bpl",
       "id": "control-01127",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation NextWh -> ExitWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "WhirlpoolActivate",
@@ -41681,10 +41870,13 @@
       "instruction": "bcc",
       "id": "control-01128",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WhirlpoolActivate -> WhPull with its source predicate, ordering and state handoff."
     },
     {
       "from": "WhirlpoolActivate",
@@ -41694,10 +41886,13 @@
       "instruction": "bpl",
       "id": "control-01129",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WhirlpoolActivate -> LeftWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "WhirlpoolActivate",
@@ -41707,10 +41902,13 @@
       "instruction": "jmp",
       "id": "control-01130",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation WhirlpoolActivate -> SetPWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "LeftWh",
@@ -41720,10 +41918,13 @@
       "instruction": "bcc",
       "id": "control-01131",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LeftWh -> WhPull with its source predicate, ordering and state handoff."
     },
     {
       "from": "LeftWh",
@@ -41733,10 +41934,13 @@
       "instruction": "adc",
       "id": "control-01132",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LeftWh -> SetPWh with its source predicate, ordering and state handoff."
     },
     {
       "from": "SetPWh",
@@ -41746,10 +41950,13 @@
       "instruction": "sta",
       "id": "control-01133",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetPWh -> WhPull with its source predicate, ordering and state handoff."
     },
     {
       "from": "WhPull",
@@ -41759,10 +41966,13 @@
       "instruction": "jmp",
       "id": "control-01134",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation WhPull -> ImposeGravity with its source predicate, ordering and state handoff."
     },
     {
       "from": "FlagpoleRoutine",
@@ -41772,10 +41982,13 @@
       "instruction": "bne",
       "id": "control-01135",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> ExitFlagP with its source predicate, ordering and state handoff."
     },
     {
       "from": "FlagpoleRoutine",
@@ -41785,10 +41998,13 @@
       "instruction": "bne",
       "id": "control-01136",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff."
     },
     {
       "from": "FlagpoleRoutine",
@@ -41798,10 +42014,13 @@
       "instruction": "bne",
       "id": "control-01137",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff."
     },
     {
       "from": "FlagpoleRoutine",
@@ -41811,10 +42030,13 @@
       "instruction": "bcs",
       "id": "control-01138",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> GiveFPScr with its source predicate, ordering and state handoff."
     },
     {
       "from": "FlagpoleRoutine",
@@ -41824,10 +42046,13 @@
       "instruction": "bcs",
       "id": "control-01139",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FlagpoleRoutine -> GiveFPScr with its source predicate, ordering and state handoff."
     },
     {
       "from": "FlagpoleRoutine",
@@ -41837,10 +42062,13 @@
       "instruction": "sta",
       "id": "control-01140",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff."
     },
     {
       "from": "SkipScore",
@@ -41850,10 +42078,13 @@
       "instruction": "jmp",
       "id": "control-01141",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation SkipScore -> FPGfx with its source predicate, ordering and state handoff."
     },
     {
       "from": "GiveFPScr",
@@ -41863,10 +42094,13 @@
       "instruction": "jsr",
       "id": "control-01142",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation GiveFPScr -> AddToScore with its source predicate, ordering and state handoff."
     },
     {
       "from": "GiveFPScr",
@@ -41876,10 +42110,13 @@
       "instruction": "sta",
       "id": "control-01143",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GiveFPScr -> FPGfx with its source predicate, ordering and state handoff."
     },
     {
       "from": "FPGfx",
@@ -41889,10 +42126,13 @@
       "instruction": "jsr",
       "id": "control-01144",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FPGfx -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff."
     },
     {
       "from": "FPGfx",
@@ -41902,10 +42142,13 @@
       "instruction": "jsr",
       "id": "control-01145",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FPGfx -> RelativeEnemyPosition with its source predicate, ordering and state handoff."
     },
     {
       "from": "FPGfx",
@@ -41915,10 +42158,13 @@
       "instruction": "jsr",
       "id": "control-01146",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FPGfx -> FlagpoleGfxHandler with its source predicate, ordering and state handoff."
     },
     {
       "from": "FPGfx",
@@ -41928,10 +42174,13 @@
       "instruction": "jsr",
       "id": "control-01147",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FPGfx -> ExitFlagP with its source predicate, ordering and state handoff."
     },
     {
       "from": "JumpspringHandler",
@@ -41941,10 +42190,13 @@
       "instruction": "jsr",
       "id": "control-01148",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation JumpspringHandler -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff."
     },
     {
       "from": "JumpspringHandler",
@@ -41954,10 +42206,13 @@
       "instruction": "bne",
       "id": "control-01149",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation JumpspringHandler -> DrawJSpr with its source predicate, ordering and state handoff."
     },
     {
       "from": "JumpspringHandler",
@@ -41967,10 +42222,13 @@
       "instruction": "beq",
       "id": "control-01150",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation JumpspringHandler -> DrawJSpr with its source predicate, ordering and state handoff."
     },
     {
       "from": "JumpspringHandler",
@@ -41980,10 +42238,13 @@
       "instruction": "bne",
       "id": "control-01151",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation JumpspringHandler -> DownJSpr with its source predicate, ordering and state handoff."
     },
     {
       "from": "JumpspringHandler",
@@ -41993,10 +42254,13 @@
       "instruction": "jmp",
       "id": "control-01152",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation JumpspringHandler -> PosJSpr with its source predicate, ordering and state handoff."
     },
     {
       "from": "DownJSpr",
@@ -42006,10 +42270,13 @@
       "instruction": "dec",
       "id": "control-01153",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DownJSpr -> PosJSpr with its source predicate, ordering and state handoff."
     },
     {
       "from": "PosJSpr",
@@ -42097,10 +42364,13 @@
       "instruction": "jsr",
       "id": "control-01160",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawJSpr -> RelativeEnemyPosition with its source predicate, ordering and state handoff."
     },
     {
       "from": "DrawJSpr",
@@ -42110,10 +42380,13 @@
       "instruction": "jsr",
       "id": "control-01161",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawJSpr -> EnemyGfxHandler with its source predicate, ordering and state handoff."
     },
     {
       "from": "DrawJSpr",
@@ -42123,10 +42396,13 @@
       "instruction": "jsr",
       "id": "control-01162",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawJSpr -> OffscreenBoundsCheck with its source predicate, ordering and state handoff."
     },
     {
       "from": "DrawJSpr",
@@ -42136,10 +42412,13 @@
       "instruction": "beq",
       "id": "control-01163",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff."
     },
     {
       "from": "DrawJSpr",
@@ -42149,10 +42428,13 @@
       "instruction": "bne",
       "id": "control-01164",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff."
     },
     {
       "from": "DrawJSpr",
@@ -42162,10 +42444,13 @@
       "instruction": "inc",
       "id": "control-01165",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff."
     },
     {
       "from": "Setup_Vine",
@@ -74536,10 +74821,13 @@
       "instruction": "rts/rti",
       "id": "control-03629",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcessWhirlpools -> ProcELoop with its source predicate, ordering and state handoff."
     },
     {
       "from": "FlagpoleRoutine",
@@ -74549,10 +74837,13 @@
       "instruction": "rts/rti",
       "id": "control-03630",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation FlagpoleRoutine -> ProcELoop with its source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -74562,10 +74853,13 @@
       "instruction": "rts/rti",
       "id": "control-03631",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RunGameTimer -> ProcELoop with its source predicate, ordering and state handoff."
     },
     {
       "from": "ColorRotation",
@@ -75272,10 +75566,13 @@
       "instruction": "rts/rti",
       "id": "control-03681",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DigitsMathRoutine -> ResGTCtrl with its source predicate, ordering and state handoff."
     },
     {
       "from": "ForceInjury",
@@ -75285,10 +75582,13 @@
       "instruction": "rts/rti",
       "id": "control-03682",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ForceInjury -> TimeUpOn with its source predicate, ordering and state handoff."
     },
     {
       "from": "AddToScore",
@@ -75298,10 +75598,13 @@
       "instruction": "rts/rti",
       "id": "control-03683",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation AddToScore -> GiveFPScr with its source predicate, ordering and state handoff."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -75311,10 +75614,13 @@
       "instruction": "rts/rti",
       "id": "control-03684",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> FPGfx with its source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -75324,10 +75630,13 @@
       "instruction": "rts/rti",
       "id": "control-03685",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> FPGfx with its source predicate, ordering and state handoff."
     },
     {
       "from": "FlagpoleGfxHandler",
@@ -75337,10 +75646,13 @@
       "instruction": "rts/rti",
       "id": "control-03686",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation FlagpoleGfxHandler -> FPGfx with its source predicate, ordering and state handoff."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -75350,10 +75662,13 @@
       "instruction": "rts/rti",
       "id": "control-03687",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> JumpspringHandler with its source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -75363,10 +75678,13 @@
       "instruction": "rts/rti",
       "id": "control-03688",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> DrawJSpr with its source predicate, ordering and state handoff."
     },
     {
       "from": "EnemyGfxHandler",
@@ -75376,10 +75694,13 @@
       "instruction": "rts/rti",
       "id": "control-03689",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EnemyGfxHandler -> DrawJSpr with its source predicate, ordering and state handoff."
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -75389,10 +75710,13 @@
       "instruction": "rts/rti",
       "id": "control-03690",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> DrawJSpr with its source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeEnemyPosition",
