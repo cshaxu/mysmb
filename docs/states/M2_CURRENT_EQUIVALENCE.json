@@ -1541,31 +1541,40 @@
       "label": "ScreenRoutines",
       "asmLine": 1386,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ScreenRoutineTask switch",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines static node-semantics pass: SMB1 lines 1386-1432 was compared with the named shared-C owner; controlled original-ROM/x86/x64 task routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $853f: reads ScreenRoutineTask and JumpEngine-dispatches selectors 0..14 to the inline screen task table; each selected leaf has its own successor/return semantics."
     },
     {
       "label": "InitScreen",
       "asmLine": 1408,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines static node-semantics pass: SMB1 lines 1386-1432 was compared with the named shared-C owner; controlled original-ROM/x86/x64 task routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8555: calls MoveAllSpritesOffscreen and InitializeNameTables, then title mode increments the screen task directly while non-title mode selects VRAM address control $03 before the same task increment."
     },
     {
       "label": "SetupIntermediate",
       "asmLine": 1418,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines static node-semantics pass: SMB1 lines 1386-1432 was compared with the named shared-C owner; controlled original-ROM/x86/x64 task routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8565: saves BackgroundColorCtrl and PlayerStatus, forces standard player colors/black background setup for GetPlayerColors, restores both saved values, then increments the screen task."
     },
     {
       "label": "AreaPalette",
@@ -23688,10 +23697,13 @@
       "instruction": "jsr",
       "id": "control-00193",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine selector switch",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines -> JumpEngine reads ScreenRoutineTask once and dispatches exactly one inline task entry."
     },
     {
       "from": "ScreenRoutines",
@@ -23701,10 +23713,13 @@
       "instruction": "jsr",
       "id": "control-00194",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines -> InitScreen fall-through identifies selector zero as InitScreen."
     },
     {
       "from": "InitScreen",
@@ -23714,10 +23729,13 @@
       "instruction": "jsr",
       "id": "control-00195",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0 mysmb_game_move_all_sprites_offscreen",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitScreen -> MoveAllSpritesOffscreen completes before name-table initialization."
     },
     {
       "from": "InitScreen",
@@ -23727,10 +23745,13 @@
       "instruction": "jsr",
       "id": "control-00196",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0 mysmb_game_initialize_name_tables",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitScreen -> InitializeNameTables follows the all-sprite reset before OperMode is read."
     },
     {
       "from": "InitScreen",
@@ -23740,10 +23761,13 @@
       "instruction": "beq",
       "id": "control-00197",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0 OperMode == 0 task increment",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitScreen -> NextSubtask title branch increments ScreenRoutineTask without writing VRAM_Buffer_AddrCtrl."
     },
     {
       "from": "InitScreen",
@@ -23753,10 +23777,13 @@
       "instruction": "jmp",
       "id": "control-00198",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0 OperMode != 0 VRAM address control write",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitScreen -> SetVRAMAddr_A non-title path writes selector $03 before the common task increment."
     },
     {
       "from": "SetupIntermediate",
@@ -23766,10 +23793,13 @@
       "instruction": "jsr",
       "id": "control-00199",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1 mysmb_area_queue_player_palette",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetupIntermediate -> GetPlayerColors runs with forced PlayerStatus=0 and BackgroundColorCtrl=2 before saved state is restored."
     },
     {
       "from": "SetupIntermediate",
@@ -23779,10 +23809,13 @@
       "instruction": "jmp",
       "id": "control-00200",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1 task increment",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetupIntermediate -> IncSubtask restores both saved bytes before advancing ScreenRoutineTask."
     },
     {
       "from": "GetAreaPalette",
@@ -66985,10 +67018,13 @@
       "instruction": "rts/rti",
       "id": "control-03515",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine switch selected case completion",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original JumpEngine -> ScreenRoutines returns from its selected inline task without a second task dispatch."
     },
     {
       "from": "MoveAllSpritesOffscreen",
@@ -66998,10 +67034,13 @@
       "instruction": "rts/rti",
       "id": "control-03516",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0 all-sprite helper completion",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original MoveAllSpritesOffscreen -> InitScreen returns before InitializeNameTables."
     },
     {
       "from": "InitializeNameTables",
@@ -67011,10 +67050,13 @@
       "instruction": "rts/rti",
       "id": "control-03517",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0 name-table helper completion",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeNameTables -> InitScreen returns before the OperMode branch."
     },
     {
       "from": "GetPlayerColors",
@@ -67024,10 +67066,13 @@
       "instruction": "rts/rti",
       "id": "control-03518",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1 palette helper completion",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetPlayerColors -> SetupIntermediate returns before restored PlayerStatus/BackgroundColorCtrl and task increment."
     },
     {
       "from": "WriteGameText",
@@ -74632,10 +74677,13 @@
       "selector": 1,
       "id": "control-04101",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step title screen-task routing",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TitleScreenMode -> ScreenRoutines selector dispatch reaches the screen task handler only at the title screen task vector."
     },
     {
       "from": "TitleScreenMode",
@@ -74764,10 +74812,13 @@
       "selector": 0,
       "id": "control-04109",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 0 dispatches to InitScreen only for ScreenRoutineTask=0."
     },
     {
       "from": "ScreenRoutines",
@@ -74778,10 +74829,13 @@
       "selector": 1,
       "id": "control-04110",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 1 dispatches to SetupIntermediate only for ScreenRoutineTask=1."
     },
     {
       "from": "ScreenRoutines",
@@ -74792,10 +74846,13 @@
       "selector": 2,
       "id": "control-04111",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 2",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 2 dispatches to WriteTopStatusLine only for ScreenRoutineTask=2."
     },
     {
       "from": "ScreenRoutines",
@@ -74806,10 +74863,13 @@
       "selector": 3,
       "id": "control-04112",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 3",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 3 dispatches to WriteBottomStatusLine only for ScreenRoutineTask=3."
     },
     {
       "from": "ScreenRoutines",
@@ -74820,10 +74880,13 @@
       "selector": 4,
       "id": "control-04113",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 4",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 4 dispatches to DisplayTimeUp only for ScreenRoutineTask=4."
     },
     {
       "from": "ScreenRoutines",
@@ -74834,10 +74897,13 @@
       "selector": 5,
       "id": "control-04114",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 5",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 5 dispatches to ResetSpritesAndScreenTimer only for ScreenRoutineTask=5."
     },
     {
       "from": "ScreenRoutines",
@@ -74848,10 +74914,13 @@
       "selector": 6,
       "id": "control-04115",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 6",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 6 dispatches to DisplayIntermediate only for ScreenRoutineTask=6."
     },
     {
       "from": "ScreenRoutines",
@@ -74862,10 +74931,13 @@
       "selector": 7,
       "id": "control-04116",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 7",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 7 dispatches to ResetSpritesAndScreenTimer only for ScreenRoutineTask=7."
     },
     {
       "from": "ScreenRoutines",
@@ -74876,10 +74948,13 @@
       "selector": 8,
       "id": "control-04117",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 8",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 8 dispatches to AreaParserTaskControl only for ScreenRoutineTask=8."
     },
     {
       "from": "ScreenRoutines",
@@ -74890,10 +74965,13 @@
       "selector": 9,
       "id": "control-04118",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 9",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 9 dispatches to GetAreaPalette only for ScreenRoutineTask=9."
     },
     {
       "from": "ScreenRoutines",
@@ -74904,10 +74982,13 @@
       "selector": 10,
       "id": "control-04119",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 10 dispatches to GetBackgroundColor only for ScreenRoutineTask=10."
     },
     {
       "from": "ScreenRoutines",
@@ -74918,10 +74999,13 @@
       "selector": 11,
       "id": "control-04120",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 11",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 11 dispatches to GetAlternatePalette1 only for ScreenRoutineTask=11."
     },
     {
       "from": "ScreenRoutines",
@@ -74932,10 +75016,13 @@
       "selector": 12,
       "id": "control-04121",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 12",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 12 dispatches to DrawTitleScreen only for ScreenRoutineTask=12."
     },
     {
       "from": "ScreenRoutines",
@@ -74946,10 +75033,13 @@
       "selector": 13,
       "id": "control-04122",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 13",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 13 dispatches to ClearBuffersDrawIcon only for ScreenRoutineTask=13."
     },
     {
       "from": "ScreenRoutines",
@@ -74960,10 +75050,13 @@
       "selector": 14,
       "id": "control-04123",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 14",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ScreenRoutines selector 14 dispatches to WriteTopScore only for ScreenRoutineTask=14."
     },
     {
       "from": "GameOverMode",
@@ -74988,10 +75081,13 @@
       "selector": 1,
       "id": "control-04125",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_game_over screen-task routing",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GameOverMode -> ScreenRoutines selector dispatch reaches the shared screen task handler only at its screen vector."
     },
     {
       "from": "GameOverMode",
@@ -75842,10 +75938,13 @@
       "selector": 1,
       "id": "control-04186",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/dispatcher.c:mysmb_game_mode screen-task routing",
+      "semanticEvidence": [
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GameMode -> ScreenRoutines selector dispatch reaches the shared screen task handler only at its screen vector."
     },
     {
       "from": "GameMode",

@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 147 control; 1 material RAM/table |
+| Needs evidence | 177 control; 1 material RAM/table |
 | Mismatch | 7 control; 1 material RAM/table |
-| Unclassified | 4,112 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 4,082 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -351,3 +351,17 @@ on the wrong timer frame, while `FloateyNumTileData -> SetupNumSpr` remains
 `needs-evidence`. Required route evidence spans zero, `$2b`, `$2c`, ordinary
 score, 1-UP, every alternate-OAM selector family, both vertical regions and
 the complete two-sprite output.
+
+### Cohort B — B1 screen-task root and first leaves
+
+`ScreenRoutines`, `InitScreen` and `SetupIntermediate` (lines 1386–1432) are
+now mapped to the shared `mysmb_game_step_screen_routine` owner and remain
+`needs-evidence`. The independent integration pass records all fifteen
+ScreenRoutineTask selector entries, the Title/Game/GameOver incoming dispatch
+relations, the JumpEngine return, and every first-leaf helper, branch and
+return relation. The root mapping does not classify the other thirteen task
+leaves: each still needs its own node-semantics pass and route proof. Required
+B1 routes must separately exercise title and non-title `InitScreen`, plus
+`SetupIntermediate` with non-default PlayerStatus and BackgroundColorCtrl, and
+compare the pre-helper temporary values, restored values, VRAM selector and
+task handoff.
