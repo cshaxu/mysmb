@@ -468,6 +468,18 @@ tails. No production source or platform code changes in this P, no node credit
 is granted, and the three P17 delivery artifacts remain the current validated
 outputs.
 
+### S5 P20: PlayerHeadCollision current replay
+
+This zero-credit audit reruns the retained 72 original `PlayerHeadCollision`
+snapshots against the current shared game library on both native widths. All
+72 records match on x86 and all 72 match on x64. The sixteen historical
+failures are no longer present: their `$00c0/$00c1` block-chunk effect and
+`$00fd/$00ff` score/status effects were repaired by their later source-owned
+chains. This closes the historical head-collision residual without assigning
+new node credit. Coin/axe VRAM/status tails remain independently open. No
+platform or production source changes; the P17 three-artifact set remains
+the validated delivery output.
+
 ### S5 P9: historical-debt source-route adjudication
 
 S5 P9 audits four still-open ledger rows against their later, source-order
