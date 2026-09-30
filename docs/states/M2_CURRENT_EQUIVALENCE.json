@@ -295,6 +295,76 @@
         "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00021",
+      "producer": "BlockGfxData",
+      "consumer": "PutBlockMetatile",
+      "storage": "selected four-tile replacement graphics to two Buffer1 commands",
+      "feasiblePath": "PutBlockMetatile multiplies graphics set by four and reads consecutive BlockGfxData bytes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area/block_metatile.c:mysmb_area_block_gfx",
+      "semanticContract": "Each reachable graphic set emits the same ordered four tiles.",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00022",
+      "producer": "WaterPaletteData",
+      "consumer": "SetVRAMAddr_A",
+      "storage": "ROM water palette stream to selector-1 NMI consumer",
+      "feasiblePath": "VRAM control one selects WaterPaletteData before palette transfer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_palette selector 0",
+      "semanticContract": "The complete water palette command matches.",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00023",
+      "producer": "GroundPaletteData",
+      "consumer": "SetVRAMAddr_A",
+      "storage": "ROM ground palette stream to selector-2 NMI consumer",
+      "feasiblePath": "VRAM control two selects GroundPaletteData before palette transfer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_palette selector 1",
+      "semanticContract": "The complete ground palette command matches.",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00024",
+      "producer": "UndergroundPaletteData",
+      "consumer": "SetVRAMAddr_A",
+      "storage": "ROM underground palette stream to selector-3 NMI consumer",
+      "feasiblePath": "VRAM control three selects UndergroundPaletteData before palette transfer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_palette selector 2",
+      "semanticContract": "The complete underground palette command matches.",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00025",
+      "producer": "CastlePaletteData",
+      "consumer": "SetVRAMAddr_A",
+      "storage": "ROM castle palette stream to selector-4 NMI consumer",
+      "feasiblePath": "VRAM control four selects CastlePaletteData before palette transfer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_palette selector 3",
+      "semanticContract": "The complete castle palette command matches.",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -2856,211 +2926,274 @@
       "label": "BlockGfxData",
       "asmLine": 2034,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_block_gfx",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a39: five four-tile block replacement graphic sets."
     },
     {
       "label": "RemoveCoin_Axe",
       "asmLine": 2041,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_remove_coin_axe",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a4d: selects water/non-water blank graphic set, writes at Buffer2 offset $41 and selects VRAM control six."
     },
     {
       "label": "WriteBlankMT",
       "asmLine": 2047,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_remove_coin_axe put-block call",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a58: enters common PutBlockMetatile with selected blank graphics."
     },
     {
       "label": "ReplaceBlockMetatile",
       "asmLine": 2052,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_replace_block_metatile",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a61: writes replacement graphic then increments residual counter and decrements replace flag."
     },
     {
       "label": "DestroyBlockMetatile",
       "asmLine": 2058,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_destroy_block_metatile",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a69: forces zero metatile before common block graphic selection."
     },
     {
       "label": "WriteBlockMetatile",
       "asmLine": 2061,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_write_block_metatile",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a6d: selects blank, line-brick, plain-brick or empty-block graphic set by metatile value."
     },
     {
       "label": "UseBOffset",
       "asmLine": 2076,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_write_block_metatile selected set handoff",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a80: preserves selected graphics set, derives Buffer1 offset and invokes PutBlockMetatile."
     },
     {
       "label": "MoveVOffset",
       "asmLine": 2080,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_move_v_offset",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a8f: changes preserved Buffer1 offset by ten then reaches SetVRAMOffset."
     },
     {
       "label": "PutBlockMetatile",
       "asmLine": 2086,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_put_block_metatile",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ab1: derives two nametable tile commands from block-buffer location and vertical high nibble."
     },
     {
       "label": "SaveHAdder",
       "asmLine": 2097,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_put_block_metatile address calculation",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ac2: saves nametable high adder before vertical address calculation."
     },
     {
       "label": "RemBridge",
       "asmLine": 2118,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/block_metatile.c",
+      "currentCounterpart": "mysmb_area_rem_bridge",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ad0: writes two length-two nametable commands, four graphic bytes and terminator."
     },
     {
       "label": "MetatileGraphics_Low",
       "asmLine": 2145,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics palette graphics lookup",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ae4: palette-indexed low-byte graphics pointers."
     },
     {
       "label": "MetatileGraphics_High",
       "asmLine": 2148,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics palette graphics lookup",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ae8: palette-indexed high-byte graphics pointers."
     },
     {
       "label": "Palette0_MTiles",
       "asmLine": 2151,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "bound area_prg metatile graphics source",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8aec: palette-zero four-tile metatile records."
     },
     {
       "label": "Palette1_MTiles",
       "asmLine": 2192,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "bound area_prg metatile graphics source",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8b90: palette-one four-tile metatile records."
     },
     {
       "label": "Palette2_MTiles",
       "asmLine": 2240,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "bound area_prg metatile graphics source",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8c50: palette-two four-tile metatile records."
     },
     {
       "label": "Palette3_MTiles",
       "asmLine": 2252,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "bound area_prg metatile graphics source",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8c80: palette-three four-tile metatile records."
     },
     {
       "label": "WaterPaletteData",
       "asmLine": 2263,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_palette selector 0",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8c98: water palette VRAM command stream."
     },
     {
       "label": "GroundPaletteData",
       "asmLine": 2275,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_palette selector 1",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ca4: ground palette VRAM command stream."
     },
     {
       "label": "UndergroundPaletteData",
       "asmLine": 2287,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_palette selector 2",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8cb0: underground palette VRAM command stream."
     },
     {
       "label": "CastlePaletteData",
       "asmLine": 2299,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_palette selector 3",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8cbc: castle palette VRAM command stream."
     },
     {
       "label": "DaySnowPaletteData",
@@ -26041,10 +26174,13 @@
       "instruction": "bne",
       "id": "control-00311",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RemoveCoin_Axe -> WriteBlankMT branch relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "RemoveCoin_Axe",
@@ -26054,10 +26190,13 @@
       "instruction": "lda",
       "id": "control-00312",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RemoveCoin_Axe -> WriteBlankMT fallthrough relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WriteBlankMT",
@@ -26067,10 +26206,13 @@
       "instruction": "jsr",
       "id": "control-00313",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBlankMT -> PutBlockMetatile call relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "ReplaceBlockMetatile",
@@ -26080,10 +26222,13 @@
       "instruction": "jsr",
       "id": "control-00314",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ReplaceBlockMetatile -> WriteBlockMetatile call relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "DestroyBlockMetatile",
@@ -26093,10 +26238,13 @@
       "instruction": "lda",
       "id": "control-00315",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DestroyBlockMetatile -> WriteBlockMetatile fallthrough relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WriteBlockMetatile",
@@ -26106,10 +26254,13 @@
       "instruction": "beq",
       "id": "control-00316",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WriteBlockMetatile",
@@ -26119,10 +26270,13 @@
       "instruction": "beq",
       "id": "control-00317",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WriteBlockMetatile",
@@ -26132,10 +26286,13 @@
       "instruction": "beq",
       "id": "control-00318",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WriteBlockMetatile",
@@ -26145,10 +26302,13 @@
       "instruction": "beq",
       "id": "control-00319",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WriteBlockMetatile",
@@ -26158,10 +26318,13 @@
       "instruction": "beq",
       "id": "control-00320",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WriteBlockMetatile",
@@ -26171,10 +26334,13 @@
       "instruction": "iny",
       "id": "control-00321",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBlockMetatile -> UseBOffset fallthrough relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "UseBOffset",
@@ -26184,10 +26350,13 @@
       "instruction": "jsr",
       "id": "control-00322",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original UseBOffset -> PutBlockMetatile call relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "UseBOffset",
@@ -26197,10 +26366,13 @@
       "instruction": "jsr",
       "id": "control-00323",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original UseBOffset -> MoveVOffset fallthrough relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "MoveVOffset",
@@ -26210,10 +26382,13 @@
       "instruction": "jmp",
       "id": "control-00324",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original MoveVOffset -> SetVRAMOffset jump relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "PutBlockMetatile",
@@ -26223,10 +26398,13 @@
       "instruction": "bcc",
       "id": "control-00325",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PutBlockMetatile -> SaveHAdder branch relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "PutBlockMetatile",
@@ -26236,10 +26414,13 @@
       "instruction": "ldy",
       "id": "control-00326",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PutBlockMetatile -> SaveHAdder fallthrough relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "SaveHAdder",
@@ -26249,10 +26430,13 @@
       "instruction": "ldy",
       "id": "control-00327",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SaveHAdder -> RemBridge fallthrough relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "InitializeNameTables",
@@ -68034,10 +68218,13 @@
       "instruction": "rts/rti",
       "id": "control-03529",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PutBlockMetatile -> WriteBlankMT return relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WriteBlockMetatile",
@@ -68047,10 +68234,13 @@
       "instruction": "rts/rti",
       "id": "control-03530",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBlockMetatile -> ReplaceBlockMetatile return relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "PutBlockMetatile",
@@ -68060,10 +68250,13 @@
       "instruction": "rts/rti",
       "id": "control-03531",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
+      "semanticEvidence": [
+        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PutBlockMetatile -> UseBOffset return relation must preserve selector/value, temporary state and successor or return handoff."
     },
     {
       "from": "WritePPUReg1",

@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 302 control; 16 material RAM/table |
+| Needs evidence | 322 control; 21 material RAM/table |
 | Mismatch | 10 control; 2 material RAM/table |
-| Unclassified | 3,954 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,934 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -418,3 +418,13 @@ attribute command output, every-eighth-frame gate, bounded Buffer1 gate and
 the six-step color cycle. No static mismatch was found; source/x86/x64 routes
 must still compare Buffer2, AttributeBuffer, nametable state and palette
 commands before these become exact.
+
+### Cohort B — B7 block-metatile replacement and static palettes
+
+`BlockGfxData` through `CastlePaletteData` now have node contracts. The edge
+pass records blank/coin/axe replacement, block-replace and destroy paths,
+graphic-set selection, two-command block output, and return handoffs. Five
+new feasible material paths cover BlockGfxData and the four static palette
+streams. No static discrepancy is confirmed; required routes include each
+block graphics selector, water/non-water blank replacement, both name-table
+halves and palette controls one through four.
