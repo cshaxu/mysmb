@@ -1487,3 +1487,9 @@ branches.
 - Node-semantics result: ten labels moved from `unclassified` to `needs-evidence`, covering vine alignment, hidden blocks and landing-spring setup.
 - Independent integration result: 14 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K53 — vertical pipe and movement impedance audit
+
+- Source range: `HandlePipeEntry` through `ExIPM` (`SMBDIS.ASM` lines 12295–12372).
+- Node-semantics result: eight labels moved from `unclassified` to `needs-evidence`, covering foot-gated pipe/warp transition and side-aware motion stop.
+- Independent integration result: 16 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

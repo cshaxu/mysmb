@@ -25903,81 +25903,105 @@
       "label": "HandlePipeEntry",
       "asmLine": 12295,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/pipe_entry.c and terrain children",
+      "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Requires Down and exact two-foot pipe tiles; starts vertical entry and optionally executes warp-zone world/area selection/reset."
     },
     {
       "label": "GetWNum",
       "asmLine": 12326,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/pipe_entry.c and terrain children",
+      "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects warp pipe world by zone and player X region, then maps it to area offset and resets entry state."
     },
     {
       "label": "ExPipeE",
       "asmLine": 12341,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/pipe_entry.c and terrain children",
+      "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from pipe entry handling."
     },
     {
       "label": "ImpedePlayerMove",
       "asmLine": 12343,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/pipe_entry.c and terrain children",
+      "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stops motion only when movement points into collision side, adjusts X/page and clears matching collision bit."
     },
     {
       "label": "RImpd",
       "asmLine": 12354,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/pipe_entry.c and terrain children",
+      "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Handles right-side collision direction test and adjustment choice."
     },
     {
       "label": "NXSpd",
       "asmLine": 12358,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/pipe_entry.c and terrain children",
+      "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets side timer, clears horizontal speed and applies signed X/page displacement."
     },
     {
       "label": "PlatF",
       "asmLine": 12365,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/pipe_entry.c and terrain children",
+      "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores page carry adjustment and applies position update."
     },
     {
       "label": "ExIPM",
       "asmLine": 12372,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/pipe_entry.c and terrain children",
+      "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears appropriate collision bit and returns."
     },
     {
       "label": "SolidMTileUpperExt",
@@ -73730,10 +73754,13 @@
       "instruction": "beq",
       "id": "control-02562",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry → ExPipeE with source input, side and state ordering."
     },
     {
       "from": "HandlePipeEntry",
@@ -73743,10 +73770,13 @@
       "instruction": "bne",
       "id": "control-02563",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry → ExPipeE with source input, side and state ordering."
     },
     {
       "from": "HandlePipeEntry",
@@ -73756,10 +73786,13 @@
       "instruction": "bne",
       "id": "control-02564",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry → ExPipeE with source input, side and state ordering."
     },
     {
       "from": "HandlePipeEntry",
@@ -73769,10 +73802,13 @@
       "instruction": "beq",
       "id": "control-02565",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry → ExPipeE with source input, side and state ordering."
     },
     {
       "from": "HandlePipeEntry",
@@ -73782,10 +73818,13 @@
       "instruction": "bcc",
       "id": "control-02566",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry → GetWNum with source input, side and state ordering."
     },
     {
       "from": "HandlePipeEntry",
@@ -73795,10 +73834,13 @@
       "instruction": "bcc",
       "id": "control-02567",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry → GetWNum with source input, side and state ordering."
     },
     {
       "from": "HandlePipeEntry",
@@ -73808,10 +73850,13 @@
       "instruction": "inx",
       "id": "control-02568",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede fallthrough relation HandlePipeEntry → GetWNum with source input, side and state ordering."
     },
     {
       "from": "GetWNum",
@@ -73821,10 +73866,13 @@
       "instruction": "inc",
       "id": "control-02569",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede fallthrough relation GetWNum → ExPipeE with source input, side and state ordering."
     },
     {
       "from": "ImpedePlayerMove",
@@ -73834,10 +73882,13 @@
       "instruction": "bne",
       "id": "control-02570",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation ImpedePlayerMove → RImpd with source input, side and state ordering."
     },
     {
       "from": "ImpedePlayerMove",
@@ -73847,10 +73898,13 @@
       "instruction": "bmi",
       "id": "control-02571",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation ImpedePlayerMove → ExIPM with source input, side and state ordering."
     },
     {
       "from": "ImpedePlayerMove",
@@ -73860,10 +73914,13 @@
       "instruction": "jmp",
       "id": "control-02572",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede jump relation ImpedePlayerMove → NXSpd with source input, side and state ordering."
     },
     {
       "from": "RImpd",
@@ -73873,10 +73930,13 @@
       "instruction": "bpl",
       "id": "control-02573",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation RImpd → ExIPM with source input, side and state ordering."
     },
     {
       "from": "RImpd",
@@ -73886,10 +73946,13 @@
       "instruction": "lda",
       "id": "control-02574",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede fallthrough relation RImpd → NXSpd with source input, side and state ordering."
     },
     {
       "from": "NXSpd",
@@ -73899,10 +73962,13 @@
       "instruction": "bpl",
       "id": "control-02575",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede branch relation NXSpd → PlatF with source input, side and state ordering."
     },
     {
       "from": "NXSpd",
@@ -73912,10 +73978,13 @@
       "instruction": "dey",
       "id": "control-02576",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede fallthrough relation NXSpd → PlatF with source input, side and state ordering."
     },
     {
       "from": "PlatF",
@@ -73925,10 +73994,13 @@
       "instruction": "sta",
       "id": "control-02577",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves pipe/impede fallthrough relation PlatF → ExIPM with source input, side and state ordering."
     },
     {
       "from": "CheckForSolidMTiles",
