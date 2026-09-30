@@ -187,3 +187,79 @@ and `mysmb64.exe` `A3FAEBD5F716BEB0D1818372116DBFC7AD1E22DDCE9B3C4D1D4BA9E15CC50
 Similar-issue sweep: all music queue/buffer, selector, header-reset and
 loop-B production paths are in `audio.c`; no platform-layer hit exists. S4
 stream parsing and later header/data ownership remain uncredited.
+
+
+## S4 admission: square-two music stream and envelope tail
+
+S4 receives the next **11** source-order labels from `HandleSquare2Music`
+through `NoDecEnv1`: `HandleSquare2Music`, `EndOfMusicData`, `NotTRO`,
+`MusicLoopBack`, `VictoryMLoopBack`, `Squ2LengthHandler`, `Squ2NoteHandler`,
+`Rest`, `SkipFqL1`, `MiscSqu2MusicTasks`, and `NoDecEnv1`. Baseline is
+**1,859 / 1,992**; all eleven are intended matches, for a maximum
+**1,870 / 1,992**. The shared owner is `src/game/audio.c`; predecessor is
+S3 `LoadHeader`, and successor is S5 `HandleSquare1Music`.
+
+The ROM-logic track enters original `SoundEngine` only after a source-selected
+non-death header. It exercises bounded square-two length, note, rest, normal
+loop, victory loop and envelope-tail states, then compares control sequence,
+stream bytes, `$f0/$f4/$f5/$f8`, counters and square-two APU writes at the
+S4/S5 boundary. The operational track adds one chain-level stream test as
+needed, runs focused audio/purity checks, x86/x64 builds and self-tests, the
+existing OpenNT DOS16 link, and refreshes all three owner-authorized EXEs.
+No square-one, triangle, noise, shared length/control, or music-data label is
+credited by this admission.
+
+
+## S4 closure: square-two music stream and envelope tail
+
+All **11** admitted labels are ROM-match complete: **1,859 -> 1,870 / 1,992**.
+`src/game/audio.c` now preserves the original `HandleSquare2Music` route as one
+contiguous shared-C chain: decrement/fetch, length-byte lookup, note/rest dispatch,
+source terminator exits, same-invocation header fallthrough after loop-back, and the
+pre-decrement-Y envelope-table access. No platform adapter selects music, mutates
+music RAM, or emits APU policy.
+
+| Source PC | Labels | Source-equivalent shared-C behavior |
+| --- | --- | --- |
+| `$f738-$f74a` | `HandleSquare2Music` | Counter decrement, indirect `MusicData,Y` read, stream-offset increment and fallthrough after `LoadHeader`. |
+| `$f74b-$f779` | `EndOfMusicData`, `NotTRO`, `MusicLoopBack`, `VictoryMLoopBack` | Terminal mute/clear, time-running interrupted-area restore, normal-area loop and victory event reload retain source order. |
+| `$f77a-$f797` | `Squ2LengthHandler`, `Squ2NoteHandler`, `Rest` | `ProcessLengthData` result, second byte fetch, frequency/no-tone branch, envelope save and register writes. |
+| `$f798-$f7b4` | `SkipFqL1`, `MiscSqu2MusicTasks`, `NoDecEnv1` | Active SFX skips frequency/envelope work; otherwise preserved pre-decrement envelope index drives `$4004/$4005`. |
+
+ROM-logic evidence uses six bounded original-ROM `SoundEngine` routes, eight calls
+each: normal stream, terminal death, time-running restore, victory reload, normal
+area loop, Square2-SFX ownership, and a real stream rest. The x86 and x64 checkers
+compare the scoped stream pointer/offset, buffer/counters/envelope and Square2 APU
+outputs: **all 48 samples per width have zero differences**. Raw records and recorder
+outputs remain below ignored `build/m2-t49-s4/`.
+
+Operational evidence: the focused audio/header checks and platform-purity scan pass
+on both Windows widths; x86 and x64 Win32 products build; the unchanged OpenNT16
+toolchain compiles the same `audio.c` and links a valid 263,877-byte MZ image
+(with the established `OLDNAMES.LIB` warning). Refreshed owner-authorized artifacts:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `53DC415A1C638C3E910B5822CA0B6D37F721769BFEB1C456FC4957FEBF864078` |
+| `assets/mysmb32.exe` | `B9C7608E77AD6E9028CFE2B1D726D683BF2ABE91489A6FB12FD6AD36213BAD4D` |
+| `assets/mysmb64.exe` | `A16607FCB942070003C11F4B38C0AEF5799E5DE29501A68ABDD33566B0DE6003` |
+
+Similar-issue sweep: every production music-stream fetch, offset, terminator, loop,
+rest, Square2-SFX gate and envelope path is in `src/game/audio.c`; no Win32 or
+DOS16 platform source contains game/audio branching or translated-state mutation.
+S5+ channel/data helpers retain their separate ledger custody and receive no credit.
+
+
+## S5 admission: square-one music stream and alternate control
+
+S5 receives **8** source-order labels: `HandleSquare1Music`, `FetchSqu1MusicData`,
+`Squ1NoteHandler`, `SkipCtrlL`, `MiscSqu1MusicTasks`, `NoDecEnv2`, `DeathMAltReg`,
+and `DoAltLoad`. Baseline is **1,870 / 1,992**; all eight are expected matches,
+for a maximum **1,878 / 1,992**. Shared owner remains `src/game/audio.c`;
+predecessor is S4 `NoDecEnv1`, successor is S6 `HandleTriangleMusic`.
+
+The ROM-logic track will compare Square1's distinct duration-bit encoding, null-data
+loop, SFX suppression, death alternate-control sequence and envelope tail against
+bounded original `SoundEngine` records. The operational track runs focused audio and
+purity checks, x86/x64 builds, the existing OpenNT DOS16 link, and refreshes all
+three owner-authorized EXEs. No S6+ channel/helper/data label is credited.

@@ -140,50 +140,6 @@ static mysmb_u8 mysmb_audio_envelope_control(const struct mysmb_game *game,
     return 8U;
 }
 
-/* Return nonzero only when ROM EndOfMusicData returns from SoundEngine.
- * The caller must then skip the later channel handlers for this frame. */
-static mysmb_u8 mysmb_audio_step_death_music(struct mysmb_game *game)
-{
-    mysmb_u16 offset;
-    mysmb_u16 table_offset;
-    mysmb_u8 data;
-
-    if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != MYSMB_EVENT_DEATH_MUSIC ||
-        game->area_prg == 0 ||
-        game->area_prg_size <= MYSMB_ROM_MUSIC_LENGTH_TABLE + 0x1fU) {
-        return 0U;
-    }
-    game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER]--;
-    if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) return 0U;
-    offset = (mysmb_u16)(MYSMB_ROM_DEATH_MUSIC_DATA +
-                         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
-    if (offset >= game->area_prg_size) return 0U;
-    data = game->area_prg[offset];
-    if (data == 0U) {
-        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
-        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
-        return 1U;
-    }
-    if ((data & 0x80U) != 0U) {
-        table_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE +
-            (data & 7U) + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
-        if (table_offset >= game->area_prg_size) return 0U;
-        game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] =
-            game->area_prg[table_offset];
-        offset = (mysmb_u16)(MYSMB_ROM_DEATH_MUSIC_DATA +
-            game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
-        if (offset >= game->area_prg_size) return 0U;
-        data = game->area_prg[offset];
-    }
-    if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
-        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] =
-            mysmb_audio_envelope_control(game, data);
-    }
-    game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
-        game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
-    return 0U;
-}
-
 static mysmb_u8 mysmb_audio_first_square1(mysmb_u8 queue)
 {
     if ((queue & 0x80U) != 0U) return 0x80U;
@@ -203,6 +159,8 @@ static mysmb_u8 mysmb_audio_read_cpu(const struct mysmb_game *game,
 static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game);
 static void mysmb_audio_handle_area_music_loop(struct mysmb_game *game,
                                                 mysmb_u8 area);
+static void mysmb_audio_load_event_music(struct mysmb_game *game,
+                                         mysmb_u8 event);
 static void mysmb_audio_square2_play_coin_timer(struct mysmb_game *game,
                                                   mysmb_u8 timer);
 static void mysmb_audio_square2_continue_coin_timer(struct mysmb_game *game);
@@ -505,51 +463,126 @@ static void mysmb_audio_step_noise(struct mysmb_game *game)
         mysmb_audio_continue_bowser_flame(game);
 }
 
-/* ROM HandleSquare2Music through Squ2NoteHandler, excluding APU register
- * writes. The source stream stores CPU addresses; NROM PRG is $8000-based. */
+/* ROM ProcessLengthData.  This helper belongs to the later shared-music
+ * helper chain, but S4 calls it at exactly the source call boundary. */
+static mysmb_u8 mysmb_audio_process_music_length(struct mysmb_game *game,
+                                                  mysmb_u8 data)
+{
+    mysmb_u8 index;
+
+    index = (mysmb_u8)((data & 7U) +
+        game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET] +
+        game->ram[MYSMB_RAM_NOTE_LENGTH_TABLE_ADDER]);
+    return mysmb_audio_read_cpu(game,
+        (mysmb_u16)(0xff66UL + index));
+}
+
+/* ROM LoadEnvelopeData.  The owner-local tables remain bound through the
+ * common CPU-address reader; S8 owns independent completion credit. */
+static mysmb_u8 mysmb_audio_load_music_envelope(const struct mysmb_game *game,
+                                                 mysmb_u8 index)
+{
+    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x08U) != 0U)
+        return mysmb_audio_read_cpu(game, (mysmb_u16)(0xff96UL + index));
+    if ((game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0x7dU) == 0U)
+        return mysmb_audio_read_cpu(game, (mysmb_u16)(0xffa2UL + index));
+    return mysmb_audio_read_cpu(game, (mysmb_u16)(0xff9aUL + index));
+}
+
+/* ROM EndOfMusicData.  Return nonzero only for the source RTS that ends this
+ * SoundEngine invocation.  A loop branch reaches LoadHeader, which falls
+ * directly back into HandleSquare2Music in the same invocation. */
+static mysmb_u8 mysmb_audio_end_square2_music(struct mysmb_game *game)
+{
+    mysmb_u8 area;
+    mysmb_u8 event;
+
+    event = game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER];
+    if (event == 0x40U) {
+        area = game->ram[MYSMB_RAM_AREA_MUSIC_ALT];
+        if (area != 0U) {
+            mysmb_audio_handle_area_music_loop(game, area);
+            return 0U;
+        }
+    }
+    if ((event & 0x04U) != 0U) {
+        mysmb_audio_load_event_music(game, event);
+        return 0U;
+    }
+    area = (mysmb_u8)(game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0x5fU);
+    if (area != 0U) {
+        mysmb_audio_handle_area_music_loop(game, area);
+        return 0U;
+    }
+    game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
+    game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
+    mysmb_audio_write_apu(game, 8U, 0U);
+    mysmb_audio_write_apu(game, 0U, 0x90U);
+    mysmb_audio_write_apu(game, 4U, 0x90U);
+    return 1U;
+}
+
+/* ROM HandleSquare2Music through NoDecEnv1.  MusicData is a source CPU
+ * pointer, so every fetch goes through the shared owner-ROM reader. */
 static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
 {
-    mysmb_u16 address;
-    mysmb_u16 length_address;
+    mysmb_u16 music_data;
     mysmb_u8 data;
-    mysmb_u8 area;
+    mysmb_u8 control_x;
+    mysmb_u8 control_y;
+    mysmb_u8 envelope;
 
-    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == 0U &&
-         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U) ||
-        game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return 0U;
-    game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER]--;
-    if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) return 0U;
-    address = (mysmb_u16)(((mysmb_u16)(game->ram[0x00f6U] - 0x80U) << 8U) |
-                          game->ram[0x00f5U]);
-    address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
-    if (address >= game->area_prg_size) return 0U;
-    data = game->area_prg[address];
-    if (data == 0U) {
-        area = (mysmb_u8)(game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0x5fU);
-        if (area == 0U) {
-            game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
-            game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
-            return 1U;
-        }
-        mysmb_audio_handle_area_music_loop(game, area);
-        return mysmb_audio_step_square2_music(game);
-    }
-    if ((data & 0x80U) != 0U) {
-        length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE +
-            (data & 7U) + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
-        if (length_address >= game->area_prg_size) return 0U;
-        game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] = game->area_prg[length_address];
+    /* LoadHeader falls through into this label.  The loop is required for
+     * EndOfMusicData's JMP routes: after a new header is loaded, its note
+     * counter is one and the source immediately parses its first byte. */
+    for (;;) {
+        game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER]--;
+        if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) break;
+        music_data = (mysmb_u16)(((mysmb_u16)game->ram[0x00f6U] << 8U) |
+                                  game->ram[0x00f5U]);
+        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
+            game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]));
         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++;
-        data = game->area_prg[address + 1U];
+        if (data == 0U) {
+            if (mysmb_audio_end_square2_music(game) != 0U) return 1U;
+            continue;
+        }
+        if ((data & 0x80U) != 0U) {
+            game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] =
+                mysmb_audio_process_music_length(game, data);
+            data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
+                game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]));
+            game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++;
+        }
+        if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
+            control_x = 4U;
+            control_y = data;
+            if (mysmb_audio_set_freq_sq2(game, data) == 0U) {
+                envelope = 0U;
+            }
+            else {
+                envelope = mysmb_audio_envelope_control(game, data);
+                control_x = 0x82U;
+                control_y = 0x7fU;
+            }
+            game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] = envelope;
+            mysmb_audio_dump_sq2_regs(game, control_x, control_y);
+        }
+        game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
+            game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
+        break;
     }
-    /* Squ2NoteHandler's LoadControlRegs returns envelope offset 8 for each
-     * audible note; a zero rest retains zero. */
-    if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
-        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] =
-            mysmb_audio_envelope_control(game, data);
-    }
-    game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
-        game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
+    if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] != 0U ||
+        (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x91U) != 0U)
+        return 0U;
+    /* Source keeps Y at the pre-decrement envelope offset.  DEC changes
+     * only memory, then LoadEnvelopeData indexes with the preserved Y. */
+    envelope = game->ram[MYSMB_RAM_SQUARE2_ENVELOPE];
+    if (envelope != 0U)
+        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE]--;
+    mysmb_audio_write_apu(game, 4U,
+        mysmb_audio_load_music_envelope(game, envelope));
+    mysmb_audio_write_apu(game, 5U, 0x7fU);
     return 0U;
 }
 
@@ -652,23 +685,6 @@ static void mysmb_audio_step_noise_music(struct mysmb_game *game)
     if (length_address >= game->area_prg_size) return;
     game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] = game->area_prg[length_address];
 }
-/* ROM MiscSqu2MusicTasks and MiscSqu1MusicTasks decrement each envelope
- * offset after a note load, except while the channel is owned by SFX or
- * the death/castle event route. */
-static void mysmb_audio_step_square_envelopes(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U &&
-        (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x91U) == 0U &&
-        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] != 0U) {
-        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE]--;
-    }
-    if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U &&
-        (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x91U) == 0U &&
-        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] != 0U) {
-        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE]--;
-    }
-}
-
 /* ROM ContinueMusic is an unconditional jump to HandleSquare2Music.  Keeping
  * this entry explicit prevents queue/header work from being mistaken for the
  * already-active music-stream handoff. */
@@ -763,14 +779,15 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
      * active music buffers are clear.  This also retains final envelopes. */
     if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == 0U &&
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U) return;
-    if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == MYSMB_EVENT_DEATH_MUSIC) {
-        if (mysmb_audio_step_death_music(game) != 0U) return;
-    }
-    else {
-        if (mysmb_audio_continue_music(game) != 0U) return;
-    }
+    if (mysmb_audio_continue_music(game) != 0U) return;
     mysmb_audio_step_square1_music(game);
-    mysmb_audio_step_square_envelopes(game);
+    /* Square two's MiscSqu2MusicTasks is inside the S4 handler above.  Keep
+     * the existing square-one tail for the later S5 chain only. */
+    if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U &&
+        (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x91U) == 0U &&
+        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] != 0U) {
+        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE]--;
+    }
     mysmb_audio_step_triangle_music(game);
     mysmb_audio_step_noise_music(game);
 }

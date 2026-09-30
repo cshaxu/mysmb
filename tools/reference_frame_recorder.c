@@ -1216,7 +1216,7 @@ int main(int argument_count, char **arguments)
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 100ul) return 64;
+                value > 106ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -5161,6 +5161,28 @@ int main(int argument_count, char **arguments)
                         ram[0x00f6u] = 0xfau;
                         ram[0x00f7u] = 0u;
                         ram[0x07b4u] = 1u;
+                    }
+                    /* S4 stream controls.  Cases 101--104 point MusicData at
+                     * an unchanged owner-ROM terminator to exercise the four
+                     * EndOfMusicData exits.  Case 105 enters a real length /
+                     * note pair while Square2 SFX owns the channel, and 106
+                     * enters a real music-stream rest. */
+                    if (sound_case >= 101u && sound_case <= 106u) {
+                        ram[0x00f0u] = 0u;
+                        ram[0x00f4u] = sound_case >= 104u ? 0x01u : 0u;
+                        ram[0x07b1u] = sound_case == 101u ? 1u :
+                            sound_case == 102u ? 0x40u :
+                            sound_case == 103u ? 0x04u : 0u;
+                        ram[0x07c5u] = sound_case == 102u ? 1u : 0u;
+                        ram[0x00f5u] = sound_case == 105u ? 0x01u :
+                            sound_case == 106u ? 0x10u : 0x07u;
+                        ram[0x00f6u] = sound_case == 105u ||
+                            sound_case == 106u ? 0xfau : 0xf0u;
+                        ram[0x00f7u] = 0u;
+                        ram[0x07b4u] = 1u;
+                        ram[0x07c7u] = sound_case == 102u ||
+                            sound_case == 104u ? 0x10u : 0u;
+                        ram[0x00f2u] = sound_case == 105u ? 0x01u : 0u;
                     }
                 }
                 else if (sound_case != 0u) {

@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1859 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1870 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 97 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 86 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1859 / 1,992 (93.32%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1870 / 1,992 (93.88%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T49 S3 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s3-closure-music-selection-and-header-loading) closes 10 music-selection and header-loading labels on 56 original calls per width, with the original OpenNT DOS16 MZ build and all three refreshed artifacts.
+Latest task review: [T49 S4 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s4-closure-square-two-music-stream-and-envelope-tail) closes eleven square-two stream labels on six bounded original-ROM SoundEngine routes, eight calls each per route and width, with zero-difference RAM/APU parity; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1859)
+## Completed matches (1870)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1892,6 +1892,17 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15682 | `FindAreaMusicHeader` |
 | 15686 | `FindEventMusicHeader` |
 | 15691 | `LoadHeader` |
+| 15720 | `HandleSquare2Music` |
+| 15730 | `EndOfMusicData` |
+| 15736 | `NotTRO` |
+| 15750 | `MusicLoopBack` |
+| 15753 | `VictoryMLoopBack` |
+| 15756 | `Squ2LengthHandler` |
+| 15763 | `Squ2NoteHandler` |
+| 15769 | `Rest` |
+| 15771 | `SkipFqL1` |
+| 15774 | `MiscSqu2MusicTasks` |
+| 15783 | `NoDecEnv1` |
 
 ## Mapped but not yet matched (36)
 

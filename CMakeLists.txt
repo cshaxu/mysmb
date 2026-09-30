@@ -473,6 +473,9 @@ target_link_libraries(mysmb_sound_music_handoff_snapshot_check PRIVATE mysmb_gam
 add_executable(mysmb_sound_music_selection_snapshot_check
                test/sound_music_selection_snapshot_check.c)
 target_link_libraries(mysmb_sound_music_selection_snapshot_check PRIVATE mysmb_game)
+add_executable(mysmb_sound_square2_music_snapshot_check
+               test/sound_square2_music_snapshot_check.c)
+target_link_libraries(mysmb_sound_square2_music_snapshot_check PRIVATE mysmb_game)
 add_executable(mysmb_end_to_end_smoke test/end_to_end_smoke.c)
 target_link_libraries(mysmb_end_to_end_smoke PRIVATE mysmb_game)
 add_executable(mysmb_ppu_frame_smoke test/ppu_frame_smoke.c)
