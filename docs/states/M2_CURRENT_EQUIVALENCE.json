@@ -29141,131 +29141,170 @@
       "label": "SoundEngine",
       "asmLine": 15070,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Silences title mode; otherwise initializes APU frame/master control and dispatches pause or normal sound processing."
     },
     {
       "label": "SndOn",
       "asmLine": 15075,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Enables the first four channels then enters pause handling when PauseModeFlag is set or PauseSoundQueue equals one, else normal sound processing."
     },
     {
       "label": "InPause",
       "asmLine": 15084,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Starts a queued pause only when buffer is empty, clears sound buffers during the APU reset and initializes pause tone length; empty queue skips subroutines."
     },
     {
       "label": "PTone1F",
       "asmLine": 15099,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the first pause-tone register value and transfers it to the common square-one write sequence."
     },
     {
       "label": "ContPau",
       "asmLine": 15101,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects pause-tone timing transitions at lengths 36, 30 and 24, otherwise decrements pause length without an APU tone write."
     },
     {
       "label": "PTone2F",
       "asmLine": 15108,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the second pause-tone register value and enters common square-one write sequence."
     },
     {
       "label": "PTRegC",
       "asmLine": 15109,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the selected pause tone through PlaySqu1Sfx before pause-length decrement."
     },
     {
       "label": "DecPauC",
       "asmLine": 15112,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements pause length; on expiry disables APU, conditionally clears PauseModeFlag, clears pause buffer and joins queue-clear tail."
     },
     {
       "label": "SkipPIn",
       "asmLine": 15121,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears the pause sound buffer then transfers to the common queue-clear tail."
     },
     {
       "label": "RunSoundSubroutines",
       "asmLine": 15125,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls square-one, square-two, noise and music handlers in source order, then clears both music queues."
     },
     {
       "label": "SkipSoundSubroutines",
       "asmLine": 15134,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears all sound queues and updates DAC_Counter according to AreaMusicBuffer low bits and the prior DAC counter."
     },
     {
       "label": "NoIncDAC",
       "asmLine": 15147,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the pre-update DAC value to preserve the source decrement/no-decrement behavior."
     },
     {
       "label": "StrWave",
       "asmLine": 15150,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the source prior DAC-counter register value to the DMC load register and returns."
     },
     {
       "label": "Dump_Squ1_Regs",
@@ -81071,10 +81110,13 @@
       "instruction": "bne",
       "id": "control-03164",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch SoundEngine → SndOn preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "SndOn",
@@ -81084,10 +81126,13 @@
       "instruction": "bne",
       "id": "control-03165",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch SndOn → InPause preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "SndOn",
@@ -81097,10 +81142,13 @@
       "instruction": "bne",
       "id": "control-03166",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch SndOn → RunSoundSubroutines preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "SndOn",
@@ -81110,10 +81158,13 @@
       "instruction": "bne",
       "id": "control-03167",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SndOn → InPause preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "InPause",
@@ -81123,10 +81174,13 @@
       "instruction": "bne",
       "id": "control-03168",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch InPause → ContPau preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "InPause",
@@ -81136,10 +81190,13 @@
       "instruction": "beq",
       "id": "control-03169",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch InPause → SkipSoundSubroutines preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "InPause",
@@ -81149,10 +81206,13 @@
       "instruction": "sta",
       "id": "control-03170",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through InPause → PTone1F preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "PTone1F",
@@ -81162,10 +81222,13 @@
       "instruction": "bne",
       "id": "control-03171",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch PTone1F → PTRegC preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "PTone1F",
@@ -81175,10 +81238,13 @@
       "instruction": "bne",
       "id": "control-03172",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PTone1F → ContPau preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "ContPau",
@@ -81188,10 +81254,13 @@
       "instruction": "beq",
       "id": "control-03173",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ContPau → PTone2F preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "ContPau",
@@ -81201,10 +81270,13 @@
       "instruction": "beq",
       "id": "control-03174",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ContPau → PTone1F preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "ContPau",
@@ -81214,10 +81286,13 @@
       "instruction": "bne",
       "id": "control-03175",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ContPau → DecPauC preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "ContPau",
@@ -81227,10 +81302,13 @@
       "instruction": "bne",
       "id": "control-03176",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContPau → PTone2F preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "PTone2F",
@@ -81240,10 +81318,13 @@
       "instruction": "lda",
       "id": "control-03177",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PTone2F → PTRegC preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "PTRegC",
@@ -81253,10 +81334,13 @@
       "instruction": "jsr",
       "id": "control-03178",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PTRegC → PlaySqu1Sfx occurs in the original audio-handler order before the caller continuation."
     },
     {
       "from": "PTRegC",
@@ -81266,10 +81350,13 @@
       "instruction": "jsr",
       "id": "control-03179",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PTRegC → DecPauC preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "DecPauC",
@@ -81279,10 +81366,13 @@
       "instruction": "bne",
       "id": "control-03180",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch DecPauC → SkipSoundSubroutines preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "DecPauC",
@@ -81292,10 +81382,13 @@
       "instruction": "bne",
       "id": "control-03181",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch DecPauC → SkipPIn preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "DecPauC",
@@ -81305,10 +81398,13 @@
       "instruction": "sta",
       "id": "control-03182",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DecPauC → SkipPIn preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "SkipPIn",
@@ -81318,10 +81414,13 @@
       "instruction": "beq",
       "id": "control-03183",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch SkipPIn → SkipSoundSubroutines preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "SkipPIn",
@@ -81331,10 +81430,13 @@
       "instruction": "beq",
       "id": "control-03184",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SkipPIn → RunSoundSubroutines preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "RunSoundSubroutines",
@@ -81344,10 +81446,13 @@
       "instruction": "jsr",
       "id": "control-03185",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RunSoundSubroutines → Square1SfxHandler occurs in the original audio-handler order before the caller continuation."
     },
     {
       "from": "RunSoundSubroutines",
@@ -81357,10 +81462,13 @@
       "instruction": "jsr",
       "id": "control-03186",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RunSoundSubroutines → Square2SfxHandler occurs in the original audio-handler order before the caller continuation."
     },
     {
       "from": "RunSoundSubroutines",
@@ -81370,10 +81478,13 @@
       "instruction": "jsr",
       "id": "control-03187",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RunSoundSubroutines → NoiseSfxHandler occurs in the original audio-handler order before the caller continuation."
     },
     {
       "from": "RunSoundSubroutines",
@@ -81383,10 +81494,13 @@
       "instruction": "jsr",
       "id": "control-03188",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RunSoundSubroutines → MusicHandler occurs in the original audio-handler order before the caller continuation."
     },
     {
       "from": "RunSoundSubroutines",
@@ -81396,10 +81510,13 @@
       "instruction": "sta",
       "id": "control-03189",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through RunSoundSubroutines → SkipSoundSubroutines preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "SkipSoundSubroutines",
@@ -81409,10 +81526,13 @@
       "instruction": "beq",
       "id": "control-03190",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch SkipSoundSubroutines → NoIncDAC preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "SkipSoundSubroutines",
@@ -81422,10 +81542,13 @@
       "instruction": "bcc",
       "id": "control-03191",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch SkipSoundSubroutines → StrWave preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "SkipSoundSubroutines",
@@ -81435,10 +81558,13 @@
       "instruction": "bcc",
       "id": "control-03192",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SkipSoundSubroutines → NoIncDAC preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "NoIncDAC",
@@ -81448,10 +81574,13 @@
       "instruction": "beq",
       "id": "control-03193",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch NoIncDAC → StrWave preserves its operating-mode, pause, timer or DAC predicate before the alternate path."
     },
     {
       "from": "NoIncDAC",
@@ -81461,10 +81590,13 @@
       "instruction": "dec",
       "id": "control-03194",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
+      "semanticEvidence": [
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through NoIncDAC → StrWave preserves prior audio-buffer/APU state writes before the successor."
     },
     {
       "from": "PlaySqu1Sfx",
@@ -85323,12 +85455,12 @@
       "id": "control-03489",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original return relation SoundEngine -> InitBuffer at source line 803 (rts/rti) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
+      "semanticContract": "The source return relation SoundEngine → InitBuffer exposes the completed audio/APU state to its caller continuation."
     },
     {
       "from": "ReadJoypads",

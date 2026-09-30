@@ -1316,3 +1316,9 @@ branches.
 - Node-semantics result: three labels moved from `unclassified` to `needs-evidence`; the shared writer's tile order, horizontal-flip attribute contribution, coordinates and caller-index advances have distinct contracts.
 - Independent integration result: 4 outgoing control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 flipped and unflipped routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K24 — SoundEngine main, pause and dispatch audit
+
+- Source range: `SoundEngine` through `StrWave` (`SMBDIS.ASM` lines 15070–15151).
+- Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering title mute, APU initialization, pause state, square-tone timing, SFX/music dispatch, queue clearing and DAC tail behavior.
+- Independent integration result: 32 outgoing control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 title/pause/normal/DAC routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
