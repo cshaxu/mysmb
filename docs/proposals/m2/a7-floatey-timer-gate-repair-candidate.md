@@ -31,12 +31,12 @@ this timing into any platform adapter.
 
 ## Receiving audit items
 
-Node: `DecNumTimer`.
+Nodes: `FloateyNumbersRoutine`, `DecNumTimer`.
 
 Control edges: `control-00176` (`DecNumTimer -> ChkTallEnemy`),
 `control-00177` and `control-00178` (`DecNumTimer -> LoadNumTiles`), and
 `control-00179` (`LoadNumTiles -> AddToScore`).
 
 Expected current-audit delta after a successful repair and fresh route proof:
-one node and four control edges from `mismatch` to `exact`; no historical
+two nodes and four control edges from `mismatch` to `exact`; no historical
 node-accounting credit is implied by this candidate.

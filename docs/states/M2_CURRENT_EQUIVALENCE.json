@@ -57,6 +57,34 @@
       "operationalEvidence": [
         "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80de, after UpdateScreen and InitBuffer, match current x86 and x64 buffer headers $0300/$0301 and $0340/$0341 plus cleared selector $0773 for selectors 0-18; x86 and x64 agree on every selector."
       ]
+    },
+    {
+      "id": "material-00004",
+      "producer": "ScoreUpdateData",
+      "consumer": "LoadNumTiles",
+      "storage": "selector-indexed score digit/amount table to DigitModifier then AddToScore",
+      "feasiblePath": "FloateyNum_Timer decrements to $2b; LoadNumTiles indexes ScoreUpdateData by FloateyNum_Control and writes DigitModifier before AddToScore.",
+      "status": "mismatch",
+      "currentCounterpart": "src/game/objects.c:score_data in mysmb_objects_step_floatey_number",
+      "semanticContract": "The table bytes match, but the source path reaches this table only after decrement produces $2b; current C selects it from the pre-decrement value.",
+      "semanticEvidence": [
+        "Td S9 A7 static mismatch: ROM DEC-before-CMP gate at lines 1320-1337 versus current C pre-decrement test changes feasible table-consumption frames."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00005",
+      "producer": "FloateyNumTileData",
+      "consumer": "SetupNumSpr",
+      "storage": "FloateyNum_Control*2 tile-pair lookup to two OAM tile bytes",
+      "feasiblePath": "After the timer/OAM-offset path, SetupNumSpr doubles current FloateyNum_Control and reads consecutive FloateyNumTileData bytes into the left/right sprite tile fields.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:tile_data indexed by control << 1 in mysmb_objects_step_floatey_number",
+      "semanticContract": "Each reachable control selects the same ordered tile pair for the two OAM sprites after the source Y/carry adjustment.",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static data-edge audit: SMB1 lines 1287-1299 and 1363-1378 map the table and its control*2 consumer to objects.c tile_data."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -1383,41 +1411,53 @@
       "label": "FloateyNumTileData",
       "asmLine": 1287,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8461: binds 12 control values to two sprite tile bytes, indexed by FloateyNum_Control*2 at SetupNumSpr."
     },
     {
       "label": "ScoreUpdateData",
       "asmLine": 1303,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8479: binds 12 control values to score digit/amount nybbles, indexed by FloateyNum_Control at LoadNumTiles."
     },
     {
       "label": "FloateyNumbersRoutine",
       "asmLine": 1308,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 static mismatch: FloateyNumbersRoutine contains DecNumTimer timing behavior that differs at initial timer $2c and $2b; see A7 Floatey timer-gate repair candidate."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $84c3: dispatches the current ObjectOffset floatey control through clamp, timer, score, OAM-offset selection, vertical motion and two-sprite output; the current entry has a confirmed timer-gate mismatch."
     },
     {
       "label": "ChkNumTimer",
       "asmLine": 1315,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $84ce: clears FloateyNum_Control and returns when its current timer is zero; nonzero timer enters DecNumTimer with control in Y."
     },
     {
       "label": "DecNumTimer",
@@ -1436,51 +1476,66 @@
       "label": "LoadNumTiles",
       "asmLine": 1328,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $84e2: loads ScoreUpdateData by control, writes the selected DigitModifier, invokes AddToScore, then continues to OAM selection; its caller timing is presently mismatched."
     },
     {
       "label": "ChkTallEnemy",
       "asmLine": 1338,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $84f4: selects ordinary or alternate enemy OAM offset based on ID and state, preserving ObjectOffset before FloateyPart."
     },
     {
       "label": "GetAltOffset",
       "asmLine": 1355,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8513: loads alternate OAM offset through SprDataOffset_Ctrl then restores ObjectOffset before FloateyPart."
     },
     {
       "label": "FloateyPart",
       "asmLine": 1358,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $851a: decrements FloateyNum_Y_Pos only at/under the non-status region and preserves the CMP carry for SetupNumSpr subtraction."
     },
     {
       "label": "SetupNumSpr",
       "asmLine": 1363,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8521: writes two OAM sprites from current floatey X/Y/control and FloateyNumTileData, with attributes $02 and X+8 right sprite."
     },
     {
       "label": "ScreenRoutines",
@@ -23313,10 +23368,13 @@
       "instruction": "bcc",
       "id": "control-00173",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "control >= $0b clamp branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original FloateyNumbersRoutine -> ChkNumTimer enters after clamping control values at or above $0b to $0b."
     },
     {
       "from": "FloateyNumbersRoutine",
@@ -23326,10 +23384,13 @@
       "instruction": "sta",
       "id": "control-00174",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "control < $0b fall-through",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original FloateyNumbersRoutine -> ChkNumTimer preserves in-range control without a clamp write."
     },
     {
       "from": "ChkNumTimer",
@@ -23339,10 +23400,13 @@
       "instruction": "bne",
       "id": "control-00175",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "timer != 0 branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkNumTimer -> DecNumTimer enters only with nonzero current FloateyNum_Timer and control retained as the score-table index."
     },
     {
       "from": "DecNumTimer",
@@ -23416,10 +23480,13 @@
       "instruction": "jsr",
       "id": "control-00180",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "post-score continuation",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original LoadNumTiles -> ChkTallEnemy enters OAM-offset selection only after AddToScore returns."
     },
     {
       "from": "ChkTallEnemy",
@@ -23429,10 +23496,13 @@
       "instruction": "beq",
       "id": "control-00181",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy id Spiny branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkTallEnemy -> FloateyPart preserves ordinary sprite offset for Spiny."
     },
     {
       "from": "ChkTallEnemy",
@@ -23442,10 +23512,13 @@
       "instruction": "beq",
       "id": "control-00182",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy id Piranha branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkTallEnemy -> FloateyPart preserves ordinary sprite offset for Piranha Plant."
     },
     {
       "from": "ChkTallEnemy",
@@ -23455,10 +23528,13 @@
       "instruction": "beq",
       "id": "control-00183",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy id Hammer Bro branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkTallEnemy -> GetAltOffset selects alternate offset for Hammer Bro."
     },
     {
       "from": "ChkTallEnemy",
@@ -23468,10 +23544,13 @@
       "instruction": "beq",
       "id": "control-00184",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy id Grey Cheep-Cheep branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkTallEnemy -> FloateyPart preserves ordinary offset for Grey Cheep-Cheep."
     },
     {
       "from": "ChkTallEnemy",
@@ -23481,10 +23560,13 @@
       "instruction": "beq",
       "id": "control-00185",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy id Red Cheep-Cheep branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkTallEnemy -> FloateyPart preserves ordinary offset for Red Cheep-Cheep."
     },
     {
       "from": "ChkTallEnemy",
@@ -23494,10 +23576,13 @@
       "instruction": "bcs",
       "id": "control-00186",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy id >= TallEnemy branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkTallEnemy -> GetAltOffset selects alternate offset for the large-enemy ID range."
     },
     {
       "from": "ChkTallEnemy",
@@ -23507,10 +23592,13 @@
       "instruction": "bcs",
       "id": "control-00187",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "ordinary enemy state >= 2 branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkTallEnemy -> FloateyPart preserves ordinary offset for defeated/advanced ordinary enemies."
     },
     {
       "from": "ChkTallEnemy",
@@ -23520,10 +23608,13 @@
       "instruction": "bcs",
       "id": "control-00188",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "ordinary enemy state < 2 fall-through",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkTallEnemy -> GetAltOffset selects alternate offset for living ordinary enemies."
     },
     {
       "from": "GetAltOffset",
@@ -23533,10 +23624,13 @@
       "instruction": "ldx",
       "id": "control-00189",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "alternate offset restore continuation",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetAltOffset -> FloateyPart restores ObjectOffset after selecting Alt_SprDataOffset."
     },
     {
       "from": "FloateyPart",
@@ -23546,10 +23640,13 @@
       "instruction": "bcc",
       "id": "control-00190",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "floatey Y < $18 branch",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original FloateyPart -> SetupNumSpr bypasses the vertical decrement in the status region while retaining CMP carry semantics."
     },
     {
       "from": "FloateyPart",
@@ -23559,10 +23656,13 @@
       "instruction": "sta",
       "id": "control-00191",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "floatey Y >= $18 continuation",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original FloateyPart -> SetupNumSpr decrements Y once before sprite construction."
     },
     {
       "from": "SetupNumSpr",
@@ -23572,10 +23672,13 @@
       "instruction": "jsr",
       "id": "control-00192",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "two-sprite OAM call",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetupNumSpr -> DumpTwoSpr supplies Y-8/9 and writes both sprite X/attribute/tile records after the helper establishes their Ys."
     },
     {
       "from": "ScreenRoutines",
@@ -31177,10 +31280,13 @@
       "instruction": "jsr",
       "id": "control-00777",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/engine_slots.c:mysmb_game_engine_actors per-slot floatey call",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ProcELoop -> FloateyNumbersRoutine executes once for the same ObjectOffset immediately after the slot enemy core."
     },
     {
       "from": "ProcELoop",
@@ -66847,10 +66953,13 @@
       "instruction": "rts/rti",
       "id": "control-03513",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number score add completion",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AddToScore -> LoadNumTiles returns before OAM-offset selection; current timing of reaching this relation is separately mismatched."
     },
     {
       "from": "DumpTwoSpr",
@@ -66860,10 +66969,13 @@
       "instruction": "rts/rti",
       "id": "control-03514",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number two OAM sprite writes",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DumpTwoSpr -> SetupNumSpr returns after both sprite Y positions are established before X/attribute/tile writes."
     },
     {
       "from": "JumpEngine",
@@ -68238,10 +68350,13 @@
       "instruction": "rts/rti",
       "id": "control-03620",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/engine_slots.c:mysmb_game_engine_actors per-slot continuation",
+      "semanticEvidence": [
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original FloateyNumbersRoutine -> ProcELoop returns to the slot loop without changing its current-object scheduling."
     },
     {
       "from": "GetPlayerOffscreenBits",

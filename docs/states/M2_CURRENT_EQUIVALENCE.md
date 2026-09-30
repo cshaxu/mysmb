@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 63 |
-| Mismatch | 3 |
-| Unclassified | 4,200 control edges; material edge denominator pending feasible-path enumeration |
+| Needs evidence | 147 control; 1 material RAM/table |
+| Mismatch | 7 control; 1 material RAM/table |
+| Unclassified | 4,112 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -338,3 +338,16 @@ paths to `LoadNumTiles`, and `LoadNumTiles -> AddToScore`. The ordered
 unnumbered repair record is [A7 Floatey timer-gate repair]
 (../proposals/m2/a7-floatey-timer-gate-repair-candidate.md). It must receive a
 later numeric task before any production source change.
+
+The remainder of the Floatey chain is now statically mapped: the two local
+tables, `FloateyNumbersRoutine`, timer-zero return, score caller/return,
+enemy OAM-offset selector, vertical/carry path and two-sprite output. Eight
+nodes and twenty currently unclassified control relations are
+`needs-evidence`; `FloateyNumbersRoutine` is also `mismatch` because its entry
+has different observable results at the two timer boundary inputs. Two
+feasible material edges are registered separately: `ScoreUpdateData ->
+LoadNumTiles` is `mismatch` because its otherwise matching table is consumed
+on the wrong timer frame, while `FloateyNumTileData -> SetupNumSpr` remains
+`needs-evidence`. Required route evidence spans zero, `$2b`, `$2c`, ordinary
+score, 1-UP, every alternate-OAM selector family, both vertical regions and
+the complete two-sprite output.
