@@ -211,7 +211,8 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T48 S4 | 16 | `Square1SfxHandler`, `CheckSfx1Buffer`, `ExS1H`, `PlaySwimStomp`, `ContinueSwimStomp`, `BranchToDecLength1`, `PlaySmackEnemy`, `ContinueSmackEnemy`, `SmSpc`, `SmTick`, `DecrementSfx1Length`, `StopSquare1Sfx`, `ExSfx1`, `PlayPipeDownInj`, `ContinuePipeDownInj`, `NoPDwnL` |
 | M2 T48 S5 | 18 | `ExtraLifeFreqData`, `PowerUpGrabFreqData`, `PUp_VGrow_FreqData`, `PlayCoinGrab`, `PlayTimerTick`, `CGrab_TTickRegL`, `ContinueCGrabTTick`, `N2Tone`, `PlayBlast`, `ContinueBlast`, `SBlasJ`, `PlayPowerUpGrab`, `ContinuePowerUpGrab`, `LoadSqu2Regs`, `DecrementSfx2Length`, `EmptySfx2Buffer`, `StopSquare2Sfx`, `ExSfx2` |
 | M2 T48 S6 | 4 | `Square2SfxHandler`, `CheckSfx2Buffer`, `ExS2H`, `Cont_CGrab_TTick` |
-| M2 Td S4 | 129 | `JumpToDecLength2`, `PlayBowserFall`, `BlstSJp`, `ContinueBowserFall`, `PBFRegs`, `EL_LRegs`, `PlayExtraLife`, `ContinueExtraLife`, `DivLLoop`, `PlayGrowPowerUp`, `PlayGrowVine`, `GrowItemRegs`, `ContinueGrowItems`, `StopGrowItems`, `BrickShatterFreqData`, `PlayBrickShatter`, `ContinueBrickShatter`, `PlayNoiseSfx`, `DecrementSfx3Length`, `ExSfx3`, `NoiseSfxHandler`, `CheckNoiseBuffer`, `ExNH`, `PlayBowserFlame`, `ContinueBowserFlame`, `ContinueMusic`, `MusicHandler`, `LoadEventMusic`, `NoStopSfx`, `LoadAreaMusic`, `NoStop1`, `GMLoopB`, `HandleAreaMusicLoopB`, `FindAreaMusicHeader`, `FindEventMusicHeader`, `LoadHeader`, `HandleSquare2Music`, `EndOfMusicData`, `NotTRO`, `MusicLoopBack`, `VictoryMLoopBack`, `Squ2LengthHandler`, `Squ2NoteHandler`, `Rest`, `SkipFqL1`, `MiscSqu2MusicTasks`, `NoDecEnv1`, `HandleSquare1Music`, `FetchSqu1MusicData`, `Squ1NoteHandler`, `SkipCtrlL`, `MiscSqu1MusicTasks`, `NoDecEnv2`, `DeathMAltReg`, `DoAltLoad`, `HandleTriangleMusic`, `TriNoteHandler`, `NotDOrD4`, `MediN`, `LongN`, `LoadTriCtrlReg`, `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler`, `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData`, `MusicHeaderData`, `TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`, `UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`, `GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`, `GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`, `GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`, `GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, `DeathMusHdr`, `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData`, `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData`, `BowserFlameEnvData`, `BrickShatterEnvData` |
+| M2 T49 S1 | 14 | `JumpToDecLength2`, `PlayBowserFall`, `BlstSJp`, `ContinueBowserFall`, `PBFRegs`, `EL_LRegs`, `PlayExtraLife`, `ContinueExtraLife`, `DivLLoop`, `PlayGrowPowerUp`, `PlayGrowVine`, `GrowItemRegs`, `ContinueGrowItems`, `StopGrowItems` |
+| M2 Td S4 | 115 | `BrickShatterFreqData`, `PlayBrickShatter`, `ContinueBrickShatter`, `PlayNoiseSfx`, `DecrementSfx3Length`, `ExSfx3`, `NoiseSfxHandler`, `CheckNoiseBuffer`, `ExNH`, `PlayBowserFlame`, `ContinueBowserFlame`, `ContinueMusic`, `MusicHandler`, `LoadEventMusic`, `NoStopSfx`, `LoadAreaMusic`, `NoStop1`, `GMLoopB`, `HandleAreaMusicLoopB`, `FindAreaMusicHeader`, `FindEventMusicHeader`, `LoadHeader`, `HandleSquare2Music`, `EndOfMusicData`, `NotTRO`, `MusicLoopBack`, `VictoryMLoopBack`, `Squ2LengthHandler`, `Squ2NoteHandler`, `Rest`, `SkipFqL1`, `MiscSqu2MusicTasks`, `NoDecEnv1`, `HandleSquare1Music`, `FetchSqu1MusicData`, `Squ1NoteHandler`, `SkipCtrlL`, `MiscSqu1MusicTasks`, `NoDecEnv2`, `DeathMAltReg`, `DoAltLoad`, `HandleTriangleMusic`, `TriNoteHandler`, `NotDOrD4`, `MediN`, `LongN`, `LoadTriCtrlReg`, `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler`, `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData`, `MusicHeaderData`, `TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`, `UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`, `GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`, `GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`, `GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`, `GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, `DeathMusHdr`, `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData`, `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData`, `BowserFlameEnvData`, `BrickShatterEnvData` |
 
 ## Future admission packages and queued plans
 
@@ -224,7 +225,7 @@ transfer existing ownership or allocate a numeric T.
 | root-revalidation | 0 | not decomposed here | [record](../../docs/proposals/m2/frame-root.md); T14 is closed; a new admitted T/S must accept outstanding root verification. |
 | screen-status | 0 | not decomposed here | [record](../../docs/proposals/m2/screen-status.md); T27 S1 is admitted for the screen-task root; later T27 chains remain queued and their nodes retain T24 S2 custody until individual admission. |
 | game-dispatcher | 0 | not decomposed here | [record](../../docs/history/M2-T31-game-dispatcher.md); Candidate has no allocated implementation T/S yet. |
-| audio-engine-deferred | 129 | not decomposed here | [record](../../docs/proposals/m2/audio-engine.md); Prematurely numbered audio candidate held until later admission. |
+| audio-engine-deferred | 115 | not decomposed here | [record](../../docs/proposals/m2/audio-engine.md); Prematurely numbered audio candidate held until later admission. |
 | fireball-bubble-timer-warp-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T20 unfinished nodes await their source-order T32/T33 successors, not T21. |
 | t22-nmi-ppu-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T21 closure found that the boot root and queued NMI/PPU nodes share the first-NMI ownership boundary; pending source-order T22 admission. |
 
@@ -2095,20 +2096,20 @@ transfer existing ownership or allocate a numeric T.
 | 15478 | `CheckSfx2Buffer` | M2 T48 S6 | existing closure backlog; admitted T48 S6 source-order implementation | M2 T24 S1 |
 | 15496 | `ExS2H` | M2 T48 S6 | existing closure backlog; admitted T48 S6 source-order implementation | M2 T24 S1 |
 | 15498 | `Cont_CGrab_TTick` | M2 T48 S6 | existing closure backlog; admitted T48 S6 source-order implementation | M2 T24 S1 |
-| 15501 | `JumpToDecLength2` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15504 | `PlayBowserFall` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15509 | `BlstSJp` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15511 | `ContinueBowserFall` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15517 | `PBFRegs` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15518 | `EL_LRegs` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15520 | `PlayExtraLife` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15524 | `ContinueExtraLife` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15527 | `DivLLoop` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15537 | `PlayGrowPowerUp` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T21 S2; M2 T24 S1 |
-| 15541 | `PlayGrowVine` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 15544 | `GrowItemRegs` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T21 S2; M2 T24 S1 |
-| 15551 | `ContinueGrowItems` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T21 S2; M2 T24 S1 |
-| 15564 | `StopGrowItems` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
+| 15501 | `JumpToDecLength2` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15504 | `PlayBowserFall` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15509 | `BlstSJp` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15511 | `ContinueBowserFall` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15517 | `PBFRegs` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15518 | `EL_LRegs` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15520 | `PlayExtraLife` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15524 | `ContinueExtraLife` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15527 | `DivLLoop` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15537 | `PlayGrowPowerUp` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T21 S2; M2 T24 S1 |
+| 15541 | `PlayGrowVine` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
+| 15544 | `GrowItemRegs` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T21 S2; M2 T24 S1 |
+| 15551 | `ContinueGrowItems` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T21 S2; M2 T24 S1 |
+| 15564 | `StopGrowItems` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
 | 15569 | `BrickShatterFreqData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
 | 15573 | `PlayBrickShatter` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
 | 15577 | `ContinueBrickShatter` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
@@ -2552,6 +2553,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T48 S4 | 0 | 16 | owner-approved-source-order, square-one-dispatch-lifetime; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
 | M2 T48 S5 | 0 | 18 | owner-approved-source-order, square-two-effect-phases; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
 | M2 T48 S6 | 0 | 4 | owner-approved-source-order, square-two-dispatch; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| M2 T49 | 0 | - | [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S1 | 0 | 14 | owner-approved-source-order, square-two-remaining-effects; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 | M2 T5 | 2 | - | [record](../../docs/history/M2-T5-object-routes.md); S not recorded |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
@@ -2560,7 +2563,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S3 | 0 | 0 | explicit-reference; [record](../../docs/proposals/m2-rom-structural-recovery.md) |
 | M2 Td S2 | 0 | 0 | explicit-reference; [record](../../docs/states/QUEUE.md) |
-| M2 Td S4 | 0 | 129 | out-of-order-custody; [record](../../docs/proposals/m2/audio-engine.md) |
+| M2 Td S4 | 0 | 115 | out-of-order-custody; [record](../../docs/proposals/m2/audio-engine.md) |
 | M2 Td S5 | 0 | 0 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S6 | 0 | 0 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S7 | 0 | 0 | source-order-identifier-reconciliation; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
@@ -2863,6 +2866,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-264-to-t48-s4 | M2 Td S4 | M2 T48 S4 | 16 | Coordinator accepts the 16-label square-one dispatcher, swim/stomp, smack, pipe and lifetime chain under the owner-approved source-order mandate.; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
 | transfer-265-to-t48-s5 | M2 Td S4 | M2 T48 S5 | 18 | Coordinator accepts the 18-label square-two effect data, phase and lifetime chain under the owner-approved source-order mandate.; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
 | transfer-266-to-t48-s6 | M2 Td S4 | M2 T48 S6 | 4 | Coordinator accepts the four-label square-two queue and buffer dispatcher chain under the owner-approved source-order mandate.; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| transfer-267-to-t49-s1 | M2 Td S4 | M2 T49 S1 | 14 | Coordinator accepts the 14-label remaining square-two effect chain under the owner-approved M2 source-order mandate.; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3112,3 +3116,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T48 S4 | 16 | 1785 | `Square1SfxHandler`, `CheckSfx1Buffer`, `ExS1H`, `PlaySwimStomp`, `ContinueSwimStomp`, `BranchToDecLength1`, `PlaySmackEnemy`, `ContinueSmackEnemy`, `SmSpc`, `SmTick`, `DecrementSfx1Length`, `StopSquare1Sfx`, `ExSfx1`, `PlayPipeDownInj`, `ContinuePipeDownInj`, `NoPDwnL` / 16 | `Square1SfxHandler`, `CheckSfx1Buffer`, `ExS1H`, `PlaySwimStomp`, `ContinueSwimStomp`, `BranchToDecLength1`, `PlaySmackEnemy`, `ContinueSmackEnemy`, `SmSpc`, `SmTick`, `DecrementSfx1Length`, `StopSquare1Sfx`, `ExSfx1`, `PlayPipeDownInj`, `ContinuePipeDownInj`, `NoPDwnL` / 16 | closed-rom-match-complete; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
 | M2 T48 S5 | 18 | 1801 | `ExtraLifeFreqData`, `PowerUpGrabFreqData`, `PUp_VGrow_FreqData`, `PlayCoinGrab`, `PlayTimerTick`, `CGrab_TTickRegL`, `ContinueCGrabTTick`, `N2Tone`, `PlayBlast`, `ContinueBlast`, `SBlasJ`, `PlayPowerUpGrab`, `ContinuePowerUpGrab`, `LoadSqu2Regs`, `DecrementSfx2Length`, `EmptySfx2Buffer`, `StopSquare2Sfx`, `ExSfx2` / 18 | `ExtraLifeFreqData`, `PowerUpGrabFreqData`, `PUp_VGrow_FreqData`, `PlayCoinGrab`, `PlayTimerTick`, `CGrab_TTickRegL`, `ContinueCGrabTTick`, `N2Tone`, `PlayBlast`, `ContinueBlast`, `SBlasJ`, `PlayPowerUpGrab`, `ContinuePowerUpGrab`, `LoadSqu2Regs`, `DecrementSfx2Length`, `EmptySfx2Buffer`, `StopSquare2Sfx`, `ExSfx2` / 18 | closed-rom-match-complete; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
 | M2 T48 S6 | 4 | 1819 | `Square2SfxHandler`, `CheckSfx2Buffer`, `ExS2H`, `Cont_CGrab_TTick` / 4 | `Square2SfxHandler`, `CheckSfx2Buffer`, `ExS2H`, `Cont_CGrab_TTick` / 4 | closed-rom-match-complete; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| M2 T49 S1 | 14 | 1823 | `JumpToDecLength2`, `PlayBowserFall`, `BlstSJp`, `ContinueBowserFall`, `PBFRegs`, `EL_LRegs`, `PlayExtraLife`, `ContinueExtraLife`, `DivLLoop`, `PlayGrowPowerUp`, `PlayGrowVine`, `GrowItemRegs`, `ContinueGrowItems`, `StopGrowItems` / 14 | none / 0 | admitted-square-two-remaining-effects; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
