@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 252 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 258 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,693 | Not yet processed by this re-audit. |
+| Unclassified | 1,687 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 480 control; 44 material RAM/table |
+| Needs evidence | 495 control; 44 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,776 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,761 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -488,3 +488,16 @@ All 15 nodes, 30 relations and two material paths remain `needs-evidence`
 until controlled original-ROM and x86/x64 runs cover no-life Game Over,
 checkpoint accepted/rejected paths, Start/non-Start timer paths and both
 successful and failed two-player transpositions.
+
+### Cohort C — B10c parser-task cadence and column-advance integration
+
+`AreaParserTaskHandler` through `NoColWrap` (lines 3060–3102) now have node
+contracts and 21 reviewed local control/return/selector relations. The audit
+keeps the screen task's full two-column loop distinct from the runtime's
+one-slot parser call: zero initializes the persistent task counter to eight;
+each call executes one descending selector; only the terminal slot emits
+attributes. It also records both column-advance selector entries, all four
+graphics entries, both parser-core entries, the 16-column page wrap and the
+32-column block-buffer wrap. No static discrepancy was found. The six nodes
+and newly reviewed relations remain `needs-evidence` pending controlled ROM
+and x86/x64 column-set and runtime scrolling routes.

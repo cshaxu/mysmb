@@ -4828,61 +4828,79 @@
       "label": "AreaParserTaskHandler",
       "asmLine": 3060,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_parser_task_step",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes a zero task counter to eight, executes exactly one descending task slot, decrements the persistent counter, and emits attributes only after slot zero."
     },
     {
       "label": "DoAPTasks",
       "asmLine": 3065,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_parser_task_step task decrement/tail",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Passes task minus one through the eight-way selector, then retains it as AreaParserTaskNum before conditional attribute output."
     },
     {
       "label": "SkipATRender",
       "asmLine": 3071,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_parser_task_step return",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after nonzero task slots without emitting attribute commands."
     },
     {
       "label": "AreaParserTasks",
       "asmLine": 3073,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_parser_task_step selector",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps source selectors 0/4 to column advance, 1/2/5/6 to graphics, and 3/7 to parser core."
     },
     {
       "label": "IncrementColumnPos",
       "asmLine": 3087,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_parser_task_step column advance",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments CurrentColumnPos, wraps its low nibble at sixteen with page increment, then advances the circular 32-column block buffer."
     },
     {
       "label": "NoColWrap",
       "asmLine": 3094,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_parser_task_step block-column tail",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Masks BlockBufferColumnPos to five bits after either page-wrap or ordinary column path."
     },
     {
       "label": "BSceneDataOffsets",
@@ -29350,10 +29368,13 @@
       "instruction": "bne",
       "id": "control-00471",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves a nonzero persistent parser task counter before executing its decremented selector.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves a nonzero persistent parser task counter before executing its decremented selector."
     },
     {
       "from": "AreaParserTaskHandler",
@@ -29363,10 +29384,13 @@
       "instruction": "sty",
       "id": "control-00472",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c initializes a zero persistent parser task counter to eight before the shared execution path.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c initializes a zero persistent parser task counter to eight before the shared execution path."
     },
     {
       "from": "DoAPTasks",
@@ -29376,10 +29400,13 @@
       "instruction": "jsr",
       "id": "control-00473",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c invokes exactly one task selector for each handler call.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c invokes exactly one task selector for each handler call."
     },
     {
       "from": "DoAPTasks",
@@ -29389,10 +29416,13 @@
       "instruction": "bne",
       "id": "control-00474",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c skips attribute output when the post-task persistent counter remains nonzero.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c skips attribute output when the post-task persistent counter remains nonzero."
     },
     {
       "from": "DoAPTasks",
@@ -29403,12 +29433,12 @@
       "id": "control-00475",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "currentCounterpart": "area.c invokes attribute output only after the post-task counter reaches zero.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original DoAPTasks -> RenderAttributeTables call relation must preserve source predicate, buffer/table state and successor or return handoff."
+      "semanticContract": "area.c invokes attribute output only after the post-task counter reaches zero."
     },
     {
       "from": "DoAPTasks",
@@ -29418,10 +29448,13 @@
       "instruction": "jsr",
       "id": "control-00476",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c returns after the final attribute producer without changing the parser counter again.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c returns after the final attribute producer without changing the parser counter again."
     },
     {
       "from": "AreaParserTasks",
@@ -29431,10 +29464,13 @@
       "instruction": "jsr",
       "id": "control-00477",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c task switch is the source-equivalent JumpEngine selector owner.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c task switch is the source-equivalent JumpEngine selector owner."
     },
     {
       "from": "AreaParserTasks",
@@ -29444,10 +29480,13 @@
       "instruction": "jsr",
       "id": "control-00478",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c selector zero/four reaches the same column-advance state transition.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c selector zero/four reaches the same column-advance state transition."
     },
     {
       "from": "IncrementColumnPos",
@@ -29457,10 +29496,13 @@
       "instruction": "bne",
       "id": "control-00479",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c nonzero low nibble bypasses CurrentPageLoc increment.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c nonzero low nibble bypasses CurrentPageLoc increment."
     },
     {
       "from": "IncrementColumnPos",
@@ -29470,10 +29512,13 @@
       "instruction": "inc",
       "id": "control-00480",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c page-wrap path clears CurrentColumnPos then falls into the same block-column tail.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c page-wrap path clears CurrentColumnPos then falls into the same block-column tail."
     },
     {
       "from": "AreaParserCore",
@@ -69639,10 +69684,13 @@
       "instruction": "rts/rti",
       "id": "control-03554",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c selected task returns to the persistent-counter decrement before attribute gating.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c selected task returns to the persistent-counter decrement before attribute gating."
     },
     {
       "from": "RenderAttributeTables",
@@ -69653,12 +69701,12 @@
       "id": "control-03555",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "currentCounterpart": "area.c attribute output returns to the common parser-handler return.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original RenderAttributeTables -> DoAPTasks return relation must preserve source predicate, buffer/table state and successor or return handoff."
+      "semanticContract": "area.c attribute output returns to the common parser-handler return."
     },
     {
       "from": "JumpEngine",
@@ -69668,10 +69716,13 @@
       "instruction": "rts/rti",
       "id": "control-03556",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "the C task switch returns to the handler tail without a separate stack-visible side effect.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "the C task switch returns to the handler tail without a separate stack-visible side effect."
     },
     {
       "from": "ProcessAreaData",
@@ -77226,10 +77277,13 @@
       "selector": 0,
       "id": "control-04127",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c selector zero performs column advance.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c selector zero performs column advance."
     },
     {
       "from": "AreaParserTasks",
@@ -77241,12 +77295,12 @@
       "id": "control-04128",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "currentCounterpart": "area.c selector one performs graphics expansion.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original AreaParserTasks -> RenderAreaGraphics jump-engine-dispatch relation must preserve source predicate, buffer/table state and successor or return handoff."
+      "semanticContract": "area.c selector one performs graphics expansion."
     },
     {
       "from": "AreaParserTasks",
@@ -77258,12 +77312,12 @@
       "id": "control-04129",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "currentCounterpart": "area.c selector two performs graphics expansion.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original AreaParserTasks -> RenderAreaGraphics jump-engine-dispatch relation must preserve source predicate, buffer/table state and successor or return handoff."
+      "semanticContract": "area.c selector two performs graphics expansion."
     },
     {
       "from": "AreaParserTasks",
@@ -77274,10 +77328,13 @@
       "selector": 3,
       "id": "control-04130",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c selector three performs AreaParserCore scenery/object work.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c selector three performs AreaParserCore scenery/object work."
     },
     {
       "from": "AreaParserTasks",
@@ -77288,10 +77345,13 @@
       "selector": 4,
       "id": "control-04131",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c selector four performs column advance.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c selector four performs column advance."
     },
     {
       "from": "AreaParserTasks",
@@ -77303,12 +77363,12 @@
       "id": "control-04132",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "currentCounterpart": "area.c selector five performs graphics expansion.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original AreaParserTasks -> RenderAreaGraphics jump-engine-dispatch relation must preserve source predicate, buffer/table state and successor or return handoff."
+      "semanticContract": "area.c selector five performs graphics expansion."
     },
     {
       "from": "AreaParserTasks",
@@ -77320,12 +77380,12 @@
       "id": "control-04133",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "currentCounterpart": "area.c selector six performs graphics expansion.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original AreaParserTasks -> RenderAreaGraphics jump-engine-dispatch relation must preserve source predicate, buffer/table state and successor or return handoff."
+      "semanticContract": "area.c selector six performs graphics expansion."
     },
     {
       "from": "AreaParserTasks",
@@ -77336,10 +77396,13 @@
       "selector": 7,
       "id": "control-04134",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c selector seven performs AreaParserCore scenery/object work.",
+      "semanticEvidence": [
+        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c selector seven performs AreaParserCore scenery/object work."
     },
     {
       "from": "RunAObj",
