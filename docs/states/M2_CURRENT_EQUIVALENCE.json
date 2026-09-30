@@ -197,6 +197,104 @@
         "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00014",
+      "producer": "MetatileBuffer",
+      "consumer": "RenderAreaGraphics",
+      "storage": "13 staged encoded metatiles to tile/attribute command producer",
+      "feasiblePath": "DrawMTLoop reads each staged metatile exactly once for graphics and attributes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics metatile loop",
+      "semanticContract": "All 13 staged values select the same tile and attribute outputs.",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00015",
+      "producer": "MetatileGraphics_Low",
+      "consumer": "RenderAreaGraphics",
+      "storage": "palette-indexed ROM low address table to metatile graphics",
+      "feasiblePath": "DrawMTLoop uses top two metatile bits to select graphics pointer low byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:area_prg MYSMB_AREA_METATILE_LOW",
+      "semanticContract": "Every palette class selects the same graphics address low byte.",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00016",
+      "producer": "MetatileGraphics_High",
+      "consumer": "RenderAreaGraphics",
+      "storage": "palette-indexed ROM high address table to metatile graphics",
+      "feasiblePath": "DrawMTLoop uses top two metatile bits to select graphics pointer high byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:area_prg MYSMB_AREA_METATILE_HIGH",
+      "semanticContract": "Every palette class selects the same graphics address high byte.",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00017",
+      "producer": "AttributeBuffer",
+      "consumer": "RenderAttributeTables",
+      "storage": "seven accumulated attribute bytes to Buffer2 commands",
+      "feasiblePath": "AttribLoop emits then clears each of seven attribute bytes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_attribute_tables",
+      "semanticContract": "All seven attribute bytes retain source order, address stride and clear behavior.",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00018",
+      "producer": "BlankPalette",
+      "consumer": "ColorRotation",
+      "storage": "eight-byte ROM palette command to Buffer1",
+      "feasiblePath": "GetBlankPal copies BlankPalette before Palette3Data overwrites its payload.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_step_palette_rotation",
+      "semanticContract": "All eight base command bytes agree.",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00019",
+      "producer": "Palette3Data",
+      "consumer": "ColorRotation",
+      "storage": "AreaType-indexed four-byte palette row to Buffer1",
+      "feasiblePath": "GetAreaPal selects and copies one four-byte area row.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_step_palette_rotation",
+      "semanticContract": "Each valid AreaType selects the same four bytes.",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00020",
+      "producer": "ColorRotatePalette",
+      "consumer": "ColorRotation",
+      "storage": "ColorRotateOffset-indexed rotating palette byte to Buffer1",
+      "feasiblePath": "ColorRotation overwrites palette slot plus four with the selected cycle byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_step_palette_rotation",
+      "semanticContract": "All six offsets select the same byte and wrap after six.",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -2524,181 +2622,235 @@
       "label": "RenderAreaGraphics",
       "asmLine": 1825,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $88ae: stages a 13-metatile vertical Buffer2 command, accumulates attributes, advances name-table address and selects control six."
     },
     {
       "label": "DrawMTLoop",
       "asmLine": 1840,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics row loop",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $88c7: selects metatile graphics half by parser-task parity and emits two vertical tile bytes for each of 13 rows."
     },
     {
       "label": "RightCheck",
       "asmLine": 1878,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics attribute_shift calculation",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8901: selects top/right attribute-bit placement."
     },
     {
       "label": "LLeft",
       "asmLine": 1886,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics attribute_shift calculation",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8910: selects lower-left attribute-bit placement."
     },
     {
       "label": "NextMTRow",
       "asmLine": 1888,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics row progression",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8916: advances attribute row for lower quadrants."
     },
     {
       "label": "SetAttrib",
       "asmLine": 1889,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics AttributeBuffer OR update",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8917: merges selected palette bits and advances two tile-byte output positions."
     },
     {
       "label": "ExitDrawM",
       "asmLine": 1914,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics name-table wrap handling",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8933: terminates Buffer2, advances name-table low byte and toggles nametable at the status-bar boundary."
     },
     {
       "label": "RenderAttributeTables",
       "asmLine": 1920,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_attribute_tables",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8940: appends seven one-byte attribute commands derived from the just-rendered column."
     },
     {
       "label": "SetATHigh",
       "asmLine": 1930,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_attribute_tables attribute address setup",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8956: builds $23c0-family attribute-table address after borrow/nametable adjustment."
     },
     {
       "label": "AttribLoop",
       "asmLine": 1940,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_attribute_tables seven-row loop",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8962: emits one attribute byte every eight address bytes and clears its source entry."
     },
     {
       "label": "SetVRAMCtrl",
       "asmLine": 1962,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_graphics and mysmb_area_render_attribute_tables selector write",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $899f: writes VRAM_Buffer_AddrCtrl six and returns."
     },
     {
       "label": "ColorRotatePalette",
       "asmLine": 1970,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_step_palette_rotation rotation lookup",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $89af: six-step palette-cycle data table."
     },
     {
       "label": "BlankPalette",
       "asmLine": 1973,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_step_palette_rotation eight-byte command copy",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $89b5: base palette-three command copied before area-specific overwrite."
     },
     {
       "label": "Palette3Data",
       "asmLine": 1977,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_step_palette_rotation AreaType table lookup",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $89bd: four AreaType palette-three data rows."
     },
     {
       "label": "ColorRotation",
       "asmLine": 1983,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_step_palette_rotation",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $89cd: every-eighth-frame, bounded Buffer1 palette command producer."
     },
     {
       "label": "GetBlankPal",
       "asmLine": 1991,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_step_palette_rotation base command loop",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $89dc: copies eight BlankPalette bytes."
     },
     {
       "label": "GetAreaPal",
       "asmLine": 2004,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_step_palette_rotation area palette overwrite loop",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $89e8: overwrites four bytes with Palette3Data then applies rotating color."
     },
     {
       "label": "ExitColorRot",
       "asmLine": 2024,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_step_palette_rotation completion/early return",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8a15: returns after no-op guards or completed cycle offset wrap."
     },
     {
       "label": "BlockGfxData",
@@ -25489,10 +25641,13 @@
       "instruction": "tax",
       "id": "control-00286",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RenderAreaGraphics -> DrawMTLoop fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "DrawMTLoop",
@@ -25502,10 +25657,13 @@
       "instruction": "bne",
       "id": "control-00287",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DrawMTLoop -> RightCheck branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "DrawMTLoop",
@@ -25515,10 +25673,13 @@
       "instruction": "bcs",
       "id": "control-00288",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DrawMTLoop -> LLeft branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "DrawMTLoop",
@@ -25528,10 +25689,13 @@
       "instruction": "jmp",
       "id": "control-00289",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DrawMTLoop -> SetAttrib jump relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "RightCheck",
@@ -25541,10 +25705,13 @@
       "instruction": "bcs",
       "id": "control-00290",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RightCheck -> NextMTRow branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "RightCheck",
@@ -25554,10 +25721,13 @@
       "instruction": "jmp",
       "id": "control-00291",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RightCheck -> SetAttrib jump relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "LLeft",
@@ -25567,10 +25737,13 @@
       "instruction": "lsr",
       "id": "control-00292",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original LLeft -> NextMTRow fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "NextMTRow",
@@ -25580,10 +25753,13 @@
       "instruction": "inc",
       "id": "control-00293",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original NextMTRow -> SetAttrib fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "SetAttrib",
@@ -25593,10 +25769,13 @@
       "instruction": "bcc",
       "id": "control-00294",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetAttrib -> DrawMTLoop branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "SetAttrib",
@@ -25606,10 +25785,13 @@
       "instruction": "bne",
       "id": "control-00295",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetAttrib -> ExitDrawM branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "SetAttrib",
@@ -25619,10 +25801,13 @@
       "instruction": "sta",
       "id": "control-00296",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetAttrib -> ExitDrawM fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "ExitDrawM",
@@ -25632,10 +25817,13 @@
       "instruction": "jmp",
       "id": "control-00297",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ExitDrawM -> SetVRAMCtrl jump relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "RenderAttributeTables",
@@ -25645,10 +25833,13 @@
       "instruction": "bcs",
       "id": "control-00298",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RenderAttributeTables -> SetATHigh branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "RenderAttributeTables",
@@ -25658,10 +25849,13 @@
       "instruction": "eor",
       "id": "control-00299",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RenderAttributeTables -> SetATHigh fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "SetATHigh",
@@ -25671,10 +25865,13 @@
       "instruction": "ldy",
       "id": "control-00300",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetATHigh -> AttribLoop fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "AttribLoop",
@@ -25684,10 +25881,13 @@
       "instruction": "bcc",
       "id": "control-00301",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AttribLoop -> AttribLoop branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "AttribLoop",
@@ -25697,10 +25897,13 @@
       "instruction": "sty",
       "id": "control-00302",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AttribLoop -> SetVRAMCtrl fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "ColorRotation",
@@ -25710,10 +25913,13 @@
       "instruction": "bne",
       "id": "control-00303",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ColorRotation -> ExitColorRot branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "ColorRotation",
@@ -25723,10 +25929,13 @@
       "instruction": "bcs",
       "id": "control-00304",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ColorRotation -> ExitColorRot branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "ColorRotation",
@@ -25736,10 +25945,13 @@
       "instruction": "tay",
       "id": "control-00305",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ColorRotation -> GetBlankPal fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "GetBlankPal",
@@ -25749,10 +25961,13 @@
       "instruction": "bcc",
       "id": "control-00306",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetBlankPal -> GetBlankPal branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "GetBlankPal",
@@ -25762,10 +25977,13 @@
       "instruction": "tay",
       "id": "control-00307",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetBlankPal -> GetAreaPal fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "GetAreaPal",
@@ -25775,10 +25993,13 @@
       "instruction": "bpl",
       "id": "control-00308",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetAreaPal -> GetAreaPal branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "GetAreaPal",
@@ -25788,10 +26009,13 @@
       "instruction": "bcc",
       "id": "control-00309",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetAreaPal -> ExitColorRot branch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "GetAreaPal",
@@ -25801,10 +26025,13 @@
       "instruction": "sta",
       "id": "control-00310",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetAreaPal -> ExitColorRot fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "RemoveCoin_Axe",
@@ -27946,10 +28173,13 @@
       "instruction": "jsr",
       "id": "control-00475",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DoAPTasks -> RenderAttributeTables call relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "DoAPTasks",
@@ -32044,10 +32274,13 @@
       "instruction": "jsr",
       "id": "control-00790",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ProcELoop -> ColorRotation call relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "ProcELoop",
@@ -68139,10 +68372,13 @@
       "instruction": "rts/rti",
       "id": "control-03555",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RenderAttributeTables -> DoAPTasks return relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "JumpEngine",
@@ -69143,10 +69379,13 @@
       "instruction": "rts/rti",
       "id": "control-03632",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ColorRotation -> ProcELoop return relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "GetAreaMusic",
@@ -75715,10 +75954,13 @@
       "selector": 1,
       "id": "control-04128",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AreaParserTasks -> RenderAreaGraphics jump-engine-dispatch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "AreaParserTasks",
@@ -75729,10 +75971,13 @@
       "selector": 2,
       "id": "control-04129",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AreaParserTasks -> RenderAreaGraphics jump-engine-dispatch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "AreaParserTasks",
@@ -75771,10 +76016,13 @@
       "selector": 5,
       "id": "control-04132",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AreaParserTasks -> RenderAreaGraphics jump-engine-dispatch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "AreaParserTasks",
@@ -75785,10 +76033,13 @@
       "selector": 6,
       "id": "control-04133",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "semanticEvidence": [
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AreaParserTasks -> RenderAreaGraphics jump-engine-dispatch relation must preserve source predicate, buffer/table state and successor or return handoff."
     },
     {
       "from": "AreaParserTasks",

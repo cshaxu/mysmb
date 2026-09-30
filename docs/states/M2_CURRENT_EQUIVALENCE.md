@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 269 control; 9 material RAM/table |
+| Needs evidence | 302 control; 16 material RAM/table |
 | Mismatch | 10 control; 2 material RAM/table |
-| Unclassified | 3,987 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,954 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -407,3 +407,14 @@ numbers. Current static mapping retains the source behavior for normal
 resource-bound routes, but all entries remain `needs-evidence` until fixtures
 cover selectors 0–6, one/two players, Mario/Luigi, Time Up/Game Over, crown
 lives and each Warp table row.
+
+### Cohort B — B6 column renderer, attribute output and palette rotation
+
+The current audit maps every node from `RenderAreaGraphics` through
+`ExitColorRot`, all local and known inbound/outbound control relations, and
+seven feasible material paths. The node contracts cover the 13-row vertical
+tile command, attribute quadrants and clears, name-table wrap, seven-row
+attribute command output, every-eighth-frame gate, bounded Buffer1 gate and
+the six-step color cycle. No static mismatch was found; source/x86/x64 routes
+must still compare Buffer2, AttributeBuffer, nametable state and palette
+commands before these become exact.
