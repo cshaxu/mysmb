@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 736 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 757 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,209 | Not yet processed by this re-audit. |
+| Unclassified | 1,188 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 1,396 control; 96 material RAM/table |
+| Needs evidence | 1,446 control; 99 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 2,860 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 2,810 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 The two ledgers are separate acceptance requirements. A node is not
@@ -756,3 +756,13 @@ records random slot selection, carry-result allocation, state-two speed setup,
 carry-correct parent-relative placement, movement/collision ordering and the
 common graphics tail. No static discrepancy was found; all entries remain
 `needs-evidence` pending controlled original-ROM/x86/x64 hammer routes.
+
+### Cohort H — B14d coin, score and misc-object integration
+
+`CoinBlock` through `NoZSup` now has twenty-one node contracts, fifty
+control/return relations and three feasible data paths. The audit records
+carry-sensitive coin coordinate creation, bounded misc-slot fallback, jump
+coin/floatey state changes, scroll carry, BCD coin/score routing, hundred-coin
+life behavior and status zero suppression. No static discrepancy was found;
+all entries remain `needs-evidence` pending controlled original-ROM/x86/x64
+coin, score and misc-object routes.

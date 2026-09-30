@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 100,
+    "enumeratedCount": 103,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1413,6 +1413,48 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00101",
+      "producer": "CoinTallyOffsets",
+      "consumer": "GiveOneCoin",
+      "storage": "CurrentPlayer-indexed BCD coin-offset table",
+      "feasiblePath": "GiveOneCoin selects CoinTallyOffsets[CurrentPlayer] before DigitsMathRoutine.",
+      "status": "needs-evidence",
+      "currentCounterpart": "coin tally offset selection",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00102",
+      "producer": "ScoreOffsets",
+      "consumer": "AddToScore",
+      "storage": "CurrentPlayer-indexed BCD score-offset table",
+      "feasiblePath": "AddToScore selects ScoreOffsets[CurrentPlayer] before DigitsMathRoutine.",
+      "status": "needs-evidence",
+      "currentCounterpart": "score offset selection",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00103",
+      "producer": "StatusBarNybbles",
+      "consumer": "GetSBNybbles",
+      "storage": "CurrentPlayer-indexed status-nybble table",
+      "feasiblePath": "GetSBNybbles reads StatusBarNybbles[CurrentPlayer] before UpdateNumber.",
+      "status": "needs-evidence",
+      "currentCounterpart": "status selector selection",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -11885,211 +11927,274 @@
       "label": "CoinBlock",
       "asmLine": 6988,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Allocates a misc slot and derives normal block coin coordinates with incoming allocation carry."
     },
     {
       "label": "SetupJumpCoin",
       "asmLine": 7000,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Allocates a misc slot and derives jump-coin coordinates using four-ASL carry."
     },
     {
       "label": "JCoinC",
       "asmLine": 7014,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes coin state/audio, preserves ObjectOffset for GiveOneCoin, then increments one-up tally."
     },
     {
       "label": "FindEmptyMiscSlot",
       "asmLine": 7025,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Starts at slot eight and searches descending through six before source fallback."
     },
     {
       "label": "FMiscLoop",
       "asmLine": 7027,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Checks each misc state and preserves the CPY-after-DEY carry behavior."
     },
     {
       "label": "UseMiscS",
       "asmLine": 7033,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores JumpCoinMiscOffset and returns selected slot."
     },
     {
       "label": "MiscObjectsCore",
       "asmLine": 7038,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes slots eight through zero, writing ObjectOffset before every state read."
     },
     {
       "label": "MiscLoop",
       "asmLine": 7040,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dispatches inactive, jump-coin/floatey and hammer states by d7."
     },
     {
       "label": "ProcJumpCoin",
       "asmLine": 7053,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Distinguishes jump state one from floatey ageing, including scroll page carry and state $30 retirement."
     },
     {
       "label": "JCoinRun",
       "asmLine": 7071,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses misc offset plus thirteen for gravity and changes state only at Y speed five."
     },
     {
       "label": "RunJCSubs",
       "asmLine": 7088,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs relative/offscreen/box/graphics tail in source order."
     },
     {
       "label": "MiscLoopBack",
       "asmLine": 7093,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements through all misc slots before returning."
     },
     {
       "label": "CoinTallyOffsets",
       "asmLine": 7100,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds current player to coin BCD offset."
     },
     {
       "label": "ScoreOffsets",
       "asmLine": 7103,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds current player to score BCD offset."
     },
     {
       "label": "StatusBarNybbles",
       "asmLine": 7106,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds current player to score/coin status selector."
     },
     {
       "label": "GiveOneCoin",
       "asmLine": 7109,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Updates BCD coin tally, hundred-coin life/sound path, then score points."
     },
     {
       "label": "CoinPoints",
       "asmLine": 7125,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes 200-point digit modifier before score update."
     },
     {
       "label": "AddToScore",
       "asmLine": 7129,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects current-player score offset then calls BCD math."
     },
     {
       "label": "GetSBNybbles",
       "asmLine": 7134,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects player status nybbles before status printing."
     },
     {
       "label": "UpdateNumber",
       "asmLine": 7138,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Prints status then performs source top-score zero suppression."
     },
     {
       "label": "NoZSup",
       "asmLine": 7145,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared coin, misc, score, world and OAM core",
+      "currentCounterpart": "shared coin/misc/score owners with named children",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset after number update."
     },
     {
       "label": "SetupPowerUp",
@@ -43875,10 +43980,13 @@
       "instruction": "jsr",
       "id": "control-01243",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation CoinBlock -> FindEmptyMiscSlot with source predicate, ordering and state handoff."
     },
     {
       "from": "CoinBlock",
@@ -43888,10 +43996,13 @@
       "instruction": "jmp",
       "id": "control-01244",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation CoinBlock -> JCoinC with source predicate, ordering and state handoff."
     },
     {
       "from": "SetupJumpCoin",
@@ -43901,10 +44012,13 @@
       "instruction": "jsr",
       "id": "control-01245",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetupJumpCoin -> FindEmptyMiscSlot with source predicate, ordering and state handoff."
     },
     {
       "from": "SetupJumpCoin",
@@ -43914,10 +44028,13 @@
       "instruction": "sta",
       "id": "control-01246",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetupJumpCoin -> JCoinC with source predicate, ordering and state handoff."
     },
     {
       "from": "JCoinC",
@@ -43927,10 +44044,13 @@
       "instruction": "jsr",
       "id": "control-01247",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation JCoinC -> GiveOneCoin with source predicate, ordering and state handoff."
     },
     {
       "from": "FindEmptyMiscSlot",
@@ -43940,10 +44060,13 @@
       "instruction": "ldy",
       "id": "control-01248",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FindEmptyMiscSlot -> FMiscLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "FMiscLoop",
@@ -43953,10 +44076,13 @@
       "instruction": "beq",
       "id": "control-01249",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FMiscLoop -> UseMiscS with source predicate, ordering and state handoff."
     },
     {
       "from": "FMiscLoop",
@@ -43966,10 +44092,13 @@
       "instruction": "bne",
       "id": "control-01250",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FMiscLoop -> FMiscLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "FMiscLoop",
@@ -43979,10 +44108,13 @@
       "instruction": "ldy",
       "id": "control-01251",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FMiscLoop -> UseMiscS with source predicate, ordering and state handoff."
     },
     {
       "from": "MiscObjectsCore",
@@ -43992,10 +44124,13 @@
       "instruction": "ldx",
       "id": "control-01252",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MiscObjectsCore -> MiscLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "MiscLoop",
@@ -44005,10 +44140,13 @@
       "instruction": "beq",
       "id": "control-01253",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MiscLoop -> MiscLoopBack with source predicate, ordering and state handoff."
     },
     {
       "from": "MiscLoop",
@@ -44018,10 +44156,13 @@
       "instruction": "bcc",
       "id": "control-01254",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MiscLoop -> ProcJumpCoin with source predicate, ordering and state handoff."
     },
     {
       "from": "MiscLoop",
@@ -44031,10 +44172,13 @@
       "instruction": "jsr",
       "id": "control-01255",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MiscLoop -> ProcHammerObj with source predicate, ordering and state handoff."
     },
     {
       "from": "MiscLoop",
@@ -44044,10 +44188,13 @@
       "instruction": "jmp",
       "id": "control-01256",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MiscLoop -> MiscLoopBack with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcJumpCoin",
@@ -44057,10 +44204,13 @@
       "instruction": "beq",
       "id": "control-01257",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcJumpCoin -> JCoinRun with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcJumpCoin",
@@ -44070,10 +44220,13 @@
       "instruction": "bne",
       "id": "control-01258",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcJumpCoin -> RunJCSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcJumpCoin",
@@ -44083,10 +44236,13 @@
       "instruction": "jmp",
       "id": "control-01259",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ProcJumpCoin -> MiscLoopBack with source predicate, ordering and state handoff."
     },
     {
       "from": "JCoinRun",
@@ -44096,10 +44252,13 @@
       "instruction": "jsr",
       "id": "control-01260",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation JCoinRun -> ImposeGravity with source predicate, ordering and state handoff."
     },
     {
       "from": "JCoinRun",
@@ -44109,10 +44268,13 @@
       "instruction": "bne",
       "id": "control-01261",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation JCoinRun -> RunJCSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "JCoinRun",
@@ -44122,10 +44284,13 @@
       "instruction": "inc",
       "id": "control-01262",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation JCoinRun -> RunJCSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "RunJCSubs",
@@ -44135,10 +44300,13 @@
       "instruction": "jsr",
       "id": "control-01263",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunJCSubs -> RelativeMiscPosition with source predicate, ordering and state handoff."
     },
     {
       "from": "RunJCSubs",
@@ -44148,10 +44316,13 @@
       "instruction": "jsr",
       "id": "control-01264",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunJCSubs -> GetMiscOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "RunJCSubs",
@@ -44161,10 +44332,13 @@
       "instruction": "jsr",
       "id": "control-01265",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunJCSubs -> GetMiscBoundBox with source predicate, ordering and state handoff."
     },
     {
       "from": "RunJCSubs",
@@ -44174,10 +44348,13 @@
       "instruction": "jsr",
       "id": "control-01266",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunJCSubs -> JCoinGfxHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "RunJCSubs",
@@ -44187,10 +44364,13 @@
       "instruction": "jsr",
       "id": "control-01267",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunJCSubs -> MiscLoopBack with source predicate, ordering and state handoff."
     },
     {
       "from": "MiscLoopBack",
@@ -44200,10 +44380,13 @@
       "instruction": "bpl",
       "id": "control-01268",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MiscLoopBack -> MiscLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "GiveOneCoin",
@@ -44213,10 +44396,13 @@
       "instruction": "jsr",
       "id": "control-01269",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation GiveOneCoin -> DigitsMathRoutine with source predicate, ordering and state handoff."
     },
     {
       "from": "GiveOneCoin",
@@ -44226,10 +44412,13 @@
       "instruction": "bne",
       "id": "control-01270",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GiveOneCoin -> CoinPoints with source predicate, ordering and state handoff."
     },
     {
       "from": "GiveOneCoin",
@@ -44239,10 +44428,13 @@
       "instruction": "sta",
       "id": "control-01271",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GiveOneCoin -> CoinPoints with source predicate, ordering and state handoff."
     },
     {
       "from": "CoinPoints",
@@ -44252,10 +44444,13 @@
       "instruction": "sta",
       "id": "control-01272",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CoinPoints -> AddToScore with source predicate, ordering and state handoff."
     },
     {
       "from": "AddToScore",
@@ -44265,10 +44460,13 @@
       "instruction": "jsr",
       "id": "control-01273",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation AddToScore -> DigitsMathRoutine with source predicate, ordering and state handoff."
     },
     {
       "from": "AddToScore",
@@ -44278,10 +44476,13 @@
       "instruction": "jsr",
       "id": "control-01274",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation AddToScore -> GetSBNybbles with source predicate, ordering and state handoff."
     },
     {
       "from": "GetSBNybbles",
@@ -44291,10 +44492,13 @@
       "instruction": "lda",
       "id": "control-01275",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetSBNybbles -> UpdateNumber with source predicate, ordering and state handoff."
     },
     {
       "from": "UpdateNumber",
@@ -44304,10 +44508,13 @@
       "instruction": "jsr",
       "id": "control-01276",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation UpdateNumber -> PrintStatusBarNumbers with source predicate, ordering and state handoff."
     },
     {
       "from": "UpdateNumber",
@@ -44317,10 +44524,13 @@
       "instruction": "bne",
       "id": "control-01277",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation UpdateNumber -> NoZSup with source predicate, ordering and state handoff."
     },
     {
       "from": "UpdateNumber",
@@ -44330,10 +44540,13 @@
       "instruction": "sta",
       "id": "control-01278",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation UpdateNumber -> NoZSup with source predicate, ordering and state handoff."
     },
     {
       "from": "SetupPowerUp",
@@ -73488,12 +73701,12 @@
       "id": "control-03513",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number score add completion",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original AddToScore -> LoadNumTiles returns before OAM-offset selection; current timing of reaching this relation is separately mismatched."
+      "semanticContract": "Preserves original return relation AddToScore -> LoadNumTiles with source predicate, ordering and state handoff."
     },
     {
       "from": "DumpTwoSpr",
@@ -73600,12 +73813,12 @@
       "id": "control-03520",
       "cohort": "B",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original GetSBNybbles -> WriteBottomStatusLine return relation must preserve the source predicate, predecessor writes and successor/return handoff."
+      "semanticContract": "Preserves original return relation GetSBNybbles -> WriteBottomStatusLine with source predicate, ordering and state handoff."
     },
     {
       "from": "DrawPlayer_Intermediate",
@@ -73712,12 +73925,12 @@
       "id": "control-03527",
       "cohort": "B",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original UpdateNumber -> WriteTopScore return relation must preserve its source predicate, data transfer/count and successor or return handoff."
+      "semanticContract": "Preserves original return relation UpdateNumber -> WriteTopScore with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveAllSpritesOffscreen",
@@ -75209,10 +75422,13 @@
       "instruction": "rts/rti",
       "id": "control-03627",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MiscObjectsCore -> ProcELoop with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcessCannons",
@@ -76016,12 +76232,12 @@
       "id": "control-03683",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation AddToScore -> GiveFPScr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation AddToScore -> GiveFPScr with source predicate, ordering and state handoff."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -76511,10 +76727,13 @@
       "instruction": "rts/rti",
       "id": "control-03714",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation FindEmptyMiscSlot -> CoinBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "FindEmptyMiscSlot",
@@ -76524,10 +76743,13 @@
       "instruction": "rts/rti",
       "id": "control-03715",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation FindEmptyMiscSlot -> SetupJumpCoin with source predicate, ordering and state handoff."
     },
     {
       "from": "GiveOneCoin",
@@ -76537,10 +76759,13 @@
       "instruction": "rts/rti",
       "id": "control-03716",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GiveOneCoin -> JCoinC with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcHammerObj",
@@ -76551,9 +76776,9 @@
       "id": "control-03717",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves original return relation ProcHammerObj -> MiscLoop with source predicate, ordering and state handoff."
@@ -76566,10 +76791,13 @@
       "instruction": "rts/rti",
       "id": "control-03718",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ImposeGravity -> JCoinRun with source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeMiscPosition",
@@ -76579,10 +76807,13 @@
       "instruction": "rts/rti",
       "id": "control-03719",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeMiscPosition -> RunJCSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "GetMiscOffscreenBits",
@@ -76592,10 +76823,13 @@
       "instruction": "rts/rti",
       "id": "control-03720",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetMiscOffscreenBits -> RunJCSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "GetMiscBoundBox",
@@ -76605,10 +76839,13 @@
       "instruction": "rts/rti",
       "id": "control-03721",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetMiscBoundBox -> RunJCSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "JCoinGfxHandler",
@@ -76618,10 +76855,13 @@
       "instruction": "rts/rti",
       "id": "control-03722",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation JCoinGfxHandler -> RunJCSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "DigitsMathRoutine",
@@ -76631,10 +76871,13 @@
       "instruction": "rts/rti",
       "id": "control-03723",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DigitsMathRoutine -> GiveOneCoin with source predicate, ordering and state handoff."
     },
     {
       "from": "DigitsMathRoutine",
@@ -76644,10 +76887,13 @@
       "instruction": "rts/rti",
       "id": "control-03724",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DigitsMathRoutine -> AddToScore with source predicate, ordering and state handoff."
     },
     {
       "from": "PrintStatusBarNumbers",
@@ -76657,10 +76903,13 @@
       "instruction": "rts/rti",
       "id": "control-03725",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PrintStatusBarNumbers -> UpdateNumber with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveJumpingEnemy",
@@ -76946,10 +77195,13 @@
       "instruction": "rts/rti",
       "id": "control-03747",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation AddToScore -> BrickShatter with source predicate, ordering and state handoff."
     },
     {
       "from": "RemoveCoin_Axe",
@@ -76972,10 +77224,13 @@
       "instruction": "rts/rti",
       "id": "control-03749",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetupJumpCoin -> CheckTopOfBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "ImposeGravityBlock",
