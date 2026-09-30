@@ -1400,3 +1400,9 @@ branches.
 - Node-semantics result: 21 labeled music stream data nodes moved from `unclassified` to `needs-evidence`; C retains source PRG bytes behind header-selected CPU pointers rather than re-encoding streams.
 - Material stream-consumer relations remain coupled to their header and channel offset routes and require controlled execution evidence.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K38 — music lookup and envelope table audit
+
+- Source range: `FreqRegLookupTbl` through `WaterEventMusEnvData` (`SMBDIS.ASM` lines 16326–16355).
+- Node-semantics result: five table labels moved from `unclassified` to `needs-evidence`.
+- Independent material integration result: 5 table-reader edges received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

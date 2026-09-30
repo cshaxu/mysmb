@@ -6553,6 +6553,76 @@
         "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-k38-01",
+      "producer": "FreqRegLookupTbl",
+      "consumer": "SetFreq_Squ2",
+      "storage": "ROM FreqRegLookupTbl indexed music table",
+      "feasiblePath": "SetFreq_Squ2 selects FreqRegLookupTbl through its source index/address path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
+      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k38-02",
+      "producer": "MusicLengthLookupTbl",
+      "consumer": "ProcessLengthData",
+      "storage": "ROM MusicLengthLookupTbl indexed music table",
+      "feasiblePath": "ProcessLengthData selects MusicLengthLookupTbl through its source index/address path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
+      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k38-03",
+      "producer": "EndOfCastleMusicEnvData",
+      "consumer": "LoadEnvelopeData",
+      "storage": "ROM EndOfCastleMusicEnvData indexed music table",
+      "feasiblePath": "LoadEnvelopeData selects EndOfCastleMusicEnvData through its source index/address path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
+      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k38-04",
+      "producer": "AreaMusicEnvData",
+      "consumer": "LoadUsualEnvData",
+      "storage": "ROM AreaMusicEnvData indexed music table",
+      "feasiblePath": "LoadUsualEnvData selects AreaMusicEnvData through its source index/address path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
+      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k38-05",
+      "producer": "WaterEventMusEnvData",
+      "consumer": "LoadWaterEventMusEnvData",
+      "storage": "ROM WaterEventMusEnvData indexed music table",
+      "feasiblePath": "LoadWaterEventMusEnvData selects WaterEventMusEnvData through its source index/address path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
+      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -32109,51 +32179,66 @@
       "label": "FreqRegLookupTbl",
       "asmLine": 16326,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader."
     },
     {
       "label": "MusicLengthLookupTbl",
       "asmLine": 16341,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader."
     },
     {
       "label": "EndOfCastleMusicEnvData",
       "asmLine": 16349,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader."
     },
     {
       "label": "AreaMusicEnvData",
       "asmLine": 16352,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader."
     },
     {
       "label": "WaterEventMusEnvData",
       "asmLine": 16355,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "semanticEvidence": [
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader."
     },
     {
       "label": "BowserFlameEnvData",
