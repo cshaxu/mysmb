@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 230,
+    "enumeratedCount": 235,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3233,6 +3233,76 @@
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00231",
+      "producer": "PRandomSubtracter",
+      "consumer": "FlyCC",
+      "storage": "Y-force high-nibble index and PRG table byte",
+      "feasiblePath": "Flying movement subtracts the source indexed random byte from Y before fold/threshold.",
+      "status": "needs-evidence",
+      "currentCounterpart": "immutable PRG data view in flying_cheep.c",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00232",
+      "producer": "FlyCC",
+      "consumer": "AddCCF",
+      "storage": "absolute Y/table difference",
+      "feasiblePath": "Only absolute difference below eight enters Y-force adjustment.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_flying_cheep_cheeps_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00233",
+      "producer": "AddCCF",
+      "consumer": "BPGet",
+      "storage": "updated Y-force high-nibble index",
+      "feasiblePath": "Priority index is recomputed after the optional force+$10 write.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_flying_cheep_cheeps_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00234",
+      "producer": "FlyCCBPriority",
+      "consumer": "BPGet",
+      "storage": "high-nibble priority index and table byte",
+      "feasiblePath": "Final sprite attribute comes from original indexed priority data.",
+      "status": "needs-evidence",
+      "currentCounterpart": "immutable PRG data view in flying_cheep.c",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00235",
+      "producer": "MoveFlyingCheepCheep",
+      "consumer": "FlyCC",
+      "storage": "defeated-state predicate and sprite attribute",
+      "feasiblePath": "Only nondefeated flying Cheep enters horizontal/gravity state update.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_flying_cheep_cheeps_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -18486,61 +18556,79 @@
       "label": "PRandomSubtracter",
       "asmLine": 9941,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/flying_cheep.c",
+      "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds flying-Cheep high-nibble indexed subtraction table {$f8,$a0,$70,$bd,$00} plus resource-adjacent indexed bytes under valid PRG binding."
     },
     {
       "label": "FlyCCBPriority",
       "asmLine": 9944,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/flying_cheep.c",
+      "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds flying-Cheep high-nibble indexed sprite-priority table {$20,$20,$20,$00,$00} plus resource-adjacent indexed bytes under valid PRG binding."
     },
     {
       "label": "MoveFlyingCheepCheep",
       "asmLine": 9947,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/flying_cheep.c",
+      "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For defeated state clears sprite attributes then tail-jumps to jumping gravity; otherwise falls through flying movement."
     },
     {
       "label": "FlyCC",
       "asmLine": 9954,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/flying_cheep.c",
+      "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves horizontally, applies gravity amount $0d/max five, derives high-nibble random index, compares vertical position against subtraction table and optionally increases Y force."
     },
     {
       "label": "AddCCF",
       "asmLine": 9971,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/flying_cheep.c",
+      "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "If absolute subtraction difference is below eight, adds $10 to Y force then derives updated high-nibble priority index; otherwise leaves force unchanged."
     },
     {
       "label": "BPGet",
       "asmLine": 9982,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/flying_cheep.c",
+      "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads indexed sprite priority into enemy attributes and returns."
     },
     {
       "label": "LakituDiffAdj",
@@ -57180,10 +57268,13 @@
       "instruction": "beq",
       "id": "control-01892",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveFlyingCheepCheep -> FlyCC with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "MoveFlyingCheepCheep",
@@ -57193,10 +57284,13 @@
       "instruction": "jmp",
       "id": "control-01893",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveFlyingCheepCheep -> MoveJ_EnemyVertically with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "FlyCC",
@@ -57206,10 +57300,13 @@
       "instruction": "jsr",
       "id": "control-01894",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FlyCC -> MoveEnemyHorizontally with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "FlyCC",
@@ -57219,10 +57316,13 @@
       "instruction": "jsr",
       "id": "control-01895",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FlyCC -> SetXMoveAmt with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "FlyCC",
@@ -57232,10 +57332,13 @@
       "instruction": "bpl",
       "id": "control-01896",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FlyCC -> AddCCF with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "FlyCC",
@@ -57245,10 +57348,13 @@
       "instruction": "adc",
       "id": "control-01897",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FlyCC -> AddCCF with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "AddCCF",
@@ -57258,10 +57364,13 @@
       "instruction": "bcs",
       "id": "control-01898",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation AddCCF -> BPGet with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "AddCCF",
@@ -57271,10 +57380,13 @@
       "instruction": "tay",
       "id": "control-01899",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation AddCCF -> BPGet with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "MoveLakitu",
@@ -83543,12 +83655,12 @@
       "id": "control-03846",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> FlyCC with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> FlyCC with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "SetXMoveAmt",
@@ -83559,12 +83671,12 @@
       "id": "control-03847",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetXMoveAmt -> FlyCC with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation SetXMoveAmt -> FlyCC with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "PlayerLakituDiff",
@@ -90800,12 +90912,12 @@
       "id": "control-04330",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveFlyingCheepCheep with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveFlyingCheepCheep with enemy state, Y force/index and source call/return ordering under valid PRG binding."
     },
     {
       "from": "LargePlatformSubroutines",

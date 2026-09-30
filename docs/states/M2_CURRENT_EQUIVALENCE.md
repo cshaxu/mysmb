@@ -1021,3 +1021,8 @@ branches.
 ### Cohort I — B15k Firebar segment and collision integration
 
 `DrawFirebar_Collision` through `GetVAdder` now has twenty node contracts, all incident branches, calls, fall-throughs, tails and returns, plus seven feasible OAM/mirror/player-probe handoffs. Static review matches dual mirror signs, `$59`/`$f8` hiding, phase lookup, injury gates, 8x8 tests, body-size probe count, loop-counter preservation and OAM +4 exit. Entries remain `needs-evidence` pending controlled ROM/x86/x64 visible/hidden, small/big/crouching and injury routes.
+
+
+### Cohort I — B15l Flying Cheep integration
+
+`PRandomSubtracter` through `BPGet` now has six node contracts, all incident dispatches, branches, calls, fall-throughs, tails and returns, and five feasible PRG/state handoffs. Under the declared immutable PRG binding prerequisite, static review matches defeated attribute clearing, horizontal-before-gravity order, high-nibble indexing, absolute-distance `$08` force adjustment and priority-table write. Entries remain `needs-evidence` pending controlled ROM/x86/x64 routes.
