@@ -54519,7 +54519,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "The byte sequence after JSR JumpEngine is a pointer table, not a reachable fall-through to MushFlowerBlock. JumpEngine removes the return address and indirect-jumps to the selected vector target.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H1"
     },
     {
       "from": "MushFlowerBlock",
@@ -55576,7 +55576,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "MoveDropPlatform loads Y=$7f then BNE is always taken to SetMdMax; there is no feasible fall-through to MoveEnemySlowVert.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H2"
     },
     {
       "from": "MoveEnemySlowVert",
@@ -55625,7 +55625,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "SetMdMax loads A=$02 then BNE is always taken to SetXMoveAmt; there is no feasible fall-through to MoveJ_EnemyVertically.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H2"
     },
     {
       "from": "MoveJ_EnemyVertically",
@@ -55738,7 +55738,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "MovePlatformDown enters via BIT opcode and skips the LDA #$01 at MovePlatformUp; it joins the shared body after that instruction, not the full target-label entry.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H2"
     },
     {
       "from": "MovePlatformUp",
@@ -57131,7 +57131,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "The bytes after JSR JumpEngine are initializer vector words, not a reachable fall-through to NoInitCode. JumpEngine removes the return address and indirect-jumps to the selected entry.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H3"
     },
     {
       "from": "InitGoomba",
@@ -57340,7 +57340,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "SmallBBox loads A=$09 immediately before BNE, so its not-taken fall-through into InitRedPTroopa is infeasible. The only ROM control edge is the taken branch to SetBBox.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H4"
     },
     {
       "from": "InitRedPTroopa",
@@ -57693,7 +57693,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "After ChkNoEn decrements an active slot, BPL has already taken every nonnegative case back to ChkNoEn; reaching BMI requires X=$ff, so the sequential fall-through to CreateL is infeasible.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H5"
     },
     {
       "from": "CreateL",
@@ -57934,7 +57934,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "SmallBBox returns through InitVStf with A=$00. SetSpSpd then executes CMP #$00, so BMI SpinyRte is infeasible; the real path decrements Y and falls through to SpinyRte.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H5"
     },
     {
       "from": "SetSpSpd",
@@ -59215,7 +59215,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "The bytes after JSR JumpEngine are the six frenzy pointer words, not reachable fall-through to NoFrenzyCode.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H6"
     },
     {
       "from": "EndFrenzy",
@@ -60480,7 +60480,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "No executable fall-through exists from LargePlatformSubroutines into EraseEnemyObject; JumpEngine consumes the return and indirect-jumps through the following pointer words.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H7"
     },
     {
       "from": "MovePodoboo",
@@ -65681,7 +65681,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H8"
     },
     {
       "from": "GameTimerFireworks",
@@ -93012,7 +93012,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "JumpEngine does not return to BlockCode: it removes the JSR return address and indirect-jumps to a content handler, whose RTS returns to BumpBlock caller context.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H1"
     },
     {
       "from": "Setup_Vine",
@@ -93429,7 +93429,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "JumpEngine does not return to InitEnemyRoutines: it removes the JSR return address and indirect-jumps through the initializer vector, whose target RTS resumes InitEnemyObject caller context.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H3"
     },
     {
       "from": "InitNormalEnemy",
@@ -93670,7 +93670,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "JumpEngine removes the JSR return address and indirect-jumps to the selected frenzy target; it does not return to InitEnemyFrenzy.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H6"
     },
     {
       "from": "PosPlatform",
@@ -95015,7 +95015,7 @@
       ],
       "operationalEvidence": [],
       "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer.",
-      "repairCandidate": "G0"
+      "repairCandidate": "H8"
     },
     {
       "from": "DigitsMathRoutine",

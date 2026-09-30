@@ -5,6 +5,23 @@ This registry is the current-build complement to
 `1,992 / 1,992`; it must never be read as a current end-to-end result until a
 row below records a fresh audit disposition.
 
+## Current static-classification checkpoint — Td S9
+
+The Td S9 source pass has now assigned a current semantic disposition to every
+known unit. These are **not** a current end-to-end completion claim: `exact`
+requires its recorded ROM/native route, while `needs-evidence` still needs that
+route.
+
+| Ledger | Exact | Needs evidence | Mismatch | Unclassified | Total |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| ROM labels | 38 | 1,944 | 10 | 0 | 1,992 |
+| Control edges | 76 | 4,241 | 25 | 0 | 4,342 |
+| Proven material edges | 3 | 483 | 1 | 0 | 487 |
+
+All 11 semantic mismatches are mapped to the existing A2, A6, A7, B2, B3 and
+H9 repair candidates. The remaining 15 control-edge mismatches are extractor
+false relations and are mapped to existing H1–H8 graph-governance candidates.
+
 The machine-readable node/control-edge ledger is
 [`M2_CURRENT_EQUIVALENCE.json`](M2_CURRENT_EQUIVALENCE.json). It is generated
 by `BuildM2CurrentAuditRegistry.py` for the baseline and then updated only by
