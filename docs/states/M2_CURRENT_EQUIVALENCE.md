@@ -1071,3 +1071,8 @@ branches.
 ### Cohort J — B15u Bowser-flame OAM integration
 
 `SetGfxF` through `ExFlmeD` now has seven node contracts, every incident state/frame/offscreen branch, three-iteration loop, child call and return relation, plus four feasible OAM/state handoffs. Static review matches relative-position-before-state gating, `$51` tiles, two-frame attribute flip, ordered three-sprite writes and the reverse `$0/$1/$2/$3` to `+12/+8/+4/+0` hide mapping. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 visible/hidden and flipped-frame routes.
+
+
+### Cohort J — B15v fireworks actor integration
+
+`RunFireworks` through `FireworksSoundScore` now has three node contracts, all incident actor dispatch, timer branches, child calls, score tail and return relations, plus four feasible timer/OAM/score handoffs. Static review matches byte-wrap decrement behavior, zero reload `$08`, terminal frame `>=3`, Y-then-X scratch copy, actor clear, blast queue and 500-point modifier before the common area-points tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 timer, frame and terminal-score routes.

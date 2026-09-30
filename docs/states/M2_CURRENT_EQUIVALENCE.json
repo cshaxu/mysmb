@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 279,
+    "enumeratedCount": 283,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3919,6 +3919,62 @@
       "semanticContract": "Preserves source producer-to-consumer OAM/state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00280",
+      "producer": "RunFireworks",
+      "consumer": "SetupExpl",
+      "storage": "ExplosionTimerCounter and ExplosionGfxCounter to visible explosion path",
+      "feasiblePath": "Every nonterminal decrement result leaves the current frame counter for drawing.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/fireworks.c timer/frame block",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00281",
+      "producer": "SetupExpl",
+      "consumer": "DrawExplosion_Fireworks",
+      "storage": "relative enemy Y/X copied to fireball scratch plus frame/OAM selector",
+      "feasiblePath": "Relative coordinates are copied Y then X before the draw child uses the current frame.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/fireworks.c -> oam/fireworks_gfx.c",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00282",
+      "producer": "RunFireworks",
+      "consumer": "FireworksSoundScore",
+      "storage": "graphics frame threshold to terminal clear/sound/score tail",
+      "feasiblePath": "Only frame three or higher clears the actor and awards the source 500-point modifier.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/fireworks.c terminal branch",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00283",
+      "producer": "FireworksSoundScore",
+      "consumer": "EndAreaPoints",
+      "storage": "enemy flag, Square2 sound and DigitModifier+4 to area-point routine",
+      "feasiblePath": "Terminal tail preserves the three source writes before the score routine.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/fireworks.c -> enemy/star_flag.c:mysmb_objects_end_area_points",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -19991,31 +20047,40 @@
       "label": "RunFireworks",
       "asmLine": 10438,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/fireworks.c",
+      "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements the per-slot explosion timer; zero reloads $08 and increments graphics frame, and frame >=3 takes the terminal sound/score path while all other cases set up the current explosion."
     },
     {
       "label": "SetupExpl",
       "asmLine": 10447,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/fireworks.c",
+      "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes relative enemy position, copies relative Y then X to the fireball scratch pair, selects current OAM and graphics frame, invokes exactly one explosion draw child and returns."
     },
     {
       "label": "FireworksSoundScore",
       "asmLine": 10457,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/fireworks.c",
+      "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears the enemy flag, queues Sfx_Blast, writes the 500-point digit modifier at +4, then tails to EndAreaPoints."
     },
     {
       "label": "StarFlagYPosAdder",
@@ -60231,10 +60296,13 @@
       "instruction": "bne",
       "id": "control-02028",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunFireworks -> SetupExpl with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "RunFireworks",
@@ -60244,10 +60312,13 @@
       "instruction": "bcs",
       "id": "control-02029",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunFireworks -> FireworksSoundScore with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "RunFireworks",
@@ -60257,10 +60328,13 @@
       "instruction": "bcs",
       "id": "control-02030",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunFireworks -> SetupExpl with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "SetupExpl",
@@ -60270,10 +60344,13 @@
       "instruction": "jsr",
       "id": "control-02031",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetupExpl -> RelativeEnemyPosition with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "SetupExpl",
@@ -60283,10 +60360,13 @@
       "instruction": "jsr",
       "id": "control-02032",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetupExpl -> DrawExplosion_Fireworks with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "FireworksSoundScore",
@@ -60296,10 +60376,13 @@
       "instruction": "jmp",
       "id": "control-02033",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation FireworksSoundScore -> EndAreaPoints with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -85139,10 +85222,13 @@
       "instruction": "rts/rti",
       "id": "control-03866",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> SetupExpl with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "DrawExplosion_Fireworks",
@@ -85152,10 +85238,13 @@
       "instruction": "rts/rti",
       "id": "control-03867",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "semanticEvidence": [
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawExplosion_Fireworks -> SetupExpl with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "JumpEngine",
@@ -91226,12 +91315,12 @@
       "id": "control-04278",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFireworks with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFireworks with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
     },
     {
       "from": "JmpEO",
