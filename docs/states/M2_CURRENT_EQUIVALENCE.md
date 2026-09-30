@@ -1136,3 +1136,8 @@ branches.
 ### Cohort J — B16h fireball-enemy collision-core integration
 
 `FireballEnemyCollision` through `ExitFBallEnemy` now has six node contracts, all incident state/frame gates, descending loop, eligibility branches, geometry/hit calls and return relations, plus four feasible box/state handoffs. Static review matches d7/odd-frame suppression, both box offset formulas, five-slot scan, ID and Goomba filters, hit d7 marking without early loop exit and restored scan state. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 hit/miss, filters and multi-slot routes.
+
+
+### Cohort J — B16i fireball-hit response integration
+
+`BowserIdentities` through `ExHCF` now has eleven node contracts, every incident paired-slot, immunity, Bowser-health, world-table, eligibility, stun, score and return relation, plus six feasible producer-to-consumer handoffs. Static review matches live `$01` restoration, paired-slot substitution only for Bowser, Buzzy immunity, terminal-only Bowser replacement, direct WorldNumber table selection, `$23/$20` state split, Piranha CMP-carry `ADC #$18` result, defeat-state d5 and the Hammer/Goomba/default score modifiers. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 Buzzy, paired-Bowser, nonterminal/terminal Bowser, excluded-ID and Piranha/Hammer/Goomba routes.

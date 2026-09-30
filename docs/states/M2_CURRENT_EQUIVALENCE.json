@@ -4761,6 +4761,90 @@
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00340",
+      "producer": "BowserIdentities",
+      "consumer": "HurtBowser",
+      "storage": "WorldNumber-indexed replacement-ID table to Enemy_ID",
+      "feasiblePath": "Terminal Bowser hit reads BowserIdentities,WorldNumber and writes the selected ID to the active enemy slot.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/fireball_hit.c:bowser_identity result to active enemy ID",
+      "semanticContract": "WorldNumber selects the unmasked legal-domain replacement identity before defeated-Bowser state selection.",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00341",
+      "producer": "HurtBowser",
+      "consumer": "SetDBSte",
+      "storage": "WorldNumber comparison and defeated-state accumulator",
+      "feasiblePath": "Terminal Bowser hit selects $20 and ORs $03 only when WorldNumber is below three before state write.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/fireball_hit.c world<3 state selection",
+      "semanticContract": "The world threshold selects exactly $23 below three or $20 at/above three before BowserFall queueing.",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00342",
+      "producer": "SetDBSte",
+      "consumer": "EnemySmackScore",
+      "storage": "Square2 BowserFall queue, restored $01 slot and score modifier $09",
+      "feasiblePath": "Defeated Bowser queues sound, restores the original current-enemy offset and carries modifier nine into common score handling.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/fireball_hit.c terminal Bowser tail",
+      "semanticContract": "The score tail uses original current slot while preserving the completed Bowser replacement state and sound write.",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00343",
+      "producer": "ShellOrBlockDefeat",
+      "consumer": "StnE",
+      "storage": "Piranha-adjusted Y or enemy ID accumulator to common stun",
+      "feasiblePath": "Piranha carries CMP into ADC #$18 before common stun; all other IDs pass unchanged.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/fireball_hit.c shell/block defeat to mysmb_world_stun_enemy",
+      "semanticContract": "The stun input is ID except for Piranha, whose stored Y and A-equivalent are Y+$19.",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00344",
+      "producer": "StnE",
+      "consumer": "GoombaPoints",
+      "storage": "stunned enemy state and selected score modifier",
+      "feasiblePath": "After common stun, state d5 is set and Hammer Bro replaces default score two with six before Goomba check.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/fireball_hit.c defeat-state and score selection",
+      "semanticContract": "The Goomba discriminator receives the source-selected modifier and enemy ID after stun/state update.",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00345",
+      "producer": "GoombaPoints",
+      "consumer": "EnemySmackScore",
+      "storage": "final score modifier and active enemy slot",
+      "feasiblePath": "Goomba overwrites modifier with one; all other eligible IDs preserve prior modifier into score setup.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/fireball_hit.c enemy_smack_score call",
+      "semanticContract": "Floatey score and EnemySmack queue consume the final source modifier and active slot.",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -4836,36 +4920,16 @@
     }
   ],
   "nodeCounts": {
-    "A": 97,
-    "B": 67,
-    "C": 260,
-    "D": 146,
-    "E": 80,
-    "F": 62,
-    "G": 49,
-    "H": 129,
-    "I": 165,
-    "J": 497,
-    "K": 154,
-    "L": 83,
-    "M": 126,
-    "N": 77
+    "exact": 38,
+    "needs-evidence": 1264,
+    "mismatch": 9,
+    "unclassified": 681
   },
   "controlEdgeCounts": {
-    "A": 239,
-    "B": 122,
-    "C": 521,
-    "D": 111,
-    "E": 239,
-    "F": 122,
-    "G": 133,
-    "H": 344,
-    "I": 420,
-    "J": 1261,
-    "K": 313,
-    "L": 165,
-    "M": 296,
-    "N": 56
+    "exact": 76,
+    "needs-evidence": 2726,
+    "mismatch": 25,
+    "unclassified": 1515
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -21972,111 +22036,144 @@
       "label": "BowserIdentities",
       "asmLine": 11145,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds WorldNumber directly to the eight-byte replacement-ID table after terminal Bowser damage; no masking occurs in the legal world range."
     },
     {
       "label": "HandleEnemyFBallCol",
       "asmLine": 11148,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes the relative enemy sprite position, starts from live $01, and only substitutes the low-nibble paired slot when its ID is Bowser before the immunity and defeat dispatch."
     },
     {
       "label": "ChkBuzzyBeetle",
       "asmLine": 11160,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rejects Buzzy Beetle immediately, sends Bowser to the hit-point chain, and forwards every other selected ID to the fireball eligibility filters."
     },
     {
       "label": "HurtBowser",
       "asmLine": 11167,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements BowserHitPoints; only the zero transition initializes vertical state, clears horizontal/frenzy state, assigns vertical speed, selects the world replacement ID and starts the Bowser-fall score tail."
     },
     {
       "label": "SetDBSte",
       "asmLine": 11182,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes $23 for worlds below three and $20 otherwise, queues BowserFall, restores current enemy offset and routes score modifier nine to the common smack-score tail."
     },
     {
       "label": "ChkOtherEnemies",
       "asmLine": 11189,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rejects BulletBill frenzy ID, Podoboo and IDs at or above $15 before shell/block defeat handling."
     },
     {
       "label": "ShellOrBlockDefeat",
       "asmLine": 11197,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For Piranha, preserves CMP carry into ADC #$18, producing Y+$19 before stun; all eligible enemies are stunned, given defeat-state d5 and routed to source score selection."
     },
     {
       "label": "StnE",
       "asmLine": 11204,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls the common stun routine, masks state with $1f, sets d5, assigns default score two and uses Hammer Bro score six before the Goomba discriminator."
     },
     {
       "label": "GoombaPoints",
       "asmLine": 11215,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Replaces the default score with one only for Goomba, otherwise preserving the score selected by the preceding branch."
     },
     {
       "label": "EnemySmackScore",
       "asmLine": 11220,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the current enemy slot and score modifier for floatey-number setup, then queues EnemySmack on Square1 before the common return."
     },
     {
       "label": "ExHCF",
       "asmLine": 11224,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/fireball_hit.c",
+      "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns to each caller without altering the selected enemy slot or the completed fireball-hit result."
     },
     {
       "label": "PlayerHammerCollision",
@@ -64181,12 +64278,12 @@
       "id": "control-02206",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation NotGoomba -> HandleEnemyFBallCol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
+      "semanticContract": "Preserves original call relation NotGoomba -> HandleEnemyFBallCol with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "NotGoomba",
@@ -64244,10 +64341,13 @@
       "instruction": "jsr",
       "id": "control-02210",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation HandleEnemyFBallCol -> RelativeEnemyPosition with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "HandleEnemyFBallCol",
@@ -64257,10 +64357,13 @@
       "instruction": "bpl",
       "id": "control-02211",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandleEnemyFBallCol -> ChkBuzzyBeetle with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "HandleEnemyFBallCol",
@@ -64270,10 +64373,13 @@
       "instruction": "beq",
       "id": "control-02212",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandleEnemyFBallCol -> HurtBowser with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "HandleEnemyFBallCol",
@@ -64283,10 +64389,13 @@
       "instruction": "ldx",
       "id": "control-02213",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation HandleEnemyFBallCol -> ChkBuzzyBeetle with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ChkBuzzyBeetle",
@@ -64296,10 +64405,13 @@
       "instruction": "beq",
       "id": "control-02214",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkBuzzyBeetle -> ExHCF with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ChkBuzzyBeetle",
@@ -64309,10 +64421,13 @@
       "instruction": "bne",
       "id": "control-02215",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkBuzzyBeetle -> ChkOtherEnemies with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ChkBuzzyBeetle",
@@ -64322,10 +64437,13 @@
       "instruction": "bne",
       "id": "control-02216",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkBuzzyBeetle -> HurtBowser with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "HurtBowser",
@@ -64335,10 +64453,13 @@
       "instruction": "bne",
       "id": "control-02217",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HurtBowser -> ExHCF with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "HurtBowser",
@@ -64348,10 +64469,13 @@
       "instruction": "jsr",
       "id": "control-02218",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation HurtBowser -> InitVStf with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "HurtBowser",
@@ -64361,10 +64485,13 @@
       "instruction": "bcs",
       "id": "control-02219",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HurtBowser -> SetDBSte with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "HurtBowser",
@@ -64374,10 +64501,13 @@
       "instruction": "ora",
       "id": "control-02220",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation HurtBowser -> SetDBSte with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "SetDBSte",
@@ -64387,10 +64517,13 @@
       "instruction": "bne",
       "id": "control-02221",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetDBSte -> EnemySmackScore with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "SetDBSte",
@@ -64400,10 +64533,13 @@
       "instruction": "bne",
       "id": "control-02222",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetDBSte -> ChkOtherEnemies with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ChkOtherEnemies",
@@ -64413,10 +64549,13 @@
       "instruction": "beq",
       "id": "control-02223",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkOtherEnemies -> ExHCF with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ChkOtherEnemies",
@@ -64426,10 +64565,13 @@
       "instruction": "beq",
       "id": "control-02224",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkOtherEnemies -> ExHCF with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ChkOtherEnemies",
@@ -64439,10 +64581,13 @@
       "instruction": "bcs",
       "id": "control-02225",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkOtherEnemies -> ExHCF with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ChkOtherEnemies",
@@ -64452,10 +64597,13 @@
       "instruction": "bcs",
       "id": "control-02226",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkOtherEnemies -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ShellOrBlockDefeat",
@@ -64465,10 +64613,13 @@
       "instruction": "bne",
       "id": "control-02227",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ShellOrBlockDefeat -> StnE with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ShellOrBlockDefeat",
@@ -64478,10 +64629,13 @@
       "instruction": "sta",
       "id": "control-02228",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ShellOrBlockDefeat -> StnE with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "StnE",
@@ -64491,10 +64645,13 @@
       "instruction": "jsr",
       "id": "control-02229",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation StnE -> ChkToStunEnemies with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "StnE",
@@ -64504,10 +64661,13 @@
       "instruction": "bne",
       "id": "control-02230",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation StnE -> GoombaPoints with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "StnE",
@@ -64517,10 +64677,13 @@
       "instruction": "lda",
       "id": "control-02231",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation StnE -> GoombaPoints with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "GoombaPoints",
@@ -64530,10 +64693,13 @@
       "instruction": "bne",
       "id": "control-02232",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GoombaPoints -> EnemySmackScore with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "GoombaPoints",
@@ -64543,10 +64709,13 @@
       "instruction": "lda",
       "id": "control-02233",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GoombaPoints -> EnemySmackScore with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "EnemySmackScore",
@@ -64556,10 +64725,13 @@
       "instruction": "jsr",
       "id": "control-02234",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation EnemySmackScore -> SetupFloateyNumber with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "EnemySmackScore",
@@ -64569,10 +64741,13 @@
       "instruction": "sta",
       "id": "control-02235",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation EnemySmackScore -> ExHCF with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "PlayerHammerCollision",
@@ -65001,10 +65176,13 @@
       "instruction": "jmp",
       "id": "control-02268",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation EColl -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -66210,10 +66388,13 @@
       "instruction": "jsr",
       "id": "control-02361",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ProcEnemyCollisions -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ProcEnemyCollisions",
@@ -66236,10 +66417,13 @@
       "instruction": "jsr",
       "id": "control-02363",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ShellCollisions -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ShellCollisions",
@@ -66301,10 +66485,13 @@
       "instruction": "jsr",
       "id": "control-02368",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ProcSecondEnemyColl -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ProcSecondEnemyColl",
@@ -70490,10 +70677,13 @@
       "instruction": "jsr",
       "id": "control-02690",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation KillEnemyAboveBlock -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "UnderHammerBro",
@@ -87351,12 +87541,12 @@
       "id": "control-03902",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation HandleEnemyFBallCol -> NotGoomba with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
+      "semanticContract": "Preserves original return relation HandleEnemyFBallCol -> NotGoomba with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -87366,10 +87556,13 @@
       "instruction": "rts/rti",
       "id": "control-03903",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> HandleEnemyFBallCol with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "InitVStf",
@@ -87380,12 +87573,12 @@
       "id": "control-03904",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitVStf -> HurtBowser with its mode/slot predicate, exact write ordering and call/tail/return handoff."
+      "semanticContract": "Preserves original return relation InitVStf -> HurtBowser with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ChkToStunEnemies",
@@ -87395,10 +87588,13 @@
       "instruction": "rts/rti",
       "id": "control-03905",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ChkToStunEnemies -> StnE with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -87408,10 +87604,13 @@
       "instruction": "rts/rti",
       "id": "control-03906",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetupFloateyNumber -> EnemySmackScore with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "PlayerCollisionCore",
@@ -87742,10 +87941,13 @@
       "instruction": "rts/rti",
       "id": "control-03931",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ShellOrBlockDefeat -> ProcEnemyCollisions with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "ShellOrBlockDefeat",
@@ -87755,10 +87957,13 @@
       "instruction": "rts/rti",
       "id": "control-03932",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ShellOrBlockDefeat -> ShellCollisions with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -87781,10 +87986,13 @@
       "instruction": "rts/rti",
       "id": "control-03934",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ShellOrBlockDefeat -> ProcSecondEnemyColl with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -88502,10 +88710,13 @@
       "instruction": "rts/rti",
       "id": "control-03989",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "semanticEvidence": [
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ShellOrBlockDefeat -> KillEnemyAboveBlock with its source predicate, selected slot and state/table handoff ordering."
     },
     {
       "from": "EnemyLanding",
