@@ -415,3 +415,12 @@ semantics across original routes, converting all 124 retained Spiny comparisons
 to matches. The current `mysmb.lakitu-smoke` executable passes on x86 and x64.
 The unrelated actor-vector, normal-actor, special-actor and firebar child
 differences remain active and are not affected by this record correction.
+
+### S5 P11: star-flag historical-route adjudication
+
+S5 P11 resolves the T39 endgame timer assertion as superseded historical debt,
+not as a new node or implementation change. T41 S6 subsequently migrated and
+proved the complete source chain containing `AwardGameTimerPoints` and
+`NoTTick`, including frame-bit sound gating and the two modifier calls. The
+current x86 and x64 star-flag native route each passes 779 cases. Other
+endgame, actor and graphics records are outside this conclusion.

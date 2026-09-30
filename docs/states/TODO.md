@@ -77,7 +77,11 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
 
 - [x] **PlayerLakituDiff scratch and adjustment semantics:** The earlier T38 caller-only discrepancy is superseded by T40 S10. The shared Lakitu chain now copies the source adjustment bytes, preserves `PlayerEnemyDiff` page/low scratch handling, distance clamping, turn delay and returned speed. Its 1,024 original routes and current x86/x64 route pass. [T40 S10 closure](../history/M2-T40-enemy-movement-and-firebar.md#s10-lakitu-movement-and-distance-helper).
 
-- [ ] **Star-flag timer native-test assertion:** T39 S2 runs the unchanged endgame timer-tick assertion against both S1 and S2 shared objects; both fail with exit six on x86/x64. Other endgame groups, including fireworks animation/initializer/stream, pass independently. Keep AwardGameTimerPoints/NoTTick with existing M2 T19 S5 custody until the planned T41 actor slice; compare the source behavior before deciding whether the fixture or implementation is wrong. [S2 evidence](../history/M2-T39-special-initialization-and-dispatch.md#s2-original-fireworks-proof).
+- [x] **Star-flag timer native-test assertion:** The early T39 fixture finding is
+  superseded by T41 S6. The source-shaped `AwardGameTimerPoints -> NoTTick`
+  chain preserves the frame-bit sound gate and the two score-modifier calls;
+  all twenty star-flag labels have ROM-match evidence. The current star-flag
+  native route passes 779 cases on each x86/x64 width. [T41 S6 closure](../history/M2-T41-bridge-bowser-and-platforms.md#s6-star-flag-and-end-area-score-chain).
 
 - [x] **Lakitu smoke Spiny-generation failure:** The historical T39 S5
   diagnostic is superseded by T40 S10. The shared source-shaped Lakitu distance

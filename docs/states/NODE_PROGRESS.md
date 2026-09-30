@@ -19,7 +19,7 @@ the conformance counts below.
 
 Verified conformance is **1,992 / 1,992 (100.00%)**. No inventory mapping remains incomplete.
 
-Latest task review: [T51 S5 P10](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p10-spiny-historical-route-adjudication) removes the superseded historical Spiny route finding. It grants no additional node credit and preserves the independently recorded ROM-route discrepancies that remain under review.
+Latest task review: [T51 S5 P11](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p11-star-flag-historical-route-adjudication) removes the superseded historical star-flag timer finding. It grants no additional node credit and preserves the independently recorded ROM-route discrepancies that remain under review.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
