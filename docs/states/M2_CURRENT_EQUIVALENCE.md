@@ -1499,3 +1499,9 @@ branches.
 - Node-semantics result: eight labels moved from `unclassified` to `needs-evidence`, covering solid/climb/coin predicates and attribute grouping.
 - Independent integration result: 7 local relations plus two threshold-table edges received `needs-evidence` contracts. Static review found no discrepancy; controlled predicate routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K55 — enemy background collision entry audit
+
+- Source range: `EnemyBGCStateData` through `NoEToBGCollision` (`SMBDIS.ASM` lines 12420–12461).
+- Node-semantics result: eight labels moved from `unclassified` to `needs-evidence`, covering ID dispatch, under-enemy eligibility and no-ground path.
+- Independent integration result: 20 relations plus two state/speed table edges received `needs-evidence` contracts. Static review found no discrepancy; controlled enemy terrain routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

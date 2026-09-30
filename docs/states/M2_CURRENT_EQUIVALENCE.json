@@ -6805,6 +6805,34 @@
         "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-k55-01",
+      "producer": "EnemyBGCStateData",
+      "consumer": "ChkLandedEnemyState",
+      "storage": "ROM EnemyBGCStateData enemy terrain table",
+      "feasiblePath": "ChkLandedEnemyState selects EnemyBGCStateData through source state/facing index.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c background_data binding",
+      "semanticContract": "Source index selects same ordered state/speed before enemy state write.",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k55-02",
+      "producer": "EnemyBGCXSpdData",
+      "consumer": "SetStun",
+      "storage": "ROM EnemyBGCXSpdData enemy terrain table",
+      "feasiblePath": "SetStun selects EnemyBGCXSpdData through source state/facing index.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c background_data binding",
+      "semanticContract": "Source index selects same ordered state/speed before enemy state write.",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -26139,81 +26167,105 @@
       "label": "EnemyBGCStateData",
       "asmLine": 12420,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies six landing state values."
     },
     {
       "label": "EnemyBGCXSpdData",
       "asmLine": 12423,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies two facing-indexed stunned speeds."
     },
     {
       "label": "EnemyToBGCollisionDet",
       "asmLine": 12426,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Guards state/Y then dispatches jump paratroopa, hammer bro or normal enemy terrain collision by ID."
     },
     {
       "label": "DoIDCheckBGColl",
       "asmLine": 12439,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes special jump/hammer IDs before normal eligibility checks."
     },
     {
       "label": "HBChk",
       "asmLine": 12443,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes Hammer Bro terrain path."
     },
     {
       "label": "CInvu",
       "asmLine": 12446,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects normal terrain eligibility for Spiny, power-up and IDs below seven."
     },
     {
       "label": "YesIn",
       "asmLine": 12452,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls under-enemy query for eligible normal actors."
     },
     {
       "label": "NoEToBGCollision",
       "asmLine": 12455,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Handles missing ground path."
     },
     {
       "label": "HandleEToBGCollision",
@@ -74142,10 +74194,13 @@
       "instruction": "bne",
       "id": "control-02583",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation EnemyToBGCollisionDet → ExEBG and source ID/state/query ordering."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -74155,10 +74210,13 @@
       "instruction": "jsr",
       "id": "control-02584",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background call relation EnemyToBGCollisionDet → SubtEnemyYPos and source ID/state/query ordering."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -74168,10 +74226,13 @@
       "instruction": "bcc",
       "id": "control-02585",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation EnemyToBGCollisionDet → ExEBG and source ID/state/query ordering."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -74181,10 +74242,13 @@
       "instruction": "bne",
       "id": "control-02586",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation EnemyToBGCollisionDet → DoIDCheckBGColl and source ID/state/query ordering."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -74194,10 +74258,13 @@
       "instruction": "bcc",
       "id": "control-02587",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation EnemyToBGCollisionDet → ExEBG and source ID/state/query ordering."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -74207,10 +74274,13 @@
       "instruction": "bcc",
       "id": "control-02588",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background fallthrough relation EnemyToBGCollisionDet → DoIDCheckBGColl and source ID/state/query ordering."
     },
     {
       "from": "DoIDCheckBGColl",
@@ -74220,10 +74290,13 @@
       "instruction": "bne",
       "id": "control-02589",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation DoIDCheckBGColl → HBChk and source ID/state/query ordering."
     },
     {
       "from": "DoIDCheckBGColl",
@@ -74233,10 +74306,13 @@
       "instruction": "jmp",
       "id": "control-02590",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background jump relation DoIDCheckBGColl → EnemyJump and source ID/state/query ordering."
     },
     {
       "from": "HBChk",
@@ -74246,10 +74322,13 @@
       "instruction": "bne",
       "id": "control-02591",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation HBChk → CInvu and source ID/state/query ordering."
     },
     {
       "from": "HBChk",
@@ -74259,10 +74338,13 @@
       "instruction": "jmp",
       "id": "control-02592",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background jump relation HBChk → HammerBroBGColl and source ID/state/query ordering."
     },
     {
       "from": "CInvu",
@@ -74272,10 +74354,13 @@
       "instruction": "beq",
       "id": "control-02593",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation CInvu → YesIn and source ID/state/query ordering."
     },
     {
       "from": "CInvu",
@@ -74285,10 +74370,13 @@
       "instruction": "beq",
       "id": "control-02594",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation CInvu → YesIn and source ID/state/query ordering."
     },
     {
       "from": "CInvu",
@@ -74298,10 +74386,13 @@
       "instruction": "bcs",
       "id": "control-02595",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation CInvu → ExEBGChk and source ID/state/query ordering."
     },
     {
       "from": "CInvu",
@@ -74311,10 +74402,13 @@
       "instruction": "bcs",
       "id": "control-02596",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background fallthrough relation CInvu → YesIn and source ID/state/query ordering."
     },
     {
       "from": "YesIn",
@@ -74324,10 +74418,13 @@
       "instruction": "jsr",
       "id": "control-02597",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background call relation YesIn → ChkUnderEnemy and source ID/state/query ordering."
     },
     {
       "from": "YesIn",
@@ -74337,10 +74434,13 @@
       "instruction": "bne",
       "id": "control-02598",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background branch relation YesIn → HandleEToBGCollision and source ID/state/query ordering."
     },
     {
       "from": "YesIn",
@@ -74350,10 +74450,13 @@
       "instruction": "bne",
       "id": "control-02599",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background fallthrough relation YesIn → NoEToBGCollision and source ID/state/query ordering."
     },
     {
       "from": "NoEToBGCollision",
@@ -74363,10 +74466,13 @@
       "instruction": "jmp",
       "id": "control-02600",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background jump relation NoEToBGCollision → ChkForRedKoopa and source ID/state/query ordering."
     },
     {
       "from": "HandleEToBGCollision",
@@ -95864,10 +95970,13 @@
       "instruction": "rts/rti",
       "id": "control-03971",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background return relation SubtEnemyYPos → EnemyToBGCollisionDet and source ID/state/query ordering."
     },
     {
       "from": "ChkUnderEnemy",
@@ -95877,10 +95986,13 @@
       "instruction": "rts/rti",
       "id": "control-03972",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy-background return relation ChkUnderEnemy → YesIn and source ID/state/query ordering."
     },
     {
       "from": "ChkForNonSolids",
