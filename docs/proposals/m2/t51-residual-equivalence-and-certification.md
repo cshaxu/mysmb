@@ -306,3 +306,14 @@ without the preceding `InitializeArea -> GetScreenPosition` route. The ROM
 and `BoundingBoxCore`. Initializing that source precondition restores the
 expected control-one box `$2b,$c4,$35,$d0`. The focused x86/x64 test passes;
 S5 remains open for seven failures.
+
+### S5 P5: Hammer Bro allocation and terrain fixture
+
+No production code changes or node credit occur here. The `$fe` fixture had
+marked all `Misc_State`, reserve `Enemy_Flag`, and block-buffer bytes occupied.
+`SpawnHammerObj` requires its selected misc and reserve-enemy slots free; an
+empty block buffer reaches `NoUnderHammerBro`, which sets state d0 before
+`ProcHammerBro` sets throwing d3. The source result is `$09`, not `$08`.
+After restoring these source preconditions, the focused Hammer Bro route
+passes on x86 and x64; the complete x86 and x64 243-test matrices each retain
+the same six unrelated legacy failures. S5 remains open for their ROM adjudication.

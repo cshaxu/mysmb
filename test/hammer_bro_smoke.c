@@ -67,6 +67,11 @@ int main(void)
     game.ram[0x071bU] = 1U;
     game.ram[0x071cU] = 0U;
     game.ram[0x071dU] = 0U;
+    /* SpawnHammerObj requires its PRNG-selected Misc_State slot to be free.
+     * This is the post-MiscObjectsCore allocation precondition. */
+    memset(&game.ram[0x002aU], 0, 9U);
+    memset(&game.ram[0x000fU], 0, 6U);
+    memset(&game.ram[0x0500U], 0, 0x1a0U);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 5U;
     game.ram[0x006eU] = 0U;
@@ -83,7 +88,7 @@ int main(void)
     game.ram[0x0014U] = 0U;
     game.ram[0x0558U] = 1U;
     mysmb_objects_step_hammer_bros(&game);
-    if (game.ram[0x03a2U] != 0x30U || game.ram[0x001eU] != 8U ||
+    if (game.ram[0x03a2U] != 0x30U || game.ram[0x001eU] != 9U ||
         game.ram[0x002bU] != 0x90U || game.ram[0x06afU] != 0U ||
         game.ram[0x04a3U] != 7U) return 2;
     source_player_box(&game);
