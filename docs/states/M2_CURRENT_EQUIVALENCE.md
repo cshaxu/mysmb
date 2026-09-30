@@ -1382,3 +1382,9 @@ branches.
 - Node-semantics result: sixteen labels moved from `unclassified` to `needs-evidence`, covering triangle stream/control selection, noise stream loopback and beats, and both shared length transforms.
 - Independent integration result: 41 outgoing and return control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K35 — music control and envelope selector audit
+
+- Source range: `LoadControlRegs` through `LoadWaterEventMusEnvData` (`SMBDIS.ASM` lines 15951–15981).
+- Node-semantics result: seven labels moved from `unclassified` to `needs-evidence`, covering end-castle, water/event and usual area control/envelope selection.
+- Independent integration result: 9 control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

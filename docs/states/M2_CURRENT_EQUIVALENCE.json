@@ -31124,71 +31124,92 @@
       "label": "LoadControlRegs",
       "asmLine": 15951,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects envelope-control offset 4 for end-castle event, 40 for water/all other event, otherwise 8; returns fixed square register pair."
     },
     {
       "label": "NotECstlM",
       "asmLine": 15957,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects water/event control path when area mask clears, otherwise default control."
     },
     {
       "label": "WaterMus",
       "asmLine": 15962,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Provides $28 water/event control offset."
     },
     {
       "label": "AllMus",
       "asmLine": 15963,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns selected A with fixed X=$82 and Y=$7f."
     },
     {
       "label": "LoadEnvelopeData",
       "asmLine": 15967,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects end-castle envelope table when secondary end-castle bit is set."
     },
     {
       "label": "LoadUsualEnvData",
       "asmLine": 15974,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects water/event envelope table when area water mask clears, otherwise usual area envelope table."
     },
     {
       "label": "LoadWaterEventMusEnvData",
       "asmLine": 15981,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads selected water/event envelope byte."
     },
     {
       "label": "MusicHeaderData",
@@ -86564,10 +86585,13 @@
       "instruction": "beq",
       "id": "control-03474",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch LoadControlRegs to NotECstlM is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "LoadControlRegs",
@@ -86577,10 +86601,13 @@
       "instruction": "bne",
       "id": "control-03475",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch LoadControlRegs to AllMus is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "LoadControlRegs",
@@ -86590,10 +86617,13 @@
       "instruction": "bne",
       "id": "control-03476",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough LoadControlRegs to NotECstlM is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "NotECstlM",
@@ -86603,10 +86633,13 @@
       "instruction": "beq",
       "id": "control-03477",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch NotECstlM to WaterMus is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "NotECstlM",
@@ -86616,10 +86649,13 @@
       "instruction": "bne",
       "id": "control-03478",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch NotECstlM to AllMus is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "NotECstlM",
@@ -86629,10 +86665,13 @@
       "instruction": "bne",
       "id": "control-03479",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough NotECstlM to WaterMus is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "WaterMus",
@@ -86642,10 +86681,13 @@
       "instruction": "lda",
       "id": "control-03480",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough WaterMus to AllMus is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "LoadEnvelopeData",
@@ -86655,10 +86697,13 @@
       "instruction": "beq",
       "id": "control-03481",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch LoadEnvelopeData to LoadUsualEnvData is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "LoadUsualEnvData",
@@ -86668,10 +86713,13 @@
       "instruction": "beq",
       "id": "control-03482",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_envelope_control and mysmb_audio_load_music_envelope",
+      "semanticEvidence": [
+        "Td S9 K35 music control/envelope selector audit: SMB1 lines 15951-15981 compared with shared src/game/audio.c envelope control and envelope lookup helpers; controlled original-ROM/x86/x64 castle, water/event and area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch LoadUsualEnvData to LoadWaterEventMusEnvData is represented by the shared music control/envelope selector predicate and ordering."
     },
     {
       "from": "InitializeMemory",
