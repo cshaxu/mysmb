@@ -71,6 +71,12 @@ and the `$01f0-$01ff` APU/6502 execution-stack window.  These routes provide
 operational evidence only for labels and edges actually reached; no
 needs-evidence status is promoted by this preflight.
 
+The independent platform-boundary audit also passes: `src/platform` has no
+direct game RAM, CIRAM, palette, OAM, scroll or operating-mode access.  Win32
+and DOS16 only translate host input, consume startup timing, call the shared
+game tick, and submit a completed shared PPU frame.  This is an architecture
+result, not ROM-node credit.
+
 ### Cohort allocation
 
 The registry allocates **all 4,342 control edges** once, by the source label
