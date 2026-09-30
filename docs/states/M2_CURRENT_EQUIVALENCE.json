@@ -5803,15 +5803,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1377,
+    "needs-evidence": 1385,
     "mismatch": 9,
-    "unclassified": 568
+    "unclassified": 560
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 3024,
+    "needs-evidence": 3038,
     "mismatch": 25,
-    "unclassified": 1217
+    "unclassified": 1203
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -6871,7 +6871,7 @@
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $83da: on worlds 1–7, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer."
+      "semanticContract": "ROM $83da: on worlds 1\u00e2\u20ac\u201c7, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer."
     },
     {
       "label": "ThankPlayer",
@@ -6897,7 +6897,7 @@
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1–7, choosing ordinary message, counter-only, or end-timer paths."
+      "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1\u00e2\u20ac\u201c7, choosing ordinary message, counter-only, or end-timer paths."
     },
     {
       "label": "EvalForMusic",
@@ -6988,7 +6988,7 @@
         "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1–7 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check."
+      "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1\u00e2\u20ac\u201c7 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check."
     },
     {
       "label": "EndExitOne",
@@ -17367,7 +17367,7 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Uses the BIT-overlap entry to preserve direction zero while skipping MovePlatformUp’s LDA-one instruction."
+      "semanticContract": "Uses the BIT-overlap entry to preserve direction zero while skipping MovePlatformUp\u00e2\u20ac\u2122s LDA-one instruction."
     },
     {
       "label": "MovePlatformUp",
@@ -17445,7 +17445,7 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Handles no-upward exit and the two’s-complement upward clamp after downward update."
+      "semanticContract": "Handles no-upward exit and the two\u00e2\u20ac\u2122s-complement upward clamp after downward update."
     },
     {
       "label": "ExVMove",
@@ -25850,81 +25850,105 @@
       "label": "VineYPosAdder",
       "asmLine": 13126,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label."
     },
     {
       "label": "DrawVine",
       "asmLine": 13129,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label."
     },
     {
       "label": "VineTL",
       "asmLine": 13156,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label."
     },
     {
       "label": "SkpVTop",
       "asmLine": 13169,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label."
     },
     {
       "label": "ChkFTop",
       "asmLine": 13170,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label."
     },
     {
       "label": "NextVSp",
       "asmLine": 13177,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label."
     },
     {
       "label": "SixSpriteStacker",
       "asmLine": 13187,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label."
     },
     {
       "label": "StkLp",
       "asmLine": 13189,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label."
     },
     {
       "label": "FirstSprXPos",
@@ -32545,7 +32569,7 @@
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original PrintVictoryMessages -> MRetainerMsg selects the worlds 1–7 message threshold path only after the secondary/primary gates."
+      "semanticContract": "Original PrintVictoryMessages -> MRetainerMsg selects the worlds 1\u00e2\u20ac\u201c7 message threshold path only after the secondary/primary gates."
     },
     {
       "from": "PrintVictoryMessages",
@@ -32588,12 +32612,12 @@
       "id": "control-00148",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 primary < 2 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 primary < 2 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original MRetainerMsg -> IncMsgCounter selects counter-only behavior for worlds 1–7 before their second message."
+      "semanticContract": "Original MRetainerMsg -> IncMsgCounter selects counter-only behavior for worlds 1\u00e2\u20ac\u201c7 before their second message."
     },
     {
       "from": "MRetainerMsg",
@@ -32604,12 +32628,12 @@
       "id": "control-00149",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 primary >= 2 fall-through",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 primary >= 2 fall-through",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original MRetainerMsg -> ThankPlayer preserves the primary-derived message index for worlds 1–7."
+      "semanticContract": "Original MRetainerMsg -> ThankPlayer preserves the primary-derived message index for worlds 1\u00e2\u20ac\u201c7."
     },
     {
       "from": "ThankPlayer",
@@ -32700,12 +32724,12 @@
       "id": "control-00155",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index >= 4 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 transformed index >= 4 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original SecondPartMsg -> SetEndTimer terminates worlds 1–7 messaging at transformed index four."
+      "semanticContract": "Original SecondPartMsg -> SetEndTimer terminates worlds 1\u00e2\u20ac\u201c7 messaging at transformed index four."
     },
     {
       "from": "SecondPartMsg",
@@ -32716,7 +32740,7 @@
       "id": "control-00156",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index == 3 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 transformed index == 3 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -32732,7 +32756,7 @@
       "id": "control-00157",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index < 3 continuation",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 transformed index < 3 continuation",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -32892,7 +32916,7 @@
       "id": "control-00167",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1–7 mysmb_game_load_area_pointer call",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1\u00e2\u20ac\u201c7 mysmb_game_load_area_pointer call",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -32908,7 +32932,7 @@
       "id": "control-00168",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1–7 next-world continuation",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1\u00e2\u20ac\u201c7 next-world continuation",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -49019,12 +49043,12 @@
       "id": "control-01176",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation VDrawLoop -> DrawVine with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation VDrawLoop -> DrawVine with source OAM loop and coordinate handoff."
     },
     {
       "from": "VDrawLoop",
@@ -73603,10 +73627,13 @@
       "instruction": "jsr",
       "id": "control-02763",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawVine -> SixSpriteStacker with source OAM loop and coordinate handoff."
     },
     {
       "from": "DrawVine",
@@ -73616,10 +73643,13 @@
       "instruction": "ldx",
       "id": "control-02764",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DrawVine -> VineTL with source OAM loop and coordinate handoff."
     },
     {
       "from": "VineTL",
@@ -73629,10 +73659,13 @@
       "instruction": "bpl",
       "id": "control-02765",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VineTL -> VineTL with source OAM loop and coordinate handoff."
     },
     {
       "from": "VineTL",
@@ -73642,10 +73675,13 @@
       "instruction": "bne",
       "id": "control-02766",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VineTL -> SkpVTop with source OAM loop and coordinate handoff."
     },
     {
       "from": "VineTL",
@@ -73655,10 +73691,13 @@
       "instruction": "sta",
       "id": "control-02767",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation VineTL -> SkpVTop with source OAM loop and coordinate handoff."
     },
     {
       "from": "SkpVTop",
@@ -73668,10 +73707,13 @@
       "instruction": "ldx",
       "id": "control-02768",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SkpVTop -> ChkFTop with source OAM loop and coordinate handoff."
     },
     {
       "from": "ChkFTop",
@@ -73681,10 +73723,13 @@
       "instruction": "bcc",
       "id": "control-02769",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkFTop -> NextVSp with source OAM loop and coordinate handoff."
     },
     {
       "from": "ChkFTop",
@@ -73694,10 +73739,13 @@
       "instruction": "sta",
       "id": "control-02770",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkFTop -> NextVSp with source OAM loop and coordinate handoff."
     },
     {
       "from": "NextVSp",
@@ -73707,10 +73755,13 @@
       "instruction": "bne",
       "id": "control-02771",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation NextVSp -> ChkFTop with source OAM loop and coordinate handoff."
     },
     {
       "from": "SixSpriteStacker",
@@ -73720,10 +73771,13 @@
       "instruction": "ldx",
       "id": "control-02772",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SixSpriteStacker -> StkLp with source OAM loop and coordinate handoff."
     },
     {
       "from": "StkLp",
@@ -73733,10 +73787,13 @@
       "instruction": "bne",
       "id": "control-02773",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation StkLp -> StkLp with source OAM loop and coordinate handoff."
     },
     {
       "from": "DrawHammer",
@@ -74006,10 +74063,13 @@
       "instruction": "jsr",
       "id": "control-02794",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawLargePlatform -> SixSpriteStacker with source OAM loop and coordinate handoff."
     },
     {
       "from": "DrawLargePlatform",
@@ -86174,12 +86234,12 @@
       "id": "control-03693",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawVine -> VDrawLoop with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation DrawVine -> VDrawLoop with source OAM loop and coordinate handoff."
     },
     {
       "from": "EraseEnemyObject",
@@ -90945,10 +91005,13 @@
       "instruction": "rts/rti",
       "id": "control-03998",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SixSpriteStacker -> DrawVine with source OAM loop and coordinate handoff."
     },
     {
       "from": "DumpTwoSpr",
@@ -90997,10 +91060,13 @@
       "instruction": "rts/rti",
       "id": "control-04002",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "semanticEvidence": [
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SixSpriteStacker -> DrawLargePlatform with source OAM loop and coordinate handoff."
     },
     {
       "from": "DumpFourSpr",
