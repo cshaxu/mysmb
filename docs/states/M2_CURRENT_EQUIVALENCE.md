@@ -287,3 +287,17 @@ least the bridge-collapse task-zero path, setup task-one path, a nonzero
 post-leaf enemy path, and the shared relative-position/player-graphics tail.
 The route records must compare the task selector, ObjectOffset handoff,
 destination page, event music, player-relative output and OAM-visible result.
+
+The adjacent `PlayerVictoryWalk -> PerformWalk -> DontWalk -> ExitVWalk`
+branch (lines 1169–1197) has now received its separate static node pass. All
+four nodes remain `needs-evidence`. Its thirteen previously unclassified
+relations are independently recorded as `needs-evidence`: both page/X walk
+predicates, their fall-throughs, the auto-control call/return, the
+screen-left branch, fixed-point scroll and parser calls/returns, the terminal
+fall-through, and the zero-control task increment. This makes the
+`VictoryModeSubroutines` selector-to-walk integration auditable without
+claiming that the current `mysmb_player_step` and scroll collaborators have
+already been proved by a current route. The required route pair is the
+same-page no-walk/task-advance case and the walking/non-destination-page case;
+both must compare auto buttons, walk control, fractional carry, screen pages,
+parser handoff and task result.

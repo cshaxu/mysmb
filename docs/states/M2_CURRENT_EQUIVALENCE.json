@@ -1149,41 +1149,53 @@
       "label": "PlayerVictoryWalk",
       "asmLine": 1169,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $84a1: clears VictoryWalkControl; selects walking when Player_PageLoc differs from DestinationPageLoc or same-page Player_X_Position is below $60; always invokes AutoControlPlayer with 0/1; if ScreenLeft_PageLoc differs from destination, adds $80 to ScrollFractional, scrolls by 1+carry, runs UpdScrollVar, and retains the victory task. A zero control at exit advances OperMode_Task."
     },
     {
       "label": "PerformWalk",
       "asmLine": 1178,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 walk predicate",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $84af: increments VictoryWalkControl and selects the rightward auto-control value before the shared DontWalk continuation."
     },
     {
       "label": "DontWalk",
       "asmLine": 1180,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 AutoControlPlayer/scroll continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $84b1: invokes AutoControlPlayer with the selected 0/1 value, conditionally applies fixed-point $80 scroll and parser update, and hands the resulting VictoryWalkControl to ExitVWalk."
     },
     {
       "label": "ExitVWalk",
       "asmLine": 1195,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 terminal condition",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $84d0: advances OperMode_Task only when VictoryWalkControl remains zero; otherwise returns to VictoryMode without another task change."
     },
     {
       "label": "PrintVictoryMessages",
@@ -22600,10 +22612,13 @@
       "instruction": "bne",
       "id": "control-00132",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:task == 2 Player_Page != DestinationPage condition",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch PlayerVictoryWalk -> PerformWalk selects walking when Player_PageLoc differs from DestinationPageLoc."
     },
     {
       "from": "PlayerVictoryWalk",
@@ -22613,10 +22628,13 @@
       "instruction": "bcs",
       "id": "control-00133",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:task == 2 Player_X >= 0x60 condition",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch PlayerVictoryWalk -> DontWalk selects no-walk only after page equality and Player_X_Position >= $60."
     },
     {
       "from": "PlayerVictoryWalk",
@@ -22626,10 +22644,13 @@
       "instruction": "bcs",
       "id": "control-00134",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:task == 2 shared walk predicate false path",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fall-through PlayerVictoryWalk -> PerformWalk selects walking when page is equal and Player_X_Position < $60."
     },
     {
       "from": "PerformWalk",
@@ -22639,10 +22660,13 @@
       "instruction": "iny",
       "id": "control-00135",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:task == 2 shared continuation after setting auto_buttons",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fall-through PerformWalk -> DontWalk preserves the incremented VictoryWalkControl and rightward auto-control value."
     },
     {
       "from": "DontWalk",
@@ -22652,10 +22676,13 @@
       "instruction": "jsr",
       "id": "control-00136",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_player_step(game, auto_buttons)",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call DontWalk -> AutoControlPlayer must run once with the locally selected zero/right value before the screen-left comparison."
     },
     {
       "from": "DontWalk",
@@ -22665,10 +22692,13 @@
       "instruction": "beq",
       "id": "control-00137",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:task == 2 ScreenLeft_Page == DestinationPage condition",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch DontWalk -> ExitVWalk bypasses fractional scroll, ScrollScreen and UpdScrollVar when ScreenLeft_PageLoc equals DestinationPageLoc."
     },
     {
       "from": "DontWalk",
@@ -22678,10 +22708,13 @@
       "instruction": "jsr",
       "id": "control-00138",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_player_scroll_screen(game, scroll_amount)",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call DontWalk -> ScrollScreen occurs only after ScrollFractional += $80 and supplies exactly 1+carry pixels."
     },
     {
       "from": "DontWalk",
@@ -22691,10 +22724,13 @@
       "instruction": "jsr",
       "id": "control-00139",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_area_parser(game)",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call DontWalk -> UpdScrollVar follows ScrollScreen and updates parser/scroll state before VictoryWalkControl is incremented."
     },
     {
       "from": "DontWalk",
@@ -22704,10 +22740,13 @@
       "instruction": "inc",
       "id": "control-00140",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:task == 2 continuation to terminal condition",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fall-through DontWalk -> ExitVWalk hands the post-scroll or no-scroll VictoryWalkControl to the single task-advance test."
     },
     {
       "from": "ExitVWalk",
@@ -22717,10 +22756,13 @@
       "instruction": "beq",
       "id": "control-00141",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:task == 2 VictoryWalkControl == 0 condition increments OperMode_Task",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch ExitVWalk -> IncModeTask_A advances the task exactly when the control remains zero; nonzero returns to VictoryMode."
     },
     {
       "from": "PrintVictoryMessages",
@@ -66575,10 +66617,13 @@
       "instruction": "rts/rti",
       "id": "control-03508",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_player_step completion before screen-left check",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return AutoControlPlayer -> DontWalk must preserve player updates before this chain reads ScreenLeft_PageLoc."
     },
     {
       "from": "ScrollScreen",
@@ -66588,10 +66633,13 @@
       "instruction": "rts/rti",
       "id": "control-03509",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_player_scroll_screen completion before parser call",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return ScrollScreen -> DontWalk reaches UpdScrollVar with the scroll result available."
     },
     {
       "from": "UpdScrollVar",
@@ -66601,10 +66649,13 @@
       "instruction": "rts/rti",
       "id": "control-03510",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_area_parser completion before VictoryWalkControl increment",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return UpdScrollVar -> DontWalk increments VictoryWalkControl only after the parser/scroll update completes."
     },
     {
       "from": "LoadAreaPointer",
