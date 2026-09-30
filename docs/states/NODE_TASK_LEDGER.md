@@ -20,8 +20,8 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T22 S15 | 3 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset` |
 | M2 T22 S23 | 1 | `InitBuffer` |
 | M2 T22 S24 | 6 | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause` |
-| M2 T22 S25 | 6 | `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip`, `RotPRandomBit` |
-| M2 T22 S26 | 8 | `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
+| M2 T22 S25 | 5 | `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip` |
+| M2 T22 S26 | 7 | `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
 | M2 T22 S27 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
@@ -221,10 +221,10 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T50 S1 | 21 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` |
 | M2 T50 S2 | 5 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` |
 | M2 T50 S3 | 2 | `BowserFlameEnvData`, `BrickShatterEnvData` |
-| M2 T51 S1 | 1 | `NonMaskableInterrupt` |
 | M2 T51 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
 | M2 T51 S3 | 1 | `KillEnemies` |
 | M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
+| M2 T52 S1 | 3 | `NonMaskableInterrupt`, `RotPRandomBit`, `SkipSprite0` |
 
 ## Future admission packages and queued plans
 
@@ -254,7 +254,7 @@ transfer existing ownership or allocate a numeric T.
 | 743 | `VRAM_AddrTable_Low` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
 | 752 | `VRAM_AddrTable_High` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
 | 761 | `VRAM_Buffer_Offset` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
-| 764 | `NonMaskableInterrupt` | M2 T51 S1 | existing closure backlog; Accepted T51 S1 final NMI-parent integration transfer. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
+| 764 | `NonMaskableInterrupt` | M2 T52 S1 | existing closure backlog; T52 S1 accepted current-equivalence corrective transfer. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
 | 776 | `ScreenOff` | M2 T22 S9 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
 | 796 | `InitBuffer` | M2 T22 S23 | existing closure backlog; T22/S16 completed the InitBuffer source branch/write contract; T22/S23 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S16; M2 T22 S23; M2 T24 S1 |
 | 814 | `DecTimers` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
@@ -262,11 +262,11 @@ transfer existing ownership or allocate a numeric T.
 | 823 | `SkipExpTimer` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
 | 825 | `NoDecTimers` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
 | 826 | `PauseSkip` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
-| 837 | `RotPRandomBit` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
+| 837 | `RotPRandomBit` | M2 T52 S1 | existing closure backlog; T52 S1 accepted current-equivalence corrective transfer. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
 | 843 | `Sprite0Clr` | M2 T22 S26 | existing closure backlog; T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 851 | `Sprite0Hit` | M2 T22 S26 | existing closure backlog; T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 855 | `HBlankDelay` | M2 T22 S26 | existing closure backlog; T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
-| 857 | `SkipSprite0` | M2 T22 S26 | existing closure backlog; T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
+| 857 | `SkipSprite0` | M2 T52 S1 | existing closure backlog; T52 S1 accepted current-equivalence corrective transfer. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 868 | `SkipMainOper` | M2 T22 S26 | existing closure backlog; T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 876 | `PauseRoutine` | M2 T22 S24 | existing closure backlog; T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
 | 885 | `ChkPauseTimer` | M2 T22 S24 | existing closure backlog; T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
@@ -2329,8 +2329,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T22 S22 | 1 | 0 | nmi-parent-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S23 | 1 | 1 | initbuffer-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S24 | 6 | 6 | pause-route-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S25 | 6 | 6 | timer-lfsr-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S26 | 8 | 8 | sprite-oam-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S25 | 6 | 5 | timer-lfsr-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S26 | 8 | 7 | sprite-oam-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S27 | 6 | 6 | sprite-shuffle-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S28 | 1 | 1 | owner-approved-independent-proof; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T23 | 5 | - | [record](../../docs/proposals/m2/player-route.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
@@ -2581,11 +2581,13 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T50 S2 | 0 | 5 | declared-plan, music-lookup-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T50 S3 | 0 | 2 | declared-plan, noise-envelope-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T51 | 0 | - | [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
-| M2 T51 S1 | 0 | 1 | owner-approved-completion, nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S1 | 0 | 0 | owner-approved-completion, nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S2 | 0 | 4 | owner-approved-completion, screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S3 | 0 | 1 | owner-approved-completion, kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S4 | 0 | 34 | owner-approved-completion, enemy-stream-data-chain-and-consumer; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S5 | 0 | 0 | cross-route-integration-certification; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T52 | 0 | - | [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S1 | 0 | 3 | owner-approved-current-equivalence-remediation, a2-nmi-prefix-state-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2913,6 +2915,9 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-280-to-t51-s2 | M2 T24 S2 | M2 T51 S2 | 4 | Coordinator accepts the source-contiguous screen/parser output chain under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | transfer-281-to-t51-s3 | M2 T29 S8 | M2 T51 S3 | 1 | Coordinator accepts the residual KillEnemies primitive under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | transfer-282-to-t51-s4 | M2 T19 S5 | M2 T51 S4 | 34 | Coordinator accepts the residual original enemy-stream data chain under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| t52-s1-nmi-parent | M2 T51 S1 | M2 T52 S1 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| t52-s1-random-prefix | M2 T22 S25 | M2 T52 S1 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| t52-s1-sprite-prefix | M2 T22 S26 | M2 T52 S1 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3178,5 +3183,6 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T51 S2 | 4 | 1953 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` / 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` / 4 | closed-screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S3 | 1 | 1957 | `KillEnemies` / 1 | `KillEnemies` / 1 | closed-kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S4 | 34 | 1958 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` / 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` / 34 | closed-enemy-stream-data-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
-| M2 T51 S5 | 0 | 1992 | none / 0 | none / 0 | admitted-cross-route-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S5 | 0 | 1992 | none / 0 | none / 0 | closed-historical-certification-handoff; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 Td S9 | 0 | 1992 | none / 0 | none / 0 | closed-current-equivalence-governance; [record](../../docs/proposals/m2/current-equivalence-reaudit.md) |
+| M2 T52 S1 | 3 | 1992 | none / 0 | none / 0 | admitted-a2-nmi-prefix-remediation; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |

@@ -7,41 +7,16 @@ a task ledger, or a record of completed work.  Active work is recorded only in
 [CURRENT.md](CURRENT.md); closed tasks remain in their proposal/history record
 and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
-A queue item has no numeric T/S identifier until it is admitted under the
-[execution policy](../rules/EXECUTION.md).  Ordering is a priority and
-source-dependency order, not a historical task-number list.
+## M2: current-equivalence work
 
-## M2: unadmitted shared-core repair candidates
+`M2 T52 S1` is active and is therefore not listed here.  T52 retains five
+unadmitted runtime repair S chains plus one graph-model S; see its
+[remediation task contract](../proposals/m2/t52-current-audit-mismatch-remediation.md).
 
-The current `M2 T51 S5` audit is active and therefore is not a queue item.
-When it closes or admits its next bounded implementation S, take the first
-candidate whose dependencies are satisfied.  Each repair belongs exclusively
-in shared `src/game/` code and must prove the same behavior on DOS16, Win32
-x86 and Win32 x64.
-
-1. [A2 NMI-prefix state-handoff repair](../proposals/m2/a2-nmi-prefix-repair-candidate.md)
-   — `RotPRandomBit -> SkipSprite0 -> OperModeExecutionTree`, including the
-   enclosing `NonMaskableInterrupt` handoff.  Restore ROM scratch `$00` and
-   d7-clear PPU-control timing through mode dispatch.
-
-2. [A6 title-menu timer-gate repair](../proposals/m2/a6-title-menu-order-repair-candidate.md)
-   — restore the `ChkSelect -> ChkWorldSel` decision order for a zero demo
-   timer and world-select B input.
-
-3. [A7 Floatey timer-gate repair](../proposals/m2/a7-floatey-timer-gate-repair-candidate.md)
-   — restore decrement-before-`$2b` comparison in the floatey score/one-up
-   chain.
-
-4. [B2 palette fall-through repair](../proposals/m2/b2-palette-fallthrough-repair-candidate.md)
-   — restore the unconditional `GetBackgroundColor -> NoBGColor ->
-   GetPlayerColors` palette producer path.
-
-5. [B3 time-up task-handoff repair](../proposals/m2/b3-timeup-task-handoff-repair-candidate.md)
-   — restore `DisplayTimeUp -> OutputInter -> NoTimeUp` task progression.
-
-6. [H9 large-platform Y-source repair](../proposals/m2/h9-large-platform-y-source-repair-candidate.md)
-   — make the first four large-platform sprite Y records read
-   `Enemy_Y_Position,x` as the ROM does.
+After T52 closes, execute the owner-directed [T53–T70 current-equivalence
+proof program](../proposals/m2/current-equivalence-proof-program.md) in its
+listed order.  Each task stays unadmitted until its own exact S packet,
+node/edge scope and ROM route are recorded.
 
 ## M3: presentation adapters
 

@@ -646,3 +646,19 @@ three current delivery artifacts are retained after hash verification:
 `mysmb16.exe` `D3FE87771AFA2EA86435F41EA954055A21750A59151F76491B972BC11E175C2C`,
 `mysmb32.exe` `DDCD4DC6A16C01E6DC8A50AAB29EF43A85E71A1124D007C494B0A18AD7DFEBF4`,
 and `mysmb64.exe` `DE701E81C81CA3F2AE408F463EBB6F85960340FC00CB362B975E3208A519CBFD`.
+
+## T51 closure: historical source-order completion handed to current-equivalence remediation
+
+T51 closes its historical source-order responsibility at **1,992 / 1,992**.
+S1 through S4 completed the 40 residual source-order labels.  S5 owned no
+node credit and established that this historical numerator is not a current
+whole-graph equivalence result.  It handed six bounded runtime discrepancies
+to T52 and retained no implementation custody.
+
+The handoff is explicit: A2 NMI state handoff, A6 title timer ordering, A7
+floatey timer ordering, B2 palette fall-through, B3 time-up task handoff and
+H9 large-platform Y-source binding are T52 shared-core work.  The H1–H8
+relations are graph-extractor defects, also handled within T52 as a zero-code
+audit S.  T51 does not claim that the 1,944 current `needs-evidence` labels
+or 4,241 current `needs-evidence` control relations are equivalent.  Those
+become the separate T53+ proof program after T52 closes.
