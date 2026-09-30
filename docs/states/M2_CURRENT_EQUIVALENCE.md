@@ -766,3 +766,18 @@ coin/floatey state changes, scroll carry, BCD coin/score routing, hundred-coin
 life behavior and status zero suppression. No static discrepancy was found;
 all entries remain `needs-evidence` pending controlled original-ROM/x86/x64
 coin, score and misc-object routes.
+
+
+### Cohort H — B14e PowerUp initialization, emergence and active-object integration
+
+`SetupPowerUp` through `ExitPUp` now has ten independent node contracts, thirty-nine
+control/return relations and two feasible RAM handoffs. The integration pass
+records fixed slot-five initialization, PlayerStatus-derived mushroom/flower
+selection, priority/sound tail, the state-bit dispatcher, the every-four-frame
+emergence threshold, and the exact `RelativeEnemyPosition` → offscreen bits →
+bounding box → graphics → player collision → bounds order. It also preserves
+the source rule that an emerging item becomes visible and collidable at state
+six, before its later active-state transition. No static discrepancy was
+found. These nodes, relations and material paths remain `needs-evidence` until
+controlled original-ROM/x86/x64 routes cover each type, timer gate, emergence
+threshold, collision and offscreen branch.

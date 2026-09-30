@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 103,
+    "enumeratedCount": 105,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1455,6 +1455,34 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00104",
+      "producer": "PwrUpJmp",
+      "consumer": "PowerUpObjHandler",
+      "storage": "Enemy_State+5 / Enemy_Flag+5 fixed-slot activation",
+      "feasiblePath": "PwrUpJmp writes active state and flag; the next power-up core invocation reads slot-five state before any behavior dispatch.",
+      "status": "needs-evidence",
+      "currentCounterpart": "slot-five state/flag initialization and subsequent dispatcher gate",
+      "semanticContract": "Preserves source producer write, consumer read and feasible frame-to-frame handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00105",
+      "producer": "StrType",
+      "consumer": "PowerUpObjHandler",
+      "storage": "PowerUpType shared byte",
+      "feasiblePath": "For type below two, StrType writes PowerUpType; after activation the handler selects mushroom, star or flower behavior from that byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "PowerUpType write and active behavior selection",
+      "semanticContract": "Preserves source producer write, consumer read and feasible frame-to-frame handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -12200,101 +12228,131 @@
       "label": "SetupPowerUp",
       "asmLine": 7150,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes fixed enemy slot five from the selected block: ID, page, X, Y-high and Y minus eight, then enters the residual initializer."
     },
     {
       "label": "PwrUpJmp",
       "asmLine": 7163,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes slot-five state, flag and bounding-box control; derives mushroom/flower type from PlayerStatus only when incoming PowerUpType is below two."
     },
     {
       "label": "StrType",
       "asmLine": 7175,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the selected player-status-derived power-up type before the common priority and sound tail."
     },
     {
       "label": "PutBehind",
       "asmLine": 7176,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets slot-five background-priority attribute and queues GrowPowerUp sound before return."
     },
     {
       "label": "PowerUpObjHandler",
       "asmLine": 7184,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects fixed slot five; gates inactive, emerging and active state; dispatches mushroom, star and flower behavior using the original state-bit and TimerControl predicates."
     },
     {
       "label": "ShroomM",
       "asmLine": 7202,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs normal-enemy motion followed by enemy-to-background collision, then enters the common power-up tail."
     },
     {
       "label": "GrowThePowerUp",
       "asmLine": 7206,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "On every fourth frame raises the item, increments emergence state, and at the original threshold installs active speed/state, foreground priority and rightward direction."
     },
     {
       "label": "ChkPUSte",
       "asmLine": 7223,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Suppresses relative position, drawing and player collision until the current emergence state reaches six."
     },
     {
       "label": "RunPUSubs",
       "asmLine": 7226,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs relative position, offscreen bits, bounding box, graphics, player collision and offscreen bounds check in source order without an intervening type gate."
     },
     {
       "label": "ExitPUp",
       "asmLine": 7232,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared power-up and game-object core",
+      "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from the current fixed-slot power-up invocation without further writes."
     },
     {
       "label": "BlockYPosAdderData",
@@ -44556,10 +44614,13 @@
       "instruction": "sta",
       "id": "control-01279",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Block-derived slot-five coordinates flow into the residual initializer without an intervening return."
     },
     {
       "from": "PwrUpJmp",
@@ -44569,10 +44630,13 @@
       "instruction": "bcs",
       "id": "control-01280",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "PowerUpType >= 2 bypasses PlayerStatus type selection and enters the common attribute/sound tail."
     },
     {
       "from": "PwrUpJmp",
@@ -44582,10 +44646,13 @@
       "instruction": "bcc",
       "id": "control-01281",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "PlayerStatus < 2 retains its value as PowerUpType before the common tail."
     },
     {
       "from": "PwrUpJmp",
@@ -44595,10 +44662,13 @@
       "instruction": "lsr",
       "id": "control-01282",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Fiery PlayerStatus shifts right before the StrType store."
     },
     {
       "from": "StrType",
@@ -44608,10 +44678,13 @@
       "instruction": "sta",
       "id": "control-01283",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "StrType falls directly into the common attribute/sound tail."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44621,10 +44694,13 @@
       "instruction": "beq",
       "id": "control-01284",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Zero slot-five state returns immediately."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44634,10 +44710,13 @@
       "instruction": "bcc",
       "id": "control-01285",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "A clear state high bit selects the emergence path."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44647,10 +44726,13 @@
       "instruction": "bne",
       "id": "control-01286",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "TimerControl nonzero skips active-item motion but retains the common tail."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44660,10 +44742,13 @@
       "instruction": "beq",
       "id": "control-01287",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Type zero selects normal mushroom motion."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44673,10 +44758,13 @@
       "instruction": "beq",
       "id": "control-01288",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Type three selects normal 1-up mushroom motion."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44686,10 +44774,13 @@
       "instruction": "bne",
       "id": "control-01289",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "A non-star non-mushroom active type enters the common tail without motion."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44699,10 +44790,13 @@
       "instruction": "jsr",
       "id": "control-01290",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Active star first runs jumping-enemy gravity."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44712,10 +44806,13 @@
       "instruction": "jsr",
       "id": "control-01291",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The same star then runs EnemyJump after gravity returns."
     },
     {
       "from": "PowerUpObjHandler",
@@ -44725,10 +44822,13 @@
       "instruction": "jmp",
       "id": "control-01292",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Star motion tail-jumps to the common tail after both children return."
     },
     {
       "from": "ShroomM",
@@ -44738,10 +44838,13 @@
       "instruction": "jsr",
       "id": "control-01293",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Mushroom path calls normal motion before terrain collision."
     },
     {
       "from": "ShroomM",
@@ -44751,10 +44854,13 @@
       "instruction": "jsr",
       "id": "control-01294",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Mushroom terrain collision follows normal motion."
     },
     {
       "from": "ShroomM",
@@ -44764,10 +44870,13 @@
       "instruction": "jmp",
       "id": "control-01295",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Mushroom path tail-jumps to the common tail after terrain handling."
     },
     {
       "from": "GrowThePowerUp",
@@ -44777,10 +44886,13 @@
       "instruction": "bne",
       "id": "control-01296",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Nonzero FrameCounter low bits skip per-four-frame emergence movement."
     },
     {
       "from": "GrowThePowerUp",
@@ -44790,10 +44902,13 @@
       "instruction": "bcc",
       "id": "control-01297",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Pre-increment state below 0x11 keeps emergence state rather than activating."
     },
     {
       "from": "GrowThePowerUp",
@@ -44803,10 +44918,13 @@
       "instruction": "sta",
       "id": "control-01298",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Activation writes speed/state/attribute/direction then falls to the emergence visibility gate."
     },
     {
       "from": "ChkPUSte",
@@ -44816,10 +44934,13 @@
       "instruction": "bcc",
       "id": "control-01299",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Current emergence state below six returns before all common-tail children."
     },
     {
       "from": "ChkPUSte",
@@ -44829,10 +44950,13 @@
       "instruction": "bcc",
       "id": "control-01300",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "State at least six enters the common tail."
     },
     {
       "from": "RunPUSubs",
@@ -44842,10 +44966,13 @@
       "instruction": "jsr",
       "id": "control-01301",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Relative coordinates are produced before offscreen-bit calculation."
     },
     {
       "from": "RunPUSubs",
@@ -44855,10 +44982,13 @@
       "instruction": "jsr",
       "id": "control-01302",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Offscreen bits consume the just-produced relative coordinates."
     },
     {
       "from": "RunPUSubs",
@@ -44868,10 +44998,13 @@
       "instruction": "jsr",
       "id": "control-01303",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Bounding box follows relative/offscreen work."
     },
     {
       "from": "RunPUSubs",
@@ -44881,10 +45014,13 @@
       "instruction": "jsr",
       "id": "control-01304",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Power-up graphics follow bounding-box construction."
     },
     {
       "from": "RunPUSubs",
@@ -44894,10 +45030,13 @@
       "instruction": "jsr",
       "id": "control-01305",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Player collision follows graphics exactly as in source."
     },
     {
       "from": "RunPUSubs",
@@ -44907,10 +45046,13 @@
       "instruction": "jsr",
       "id": "control-01306",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Offscreen bounds checking follows player collision."
     },
     {
       "from": "RunPUSubs",
@@ -44920,10 +45062,13 @@
       "instruction": "jsr",
       "id": "control-01307",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The common tail falls into the return exit."
     },
     {
       "from": "PlayerHeadCollision",
@@ -76919,10 +77064,13 @@
       "instruction": "rts/rti",
       "id": "control-03726",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "EnemyJump",
@@ -76932,10 +77080,13 @@
       "instruction": "rts/rti",
       "id": "control-03727",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "MoveNormalEnemy",
@@ -76945,10 +77096,13 @@
       "instruction": "rts/rti",
       "id": "control-03728",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -76958,10 +77112,13 @@
       "instruction": "rts/rti",
       "id": "control-03729",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -76971,10 +77128,13 @@
       "instruction": "rts/rti",
       "id": "control-03730",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -76984,10 +77144,13 @@
       "instruction": "rts/rti",
       "id": "control-03731",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -76997,10 +77160,13 @@
       "instruction": "rts/rti",
       "id": "control-03732",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "DrawPowerUp",
@@ -77010,10 +77176,13 @@
       "instruction": "rts/rti",
       "id": "control-03733",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -77023,10 +77192,13 @@
       "instruction": "rts/rti",
       "id": "control-03734",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -77036,10 +77208,13 @@
       "instruction": "rts/rti",
       "id": "control-03735",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
     },
     {
       "from": "DestroyBlockMetatile",
