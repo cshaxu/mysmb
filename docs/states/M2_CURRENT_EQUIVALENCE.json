@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 331,
+    "enumeratedCount": 335,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4647,6 +4647,62 @@
       "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00332",
+      "producer": "OffscreenBoundsCheck",
+      "consumer": "LimitB",
+      "storage": "enemy ID CPY carry to Hammer/Piranha left-bound adjustment",
+      "feasiblePath": "Equality carry is deliberately consumed by ADC $38.",
+      "status": "needs-evidence",
+      "currentCounterpart": "actor_slots.c special-left arithmetic",
+      "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00333",
+      "producer": "LimitB",
+      "consumer": "ExtendLB",
+      "storage": "special left X and carry to common SBC $48",
+      "feasiblePath": "Special path adds with carry before common subtract.",
+      "status": "needs-evidence",
+      "currentCounterpart": "actor_slots.c special-left arithmetic",
+      "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00334",
+      "producer": "ExtendLB",
+      "consumer": "TooFar",
+      "storage": "constructed left/right X/page boundaries and signed page difference",
+      "feasiblePath": "Left-outside erases; right-outside considers exception IDs.",
+      "status": "needs-evidence",
+      "currentCounterpart": "actor_slots.c bound comparisons",
+      "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00335",
+      "producer": "OffscreenBoundsCheck",
+      "consumer": "ExScrnBd",
+      "storage": "Flying Cheep and right-exception IDs to retained return",
+      "feasiblePath": "Flying Cheep, Piranha, flag objects and jumpspring bypass erase on right.",
+      "status": "needs-evidence",
+      "currentCounterpart": "actor_slots.c exception returns",
+      "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -21717,51 +21773,66 @@
       "label": "OffscreenBoundsCheck",
       "asmLine": 11031,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/actor_slots.c",
+      "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Immediately retains Flying Cheep; otherwise preserves CPY carry through special left-edge arithmetic, constructs extended bounds, performs source X/page subtract comparisons and applies right-side exception IDs before erase."
     },
     {
       "label": "LimitB",
       "asmLine": 11041,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/actor_slots.c",
+      "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For Hammer Bro/Piranha preserves CPY equality carry into ADC $38 before common SBC $48, yielding source-special left bound."
     },
     {
       "label": "ExtendLB",
       "asmLine": 11042,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/actor_slots.c",
+      "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes CPY carry through SBC $48 and stores left X/page before right bound ADC consumes final carry."
     },
     {
       "label": "TooFar",
       "asmLine": 11074,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/actor_slots.c",
+      "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls lifecycle erase after left-outside or non-exempt right-outside determination."
     },
     {
       "label": "ExScrnBd",
       "asmLine": 11075,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/actor_slots.c",
+      "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common retained-object/erase return endpoint."
     },
     {
       "label": "FireballEnemyCollision",
@@ -47332,12 +47403,12 @@
       "id": "control-01162",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DrawJSpr -> OffscreenBoundsCheck with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation DrawJSpr -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "DrawJSpr",
@@ -47908,12 +47979,12 @@
       "id": "control-01198",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation Chk_BB -> OffscreenBoundsCheck with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation Chk_BB -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "Chk_BB",
@@ -49636,12 +49707,12 @@
       "id": "control-01306",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Offscreen bounds checking follows player collision."
+      "semanticContract": "Preserves original call relation RunPUSubs -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "RunPUSubs",
@@ -55636,12 +55707,12 @@
       "id": "control-01681",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation SkipMove -> OffscreenBoundsCheck with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump relation SkipMove -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -55764,12 +55835,12 @@
       "id": "control-01689",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation RunBowserFlame -> OffscreenBoundsCheck with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump relation RunBowserFlame -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "RunFirebarObj",
@@ -55796,12 +55867,12 @@
       "id": "control-01691",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation RunFirebarObj -> OffscreenBoundsCheck with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump relation RunFirebarObj -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "RunSmallPlatform",
@@ -55924,12 +55995,12 @@
       "id": "control-01699",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation RunSmallPlatform -> OffscreenBoundsCheck with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump relation RunSmallPlatform -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "RunLargePlatform",
@@ -56084,12 +56155,12 @@
       "id": "control-01709",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation SkipPT -> OffscreenBoundsCheck with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump relation SkipPT -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -63555,10 +63626,13 @@
       "instruction": "beq",
       "id": "control-02176",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation OffscreenBoundsCheck -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -63568,10 +63642,13 @@
       "instruction": "beq",
       "id": "control-02177",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation OffscreenBoundsCheck -> LimitB with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -63581,10 +63658,13 @@
       "instruction": "bne",
       "id": "control-02178",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation OffscreenBoundsCheck -> ExtendLB with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -63594,10 +63674,13 @@
       "instruction": "bne",
       "id": "control-02179",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation OffscreenBoundsCheck -> LimitB with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "LimitB",
@@ -63607,10 +63690,13 @@
       "instruction": "adc",
       "id": "control-02180",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LimitB -> ExtendLB with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "ExtendLB",
@@ -63620,10 +63706,13 @@
       "instruction": "bmi",
       "id": "control-02181",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ExtendLB -> TooFar with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "ExtendLB",
@@ -63633,10 +63722,13 @@
       "instruction": "bmi",
       "id": "control-02182",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "ExtendLB",
@@ -63646,10 +63738,13 @@
       "instruction": "beq",
       "id": "control-02183",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "ExtendLB",
@@ -63659,10 +63754,13 @@
       "instruction": "beq",
       "id": "control-02184",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "ExtendLB",
@@ -63672,10 +63770,13 @@
       "instruction": "beq",
       "id": "control-02185",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "ExtendLB",
@@ -63685,10 +63786,13 @@
       "instruction": "beq",
       "id": "control-02186",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "ExtendLB",
@@ -63698,10 +63802,13 @@
       "instruction": "beq",
       "id": "control-02187",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "ExtendLB",
@@ -63711,10 +63818,13 @@
       "instruction": "beq",
       "id": "control-02188",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ExtendLB -> TooFar with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "TooFar",
@@ -63725,12 +63835,12 @@
       "id": "control-02189",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation TooFar -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original call relation TooFar -> EraseEnemyObject with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "TooFar",
@@ -63740,10 +63850,13 @@
       "instruction": "jsr",
       "id": "control-02190",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "semanticEvidence": [
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation TooFar -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "FireballEnemyCollision",
@@ -83715,12 +83828,12 @@
       "id": "control-03690",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> DrawJSpr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> DrawJSpr with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -83811,12 +83924,12 @@
       "id": "control-03696",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> Chk_BB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> Chk_BB with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -84435,12 +84548,12 @@
       "id": "control-03735",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
+      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> RunPUSubs with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "DestroyBlockMetatile",
@@ -87075,12 +87188,12 @@
       "id": "control-03900",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EraseEnemyObject -> TooFar with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> TooFar with ID/carry/page-bound predicate and call/return ordering."
     },
     {
       "from": "SprObjectCollisionCore",

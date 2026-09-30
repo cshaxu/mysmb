@@ -1126,3 +1126,8 @@ branches.
 ### Cohort J — B16f lift-platform integration
 
 `MoveLargeLiftPlat` through `ExLiftP` now has five node contracts, all incident TimerControl, call, large/small collision-tail and return relations, plus four feasible lift/rider handoffs. Static review matches frozen motion, fractional carry into Y, unconditional large rider path and nonzero-only small rider path. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 frozen, carry and both rider routes.
+
+
+### Cohort J — B16g offscreen-bounds integration
+
+`OffscreenBoundsCheck` through `ExScrnBd` now has five node contracts, all incident ID, carry, left/right bound, exception, erase and return relations, plus four feasible handoffs. Static review matches the non-obvious CPY carry propagation through special Hammer/Piranha left-edge arithmetic, cross-page comparisons and all retained right-side object IDs. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 left/right, special-ID and exception routes.
