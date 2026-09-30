@@ -1,4 +1,5 @@
 #include "game/fireball/fireball.h"
+#include "game/oam/oam.h"
 
 /* ROM $B6F9-$B74E: BubbleCheck, SetupBubble, PosBubl, MoveBubl,
  * Y_Bubl, ExitBubl and their two data tables.
@@ -153,9 +154,7 @@ void mysmb_fireball_check_bubble(struct mysmb_game *game, mysmb_u8 slot)
 
 void mysmb_fireball_relative_bubble_position(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[MYSMB_BUBBLE_REL_X] = (mysmb_u8)(
-        game->ram[MYSMB_BUBBLE_X + slot] - game->ram[MYSMB_BUBBLE_SCREEN_LEFT_X]);
-    game->ram[MYSMB_BUBBLE_REL_Y] = game->ram[MYSMB_BUBBLE_Y + slot];
+    mysmb_oam_relative_bubble_position(game, slot);
 }
 
 void mysmb_fireball_get_bubble_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)

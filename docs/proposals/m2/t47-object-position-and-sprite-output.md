@@ -79,4 +79,86 @@ does not change production C, their SHA-256 values remain:
 The similar-issue sweep checked every `ChkForPlayerAttrib` return
 successor in the original listing and its single shared-C owner.
 No other exit node is claimed by this S. S2 begins at
-`RelativePlayerPosition` and remains unadmitted.
+`RelativePlayerPosition` and is now admitted below.
+
+## S2 admission: shared relative object coordinates
+
+The next contiguous chain begins at `RelativePlayerPosition` (14786)
+and ends at `GetObjRelativePosition` (14834). Its exact nine labels
+are the S2 row in the task table. `RelativePlayerPosition` is
+**audited; mismatch**, `RelativeFireballPosition` is **audited;
+evidence incomplete**, and the other seven are **open**. All nine are
+intended new ROM matches: **1,710 → 1,719 / 1,992** maximum. M2 T16
+S4 transfers their custody to T47 S2. The source predecessor is S1
+`ExPlyrAt`; the successor is S3 `GetPlayerOffscreenBits`, which is not
+credited here. The shared owner is `src/game/oam/object_position.c`.
+The existing bubble relative-position body in `fireball/bubble.c`
+must be moved to this owner, with callers using its public OAM entry;
+the C split must not duplicate the source's common offset/coordinate
+logic.
+
+The original GameEngine actor-position route covers player, enemy,
+fireball, bubble, block and misc variants at naturally reached entries.
+The nine labels share `GetObjRelativePosition` and the source
+`ObjectOffset`/`$00` scratch contract. For each variant compare branch
+and call order, indexed source coordinates, `SprObject_Rel_XPos/YPos`
+writes, `$00` and restored X/ObjectOffset behavior against native C on
+x86/x64. The platform-independent operational track then builds all
+three targets, runs focused relative-position/actor regression tests,
+purity, and refreshes the three EXEs. Original CPU PC/stack/ROM are
+never altered; bounded RAM variants are allowed only at naturally
+reached entries.
+
+### S2 closure: shared relative object coordinates
+
+All **nine expected labels are ROM-match complete**; there are no S2
+deferrals. The count advances **1,710 → 1,719 / 1,992**. The original
+GameEngine naturally reached all nine source PCs on player, bubble,
+fireball, misc, enemy and block routes. Each route was captured in its
+ordinary state and in a bounded RAM edge variant. The recorder changed
+neither ROM nor CPU PC/stack. Across **12 routes and 30 original child
+calls**, x86 and x64 each matched every non-stack RAM/OAM byte after
+the child: **60 comparisons, zero differences**. Return X matched
+`ObjectOffset` in every record. Raw records and the machine-checked
+PC/write summary remain under ignored `build/m2-t47-s2/`.
+
+| Source PC | Label and original control/read/write contract | C owner |
+| --- | --- | --- |
+| `$f12a` | `RelativePlayerPosition`: X=Y=0, fall into `RelWOfs`; no `$0755` write | `mysmb_oam_relative_player_position` |
+| `$f131` | `RelativeBubblePosition`: bubble slot through source offset table; fixed relative result 3 | `mysmb_oam_relative_bubble_position` |
+| `$f13b` | `RelativeFireballPosition`: fireball slot through source offset table; fixed result 2 | `mysmb_oam_relative_fireball_position` |
+| `$f142` | `RelWOfs`: save source slot to `ObjectOffset`, call common position routine, restore X | shared relative wrappers; original return-X check |
+| `$f148` | `RelativeMiscPosition`: misc slot through source offset table; fixed result 6 | `mysmb_oam_relative_misc_position` |
+| `$f152` | `RelativeEnemyPosition`: source displacement 1, result 1; preserve incoming slot in `$00` | `mysmb_oam_relative_enemy_position` |
+| `$f159` | `RelativeBlockPosition`: two calls with displacement 9, results 4 and 5, slots X and X+2; final `$00` is X+2 | `mysmb_oam_relative_block_position` |
+| `$f165` | `VariableObjOfsRelPos`: write incoming X to `$00`, add displacement and call common routine | `mysmb_oam_variable_obj_relative_position` |
+| `$f171` | `GetObjRelativePosition`: indexed `SprObject_Y_Position` to relative Y; indexed X minus `ScreenLeft_X_Pos` to relative X, with eight-bit wrap | `mysmb_oam_get_obj_relative_position` |
+
+The owner ROM's three `ObjOffsetData` bytes were checked directly
+against the `SprObject` RAM-array displacements used by the C helper.
+This is the fixed owner-ROM specialization of the caller edge; the
+`ObjOffsetData` and `GetProperObjOffset` labels themselves remain
+uncredited and assigned to S4. The defect sweep covered all six actor
+callers. It removed the duplicate bubble calculation, the spurious
+player `$0755` write, and the missing enemy/block `$00` writes.
+The edge routes check coordinate wrap, source indexing, and scratch
+preservation; no platform adapter gained game logic.
+
+The separate operational track rebuilt Win32 x86, x64 and DOS16.
+Focused player route, block lifetime, four actor OAM and platform-purity
+tests passed **7/7 on each Windows architecture**. Both packaged
+Win32 `--self-test` runs exited zero. The DOS16 linker produced a valid
+262,191-byte MZ executable. The broader pre-refactor suite was
+**222/233 on both x86 and x64**; its same 11 known T46 S4 baseline
+failures are unchanged, and no new failures appeared. The final
+helper-only refactor was checked by the focused tests and all 60 ROM
+comparisons above.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `b5b9ad5127acfb5bfed06694e8f9785123c65c6ab47b5a07c64822a6eee263c0` |
+| `assets/mysmb32.exe` | `4b5f76acec61ae49427dd31dc43b68465ab4bec39ec5d616694bbe7fd5c8b173` |
+| `assets/mysmb64.exe` | `fc91bd0c1813c78e664f121c73a3d68091e72f012641b8830bcf65b5d1365035` |
+
+S3 `GetPlayerOffscreenBits` is next in source order and remains
+unadmitted at this closure.

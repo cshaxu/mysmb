@@ -1034,6 +1034,17 @@ int main(int argument_count, char **arguments)
     unsigned int player_size_child_active;
     lib_u16 player_size_child_return;
     lib_u8 player_size_child_stack;
+    const char *relative_child_path;
+    unsigned char relative_children[8][4100];
+    unsigned int relative_child_count;
+    unsigned int relative_child_active;
+    unsigned int relative_kind;
+    char *relative_kind_end;
+    unsigned int relative_coordinate_variant;
+    char *relative_coordinate_variant_end;
+    lib_u16 relative_child_entry;
+    lib_u16 relative_child_return;
+    lib_u8 relative_child_stack;
     lib_u16 control_return;
     lib_u8 control_stack;
     lib_u16 transition_entry;
@@ -1112,6 +1123,14 @@ int main(int argument_count, char **arguments)
     player_size_child_active = 0u;
     player_size_child_return = 0u;
     player_size_child_stack = 0u;
+    relative_child_path = NULL;
+    relative_child_count = 0u;
+    relative_child_active = 0u;
+    relative_kind = 0xffffffffu;
+    relative_coordinate_variant = 0xffffffffu;
+    relative_child_entry = 0u;
+    relative_child_return = 0u;
+    relative_child_stack = 0u;
     control_return = 0u;
     control_stack = 0u;
     transition_entry = 0u;
@@ -1140,6 +1159,35 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--relative-child=", 17u) == 0) {
+            if (relative_child_path != NULL ||
+                arguments[recorded][17] == '\0') return 64;
+            relative_child_path = arguments[recorded] + 17u;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--relative-kind=", 16u) == 0) {
+            unsigned long value;
+            if (relative_kind != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 16u,
+                            &relative_kind_end, 10);
+            if (relative_kind_end == arguments[recorded] + 16u ||
+                *relative_kind_end != '\0' || value >= 6u) return 64;
+            relative_kind = (unsigned int)value;
+            continue;
+        }
+        if (strncmp(arguments[recorded],
+                    "--relative-coordinate-variant=", 30u) == 0) {
+            unsigned long value;
+            if (relative_coordinate_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 30u,
+                            &relative_coordinate_variant_end, 10);
+            if (relative_coordinate_variant_end ==
+                    arguments[recorded] + 30u ||
+                *relative_coordinate_variant_end != '\0' || value != 1u)
+                return 64;
+            relative_coordinate_variant = (unsigned int)value;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--player-size-child=", 20u) == 0) {
             if (player_size_child_path != NULL ||
                 arguments[recorded][20] == '\0') return 64;
@@ -2922,6 +2970,16 @@ int main(int argument_count, char **arguments)
             if (script != NULL) return 64;
             script = arguments[recorded];
         }
+    }
+    if ((relative_child_path == NULL) !=
+        (relative_kind == 0xffffffffu)) return 64;
+    if (relative_coordinate_variant != 0xffffffffu &&
+        relative_child_path == NULL) return 64;
+    if (relative_child_path != NULL) {
+        static const lib_u16 entries[6] = {
+            0xf12au, 0xf131u, 0xf13bu, 0xf148u, 0xf152u, 0xf159u
+        };
+        relative_child_entry = entries[relative_kind];
     }
     if (enemy_graphics_variant != 0xffffffffu &&
         (background_snapshot != 42u || t26_fixture < 3834u ||
@@ -4735,6 +4793,62 @@ int main(int argument_count, char **arguments)
                 player_size_child_active = 1u;
             }
         }
+        /* T47 S2: vary only the selected routine's RAM inputs after its
+         * natural call.  The original CPU PC/registers/stack/ROM stay put. */
+        if (relative_coordinate_variant == 1u &&
+            before_pc == relative_child_entry) {
+            static const lib_u8 coordinate_displacements[6] = {
+                0u, 0x009cu - 0x0086u, 0x008du - 0x0086u,
+                0x0093u - 0x0086u, 0x0087u - 0x0086u,
+                0x008fu - 0x0086u
+            };
+            lib_u8 *ram = driver->machine->ram;
+            lib_u8 source = (lib_u8)(driver->machine->x +
+                                     coordinate_displacements[relative_kind]);
+            ram[0x071cu] = 0xf0u;
+            ram[0x0086u + source] = 5u;
+            ram[0x00ceu + source] = 0x95u;
+            if (relative_kind == 5u) {
+                source = (lib_u8)(source + 2u);
+                ram[0x0086u + source] = 7u;
+                ram[0x00ceu + source] = 0x96u;
+            }
+            ram[0u] = 0xccu;
+            ram[0x0755u] = 0xa5u;
+        }
+        /* T47 S2: observe a source-reached relative-position call and
+         * stack-derived return.  Never redirect the original CPU. */
+        if (relative_child_path != NULL && elapsed >= warmup_frames) {
+            if (relative_child_active != 0u) {
+                if (before_pc == relative_child_return &&
+                    driver->machine->s ==
+                    (lib_u8)(relative_child_stack + 2u)) {
+                    relative_children[relative_child_count][2] =
+                        driver->machine->x;
+                    memcpy(relative_children[relative_child_count] + 2052u,
+                           driver->machine->ram, 2048u);
+                    ++relative_child_count;
+                    relative_child_active = 0u;
+                }
+            }
+            else if (relative_child_count < 8u &&
+                     before_pc == relative_child_entry) {
+                relative_children[relative_child_count][0] =
+                    (unsigned char)(relative_kind + 1u);
+                relative_children[relative_child_count][1] =
+                    driver->machine->x;
+                relative_children[relative_child_count][3] = 0u;
+                memcpy(relative_children[relative_child_count] + 4u,
+                       driver->machine->ram, 2048u);
+                relative_child_stack = driver->machine->s;
+                relative_child_return = (lib_u16)(1u +
+                    driver->machine->ram[0x100u +
+                        (lib_u8)(relative_child_stack + 1u)] +
+                    256u * driver->machine->ram[0x100u +
+                        (lib_u8)(relative_child_stack + 2u)]);
+                relative_child_active = 1u;
+            }
+        }
         /* Observe declared child entry/return states while the original
          * PlayerEntrance executes. Read the real return address and stack
          * depth; never replace the original child or alter CPU state. */
@@ -5226,6 +5340,23 @@ int main(int argument_count, char **arguments)
         for (child = 0u; child < player_size_child_count; ++child)
             if (fwrite(player_size_children[child], 1u, 4098u, children) !=
                 4098u) ok = 0;
+        if (fclose(children) != 0) ok = 0;
+        if (!ok) return 69;
+    }
+    if (relative_child_path != NULL) {
+        FILE *children;
+        unsigned char header[8] = { 'M', 'S', 'R', 'C', 2u, 0u, 0u, 0u };
+        unsigned int child;
+        int ok;
+        if (relative_child_count == 0u ||
+            relative_child_active != 0u) return 69;
+        header[5] = (unsigned char)relative_child_count;
+        children = fopen(relative_child_path, "wb");
+        if (children == NULL) return 69;
+        ok = fwrite(header, 1u, 8u, children) == 8u;
+        for (child = 0u; child < relative_child_count; ++child)
+            if (fwrite(relative_children[child], 1u, 4100u, children) !=
+                4100u) ok = 0;
         if (fclose(children) != 0) ok = 0;
         if (!ok) return 69;
     }

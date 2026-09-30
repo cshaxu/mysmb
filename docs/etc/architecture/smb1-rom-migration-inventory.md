@@ -121,7 +121,7 @@ The labels and branches behind every line remain open until individually bound b
 - [ ] **Shared arithmetic, RNG, VRAM and utility primitives**
   - [ ] `InitializeMemory` — ROM line 2795; C owner/evidence pending
   - [ ] `GetPlayerOffscreenBits` — ROM line 14846; C owner/evidence pending
-  - [ ] `RelativePlayerPosition` — ROM line 14786; C owner/evidence pending
+  - [x] `RelativePlayerPosition` — ROM line 14786; C owner/evidence pending
   - [ ] `MoveObjectHorizontally` — ROM line 7566; C owner/evidence pending
   - [ ] `ImposeGravity` — ROM line 7729; C owner/evidence pending
 
@@ -1888,15 +1888,15 @@ The labels and branches behind every line remain open until individually bound b
 | 14767 | `KilledAtt` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
 | 14774 | `C_S_IGAtt` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
 | 14781 | `ExPlyrAt` | M2 T47 S1 shared `src/game/oam/player_gfx.c` | ROM-match complete | [T47 S1 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s1-closure-player-attribute-return) |
-| 14786 | `RelativePlayerPosition` | T16: `src/game/oam/object_position.c` | audited; mismatch | [T24 S1: D9](m2-t24-s1-node-verification.md#node-relativeplayerposition) |
-| 14791 | `RelativeBubblePosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativebubbleposition) |
-| 14797 | `RelativeFireballPosition` | T16: `src/game/oam/object_position.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-relativefireballposition) |
-| 14801 | `RelWOfs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relwofs) |
-| 14805 | `RelativeMiscPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativemiscposition) |
-| 14811 | `RelativeEnemyPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativeenemyposition); [S8 child diagnostic](../../history/M2-T40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): missing original slot scratch |
-| 14816 | `RelativeBlockPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativeblockposition) |
-| 14825 | `VariableObjOfsRelPos` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-variableobjofsrelpos) |
-| 14834 | `GetObjRelativePosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getobjrelativeposition) |
+| 14786 | `RelativePlayerPosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
+| 14791 | `RelativeBubblePosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
+| 14797 | `RelativeFireballPosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
+| 14801 | `RelWOfs` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
+| 14805 | `RelativeMiscPosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
+| 14811 | `RelativeEnemyPosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
+| 14816 | `RelativeBlockPosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
+| 14825 | `VariableObjOfsRelPos` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
+| 14834 | `GetObjRelativePosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
 | 14846 | `GetPlayerOffscreenBits` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getplayeroffscreenbits) |
 | 14851 | `GetFireballOffscreenBits` | T16: `src/game/oam/object_position.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getfireballoffscreenbits) |
 | 14857 | `GetBubbleOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getbubbleoffscreenbits) |

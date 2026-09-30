@@ -1,70 +1,94 @@
 #include "game/oam/oam.h"
 
 enum {
+    MYSMB_SPR_OBJECT_X = 0x0086U,
+    MYSMB_SPR_OBJECT_Y = 0x00ceU,
+    MYSMB_SPR_OBJECT_RELATIVE_X = 0x03adU,
+    MYSMB_SPR_OBJECT_RELATIVE_Y = 0x03b8U,
     MYSMB_SCREEN_EDGE_PAGE = 0x071aU,
     MYSMB_SCREEN_EDGE_X = 0x071cU,
     MYSMB_BLOCK_PAGE = 0x0076U,
     MYSMB_BLOCK_X = 0x008fU,
     MYSMB_BLOCK_Y_HIGH = 0x00beU,
     MYSMB_BLOCK_Y = 0x00d7U,
-    MYSMB_BLOCK_RELATIVE_X = 0x03b1U,
-    MYSMB_BLOCK_RELATIVE_Y = 0x03bcU,
     MYSMB_BLOCK_OFFSCREEN_BITS = 0x03d4U,
     MYSMB_MISC_PAGE = 0x007aU,
     MYSMB_MISC_X = 0x0093U,
     MYSMB_MISC_Y_HIGH = 0x00c2U,
     MYSMB_MISC_Y = 0x00dbU,
-    MYSMB_MISC_RELATIVE_X = 0x03b3U,
-    MYSMB_MISC_RELATIVE_Y = 0x03beU,
     MYSMB_MISC_OFFSCREEN_BITS = 0x03d6U,
     MYSMB_FIREBALL_PAGE = 0x0074U,
     MYSMB_FIREBALL_X = 0x008dU,
     MYSMB_FIREBALL_Y_HIGH = 0x00bcU,
     MYSMB_FIREBALL_Y = 0x00d5U,
-    MYSMB_FIREBALL_RELATIVE_X = 0x03afU,
-    MYSMB_FIREBALL_RELATIVE_Y = 0x03baU,
     MYSMB_FIREBALL_OFFSCREEN_BITS = 0x03d2U,
     MYSMB_ENEMY_X = 0x0087U,
     MYSMB_ENEMY_PAGE = 0x006eU,
     MYSMB_ENEMY_Y_HIGH = 0x00b6U,
     MYSMB_ENEMY_Y = 0x00cfU,
-    MYSMB_ENEMY_RELATIVE_X = 0x03aeU,
-    MYSMB_ENEMY_RELATIVE_Y = 0x03b9U,
     MYSMB_ENEMY_OFFSCREEN_BITS = 0x03d1U
 };
 
-/* ROM RelativePlayerPosition.  This belongs with the other
- * GetObjRelativePosition outputs: player control calls it, while the
- * source-defined relative scratch remains a single game-owned result. */
+/* GetObjRelativePosition: all actor wrappers select source X and
+ * destination Y, then execute the same two source-coordinate loads and
+ * relative stores.  The 6502 X register itself is not game RAM. */
+static void mysmb_oam_get_obj_relative_position(struct mysmb_game *game,
+                                                 mysmb_u8 source,
+                                                 mysmb_u8 destination)
+{
+    game->ram[MYSMB_SPR_OBJECT_RELATIVE_Y + destination] =
+        game->ram[MYSMB_SPR_OBJECT_Y + source];
+    game->ram[MYSMB_SPR_OBJECT_RELATIVE_X + destination] =
+        (mysmb_u8)(game->ram[MYSMB_SPR_OBJECT_X + source] -
+                   game->ram[MYSMB_SCREEN_EDGE_X]);
+}
+
+/* RelativePlayerPosition enters RelWOfs with X=Y=0.  The later
+ * RenderPlayerSub, not this routine, writes Player_Pos_ForScroll. */
 void mysmb_oam_relative_player_position(struct mysmb_game *game)
 {
-    game->ram[0x03adU] = (mysmb_u8)(game->ram[0x0086U] -
-                                    game->ram[MYSMB_SCREEN_EDGE_X]);
-    game->ram[0x03b8U] = game->ram[0x00ceU];
-    game->ram[0x0755U] = game->ram[0x03adU];
+    mysmb_oam_get_obj_relative_position(game, 0U, 0U);
 }
 
-/* ROM RelativeFireballPosition.  GetProperObjOffset maps the source slot
- * through SprObject arrays; Fireball_Rel_* is a fixed pair. */
+/* The original GetProperObjOffset adds a fixed SprObject array displacement.
+ * For the owner SMB1 ROM these three immutable table values are exactly the
+ * distances between the corresponding X arrays and SprObject_X_Position.
+ * Keep the call edge here; its PRG table/data-node binding remains T47 S4. */
+static mysmb_u8 mysmb_oam_proper_source_offset(mysmb_u8 slot,
+                                                mysmb_u16 origin_x)
+{
+    return (mysmb_u8)(slot + (origin_x - MYSMB_SPR_OBJECT_X));
+}
+
+/* RelativeBubblePosition and RelativeFireballPosition use the original
+ * SprObject RAM layout and fixed relative-result cells. */
+void mysmb_oam_relative_bubble_position(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_oam_get_obj_relative_position(game,
+        mysmb_oam_proper_source_offset(slot, 0x009cU), 3U);
+}
+
 void mysmb_oam_relative_fireball_position(struct mysmb_game *game, mysmb_u8 slot)
 {
-    (void)slot;
-    game->ram[MYSMB_FIREBALL_RELATIVE_X] =
-        (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] -
-                   game->ram[MYSMB_SCREEN_EDGE_X]);
-    game->ram[MYSMB_FIREBALL_RELATIVE_Y] =
-        game->ram[MYSMB_FIREBALL_Y + slot];
+    mysmb_oam_get_obj_relative_position(game,
+        mysmb_oam_proper_source_offset(slot, MYSMB_FIREBALL_X), 2U);
 }
 
-/* ROM RelativeEnemyPosition -> VariableObjOfsRelPos ->
- * GetObjRelativePosition.  The result is the fixed Enemy_Rel_* scratch
- * pair selected by the current enemy slot, never a host/world coordinate. */
+/* VariableObjOfsRelPos first stores the incoming X in $00, then adds
+ * the object's RAM-array displacement and calls GetObjRelativePosition. */
+static void mysmb_oam_variable_obj_relative_position(struct mysmb_game *game,
+                                                      mysmb_u8 slot,
+                                                      mysmb_u8 displacement,
+                                                      mysmb_u8 destination)
+{
+    game->ram[0U] = slot;
+    mysmb_oam_get_obj_relative_position(game,
+        (mysmb_u8)(slot + displacement), destination);
+}
+
 void mysmb_oam_relative_enemy_position(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[MYSMB_ENEMY_RELATIVE_X] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
-                   game->ram[MYSMB_SCREEN_EDGE_X]);
-    game->ram[MYSMB_ENEMY_RELATIVE_Y] = game->ram[MYSMB_ENEMY_Y + slot];
+    mysmb_oam_variable_obj_relative_position(game, slot, 1U, 1U);
 }
 /* ROM GetXOffscreenBits.  Returns the source table byte before
  * RunOffscrBitsSubs moves its high nybble to the final low nybble. */
@@ -189,15 +213,9 @@ void mysmb_oam_get_fireball_offscreen_bits(struct mysmb_game *game, mysmb_u8 slo
  * indexed by ObjectOffset. */
 void mysmb_oam_relative_block_position(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[MYSMB_BLOCK_RELATIVE_Y] = game->ram[MYSMB_BLOCK_Y + slot];
-    game->ram[MYSMB_BLOCK_RELATIVE_X] =
-        (mysmb_u8)(game->ram[MYSMB_BLOCK_X + slot] -
-                   game->ram[MYSMB_SCREEN_EDGE_X]);
-    game->ram[MYSMB_BLOCK_RELATIVE_Y + 1U] =
-        game->ram[MYSMB_BLOCK_Y + slot + 2U];
-    game->ram[MYSMB_BLOCK_RELATIVE_X + 1U] =
-        (mysmb_u8)(game->ram[MYSMB_BLOCK_X + slot + 2U] -
-                   game->ram[MYSMB_SCREEN_EDGE_X]);
+    mysmb_oam_variable_obj_relative_position(game, slot, 9U, 4U);
+    mysmb_oam_variable_obj_relative_position(game,
+        (mysmb_u8)(slot + 2U), 9U, 5U);
 }
 /* ROM GetBlockOffscreenBits -> GetOffScreenBitsSet. */
 void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
@@ -220,10 +238,8 @@ void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
 /* ROM RelativeMiscPosition -> GetProperObjOffset -> GetObjRelativePosition. */
 void mysmb_oam_relative_misc_position(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[MYSMB_MISC_RELATIVE_Y] = game->ram[MYSMB_MISC_Y + slot];
-    game->ram[MYSMB_MISC_RELATIVE_X] =
-        (mysmb_u8)(game->ram[MYSMB_MISC_X + slot] -
-                   game->ram[MYSMB_SCREEN_EDGE_X]);
+    mysmb_oam_get_obj_relative_position(game,
+        mysmb_oam_proper_source_offset(slot, MYSMB_MISC_X), 6U);
 }
 
 /* ROM GetMiscOffscreenBits -> GetOffScreenBitsSet. */
