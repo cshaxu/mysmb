@@ -20,8 +20,8 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 9 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 13 | Current source audit exists but the current original-ROM route is incomplete. |
-| Mismatch | 0 | Current route or source audit finds a concrete semantic difference. |
+| Needs evidence | 10 | Current source audit exists but the current original-ROM route is incomplete. |
+| Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
@@ -54,8 +54,8 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 20 control; 3 material RAM/table |
-| Needs evidence | 47 |
-| Mismatch | 0 |
+| Needs evidence | 45 |
+| Mismatch | 2 |
 | Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
@@ -181,3 +181,13 @@ branches, fall-throughs, calls and matching returns through the first
 operation-mode-dispatch call. Those edges are also **needs-evidence** until
 the controlled route observes the corresponding alternatives. This preserves
 the distinction between a mapped node and a proven node/edge system.
+
+The first controlled route exposes a confirmed shared-core mismatch chain.
+At the boundary immediately before `OperModeExecutionTree`, ROM
+`RotPRandomBit` leaves `$00=$02`; current x86/x64 leave `$00=$01` because the
+shared C owner does not perform the source scratch write. At the same boundary
+ROM physical `$2000=$10`, while current x86/x64 expose `$90`: d7 is restored
+before mode dispatch rather than at the RTI equivalent. The registry marks
+`RotPRandomBit`, `SkipSprite0`, `NonMaskableInterrupt`, and their two
+state-handoff control edges as mismatches. The ordered unnumbered repair
+candidate is [A2 NMI-prefix state handoff](../proposals/m2/a2-nmi-prefix-repair-candidate.md).

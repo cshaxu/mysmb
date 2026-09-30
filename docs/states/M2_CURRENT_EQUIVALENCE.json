@@ -312,14 +312,16 @@
       "label": "NonMaskableInterrupt",
       "asmLine": 764,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_frame_root_begin / mysmb_frame_root_step",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin / mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 static node audit identifies the named source-state contract and shared-C counterpart."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Owns one NMI frame transaction: temporarily disables NMI in the mirror, prepares physical display state, resets scroll and OAM DMA, selects/consumes VRAM, runs input/timers/random/sprite split and exactly one operation-mode dispatch, then restores the saved control value with NMI enable."
+      "operationalEvidence": [
+        "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree and proves the physical-control phase mismatch ($10 ROM versus $90 x86/x64) inside the shared NMI parent."
+      ],
+      "semanticContract": "Preserves the source NMI phase boundary: d7-clear control during pre-dispatch work and main-mode execution, then d7 re-enable only at the RTI tail."
     },
     {
       "label": "ScreenOff",
@@ -416,14 +418,16 @@
       "label": "RotPRandomBit",
       "asmLine": 837,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_game_rotate_pseudorandom",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 static node audit identifies the named source-state contract and shared-C counterpart."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Computes carry from bit one of the first two LFSR bytes and rotates that carry through exactly seven bytes in ascending address order."
+      "operationalEvidence": [
+        "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree: ROM has $00=$02 after the LFSR sequence; current x86/x64 both leave $00=$01 from the earlier VRAM-pointer selection. The current local-variable implementation omits the source scratch write."
+      ],
+      "semanticContract": "Performs the source seven-byte LFSR rotation and leaves the source scratch $00 equal to the first masked bit while passing control to sprite-zero processing."
     },
     {
       "label": "Sprite0Clr",
@@ -468,14 +472,16 @@
       "label": "SkipSprite0",
       "asmLine": 857,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 static node audit identifies the named source-state contract and shared-C counterpart."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Commits horizontal/vertical scroll and the d7-cleared control mirror for the current frame, skips operating-mode work while paused, otherwise dispatches exactly one operating-mode tree call."
+      "operationalEvidence": [
+        "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree: ROM physical $2000 is $10, while current x86/x64 visible control is $90. The current owner restores d7 before the source dispatch boundary."
+      ],
+      "semanticContract": "Writes horizontal/vertical scroll and the d7-cleared $2000 mirror before the unpaused OperModeExecutionTree call; only the RTI tail restores d7."
     },
     {
       "label": "SkipMainOper",
@@ -20841,13 +20847,15 @@
       "instruction": "beq",
       "id": "control-00040",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "status": "mismatch",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom to mysmb_frame_root_begin sprite-zero path",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 static integration audit identifies the required predecessor state and source control relation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original branch relation RotPRandomBit -> SkipSprite0 at source line 842 (beq) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
+      "operationalEvidence": [
+        "Td S9 A2 controlled NMI-prefix route executes the source branch and stops before mode dispatch: ROM handoff has $00=$02 while current x86/x64 have $00=$01."
+      ],
+      "semanticContract": "The RotPRandomBit -> SkipSprite0 branch must hand off the source scratch $00 written by the LFSR prefix before sprite-zero selection."
     },
     {
       "from": "RotPRandomBit",
@@ -21033,13 +21041,15 @@
       "instruction": "jsr",
       "id": "control-00052",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "status": "mismatch",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode dispatch after mysmb_frame_root_begin",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 static integration audit identifies the required predecessor state and source control relation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original call relation SkipSprite0 -> OperModeExecutionTree at source line 867 (jsr) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
+      "operationalEvidence": [
+        "Td S9 A2 controlled NMI-prefix route stops at the source JSR boundary: ROM physical $2000=$10 while current x86/x64 visible control=$90 before the counterpart dispatch."
+      ],
+      "semanticContract": "The unpaused SkipSprite0 -> OperModeExecutionTree call must enter mode dispatch with physical $2000 equal to the saved mirror with d7 clear; RTI alone re-enables d7."
     },
     {
       "from": "SkipSprite0",
