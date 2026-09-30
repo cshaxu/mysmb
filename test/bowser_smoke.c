@@ -4,18 +4,22 @@
 #include "game/objects.h"
 #include "game/enemy/frenzy.h"
 #include "game/fireball/fireball.h"
+#include "game/frame_root.h"
 
 int main(void)
 {
     struct mysmb_game game;
     struct mysmb_area_source source;
-    struct mysmb_input input;
-    struct mysmb_frame frame;
     mysmb_u8 bowser_data[2] = { 0U, 45U };
     mysmb_u8 flame_data[2] = { 0xf0U, 21U };
+    static mysmb_u8 bridge_prg[0x0a4dU];
 
     /* InitBowser duplicates the object before setting front-half fields.
      * It clears the bridge offset but does not initialize the bounding box. */
+    /* Initialize the host-side source bindings once.  The ROM MemoryInit
+     * routine below deliberately initializes only CPU RAM, so it must not
+     * receive an indeterminate area_prg pointer in a focused fixture. */
+    mysmb_game_initialize(&game);
     mysmb_game_initialize_memory(&game, 0xfeU);
     source.prg = bowser_data;
     source.prg_size = 2U;
@@ -100,20 +104,23 @@ int main(void)
     game.ram[0x0016U] = 45U;
     game.ram[0x001eU] = 0U;
     game.ram[0x006eU] = 0U;
-    game.ram[0x0087U] = 0x80U;
+    game.ram[0x0087U] = 0x40U;
     game.ram[0x00cfU] = 0x70U;
     game.ram[0x0483U] = 1U;
     /* FireballEnemyCollision consumes the bounding boxes already generated
      * by each enemy's graphics route.  Supply that source-owned preparation
      * explicitly in this isolated owner fixture. */
     game.ram[0x049aU] = 10U;
-    game.ram[0x03aeU] = 0x80U;
+    game.ram[0x03aeU] = 0x40U;
     game.ram[0x03b9U] = 0x70U;
     game.ram[0x03d1U] = 0U;
+    /* FireballEnemyCollision consumes the masked enemy offscreen result
+     * prepared by RunNormalEnemies before it reaches the bounding boxes. */
+    game.ram[0x03d8U] = 0U;
     mysmb_objects_update_enemy_bounding_box(&game, 0U);
     game.ram[0x0024U] = 1U;
     game.ram[0x0074U] = 0U;
-    game.ram[0x008dU] = 0x80U;
+    game.ram[0x008dU] = 0x40U;
     game.ram[0x00bcU] = 1U;
     game.ram[0x00d5U] = 0x80U;
     game.ram[0x005eU] = 0U;
@@ -121,7 +128,7 @@ int main(void)
     game.ram[0x043aU] = 0U;
     game.ram[0x04a0U] = 7U;
     game.ram[0x0407U] = 0U;
-    mysmb_fireball_step(&game);
+    mysmb_fireball_step_object(&game, 0U);
     if (game.ram[0x0483U] != 0U || game.ram[0x0016U] != 6U ||
         game.ram[0x001eU] != 0x23U || game.ram[0x00a0U] != 0xfeU ||
         game.ram[0x0024U] != 0x80U || game.ram[0x00feU] != 0x80U ||
@@ -130,6 +137,13 @@ int main(void)
     /* BridgeCollapse erases its axe/chain/bridge metatiles in the ordinary
      * NMI buffer, two name-table rows at a time, every four calls. */
     mysmb_game_initialize(&game);
+    /* RemBridge reads BlockGfxData[12..15], whose original bytes are $24.
+     * This isolated route needs the same source-table binding as an area. */
+    bridge_prg[0x0a45U] = 0x24U;
+    bridge_prg[0x0a46U] = 0x24U;
+    bridge_prg[0x0a47U] = 0x24U;
+    bridge_prg[0x0a48U] = 0x24U;
+    mysmb_game_bind_area_source(&game, bridge_prg, sizeof bridge_prg);
     game.ram[0x0368U] = 0U;
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 45U;
@@ -143,11 +157,10 @@ int main(void)
         game.ram[0x030aU] != 0x24U || game.ram[0x030bU] != 0U ||
         game.ram[0x0369U] != 1U || game.ram[0x00feU] != 8U ||
         game.ram[0x00fdU] != 1U) return 5;
-    game.ram[0x0770U] = 2U;
-    game.ram[0x0772U] = 1U;
-    input.buttons2 = 0U;
-    input.buttons = 0U;
-    mysmb_game_tick(&game, &input, &frame);
+    /* The next NMI's UpdateScreen consumes the completed buffer.  Calling
+     * the isolated commit preserves that route without entering unrelated
+     * GameEngine work that requires a fully bound area image. */
+    mysmb_game_commit_vram_buffer(&game);
     if (game.name_table[0U][0x021aU] != 0x24U ||
         game.name_table[0U][0x023aU] != 0x24U) return 6;
 

@@ -328,3 +328,29 @@ descending candidate loop. The smoke fixture supplied C argument one but left
 latch. Initializing `$08 = 1` restores the original caller precondition. The
 newly built x86 and x64 focused test both pass. S5 remains open for five
 unrelated legacy failures.
+
+### S5 P7: Bowser fixture source-route completion
+
+This P changes no translated game or platform source and earns no node credit.
+The Bowser smoke had several independently missing source-route predecessors.
+`MemoryInit` initializes original CPU RAM only, so the fixture first uses the
+complete game constructor to establish null host-side resource bindings.
+`FireballEnemyCollision` requires the `RunNormalEnemies`-prepared
+`EnemyOffscrBitsMasked` byte; the fireball and Bowser coordinates are placed
+in the visible left half because `CheckRightScreenBBox` clips the exact
+right-edge position. The fifth-fireball assertion invokes the direct
+`FireballObjCore` child, preventing a sibling fireball slot in the parent
+wrapper from overwriting the child route's scratch state.
+
+The bridge assertion binds only the required local `BlockGfxData[12..15]`
+bytes (`$24`) before `RemBridge`, then invokes the NMI-side `UpdateScreen`
+buffer commit directly. Entering the complete GameEngine at that point would
+be a different ROM route and requires a fully bound area image. The focused
+`mysmb.bowser-smoke` route now passes on freshly built x86 and x64 targets;
+the platform-purity audit also passes. The existing OpenNT DOS16 toolchain
+links the unchanged shared C90 sources to a 264165-byte MZ executable
+(`D3FE87771AFA2EA86435F41EA954055A21750A59151F76491B972BC11E175C2C`),
+with only its established C4761 and `OLDNAMES.LIB` warnings. The three
+owner-local application artifacts are unchanged because this P changes only
+the test fixture. S5 remains open for four unrelated legacy failures: `core`,
+`title-demo`, `end-to-end`, and `local-area`.
