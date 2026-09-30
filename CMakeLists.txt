@@ -265,6 +265,9 @@ target_link_libraries(mysmb_parser_buffer_commit_smoke PRIVATE mysmb_game)
 add_executable(mysmb_screen_parser_output_chain_check
     test/screen_parser_output_chain_check.c)
 target_link_libraries(mysmb_screen_parser_output_chain_check PRIVATE mysmb_game)
+add_executable(mysmb_kill_enemies_shared_primitive_check
+    test/kill_enemies_shared_primitive_check.c)
+target_link_libraries(mysmb_kill_enemies_shared_primitive_check PRIVATE mysmb_game)
 add_executable(mysmb_player_route_smoke test/player_route_smoke.c)
 add_executable(mysmb_player_scroll_chain_smoke test/player_scroll_chain_smoke.c src/game/scroll.c)
 add_executable(mysmb_player_entry_chain_smoke test/player_entry_chain_smoke.c src/game/entry.c)
@@ -1001,6 +1004,8 @@ add_test(NAME mysmb.parser-schedule-smoke COMMAND mysmb_parser_schedule_smoke)
 add_test(NAME mysmb.parser-buffer-commit-smoke COMMAND mysmb_parser_buffer_commit_smoke)
 add_test(NAME mysmb.screen-parser-output-chain
     COMMAND mysmb_screen_parser_output_chain_check)
+add_test(NAME mysmb.kill-enemies-shared-primitive
+    COMMAND mysmb_kill_enemies_shared_primitive_check)
 add_test(NAME mysmb.player-route-smoke COMMAND mysmb_player_route_smoke)
 add_test(NAME mysmb.player-scroll-chain COMMAND mysmb_player_scroll_chain_smoke)
 add_test(NAME mysmb.player-entry-chain COMMAND mysmb_player_entry_chain_smoke)

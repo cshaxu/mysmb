@@ -163,3 +163,37 @@ remain non-fatal. Artifacts: `mysmb16.exe`
 `0FE56863DA85261D8739D6BC709D24DCAA04C9D0288BB1D73EE512EFB17E847A`,
 `mysmb32.exe` `90A87B3A71D039F3A696DF45530474E32BDBF8FD76A3B1B029F546174D7B62D3`,
 `mysmb64.exe` `FD5225DF27F4279285D1C1AA9BF182BDFF15DB73AD2D5A59308EC6BD46C7ED65`.
+
+## T51 S3 admission: KillEnemies shared primitive
+
+S3 receives exactly `KillEnemies`, transferred from `M2 T29 S8` by
+`transfer-281-to-t51-s3`. Its incoming state is `audited; mismatch`; baseline
+is **1,957 / 1,992** and its sole expected match gives a maximum of
+**1,958 / 1,992**. The source at `$9716` stores its A-register identifier in
+`$00`, loads zero once, starts X at four and decrements through slots four to
+zero. For each `Enemy_ID,x` equal to `$00`, it writes that zero to
+`Enemy_Flag,x`; nonmatching slots remain untouched.
+
+The shared `src/game/area.c` owner serves the same primitive from the warp-zone
+PiranhaPlant caller and the flagpole BulletBill_CannonVar caller. ROM-logic
+verification compares the entry `$00` write, load-once zero, inclusive
+five-slot order and conditional flag write. Operational verification runs a
+controlled all-slots test for both caller IDs, focused x86/x64 tests, the
+platform-purity audit, OpenNT DOS16 link, and refreshes all three artifacts.
+
+## T51 S3 closure: KillEnemies shared primitive
+
+S3 closes `KillEnemies`, its only admitted node, from **1,957** to
+**1,958 / 1,992**. The shared owner now writes the entry identifier to `$00`,
+then begins the source-shaped zero/load and X=4 downward loop. Slots 4 through
+0 compare `Enemy_ID,x` with `$00`; only equal slots receive zero in
+`Enemy_Flag,x`. The controlled check proves this exact selective result for the
+WarpNum PiranhaPlant (`$0d`) and flagpole BulletBill_CannonVar (`$0b`) callers.
+
+The x86 and x64 focused primitive, parser-chain and NMI-parent checks pass.
+The platform-purity audit passes. OpenNT links the same C90 core to the
+264165-byte DOS16 MZ with only established C4761 and OLDNAMES warnings.
+Artifacts: `mysmb16.exe`
+`D3FE87771AFA2EA86435F41EA954055A21750A59151F76491B972BC11E175C2C`,
+`mysmb32.exe` `A1CA95022E329C65F16255409BACBB2BE7357EF06BA056E4CB38E981336505CF`,
+and `mysmb64.exe` `60C17F2C44CE5DF9D4AE62EF5D37C52559F5476848C0D328A04BD6255D421FCD`.

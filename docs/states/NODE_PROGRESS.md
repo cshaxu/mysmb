@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1957 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 35 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| ROM-match complete | 1958 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 34 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
 | Open / unmatched | 0 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1957 / 1,992 (98.24%)**. The 35 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1958 / 1,992 (98.29%)**. The 34 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T51 S2 closure](../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s2-closure-screen-parser-output-chain) closes the source-contiguous screen/parser output chain through actual two-branch shared-core checks and the OpenNT DOS16 link.
+Latest task review: [T51 S3 closure](../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s3-closure-killenemies-shared-primitive) closes the source-exact shared five-slot KillEnemies primitive through warp/flagpole caller IDs and the OpenNT DOS16 link.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1957)
+## Completed matches (1958)
 
 | ROM line | Node |
 | ---: | --- |
@@ -406,6 +406,7 @@ of equivalent native nodes. No product repair is part of this audit.
 | 3591 | `ScrollLockObject_Warp` |
 | 3600 | `WarpNum` |
 | 3606 | `ScrollLockObject` |
+| 3615 | `KillEnemies` |
 | 3619 | `KillELoop` |
 | 3623 | `NoKillE` |
 | 3629 | `FrenzyIDData` |
@@ -1991,11 +1992,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 16362 | `BowserFlameEnvData` |
 | 16368 | `BrickShatterEnvData` |
 
-## Mapped but not yet matched (35)
+## Mapped but not yet matched (34)
 
 | ROM line | Node |
 | ---: | --- |
-| 3615 | `KillEnemies` |
 | 4550 | `E_CastleArea1` |
 | 4558 | `E_CastleArea2` |
 | 4565 | `E_CastleArea3` |

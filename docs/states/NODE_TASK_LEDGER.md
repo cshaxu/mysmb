@@ -66,7 +66,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T29 S5 | 14 | `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `AreaParserTasks`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, `AreaParserCore` |
 | M2 T29 S6 | 20 | `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `BlockBuffLowBounds` |
 | M2 T29 S7 | 30 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `Chk1stB`, `ChkRow14`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore` |
-| M2 T29 S8 | 22 | `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillEnemies`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit` |
+| M2 T29 S8 | 21 | `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit` |
 | M2 T29 S9 | 21 | `CastleMetatiles`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `GetPipeHeight` |
 | M2 T30 S1 | 3 | `EndlessRope`, `BalancePlatRope`, `DrawRope` |
 | M2 T30 S10 | 6 | `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition` |
@@ -224,6 +224,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T50 S3 | 2 | `BowserFlameEnvData`, `BrickShatterEnvData` |
 | M2 T51 S1 | 1 | `NonMaskableInterrupt` |
 | M2 T51 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
+| M2 T51 S3 | 1 | `KillEnemies` |
 
 ## Future admission packages and queued plans
 
@@ -617,7 +618,7 @@ transfer existing ownership or allocate a numeric T.
 | 3591 | `ScrollLockObject_Warp` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
 | 3600 | `WarpNum` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
 | 3606 | `ScrollLockObject` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3615 | `KillEnemies` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
+| 3615 | `KillEnemies` | M2 T51 S3 | existing closure backlog; Accepted transfer-281: source-exact residual KillEnemies primitive and its shared warp/flagpole callers. | M2 T21 S4; M2 T24 S1 |
 | 3619 | `KillELoop` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
 | 3623 | `NoKillE` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
 | 3629 | `FrenzyIDData` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
@@ -2396,7 +2397,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T29 S5 | 0 | 14 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S6 | 0 | 20 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S7 | 0 | 30 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S8 | 0 | 22 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S8 | 0 | 21 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S9 | 22 | 21 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S10 | 10 | 10 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T3 | 2 | - | [record](../../docs/history/M2-T2-title-start-checkpoint.md); [record](../../docs/history/M2-T3-area-bootstrap-and-commands.md); S not recorded |
@@ -2582,6 +2583,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T51 | 0 | - | [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
 | M2 T51 S1 | 0 | 1 | owner-approved-completion, nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S2 | 0 | 4 | owner-approved-completion, screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S3 | 0 | 1 | owner-approved-completion, kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2906,6 +2908,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-278-to-t50-s3 | M2 Td S4 | M2 T50 S3 | 2 | Coordinator under the continuing owner-approved M2 source-order mandate; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | transfer-279-to-t51-s1 | M2 T24 S2 | M2 T51 S1 | 1 | Coordinator under the continuing owner-approved M2 completion mandate; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | transfer-280-to-t51-s2 | M2 T24 S2 | M2 T51 S2 | 4 | Coordinator accepts the source-contiguous screen/parser output chain under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| transfer-281-to-t51-s3 | M2 T29 S8 | M2 T51 S3 | 1 | Coordinator accepts the residual KillEnemies primitive under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3169,3 +3172,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T50 S3 | 2 | 1950 | `BowserFlameEnvData`, `BrickShatterEnvData` / 2 | `BowserFlameEnvData`, `BrickShatterEnvData` / 2 | closed-noise-envelope-chain; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T51 S1 | 1 | 1952 | `NonMaskableInterrupt` / 1 | `NonMaskableInterrupt` / 1 | closed-nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S2 | 4 | 1953 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` / 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` / 4 | closed-screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S3 | 1 | 1957 | `KillEnemies` / 1 | `KillEnemies` / 1 | closed-kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
