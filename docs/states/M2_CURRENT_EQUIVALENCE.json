@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 94,
+    "enumeratedCount": 95,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1329,6 +1329,20 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00095",
+      "producer": "VineHeightData",
+      "consumer": "VineObjectHandler",
+      "storage": "VineFlagOffset-1 indexed growth-height table",
+      "feasiblePath": "VineObjectHandler decrements VineFlagOffset then reads VineHeightData[Y] before its source growth gate.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_vine_height_data[index] in mysmb_objects_step_vine",
+      "semanticContract": "Preserves the two height thresholds and decrement-before-index ordering.",
+      "semanticEvidence": [
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -11372,31 +11386,40 @@
       "label": "Setup_Vine",
       "asmLine": 6702,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine core",
+      "currentCounterpart": "mysmb_objects_start_vine and mysmb_vine_height_data",
+      "semanticEvidence": [
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies source block page/X/Y into the selected vine enemy slot, initializes identity/flag, records first-vine start Y only at zero offset, appends the slot and queues grow-vine sound."
     },
     {
       "label": "NextVO",
       "asmLine": 6716,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine core",
+      "currentCounterpart": "mysmb_objects_start_vine and mysmb_vine_height_data",
+      "semanticEvidence": [
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound."
     },
     {
       "label": "VineHeightData",
       "asmLine": 6727,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine core",
+      "currentCounterpart": "mysmb_objects_start_vine and mysmb_vine_height_data",
+      "semanticEvidence": [
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds active vine index to source growth-height limits $30 and $60."
     },
     {
       "label": "VineObjectHandler",
@@ -42460,10 +42483,13 @@
       "instruction": "bne",
       "id": "control-01166",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine initialization branch/return ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Setup_Vine -> NextVO with source offset, ordering and state handoff."
     },
     {
       "from": "Setup_Vine",
@@ -42473,10 +42499,13 @@
       "instruction": "sta",
       "id": "control-01167",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine initialization branch/return ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Setup_Vine -> NextVO with source offset, ordering and state handoff."
     },
     {
       "from": "VineObjectHandler",
@@ -73616,12 +73645,12 @@
       "id": "control-03548",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "mysmb_objects_start_vine returns before the common water check.",
+      "currentCounterpart": "shared vine initialization branch/return ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "mysmb_objects_start_vine returns before the common water check."
+      "semanticContract": "Preserves original return relation Setup_Vine -> ChkOverR with source offset, ordering and state handoff."
     },
     {
       "from": "SetupBubble",
@@ -76415,10 +76444,13 @@
       "instruction": "rts/rti",
       "id": "control-03744",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine initialization branch/return ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation Setup_Vine -> VineBlock with source offset, ordering and state handoff."
     },
     {
       "from": "CheckTopOfBlock",

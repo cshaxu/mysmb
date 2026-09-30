@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 703 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 706 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,242 | Not yet processed by this re-audit. |
+| Unclassified | 1,239 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 1,291 control; 90 material RAM/table |
+| Needs evidence | 1,294 control; 91 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 2,965 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 2,962 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 The two ledgers are separate acceptance requirements. A node is not
@@ -718,3 +718,13 @@ carries; and each spring animation/bounce transition. No static discrepancy
 was found. These entries remain `needs-evidence` until controlled
 original-ROM/x86/x64 routes cover every gate, table index, timer and actor
 state transition.
+
+### Cohort G — B13c vine initialization tail
+
+The final source-order Cohort G chain, `Setup_Vine` through `VineHeightData`,
+now has three node contracts, three newly classified branch/return relations
+and one feasible data path into the next cohort's growth handler. The audit
+records the first-vine-only start-Y write, ordered slot append, sound queue and
+decrement-before-height-index consumer. No static discrepancy was found; all
+entries remain `needs-evidence` pending the shared original-ROM/x86/x64 vine
+route.
