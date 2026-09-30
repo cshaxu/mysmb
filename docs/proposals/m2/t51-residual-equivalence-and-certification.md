@@ -455,6 +455,19 @@ No DOS-specific or platform source changed. The current three delivery
 artifacts remain P17's validated outputs while the DOS16 resource-binding
 requirement remains a separate M3 concern.
 
+### S5 P19: terrain residual ledger normalization
+
+This zero-credit audit removes a stale subclaim from the terrain debt record.
+T43's pre-T44 child output reported missing block-query scratch bytes. T44 S1
+later replaced that incomplete seam with the shared
+`BlockBufferColli_Head/Feet/Side -> BlockBufferCollision` owner, proving the
+original selector paths, tables, page carry and `$02-$07` scratch on original
+player, enemy and fireball routes. The remaining terrain record is narrowed
+to the independently unproven `PlayerHeadCollision` and coin/axe VRAM/status
+tails. No production source or platform code changes in this P, no node credit
+is granted, and the three P17 delivery artifacts remain the current validated
+outputs.
+
 ### S5 P9: historical-debt source-route adjudication
 
 S5 P9 audits four still-open ledger rows against their later, source-order
