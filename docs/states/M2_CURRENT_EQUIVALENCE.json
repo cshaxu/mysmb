@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 310,
+    "enumeratedCount": 318,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4353,6 +4353,118 @@
       "semanticContract": "Preserves source paired-platform state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00311",
+      "producer": "DrawEraseRope",
+      "consumer": "SetupPlatformRope",
+      "storage": "two saved speed copies and peer slot to first/second address calculation",
+      "feasiblePath": "Both commands derive addresses before complementary tile selection.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c draw_erase_rope/setup_rope",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00312",
+      "producer": "SetupPlatformRope",
+      "consumer": "GetLRp",
+      "storage": "X/page carry and difficulty selector to rope address",
+      "feasiblePath": "Second normal-mode add explicitly replaces source carry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c setup_rope",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00313",
+      "producer": "GetHRp",
+      "consumer": "ExPRp",
+      "storage": "rotated Y/page address fields to final name-table address",
+      "feasiblePath": "Y bits 7/6 and page LSB form high address then low address combines horizontal field.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c setup_rope",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00314",
+      "producer": "EraseR1",
+      "consumer": "OtherRope",
+      "storage": "first rope tile selection and inverted speed to second command",
+      "feasiblePath": "Source uses inverted second copy before peer setup.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c draw_erase_rope",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00315",
+      "producer": "OtherRope",
+      "consumer": "EraseR2",
+      "storage": "peer address and original speed sign to complementary second tile pair",
+      "feasiblePath": "Second command mirrors first rope erase/draw choice.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c draw_erase_rope",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00316",
+      "producer": "EndRp",
+      "consumer": "ExitRp",
+      "storage": "ten-byte command completion to buffer offset and slot restoration",
+      "feasiblePath": "Only completed pair increments buffer by ten.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c draw_erase_rope",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00317",
+      "producer": "InitPlatformFall",
+      "consumer": "StopPlatforms",
+      "storage": "floatey/result state to falling flag and zeroed peer speed/force",
+      "feasiblePath": "Fall setup writes player-relative number then initializes both motion fields.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c init_platform_fall",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00318",
+      "producer": "PlatformFall",
+      "consumer": "ExPF",
+      "storage": "ordered two-platform falling positions and collision slot to player placement",
+      "feasiblePath": "Player follows only a present collision after both platform moves.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c platform_fall",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -20981,141 +21093,183 @@
       "label": "DrawEraseRope",
       "asmLine": 10771,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips stationary platforms and VRAM offsets >=$20; otherwise emits two two-tile rope commands using two saved speed copies and then advances Buffer1 offset by ten."
     },
     {
       "label": "EraseR1",
       "asmLine": 10796,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects blank $24,$24 for first rope when current speed is negative; nonnegative selects $a2,$a3."
     },
     {
       "label": "OtherRope",
       "asmLine": 10800,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses peer state as slot and inverted second speed to derive peer address before its complementary tile selection."
     },
     {
       "label": "EraseR2",
       "asmLine": 10819,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects blank $24,$24 for second rope when first speed is nonnegative; negative selects $a2,$a3."
     },
     {
       "label": "EndRp",
       "asmLine": 10822,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes command terminator and advances VRAM buffer offset by ten."
     },
     {
       "label": "ExitRp",
       "asmLine": 10828,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset before return."
     },
     {
       "label": "SetupPlatformRope",
       "asmLine": 10831,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes name-table low/high address from peer X/page/Y, difficulty adjustment, speed sign and bottom-screen correction while preserving source stack speed copies."
     },
     {
       "label": "GetLRp",
       "asmLine": 10840,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies X+8 and, only outside secondary hard mode, a second X+16 whose carry supersedes the first source carry."
     },
     {
       "label": "GetHRp",
       "asmLine": 10857,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds high byte from rotated Y bits and page LSB, then combines vertical/horizontal low fields."
     },
     {
       "label": "ExPRp",
       "asmLine": 10883,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns prepared address, including Y>= $e8 low-address bit-six clear."
     },
     {
       "label": "InitPlatformFall",
       "asmLine": 10885,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses peer offscreen bits and floatey setup, copies player relative/X-Y values, marks falling direction then stops both platforms."
     },
     {
       "label": "StopPlatforms",
       "asmLine": 10898,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes source vertical state and writes zero speed/force to peer."
     },
     {
       "label": "PlatformFall",
       "asmLine": 10904,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves current then peer falling platforms, then positions player only for nonnegative collision flag."
     },
     {
       "label": "ExPF",
       "asmLine": 10916,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns."
     },
     {
       "label": "YMovingPlatform",
@@ -61736,12 +61890,12 @@
       "id": "control-02087",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation CheckBalPlatform -> PlatformFall with high-Y/state/peer/collision predicate and tail ordering."
+      "semanticContract": "Preserves original jump relation CheckBalPlatform -> PlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "ChkForFall",
@@ -61784,12 +61938,12 @@
       "id": "control-02090",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation ChkForFall -> StopPlatforms with high-Y/state/peer/collision predicate and tail ordering."
+      "semanticContract": "Preserves original jump relation ChkForFall -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "MakePlatformFall",
@@ -61800,12 +61954,12 @@
       "id": "control-02091",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation MakePlatformFall -> InitPlatformFall with high-Y/state/peer/collision predicate and tail ordering."
+      "semanticContract": "Preserves original jump relation MakePlatformFall -> InitPlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "ChkOtherForFall",
@@ -61848,12 +62002,12 @@
       "id": "control-02094",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation ChkOtherForFall -> StopPlatforms with high-Y/state/peer/collision predicate and tail ordering."
+      "semanticContract": "Preserves original jump relation ChkOtherForFall -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "ChkToMoveBalPlat",
@@ -62024,12 +62178,12 @@
       "id": "control-02105",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation PlatSt -> StopPlatforms with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
+      "semanticContract": "Preserves original call relation PlatSt -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "PlatSt",
@@ -62088,12 +62242,12 @@
       "id": "control-02109",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation DoOtherPlatform -> DrawEraseRope with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
+      "semanticContract": "Preserves original branch relation DoOtherPlatform -> DrawEraseRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "DoOtherPlatform",
@@ -62120,12 +62274,12 @@
       "id": "control-02111",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation DoOtherPlatform -> DrawEraseRope with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
+      "semanticContract": "Preserves original fallthrough relation DoOtherPlatform -> DrawEraseRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "DrawEraseRope",
@@ -62135,10 +62289,13 @@
       "instruction": "beq",
       "id": "control-02112",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DrawEraseRope -> ExitRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "DrawEraseRope",
@@ -62148,10 +62305,13 @@
       "instruction": "bcs",
       "id": "control-02113",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DrawEraseRope -> ExitRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "DrawEraseRope",
@@ -62161,10 +62321,13 @@
       "instruction": "jsr",
       "id": "control-02114",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawEraseRope -> SetupPlatformRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "DrawEraseRope",
@@ -62174,10 +62337,13 @@
       "instruction": "bmi",
       "id": "control-02115",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DrawEraseRope -> EraseR1 with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "DrawEraseRope",
@@ -62187,10 +62353,13 @@
       "instruction": "jmp",
       "id": "control-02116",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation DrawEraseRope -> OtherRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "EraseR1",
@@ -62200,10 +62369,13 @@
       "instruction": "sta",
       "id": "control-02117",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation EraseR1 -> OtherRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "OtherRope",
@@ -62213,10 +62385,13 @@
       "instruction": "jsr",
       "id": "control-02118",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation OtherRope -> SetupPlatformRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "OtherRope",
@@ -62226,10 +62401,13 @@
       "instruction": "bpl",
       "id": "control-02119",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation OtherRope -> EraseR2 with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "OtherRope",
@@ -62239,10 +62417,13 @@
       "instruction": "jmp",
       "id": "control-02120",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation OtherRope -> EndRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "EraseR2",
@@ -62252,10 +62433,13 @@
       "instruction": "sta",
       "id": "control-02121",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation EraseR2 -> EndRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "EndRp",
@@ -62265,10 +62449,13 @@
       "instruction": "sta",
       "id": "control-02122",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation EndRp -> ExitRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "SetupPlatformRope",
@@ -62278,10 +62465,13 @@
       "instruction": "bne",
       "id": "control-02123",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetupPlatformRope -> GetLRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "SetupPlatformRope",
@@ -62291,10 +62481,13 @@
       "instruction": "adc",
       "id": "control-02124",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetupPlatformRope -> GetLRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "GetLRp",
@@ -62304,10 +62497,13 @@
       "instruction": "bpl",
       "id": "control-02125",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GetLRp -> GetHRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "GetLRp",
@@ -62317,10 +62513,13 @@
       "instruction": "tax",
       "id": "control-02126",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetLRp -> GetHRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "GetHRp",
@@ -62330,10 +62529,13 @@
       "instruction": "bcc",
       "id": "control-02127",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GetHRp -> ExPRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "GetHRp",
@@ -62343,10 +62545,13 @@
       "instruction": "sta",
       "id": "control-02128",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetHRp -> ExPRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "InitPlatformFall",
@@ -62356,10 +62561,13 @@
       "instruction": "jsr",
       "id": "control-02129",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitPlatformFall -> GetEnemyOffscreenBits with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "InitPlatformFall",
@@ -62369,10 +62577,13 @@
       "instruction": "jsr",
       "id": "control-02130",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitPlatformFall -> SetupFloateyNumber with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "InitPlatformFall",
@@ -62382,10 +62593,13 @@
       "instruction": "sta",
       "id": "control-02131",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitPlatformFall -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "StopPlatforms",
@@ -62395,10 +62609,13 @@
       "instruction": "jsr",
       "id": "control-02132",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation StopPlatforms -> InitVStf with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "PlatformFall",
@@ -62408,10 +62625,13 @@
       "instruction": "jsr",
       "id": "control-02133",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlatformFall -> MoveFallingPlatform with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "PlatformFall",
@@ -62421,10 +62641,13 @@
       "instruction": "jsr",
       "id": "control-02134",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlatformFall -> MoveFallingPlatform with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "PlatformFall",
@@ -62434,10 +62657,13 @@
       "instruction": "bmi",
       "id": "control-02135",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlatformFall -> ExPF with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "PlatformFall",
@@ -62447,10 +62673,13 @@
       "instruction": "jsr",
       "id": "control-02136",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlatformFall -> PositionPlayerOnVPlat with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "PlatformFall",
@@ -62460,10 +62689,13 @@
       "instruction": "jsr",
       "id": "control-02137",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PlatformFall -> ExPF with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "YMovingPlatform",
@@ -86109,12 +86341,12 @@
       "id": "control-03876",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation StopPlatforms -> PlatSt with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
+      "semanticContract": "Preserves original return relation StopPlatforms -> PlatSt with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "MovePlatformDown",
@@ -86156,10 +86388,13 @@
       "instruction": "rts/rti",
       "id": "control-03879",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetupPlatformRope -> DrawEraseRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "SetupPlatformRope",
@@ -86169,10 +86404,13 @@
       "instruction": "rts/rti",
       "id": "control-03880",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetupPlatformRope -> OtherRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -86182,10 +86420,13 @@
       "instruction": "rts/rti",
       "id": "control-03881",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> InitPlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -86195,10 +86436,13 @@
       "instruction": "rts/rti",
       "id": "control-03882",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetupFloateyNumber -> InitPlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "InitVStf",
@@ -86209,12 +86453,12 @@
       "id": "control-03883",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitVStf -> StopPlatforms with its mode/slot predicate, exact write ordering and call/tail/return handoff."
+      "semanticContract": "Preserves original return relation InitVStf -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "MoveFallingPlatform",
@@ -86225,12 +86469,12 @@
       "id": "control-03884",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveFallingPlatform -> PlatformFall with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveFallingPlatform -> PlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "MoveFallingPlatform",
@@ -86241,12 +86485,12 @@
       "id": "control-03885",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveFallingPlatform -> PlatformFall with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveFallingPlatform -> PlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -86256,10 +86500,13 @@
       "instruction": "rts/rti",
       "id": "control-03886",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "semanticEvidence": [
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> PlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
     },
     {
       "from": "MovePlatformUp",

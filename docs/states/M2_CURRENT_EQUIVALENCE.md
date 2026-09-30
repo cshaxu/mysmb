@@ -1106,3 +1106,8 @@ branches.
 ### Cohort J — B16b balance-platform coupled-motion integration
 
 `ChkToMoveBalPlat` through `DoOtherPlatform` now has six node contracts, all incident force/speed/collision branches, gravity/stop calls, paired displacement, player-position and rope-tail relations, plus four feasible handoffs. Static review matches force-plus-five carry handling, signed movement selection, collision-slot equality, old-minus-new peer displacement and player-position ordering. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 up/down/stop and player-collision routes.
+
+
+### Cohort J — B16c balance-platform rope and fall integration
+
+`DrawEraseRope` through `ExPF` now has fourteen node contracts, every incident buffer gate, speed-sign branch, helper call, paired-fall, player-position and return relation, plus eight feasible VRAM/platform-state handoffs. Static review matches both rope command tile selections, source carry replacement in normal difficulty, name-table address construction, ten-byte buffer advance, fall floatey setup, dual stop and ordered dual fall. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 rope draw/erase, hard-mode address, fall and collision routes.
