@@ -1394,3 +1394,9 @@ branches.
 - Node-semantics result: 23 data labels moved from `unclassified` to `needs-evidence`; C reads owner-local PRG offsets rather than reproducing header data.
 - Independent material integration result: 23 selected-header-to-`LoadHeader` edges received `needs-evidence` contracts. Static review found no discrepancy; controlled selector/header routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K37 — labeled music stream data audit
+
+- Source range: `Star_CloudMData` through `VictoryMusData` (`SMBDIS.ASM` lines 16077–16313).
+- Node-semantics result: 21 labeled music stream data nodes moved from `unclassified` to `needs-evidence`; C retains source PRG bytes behind header-selected CPU pointers rather than re-encoding streams.
+- Material stream-consumer relations remain coupled to their header and channel offset routes and require controlled execution evidence.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

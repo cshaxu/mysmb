@@ -31836,211 +31836,274 @@
       "label": "Star_CloudMData",
       "asmLine": 16077,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P1Data",
       "asmLine": 16089,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "SilenceData",
       "asmLine": 16094,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P2AData",
       "asmLine": 16104,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P2BData",
       "asmLine": 16114,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P2CData",
       "asmLine": 16124,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P3AData",
       "asmLine": 16134,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P3BData",
       "asmLine": 16140,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundMLdInData",
       "asmLine": 16148,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P4AData",
       "asmLine": 16158,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P4BData",
       "asmLine": 16167,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "DeathMusData",
       "asmLine": 16176,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GroundM_P4CData",
       "asmLine": 16179,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "CastleMusData",
       "asmLine": 16193,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "GameOverMusData",
       "asmLine": 16217,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "TimeRunOutMusData",
       "asmLine": 16226,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "WinLevelMusData",
       "asmLine": 16236,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "UndergroundMusData",
       "asmLine": 16253,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "WaterMusData",
       "asmLine": 16264,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "EndOfCastleMusData",
       "asmLine": 16295,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "VictoryMusData",
       "asmLine": 16313,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "semanticEvidence": [
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads."
     },
     {
       "label": "FreqRegLookupTbl",
