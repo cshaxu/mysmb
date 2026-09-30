@@ -547,6 +547,34 @@
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00039",
+      "producer": "DefaultSprOffsets",
+      "consumer": "SecondaryGameSetup",
+      "storage": "15-byte ROM OAM-offset table",
+      "feasiblePath": "SecondaryGameSetup copies all 15 offsets before game core starts.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:default_offsets",
+      "semanticContract": "All 15 bytes retain source order.",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00040",
+      "producer": "Sprite0Data",
+      "consumer": "SecondaryGameSetup",
+      "storage": "four-byte ROM sprite-zero data",
+      "feasiblePath": "SecondaryGameSetup copies Sprite0Data to OAM before task 3.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:sprite0_data",
+      "semanticContract": "All four OAM bytes retain source order.",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -3992,181 +4020,235 @@
       "label": "DefaultSprOffsets",
       "asmLine": 2665,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_secondary_setup default_offsets",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0a69 DefaultSprOffsets: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "Sprite0Data",
       "asmLine": 2669,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_secondary_setup sprite0_data",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0a6d Sprite0Data: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "InitializeGame",
       "asmLine": 2674,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_begin_title_bootstrap",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0a72 InitializeGame: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "ClrSndLoop",
       "asmLine": 2678,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0a76 ClrSndLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "InitializeArea",
       "asmLine": 2685,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_initialize",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0a7d InitializeArea: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "ClrTimersLoop",
       "asmLine": 2690,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0a82 ClrTimersLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "StartPage",
       "asmLine": 2697,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0a89 StartPage: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "SetInitNTHigh",
       "asmLine": 2705,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0a91 SetInitNTHigh: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "SetSecHard",
       "asmLine": 2728,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0aa8 SetSecHard: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "CheckHalfway",
       "asmLine": 2729,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0aa9 CheckHalfway: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "DoneInitArea",
       "asmLine": 2733,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0aad DoneInitArea: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "PrimaryGameSetup",
       "asmLine": 2742,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_primary_setup",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0ab6 PrimaryGameSetup: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "SecondaryGameSetup",
       "asmLine": 2750,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_secondary_setup",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0abe SecondaryGameSetup: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "ClearVRLoop",
       "asmLine": 2754,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0ac2 ClearVRLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "ShufAmtLoop",
       "asmLine": 2775,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0ad7 ShufAmtLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "ISpr0Loop",
       "asmLine": 2780,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0adc ISpr0Loop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "InitializeMemory",
       "asmLine": 2795,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_memory",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0aeb InitializeMemory: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "InitPageLoop",
       "asmLine": 2799,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $0aef InitPageLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner."
     },
     {
       "label": "InitByteLoop",
@@ -27633,10 +27715,13 @@
       "instruction": "jsr",
       "id": "control-00382",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeGame -> InitializeMemory call relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "InitializeGame",
@@ -27646,10 +27731,13 @@
       "instruction": "ldy",
       "id": "control-00383",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeGame -> ClrSndLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClrSndLoop",
@@ -27659,10 +27747,13 @@
       "instruction": "bpl",
       "id": "control-00384",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClrSndLoop -> ClrSndLoop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClrSndLoop",
@@ -27672,10 +27763,13 @@
       "instruction": "jsr",
       "id": "control-00385",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClrSndLoop -> LoadAreaPointer call relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClrSndLoop",
@@ -27685,10 +27779,13 @@
       "instruction": "jsr",
       "id": "control-00386",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClrSndLoop -> InitializeArea fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "InitializeArea",
@@ -27698,10 +27795,13 @@
       "instruction": "jsr",
       "id": "control-00387",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeArea -> InitializeMemory call relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "InitializeArea",
@@ -27711,10 +27811,13 @@
       "instruction": "lda",
       "id": "control-00388",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeArea -> ClrTimersLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClrTimersLoop",
@@ -27724,10 +27827,13 @@
       "instruction": "bpl",
       "id": "control-00389",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClrTimersLoop -> ClrTimersLoop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClrTimersLoop",
@@ -27737,10 +27843,13 @@
       "instruction": "beq",
       "id": "control-00390",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClrTimersLoop -> StartPage branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClrTimersLoop",
@@ -27750,10 +27859,13 @@
       "instruction": "lda",
       "id": "control-00391",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClrTimersLoop -> StartPage fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "StartPage",
@@ -27763,10 +27875,13 @@
       "instruction": "jsr",
       "id": "control-00392",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original StartPage -> GetScreenPosition call relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "StartPage",
@@ -27776,10 +27891,13 @@
       "instruction": "beq",
       "id": "control-00393",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original StartPage -> SetInitNTHigh branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "StartPage",
@@ -27789,10 +27907,13 @@
       "instruction": "ldy",
       "id": "control-00394",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original StartPage -> SetInitNTHigh fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "SetInitNTHigh",
@@ -27802,10 +27923,13 @@
       "instruction": "jsr",
       "id": "control-00395",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetInitNTHigh -> GetAreaDataAddrs call relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "SetInitNTHigh",
@@ -27815,10 +27939,13 @@
       "instruction": "bne",
       "id": "control-00396",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetInitNTHigh -> SetSecHard branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "SetInitNTHigh",
@@ -27828,10 +27955,13 @@
       "instruction": "bcc",
       "id": "control-00397",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetInitNTHigh -> CheckHalfway branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "SetInitNTHigh",
@@ -27841,10 +27971,13 @@
       "instruction": "bne",
       "id": "control-00398",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetInitNTHigh -> SetSecHard branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "SetInitNTHigh",
@@ -27854,10 +27987,13 @@
       "instruction": "bcc",
       "id": "control-00399",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetInitNTHigh -> CheckHalfway branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "SetInitNTHigh",
@@ -27867,10 +28003,13 @@
       "instruction": "bcc",
       "id": "control-00400",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetInitNTHigh -> SetSecHard fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "SetSecHard",
@@ -27880,10 +28019,13 @@
       "instruction": "inc",
       "id": "control-00401",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetSecHard -> CheckHalfway fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "CheckHalfway",
@@ -27893,10 +28035,13 @@
       "instruction": "beq",
       "id": "control-00402",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original CheckHalfway -> DoneInitArea branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "CheckHalfway",
@@ -27906,10 +28051,13 @@
       "instruction": "sta",
       "id": "control-00403",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original CheckHalfway -> DoneInitArea fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "PrimaryGameSetup",
@@ -27919,10 +28067,13 @@
       "instruction": "sta",
       "id": "control-00404",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PrimaryGameSetup -> SecondaryGameSetup fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "SecondaryGameSetup",
@@ -27932,10 +28083,13 @@
       "instruction": "tay",
       "id": "control-00405",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SecondaryGameSetup -> ClearVRLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClearVRLoop",
@@ -27945,10 +28099,13 @@
       "instruction": "bne",
       "id": "control-00406",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClearVRLoop -> ClearVRLoop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClearVRLoop",
@@ -27958,10 +28115,13 @@
       "instruction": "jsr",
       "id": "control-00407",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClearVRLoop -> GetAreaMusic call relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ClearVRLoop",
@@ -27971,10 +28131,13 @@
       "instruction": "ldx",
       "id": "control-00408",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClearVRLoop -> ShufAmtLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ShufAmtLoop",
@@ -27984,10 +28147,13 @@
       "instruction": "bpl",
       "id": "control-00409",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ShufAmtLoop -> ShufAmtLoop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ShufAmtLoop",
@@ -27997,10 +28163,13 @@
       "instruction": "ldy",
       "id": "control-00410",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ShufAmtLoop -> ISpr0Loop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ISpr0Loop",
@@ -28010,10 +28179,13 @@
       "instruction": "bpl",
       "id": "control-00411",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ISpr0Loop -> ISpr0Loop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ISpr0Loop",
@@ -28023,10 +28195,13 @@
       "instruction": "jsr",
       "id": "control-00412",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ISpr0Loop -> DoNothing2 call relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "ISpr0Loop",
@@ -28036,10 +28211,13 @@
       "instruction": "jsr",
       "id": "control-00413",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ISpr0Loop -> DoNothing1 call relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "InitializeMemory",
@@ -28049,10 +28227,13 @@
       "instruction": "sta",
       "id": "control-00414",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeMemory -> InitPageLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "InitPageLoop",
@@ -28062,10 +28243,13 @@
       "instruction": "stx",
       "id": "control-00415",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "semanticEvidence": [
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitPageLoop -> InitByteLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior."
     },
     {
       "from": "InitByteLoop",

@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 382 control; 34 material RAM/table |
+| Needs evidence | 416 control; 36 material RAM/table |
 | Mismatch | 10 control; 2 material RAM/table |
-| Unclassified | 3,874 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,840 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -449,3 +449,12 @@ top-score comparison/copy. Two feasible data edges cover status command and
 digit-offset tables. Static source comparison found no new discrepancy; route
 proof must cover every valid/invalid selector, title/non-title arithmetic,
 borrow/carry chains and both player high-score outcomes.
+
+### Cohort B — B9b game and area initialization chain
+
+`DefaultSprOffsets` through `InitPageLoop` are static-mapped with startup,
+restart, area-entry, hard-mode, render-preload and secondary setup edges.
+The two OAM initialization tables are registered as feasible data paths. No
+new static discrepancy is confirmed; route proof must cover title startup,
+death restart, alternate entrance, halfway page, hard-mode thresholds and
+the full secondary OAM/VRAM initialization sequence.
