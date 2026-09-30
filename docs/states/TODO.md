@@ -55,7 +55,7 @@
 
 - [x] **Jumpspring graphics child:** T44 S8 removed the unsupported slot-five guard and restored the source frame, flip, work-byte and OAM path. All 32 current original graphics-child records match non-stack RAM/OAM on both widths; the earlier T35 differences remain historical evidence. [Closure](../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation). The separate pre-parser screen-origin route still needs integrated revalidation.
 
-- [ ] **Vine OAM wrapped clipping (`TODO(High)`):** T36 S1 proves the six vine caller nodes, while actual-child comparison retains 32 failures at OAM Y bytes 0200/020C/0210/0214. DrawVine/ChkFTop/NextVSp retain M2 T17 S6 custody; repair the original wrapped subtraction and recheck all source rows when that graphics slice is admitted. [Evidence](../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof).
+- [x] **Vine OAM wrapped clipping:** The earlier T36 child discrepancy is superseded by T44 S2. `DrawVine -> ChkFTop -> NextVSp` now consumes caller-relative coordinates, applies the source wrapped subtraction and emits all six OAM rows; original replay and current x86/x64 vine OAM checks pass. [T44 S2 closure](../history/M2-T44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics).
 
 - [ ] **Misc bounding-box screen clipping (`TODO(High)`):** T36 S2 exposes the existing GetMiscBoundBox child unchanged; it computes the box but omits the original CheckRightScreenBBox tail. The 63 scoped hammer scenarios match and do not certify edge cases. Keep this child with its existing collision receiver and test wrapped screen edges when admitted. [Evidence](../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof).
 

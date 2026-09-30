@@ -435,3 +435,11 @@ through the original `SwimKickTileNum` table and consumer route, so the retained
 mixed record now names only D6-D8. Current focused fireball, block and player
 OAM tests pass on x86 and x64. This audit does not resolve the retained
 throw-pose, attribute or swimming-freeze cases.
+
+### S5 P13: vine-graphics historical-route adjudication
+
+S5 P13 resolves the T36 vine OAM clipping record through T44 S2's complete
+source chain. The later chain proves `DrawVine`, `ChkFTop` and `NextVSp` on
+original `VDrawLoop` routes, including the wrapped subtraction that caused the
+old discrepancy. The current vine OAM check passes on x86 and x64. This does
+not assert equivalence for the separate `GetMiscBoundBox` dependency.
