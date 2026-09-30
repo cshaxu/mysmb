@@ -20,6 +20,31 @@ int main(void)
     if (game.apu_registers[4U] != 0x8dU ||
         game.apu_registers[5U] != 0x7fU) return 2;
 
+    /* Later queue bits take their original selection paths after coin. */
+    reset_game(&game);
+    game.ram[0x00feU] = 0x02U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x00f2U] != 0x02U || game.ram[0x07bdU] != 0x10U ||
+        game.ram[0x07beU] != 1U) return 6;
+
+    reset_game(&game);
+    game.ram[0x00feU] = 0x04U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x00f2U] != 0x04U || game.ram[0x07bdU] != 0x20U ||
+        game.ram[0x07beU] != 1U) return 7;
+
+    reset_game(&game);
+    game.ram[0x00feU] = 0x08U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x00f2U] != 0x08U || game.ram[0x07bdU] != 0x1fU ||
+        game.apu_registers[4U] != 0x9fU) return 8;
+
+    reset_game(&game);
+    game.ram[0x00feU] = 0x20U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x00f2U] != 0x20U || game.ram[0x07bdU] != 0x35U)
+        return 9;
+
     /* An active 1-up takes priority over a newly queued coin.  With length
      * one, the later ContinueExtraLife path reaches the shared stop tail. */
     reset_game(&game);
