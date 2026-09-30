@@ -1429,3 +1429,8 @@ branches.
 - Source range: `FireBulletBill` (`SMBDIS.ASM` lines 8767–8772).
 - Node-semantics result: one label moved from `unclassified` to `needs-evidence`; existing incident edge contracts remain applicable. Static review found no discrepancy; controlled fire route remains required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K43 — StarFlagExit2 node audit
+
+- Source range: `StarFlagExit2` (`SMBDIS.ASM` line 10596).
+- Node-semantics result: one label moved from `unclassified` to `needs-evidence`; existing incident edge contracts remain applicable. Static review found no discrepancy; controlled flag route remains required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

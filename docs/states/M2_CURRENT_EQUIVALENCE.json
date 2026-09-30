@@ -23000,11 +23000,14 @@
       "label": "StarFlagExit2",
       "asmLine": 10596,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/star_flag.c",
+      "currentCounterpart": "mysmb_objects_step_star_flags_slot return path",
+      "semanticEvidence": [
+        "Td S9 K43 StarFlagExit2 node audit: SMB1 line 10596 compared with shared src/game/enemy/star_flag.c task return; controlled flag route remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns while interval timer or event music blocks advancement of the star-flag task."
     },
     {
       "label": "MovePiranhaPlant",
