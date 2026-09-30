@@ -31,11 +31,11 @@ not own game logic.
 
 ## Current S5 Finding
 
-S5 P11 has completed the project-owned native regression matrix: x64 and x86
+S5 P12 has completed the project-owned native regression matrix: x64 and x86
 each pass 218 / 218 tests, owner-local area routing passes on both widths,
-and the OpenNT DOS16 link is current. It also removes the historical T39
-star-flag timer finding after T41 S6's source-route closure and current x86/x64
-route check. This does not close S5 or M2: the remaining review ledger still
-contains independently recorded original-ROM discrepancies and the DOS16
-owner-resource binding gap, each requiring source-route treatment before final
-certification can claim complete game behavior.
+and the OpenNT DOS16 link is current. It also removes superseded fireball and
+block/chunk OAM records and narrows the mixed player OAM record after T45's
+source-route closures and current x86/x64 checks. This does not close S5 or M2:
+the remaining review ledger still contains independently recorded original-ROM
+discrepancies and the DOS16 owner-resource binding gap, each requiring
+source-route treatment before final certification can claim complete behavior.

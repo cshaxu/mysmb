@@ -424,3 +424,14 @@ proved the complete source chain containing `AwardGameTimerPoints` and
 `NoTTick`, including frame-bit sound gating and the two modifier calls. The
 current x86 and x64 star-flag native route each passes 779 cases. Other
 endgame, actor and graphics records are outside this conclusion.
+
+### S5 P12: projectile and block-graphics historical-route adjudication
+
+S5 P12 resolves two historical OAM records and narrows a third mixed record.
+T45 S2 proves the complete block/brick-chunk graphics chain that previously
+caused the T37 OAM differences. T45 S3 proves `DrawFireball` and
+`DrawExplosion_Fireball`, resolving T24 D3/D4. T45 S5 separately resolves D5
+through the original `SwimKickTileNum` table and consumer route, so the retained
+mixed record now names only D6-D8. Current focused fireball, block and player
+OAM tests pass on x86 and x64. This audit does not resolve the retained
+throw-pose, attribute or swimming-freeze cases.
