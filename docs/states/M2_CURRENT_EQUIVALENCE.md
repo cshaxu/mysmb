@@ -905,3 +905,19 @@ mismatches in an unnumbered governance candidate, not C game-logic defects.
 All other entries remain `needs-evidence` pending controlled original-ROM/x86/x64
 routes for timer gates, both searches, reappearance, Spiny spawn/sign paths
 and egg activation.
+
+
+### Cohort I — B14m firebar and flying-Cheep initializer integration
+
+`FirebarSpinSpdData` through `FinCCSt` now has fourteen node contracts and
+all incident call, return, dispatch, branch and fall-through relations. The
+node pass records the shared firebar table index, X page carry, long-firebar
+child ordering, flying-Cheep timer/slot gates, player-speed bias, random seed
+override, stationary reversal and both final page carry/borrow paths. Five
+feasible table handoffs are separately registered. No static shared-C
+discrepancy was found.
+
+These entries remain `needs-evidence` pending controlled original-ROM/x86/x64
+routes for every firebar ID, X wrap, timer gate, hard-mode capacity gate,
+player-speed bias, random override, direction reversal and both position
+branches.

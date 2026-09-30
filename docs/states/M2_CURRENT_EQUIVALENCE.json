@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 131,
+    "enumeratedCount": 136,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1847,6 +1847,76 @@
       "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00132",
+      "producer": "FirebarSpinSpdData",
+      "consumer": "InitShortFirebar",
+      "storage": "FirebarSpinSpdData[Enemy_ID-$1b]",
+      "feasiblePath": "InitShortFirebar derives one shared ID index and stores the selected angular speed before position adjustment.",
+      "status": "needs-evidence",
+      "currentCounterpart": "spin_speed[index] in mysmb_enemy_init_firebar_entry",
+      "semanticContract": "Preserves source table selection, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00133",
+      "producer": "FirebarSpinDirData",
+      "consumer": "InitShortFirebar",
+      "storage": "FirebarSpinDirData[Enemy_ID-$1b]",
+      "feasiblePath": "The same firebar ID index selects and stores spin direction before the X/Y updates.",
+      "status": "needs-evidence",
+      "currentCounterpart": "spin_direction[index] in mysmb_enemy_init_firebar_entry",
+      "semanticContract": "Preserves source table selection, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00134",
+      "producer": "FlyCCTimerData",
+      "consumer": "InitFlyingCheepCheep",
+      "storage": "FlyCCTimerData[random2&3]",
+      "feasiblePath": "The second random-register low bits select the frenzy timer before the slot-limit gate.",
+      "status": "needs-evidence",
+      "currentCounterpart": "timer[timer_index] in mysmb_enemy_init_flying_cheep_frenzy",
+      "semanticContract": "Preserves source table selection, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00135",
+      "producer": "FlyCCXSpeedData",
+      "consumer": "RSeed",
+      "storage": "FlyCCXSpeedData[player-speed-bias + random1&3]",
+      "feasiblePath": "RSeed consumes the retained bias/random index to select horizontal speed before optional stationary reversal.",
+      "status": "needs-evidence",
+      "currentCounterpart": "x_speed[speed_index] in mysmb_enemy_init_flying_cheep_frenzy",
+      "semanticContract": "Preserves source table selection, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00136",
+      "producer": "FlyCCXPositionData",
+      "consumer": "D2XPos1",
+      "storage": "FlyCCXPositionData[position index]",
+      "feasiblePath": "The final d1-selected branch consumes the source position index to add or subtract one exact offset with page carry/borrow.",
+      "status": "needs-evidence",
+      "currentCounterpart": "x_position[position_index] in mysmb_enemy_init_flying_cheep_frenzy",
+      "semanticContract": "Preserves source table selection, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -14568,141 +14638,183 @@
       "label": "FirebarSpinSpdData",
       "asmLine": 8394,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the five exact firebar angular-speed bytes selected by enemy ID minus $1b."
     },
     {
       "label": "FirebarSpinDirData",
       "asmLine": 8397,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the five exact firebar direction bytes selected by the same ID-derived index."
     },
     {
       "label": "InitLongFirebar",
       "asmLine": 8400,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls DuplicateEnemyObj, then falls through into the short-firebar initialization body."
     },
     {
       "label": "InitShortFirebar",
       "asmLine": 8403,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears low spin state, selects speed/direction tables, adds four to Y and X with page carry, then tail-selects box-only TallBBox2."
     },
     {
       "label": "FlyCCXPositionData",
       "asmLine": 8430,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds all sixteen flying Cheep Cheep horizontal offsets for the final add/subtract positioning path."
     },
     {
       "label": "FlyCCXSpeedData",
       "asmLine": 8436,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds all twelve flying Cheep Cheep horizontal speeds selected by player-speed bias plus random low bits."
     },
     {
       "label": "FlyCCTimerData",
       "asmLine": 8441,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four frenzy timer values selected by the second random register low bits."
     },
     {
       "label": "InitFlyingCheepCheep",
       "asmLine": 8444,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates on frenzy timer, initializes small box and timer, applies hard-mode slot limit and begins random/player-speed selection."
     },
     {
       "label": "MaxCC",
       "asmLine": 8457,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the three/four enemy limit, rejects slots at or beyond it, then selects player-speed bias zero, four or eight."
     },
     {
       "label": "GSeed",
       "asmLine": 8473,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds player-speed bias to first random seed and conditionally replaces position seed with the third-register low nybble."
     },
     {
       "label": "RSeed",
       "asmLine": 8483,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores player-speed bias, selects X speed, optionally reverses stationary-player direction and enters positional sign dispatch."
     },
     {
       "label": "D2XPos1",
       "asmLine": 8503,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For position bit d1 set, adds selected offset to player X and propagates carry into player page before the common final state."
     },
     {
       "label": "D2XPos2",
       "asmLine": 8513,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For position bit d1 clear, subtracts selected offset from player X and propagates borrow into player page before the common final state."
     },
     {
       "label": "FinCCSt",
       "asmLine": 8519,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared firebar and flying-Cheep initializer core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores computed page, enables actor and Y-high, sets Y=$f8 and returns."
     },
     {
       "label": "InitBowser",
@@ -49820,10 +49932,13 @@
       "instruction": "jsr",
       "id": "control-01555",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitLongFirebar -> DuplicateEnemyObj with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitLongFirebar",
@@ -49833,10 +49948,13 @@
       "instruction": "jsr",
       "id": "control-01556",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitLongFirebar -> InitShortFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitShortFirebar",
@@ -49846,10 +49964,13 @@
       "instruction": "jmp",
       "id": "control-01557",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation InitShortFirebar -> TallBBox2 with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitFlyingCheepCheep",
@@ -49860,12 +49981,12 @@
       "id": "control-01558",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation InitFlyingCheepCheep -> ChpChpEx with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original branch relation InitFlyingCheepCheep -> ChpChpEx with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitFlyingCheepCheep",
@@ -49875,10 +49996,13 @@
       "instruction": "jsr",
       "id": "control-01559",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitFlyingCheepCheep -> SmallBBox with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitFlyingCheepCheep",
@@ -49888,10 +50012,13 @@
       "instruction": "beq",
       "id": "control-01560",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitFlyingCheepCheep -> MaxCC with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitFlyingCheepCheep",
@@ -49901,10 +50028,13 @@
       "instruction": "iny",
       "id": "control-01561",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitFlyingCheepCheep -> MaxCC with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "MaxCC",
@@ -49915,12 +50045,12 @@
       "id": "control-01562",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation MaxCC -> ChpChpEx with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original branch relation MaxCC -> ChpChpEx with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "MaxCC",
@@ -49930,10 +50060,13 @@
       "instruction": "beq",
       "id": "control-01563",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MaxCC -> GSeed with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "MaxCC",
@@ -49943,10 +50076,13 @@
       "instruction": "bcc",
       "id": "control-01564",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MaxCC -> GSeed with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "MaxCC",
@@ -49956,10 +50092,13 @@
       "instruction": "asl",
       "id": "control-01565",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MaxCC -> GSeed with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "GSeed",
@@ -49969,10 +50108,13 @@
       "instruction": "beq",
       "id": "control-01566",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GSeed -> RSeed with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "GSeed",
@@ -49982,10 +50124,13 @@
       "instruction": "sta",
       "id": "control-01567",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GSeed -> RSeed with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "RSeed",
@@ -49995,10 +50140,13 @@
       "instruction": "bne",
       "id": "control-01568",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RSeed -> D2XPos1 with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "RSeed",
@@ -50008,10 +50156,13 @@
       "instruction": "beq",
       "id": "control-01569",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RSeed -> D2XPos1 with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "RSeed",
@@ -50021,10 +50172,13 @@
       "instruction": "inc",
       "id": "control-01570",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RSeed -> D2XPos1 with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "D2XPos1",
@@ -50034,10 +50188,13 @@
       "instruction": "beq",
       "id": "control-01571",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation D2XPos1 -> D2XPos2 with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "D2XPos1",
@@ -50047,10 +50204,13 @@
       "instruction": "jmp",
       "id": "control-01572",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation D2XPos1 -> FinCCSt with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "D2XPos2",
@@ -50060,10 +50220,13 @@
       "instruction": "sbc",
       "id": "control-01573",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation D2XPos2 -> FinCCSt with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitBowser",
@@ -79451,10 +79614,13 @@
       "instruction": "rts/rti",
       "id": "control-03778",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DuplicateEnemyObj -> InitLongFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "SmallBBox",
@@ -79465,12 +79631,12 @@
       "id": "control-03779",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SmallBBox -> InitFlyingCheepCheep with its mode/slot predicate, exact write ordering and call/tail/return handoff."
+      "semanticContract": "Preserves original return relation SmallBBox -> InitFlyingCheepCheep with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "DuplicateEnemyObj",
@@ -86106,12 +86272,12 @@
       "id": "control-04242",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86123,12 +86289,12 @@
       "id": "control-04243",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86140,12 +86306,12 @@
       "id": "control-04244",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86157,12 +86323,12 @@
       "id": "control-04245",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86174,12 +86340,12 @@
       "id": "control-04246",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitLongFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitLongFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86612,10 +86778,13 @@
       "selector": 2,
       "id": "control-04272",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitFlyingCheepCheep with exact table index, timer/slot predicate, carry/borrow and return handoff."
     },
     {
       "from": "InitEnemyFrenzy",
