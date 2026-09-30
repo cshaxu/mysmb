@@ -130,6 +130,10 @@ material RAM/table edge, it records the producing write or table selection,
 the consuming read/index, the feasible original path between them and the
 corresponding shared-C data flow. A route may mark only the items it executes;
 all unexecuted items remain `needs-evidence` until source review closes them.
+Every cohort performs the node-semantics pass before the independent edge and
+integration pass. Node equality does not infer call/return/branch/data-flow
+equality: each relation receives its own counterpart, ordering contract and
+evidence. A cohort remains open until both scoped ledgers have dispositions.
 [`ExtractM2RomDataAccesses.py`](../../tools/ExtractM2RomDataAccesses.py)
 provides the source-addressed read/write atoms for that work. Its output is a
 local audit input, not a data-edge list or a verdict.

@@ -48,6 +48,19 @@ executes. Static source review checks every other edge. A node cannot be
 current-exact if an owned required edge is mismatched; an edge cannot be
 current-exact merely because both endpoints have local tests.
 
+Each source-order cohort is reviewed in two ordered passes. First, the
+**node-semantics pass** writes a contract for every label: predicates,
+reads/writes, table binding, outputs and current shared-C owner. It compares
+those contracts with controlled ROM and native routes and assigns a node
+disposition. Second, the **integration pass** independently walks every
+original outgoing and incoming control relation, then each proven material
+producer-to-consumer data relation. It verifies counterpart, condition,
+ordering, return/dispatch behavior and state handoff. A matching node pair is
+not evidence that the edge between them is correct. A cohort may report local
+node results before its edge pass finishes, but cannot be described as
+current-equivalent or closed until both ledgers have a disposition for its
+scope.
+
 ## Execution order
 
 The audit follows cohorts A through N in original source order. One cohort may
