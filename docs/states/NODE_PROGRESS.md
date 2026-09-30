@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1870 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1878 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 86 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 78 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1870 / 1,992 (93.88%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1878 / 1,992 (94.28%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T49 S4 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s4-closure-square-two-music-stream-and-envelope-tail) closes eleven square-two stream labels on six bounded original-ROM SoundEngine routes, eight calls each per route and width, with zero-difference RAM/APU parity; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
+Latest task review: [T49 S5 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s5-closure-square-one-music-stream-and-alternate-control) closes eight square-one stream labels on four bounded original-ROM SoundEngine routes, eight calls each per route and width, with zero-difference RAM/APU parity; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -1903,6 +1903,14 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15771 | `SkipFqL1` |
 | 15774 | `MiscSqu2MusicTasks` |
 | 15783 | `NoDecEnv1` |
+| 15788 | `HandleSquare1Music` |
+| 15794 | `FetchSqu1MusicData` |
+| 15806 | `Squ1NoteHandler` |
+| 15816 | `SkipCtrlL` |
+| 15819 | `MiscSqu1MusicTasks` |
+| 15828 | `NoDecEnv2` |
+| 15830 | `DeathMAltReg` |
+| 15833 | `DoAltLoad` |
 
 ## Mapped but not yet matched (36)
 

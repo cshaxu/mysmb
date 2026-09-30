@@ -1216,7 +1216,7 @@ int main(int argument_count, char **arguments)
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 106ul) return 64;
+                value > 110ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -5183,6 +5183,30 @@ int main(int argument_count, char **arguments)
                         ram[0x07c7u] = sound_case == 102u ||
                             sound_case == 104u ? 0x10u : 0u;
                         ram[0x00f2u] = sound_case == 105u ? 0x01u : 0u;
+                    }
+                    /* T49 S5: Square1 music consumes the same untouched
+                     * GroundM_P1 stream as the source.  The four records
+                     * isolate a rest/control bypass, null-data loop followed
+                     * by an audible note, SFX ownership exit and death
+                     * alternate-control tail. */
+                    if (sound_case >= 107u && sound_case <= 110u) {
+                        ram[0x00f0u] = 0u;
+                        ram[0x00f4u] = 0x01u;
+                        ram[0x00f5u] = 0x00u;
+                        ram[0x00f6u] = 0xfau;
+                        /* Square2, triangle and noise take their no-fetch
+                         * paths, leaving the S5 Square1 result surface
+                         * attributable to this source chain. */
+                        ram[0x00f7u] = 1u;
+                        ram[0x07b4u] = 2u;
+                        ram[0x00f9u] = 1u;
+                        ram[0x07b9u] = 2u;
+                        ram[0x07b0u] = 1u;
+                        ram[0x07bau] = 2u;
+                        ram[0x00f8u] = sound_case == 108u ? 0x1cu : 1u;
+                        ram[0x07b6u] = sound_case == 110u ? 2u : 1u;
+                        ram[0x00f1u] = sound_case == 109u ? 0x01u : 0u;
+                        ram[0x07b1u] = sound_case == 110u ? 0x01u : 0u;
                     }
                 }
                 else if (sound_case != 0u) {

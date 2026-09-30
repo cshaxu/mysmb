@@ -263,3 +263,58 @@ loop, SFX suppression, death alternate-control sequence and envelope tail agains
 bounded original `SoundEngine` records. The operational track runs focused audio and
 purity checks, x86/x64 builds, the existing OpenNT DOS16 link, and refreshes all
 three owner-authorized EXEs. No S6+ channel/helper/data label is credited.
+
+## S5 closure: square-one music stream and alternate control
+
+All **8** admitted labels are ROM-match complete: **1,870 -> 1,878 / 1,992**.
+`src/game/audio.c` now follows the original Square1 path from its independent
+offset gate through the Square1-only duration encoding, null-data control loop,
+rest bypass, SFX ownership exit, envelope decay and death alternate register.
+The implementation reads the owner-local music and lookup data through the
+shared CPU-address reader; no platform adapter selects music or writes game
+audio state.
+
+| Source PC | Labels | Shared-C equivalence and original route |
+| --- | --- | --- |
+| `$f72c-$f735` | `HandleSquare1Music`, `FetchSqu1MusicData` | Offset zero bypasses Square1, counter decrement gates fetch, and null bytes write `$4000=$83`, `$4001=$94`, retain `$07ca=$94`, then fetch again. |
+| `$f746-$f759` | `Squ1NoteHandler`, `SkipCtrlL` | Original bit 0/7/6 duration selector feeds the shared owner-ROM length table. The controlled GroundM_P1 rest takes the `SetFreq_Squ1` zero path; the following control dump retains zero X and the masked-note Y. |
+| `$f75c-$f76d` | `MiscSqu1MusicTasks`, `NoDecEnv2` | A live Square1 SFX reaches the immediate Triangle handoff; otherwise the pre-decrement envelope index selects the same owner-ROM envelope byte. |
+| `$f770-$f773` | `DeathMAltReg`, `DoAltLoad` | Death music bypasses envelope replacement and writes `$07ca`, or the source default `$7f`, to `$4001`. |
+
+The unchanged owner-ROM `SoundEngine` route recorded four bounded states, each
+with eight calls: a GroundM_P1 rest/control bypass, a real null-data loop
+followed by an audible note, a live Square1 SFX ownership exit, and a death
+alternate-control tail. The dedicated Square1 music checker compares `$f1`,
+`$f8`, `$7b6`, `$7b7`, `$7ca`, and `$4000-$4003` after every call. Both x86 and
+x64 report **32 comparisons with zero differences**.
+
+Focused audio/header smoke checks pass on both Windows widths, platform purity
+passes, and the existing OpenNT16 route compiles the same shared C sources and
+links its MZ executable. The refreshed owner-authorized artifacts are:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `09A9500657C9BF812AD899D1AE1563BABC0C9539DD248807265B606DFC93E8E4` |
+| `assets/mysmb32.exe` | `4037D2955D055B735F983703F397F0A0A15A98641733A5C5DEEC3D31477F889B` |
+| `assets/mysmb64.exe` | `F506FF5B5403BFC7EFF96C1DC13E4931CDFA6116C21578D9C9A82DED7B4745B8` |
+
+Similar-issue sweep: every production Square1 music fetch, duration selection,
+null loop, rest, SFX gate, envelope tail and alternate-control write is in
+`src/game/audio.c`. `src/platform/` contains no audio/gameplay control flow.
+The triangle, noise and shared helper chains retain their separate source-order
+custody and receive no S5 credit.
+
+## S6 admission: triangle music stream and control register
+
+S6 receives **6** source-order labels: `HandleTriangleMusic`, `TriNoteHandler`,
+`NotDOrD4`, `MediN`, `LongN`, and `LoadTriCtrlReg`. Baseline is **1,878 / 1,992**;
+all six are expected matches, for a maximum **1,884 / 1,992**. Shared owner is
+`src/game/audio.c`; predecessor is S5 `DoAltLoad`, successor is S7
+`HandleNoiseMusic`.
+
+The ROM-logic track will compare the unconditional triangle counter decrement,
+the zero-byte control branch, length-byte plus note pair, frequency output, and
+the event/area/length selector of `$4008` using bounded original `SoundEngine`
+records. The operational track will run focused audio tests, x86/x64 builds,
+the existing OpenNT DOS16 link, platform-purity audit and refreshed three EXEs.
+No S7+ node receives credit.

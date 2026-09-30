@@ -613,44 +613,76 @@ static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
     game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_TRIANGLE_NOTE_BUFFER];
 }
-/* ROM HandleSquare1Music through AlternateLengthHandler.  Square 1 encodes
- * its three-bit duration selector in bits 0, 7 and 6, unlike Square 2 and
- * Triangle which use the low three bits directly. */
+/* ROM HandleSquare1Music through DoAltLoad.  Square 1 encodes its three-bit
+ * duration selector in bits 0, 7 and 6, unlike Square 2 and Triangle which
+ * use the low three bits directly. */
 static void mysmb_audio_step_square1_music(struct mysmb_game *game)
 {
-    mysmb_u16 address;
-    mysmb_u16 length_address;
+    mysmb_u16 music_data;
     mysmb_u8 data;
+    mysmb_u8 control_x;
+    mysmb_u8 control_y;
+    mysmb_u8 envelope;
     mysmb_u8 length_index;
 
-    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == 0U &&
-         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U) ||
-        game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return;
+    /* HandleSquare1Music enters Triangle directly when this header supplies
+     * no Square1 stream.  This is independent of the active music buffers. */
+    if (game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1] == 0U) return;
     game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER]--;
-    if (game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] != 0U) return;
-    address = (mysmb_u16)(((mysmb_u16)(game->ram[0x00f6U] - 0x80U) << 8U) |
-                          game->ram[0x00f5U]);
-    address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]++);
-    if (address >= game->area_prg_size) return;
-    data = game->area_prg[address];
-    while (data == 0U) {
-        game->ram[MYSMB_RAM_ALT_REGISTER_CONTENT] = 0x94U;
-        address = (mysmb_u16)(address + 1U);
+    if (game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] == 0U) {
+        music_data = (mysmb_u16)(((mysmb_u16)game->ram[0x00f6U] << 8U) |
+                                  game->ram[0x00f5U]);
+        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
+            game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]));
         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]++;
-        if (address >= game->area_prg_size) return;
-        data = game->area_prg[address];
+        while (data == 0U) {
+            /* FetchSqu1MusicData's null bytes are audible control changes,
+             * not merely an in-memory loop marker. */
+            mysmb_audio_write_apu(game, 0U, 0x83U);
+            mysmb_audio_write_apu(game, 1U, 0x94U);
+            game->ram[MYSMB_RAM_ALT_REGISTER_CONTENT] = 0x94U;
+            data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
+                game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]));
+            game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]++;
+        }
+        /* AlternateLengthHandler: carry starts with original bit zero, then
+         * three ROLs turn bits 0/7/6 into the length-table selector. */
+        length_index = (mysmb_u8)(((data & 1U) << 2U) |
+            ((data & 0x80U) >> 6U) | ((data & 0x40U) >> 6U));
+        game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] =
+            mysmb_audio_process_music_length(game, length_index);
+        if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) {
+            control_x = 0U;
+            control_y = (mysmb_u8)(data & 0x3eU);
+            if (mysmb_audio_set_freq_squ1(game, control_y) != 0U) {
+                envelope = mysmb_audio_envelope_control(game, data);
+                control_x = 0x82U;
+                control_y = 0x7fU;
+            }
+            else {
+                envelope = 0U;
+            }
+            game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] = envelope;
+            mysmb_audio_dump_squ1_regs(game, control_x, control_y);
+        }
     }
-    length_index = (mysmb_u8)(((data & 1U) << 2U) |
-        ((data & 0x80U) >> 6U) | ((data & 0x40U) >> 6U));
-    length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE + length_index +
-        game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
-    if (length_address >= game->area_prg_size) return;
-    game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] = game->area_prg[length_address];
-    /* SetFreq_Squ1 returns zero for a rest, bypassing LoadControlRegs. */
-    if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) {
-        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] =
-            mysmb_audio_envelope_control(game, data);
+    /* MiscSqu1MusicTasks branches around every tail write while a Square1
+     * effect owns the channel. */
+    if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] != 0U) return;
+    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x91U) == 0U) {
+        /* As with Square2, DEC changes memory only: LoadEnvelopeData indexes
+         * with the pre-decrement Y value. */
+        envelope = game->ram[MYSMB_RAM_SQUARE1_ENVELOPE];
+        if (envelope != 0U)
+            game->ram[MYSMB_RAM_SQUARE1_ENVELOPE]--;
+        mysmb_audio_write_apu(game, 0U,
+            mysmb_audio_load_music_envelope(game, envelope));
     }
+    /* DeathMAltReg / DoAltLoad run both after a normal envelope load and on
+     * the death/D4 branch. */
+    control_y = game->ram[MYSMB_RAM_ALT_REGISTER_CONTENT];
+    if (control_y == 0U) control_y = 0x7fU;
+    mysmb_audio_write_apu(game, 1U, control_y);
 }
 /* ROM HandleNoiseMusic through NoiseBeatHandler, excluding APU writes. */
 static void mysmb_audio_step_noise_music(struct mysmb_game *game)
@@ -781,13 +813,6 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U) return;
     if (mysmb_audio_continue_music(game) != 0U) return;
     mysmb_audio_step_square1_music(game);
-    /* Square two's MiscSqu2MusicTasks is inside the S4 handler above.  Keep
-     * the existing square-one tail for the later S5 chain only. */
-    if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U &&
-        (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x91U) == 0U &&
-        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] != 0U) {
-        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE]--;
-    }
     mysmb_audio_step_triangle_music(game);
     mysmb_audio_step_noise_music(game);
 }
