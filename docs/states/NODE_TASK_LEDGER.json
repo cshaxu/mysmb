@@ -251056,9 +251056,24 @@
         "StopGrowItems"
       ],
       "maximumComplete": 1837,
-      "actualMatches": [],
+      "actualMatches": [
+        "JumpToDecLength2",
+        "PlayBowserFall",
+        "BlstSJp",
+        "ContinueBowserFall",
+        "PBFRegs",
+        "EL_LRegs",
+        "PlayExtraLife",
+        "ContinueExtraLife",
+        "DivLLoop",
+        "PlayGrowPowerUp",
+        "PlayGrowVine",
+        "GrowItemRegs",
+        "ContinueGrowItems",
+        "StopGrowItems"
+      ],
       "evidence": "docs/proposals/m2/t49-music-engine-and-channel-handlers.md",
-      "state": "admitted-square-two-remaining-effects"
+      "state": "closed-rom-match-complete"
     }
   ]
 }

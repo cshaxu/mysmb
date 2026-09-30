@@ -48,3 +48,53 @@ uses focused audio/dispatcher tests, new source-route checks as needed,
 x86/x64 builds and self-tests, the existing OpenNT DOS16 target, platform
 purity and refreshed three executable artifacts. Closure individually names
 all fourteen node dispositions and records any successor transfer.
+
+### S1 closure: remaining square-two effects
+
+All **14** admitted labels are ROM-match complete: **1,823 -> 1,837 / 1,992**.
+The shared `audio.c` owner now follows the source chain directly: the decrement
+trampoline, Bowser-fall initial/length-eight register phases, extra-life's
+three-shift gate, and both grow-item selectors with their independent secondary
+counter and empty-buffer exit.
+
+| Source PC | Label | Source behavior and shared-C mapping |
+| --- | --- | --- |
+| `$f5c5` | `JumpToDecLength2` | Unconditional entry reaches `DecrementSfx2Length`; `mysmb_audio_square2_jump_to_decrement` preserves that tail. |
+| `$f5c8` | `PlayBowserFall` | Initializes `$07bd` to `$38`, loads A/Y `$18/$c4`, then takes the shared register/decrement tail. |
+| `$f5cd` | `BlstSJp` | Unconditional nonzero branch supplies the shared Bowser/blast register path. |
+| `$f5cf` | `ContinueBowserFall` | Only remaining length `$08` loads `$5a/$a4`; every other length takes the decrement trampoline. |
+| `$f5d5` | `PBFRegs` | Loads X `$9f` before the shared square-two register helper. |
+| `$f5d6` | `EL_LRegs` | Nonzero branch enters `LoadSqu2Regs`, whose decrement fallthrough remains shared. |
+| `$f5d8` | `PlayExtraLife` | Initializes `$07bd` to `$30` and falls into its continuation. |
+| `$f5dc` | `ContinueExtraLife` | Checks the current length before source's three logical shifts and shared register/decrement tail. |
+| `$f5df` | `DivLLoop` | Any of the three shifted low bits takes the decrement trampoline; exact multiples of eight index `ExtraLifeFreqData-1,Y`. |
+| `$f5e9` | `PlayGrowPowerUp` | Supplies grow length `$10` to `GrowItemRegs`. |
+| `$f5ed` | `PlayGrowVine` | Supplies grow length `$20` to the same register setup. |
+| `$f5f0` | `GrowItemRegs` | Writes length, direct `$4005=$7f`, clears `$07be`, then falls into the first grow phase. |
+| `$f5f7` | `ContinueGrowItems` | Increments `$07be`, compares its half value with `$07bd`, otherwise writes `$4004=$9d` and calls `SetFreq_Squ2` with `PUp_VGrow_FreqData,Y`. |
+| `$f604` | `StopGrowItems` | Equality takes `EmptySfx2Buffer`, preserving the `$4015=$0d,$0f` stop sequence. |
+
+The unchanged owner ROM was sampled through `SoundEngine` in eight bounded
+states: new and continuing Bowser fall, new and active extra-life, power-up
+reveal, vine growth, and both grow-item terminal states. Each state supplied
+eight NMI calls. The x86 and x64 C checkers compare `$f2`, `$fe`, `$07bd`,
+`$07be`, and square-two/master APU output after each call: **128 comparisons,
+zero differences**. The recorder and raw records remain under ignored
+`build/m2-t49-s1/`.
+
+Focused audio, dispatcher and platform-purity CTests pass on x86 and x64;
+both Win32 `--self-test` routes pass. Full CTest stays **223/234** on each
+width with the same eleven registered baseline failures and no new failure.
+The original OpenNT16 target compiles the same shared core and links a valid
+262,421-byte MZ executable. The three refreshed owner-authorized artifacts are:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `43ea2f97a0c910ac2a8d362e7c76cdf365176b706b588a0eadaed26db9e52e85` |
+| `assets/mysmb32.exe` | `3e5dd6f32b56fad985b97ed8da1971a93d17c62abe329a2be04e20935772b42e` |
+| `assets/mysmb64.exe` | `938a27e272738034cbff15e63f08eff69d40cc8dd755b2f57ef135b8d0c4c137` |
+
+The similar-issue sweep searched all square-two queue/buffer routes. The only
+production dispatch point is `src/game/audio.c`; no platform adapter selects
+an effect, branches on game state, or mutates game RAM/APU state. S2's noise
+and music labels remain out of scope and retain their existing custody.

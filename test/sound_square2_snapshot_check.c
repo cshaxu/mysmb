@@ -17,12 +17,14 @@ int main(int argc, char **argv)
     unsigned int failures;
     unsigned int address;
     unsigned int case_id;
-    const unsigned int ram_addresses[3] = { 0x00f2U, 0x00feU, 0x07bdU };
+    const unsigned int ram_addresses[4] = {
+        0x00f2U, 0x00feU, 0x07bdU, 0x07beU
+    };
     const unsigned int apu_addresses[5] = { 4U, 5U, 6U, 7U, 21U };
 
     if (argc != 4) return 64;
     case_id = (unsigned int)atoi(argv[3]);
-    if (case_id < 61U || case_id > 80U) return 64;
+    if (case_id < 61U || case_id > 88U) return 64;
     rom = fopen(argv[2], "rb");
     if (rom == NULL) return 65;
     if (fread(header, 1U, 16U, rom) != 16U ||
@@ -64,7 +66,7 @@ int main(int argc, char **argv)
         game.area_prg = prg;
         game.area_prg_size = sizeof(prg);
         mysmb_audio_step(&game);
-        for (address = 0U; address < 3U; ++address) {
+        for (address = 0U; address < 4U; ++address) {
             unsigned int offset = ram_addresses[address];
             if (game.ram[offset] != record[2072U + offset]) {
                 if (failures < 24U)

@@ -189,18 +189,13 @@ static void mysmb_audio_square2_continue_blast(struct mysmb_game *game);
 static void mysmb_audio_square2_play_power_up(struct mysmb_game *game);
 static void mysmb_audio_square2_continue_power_up(struct mysmb_game *game);
 static void mysmb_audio_square2_decrement(struct mysmb_game *game);
-
-static mysmb_u8 mysmb_audio_square2_length(mysmb_u8 effect)
-{
-    if (effect == 0x80U) return 0x38U;
-    if (effect == 0x01U) return 0x35U;
-    if (effect == 0x02U) return 0x10U;
-    if (effect == 0x04U) return 0x20U;
-    if (effect == 0x08U) return 0x20U;
-    if (effect == 0x10U) return 0x06U;
-    if (effect == 0x20U) return 0x36U;
-    return 0x30U;
-}
+static void mysmb_audio_square2_play_bowser_fall(struct mysmb_game *game);
+static void mysmb_audio_square2_continue_bowser_fall(struct mysmb_game *game);
+static void mysmb_audio_square2_play_extra_life(struct mysmb_game *game);
+static void mysmb_audio_square2_continue_extra_life(struct mysmb_game *game);
+static void mysmb_audio_square2_play_grow_item(struct mysmb_game *game,
+                                                mysmb_u8 length);
+static void mysmb_audio_square2_continue_grow_item(struct mysmb_game *game);
 
 static void mysmb_audio_step_square1(struct mysmb_game *game)
 {
@@ -277,12 +272,11 @@ static void mysmb_audio_step_square2(struct mysmb_game *game)
     mysmb_u8 buffer;
 
     /* ROM Square2SfxHandler checks an active 1-up before it reads the queue.
-     * The buffer may retain several source queue bits, so $40 owns square 2
-     * until ContinueExtraLife finishes.  That successor is outside S6; its
-     * existing lifetime fallback is retained without giving it S6 credit. */
+     * ContinueExtraLife owns the whole current invocation, including the
+     * source's divide-by-eight decision and decrement trampoline. */
     buffer = game->ram[MYSMB_RAM_SQUARE2_BUFFER];
     if ((buffer & MYSMB_SFX_EXTRA_LIFE) != 0U) {
-        mysmb_audio_square2_decrement(game);
+        mysmb_audio_square2_continue_extra_life(game);
         return;
     }
 
@@ -290,8 +284,8 @@ static void mysmb_audio_step_square2(struct mysmb_game *game)
     if (queue != 0U) {
         game->ram[MYSMB_RAM_SQUARE2_BUFFER] = queue;
         if ((queue & 0x80U) != 0U) {
-            game->ram[MYSMB_RAM_SQUARE2_LENGTH] =
-                mysmb_audio_square2_length(0x80U);
+            mysmb_audio_square2_play_bowser_fall(game);
+            return;
         }
         else if ((queue & 1U) != 0U) {
             game->ram[MYSMB_RAM_SQUARE2_QUEUE] = (mysmb_u8)(queue >> 1U);
@@ -302,18 +296,16 @@ static void mysmb_audio_step_square2(struct mysmb_game *game)
             game->ram[MYSMB_RAM_SQUARE2_QUEUE] = queue;
             if ((queue & 1U) != 0U) {
                 game->ram[MYSMB_RAM_SQUARE2_QUEUE] = (mysmb_u8)(queue >> 1U);
-                game->ram[MYSMB_RAM_SQUARE2_LENGTH] =
-                    mysmb_audio_square2_length(0x02U);
-                game->ram[MYSMB_RAM_SFX_SECONDARY] = 0U;
+                mysmb_audio_square2_play_grow_item(game, 0x10U);
+                return;
             }
             else {
                 queue >>= 1U;
                 game->ram[MYSMB_RAM_SQUARE2_QUEUE] = queue;
                 if ((queue & 1U) != 0U) {
                     game->ram[MYSMB_RAM_SQUARE2_QUEUE] = (mysmb_u8)(queue >> 1U);
-                    game->ram[MYSMB_RAM_SQUARE2_LENGTH] =
-                        mysmb_audio_square2_length(0x04U);
-                    game->ram[MYSMB_RAM_SFX_SECONDARY] = 0U;
+                    mysmb_audio_square2_play_grow_item(game, 0x20U);
+                    return;
                 }
                 else {
                     queue >>= 1U;
@@ -345,8 +337,8 @@ static void mysmb_audio_step_square2(struct mysmb_game *game)
                                 if ((queue & 1U) != 0U) {
                                     game->ram[MYSMB_RAM_SQUARE2_QUEUE] =
                                         (mysmb_u8)(queue >> 1U);
-                                    game->ram[MYSMB_RAM_SQUARE2_LENGTH] =
-                                        mysmb_audio_square2_length(0x40U);
+                                    mysmb_audio_square2_play_extra_life(game);
+                                    return;
                                 }
                             }
                         }
@@ -362,16 +354,11 @@ static void mysmb_audio_step_square2(struct mysmb_game *game)
     buffer = game->ram[MYSMB_RAM_SQUARE2_BUFFER];
     if (buffer == 0U) return;
     if ((buffer & 0x80U) != 0U)
-        mysmb_audio_square2_decrement(game);
+        mysmb_audio_square2_continue_bowser_fall(game);
     else if ((buffer & 0x01U) != 0U)
         mysmb_audio_square2_continue_coin_timer(game);
-    else if ((buffer & 0x02U) != 0U || (buffer & 0x04U) != 0U) {
-        game->ram[MYSMB_RAM_SFX_SECONDARY]++;
-        if ((mysmb_u8)(game->ram[MYSMB_RAM_SFX_SECONDARY] >> 1U) ==
-            game->ram[MYSMB_RAM_SQUARE2_LENGTH]) {
-            game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
-        }
-    }
+    else if ((buffer & 0x02U) != 0U || (buffer & 0x04U) != 0U)
+        mysmb_audio_square2_continue_grow_item(game);
     else if ((buffer & 0x08U) != 0U)
         mysmb_audio_square2_continue_blast(game);
     else if ((buffer & 0x10U) != 0U)
@@ -379,7 +366,7 @@ static void mysmb_audio_step_square2(struct mysmb_game *game)
     else if ((buffer & 0x20U) != 0U)
         mysmb_audio_square2_continue_power_up(game);
     else
-        mysmb_audio_square2_decrement(game);
+        mysmb_audio_square2_continue_extra_life(game);
 }
 
 static void mysmb_audio_step_noise(struct mysmb_game *game)
@@ -801,6 +788,96 @@ mysmb_u8 mysmb_audio_square2_grow_vine_freq(const struct mysmb_game *game,
                                              mysmb_u8 index)
 {
     return mysmb_audio_read_cpu(game, (mysmb_u16)(0xf4f8UL + index));
+}
+
+/* ROM JumpToDecLength2 is the unconditional entry into this shared tail. */
+static void mysmb_audio_square2_jump_to_decrement(struct mysmb_game *game)
+{
+    mysmb_audio_square2_decrement(game);
+}
+
+/* ROM PBFRegs -> EL_LRegs -> LoadSqu2Regs.  Bowser fall and the earlier
+ * blast path share the same control-register load; this entry supplies the
+ * Bowser-specific A/Y pair and preserves LoadSqu2Regs' decrement fallthrough. */
+static void mysmb_audio_square2_load_bowser_regs(struct mysmb_game *game,
+                                                  mysmb_u8 frequency,
+                                                  mysmb_u8 control)
+{
+    (void)mysmb_audio_play_sq2_sfx(game, frequency, 0x9fU, control);
+    mysmb_audio_square2_decrement(game);
+}
+
+/* ROM PlayBowserFall -> BlstSJp -> PBFRegs -> EL_LRegs. */
+static void mysmb_audio_square2_play_bowser_fall(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_SQUARE2_LENGTH] = 0x38U;
+    mysmb_audio_square2_load_bowser_regs(game, 0x18U, 0xc4U);
+}
+
+/* ROM ContinueBowserFall changes its tone only at remaining length $08. */
+static void mysmb_audio_square2_continue_bowser_fall(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_SQUARE2_LENGTH] != 0x08U) {
+        mysmb_audio_square2_jump_to_decrement(game);
+        return;
+    }
+    mysmb_audio_square2_load_bowser_regs(game, 0x5aU, 0xa4U);
+}
+
+/* ROM PlayExtraLife -> ContinueExtraLife -> DivLLoop.  Three logical shifts
+ * determine whether the remaining length is divisible by eight.  Any set bit
+ * takes JumpToDecLength2; otherwise table-1,Y is loaded before the shared
+ * LoadSqu2Regs/decrement tail. */
+static void mysmb_audio_square2_continue_extra_life(struct mysmb_game *game)
+{
+    mysmb_u8 length;
+    mysmb_u8 index;
+
+    length = game->ram[MYSMB_RAM_SQUARE2_LENGTH];
+    if ((length & 7U) != 0U) {
+        mysmb_audio_square2_jump_to_decrement(game);
+        return;
+    }
+    index = (mysmb_u8)(length >> 3U);
+    (void)mysmb_audio_play_sq2_sfx(game,
+        mysmb_audio_square2_extra_life_freq(game, index), 0x82U, 0x7fU);
+    mysmb_audio_square2_decrement(game);
+}
+
+static void mysmb_audio_square2_play_extra_life(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_SQUARE2_LENGTH] = 0x30U;
+    mysmb_audio_square2_continue_extra_life(game);
+}
+
+/* ROM PlayGrowPowerUp/PlayGrowVine -> GrowItemRegs. */
+static void mysmb_audio_square2_play_grow_item(struct mysmb_game *game,
+                                                mysmb_u8 length)
+{
+    game->ram[MYSMB_RAM_SQUARE2_LENGTH] = length;
+    mysmb_audio_write_apu(game, 5U, 0x7fU);
+    game->ram[MYSMB_RAM_SFX_SECONDARY] = 0U;
+    mysmb_audio_square2_continue_grow_item(game);
+}
+
+/* ROM ContinueGrowItems uses its separate counter: it never decrements the
+ * usual length.  Equality jumps to EmptySfx2Buffer; otherwise it writes the
+ * control register directly and calls SetFreq_Squ2 with PUp_VGrow_FreqData,Y. */
+static void mysmb_audio_square2_continue_grow_item(struct mysmb_game *game)
+{
+    mysmb_u8 index;
+
+    game->ram[MYSMB_RAM_SFX_SECONDARY]++;
+    index = (mysmb_u8)(game->ram[MYSMB_RAM_SFX_SECONDARY] >> 1U);
+    if (index == game->ram[MYSMB_RAM_SQUARE2_LENGTH]) {
+        game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
+        mysmb_audio_write_apu(game, 21U, 0x0dU);
+        mysmb_audio_write_apu(game, 21U, 0x0fU);
+        return;
+    }
+    mysmb_audio_write_apu(game, 4U, 0x9dU);
+    (void)mysmb_audio_set_freq_sq2(game,
+        mysmb_audio_square2_grow_vine_freq(game, index));
 }
 
 /* ROM PlayCoinGrab/PlayTimerTick -> CGrab_TTickRegL. */
