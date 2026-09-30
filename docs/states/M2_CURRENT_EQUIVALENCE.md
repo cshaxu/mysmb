@@ -1412,3 +1412,9 @@ branches.
 - Node-semantics result: three labels moved from `unclassified` to `needs-evidence`.
 - Independent integration result: 4 RunDemo call/return/reset relations and one world-select-template material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled title routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K40 — DoNothing residual leaf audit
+
+- Source range: `DoNothing1` through `DoNothing2` (`SMBDIS.ASM` lines 3052–3055).
+- Node-semantics result: two labels moved from `unclassified` to `needs-evidence`; current secondary setup preserves the residual `$06c9 = $ff` write and return behavior.
+- Independent integration result: 3 fall-through/return relations received `needs-evidence` contracts. Static review found no discrepancy; controlled startup route remains required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

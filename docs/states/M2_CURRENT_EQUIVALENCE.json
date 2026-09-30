@@ -10747,21 +10747,27 @@
       "label": "DoNothing1",
       "asmLine": 3052,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_secondary_setup residual store",
+      "semanticEvidence": [
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes $ff to residual RAM $06c9 then falls through to return."
     },
     {
       "label": "DoNothing2",
       "asmLine": 3055,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_secondary_setup residual store",
+      "semanticEvidence": [
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without additional state change."
     },
     {
       "label": "AreaParserTaskHandler",
@@ -39925,10 +39931,13 @@
       "instruction": "sta",
       "id": "control-00470",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c mysmb_game_secondary_setup startup sequence",
+      "semanticEvidence": [
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves residual leaf fallthrough relation DoNothing1 → DoNothing2 without reordering surrounding initialization."
     },
     {
       "from": "AreaParserTaskHandler",
@@ -88279,10 +88288,13 @@
       "instruction": "rts/rti",
       "id": "control-03544",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c mysmb_game_secondary_setup startup sequence",
+      "semanticEvidence": [
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves residual leaf return relation DoNothing2 → ISpr0Loop without reordering surrounding initialization."
     },
     {
       "from": "DoNothing1",
@@ -88292,10 +88304,13 @@
       "instruction": "rts/rti",
       "id": "control-03545",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c mysmb_game_secondary_setup startup sequence",
+      "semanticEvidence": [
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves residual leaf return relation DoNothing1 → ISpr0Loop without reordering surrounding initialization."
     },
     {
       "from": "GetPlayerColors",
