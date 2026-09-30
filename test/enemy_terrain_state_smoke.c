@@ -1,8 +1,10 @@
 #include "game/objects.h"
+#include <string.h>
 
 static void mysmb_test_prepare_enemy(struct mysmb_game *game, mysmb_u8 id,
                                      mysmb_u8 state)
 {
+    memset(game, 0, sizeof(*game));
     mysmb_game_initialize_memory(game, 0U);
     game->ram[0x071dU] = 0xf0U;
     game->ram[0x074eU] = 1U; /* AreaType: ground */
@@ -52,7 +54,7 @@ int main(void)
     game.ram[0x0544U] = 0x23U;
     mysmb_objects_step_normal_enemy_terrain(&game, 0U);
     if (game.ram[0x0544U] != 0U || game.ram[0x001eU] != 0x22U ||
-        game.ram[0x00cfU] != 0x4eU || game.ram[0x00a0U] != 0xfdU ||
+        game.ram[0x00cfU] != 0x4cU || game.ram[0x00a0U] != 0xfdU ||
         game.ram[0x0046U] != 1U || game.ram[0x0058U] != 0x10U ||
         game.ram[0x0110U] != 1U) return 4;
 

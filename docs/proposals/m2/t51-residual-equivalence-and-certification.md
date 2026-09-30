@@ -268,3 +268,22 @@ The refreshed three-target artifacts are `mysmb16.exe`
 and `mysmb64.exe` `F0EFDAFBB738DFE0D170BE3368B9526485A3C91D6A6533CE6671373E9A57F328`.
 S5 remains open: this evidence removes one false test assertion, but does not
 waive the ten remaining cross-route adjudications.
+
+### S5 P2: enemy-terrain-state deterministic fixture and source result
+
+This P likewise changes no production source and earns no node credit. The
+legacy terrain fixture initialized only `game.ram`, leaving `area_prg` and
+`area_prg_size` indeterminate. Its terrain route legitimately selects a
+bound-ROM table when present, so the uninitialized pointer caused the reported
+x86/x64 access violation rather than a game-logic fault. The fixture now
+zeroes its complete game structure before selecting the intended fallback
+tables.
+
+The Goomba bumped-block expectation was also re-read through
+`HandleEToBGCollision` at `$dffa`, `KillEnemyAboveBlock` at `$e164`,
+`ShellOrBlockDefeat` at `$d795`, and the fall-through `ChkToStunEnemies` tail.
+The source calls `SetStun` once under `ShellOrBlockDefeat`, then calls it a
+second time after `GiveOEPoints`; each decrements Y twice. Starting at `$50`,
+the correct final Y is therefore `$4c`, not the former `$4e`. Focused x86 and
+x64 tests pass after that expectation correction. S5 remains open pending the
+remaining nine cross-route failures.
