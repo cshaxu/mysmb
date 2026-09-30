@@ -1151,3 +1151,8 @@ branches.
 ### Cohort J — B16k power-up collection integration
 
 `HandlePowerUpCollision` through `NoPUp` now has six node contracts, every incident erase/score/palette/routine call, type/status branch, caller edge and return relation, plus six feasible pickup handoffs. Static review matches common erase/modifier-six/PowerUpGrab order, `<2`, `==3` and star type dispatch, 1UP-only score overwrite, small-to-super and super-to-fiery restrictions, fiery palette order and the `$09/$0c` SetPRout tails. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 mushroom, flower, 1UP, star and nonconvertible-status routes.
+
+
+### Cohort J — B16l player-enemy contact front integration
+
+`PlayerEnemyCollision` through `ExPEC` now has seven node contracts, every incident caller, frame/vertical/offscreen/control/state gate, geometry, pickup/star/response branch, injury/stomp/score child and return relation, plus eight feasible collision/state handoffs. Static review matches even-frame gating, prepared-box use, current-slot reload, miss d0 clear, PowerUpObject dispatch, star defeat bypass, first-contact latch, source hazard order, shell conversion, direction speed and timer-dependent kick score tables. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 gate, miss, pickup, star, direct hazard, stomp and kicked-shell interval routes.

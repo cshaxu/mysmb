@@ -4985,6 +4985,118 @@
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00356",
+      "producer": "PlayerEnemyCollision",
+      "consumer": "CheckForPUpCollision",
+      "storage": "prepared player/enemy boxes, carry-equivalent hit and reloaded ObjectOffset",
+      "feasiblePath": "An eligible even-frame hit reloads ObjectOffset before ID dispatch.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c geometry result and slot reload",
+      "semanticContract": "The hit dispatcher consumes the reloaded source current slot after prepared-box geometry.",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00357",
+      "producer": "PlayerEnemyCollision",
+      "consumer": "NoPECol",
+      "storage": "Enemy_CollisionBits d0 on a carry-clear geometry result",
+      "feasiblePath": "A miss clears only d0 of the current enemy collision byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c miss branch",
+      "semanticContract": "Miss handling releases a stale collision latch without changing other collision bits.",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00358",
+      "producer": "CheckForPUpCollision",
+      "consumer": "HandlePowerUpCollision",
+      "storage": "Enemy_ID equal PowerUpObject and current ObjectOffset",
+      "feasiblePath": "PowerUpObject transfers to pickup after collision; non-power-up preserves ID for EColl.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c id==0x2e branch",
+      "semanticContract": "The pickup chain receives the active enemy slot selected by collision geometry.",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00359",
+      "producer": "EColl",
+      "consumer": "ShellOrBlockDefeat",
+      "storage": "nonzero StarInvincibleTimer and active enemy slot",
+      "feasiblePath": "Star Mario converts a collided enemy through common shell/block defeat.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c star branch",
+      "semanticContract": "Star defeat bypasses ordinary enemy contact after source collision dispatch.",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00360",
+      "producer": "HandlePECollisions",
+      "consumer": "ChkForPlayerInjury",
+      "storage": "collision latch and ID/area/state eligibility result",
+      "feasiblePath": "Spiny, cannon Bullet Bill and selected enemy states route into the stomp-or-injury decision child.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c check_player_injury",
+      "semanticContract": "The child receives the newly latched active enemy contact after source filters.",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00361",
+      "producer": "HandlePECollisions",
+      "consumer": "InjurePlayer",
+      "storage": "collision latch and direct hazard eligibility result",
+      "feasiblePath": "Piranha, Podoboo, IDs >=$15 and water route directly to guarded injury.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_force_injury",
+      "semanticContract": "Direct hazard paths retain the source latch and delegate InjuryTimer semantics.",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00362",
+      "producer": "HandlePECollisions",
+      "consumer": "KSPts",
+      "storage": "EnemyFacePlayer direction, shell speed and point modifier",
+      "feasiblePath": "Qualifying kicked shell uses direction-indexed speed and timer-selected point modifier.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c kicked speed/points path",
+      "semanticContract": "Floatey setup consumes the source kick modifier after moving-shell state and speed write.",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00363",
+      "producer": "KSPts",
+      "consumer": "ExPEC",
+      "storage": "Floatey number control and EnemySmack queue/state",
+      "feasiblePath": "Score setup completes the shell-kick response before return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_setup_floatey_from_relative",
+      "semanticContract": "Return observes the completed source score handoff without an extra response.",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -5061,15 +5173,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1273,
+    "needs-evidence": 1280,
     "mismatch": 9,
-    "unclassified": 672
+    "unclassified": 665
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 2750,
+    "needs-evidence": 2781,
     "mismatch": 25,
-    "unclassified": 1491
+    "unclassified": 1460
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -22466,41 +22578,53 @@
       "label": "PlayerEnemyCollision",
       "asmLine": 11318,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "On even frames only, rejects off-vertical/offscreen/non-control/d5 enemies, uses prepared enemy box and PlayerCollisionCore, reloads ObjectOffset, clears collision d0 on a miss and dispatches a hit by power-up ID or star timer."
     },
     {
       "label": "NoPECol",
       "asmLine": 11339,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after a gated or miss contact; a miss has cleared only collision-bit d0 for the reloaded current enemy slot."
     },
     {
       "label": "CheckForPUpCollision",
       "asmLine": 11341,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads enemy ID into Y and transfers PowerUpObject to the pickup chain; every other ID falls through with Y preserved for contact handling."
     },
     {
       "label": "EColl",
       "asmLine": 11346,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes star-invincible contact to ShellOrBlockDefeat and routes a zero StarInvincibleTimer to ordinary player/enemy response."
     },
     {
       "label": "KickedShellPtsData",
@@ -22516,31 +22640,40 @@
       "label": "HandlePECollisions",
       "asmLine": 11353,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Latches a first on-screen contact, applies source ID/area/state eligibility ordering, sends injury/stomp cases to their owners, and turns a qualifying non-Goomba defeated shell into a player-facing moving shell with source score selection."
     },
     {
       "label": "KSPts",
       "asmLine": 11398,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses timer-indexed kick points for intervals below three, otherwise retains StompChainCounter plus three, then initializes the floatey number."
     },
     {
       "label": "ExPEC",
       "asmLine": 11399,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after contact suppression, Goomba defeated exclusion, injury/stomp delegation or completed shell-kick response while retaining the active ObjectOffset semantics."
     },
     {
       "label": "ChkForPlayerInjury",
@@ -48685,12 +48818,12 @@
       "id": "control-01221",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunBBSubs -> PlayerEnemyCollision with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunBBSubs -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "RunBBSubs",
@@ -50029,12 +50162,12 @@
       "id": "control-01305",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Player collision follows graphics exactly as in source."
+      "semanticContract": "Preserves original call relation RunPUSubs -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "RunPUSubs",
@@ -55981,12 +56114,12 @@
       "id": "control-01677",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunNormalEnemies -> PlayerEnemyCollision with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -56157,12 +56290,12 @@
       "id": "control-01688",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunBowserFlame -> PlayerEnemyCollision with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original call relation RunBowserFlame -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -61245,12 +61378,12 @@
       "id": "control-02006",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation ProcessBowserHalf -> PlayerEnemyCollision with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
+      "semanticContract": "Preserves original jump relation ProcessBowserHalf -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "SetFlameTimer",
@@ -65229,12 +65362,12 @@
       "id": "control-02255",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPUp with source type/status predicate and score/status/routine handoff ordering."
+      "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPUp with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65244,10 +65377,13 @@
       "instruction": "jsr",
       "id": "control-02256",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> CheckPlayerVertical with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65257,10 +65393,13 @@
       "instruction": "bcs",
       "id": "control-02257",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65270,10 +65409,13 @@
       "instruction": "bne",
       "id": "control-02258",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65283,10 +65425,13 @@
       "instruction": "bne",
       "id": "control-02259",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65296,10 +65441,13 @@
       "instruction": "bne",
       "id": "control-02260",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65309,10 +65457,13 @@
       "instruction": "jsr",
       "id": "control-02261",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> GetEnemyBoundBoxOfs with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65322,10 +65473,13 @@
       "instruction": "jsr",
       "id": "control-02262",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> PlayerCollisionCore with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65335,10 +65489,13 @@
       "instruction": "bcs",
       "id": "control-02263",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> CheckForPUpCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65348,10 +65505,13 @@
       "instruction": "sta",
       "id": "control-02264",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "CheckForPUpCollision",
@@ -65361,10 +65521,13 @@
       "instruction": "bne",
       "id": "control-02265",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckForPUpCollision -> EColl with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "CheckForPUpCollision",
@@ -65375,12 +65538,12 @@
       "id": "control-02266",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation CheckForPUpCollision -> HandlePowerUpCollision with source type/status predicate and score/status/routine handoff ordering."
+      "semanticContract": "Preserves original jump relation CheckForPUpCollision -> HandlePowerUpCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "EColl",
@@ -65390,10 +65553,13 @@
       "instruction": "beq",
       "id": "control-02267",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation EColl -> HandlePECollisions with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "EColl",
@@ -65404,12 +65570,12 @@
       "id": "control-02268",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation EColl -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering."
+      "semanticContract": "Preserves original jump relation EColl -> ShellOrBlockDefeat with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65419,10 +65585,13 @@
       "instruction": "bne",
       "id": "control-02269",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ExPEC with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65432,10 +65601,13 @@
       "instruction": "beq",
       "id": "control-02270",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65445,10 +65617,13 @@
       "instruction": "beq",
       "id": "control-02271",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65458,10 +65633,13 @@
       "instruction": "beq",
       "id": "control-02272",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65471,10 +65649,13 @@
       "instruction": "beq",
       "id": "control-02273",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65484,10 +65665,13 @@
       "instruction": "bcs",
       "id": "control-02274",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65497,10 +65681,13 @@
       "instruction": "beq",
       "id": "control-02275",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65510,10 +65697,13 @@
       "instruction": "bcs",
       "id": "control-02276",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65523,10 +65713,13 @@
       "instruction": "bcc",
       "id": "control-02277",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65536,10 +65729,13 @@
       "instruction": "beq",
       "id": "control-02278",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ExPEC with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65549,10 +65745,13 @@
       "instruction": "jsr",
       "id": "control-02279",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation HandlePECollisions -> EnemyFacePlayer with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65562,10 +65761,13 @@
       "instruction": "bcs",
       "id": "control-02280",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> KSPts with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65575,10 +65777,13 @@
       "instruction": "lda",
       "id": "control-02281",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation HandlePECollisions -> KSPts with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "KSPts",
@@ -65588,10 +65793,13 @@
       "instruction": "jsr",
       "id": "control-02282",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation KSPts -> SetupFloateyNumber with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "KSPts",
@@ -65601,10 +65809,13 @@
       "instruction": "jsr",
       "id": "control-02283",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation KSPts -> ExPEC with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "ChkForPlayerInjury",
@@ -84616,12 +84827,12 @@
       "id": "control-03705",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunBBSubs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunBBSubs with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "EraseEnemyObject",
@@ -85080,12 +85291,12 @@
       "id": "control-03734",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
+      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunPUSubs with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -86136,12 +86347,12 @@
       "id": "control-03800",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunNormalEnemies with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunNormalEnemies with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -86248,12 +86459,12 @@
       "id": "control-03807",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunBowserFlame with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunBowserFlame with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "ProcFirebar",
@@ -87927,10 +88138,13 @@
       "instruction": "rts/rti",
       "id": "control-03912",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation CheckPlayerVertical -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "GetEnemyBoundBoxOfs",
@@ -87940,10 +88154,13 @@
       "instruction": "rts/rti",
       "id": "control-03913",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "PlayerCollisionCore",
@@ -87953,10 +88170,13 @@
       "instruction": "rts/rti",
       "id": "control-03914",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerCollisionCore -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "EnemyFacePlayer",
@@ -87966,10 +88186,13 @@
       "instruction": "rts/rti",
       "id": "control-03915",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EnemyFacePlayer -> HandlePECollisions with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -87979,10 +88202,13 @@
       "instruction": "rts/rti",
       "id": "control-03916",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "semanticEvidence": [
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetupFloateyNumber -> KSPts with source predicate, current slot and collision/state handoff ordering."
     },
     {
       "from": "GetPlayerColors",
