@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 88,
+    "enumeratedCount": 91,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1245,6 +1245,48 @@
       "semanticContract": "Neutral, up and down retain the source vertical speed entries and animation timing consequence.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00089",
+      "producer": "FireballXSpdData",
+      "consumer": "FireballObjCore",
+      "storage": "PlayerFacingDir-1 indexed fireball horizontal-speed table",
+      "feasiblePath": "Fireball creation selects the speed after PlayerFacingDir decrement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_fireball_x_speed[PlayerFacingDir - 1]",
+      "semanticContract": "Preserves the source table selection and consumer write/order.",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00090",
+      "producer": "Bubble_MForceData",
+      "consumer": "MoveBubl",
+      "storage": "pseudo-random-bit indexed bubble fractional-force table",
+      "feasiblePath": "BubbleCheck writes $07 before MoveBubl reads Bubble_MForceData[$07].",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_bubble_force[ram[$07]]",
+      "semanticContract": "Preserves the source table selection and consumer write/order.",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00091",
+      "producer": "BubbleTimerData",
+      "consumer": "SetupBubble",
+      "storage": "pseudo-random-bit indexed bubble timer table",
+      "feasiblePath": "BubbleCheck writes $07 before SetupBubble reads BubbleTimerData[$07].",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_bubble_timer[ram[$07]]",
+      "semanticContract": "Preserves the source table selection and consumer write/order.",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -10699,191 +10741,248 @@
       "label": "ProcFireball_Bubble",
       "asmLine": 6298,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Partitions PlayerStatus before one-shot B eligibility, alternating-slot selection, Y-high/crouch/climb gates and creation writes."
     },
     {
       "label": "ProcFireballs",
       "asmLine": 6330,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs fireball slots zero then one before entering the bubble gate."
     },
     {
       "label": "ProcAirBubbles",
       "asmLine": 6336,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs bubbles only in water areas."
     },
     {
       "label": "BublLoop",
       "asmLine": 6340,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes slots two, one and zero in descending order: update, relative position, offscreen bits, draw."
     },
     {
       "label": "BublExit",
       "asmLine": 6347,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after the area gate or final bubble slot."
     },
     {
       "label": "FireballXSpdData",
       "asmLine": 6349,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds facing indices right/left to $40/$c0 fireball speed bytes."
     },
     {
       "label": "FireballObjCore",
       "asmLine": 6352,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves explosion/inactive/new/active state partition and ObjectOffset handoff."
     },
     {
       "label": "RunFB",
       "asmLine": 6380,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves gravity, horizontal movement, relative-position, offscreen, bounding-box, terrain, erase, enemy and draw order."
     },
     {
       "label": "EraseFB",
       "asmLine": 6401,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears only the selected Fireball_State after offscreen mask $cc is nonzero."
     },
     {
       "label": "NoFBall",
       "asmLine": 6403,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without modifying inactive fireball state."
     },
     {
       "label": "FireballExplosion",
       "asmLine": 6405,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes relative position before explosion drawing."
     },
     {
       "label": "BubbleCheck",
       "asmLine": 6409,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects pseudo-random bit, moves active bubbles, blocks inactive bubbles while timer is nonzero, otherwise creates one."
     },
     {
       "label": "SetupBubble",
       "asmLine": 6419,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves facing LSR carry into X placement, page carry, Y+8, timer selection and fallthrough movement."
     },
     {
       "label": "PosBubl",
       "asmLine": 6425,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses zero or eight plus retained facing carry before player X/page placement."
     },
     {
       "label": "MoveBubl",
       "asmLine": 6440,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Subtracts the selected fractional force and propagates its borrow to bubble Y."
     },
     {
       "label": "Y_Bubl",
       "asmLine": 6450,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores moved Y or the offscreen $f8 sentinel."
     },
     {
       "label": "ExitBubl",
       "asmLine": 6451,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after bubble update."
     },
     {
       "label": "Bubble_MForceData",
       "asmLine": 6453,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds pseudo-random bit to movement-force bytes $ff/$50."
     },
     {
       "label": "BubbleTimerData",
       "asmLine": 6456,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireball, world and OAM core",
+      "currentCounterpart": "shared fireball/bubble owner",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds pseudo-random bit to timer bytes $40/$20."
     },
     {
       "label": "RunGameTimer",
@@ -40553,10 +40652,13 @@
       "instruction": "bcc",
       "id": "control-01059",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcAirBubbles with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireball_Bubble",
@@ -40566,10 +40668,13 @@
       "instruction": "beq",
       "id": "control-01060",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireball_Bubble",
@@ -40579,10 +40684,13 @@
       "instruction": "bne",
       "id": "control-01061",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireball_Bubble",
@@ -40592,10 +40700,13 @@
       "instruction": "bne",
       "id": "control-01062",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireball_Bubble",
@@ -40605,10 +40716,13 @@
       "instruction": "bne",
       "id": "control-01063",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireball_Bubble",
@@ -40618,10 +40732,13 @@
       "instruction": "bne",
       "id": "control-01064",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireball_Bubble",
@@ -40631,10 +40748,13 @@
       "instruction": "beq",
       "id": "control-01065",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireball_Bubble",
@@ -40644,10 +40764,13 @@
       "instruction": "inc",
       "id": "control-01066",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireballs",
@@ -40657,10 +40780,13 @@
       "instruction": "jsr",
       "id": "control-01067",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ProcFireballs -> FireballObjCore with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireballs",
@@ -40670,10 +40796,13 @@
       "instruction": "jsr",
       "id": "control-01068",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ProcFireballs -> FireballObjCore with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcFireballs",
@@ -40683,10 +40812,13 @@
       "instruction": "jsr",
       "id": "control-01069",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcFireballs -> ProcAirBubbles with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcAirBubbles",
@@ -40696,10 +40828,13 @@
       "instruction": "bne",
       "id": "control-01070",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcAirBubbles -> BublExit with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcAirBubbles",
@@ -40709,10 +40844,13 @@
       "instruction": "ldx",
       "id": "control-01071",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcAirBubbles -> BublLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "BublLoop",
@@ -40722,10 +40860,13 @@
       "instruction": "jsr",
       "id": "control-01072",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BublLoop -> BubbleCheck with source predicate, ordering and state handoff."
     },
     {
       "from": "BublLoop",
@@ -40735,10 +40876,13 @@
       "instruction": "jsr",
       "id": "control-01073",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BublLoop -> RelativeBubblePosition with source predicate, ordering and state handoff."
     },
     {
       "from": "BublLoop",
@@ -40748,10 +40892,13 @@
       "instruction": "jsr",
       "id": "control-01074",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BublLoop -> GetBubbleOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "BublLoop",
@@ -40761,10 +40908,13 @@
       "instruction": "jsr",
       "id": "control-01075",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BublLoop -> DrawBubble with source predicate, ordering and state handoff."
     },
     {
       "from": "BublLoop",
@@ -40774,10 +40924,13 @@
       "instruction": "bpl",
       "id": "control-01076",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BublLoop -> BublLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "BublLoop",
@@ -40787,10 +40940,13 @@
       "instruction": "bpl",
       "id": "control-01077",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BublLoop -> BublExit with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballObjCore",
@@ -40800,10 +40956,13 @@
       "instruction": "bcs",
       "id": "control-01078",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballObjCore -> FireballExplosion with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballObjCore",
@@ -40813,10 +40972,13 @@
       "instruction": "beq",
       "id": "control-01079",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballObjCore -> NoFBall with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballObjCore",
@@ -40826,10 +40988,13 @@
       "instruction": "beq",
       "id": "control-01080",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballObjCore -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballObjCore",
@@ -40839,10 +41004,13 @@
       "instruction": "dec",
       "id": "control-01081",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FireballObjCore -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40852,10 +41020,13 @@
       "instruction": "jsr",
       "id": "control-01082",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunFB -> ImposeGravity with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40865,10 +41036,13 @@
       "instruction": "jsr",
       "id": "control-01083",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunFB -> MoveObjectHorizontally with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40878,10 +41052,13 @@
       "instruction": "jsr",
       "id": "control-01084",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunFB -> RelativeFireballPosition with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40891,10 +41068,13 @@
       "instruction": "jsr",
       "id": "control-01085",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunFB -> GetFireballOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40904,10 +41084,13 @@
       "instruction": "jsr",
       "id": "control-01086",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunFB -> GetFireballBoundBox with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40917,10 +41100,13 @@
       "instruction": "jsr",
       "id": "control-01087",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunFB -> FireballBGCollision with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40930,10 +41116,13 @@
       "instruction": "bne",
       "id": "control-01088",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunFB -> EraseFB with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40943,10 +41132,13 @@
       "instruction": "jsr",
       "id": "control-01089",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunFB -> FireballEnemyCollision with source predicate, ordering and state handoff."
     },
     {
       "from": "RunFB",
@@ -40956,10 +41148,13 @@
       "instruction": "jmp",
       "id": "control-01090",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation RunFB -> DrawFireball with source predicate, ordering and state handoff."
     },
     {
       "from": "EraseFB",
@@ -40969,10 +41164,13 @@
       "instruction": "sta",
       "id": "control-01091",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation EraseFB -> NoFBall with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballExplosion",
@@ -40982,10 +41180,13 @@
       "instruction": "jsr",
       "id": "control-01092",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FireballExplosion -> RelativeFireballPosition with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballExplosion",
@@ -40995,10 +41196,13 @@
       "instruction": "jmp",
       "id": "control-01093",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation FireballExplosion -> DrawExplosion_Fireball with source predicate, ordering and state handoff."
     },
     {
       "from": "BubbleCheck",
@@ -41008,10 +41212,13 @@
       "instruction": "bne",
       "id": "control-01094",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BubbleCheck -> MoveBubl with source predicate, ordering and state handoff."
     },
     {
       "from": "BubbleCheck",
@@ -41021,10 +41228,13 @@
       "instruction": "bne",
       "id": "control-01095",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BubbleCheck -> ExitBubl with source predicate, ordering and state handoff."
     },
     {
       "from": "BubbleCheck",
@@ -41034,10 +41244,13 @@
       "instruction": "bne",
       "id": "control-01096",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BubbleCheck -> SetupBubble with source predicate, ordering and state handoff."
     },
     {
       "from": "SetupBubble",
@@ -41047,10 +41260,13 @@
       "instruction": "bcc",
       "id": "control-01097",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetupBubble -> PosBubl with source predicate, ordering and state handoff."
     },
     {
       "from": "SetupBubble",
@@ -41060,10 +41276,13 @@
       "instruction": "ldy",
       "id": "control-01098",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetupBubble -> PosBubl with source predicate, ordering and state handoff."
     },
     {
       "from": "PosBubl",
@@ -41073,10 +41292,13 @@
       "instruction": "sta",
       "id": "control-01099",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PosBubl -> MoveBubl with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveBubl",
@@ -41086,10 +41308,13 @@
       "instruction": "bcs",
       "id": "control-01100",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveBubl -> Y_Bubl with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveBubl",
@@ -41099,10 +41324,13 @@
       "instruction": "lda",
       "id": "control-01101",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveBubl -> Y_Bubl with source predicate, ordering and state handoff."
     },
     {
       "from": "Y_Bubl",
@@ -41112,10 +41340,13 @@
       "instruction": "sta",
       "id": "control-01102",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Y_Bubl -> ExitBubl with source predicate, ordering and state handoff."
     },
     {
       "from": "RunGameTimer",
@@ -74156,10 +74387,13 @@
       "instruction": "rts/rti",
       "id": "control-03618",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcFireball_Bubble -> GameEngine with source predicate, ordering and state handoff."
     },
     {
       "from": "EnemiesAndLoopsCore",
@@ -74814,10 +75048,13 @@
       "instruction": "rts/rti",
       "id": "control-03667",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation FireballObjCore -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballObjCore",
@@ -74827,10 +75064,13 @@
       "instruction": "rts/rti",
       "id": "control-03668",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation FireballObjCore -> ProcFireballs with source predicate, ordering and state handoff."
     },
     {
       "from": "BubbleCheck",
@@ -74840,10 +75080,13 @@
       "instruction": "rts/rti",
       "id": "control-03669",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BubbleCheck -> BublLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeBubblePosition",
@@ -74853,10 +75096,13 @@
       "instruction": "rts/rti",
       "id": "control-03670",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeBubblePosition -> BublLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "GetBubbleOffscreenBits",
@@ -74866,10 +75112,13 @@
       "instruction": "rts/rti",
       "id": "control-03671",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetBubbleOffscreenBits -> BublLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "DrawBubble",
@@ -74879,10 +75128,13 @@
       "instruction": "rts/rti",
       "id": "control-03672",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawBubble -> BublLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "ImposeGravity",
@@ -74892,10 +75144,13 @@
       "instruction": "rts/rti",
       "id": "control-03673",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ImposeGravity -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -74905,10 +75160,13 @@
       "instruction": "rts/rti",
       "id": "control-03674",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeFireballPosition",
@@ -74918,10 +75176,13 @@
       "instruction": "rts/rti",
       "id": "control-03675",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeFireballPosition -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "GetFireballOffscreenBits",
@@ -74931,10 +75192,13 @@
       "instruction": "rts/rti",
       "id": "control-03676",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetFireballOffscreenBits -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "GetFireballBoundBox",
@@ -74944,10 +75208,13 @@
       "instruction": "rts/rti",
       "id": "control-03677",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetFireballBoundBox -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballBGCollision",
@@ -74957,10 +75224,13 @@
       "instruction": "rts/rti",
       "id": "control-03678",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation FireballBGCollision -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "FireballEnemyCollision",
@@ -74970,10 +75240,13 @@
       "instruction": "rts/rti",
       "id": "control-03679",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation FireballEnemyCollision -> RunFB with source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeFireballPosition",
@@ -74983,10 +75256,13 @@
       "instruction": "rts/rti",
       "id": "control-03680",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeFireballPosition -> FireballExplosion with source predicate, ordering and state handoff."
     },
     {
       "from": "DigitsMathRoutine",

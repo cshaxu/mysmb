@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 660 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 679 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,285 | Not yet processed by this re-audit. |
+| Unclassified | 1,266 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 1,162 control; 84 material RAM/table |
+| Needs evidence | 1,221 control; 87 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,094 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,035 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 The two ledgers are separate acceptance requirements. A node is not
@@ -693,3 +693,17 @@ twenty-two nodes, forty-four control relations and twelve material paths are
 the listed branch families, clamps, table indices, speed-sign paths and caller
 returns. This batch therefore increases audit coverage but makes no
 current-exact claim.
+
+### Cohort G — B13a fireball, explosion and bubble-core integration
+
+`ProcFireball_Bubble` through `BubbleTimerData` now has nineteen independent
+node contracts, fifty-nine newly classified control/return relations and three
+feasible data paths. The integration audit records fireball status and
+creation gates, two-slot order, cross-page creation carry, the exact
+relative-position → offscreen bits → bounding box → terrain sequence, the
+`FBall_OffscreenBits & $cc` erase gate, and enemy collision before drawing.
+It also records the water-only descending bubble loop, facing carry into bubble
+placement, fractional-force borrow and the `$f8` inactive sentinel. No static
+discrepancy was found. All entries remain `needs-evidence` until controlled
+original-ROM/x86/x64 routes exercise every fireball state, boundary, collision
+and bubble timer/random-bit branch.
