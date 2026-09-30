@@ -217,3 +217,91 @@ nodes remain explicit dependencies, without premature credit. The
 operational track runs focused audio and purity checks, full x86/x64
 regression against the 11-failure baseline, both Windows self-tests,
 DOS16 MZ build, and three refreshed owner-requested EXEs.
+
+### S3 ROM-logic evidence
+
+The unchanged owner ROM reached 13 executable S3 labels through the
+original NMI `SoundEngine` call. Five queue selections covered small
+and big jump, bump, fireball throw and flagpole slide; eight bounded
+buffer/counter states covered continuation and second/third phases.
+These **13 active routes produced 39 original SoundEngine calls**.
+The native x86/x64 checker compared square-one buffer and length RAM,
+and all four square-one APU registers after each call: **78 comparisons,
+zero S3-owned differences**. The original swim/stomp route executed
+`ContinueSwimStomp`'s indexed read at `$f46c` three times. That source
+instruction reads `SwimStompEnvelopeData-1,Y`; the shared C accessor
+was checked against all 14 owner-ROM table entries. The table remains
+outside tracked C source. No ROM byte, CPU PC or return stack was
+altered by the recorder.
+
+| Node / original PC | Hits | Source control and shared C mapping |
+| --- | ---: | --- |
+| `SwimStompEnvelopeData` `$f3b1` | data; three source reads | Fourteen owner-ROM bytes read through `mysmb_audio_swim_stomp_envelope`, indexed by the original remaining-length Y. S4 owns the eventual swim/stomp caller. |
+| `PlayFlagpoleSlide` `$f3bf` | 3 | Length `$40`, frequency offset `$62`, then X=`$99`/Y=`$bc` control writes; `mysmb_audio_square1_play_flagpole`. |
+| `PlaySmallJump` `$f3cd`, `PlayBigJump` `$f3d1`, `JumpRegContents` `$f3d3` | 3, 3, 6 | Frequency `$26` or `$18` with X=`$82`/Y=`$a7`, then length `$28`; `mysmb_audio_square1_play_jump`. |
+| `ContinueSndJump` `$f3df`, `N2Prt` `$f3ec` | 18, 15 | Remaining length `$25` selects X=`$5f`/Y=`$f6`; `$20` selects the third phase, otherwise proceeds to the decrement tail; `mysmb_audio_square1_continue_jump`. |
+| `FPS2nd` `$f3f2`, `DmpJpFPS` `$f3f4` | 6, 9 | Shared Y=`$bc` flagpole/third-jump path and square-one control writer. |
+| `PlayFireballThrow` `$f3f9`, `PlayBump` `$f3ff`, `Fthrow` `$f403` | 3, 3, 6 | Length `$05`/`$0a`, Y=`$99`/`$93`, X=`$9e`, shared frequency `$0c`; `mysmb_audio_square1_play_throw`. |
+| `ContinueBumpThrow` `$f40d`, `DecJpFPS` `$f419` | 18, 39 | Remaining length `$06` writes `$bb` to `$4001`; source branches into S4's decrement tail. The shared C phase helper runs before that same provisional decrement. |
+
+The `Square1SfxHandler` dispatcher, swim/stomp caller and decrement
+lifetime are S4 scope. S3's direct phase comparisons prove this slice
+and its S2 helper calls; they do not certify the whole square-one
+handler or the later music/noise routes.
+
+### S3 closure: square-one effect phases
+
+**P1 result: 14 intended matches, 14 actual matches, no scoped
+deferments; 1,771 to 1,785/1,992.** The 14 individual dispositions are
+the source-PC/data rows above. The ROM-logic track used 39 original
+SoundEngine calls over 13 bounded effect routes, 78 x86/x64 native
+comparisons of the S3-owned RAM/APU outputs with zero differences, and
+all 14 owner-ROM envelope bytes. Original NMI entry, CPU code and return
+stack were preserved. S4's queue dispatcher and lifetime remain open.
+
+The operational track built Win32 x86/x64 and DOS16 from shared C. Both
+Windows products passed `--self-test`; DOS16 linked as an MZ executable.
+The full x86 and x64 CTest matrices each passed **222/233**, with exactly
+the 11 recorded baseline failures and no new failure. The focused audio
+and platform-purity tests passed on both widths. Two pre-existing smoke
+tests had passed an uninitialized host container to the RAM-only
+`mysmb_game_initialize_memory`; initializing that container removed an
+x64-only OAM-test crash and restored the collision test's prior failure
+code. This changed test setup only, not translated game behavior.
+
+| Owner-requested artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `d292f16ea303307ca21b409cbc13dfbb3a472dc46933cffefa287781b738cae` |
+| `assets/mysmb32.exe` | `281e4884e4ec1954bc064c21c714c20a2ab7ea49ceea5e10bcfb702218280291` |
+| `assets/mysmb64.exe` | `e5a1e233daa101e67414ff1532b33bcf5fc3a1b00dd870f61d59944fc04a33e2` |
+
+The similar-issue sweep found square-one phase decisions only in shared
+`src/game/audio.c`; neither platform adapter selects effects or modifies
+sound queues. The test-fixture defect was checked in the two failing
+tests and corrected before the full cross-width regression. The
+unmigrated square-one dispatcher, swim/stomp continuation and effect
+lifetime are explicitly S4's next source-order chain.
+
+## S4 admission: square-one dispatch and lifetime
+
+S3 closed at **1,785/1,992**. S4 accepts the next 16 **open** labels in
+source order: `Square1SfxHandler`, `CheckSfx1Buffer`, `ExS1H`,
+`PlaySwimStomp`, `ContinueSwimStomp`, `BranchToDecLength1`,
+`PlaySmackEnemy`, `ContinueSmackEnemy`, `SmSpc`, `SmTick`,
+`DecrementSfx1Length`, `StopSquare1Sfx`, `ExSfx1`, `PlayPipeDownInj`,
+`ContinuePipeDownInj`, `NoPDwnL`. All 16 are intended ROM matches, for
+a maximum **1,801/1,992**. This chain begins with the original
+`Square1SfxHandler` queue selector immediately after `DecJpFPS` and
+ends at `NoPDwnL` before S5's `ExtraLifeFreqData`. Shared owner is
+`src/game/audio.c`; S2 register helpers and S3 effect phases are its
+predecessor dependencies. The S5/S6 square-two route is outside scope.
+
+The ROM-logic track enters the unchanged ROM's SoundEngine through NMI,
+selects each square-one queue priority and continuation buffer route,
+and checks original dispatch PCs, shifts, branch order, effect counters,
+stop behavior, table reads and APU writes against shared C. The route
+also covers swim/stomp, smack and pipe effects missing from S3. The
+operational track runs focused audio and purity tests, x86/x64 full
+regression against the 11-failure baseline, both Windows self-tests,
+DOS16 MZ link and three refreshed EXEs. Any unresolved dependency is
+reported by exact label rather than silently credited.

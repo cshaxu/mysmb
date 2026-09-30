@@ -1216,7 +1216,7 @@ int main(int argument_count, char **arguments)
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 36ul) return 64;
+                value > 45ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -5068,16 +5068,26 @@ int main(int argument_count, char **arguments)
                     ram[0x07c6u] = 0u;
                     ram[0x00fau] = 0u;
                     ram[0x07b2u] = 0u;
-                    ram[0x00f1u] = 0u;
+                    ram[0x00f1u] = sound_case >= 37u && sound_case <= 40u ?
+                        0x80u : sound_case == 41u || sound_case == 42u ?
+                        0x02u : sound_case == 43u || sound_case == 44u ?
+                        0x20u : sound_case == 45u ? 0x04u : 0u;
                     ram[0x00f2u] = 0u;
                     ram[0x00f3u] = 0u;
                     ram[0x00f4u] = 0u;
                     ram[0x07b1u] = 0u;
-                    ram[0x00fbu] = sound_case >= 29u ?
+                    ram[0x00fbu] = sound_case >= 29u && sound_case <= 36u ?
                         (lib_u8)(1u << (sound_case - 29u)) : 0u;
                     ram[0x00fcu] = 0u;
                     ram[0x00ffu] = sound_case <= 20u ?
                         (lib_u8)(1u << (sound_case - 13u)) : 0u;
+                    ram[0x07bbu] = sound_case == 37u ? 0x25u :
+                        sound_case == 38u ? 0x20u :
+                        sound_case == 39u ? 0x24u :
+                        sound_case == 40u ? 0x1fu :
+                        sound_case == 41u || sound_case == 43u ? 6u :
+                        sound_case == 42u || sound_case == 44u ? 7u :
+                        sound_case == 45u ? 0x0eu : 0u;
                     ram[0x00feu] = sound_case >= 21u && sound_case <= 28u ?
                         (lib_u8)(1u << (sound_case - 21u)) : 0u;
                     ram[0x00fdu] = 0u;

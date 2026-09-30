@@ -183,9 +183,6 @@ static mysmb_u8 mysmb_audio_square1_length(mysmb_u8 effect)
 {
     if (effect == 0x04U || effect == 0x08U) return 0x0eU;
     if (effect == 0x10U) return 0x2fU;
-    if (effect == 0x20U) return 0x05U;
-    if (effect == 0x40U) return 0x40U;
-    if (effect == 0x02U) return 0x0aU;
     return 0x28U;
 }
 
@@ -225,9 +222,24 @@ static void mysmb_audio_step_square1(struct mysmb_game *game)
          * bit decides this frame's effect, while the raw command remains
          * observable to a future audio adapter. */
         game->ram[MYSMB_RAM_SQUARE1_BUFFER] = queue;
-        game->ram[MYSMB_RAM_SQUARE1_LENGTH] = mysmb_audio_square1_length(effect);
+        if (effect == 0x80U || effect == 0x01U)
+            mysmb_audio_square1_play_jump(game,
+                                           effect == 0x80U ? 1U : 0U);
+        else if (effect == 0x02U || effect == 0x20U)
+            mysmb_audio_square1_play_throw(game,
+                                            effect == 0x20U ? 1U : 0U);
+        else if (effect == 0x40U)
+            mysmb_audio_square1_play_flagpole(game);
+        else
+            game->ram[MYSMB_RAM_SQUARE1_LENGTH] =
+                mysmb_audio_square1_length(effect);
     }
     if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) return;
+    effect = mysmb_audio_first_square1(game->ram[MYSMB_RAM_SQUARE1_BUFFER]);
+    if (effect == 0x80U || effect == 0x01U)
+        mysmb_audio_square1_continue_jump(game);
+    else if (effect == 0x02U || effect == 0x20U)
+        mysmb_audio_square1_continue_throw(game);
     game->ram[MYSMB_RAM_SQUARE1_LENGTH]--;
     if (game->ram[MYSMB_RAM_SQUARE1_LENGTH] == 0U) {
         game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
@@ -615,6 +627,61 @@ mysmb_u8 mysmb_audio_play_sq2_sfx(struct mysmb_game *game, mysmb_u8 a,
 mysmb_u8 mysmb_audio_set_freq_tri(struct mysmb_game *game, mysmb_u8 a)
 {
     return mysmb_audio_dump_freq_regs(game, a, 8U);
+}
+
+/* ROM SwimStompEnvelopeData-1,Y, where Y is the remaining effect length.
+ * S4's ContinueSwimStomp will consume this owner-ROM binding. */
+mysmb_u8 mysmb_audio_swim_stomp_envelope(const struct mysmb_game *game,
+                                          mysmb_u8 length)
+{
+    return mysmb_audio_read_cpu(game,
+        (mysmb_u16)(0xf3b0UL + length));
+}
+
+/* ROM PlayFlagpoleSlide -> FPS2nd -> DmpJpFPS. */
+void mysmb_audio_square1_play_flagpole(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_SQUARE1_LENGTH] = 0x40U;
+    (void)mysmb_audio_set_freq_squ1(game, 0x62U);
+    mysmb_audio_dump_squ1_regs(game, 0x99U, 0xbcU);
+}
+
+/* ROM PlaySmallJump/PlayBigJump -> JumpRegContents. The original then
+ * falls through ContinueSndJump and S4's decrement tail in this frame. */
+void mysmb_audio_square1_play_jump(struct mysmb_game *game, mysmb_u8 small)
+{
+    (void)mysmb_audio_play_squ1_sfx(game,
+        small != 0U ? 0x26U : 0x18U, 0x82U, 0xa7U);
+    game->ram[MYSMB_RAM_SQUARE1_LENGTH] = 0x28U;
+}
+
+/* ROM ContinueSndJump -> N2Prt, with FPS2nd's shared third phase. */
+void mysmb_audio_square1_continue_jump(struct mysmb_game *game)
+{
+    mysmb_u8 length;
+
+    length = game->ram[MYSMB_RAM_SQUARE1_LENGTH];
+    if (length == 0x25U)
+        mysmb_audio_dump_squ1_regs(game, 0x5fU, 0xf6U);
+    else if (length == 0x20U)
+        mysmb_audio_dump_squ1_regs(game, 0x48U, 0xbcU);
+}
+
+/* ROM PlayFireballThrow/PlayBump -> Fthrow. Both share frequency $0c. */
+void mysmb_audio_square1_play_throw(struct mysmb_game *game,
+                                     mysmb_u8 fireball)
+{
+    game->ram[MYSMB_RAM_SQUARE1_LENGTH] =
+        fireball != 0U ? 0x05U : 0x0aU;
+    (void)mysmb_audio_play_squ1_sfx(game, 0x0cU, 0x9eU,
+                                     fireball != 0U ? 0x99U : 0x93U);
+}
+
+/* ROM ContinueBumpThrow -> DecJpFPS. The S4 tail decrements afterward. */
+void mysmb_audio_square1_continue_throw(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_SQUARE1_LENGTH] == 0x06U)
+        mysmb_audio_write_apu(game, 1U, 0xbbU);
 }
 
 static void mysmb_audio_pause_tone(struct mysmb_game *game, mysmb_u8 tone)

@@ -1,11 +1,13 @@
 #include "game/game.h"
 #include "game/objects.h"
 #include "game/world/world.h"
+#include <string.h>
 
 int main(void)
 {
     struct mysmb_game game;
 
+    memset(&game, 0, sizeof game);
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x074eU] = 1U;
     game.ram[0x071aU] = 0U;

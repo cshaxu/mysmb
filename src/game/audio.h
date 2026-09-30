@@ -24,4 +24,15 @@ mysmb_u8 mysmb_audio_play_sq2_sfx(struct mysmb_game *game, mysmb_u8 a,
 mysmb_u8 mysmb_audio_set_freq_sq2(struct mysmb_game *game, mysmb_u8 a);
 mysmb_u8 mysmb_audio_set_freq_tri(struct mysmb_game *game, mysmb_u8 a);
 
+/* ROM square-one effect phases before Square1SfxHandler's S4 dispatch and
+ * decrement tail.  A nonzero selector chooses the indicated start phase. */
+void mysmb_audio_square1_play_flagpole(struct mysmb_game *game);
+void mysmb_audio_square1_play_jump(struct mysmb_game *game, mysmb_u8 small);
+void mysmb_audio_square1_continue_jump(struct mysmb_game *game);
+void mysmb_audio_square1_play_throw(struct mysmb_game *game,
+                                     mysmb_u8 fireball);
+void mysmb_audio_square1_continue_throw(struct mysmb_game *game);
+mysmb_u8 mysmb_audio_swim_stomp_envelope(const struct mysmb_game *game,
+                                          mysmb_u8 length);
+
 #endif

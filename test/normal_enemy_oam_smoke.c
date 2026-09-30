@@ -1,4 +1,5 @@
 #include "game/objects.h"
+#include <string.h>
 
 static mysmb_u8 mysmb_test_oam(const struct mysmb_game *game,
                                const mysmb_u8 *expected)
@@ -30,6 +31,7 @@ int main(void)
     };
     struct mysmb_game game;
 
+    memset(&game, 0, sizeof game);
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x071aU] = 0U;
     game.ram[0x071cU] = 0U;
