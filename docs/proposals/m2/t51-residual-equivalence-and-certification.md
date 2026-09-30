@@ -232,3 +232,13 @@ S4 closes all 34 admitted labels from **1,958 / 1,992** to **1,992 / 1,992**. Th
 ## T51 S5 admission: cross-route integration certification
 
 S5 owns no node credit. It begins at **1,992 / 1,992** and validates the complete translated graph through the T51 cross-route matrix, x86/x64 and OpenNT DOS16 artifacts, and platform-purity audit. It cannot alter game logic merely to satisfy a platform route.
+
+## T51 S5 integration finding: full x64 matrix is not clean
+
+The first full x64 CTest matrix built 243 tests and exposed failures in core,
+area-entry, player bounding-box, enemy terrain state (segmentation fault),
+hammer-bro, enemy collision, Bowser, title/demo, end-to-end, local-area and
+enemy-background-entry routes. Therefore S5 remains open and M2 cannot close.
+This finding is operational evidence only: it does not by itself identify a
+specific translated ROM node to revoke. Each failure must be traced through its
+shared C owner and original route before a node status changes.
