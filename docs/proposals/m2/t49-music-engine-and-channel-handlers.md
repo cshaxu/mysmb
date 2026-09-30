@@ -116,3 +116,30 @@ table bytes, APU noise registers, and the `ContinueMusic` handoff. Operational
 evidence is one chain-level focused test set plus x86/x64 builds and self-tests,
 the original OpenNT DOS16 link, platform-purity audit, and all three artifacts.
 No music stream node is credited by this admission.
+
+## S2 closure: noise effects and music handoff
+
+All **12** admitted labels are ROM-match complete: **1,837 -> 1,849 / 1,992**.
+`src/game/audio.c` now preserves the original noise queue and buffer shifts, brick
+phase tables, direct noise-register write order, terminal mute path, Bowser-flame
+phase, and the `ContinueMusic` tail into square-two music handling.
+
+| Source PC | Labels | Shared-C mapping |
+| --- | --- | --- |
+| `$f62b` | `BrickShatterFreqData` | owner-local ROM table readers |
+| `$f63b-$f666` | `PlayBrickShatter`, `ContinueBrickShatter`, `PlayNoiseSfx`, `DecrementSfx3Length`, `ExSfx3` | brick phase, APU writes and terminal path |
+| `$f667-$f67f` | `NoiseSfxHandler`, `CheckNoiseBuffer`, `ExNH` | queue/buffer dispatcher and exits |
+| `$f680-$f68f` | `PlayBowserFlame`, `ContinueBowserFlame` | flame phase and shared noise tail |
+| `$f691` | `ContinueMusic` | explicit square-two handoff |
+
+The owner-ROM `SoundEngine` route covered six noise states and one controlled
+`ContinueMusic` state, eight calls each. x86 and x64 comparison checkers found
+**zero differences across 112 RAM/APU comparisons**. Focused audio, dispatcher
+and platform-purity checks pass on both widths. Full CTest is **224/235** on each
+width with the same eleven pre-existing failures and no new failure. The original
+OpenNT16 target compiled the same shared core and linked a valid **263,173-byte**
+MZ executable. No platform adapter chooses an effect, branches on game state, or
+mutates translated game state.
+
+The three owner-authorized artifacts were refreshed at closure; their SHA-256
+values are recorded in the active packet closure update.

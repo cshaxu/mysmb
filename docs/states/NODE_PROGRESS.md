@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1837 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1849 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 119 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 107 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1837 / 1,992 (92.22%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1849 / 1,992 (92.82%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T49 S1 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s1-closure-remaining-square-two-effects) closes 14 square-two fall, one-up and grow-item labels on 64 original calls and 128 x86/x64 comparisons, with the original OpenNT DOS16 MZ build and all three refreshed artifacts.
+Latest task review: [T49 S2 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s2-closure-noise-effects-and-music-handoff) closes 12 noise-effect and music-handoff labels on 56 original calls per width, with the original OpenNT DOS16 MZ build and all three refreshed artifacts.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1837)
+## Completed matches (1849)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1870,6 +1870,18 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15544 | `GrowItemRegs` |
 | 15551 | `ContinueGrowItems` |
 | 15564 | `StopGrowItems` |
+| 15569 | `BrickShatterFreqData` |
+| 15573 | `PlayBrickShatter` |
+| 15577 | `ContinueBrickShatter` |
+| 15585 | `PlayNoiseSfx` |
+| 15591 | `DecrementSfx3Length` |
+| 15598 | `ExSfx3` |
+| 15600 | `NoiseSfxHandler` |
+| 15609 | `CheckNoiseBuffer` |
+| 15616 | `ExNH` |
+| 15618 | `PlayBowserFlame` |
+| 15622 | `ContinueBowserFlame` |
+| 15632 | `ContinueMusic` |
 
 ## Mapped but not yet matched (36)
 

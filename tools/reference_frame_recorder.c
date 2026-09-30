@@ -1216,7 +1216,7 @@ int main(int argument_count, char **arguments)
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 88ul) return 64;
+                value > 95ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -5089,8 +5089,10 @@ int main(int argument_count, char **arguments)
                         sound_case == 77u ? 0x20u :
                         sound_case == 79u ? 0x11u :
                         sound_case == 80u ? 0x41u : 0u;
-                    ram[0x00f3u] = 0u;
-                    ram[0x00f4u] = 0u;
+                    ram[0x00f3u] = sound_case == 90u ||
+                        sound_case == 91u ? 0x01u :
+                        sound_case == 93u ? 0x02u : 0u;
+                    ram[0x00f4u] = sound_case == 95u ? 0x01u : 0u;
                     ram[0x07b1u] = 0u;
                     ram[0x00fbu] = sound_case >= 29u && sound_case <= 36u ?
                         (lib_u8)(1u << (sound_case - 29u)) : 0u;
@@ -5140,7 +5142,22 @@ int main(int argument_count, char **arguments)
                         0x35u : sound_case == 70u ? 1u : 0u;
                     ram[0x07beu] = sound_case == 87u ? 0x1fu :
                         sound_case == 88u ? 0x3fu : 0u;
-                    ram[0x00fdu] = 0u;
+                    ram[0x07bfu] = sound_case == 90u ? 0x1fu :
+                        sound_case == 91u ? 1u : sound_case == 93u ? 2u : 0u;
+                    ram[0x00fdu] = sound_case == 89u ? 0x01u :
+                        sound_case == 92u ? 0x02u : sound_case == 94u ?
+                        0x04u : 0u;
+                    /* S2 ContinueMusic: active ground-music buffer after
+                     * LoadHeader, with a real GroundM_P1 square-two stream.
+                     * MusicHandler must take its direct handoff to
+                     * HandleSquare2Music rather than reload a header. */
+                    if (sound_case == 95u) {
+                        ram[0x00f0u] = 0x18u;
+                        ram[0x00f5u] = 0x01u;
+                        ram[0x00f6u] = 0xfau;
+                        ram[0x00f7u] = 0u;
+                        ram[0x07b4u] = 1u;
+                    }
                 }
                 else if (sound_case != 0u) {
                     ram[0x0770u] = 1u;

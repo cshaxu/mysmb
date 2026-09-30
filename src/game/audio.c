@@ -31,6 +31,11 @@ enum {
     MYSMB_ROM_DEATH_MUSIC_DATA = 0x7b72U,
     MYSMB_ROM_MUSIC_LENGTH_TABLE = 0x7f66U,
     MYSMB_ROM_MUSIC_HEADER_DATA = 0x790dU,
+    /* Local PRG offsets for ROM $f62b BrickShatterFreqData, $ffca
+     * BowserFlameEnvData and $ffea BrickShatterEnvData. */
+    MYSMB_ROM_BRICK_SHATTER_FREQ_DATA = 0x762bU,
+    MYSMB_ROM_BOWSER_FLAME_ENV_DATA = 0x7fcaU,
+    MYSMB_ROM_BRICK_SHATTER_ENV_DATA = 0x7feaU,
     MYSMB_RAM_MUSIC_LENGTH_OFFSET = 0x00f0U,
     MYSMB_RAM_MUSIC_OFFSET_SQUARE2 = 0x00f7U,
     MYSMB_RAM_MUSIC_OFFSET_SQUARE1 = 0x00f8U,
@@ -181,6 +186,9 @@ static mysmb_u8 mysmb_audio_first_square1(mysmb_u8 queue)
 
 static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
                                   mysmb_u8 value);
+static mysmb_u8 mysmb_audio_read_cpu(const struct mysmb_game *game,
+                                     mysmb_u16 address);
+static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game);
 static void mysmb_audio_square2_play_coin_timer(struct mysmb_game *game,
                                                   mysmb_u8 timer);
 static void mysmb_audio_square2_continue_coin_timer(struct mysmb_game *game);
@@ -369,26 +377,118 @@ static void mysmb_audio_step_square2(struct mysmb_game *game)
         mysmb_audio_square2_continue_extra_life(game);
 }
 
+/* ROM BrickShatterFreqData and its paired source table.  The bytes remain in
+ * the owner-local PRG binding: these helpers only preserve table,Y access. */
+static mysmb_u8 mysmb_audio_brick_shatter_frequency(
+    const struct mysmb_game *game, mysmb_u8 index)
+{
+    return mysmb_audio_read_cpu(game, (mysmb_u16)(0x8000UL +
+        MYSMB_ROM_BRICK_SHATTER_FREQ_DATA + index));
+}
+
+static mysmb_u8 mysmb_audio_brick_shatter_envelope(
+    const struct mysmb_game *game, mysmb_u8 index)
+{
+    return mysmb_audio_read_cpu(game, (mysmb_u16)(0x8000UL +
+        MYSMB_ROM_BRICK_SHATTER_ENV_DATA + index));
+}
+
+/* ROM BowserFlameEnvData-1,Y.  The -1 is deliberate: ContinueBowserFlame
+ * divides the remaining length first, then indexes the preceding byte. */
+static mysmb_u8 mysmb_audio_bowser_flame_envelope(
+    const struct mysmb_game *game, mysmb_u8 index)
+{
+    return mysmb_audio_read_cpu(game, (mysmb_u16)(0x7fffUL +
+        MYSMB_ROM_BOWSER_FLAME_ENV_DATA + index));
+}
+
+/* ROM PlayNoiseSfx writes the noise envelope, period and length in order. */
+static void mysmb_audio_play_noise_sfx(struct mysmb_game *game, mysmb_u8 a,
+                                       mysmb_u8 x)
+{
+    mysmb_audio_write_apu(game, 12U, a);
+    mysmb_audio_write_apu(game, 14U, x);
+    mysmb_audio_write_apu(game, 15U, 0x18U);
+}
+
+/* ROM DecrementSfx3Length -> ExSfx3.  The terminal branch mutes noise and
+ * clears only NoiseSoundBuffer; queue clearing remains SoundEngine's tail. */
+static void mysmb_audio_decrement_noise_length(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_NOISE_LENGTH]--;
+    if (game->ram[MYSMB_RAM_NOISE_LENGTH] != 0U) return;
+    mysmb_audio_write_apu(game, 12U, 0xf0U);
+    game->ram[MYSMB_RAM_NOISE_BUFFER] = 0U;
+}
+
+/* ROM PlayBrickShatter falls through ContinueBrickShatter. */
+static void mysmb_audio_continue_brick_shatter(struct mysmb_game *game)
+{
+    mysmb_u8 length;
+    mysmb_u8 index;
+
+    length = game->ram[MYSMB_RAM_NOISE_LENGTH];
+    if ((length & 1U) != 0U) {
+        index = (mysmb_u8)(length >> 1U);
+        mysmb_audio_play_noise_sfx(game,
+            mysmb_audio_brick_shatter_envelope(game, index),
+            mysmb_audio_brick_shatter_frequency(game, index));
+    }
+    mysmb_audio_decrement_noise_length(game);
+}
+
+static void mysmb_audio_play_brick_shatter(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_NOISE_LENGTH] = 0x20U;
+    mysmb_audio_continue_brick_shatter(game);
+}
+
+/* ROM PlayBowserFlame falls through ContinueBowserFlame. */
+static void mysmb_audio_continue_bowser_flame(struct mysmb_game *game)
+{
+    mysmb_u8 index;
+
+    index = (mysmb_u8)(game->ram[MYSMB_RAM_NOISE_LENGTH] >> 1U);
+    mysmb_audio_play_noise_sfx(game,
+        mysmb_audio_bowser_flame_envelope(game, index), 0x0fU);
+    mysmb_audio_decrement_noise_length(game);
+}
+
+static void mysmb_audio_play_bowser_flame(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_NOISE_LENGTH] = 0x40U;
+    mysmb_audio_continue_bowser_flame(game);
+}
+
+/* ROM NoiseSfxHandler -> CheckNoiseBuffer.  Queue shifts mutate $fd just as
+ * 6502 LSR does; buffer tests shift A only and leave $f3 unmodified. */
 static void mysmb_audio_step_noise(struct mysmb_game *game)
 {
     mysmb_u8 queue;
+    mysmb_u8 buffer;
 
     queue = game->ram[MYSMB_RAM_NOISE_QUEUE];
     if (queue != 0U) {
-        if ((queue & 0x01U) != 0U) {
-            game->ram[MYSMB_RAM_NOISE_BUFFER] = queue;
-            game->ram[MYSMB_RAM_NOISE_LENGTH] = 0x20U;
+        game->ram[MYSMB_RAM_NOISE_BUFFER] = queue;
+        queue >>= 1U;
+        game->ram[MYSMB_RAM_NOISE_QUEUE] = queue;
+        if ((game->ram[MYSMB_RAM_NOISE_BUFFER] & 1U) != 0U) {
+            mysmb_audio_play_brick_shatter(game);
+            return;
         }
-        else {
-            game->ram[MYSMB_RAM_NOISE_BUFFER] = queue;
-            game->ram[MYSMB_RAM_NOISE_LENGTH] = 0x40U;
+        if ((queue & 1U) != 0U) {
+            game->ram[MYSMB_RAM_NOISE_QUEUE] = (mysmb_u8)(queue >> 1U);
+            mysmb_audio_play_bowser_flame(game);
+            return;
         }
+        game->ram[MYSMB_RAM_NOISE_QUEUE] = (mysmb_u8)(queue >> 1U);
     }
-    if (game->ram[MYSMB_RAM_NOISE_BUFFER] == 0U) return;
-    game->ram[MYSMB_RAM_NOISE_LENGTH]--;
-    if (game->ram[MYSMB_RAM_NOISE_LENGTH] == 0U) {
-        game->ram[MYSMB_RAM_NOISE_BUFFER] = 0U;
-    }
+    buffer = game->ram[MYSMB_RAM_NOISE_BUFFER];
+    if (buffer == 0U) return;
+    if ((buffer & 1U) != 0U)
+        mysmb_audio_continue_brick_shatter(game);
+    else if ((buffer & 2U) != 0U)
+        mysmb_audio_continue_bowser_flame(game);
 }
 
 /* ROM HandleSquare2Music through Squ2NoteHandler, excluding APU register
@@ -566,6 +666,15 @@ static void mysmb_audio_step_square_envelopes(struct mysmb_game *game)
         game->ram[MYSMB_RAM_SQUARE1_ENVELOPE]--;
     }
 }
+
+/* ROM ContinueMusic is an unconditional jump to HandleSquare2Music.  Keeping
+ * this entry explicit prevents queue/header work from being mistaken for the
+ * already-active music-stream handoff. */
+static mysmb_u8 mysmb_audio_continue_music(struct mysmb_game *game)
+{
+    return mysmb_audio_step_square2_music(game);
+}
+
 static void mysmb_audio_step_music(struct mysmb_game *game)
 {
     mysmb_u8 event;
@@ -620,7 +729,7 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
         if (mysmb_audio_step_death_music(game) != 0U) return;
     }
     else {
-        if (mysmb_audio_step_square2_music(game) != 0U) return;
+        if (mysmb_audio_continue_music(game) != 0U) return;
     }
     mysmb_audio_step_square1_music(game);
     mysmb_audio_step_square_envelopes(game);
