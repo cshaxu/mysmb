@@ -1346,3 +1346,9 @@ branches.
 - Node-semantics result: twenty-three labels moved from `unclassified` to `needs-evidence`, covering square-two effect tables, coin/timer, blast, power-up, terminal reset, one-up protection and queue/buffer priority dispatch.
 - Independent integration result: 49 outgoing control relations plus three feasible table-to-consumer material edges received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 timing and priority routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K29 — square-two Bowser, one-up and grow/vine audit
+
+- Source range: `PlayBowserFall` through `StopGrowItems` (`SMBDIS.ASM` lines 15504–15565).
+- Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering Bowser tone transition, one-up divisibility scan and grow/vine secondary-counter lifecycle.
+- Independent integration result: 21 outgoing control relations received `needs-evidence` contracts. Existing feasible frequency-table edges remain linked; static review found no discrepancy.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

@@ -30172,131 +30172,170 @@
       "label": "PlayBowserFall",
       "asmLine": 15504,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes Bowser-fall length and enters shared Bowser/blast register setup."
     },
     {
       "label": "BlstSJp",
       "asmLine": 15509,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers selected Bowser/blast state to the common control-register setup."
     },
     {
       "label": "ContinueBowserFall",
       "asmLine": 15511,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the alternate Bowser tone only at remaining length eight; otherwise decrements."
     },
     {
       "label": "PBFRegs",
       "asmLine": 15517,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies the shared Bowser/blast control value before common register load."
     },
     {
       "label": "EL_LRegs",
       "asmLine": 15518,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers selected one-up/Bowser state to common square-two register load."
     },
     {
       "label": "PlayExtraLife",
       "asmLine": 15520,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes one-up length then enters its eight-frame continuation."
     },
     {
       "label": "ContinueExtraLife",
       "asmLine": 15524,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses three logical shifts to update one-up tone only when remaining length is divisible by eight, otherwise decrements."
     },
     {
       "label": "DivLLoop",
       "asmLine": 15527,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Performs one of the three source shift/tests for one-up divisibility before either decrement or table selection."
     },
     {
       "label": "PlayGrowPowerUp",
       "asmLine": 15537,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects power-up reveal duration and joins shared grow-item setup."
     },
     {
       "label": "PlayGrowVine",
       "asmLine": 15541,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects vine-grow duration and joins shared grow-item setup."
     },
     {
       "label": "GrowItemRegs",
       "asmLine": 15544,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes duration, direct square-two control byte and secondary counter."
     },
     {
       "label": "ContinueGrowItems",
       "asmLine": 15551,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments secondary counter, stops when half-counter equals duration, otherwise writes control and indexed grow/vine frequency."
     },
     {
       "label": "StopGrowItems",
       "asmLine": 15564,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "square-two Bowser, extra-life and grow/vine helper paths in src/game/audio.c",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers grow/vine termination to square-two buffer clear."
     },
     {
       "label": "BrickShatterFreqData",
@@ -83896,10 +83935,13 @@
       "instruction": "lda",
       "id": "control-03323",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayBowserFall → BlstSJp preserves prior square-two state writes before the successor."
     },
     {
       "from": "BlstSJp",
@@ -83909,10 +83951,13 @@
       "instruction": "bne",
       "id": "control-03324",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch BlstSJp → PBFRegs preserves its remaining-length, divisibility or secondary-counter predicate before the alternate square-two path."
     },
     {
       "from": "BlstSJp",
@@ -83922,10 +83967,13 @@
       "instruction": "bne",
       "id": "control-03325",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through BlstSJp → ContinueBowserFall preserves prior square-two state writes before the successor."
     },
     {
       "from": "ContinueBowserFall",
@@ -83935,10 +83983,13 @@
       "instruction": "bne",
       "id": "control-03326",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueBowserFall → DecrementSfx2Length preserves its remaining-length, divisibility or secondary-counter predicate before the alternate square-two path."
     },
     {
       "from": "ContinueBowserFall",
@@ -83948,10 +83999,13 @@
       "instruction": "lda",
       "id": "control-03327",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinueBowserFall → PBFRegs preserves prior square-two state writes before the successor."
     },
     {
       "from": "PBFRegs",
@@ -83961,10 +84015,13 @@
       "instruction": "ldx",
       "id": "control-03328",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PBFRegs → EL_LRegs preserves prior square-two state writes before the successor."
     },
     {
       "from": "EL_LRegs",
@@ -83974,10 +84031,13 @@
       "instruction": "bne",
       "id": "control-03329",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch EL_LRegs → LoadSqu2Regs preserves its remaining-length, divisibility or secondary-counter predicate before the alternate square-two path."
     },
     {
       "from": "EL_LRegs",
@@ -83987,10 +84047,13 @@
       "instruction": "bne",
       "id": "control-03330",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through EL_LRegs → PlayExtraLife preserves prior square-two state writes before the successor."
     },
     {
       "from": "PlayExtraLife",
@@ -84000,10 +84063,13 @@
       "instruction": "sta",
       "id": "control-03331",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayExtraLife → ContinueExtraLife preserves prior square-two state writes before the successor."
     },
     {
       "from": "ContinueExtraLife",
@@ -84013,10 +84079,13 @@
       "instruction": "ldx",
       "id": "control-03332",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinueExtraLife → DivLLoop preserves prior square-two state writes before the successor."
     },
     {
       "from": "DivLLoop",
@@ -84026,10 +84095,13 @@
       "instruction": "bcs",
       "id": "control-03333",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DivLLoop → JumpToDecLength2 preserves its remaining-length, divisibility or secondary-counter predicate before the alternate square-two path."
     },
     {
       "from": "DivLLoop",
@@ -84039,10 +84111,13 @@
       "instruction": "bne",
       "id": "control-03334",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DivLLoop → DivLLoop preserves its remaining-length, divisibility or secondary-counter predicate before the alternate square-two path."
     },
     {
       "from": "DivLLoop",
@@ -84052,10 +84127,13 @@
       "instruction": "bne",
       "id": "control-03335",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DivLLoop → EL_LRegs preserves its remaining-length, divisibility or secondary-counter predicate before the alternate square-two path."
     },
     {
       "from": "DivLLoop",
@@ -84065,10 +84143,13 @@
       "instruction": "bne",
       "id": "control-03336",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DivLLoop → PlayGrowPowerUp preserves prior square-two state writes before the successor."
     },
     {
       "from": "PlayGrowPowerUp",
@@ -84078,10 +84159,13 @@
       "instruction": "bne",
       "id": "control-03337",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch PlayGrowPowerUp → GrowItemRegs preserves its remaining-length, divisibility or secondary-counter predicate before the alternate square-two path."
     },
     {
       "from": "PlayGrowPowerUp",
@@ -84091,10 +84175,13 @@
       "instruction": "bne",
       "id": "control-03338",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayGrowPowerUp → PlayGrowVine preserves prior square-two state writes before the successor."
     },
     {
       "from": "PlayGrowVine",
@@ -84104,10 +84191,13 @@
       "instruction": "lda",
       "id": "control-03339",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayGrowVine → GrowItemRegs preserves prior square-two state writes before the successor."
     },
     {
       "from": "GrowItemRegs",
@@ -84117,10 +84207,13 @@
       "instruction": "sta",
       "id": "control-03340",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through GrowItemRegs → ContinueGrowItems preserves prior square-two state writes before the successor."
     },
     {
       "from": "ContinueGrowItems",
@@ -84130,10 +84223,13 @@
       "instruction": "beq",
       "id": "control-03341",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueGrowItems → StopGrowItems preserves its remaining-length, divisibility or secondary-counter predicate before the alternate square-two path."
     },
     {
       "from": "ContinueGrowItems",
@@ -84143,10 +84239,13 @@
       "instruction": "jsr",
       "id": "control-03342",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call ContinueGrowItems → SetFreq_Squ2 completes indexed frequency/APU output before caller continuation."
     },
     {
       "from": "StopGrowItems",
@@ -84156,10 +84255,13 @@
       "instruction": "jmp",
       "id": "control-03343",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c Bowser/one-up/grow-vine control flow",
+      "semanticEvidence": [
+        "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer StopGrowItems → EmptySfx2Buffer preserves selected square-two state without local continuation."
     },
     {
       "from": "PlayBrickShatter",
