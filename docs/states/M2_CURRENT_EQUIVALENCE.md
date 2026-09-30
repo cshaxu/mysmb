@@ -1210,3 +1210,7 @@ branches.
 ### Cohort K — K1 hammer OAM pose integration
 
 `FirstSprXPos` through `NoHOffscr` now has twelve node contracts, every incident timer/state pose-selection, render/offscreen, helper-call and return relation, plus seven feasible pose-table-to-OAM handoffs. Static review matches all four X/Y/tile/attribute pose rows, the TimerControl and masked-state force-zero conditions, FrameCounter d3-d2 selection, source chained additions for the second record, and the `Misc_OffscreenBits & $fc` state-clear/two-Y-hide tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 forced-pose, animated-pose, visible and offscreen routes.
+
+### Cohort K — K2 flagpole graphics and OAM dump integration
+
+`FlagpoleScoreNumTiles` through `ExitDumpSpr` now has nine node contracts, the local flagpole caller, score-row, offscreen and return relations, plus one feasible score-table handoff. Static review matches the three fixed flag sprites, score-row `$00/$01` setup and tile-pair indexing, d1-d3 offscreen hide condition, and all six/four/three/two dump fall-through stores in descending OAM order. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 flag-visible, score-visible and d1-d3-offscreen routes.

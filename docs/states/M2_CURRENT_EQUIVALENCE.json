@@ -5825,6 +5825,20 @@
         "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00416",
+      "producer": "FlagpoleScoreNumTiles",
+      "consumer": "FlagpoleGfxHandler",
+      "storage": "ROM FlagpoleScoreNumTiles pair selected by FlagpoleScore*2 to $00/$01 then DrawOneSpriteRow",
+      "feasiblePath": "FlagpoleGfxHandler doubles FlagpoleScore, loads the two selected table bytes to $00/$01, then calls DrawOneSpriteRow.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c score_tiles selected by mysmb_objects_draw_flagpole_graphics",
+      "semanticContract": "The selected score tile pair reaches DrawOneSpriteRow before the score row OAM write.",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -26208,91 +26222,118 @@
       "label": "FlagpoleScoreNumTiles",
       "asmLine": 13277,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/flagpole_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_flagpole_graphics",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds five ordered two-tile flagpole score pairs selected by FlagpoleScore times two."
     },
     {
       "label": "FlagpoleGfxHandler",
       "asmLine": 13284,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/flagpole_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_flagpole_graphics",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the three flag sprites, initializes DrawOneSpriteRow scratch values, conditionally draws the score row, then applies the source d1-d3 offscreen hide decision."
     },
     {
       "label": "ChkFlagOffscreen",
       "asmLine": 13326,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/flagpole_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_flagpole_graphics",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reloads ObjectOffset/OAM and returns for clear Enemy_OffscreenBits d1-d3; otherwise enters six-sprite hide."
     },
     {
       "label": "MoveSixSpritesOffscreen",
       "asmLine": 13335,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_dump.c",
+      "currentCounterpart": "mysmb_oam_move_six_sprites_offscreen",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies source A=$f8 to the six-sprite dump fall-through."
     },
     {
       "label": "DumpSixSpr",
       "asmLine": 13338,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_dump.c",
+      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores A into sixth/fifth records and falls through to four-record dump."
     },
     {
       "label": "DumpFourSpr",
       "asmLine": 13342,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_dump.c",
+      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores A into fourth record and falls through to three-record dump."
     },
     {
       "label": "DumpThreeSpr",
       "asmLine": 13345,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_dump.c",
+      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores A into third record and falls through to two-record dump."
     },
     {
       "label": "DumpTwoSpr",
       "asmLine": 13348,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_dump.c",
+      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores A into second then first OAM records and falls through to return."
     },
     {
       "label": "ExitDumpSpr",
       "asmLine": 13352,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/sprite_dump.c",
+      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns with the OAM writes completed."
     },
     {
       "label": "DrawLargePlatform",
@@ -48715,12 +48756,12 @@
       "id": "control-01146",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation FPGfx -> FlagpoleGfxHandler with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM call relation FPGfx -> FlagpoleGfxHandler with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "FPGfx",
@@ -74081,10 +74122,13 @@
       "instruction": "jsr",
       "id": "control-02783",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation FlagpoleGfxHandler -> DumpTwoSpr with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "FlagpoleGfxHandler",
@@ -74094,10 +74138,13 @@
       "instruction": "beq",
       "id": "control-02784",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation FlagpoleGfxHandler -> ChkFlagOffscreen with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "FlagpoleGfxHandler",
@@ -74107,10 +74154,13 @@
       "instruction": "jsr",
       "id": "control-02785",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation FlagpoleGfxHandler -> DrawOneSpriteRow with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "FlagpoleGfxHandler",
@@ -74120,10 +74170,13 @@
       "instruction": "jsr",
       "id": "control-02786",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation FlagpoleGfxHandler -> ChkFlagOffscreen with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "ChkFlagOffscreen",
@@ -74133,10 +74186,13 @@
       "instruction": "beq",
       "id": "control-02787",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ChkFlagOffscreen -> ExitDumpSpr with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "ChkFlagOffscreen",
@@ -74146,10 +74202,13 @@
       "instruction": "beq",
       "id": "control-02788",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ChkFlagOffscreen -> MoveSixSpritesOffscreen with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "MoveSixSpritesOffscreen",
@@ -74159,10 +74218,13 @@
       "instruction": "lda",
       "id": "control-02789",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation MoveSixSpritesOffscreen -> DumpSixSpr with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "DumpSixSpr",
@@ -74172,10 +74234,13 @@
       "instruction": "sta",
       "id": "control-02790",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DumpSixSpr -> DumpFourSpr with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "DumpFourSpr",
@@ -74185,10 +74250,13 @@
       "instruction": "sta",
       "id": "control-02791",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DumpFourSpr -> DumpThreeSpr with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "DumpThreeSpr",
@@ -74198,10 +74266,13 @@
       "instruction": "sta",
       "id": "control-02792",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DumpThreeSpr -> DumpTwoSpr with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "DumpTwoSpr",
@@ -74211,10 +74282,13 @@
       "instruction": "sta",
       "id": "control-02793",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DumpTwoSpr -> ExitDumpSpr with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "DrawLargePlatform",
@@ -86283,12 +86357,12 @@
       "id": "control-03686",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation FlagpoleGfxHandler -> FPGfx with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM return relation FlagpoleGfxHandler -> FPGfx with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -91198,10 +91272,13 @@
       "instruction": "rts/rti",
       "id": "control-04000",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> FlagpoleGfxHandler with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "DrawOneSpriteRow",
@@ -91211,10 +91288,13 @@
       "instruction": "rts/rti",
       "id": "control-04001",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "semanticEvidence": [
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DrawOneSpriteRow -> FlagpoleGfxHandler with the source condition, scratch/OAM handoff and return ordering."
     },
     {
       "from": "SixSpriteStacker",
