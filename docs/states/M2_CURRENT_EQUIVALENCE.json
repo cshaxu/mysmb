@@ -6211,10 +6211,10 @@
       "storage": "ROM BrickShatterEnvData half-length index to noise envelope",
       "feasiblePath": "ContinueBrickShatter uses the same half-length table index for BrickShatterEnvData before PlayNoiseSfx.",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c owner-local ROM table binding",
-      "semanticContract": "The half-length index selects the same ordered brick noise envelope.",
+      "currentCounterpart": "src/game/audio.c immutable PRG envelope reader",
+      "semanticContract": "Preserves BrickShatterEnvData byte selection, source index arithmetic and noise-register handoff to ContinueBrickShatter.",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required."
       ],
       "operationalEvidence": []
     },
@@ -6225,10 +6225,10 @@
       "storage": "ROM BowserFlameEnvData half-length index to noise envelope",
       "feasiblePath": "ContinueBowserFlame shifts remaining noise length and indexes BowserFlameEnvData-1 before PlayNoiseSfx.",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c owner-local ROM table binding",
-      "semanticContract": "The half-length index selects the same ordered Bowser flame envelope.",
+      "currentCounterpart": "src/game/audio.c immutable PRG envelope reader",
+      "semanticContract": "Preserves BowserFlameEnvData byte selection, source index arithmetic and noise-register handoff to ContinueBowserFlame.",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required."
       ],
       "operationalEvidence": []
     },
@@ -32895,21 +32895,27 @@
       "label": "BowserFlameEnvData",
       "asmLine": 16362,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c immutable PRG envelope reader",
+      "currentCounterpart": "mysmb_audio_bowser_flame_envelope",
+      "semanticEvidence": [
+        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Provides the 32-byte Bowser-flame noise envelope; ContinueBowserFlame selects its preceding byte after the source length division."
     },
     {
       "label": "BrickShatterEnvData",
       "asmLine": 16368,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c immutable PRG envelope reader",
+      "currentCounterpart": "mysmb_audio_brick_shatter_envelope",
+      "semanticEvidence": [
+        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Provides the 16-byte brick-shatter noise envelope selected by the source noise-length half-index."
     }
   ],
   "controlEdges": [

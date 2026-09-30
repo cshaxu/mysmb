@@ -1541,3 +1541,9 @@ branches.
 - Node-semantics result: five labels moved from `unclassified` to `needs-evidence`, covering two-tile row loading/drawing and row/column OAM hiding leaves.
 - Independent integration result: 5 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 normal-enemy OAM routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K62 — terminal noise-envelope data audit
+
+- Source range: `BowserFlameEnvData` and `BrickShatterEnvData` (`SMBDIS.ASM` lines 16362–16370).
+- Node-semantics result: both final unclassified labels moved to `needs-evidence`; their existing material producer-to-consumer records were strengthened with index and handoff contracts.
+- No control-edge classification was inferred from table endpoint status. Static review found no discrepancy; controlled original-ROM/x86/x64 sound routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
