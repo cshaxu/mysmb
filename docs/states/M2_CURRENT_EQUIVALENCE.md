@@ -1026,3 +1026,8 @@ branches.
 ### Cohort I — B15l Flying Cheep integration
 
 `PRandomSubtracter` through `BPGet` now has six node contracts, all incident dispatches, branches, calls, fall-throughs, tails and returns, and five feasible PRG/state handoffs. Under the declared immutable PRG binding prerequisite, static review matches defeated attribute clearing, horizontal-before-gravity order, high-nibble indexing, absolute-distance `$08` force adjustment and priority-table write. Entries remain `needs-evidence` pending controlled ROM/x86/x64 routes.
+
+
+### Cohort I — B15m Lakitu integration
+
+`LakituDiffAdj` through `ExMoveLak` now has sixteen node contracts, all incident dispatches, branches, calls, loopbacks, fall-throughs, tails and returns, plus seven feasible adjustment/state handoffs. Static review matches defeated handling, Spiny request setup, descending adjustment copy, signed `$3c` saturated difference, turn/slowdown rule, player speed/scroll/Spiny index selection, pixel loop and final signed horizontal move. Entries remain `needs-evidence` pending controlled ROM/x86/x64 Lakitu and Spiny routes.

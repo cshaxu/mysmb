@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 235,
+    "enumeratedCount": 242,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3303,6 +3303,104 @@
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00236",
+      "producer": "LakituDiffAdj",
+      "consumer": "LdLDa",
+      "storage": "descending table index and scratch $01-$03",
+      "feasiblePath": "Lakitu empty-state path copies all three source adjustment bytes before distance calculation.",
+      "status": "needs-evidence",
+      "currentCounterpart": "adjustment[] copy in mysmb_enemy_step_lakitus_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00237",
+      "producer": "Fr12S",
+      "consumer": "PlayerLakituDiff",
+      "storage": "Spiny frenzy buffer and scratch adjustments",
+      "feasiblePath": "Player-distance helper consumes Lakitu-specific adjustment scratch after Spiny request.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_step_lakitus_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00238",
+      "producer": "PlayerLakituDiff",
+      "consumer": "ChkLakDif",
+      "storage": "PlayerEnemyDiff sign/magnitude and Lakitu direction/speed",
+      "feasiblePath": "Saturated-distance handling depends on signed difference and current Lakitu direction.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_player_lakitu_difference",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00239",
+      "producer": "ChkLakDif",
+      "consumer": "SetLMovD",
+      "storage": "saturated $3c distance and away-direction state",
+      "feasiblePath": "Only eligible Lakitu at max distance updates direction after slowdown.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_player_lakitu_difference",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00240",
+      "producer": "ChkPSpeed",
+      "consumer": "SubDifAdj",
+      "storage": "compressed distance, player speed and scroll-derived adjustment index",
+      "feasiblePath": "Source conditions select scratch adjustment index before pixel loop.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_player_lakitu_difference",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00241",
+      "producer": "SubDifAdj",
+      "consumer": "SPixelLak",
+      "storage": "selected adjustment byte and compressed pixel count",
+      "feasiblePath": "Pixel loop subtracts once for each remaining distance count.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_player_lakitu_difference",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00242",
+      "producer": "SetLSpd",
+      "consumer": "SetLMov",
+      "storage": "speed sign and direction bit",
+      "feasiblePath": "Final direction write matches speed sign before horizontal movement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_step_lakitus_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -18634,161 +18732,209 @@
       "label": "LakituDiffAdj",
       "asmLine": 9990,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds Lakitu distance adjustment bytes {$15,$30,$40}."
     },
     {
       "label": "MoveLakitu",
       "asmLine": 9993,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes defeated state to downward gravity; otherwise selects nonzero-state reset/fixed-speed path or empty-state Spiny/distance path, then chooses signed movement direction and tail-jumps horizontally."
     },
     {
       "label": "ChkLS",
       "asmLine": 9998,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For zero state enters Spiny/distance setup; otherwise clears Lakitu direction/frenzy buffer and uses fixed speed $10."
     },
     {
       "label": "Fr12S",
       "asmLine": 10005,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes Spiny to frenzy buffer, copies three Lakitu distance adjustments to scratch and enters player-distance helper."
     },
     {
       "label": "LdLDa",
       "asmLine": 10008,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies adjustment table in descending index order, loops through all three bytes, calls PlayerLakituDiff then falls through speed setup."
     },
     {
       "label": "SetLSpd",
       "asmLine": 10013,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores returned/fixed speed, defaults direction right, negates speed and switches direction left when Lakitu direction bit zero."
     },
     {
       "label": "SetLMov",
       "asmLine": 10024,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores direction and tail-jumps to horizontal movement."
     },
     {
       "label": "PlayerLakituDiff",
       "asmLine": 10027,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Derives signed player difference, saturates magnitude at $3c, applies Lakitu turn/slowdown rules, selects adjustment index from player movement/scroll/enemy state, and subtracts once per distance pixel."
     },
     {
       "label": "ChkLakDif",
       "asmLine": 10037,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Handles saturated distance; for Lakitu moving away, decrements speed until zero then updates movement direction, otherwise continues speed selection."
     },
     {
       "label": "SetLMovD",
       "asmLine": 10053,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes Lakitu movement direction from the player-difference side then falls through speed selection."
     },
     {
       "label": "ChkPSpeed",
       "asmLine": 10055,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compresses distance to four middle bits and selects one of three adjustment indices from player X speed and scroll amount."
     },
     {
       "label": "ChkSpinyO",
       "asmLine": 10073,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies Spiny-specific fallback: zero player speed preserves current selected index; otherwise reaches enemy-speed check."
     },
     {
       "label": "ChkEmySpd",
       "asmLine": 10078,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For non-Spiny or player-moving paths uses enemy Y speed to decide whether index resets to zero."
     },
     {
       "label": "SubDifAdj",
       "asmLine": 10081,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads selected scratch adjustment and passes compressed distance to pixel subtraction loop."
     },
     {
       "label": "SPixelLak",
       "asmLine": 10083,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Subtracts one adjustment unit per compressed distance count, then returns the resulting speed."
     },
     {
       "label": "ExMoveLak",
       "asmLine": 10087,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/lakitu.c",
+      "currentCounterpart": "shared Lakitu slot and player-distance paths",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns computed speed to caller."
     },
     {
       "label": "BridgeCollapseData",
@@ -51733,12 +51879,12 @@
       "id": "control-01546",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DifLoop -> PlayerLakituDiff with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original call relation DifLoop -> PlayerLakituDiff with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "DifLoop",
@@ -57396,10 +57542,13 @@
       "instruction": "beq",
       "id": "control-01900",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveLakitu -> ChkLS with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "MoveLakitu",
@@ -57409,10 +57558,13 @@
       "instruction": "jmp",
       "id": "control-01901",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveLakitu -> MoveD_EnemyVertically with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLS",
@@ -57422,10 +57574,13 @@
       "instruction": "beq",
       "id": "control-01902",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLS -> Fr12S with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLS",
@@ -57435,10 +57590,13 @@
       "instruction": "bne",
       "id": "control-01903",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLS -> SetLSpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLS",
@@ -57448,10 +57606,13 @@
       "instruction": "bne",
       "id": "control-01904",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkLS -> Fr12S with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "Fr12S",
@@ -57461,10 +57622,13 @@
       "instruction": "ldy",
       "id": "control-01905",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Fr12S -> LdLDa with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "LdLDa",
@@ -57474,10 +57638,13 @@
       "instruction": "bpl",
       "id": "control-01906",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LdLDa -> LdLDa with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "LdLDa",
@@ -57487,10 +57654,13 @@
       "instruction": "jsr",
       "id": "control-01907",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation LdLDa -> PlayerLakituDiff with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "LdLDa",
@@ -57500,10 +57670,13 @@
       "instruction": "jsr",
       "id": "control-01908",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LdLDa -> SetLSpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "SetLSpd",
@@ -57513,10 +57686,13 @@
       "instruction": "bne",
       "id": "control-01909",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetLSpd -> SetLMov with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "SetLSpd",
@@ -57526,10 +57702,13 @@
       "instruction": "iny",
       "id": "control-01910",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetLSpd -> SetLMov with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "SetLMov",
@@ -57539,10 +57718,13 @@
       "instruction": "jmp",
       "id": "control-01911",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation SetLMov -> MoveEnemyHorizontally with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "PlayerLakituDiff",
@@ -57552,10 +57734,13 @@
       "instruction": "jsr",
       "id": "control-01912",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlayerLakituDiff -> PlayerEnemyDiff with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "PlayerLakituDiff",
@@ -57565,10 +57750,13 @@
       "instruction": "bpl",
       "id": "control-01913",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerLakituDiff -> ChkLakDif with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "PlayerLakituDiff",
@@ -57578,10 +57766,13 @@
       "instruction": "sta",
       "id": "control-01914",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PlayerLakituDiff -> ChkLakDif with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLakDif",
@@ -57591,10 +57782,13 @@
       "instruction": "bcc",
       "id": "control-01915",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLakDif -> ChkPSpeed with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLakDif",
@@ -57604,10 +57798,13 @@
       "instruction": "bne",
       "id": "control-01916",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLakDif -> ChkPSpeed with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLakDif",
@@ -57617,10 +57814,13 @@
       "instruction": "beq",
       "id": "control-01917",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLakDif -> ChkPSpeed with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLakDif",
@@ -57630,10 +57830,13 @@
       "instruction": "beq",
       "id": "control-01918",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLakDif -> SetLMovD with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLakDif",
@@ -57643,10 +57846,13 @@
       "instruction": "bne",
       "id": "control-01919",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLakDif -> ExMoveLak with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkLakDif",
@@ -57656,10 +57862,13 @@
       "instruction": "bne",
       "id": "control-01920",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkLakDif -> SetLMovD with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "SetLMovD",
@@ -57669,10 +57878,13 @@
       "instruction": "sta",
       "id": "control-01921",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetLMovD -> ChkPSpeed with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkPSpeed",
@@ -57682,10 +57894,13 @@
       "instruction": "beq",
       "id": "control-01922",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkPSpeed -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkPSpeed",
@@ -57695,10 +57910,13 @@
       "instruction": "beq",
       "id": "control-01923",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkPSpeed -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkPSpeed",
@@ -57708,10 +57926,13 @@
       "instruction": "bcc",
       "id": "control-01924",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkPSpeed -> ChkSpinyO with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkPSpeed",
@@ -57721,10 +57942,13 @@
       "instruction": "bcc",
       "id": "control-01925",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkPSpeed -> ChkSpinyO with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkPSpeed",
@@ -57734,10 +57958,13 @@
       "instruction": "iny",
       "id": "control-01926",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkPSpeed -> ChkSpinyO with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkSpinyO",
@@ -57747,10 +57974,13 @@
       "instruction": "bne",
       "id": "control-01927",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkSpinyO -> ChkEmySpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkSpinyO",
@@ -57760,10 +57990,13 @@
       "instruction": "bne",
       "id": "control-01928",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkSpinyO -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkSpinyO",
@@ -57773,10 +58006,13 @@
       "instruction": "bne",
       "id": "control-01929",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkSpinyO -> ChkEmySpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkEmySpd",
@@ -57786,10 +58022,13 @@
       "instruction": "bne",
       "id": "control-01930",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkEmySpd -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "ChkEmySpd",
@@ -57799,10 +58038,13 @@
       "instruction": "ldy",
       "id": "control-01931",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkEmySpd -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "SubDifAdj",
@@ -57812,10 +58054,13 @@
       "instruction": "ldy",
       "id": "control-01932",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SubDifAdj -> SPixelLak with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "SPixelLak",
@@ -57825,10 +58070,13 @@
       "instruction": "bpl",
       "id": "control-01933",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SPixelLak -> SPixelLak with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "SPixelLak",
@@ -57838,10 +58086,13 @@
       "instruction": "bpl",
       "id": "control-01934",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SPixelLak -> ExMoveLak with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "BridgeCollapse",
@@ -82535,12 +82786,12 @@
       "id": "control-03776",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerLakituDiff -> DifLoop with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original return relation PlayerLakituDiff -> DifLoop with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "SmallBBox",
@@ -83686,10 +83937,13 @@
       "instruction": "rts/rti",
       "id": "control-03848",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerLakituDiff -> LdLDa with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -83699,10 +83953,13 @@
       "instruction": "rts/rti",
       "id": "control-03849",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerEnemyDiff -> PlayerLakituDiff with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "MoveEnemySlowVert",
@@ -90861,12 +91118,12 @@
       "id": "control-04327",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveLakitu with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveLakitu with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
