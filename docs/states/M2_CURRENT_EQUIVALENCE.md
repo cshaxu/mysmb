@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 309 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 324 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,636 | Not yet processed by this re-audit. |
+| Unclassified | 1,621 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 601 control; 53 material RAM/table |
+| Needs evidence | 670 control; 54 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,655 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,586 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -542,3 +542,14 @@ offset to decoder record consumption. No static discrepancy was found. These
 23 nodes, 57 relations and the data path remain `needs-evidence` until ROM and
 x86/x64 routes cover control records, resident slots, backloading and each
 object-family entry.
+
+### Cohort C — B10g parser object-family selector and attribute/warp leaves
+
+`LeavePar` through `NoKillE`, plus all 47 `RunAObj` selector edges, now have
+static contracts. The audit records rear/page/column placement gating, the
+normalized `$00 + $07` dispatch input, row-14 attribute paths, warp text and
+scroll-lock ordering, and piranha removal across the five regular enemy
+slots. The normalized-ID material handoff to the object-family selector is
+registered independently. No static discrepancy was found. These 15 nodes,
+69 relations and the data path remain `needs-evidence` until routes exercise
+every object family, warp variant, placement gate and enemy-slot outcome.
