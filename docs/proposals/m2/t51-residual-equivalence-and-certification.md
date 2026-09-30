@@ -389,3 +389,18 @@ S5 remains open despite the complete native matrix. The review ledger still
 contains independently recorded original-ROM discrepancies and the DOS16
 resource-binding gap. Passing a project-owned regression suite does not
 replace their source-route evidence or establish DOS16 playability.
+
+### S5 P9: historical-debt source-route adjudication
+
+S5 P9 audits four still-open ledger rows against their later, source-order
+closures before treating them as active gaps. This is a documentation and
+evidence correction only; it admits no new node and changes no game or platform
+code. `KillEnemies` is covered by T51 S3, `ImpedePlayerMove` through `ExIPM` by
+T43 S6, `ForceInjury` by T42 S5, and `PlayerLakituDiff` by T40 S10. Each later
+chain explicitly records original control flow and RAM effects, while the
+current focused x86/x64 executables pass their corresponding checks.
+
+The four historical TODO rows are therefore marked resolved with a direct link
+to their superseding closure. This audit does not resolve any remaining row:
+the unresolved ledger still supplies the basis for S5's final discrepancy
+review, including the distinct DOS16 owner-resource binding gap.
