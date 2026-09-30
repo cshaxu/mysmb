@@ -6955,161 +6955,209 @@
       "label": "BulletBillCannon",
       "asmLine": 4120,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decodes row and height, writes top $64 and optional middle $65, fills base $66 only when height remains, then registers cannon."
     },
     {
       "label": "SetupCannon",
       "asmLine": 4135,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores object Y, current page and object X in the six-entry cannon ring before increment/wrap."
     },
     {
       "label": "StrCOffset",
       "asmLine": 4146,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the post-increment cannon ring offset and returns."
     },
     {
       "label": "StaircaseHeightData",
       "asmLine": 4151,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Provides the nine descending staircase vertical extents."
     },
     {
       "label": "StaircaseRowData",
       "asmLine": 4154,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Provides the paired nine staircase start rows."
     },
     {
       "label": "StaircaseObject",
       "asmLine": 4157,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes control to nine only on first length decode, decrements before paired table lookup, and renders $61."
     },
     {
       "label": "NextStair",
       "asmLine": 4162,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes decremented staircase control as both table index and shared renderer input."
     },
     {
       "label": "Jumpspring",
       "asmLine": 4172,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the empty-slot result even when full, initializes the jumpspring actor and writes $67/$68 at decoded row."
     },
     {
       "label": "Hidden1UpBlock",
       "asmLine": 4197,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns while hidden flag is zero; otherwise clears it and shares BrickWithItem."
     },
     {
       "label": "QuestionBlock",
       "asmLine": 4204,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves decoded ID then tail-enters question/brick metatile selection."
     },
     {
       "label": "BrickWithCoins",
       "asmLine": 4208,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears multi-coin timer before falling through to BrickWithItem."
     },
     {
       "label": "BrickWithItem",
       "asmLine": 4212,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Chooses the area-dependent metatile offset and falls into DrawQBlk."
     },
     {
       "label": "BWithL",
       "asmLine": 4220,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds preserved object ID to the selected metatile base before DrawQBlk."
     },
     {
       "label": "DrawQBlk",
       "asmLine": 4223,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves selected metatile across attribute decode and tail-enters DrawRow."
     },
     {
       "label": "GetAreaObjectID",
       "asmLine": 4228,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies parser ID from $00 to Y through source SEC/SBC identity operation."
     },
     {
       "label": "ExitDecBlock",
       "asmLine": 4233,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from disabled hidden block or completed object-ID decode."
     },
     {
       "label": "HoleMetatiles",
@@ -33874,10 +33922,13 @@
       "instruction": "jsr",
       "id": "control-00710",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation BulletBillCannon -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BulletBillCannon",
@@ -33887,10 +33938,13 @@
       "instruction": "bmi",
       "id": "control-00711",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation BulletBillCannon -> SetupCannon.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BulletBillCannon",
@@ -33900,10 +33954,13 @@
       "instruction": "bmi",
       "id": "control-00712",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation BulletBillCannon -> SetupCannon.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BulletBillCannon",
@@ -33913,10 +33970,13 @@
       "instruction": "jsr",
       "id": "control-00713",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation BulletBillCannon -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BulletBillCannon",
@@ -33926,10 +33986,13 @@
       "instruction": "jsr",
       "id": "control-00714",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation BulletBillCannon -> SetupCannon.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "SetupCannon",
@@ -33939,10 +34002,13 @@
       "instruction": "jsr",
       "id": "control-00715",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation SetupCannon -> GetAreaObjYPosition.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "SetupCannon",
@@ -33952,10 +34018,13 @@
       "instruction": "jsr",
       "id": "control-00716",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation SetupCannon -> GetAreaObjXPosition.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "SetupCannon",
@@ -33965,10 +34034,13 @@
       "instruction": "bcc",
       "id": "control-00717",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation SetupCannon -> StrCOffset.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "SetupCannon",
@@ -33978,10 +34050,13 @@
       "instruction": "ldx",
       "id": "control-00718",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation SetupCannon -> StrCOffset.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "StaircaseObject",
@@ -33991,10 +34066,13 @@
       "instruction": "jsr",
       "id": "control-00719",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation StaircaseObject -> ChkLrgObjLength.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "StaircaseObject",
@@ -34004,10 +34082,13 @@
       "instruction": "bcc",
       "id": "control-00720",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation StaircaseObject -> NextStair.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "StaircaseObject",
@@ -34017,10 +34098,13 @@
       "instruction": "sta",
       "id": "control-00721",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation StaircaseObject -> NextStair.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "NextStair",
@@ -34030,10 +34114,13 @@
       "instruction": "jmp",
       "id": "control-00722",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source jump relation NextStair -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "Jumpspring",
@@ -34043,10 +34130,13 @@
       "instruction": "jsr",
       "id": "control-00723",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation Jumpspring -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "Jumpspring",
@@ -34056,10 +34146,13 @@
       "instruction": "jsr",
       "id": "control-00724",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation Jumpspring -> FindEmptyEnemySlot.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "Jumpspring",
@@ -34069,10 +34162,13 @@
       "instruction": "jsr",
       "id": "control-00725",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation Jumpspring -> GetAreaObjXPosition.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "Jumpspring",
@@ -34082,10 +34178,13 @@
       "instruction": "jsr",
       "id": "control-00726",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation Jumpspring -> GetAreaObjYPosition.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "Hidden1UpBlock",
@@ -34095,10 +34194,13 @@
       "instruction": "beq",
       "id": "control-00727",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation Hidden1UpBlock -> ExitDecBlock.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "Hidden1UpBlock",
@@ -34108,10 +34210,13 @@
       "instruction": "jmp",
       "id": "control-00728",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source jump relation Hidden1UpBlock -> BrickWithItem.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "QuestionBlock",
@@ -34121,10 +34226,13 @@
       "instruction": "jsr",
       "id": "control-00729",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation QuestionBlock -> GetAreaObjectID.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "QuestionBlock",
@@ -34134,10 +34242,13 @@
       "instruction": "jmp",
       "id": "control-00730",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source jump relation QuestionBlock -> DrawQBlk.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BrickWithCoins",
@@ -34147,10 +34258,13 @@
       "instruction": "sta",
       "id": "control-00731",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation BrickWithCoins -> BrickWithItem.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BrickWithItem",
@@ -34160,10 +34274,13 @@
       "instruction": "jsr",
       "id": "control-00732",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation BrickWithItem -> GetAreaObjectID.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BrickWithItem",
@@ -34173,10 +34290,13 @@
       "instruction": "beq",
       "id": "control-00733",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation BrickWithItem -> BWithL.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BrickWithItem",
@@ -34186,10 +34306,13 @@
       "instruction": "lda",
       "id": "control-00734",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation BrickWithItem -> BWithL.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "BWithL",
@@ -34199,10 +34322,13 @@
       "instruction": "tay",
       "id": "control-00735",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation BWithL -> DrawQBlk.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "DrawQBlk",
@@ -34212,10 +34338,13 @@
       "instruction": "jsr",
       "id": "control-00736",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation DrawQBlk -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "DrawQBlk",
@@ -34226,12 +34355,13 @@
       "id": "control-00737",
       "cohort": "D",
       "status": "needs-evidence",
-      "currentCounterpart": "Shared game C preserves source jump relation DrawQBlk -> DrawRow.",
+      "currentCounterpart": "src/game/area.c preserves source jump relation DrawQBlk -> DrawRow.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetAreaObjectID",
@@ -34241,10 +34371,13 @@
       "instruction": "tay",
       "id": "control-00738",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation GetAreaObjectID -> ExitDecBlock.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "Hole_Empty",
@@ -71719,10 +71852,13 @@
       "instruction": "rts/rti",
       "id": "control-03599",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetLrgObjAttrib -> BulletBillCannon.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "RenderUnderPart",
@@ -71732,10 +71868,13 @@
       "instruction": "rts/rti",
       "id": "control-03600",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation RenderUnderPart -> BulletBillCannon.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetAreaObjYPosition",
@@ -71745,10 +71884,13 @@
       "instruction": "rts/rti",
       "id": "control-03601",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjYPosition -> SetupCannon.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetAreaObjXPosition",
@@ -71758,10 +71900,13 @@
       "instruction": "rts/rti",
       "id": "control-03602",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjXPosition -> SetupCannon.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "ChkLrgObjLength",
@@ -71771,10 +71916,13 @@
       "instruction": "rts/rti",
       "id": "control-03603",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation ChkLrgObjLength -> StaircaseObject.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -71784,10 +71932,13 @@
       "instruction": "rts/rti",
       "id": "control-03604",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetLrgObjAttrib -> Jumpspring.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "FindEmptyEnemySlot",
@@ -71797,10 +71948,13 @@
       "instruction": "rts/rti",
       "id": "control-03605",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation FindEmptyEnemySlot -> Jumpspring.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetAreaObjXPosition",
@@ -71810,10 +71964,13 @@
       "instruction": "rts/rti",
       "id": "control-03606",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjXPosition -> Jumpspring.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetAreaObjYPosition",
@@ -71823,10 +71980,13 @@
       "instruction": "rts/rti",
       "id": "control-03607",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjYPosition -> Jumpspring.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetAreaObjectID",
@@ -71836,10 +71996,13 @@
       "instruction": "rts/rti",
       "id": "control-03608",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjectID -> QuestionBlock.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetAreaObjectID",
@@ -71849,10 +72012,13 @@
       "instruction": "rts/rti",
       "id": "control-03609",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjectID -> BrickWithItem.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -71862,10 +72028,13 @@
       "instruction": "rts/rti",
       "id": "control-03610",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetLrgObjAttrib -> DrawQBlk.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
     },
     {
       "from": "ChkLrgObjLength",
