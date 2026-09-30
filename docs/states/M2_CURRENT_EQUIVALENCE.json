@@ -776,13 +776,15 @@
       "label": "ChkSelect",
       "asmLine": 1005,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu mismatch route: with DemoTimer=0, WorldSelectEnableFlag=1 and B pressed, original ROM takes ChkSelect -> DemoEngine before ChkWorldSel; current x86/x64 takes the world-select branch and ResetTitle. The first divergent title-owned field is OperMode_Task (ROM 3, C 0) at the common post-menu boundary."
+      ],
       "semanticContract": "When Start did not match, selects Select processing, active-demo/world-select processing, or DemoEngine at demo timeout."
     },
     {
@@ -21778,12 +21780,14 @@
       "instruction": "bne",
       "id": "control-00087",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration mismatch: source ChkSelect branches to ChkWorldSel only when DemoTimer is nonzero. Current title_modes.c evaluates enabled B world selection before the source DemoTimer gate, so it takes this edge on an impossible source path."
+      ],
       "semanticContract": "Original branch relation ChkSelect -> ChkWorldSel at source line 1008 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {

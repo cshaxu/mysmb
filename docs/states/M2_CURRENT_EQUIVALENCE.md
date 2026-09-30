@@ -20,8 +20,8 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 29 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 21 | Current source audit exists but the current original-ROM route is incomplete. |
-| Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
+| Needs evidence | 20 | Current source audit exists but the current original-ROM route is incomplete. |
+| Mismatch | 4 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,939 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
@@ -54,8 +54,8 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 60 control; 3 material RAM/table |
-| Needs evidence | 69 |
-| Mismatch | 2 |
+| Needs evidence | 68 |
+| Mismatch | 3 |
 | Unclassified | 4,211 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
@@ -247,4 +247,8 @@ The remaining title labels and relations stay `needs-evidence`. In particular,
 `ChkSelect`, `ChkWorldSel` and `SelectBLogic` need their remaining debounce,
 disabled/enabled and reset branches; and `RunDemo` with its post-
 `GameCoreRoutine` reset condition remains a separate route family. Demo
-action/timing data is also deferred to that route family.
+action/timing data is also deferred to that route family. The zero-demo-timer,
+world-select-B case is a confirmed `ChkSelect` mismatch: the source enters
+`DemoEngine` before world-select handling, while current C enters
+`SelectBLogic` and resets title mode. Its ordered repair candidate is
+[A6 title-menu timer gate](../proposals/m2/a6-title-menu-order-repair-candidate.md).
