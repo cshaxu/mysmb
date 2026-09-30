@@ -8954,263 +8954,339 @@
       "asmLine": 5499,
       "cohort": "E",
       "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "PlayerEntrance",
       "asmLine": 5519,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "ChkBehPipe",
       "asmLine": 5532,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "IntroEntr",
       "asmLine": 5536,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "EntrMode2",
       "asmLine": 5541,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "VineEntr",
       "asmLine": 5549,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "OffVine",
       "asmLine": 5562,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "PlayerRdy",
       "asmLine": 5567,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "ExitEntr",
       "asmLine": 5575,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "AutoControlPlayer",
       "asmLine": 5580,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "PlayerCtrlRoutine",
       "asmLine": 5583,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "DisJoyp",
       "asmLine": 5595,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "SaveJoyp",
       "asmLine": 5597,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "SizeChk",
       "asmLine": 5615,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "ChkMoveDir",
       "asmLine": 5623,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "SetMoveDir",
       "asmLine": 5629,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "PlayerSubs",
       "asmLine": 5630,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "PlayerHole",
       "asmLine": 5649,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "HoleDie",
       "asmLine": 5661,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "HoleBottom",
       "asmLine": 5670,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "ChkHoleX",
       "asmLine": 5672,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "ExitCtrl",
       "asmLine": 5680,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "CloudExit",
       "asmLine": 5682,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "Vine_AutoClimb",
       "asmLine": 5691,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "AutoClimb",
       "asmLine": 5697,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "SetEntr",
       "asmLine": 5702,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared entry/player/transition owners",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
     },
     {
       "label": "VerticalPipeEntry",
@@ -36292,10 +36368,13 @@
       "instruction": "jsr",
       "id": "control-00827",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation GameRoutines -> JumpEngine.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "GameRoutines",
@@ -36305,10 +36384,13 @@
       "instruction": "jsr",
       "id": "control-00828",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation GameRoutines -> PlayerEntrance.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerEntrance",
@@ -36318,10 +36400,13 @@
       "instruction": "beq",
       "id": "control-00829",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerEntrance -> EntrMode2.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerEntrance",
@@ -36331,10 +36416,13 @@
       "instruction": "bcc",
       "id": "control-00830",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerEntrance -> AutoControlPlayer.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerEntrance",
@@ -36344,10 +36432,13 @@
       "instruction": "beq",
       "id": "control-00831",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerEntrance -> ChkBehPipe.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerEntrance",
@@ -36357,10 +36448,13 @@
       "instruction": "bne",
       "id": "control-00832",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerEntrance -> PlayerRdy.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerEntrance",
@@ -36370,10 +36464,13 @@
       "instruction": "bne",
       "id": "control-00833",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation PlayerEntrance -> ChkBehPipe.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkBehPipe",
@@ -36383,10 +36480,13 @@
       "instruction": "bne",
       "id": "control-00834",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ChkBehPipe -> IntroEntr.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkBehPipe",
@@ -36396,10 +36496,13 @@
       "instruction": "jmp",
       "id": "control-00835",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source jump relation ChkBehPipe -> AutoControlPlayer.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "IntroEntr",
@@ -36409,10 +36512,13 @@
       "instruction": "jsr",
       "id": "control-00836",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation IntroEntr -> EnterSidePipe.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "IntroEntr",
@@ -36422,10 +36528,13 @@
       "instruction": "bne",
       "id": "control-00837",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation IntroEntr -> ExitEntr.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "IntroEntr",
@@ -36435,10 +36544,13 @@
       "instruction": "jmp",
       "id": "control-00838",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source jump relation IntroEntr -> NextArea.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "EntrMode2",
@@ -36448,10 +36560,13 @@
       "instruction": "bne",
       "id": "control-00839",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation EntrMode2 -> VineEntr.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "EntrMode2",
@@ -36461,10 +36576,13 @@
       "instruction": "jsr",
       "id": "control-00840",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation EntrMode2 -> MovePlayerYAxis.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "EntrMode2",
@@ -36474,10 +36592,13 @@
       "instruction": "bcc",
       "id": "control-00841",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation EntrMode2 -> PlayerRdy.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "VineEntr",
@@ -36487,10 +36608,13 @@
       "instruction": "bne",
       "id": "control-00842",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation VineEntr -> ExitEntr.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "VineEntr",
@@ -36500,10 +36624,13 @@
       "instruction": "bcc",
       "id": "control-00843",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation VineEntr -> OffVine.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "VineEntr",
@@ -36513,10 +36640,13 @@
       "instruction": "sta",
       "id": "control-00844",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation VineEntr -> OffVine.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "OffVine",
@@ -36526,10 +36656,13 @@
       "instruction": "jsr",
       "id": "control-00845",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation OffVine -> AutoControlPlayer.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "OffVine",
@@ -36539,10 +36672,13 @@
       "instruction": "bcc",
       "id": "control-00846",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation OffVine -> ExitEntr.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "OffVine",
@@ -36552,10 +36688,13 @@
       "instruction": "bcc",
       "id": "control-00847",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation OffVine -> PlayerRdy.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerRdy",
@@ -36565,10 +36704,13 @@
       "instruction": "sta",
       "id": "control-00848",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation PlayerRdy -> ExitEntr.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "AutoControlPlayer",
@@ -36578,10 +36720,13 @@
       "instruction": "sta",
       "id": "control-00849",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation AutoControlPlayer -> PlayerCtrlRoutine.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerCtrlRoutine",
@@ -36591,10 +36736,13 @@
       "instruction": "beq",
       "id": "control-00850",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerCtrlRoutine -> SizeChk.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerCtrlRoutine",
@@ -36604,10 +36752,13 @@
       "instruction": "bne",
       "id": "control-00851",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerCtrlRoutine -> SaveJoyp.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerCtrlRoutine",
@@ -36617,10 +36768,13 @@
       "instruction": "bne",
       "id": "control-00852",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerCtrlRoutine -> DisJoyp.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerCtrlRoutine",
@@ -36630,10 +36784,13 @@
       "instruction": "bcc",
       "id": "control-00853",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerCtrlRoutine -> SaveJoyp.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerCtrlRoutine",
@@ -36643,10 +36800,13 @@
       "instruction": "bcc",
       "id": "control-00854",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation PlayerCtrlRoutine -> DisJoyp.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "DisJoyp",
@@ -36656,10 +36816,13 @@
       "instruction": "sta",
       "id": "control-00855",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation DisJoyp -> SaveJoyp.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SaveJoyp",
@@ -36669,10 +36832,13 @@
       "instruction": "beq",
       "id": "control-00856",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation SaveJoyp -> SizeChk.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SaveJoyp",
@@ -36682,10 +36848,13 @@
       "instruction": "bne",
       "id": "control-00857",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation SaveJoyp -> SizeChk.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SaveJoyp",
@@ -36695,10 +36864,13 @@
       "instruction": "beq",
       "id": "control-00858",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation SaveJoyp -> SizeChk.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SaveJoyp",
@@ -36708,10 +36880,13 @@
       "instruction": "sta",
       "id": "control-00859",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation SaveJoyp -> SizeChk.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SizeChk",
@@ -36721,10 +36896,13 @@
       "instruction": "jsr",
       "id": "control-00860",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation SizeChk -> PlayerMovementSubs.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SizeChk",
@@ -36734,10 +36912,13 @@
       "instruction": "bne",
       "id": "control-00861",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation SizeChk -> ChkMoveDir.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SizeChk",
@@ -36747,10 +36928,13 @@
       "instruction": "beq",
       "id": "control-00862",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation SizeChk -> ChkMoveDir.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SizeChk",
@@ -36760,10 +36944,13 @@
       "instruction": "ldy",
       "id": "control-00863",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation SizeChk -> ChkMoveDir.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkMoveDir",
@@ -36773,10 +36960,13 @@
       "instruction": "beq",
       "id": "control-00864",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ChkMoveDir -> PlayerSubs.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkMoveDir",
@@ -36786,10 +36976,13 @@
       "instruction": "bpl",
       "id": "control-00865",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ChkMoveDir -> SetMoveDir.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkMoveDir",
@@ -36799,10 +36992,13 @@
       "instruction": "asl",
       "id": "control-00866",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation ChkMoveDir -> SetMoveDir.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "SetMoveDir",
@@ -36812,10 +37008,13 @@
       "instruction": "sta",
       "id": "control-00867",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation SetMoveDir -> PlayerSubs.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36825,10 +37024,13 @@
       "instruction": "jsr",
       "id": "control-00868",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation PlayerSubs -> ScrollHandler.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36838,10 +37040,13 @@
       "instruction": "jsr",
       "id": "control-00869",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation PlayerSubs -> GetPlayerOffscreenBits.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36851,10 +37056,13 @@
       "instruction": "jsr",
       "id": "control-00870",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation PlayerSubs -> RelativePlayerPosition.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36864,10 +37072,13 @@
       "instruction": "jsr",
       "id": "control-00871",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation PlayerSubs -> BoundingBoxCore.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36877,10 +37088,13 @@
       "instruction": "jsr",
       "id": "control-00872",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation PlayerSubs -> PlayerBGCollision.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36890,10 +37104,13 @@
       "instruction": "bcc",
       "id": "control-00873",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerSubs -> PlayerHole.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36903,10 +37120,13 @@
       "instruction": "beq",
       "id": "control-00874",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerSubs -> PlayerHole.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36916,10 +37136,13 @@
       "instruction": "beq",
       "id": "control-00875",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerSubs -> PlayerHole.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36929,10 +37152,13 @@
       "instruction": "bcc",
       "id": "control-00876",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerSubs -> PlayerHole.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerSubs",
@@ -36942,10 +37168,13 @@
       "instruction": "sta",
       "id": "control-00877",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation PlayerSubs -> PlayerHole.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerHole",
@@ -36955,10 +37184,13 @@
       "instruction": "bmi",
       "id": "control-00878",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerHole -> ExitCtrl.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerHole",
@@ -36968,10 +37200,13 @@
       "instruction": "bne",
       "id": "control-00879",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerHole -> HoleDie.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerHole",
@@ -36981,10 +37216,13 @@
       "instruction": "bne",
       "id": "control-00880",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation PlayerHole -> ChkHoleX.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "PlayerHole",
@@ -36994,10 +37232,13 @@
       "instruction": "bne",
       "id": "control-00881",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation PlayerHole -> HoleDie.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "HoleDie",
@@ -37007,10 +37248,13 @@
       "instruction": "beq",
       "id": "control-00882",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation HoleDie -> ChkHoleX.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "HoleDie",
@@ -37020,10 +37264,13 @@
       "instruction": "bne",
       "id": "control-00883",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation HoleDie -> HoleBottom.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "HoleDie",
@@ -37033,10 +37280,13 @@
       "instruction": "sty",
       "id": "control-00884",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation HoleDie -> HoleBottom.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "HoleBottom",
@@ -37046,10 +37296,13 @@
       "instruction": "sty",
       "id": "control-00885",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation HoleBottom -> ChkHoleX.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkHoleX",
@@ -37059,10 +37312,13 @@
       "instruction": "bmi",
       "id": "control-00886",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ChkHoleX -> ExitCtrl.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkHoleX",
@@ -37072,10 +37328,13 @@
       "instruction": "bmi",
       "id": "control-00887",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ChkHoleX -> CloudExit.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkHoleX",
@@ -37085,10 +37344,13 @@
       "instruction": "bne",
       "id": "control-00888",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ChkHoleX -> ExitCtrl.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "ChkHoleX",
@@ -37098,10 +37360,13 @@
       "instruction": "sta",
       "id": "control-00889",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation ChkHoleX -> ExitCtrl.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "CloudExit",
@@ -37111,10 +37376,13 @@
       "instruction": "jsr",
       "id": "control-00890",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation CloudExit -> SetEntr.",
+      "semanticEvidence": [
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, input partition and successor ordering."
     },
     {
       "from": "Vine_AutoClimb",
