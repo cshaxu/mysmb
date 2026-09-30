@@ -1181,3 +1181,8 @@ branches.
 ### Cohort J — B16q platform response and rider-position integration
 
 `ProcSPlatCollisions` through `ExPlPos` now has eleven node contracts, every incident platform collision/runner caller, underside/top/side branch, collision flag, impedance call, small-position table, vertical gate and return relation, plus seven feasible platform/player handoffs. Static review matches rising-jump cancellation, top/side thresholds, small-ID counter ownership, borrow-aware side arithmetic, `$80/$00` small height table, death/high-byte gates, 32-pixel height subtraction and motion clear. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 underside, top, left/right side, both small-box offsets, vertical platform and gated rider routes.
+
+
+### Cohort J — B16r vertical and enemy-box offset integration
+
+`CheckPlayerVertical` through `GetEnemyBoundBoxOfsArg` now has four node contracts, every incident caller, carry branch, fall-through and return relation, plus three feasible vertical/box handoffs. Static review matches the non-obvious clear-carry high-Y exit, `$f0/$d0` thresholds, ObjectOffset fall-through, `slot*4+4` box offset and unindexed low-nibble offscreen comparison. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 vertical and box/offscreen carry routes.

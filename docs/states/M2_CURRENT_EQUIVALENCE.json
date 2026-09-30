@@ -5601,6 +5601,48 @@
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00400",
+      "producer": "CheckPlayerVertical",
+      "consumer": "ExCPV",
+      "storage": "Player_OffscreenBits, Player_Y_HighPos and Player_Y_Position carry result",
+      "feasiblePath": "Vertical collision gate returns source carry result before caller collision work.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/collision.c mysmb_world_player_vertical_carry",
+      "semanticContract": "Callers receive set carry only for fully offscreen or bottom-screen player cases.",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00401",
+      "producer": "GetEnemyBoundBoxOfs",
+      "consumer": "GetEnemyBoundBoxOfsArg",
+      "storage": "ObjectOffset to argument A-equivalent",
+      "feasiblePath": "Current object slot flows into source slot*4+4 box calculation.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/collision.c mysmb_world_enemy_box_offset",
+      "semanticContract": "All ordinary enemy callers use ObjectOffset-selected bounding box.",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00402",
+      "producer": "GetEnemyBoundBoxOfsArg",
+      "consumer": "PlayerCollisionCore",
+      "storage": "Y box offset and unindexed Enemy_OffscreenBits low nibble",
+      "feasiblePath": "Platform caller receives box offset and source offscreen-mask comparison before geometry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/collision.c mysmb_world_enemy_box_offset_arg",
+      "semanticContract": "Platform scan preserves the unusual unindexed low-nibble source handoff.",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -5677,15 +5719,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1334,
+    "needs-evidence": 1338,
     "mismatch": 9,
-    "unclassified": 611
+    "unclassified": 607
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 2943,
+    "needs-evidence": 2947,
     "mismatch": 25,
-    "unclassified": 1298
+    "unclassified": 1294
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -23915,41 +23957,53 @@
       "label": "CheckPlayerVertical",
       "asmLine": 11892,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c",
+      "currentCounterpart": "src/game/world/collision.c:mysmb_world_player_vertical_carry / mysmb_world_enemy_box_offset / mysmb_world_enemy_box_offset_arg",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns carry set only for Player_OffscreenBits >=$f0 or on-screen-high Y with Player_Y_Position >=$d0; high-Y-not-one exit preserves clear carry from the prior offscreen compare."
     },
     {
       "label": "ExCPV",
       "asmLine": 11901,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c",
+      "currentCounterpart": "src/game/world/collision.c:mysmb_world_player_vertical_carry / mysmb_world_enemy_box_offset / mysmb_world_enemy_box_offset_arg",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the source carry result without changing collision state."
     },
     {
       "label": "GetEnemyBoundBoxOfs",
       "asmLine": 11905,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c",
+      "currentCounterpart": "src/game/world/collision.c:mysmb_world_player_vertical_carry / mysmb_world_enemy_box_offset / mysmb_world_enemy_box_offset_arg",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads ObjectOffset and falls through to the argument-based box offset calculation."
     },
     {
       "label": "GetEnemyBoundBoxOfsArg",
       "asmLine": 11908,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c",
+      "currentCounterpart": "src/game/world/collision.c:mysmb_world_player_vertical_carry / mysmb_world_enemy_box_offset / mysmb_world_enemy_box_offset_arg",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps input slot to box offset slot*4+4 in Y and returns the unindexed Enemy_OffscreenBits low nibble comparison with $0f carry semantics."
     },
     {
       "label": "PlayerBGUpperExtent",
@@ -66044,12 +66098,12 @@
       "id": "control-02256",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> CheckPlayerVertical with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> CheckPlayerVertical with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -66124,12 +66178,12 @@
       "id": "control-02261",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> GetEnemyBoundBoxOfs with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original call relation PlayerEnemyCollision -> GetEnemyBoundBoxOfs with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -67356,12 +67410,12 @@
       "id": "control-02338",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation EnemiesCollision -> GetEnemyBoundBoxOfs with source slot/mask/state predicate and pair collision handoff ordering."
+      "semanticContract": "Preserves original call relation EnemiesCollision -> GetEnemyBoundBoxOfs with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "EnemiesCollision",
@@ -68108,12 +68162,12 @@
       "id": "control-02385",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> CheckPlayerVertical with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> CheckPlayerVertical with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -68140,12 +68194,12 @@
       "id": "control-02387",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> GetEnemyBoundBoxOfsArg with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> GetEnemyBoundBoxOfsArg with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -68236,12 +68290,12 @@
       "id": "control-02393",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SmallPlatformCollision -> CheckPlayerVertical with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original call relation SmallPlatformCollision -> CheckPlayerVertical with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "SmallPlatformCollision",
@@ -68284,12 +68338,12 @@
       "id": "control-02396",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ChkSmallPlatLoop -> GetEnemyBoundBoxOfs with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original call relation ChkSmallPlatLoop -> GetEnemyBoundBoxOfs with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "ChkSmallPlatLoop",
@@ -68699,10 +68753,13 @@
       "instruction": "bcs",
       "id": "control-02422",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckPlayerVertical -> ExCPV with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "CheckPlayerVertical",
@@ -68712,10 +68769,13 @@
       "instruction": "bne",
       "id": "control-02423",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckPlayerVertical -> ExCPV with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "CheckPlayerVertical",
@@ -68725,10 +68785,13 @@
       "instruction": "cmp",
       "id": "control-02424",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckPlayerVertical -> ExCPV with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "GetEnemyBoundBoxOfs",
@@ -68738,10 +68801,13 @@
       "instruction": "lda",
       "id": "control-02425",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
+      "semanticEvidence": [
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetEnemyBoundBoxOfs -> GetEnemyBoundBoxOfsArg with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "PlayerBGCollision",
@@ -89216,12 +89282,12 @@
       "id": "control-03912",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation CheckPlayerVertical -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original return relation CheckPlayerVertical -> PlayerEnemyCollision with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "GetEnemyBoundBoxOfs",
@@ -89232,12 +89298,12 @@
       "id": "control-03913",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> PlayerEnemyCollision with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "PlayerCollisionCore",
@@ -89456,12 +89522,12 @@
       "id": "control-03927",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> EnemiesCollision with source slot/mask/state predicate and pair collision handoff ordering."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> EnemiesCollision with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "SprObjectCollisionCore",
@@ -89632,12 +89698,12 @@
       "id": "control-03938",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation CheckPlayerVertical -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original return relation CheckPlayerVertical -> ChkForPlayerC_LargeP with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "GetEnemyBoundBoxOfsArg",
@@ -89648,12 +89714,12 @@
       "id": "control-03939",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfsArg -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfsArg -> ChkForPlayerC_LargeP with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "PlayerCollisionCore",
@@ -89696,12 +89762,12 @@
       "id": "control-03942",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation CheckPlayerVertical -> SmallPlatformCollision with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original return relation CheckPlayerVertical -> SmallPlatformCollision with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "GetEnemyBoundBoxOfs",
@@ -89712,12 +89778,12 @@
       "id": "control-03943",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> ChkSmallPlatLoop with source timer/state/box predicate and current platform handoff ordering."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> ChkSmallPlatLoop with source carry predicate and ObjectOffset/box handoff ordering."
     },
     {
       "from": "PlayerCollisionCore",
