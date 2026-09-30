@@ -1051,6 +1051,34 @@
         "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00075",
+      "producer": "E_CastleArea1-E_WaterArea3",
+      "consumer": "ProcessEnemyData",
+      "storage": "selected ROM stream pointer",
+      "feasiblePath": "Area pointer selection reaches the matching stream parser.",
+      "status": "needs-evidence",
+      "currentCounterpart": "shared source-bound parser",
+      "semanticContract": "The selected stream remains a byte-for-byte local ROM input.",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00076",
+      "producer": "L_CastleArea1-L_WaterArea3",
+      "consumer": "ProcessAreaData",
+      "storage": "selected ROM stream pointer",
+      "feasiblePath": "Area pointer selection reaches the matching stream parser.",
+      "status": "needs-evidence",
+      "currentCounterpart": "shared source-bound parser",
+      "semanticContract": "The selected stream remains a byte-for-byte local ROM input.",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -7768,681 +7796,885 @@
       "label": "E_CastleArea1",
       "asmLine": 4550,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_CastleArea2",
       "asmLine": 4558,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_CastleArea3",
       "asmLine": 4565,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_CastleArea4",
       "asmLine": 4574,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_CastleArea5",
       "asmLine": 4583,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_CastleArea6",
       "asmLine": 4589,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea1",
       "asmLine": 4598,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea2",
       "asmLine": 4606,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea3",
       "asmLine": 4613,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea4",
       "asmLine": 4619,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea5",
       "asmLine": 4627,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea6",
       "asmLine": 4636,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea7",
       "asmLine": 4643,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea8",
       "asmLine": 4650,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea9",
       "asmLine": 4656,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea10",
       "asmLine": 4662,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea11",
       "asmLine": 4666,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea12",
       "asmLine": 4674,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea13",
       "asmLine": 4679,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea14",
       "asmLine": 4687,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea15",
       "asmLine": 4695,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea16",
       "asmLine": 4700,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea17",
       "asmLine": 4704,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea18",
       "asmLine": 4714,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea19",
       "asmLine": 4722,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea20",
       "asmLine": 4731,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea21",
       "asmLine": 4738,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_GroundArea22",
       "asmLine": 4743,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_UndergroundArea1",
       "asmLine": 4751,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_UndergroundArea2",
       "asmLine": 4760,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_UndergroundArea3",
       "asmLine": 4769,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_WaterArea1",
       "asmLine": 4777,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_WaterArea2",
       "asmLine": 4783,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "E_WaterArea3",
       "asmLine": 4791,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_CastleArea1",
       "asmLine": 4799,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_CastleArea2",
       "asmLine": 4814,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_CastleArea3",
       "asmLine": 4832,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_CastleArea4",
       "asmLine": 4849,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_CastleArea5",
       "asmLine": 4865,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_CastleArea6",
       "asmLine": 4884,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea1",
       "asmLine": 4900,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea2",
       "asmLine": 4915,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea3",
       "asmLine": 4931,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea4",
       "asmLine": 4944,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea5",
       "asmLine": 4963,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea6",
       "asmLine": 4980,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea7",
       "asmLine": 4995,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea8",
       "asmLine": 5009,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea9",
       "asmLine": 5027,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea10",
       "asmLine": 5042,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea11",
       "asmLine": 5048,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea12",
       "asmLine": 5059,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea13",
       "asmLine": 5066,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea14",
       "asmLine": 5081,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea15",
       "asmLine": 5096,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea16",
       "asmLine": 5113,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea17",
       "asmLine": 5123,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea18",
       "asmLine": 5143,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea19",
       "asmLine": 5160,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea20",
       "asmLine": 5177,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea21",
       "asmLine": 5191,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_GroundArea22",
       "asmLine": 5200,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_UndergroundArea1",
       "asmLine": 5210,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_UndergroundArea2",
       "asmLine": 5231,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_UndergroundArea3",
       "asmLine": 5252,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_WaterArea1",
       "asmLine": 5271,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_WaterArea2",
       "asmLine": 5282,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "L_WaterArea3",
       "asmLine": 5299,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "owner-local area_prg through shared core",
+      "currentCounterpart": "shared enemy or area stream parser",
+      "semanticEvidence": [
+        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
     },
     {
       "label": "GameMode",
