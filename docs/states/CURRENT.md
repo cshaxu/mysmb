@@ -10,16 +10,16 @@
 | Admission And Approval | Owner-directed re-audit after historical completion accounting proved insufficient to track present end-to-end equivalence. |
 | Objective | Establish current-build, source-order node and edge registries for the complete original ROM graph, then produce an ordered, unnumbered repair queue from confirmed discrepancies. |
 | Non-goals | No gameplay repair, node-credit promotion, platform logic, numeric implementation T allocation, or M2 closure. |
-| Reference Baseline | Historical accounting: 1,992 / 1,992. Current node registry: 38 exact, 218 needs-evidence, 9 mismatch, 1,727 unclassified. Current control-edge registry: 76 exact, 416 needs-evidence, 10 mismatch, 3,840 unclassified. Three material RAM/table edges have source-path proof and are exact; two are mismatched and thirty-six need evidence; their final denominator remains pending feasible-path enumeration. Scope is all labels and extracted edges; expected match delta is zero. |
+| Reference Baseline | Historical accounting: 1,992 / 1,992. Current node registry: 38 exact, 660 needs-evidence, 9 mismatch, 1,285 unclassified. Current control-edge registry: 76 exact, 1,162 needs-evidence, 10 mismatch, 3,094 unclassified. Material RAM/table ledger: 3 exact, 1 mismatch and 84 needs-evidence; its final denominator remains pending feasible-path enumeration. Scope is all labels and extracted edges; expected match delta is zero. |
 | Candidate Proposal | docs/proposals/m2/current-equivalence-reaudit.md. |
 | Files And ABI Surface | Governance states, audit registry, queue and neutral build-local recorder outputs; no production source mutation. |
 | Applicable Rules | Execution, documentation, architecture, coding and source/research policy. |
 | Verification | Node and edge registry integrity/counts; source-order cohort allocation; fresh original-ROM/x86/x64 preflight; platform-purity and documentation governance. |
-| Expected Markers | 1,992 historical labels retained; every label and every extracted ROM graph edge assigned to one audit cohort; no node status or artifact change. |
+| Expected Markers | 1,992 historical labels retained; every label and every extracted ROM graph edge assigned to one audit cohort; each node has a semantic contract, and each control or feasible material edge has an independently audited integration contract; no production artifact change. |
 | Asset Needs | Owner-local ROM only under ignored build paths; no ROM, generated source, trace or executable is committed. |
 | Reporting Requirements | Report historical count, current node counts and current edge counts separately; after every cohort report exact/needs-evidence/mismatch totals, routes, covered edges, and resulting unnumbered repair candidates. |
 | Stop Conditions | Stop implementation on a node or edge mismatch; record its minimal contiguous chain and continue only independent audit cohorts. |
-| Exit Criteria | Every label and every extracted ROM graph edge has a current-equivalence disposition, every mismatch has an ordered repair candidate, and the registries and queue pass governance review. |
+| Exit Criteria | Every label has a current semantic disposition; every extracted control edge and every proven feasible material edge has an independently recorded integration disposition; every mismatch has an ordered repair candidate; and the registries and queue pass governance review. |
 | Original Owner Request | Faithful original-ROM C logic shared by DOS16 and Win32; DOS16 stays active via OpenNT, without DOSBox. |
 | Similar-Issue Sweep | Audit every platform source for game-state decisions and every current mismatch for adjacent owner-chain effects. |
 

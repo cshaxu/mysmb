@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 638 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 660 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,307 | Not yet processed by this re-audit. |
+| Unclassified | 1,285 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,10 +54,17 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 1,118 control; 72 material RAM/table |
+| Needs evidence | 1,162 control; 84 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,138 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,094 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
+
+The two ledgers are separate acceptance requirements. A node is not
+current-exact merely because its own outputs look right: its source contract
+and every owned incoming/outgoing control connection must be accounted for.
+Likewise, a control or feasible material edge is not exact merely because its
+endpoints are mapped. Its predicate, ordering, state handoff and return or
+dispatch behavior must have their own counterpart and route evidence.
 
 ### Control-edge allocation
 
@@ -627,3 +634,62 @@ overwrite predicate, byte-length carry initialization, wrapped attribute read,
 and pixel coordinate conversion. No static discrepancy was found; all sixteen
 nodes and relations remain `needs-evidence` pending controlled ROM/x86/x64
 object routes.
+
+### Cohort E — B12a game-engine root integration
+
+`GameMode` through `ProcELoop` now have twenty-two static node contracts and
+forty-nine control/return relations. The audit records game-mode dispatch,
+timer, palette and music ordering, engine-subroutine execution and parser/
+scroll handoff. Star-palette reset and area-music selection are confirmed in
+the shared game core rather than a platform adapter. These entries remain
+`needs-evidence` until a controlled original-ROM/x86/x64 matrix covers the
+mode, timer, palette and engine-subroutine alternatives.
+
+### Cohort E — B12b player entry and control integration
+
+`GameRoutines` through the player-control, pipe, vine, automatic-control and
+hole paths now have twenty-five node contracts and sixty-four control
+relations. The audit records the source dispatch and entry sequencing, with
+the shared player core as the only game-logic owner. No static discrepancy was
+found; the nodes and edges remain `needs-evidence` pending controlled routes
+for each entrance, pipe/vine and automatic-control branch.
+
+### Cohort E — B12c player transition integration
+
+The pipe, vine, size, death, fire-flower, flagpole and end-level transition
+chain now has thirty-three node contracts and sixty-nine control relations.
+The static pass confirms that `ChgAreaPipe` decrements zero to `$ff` and that
+vertical-pipe selection occurs only after its source scrolling decision. No
+static discrepancy was found. All entries remain `needs-evidence` until ROM,
+x86 and x64 routes cover the transition alternatives and their persistent
+state handoffs.
+
+### Cohort F — B12d player movement-state and jump-physics integration
+
+`PlayerMovementSubs` through `GetYPhy`, including the player-state dispatch,
+ground/air/climb state paths, jump initialization and vertical-physics tables,
+now has forty static node contracts and fifty-eight control relations. The
+audit preserves the source state dispatch, jump/swim selectors and physics
+table ordering. No static discrepancy was found. These items remain
+`needs-evidence` pending controlled original-ROM/x86/x64 movement-state and
+jump/swim route comparisons.
+
+### Cohort F — B12e horizontal physics, animation and friction integration
+
+The source-contiguous player chain from `PJumpSnd` through `SetAbsSpd` now has
+an independent node-semantics and integration pass. It records twenty-two node
+contracts, forty internal branch/fall-through/jump relations, four caller
+return relations, and twelve feasible table-to-consumer paths. The contracts
+cover jump-sound selection; grounded, water and airborne X-physics indices;
+run timer and fast-friction gates; entrance maximum-right substitution;
+animation timer/skid behavior; and every friction branch.
+
+The friction contract specifically keeps the source's released-input split:
+positive speed takes the subtractive path and negative speed takes the
+additive path, so both converge toward zero. Held directions instead use the
+right-bit LSR precedence. No static discrepancy was found in this chain. All
+twenty-two nodes, forty-four control relations and twelve material paths are
+`needs-evidence` until the same original-ROM, x86 and x64 route matrix covers
+the listed branch families, clamps, table indices, speed-sign paths and caller
+returns. This batch therefore increases audit coverage but makes no
+current-exact claim.
