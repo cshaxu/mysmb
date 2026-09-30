@@ -31,11 +31,11 @@ not own game logic.
 
 ## Current S5 Finding
 
-S5 P9 has completed the project-owned native regression matrix: x64 and x86
+S5 P10 has completed the project-owned native regression matrix: x64 and x86
 each pass 218 / 218 tests, owner-local area routing passes on both widths,
-and the OpenNT DOS16 link is current. It also removed four superseded historic
-ledger rows after linking them to their later source-route closures. This does
-not close S5 or M2: the remaining review ledger still contains independently
-recorded original-ROM discrepancies and the DOS16 owner-resource binding gap,
-each requiring source-route treatment before final certification can claim
-complete game behavior.
+and the OpenNT DOS16 link is current. It also removes the historical T39
+Spiny smoke finding after T40 S10's source-route closure and current x86/x64
+route check. This does not close S5 or M2: the remaining review ledger still
+contains independently recorded original-ROM discrepancies and the DOS16
+owner-resource binding gap, each requiring source-route treatment before final
+certification can claim complete game behavior.

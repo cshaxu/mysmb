@@ -79,11 +79,11 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
 
 - [ ] **Star-flag timer native-test assertion:** T39 S2 runs the unchanged endgame timer-tick assertion against both S1 and S2 shared objects; both fail with exit six on x86/x64. Other endgame groups, including fireworks animation/initializer/stream, pass independently. Keep AwardGameTimerPoints/NoTTick with existing M2 T19 S5 custody until the planned T41 actor slice; compare the source behavior before deciding whether the fixture or implementation is wrong. [S2 evidence](../history/M2-T39-special-initialization-and-dispatch.md#s2-original-fireworks-proof).
 
-- [ ] **Retained Lakitu smoke Spiny-generation failure:** T39 S5 compares the
-  same diagnostic assertion with S4 and S5 shared objects on x86/x64; all four
-  fail at original lakitu_smoke.c line 76, before EndFrenzy. Preserve the
-  existing Lakitu/Spiny source-order receivers. The nine initializer/frenzy
-  matches grant no child or full-actor credit. [S5 proof](../history/M2-T39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof).
+- [x] **Lakitu smoke Spiny-generation failure:** The historical T39 S5
+  diagnostic is superseded by T40 S10. The shared source-shaped Lakitu distance
+  helper preserves Spiny's distinct adjustment bytes and call order; all former
+  124 Spiny differences became original/native matches. The current
+  `mysmb.lakitu-smoke` route passes on x86 and x64. [T40 S10 closure](../history/M2-T40-enemy-movement-and-firebar.md#s10-lakitu-movement-and-distance-helper).
 
 - [ ] **Actor-vector and retainer actual-child gaps:** T39 S7 proves only the
   four caller nodes (360/360); actual native children match 42/360, retaining

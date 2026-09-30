@@ -404,3 +404,14 @@ The four historical TODO rows are therefore marked resolved with a direct link
 to their superseding closure. This audit does not resolve any remaining row:
 the unresolved ledger still supplies the basis for S5's final discrepancy
 review, including the distinct DOS16 owner-resource binding gap.
+
+### S5 P10: Spiny historical-route adjudication
+
+S5 P10 resolves one additional historical ledger row without admitting node
+credit or changing production code. T39 S5 recorded a `lakitu_smoke` failure
+before the later source-order `PlayerLakituDiff` chain existed. T40 S10 then
+proved the shared helper's Spiny adjustment, scratch and returned-speed
+semantics across original routes, converting all 124 retained Spiny comparisons
+to matches. The current `mysmb.lakitu-smoke` executable passes on x86 and x64.
+The unrelated actor-vector, normal-actor, special-actor and firebar child
+differences remain active and are not affected by this record correction.
