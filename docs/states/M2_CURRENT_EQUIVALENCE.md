@@ -956,3 +956,8 @@ branches.
 ### Cohort I — B14t jump-green-paratroopa box-tail integration
 
 `InitJumpGPTroopa` through `SetBBox2` now has three node contracts, all incident fall-through/dispatch relations and one feasible state handoff. The audit confirms its intentionally narrow direction/speed/box write footprint. No static shared-C discrepancy was found; entries remain `needs-evidence`.
+
+
+### Cohort I — B14u balance/drop/horizontal platform integration
+
+`InitBalPlatform` through `PosPlatform` now has eleven node contracts, incident platform control relations and four feasible data handoffs. The audit records balance alignment alternation, collision/counter entries, vertical reset ordering, castle/hard box choice and all low/high page-carry position table use. No static shared-C discrepancy was found; entries remain `needs-evidence`.

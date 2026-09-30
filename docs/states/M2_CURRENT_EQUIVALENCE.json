@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 158,
+    "enumeratedCount": 162,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2225,6 +2225,62 @@
       "semanticContract": "Preserves ordered limited writes without generic vertical-state reset.",
       "semanticEvidence": [
         "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00159",
+      "producer": "PlatPosDataLow",
+      "consumer": "PosPlatform",
+      "storage": "PlatPosDataLow[Y]",
+      "feasiblePath": "Position helper adds low offset before page carry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform_position_low[index]",
+      "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00160",
+      "producer": "PlatPosDataHigh",
+      "consumer": "PosPlatform",
+      "storage": "PlatPosDataHigh[Y] plus low carry",
+      "feasiblePath": "Position helper adds high compensation and low carry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform_position_high[index]",
+      "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00161",
+      "producer": "InitBalPlatform",
+      "consumer": "InitDropPlatform",
+      "storage": "alignment/state/direction and position writes",
+      "feasiblePath": "Balance path enters shared drop initialization after both position adjustments.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_balance_platform then drop",
+      "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00162",
+      "producer": "CommonPlatCode",
+      "consumer": "SPBBox",
+      "storage": "cleared vertical state and area/hard flags",
+      "feasiblePath": "Common platform state reset precedes box selection.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_common_platform",
+      "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -15749,51 +15805,66 @@
       "label": "InitBalPlatform",
       "asmLine": 8904,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Raises Y two pixels, conditionally applies platform position index two, alternates global alignment, resets direction, applies index zero then falls into drop initialization."
     },
     {
       "label": "AlignP",
       "asmLine": 8911,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies global alignment to state and selects next global alignment from $ff or object slot."
     },
     {
       "label": "SetBPA",
       "asmLine": 8917,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores alignment, clears direction, calls position index zero and falls through drop setup."
     },
     {
       "label": "InitDropPlatform",
       "asmLine": 8925,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets collision flag $ff then tail-selects common platform code."
     },
     {
       "label": "InitHoriPlatform",
       "asmLine": 8932,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears secondary X counter then tail-selects common platform code."
     },
     {
       "label": "InitVertPlatform",
@@ -15819,31 +15890,40 @@
       "label": "CommonPlatCode",
       "asmLine": 8955,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls InitVStf then falls through platform box selection."
     },
     {
       "label": "SPBBox",
       "asmLine": 8957,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects box $05 for castle/secondary hard and $06 otherwise."
     },
     {
       "label": "CasPBB",
       "asmLine": 8964,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected platform box and returns."
     },
     {
       "label": "LargeLiftUp",
@@ -15909,31 +15989,40 @@
       "label": "PlatPosDataLow",
       "asmLine": 9007,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds position low addends $08,$0c,$f8."
     },
     {
       "label": "PlatPosDataHigh",
       "asmLine": 9010,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds position high addends $00,$00,$ff."
     },
     {
       "label": "PosPlatform",
       "asmLine": 9013,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared platform initializer core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds indexed low and high platform offsets with low-byte carry into page."
     },
     {
       "label": "EndOfEnemyInitCode",
@@ -51725,10 +51814,13 @@
       "instruction": "bne",
       "id": "control-01639",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitBalPlatform -> AlignP with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitBalPlatform",
@@ -51738,10 +51830,13 @@
       "instruction": "jsr",
       "id": "control-01640",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitBalPlatform -> PosPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitBalPlatform",
@@ -51751,10 +51846,13 @@
       "instruction": "jsr",
       "id": "control-01641",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitBalPlatform -> AlignP with platform state, position carry and box-selection handoff."
     },
     {
       "from": "AlignP",
@@ -51764,10 +51862,13 @@
       "instruction": "bpl",
       "id": "control-01642",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation AlignP -> SetBPA with platform state, position carry and box-selection handoff."
     },
     {
       "from": "AlignP",
@@ -51777,10 +51878,13 @@
       "instruction": "tay",
       "id": "control-01643",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation AlignP -> SetBPA with platform state, position carry and box-selection handoff."
     },
     {
       "from": "SetBPA",
@@ -51790,10 +51894,13 @@
       "instruction": "jsr",
       "id": "control-01644",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetBPA -> PosPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "SetBPA",
@@ -51803,10 +51910,13 @@
       "instruction": "jsr",
       "id": "control-01645",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetBPA -> InitDropPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitDropPlatform",
@@ -51816,10 +51926,13 @@
       "instruction": "jmp",
       "id": "control-01646",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation InitDropPlatform -> CommonPlatCode with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitHoriPlatform",
@@ -51829,10 +51942,13 @@
       "instruction": "jmp",
       "id": "control-01647",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation InitHoriPlatform -> CommonPlatCode with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitVertPlatform",
@@ -51868,10 +51984,13 @@
       "instruction": "sta",
       "id": "control-01650",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetYO -> CommonPlatCode with platform state, position carry and box-selection handoff."
     },
     {
       "from": "CommonPlatCode",
@@ -51881,10 +52000,13 @@
       "instruction": "jsr",
       "id": "control-01651",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation CommonPlatCode -> InitVStf with platform state, position carry and box-selection handoff."
     },
     {
       "from": "CommonPlatCode",
@@ -51894,10 +52016,13 @@
       "instruction": "jsr",
       "id": "control-01652",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CommonPlatCode -> SPBBox with platform state, position carry and box-selection handoff."
     },
     {
       "from": "SPBBox",
@@ -51907,10 +52032,13 @@
       "instruction": "beq",
       "id": "control-01653",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SPBBox -> CasPBB with platform state, position carry and box-selection handoff."
     },
     {
       "from": "SPBBox",
@@ -51920,10 +52048,13 @@
       "instruction": "bne",
       "id": "control-01654",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SPBBox -> CasPBB with platform state, position carry and box-selection handoff."
     },
     {
       "from": "SPBBox",
@@ -51933,10 +52064,13 @@
       "instruction": "lda",
       "id": "control-01655",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SPBBox -> CasPBB with platform state, position carry and box-selection handoff."
     },
     {
       "from": "LargeLiftUp",
@@ -51998,10 +52132,13 @@
       "instruction": "jmp",
       "id": "control-01660",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation LargeLiftBBox -> SPBBox with platform state, position carry and box-selection handoff."
     },
     {
       "from": "PlatLiftUp",
@@ -52037,10 +52174,13 @@
       "instruction": "jsr",
       "id": "control-01663",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation CommonSmallLift -> PosPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "RunEnemyObjectsCore",
@@ -80373,10 +80513,13 @@
       "instruction": "rts/rti",
       "id": "control-03785",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PosPlatform -> InitBalPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "PosPlatform",
@@ -80386,10 +80529,13 @@
       "instruction": "rts/rti",
       "id": "control-03786",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PosPlatform -> SetBPA with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitVStf",
@@ -80400,12 +80546,12 @@
       "id": "control-03787",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitVStf -> CommonPlatCode with its mode/slot predicate, exact write ordering and call/tail/return handoff."
+      "semanticContract": "Preserves original return relation InitVStf -> CommonPlatCode with platform state, position carry and box-selection handoff."
     },
     {
       "from": "PlatLiftUp",
@@ -80441,10 +80587,13 @@
       "instruction": "rts/rti",
       "id": "control-03790",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PosPlatform -> CommonSmallLift with platform state, position carry and box-selection handoff."
     },
     {
       "from": "JumpEngine",
@@ -87084,12 +87233,12 @@
       "id": "control-04251",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitBalPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitBalPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -87152,12 +87301,12 @@
       "id": "control-04255",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitHoriPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitHoriPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -87169,12 +87318,12 @@
       "id": "control-04256",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitDropPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitDropPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -87186,12 +87335,12 @@
       "id": "control-04257",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitHoriPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitHoriPlatform with platform state, position carry and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",
