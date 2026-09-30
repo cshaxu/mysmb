@@ -6495,12 +6495,13 @@
       "cohort": "C",
       "status": "needs-evidence",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Writes wave and water-underpart geometry from large-object length."
+      "semanticContract": "Decodes the persistent large-object length, writes wave at row 10, then renders water metatile $87 from row 11 for one row."
     },
     {
       "label": "QuestionBlockRow_High",
@@ -6508,62 +6509,78 @@
       "cohort": "C",
       "status": "needs-evidence",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Falls into low-row question block handling after its high-row setup."
+      "semanticContract": "Uses the source BIT-opcode fall-through to select row 3, then shares low-row length decode and coin-question write."
     },
     {
       "label": "QuestionBlockRow_Low",
       "asmLine": 3948,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects row 7, preserves it across large-length decode, and writes metatile $c0 at the selected buffer row."
     },
     {
       "label": "Bridge_High",
       "asmLine": 3960,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the two source fall-through selectors to choose bridge row 6, then shares the low bridge renderer."
     },
     {
       "label": "Bridge_Middle",
       "asmLine": 3964,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the source fall-through selector to choose bridge row 7, then shares the low bridge renderer."
     },
     {
       "label": "Bridge_Low",
       "asmLine": 3968,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects row 9, preserves it across large-length decode, writes rail $0b, then renders bridge metatile $63 below it."
     },
     {
       "label": "FlagBalls_Residual",
       "asmLine": 3983,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decodes the low-nibble vertical extent, then renders flag balls metatile $6d from fixed row 2."
     },
     {
       "label": "FlagpoleObject",
@@ -33140,12 +33157,13 @@
       "id": "control-00674",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "area.c preserves source call relation Hole_Water -> ChkLrgObjLength.",
+      "currentCounterpart": "src/game/area.c preserves the source call relation Hole_Water -> ChkLrgObjLength through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "area.c preserves source call relation Hole_Water -> ChkLrgObjLength."
+      "semanticContract": "The parser preserves this call handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "Hole_Water",
@@ -33156,12 +33174,13 @@
       "id": "control-00675",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "area.c preserves source jump relation Hole_Water -> RenderUnderPart.",
+      "currentCounterpart": "src/game/area.c preserves the source jump relation Hole_Water -> RenderUnderPart through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "area.c preserves source jump relation Hole_Water -> RenderUnderPart."
+      "semanticContract": "The parser preserves this jump handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "QuestionBlockRow_High",
@@ -33172,12 +33191,13 @@
       "id": "control-00676",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "area.c preserves source fallthrough relation QuestionBlockRow_High -> QuestionBlockRow_Low.",
+      "currentCounterpart": "src/game/area.c preserves the source fallthrough relation QuestionBlockRow_High -> QuestionBlockRow_Low through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "area.c preserves source fallthrough relation QuestionBlockRow_High -> QuestionBlockRow_Low."
+      "semanticContract": "The parser preserves this fallthrough handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "QuestionBlockRow_Low",
@@ -33187,10 +33207,13 @@
       "instruction": "jsr",
       "id": "control-00677",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source call relation QuestionBlockRow_Low -> ChkLrgObjLength through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this call handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "Bridge_High",
@@ -33200,10 +33223,13 @@
       "instruction": "lda",
       "id": "control-00678",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source fallthrough relation Bridge_High -> Bridge_Middle through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this fallthrough handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "Bridge_Middle",
@@ -33213,10 +33239,13 @@
       "instruction": "lda",
       "id": "control-00679",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source fallthrough relation Bridge_Middle -> Bridge_Low through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this fallthrough handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "Bridge_Low",
@@ -33226,10 +33255,13 @@
       "instruction": "jsr",
       "id": "control-00680",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source call relation Bridge_Low -> ChkLrgObjLength through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this call handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "Bridge_Low",
@@ -33239,10 +33271,13 @@
       "instruction": "jmp",
       "id": "control-00681",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source jump relation Bridge_Low -> RenderUnderPart through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this jump handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "FlagBalls_Residual",
@@ -33252,10 +33287,13 @@
       "instruction": "jsr",
       "id": "control-00682",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source call relation FlagBalls_Residual -> GetLrgObjAttrib through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this call handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "FlagBalls_Residual",
@@ -33265,10 +33303,13 @@
       "instruction": "jmp",
       "id": "control-00683",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source jump relation FlagBalls_Residual -> RenderUnderPart through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this jump handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "FlagpoleObject",
@@ -71266,10 +71307,13 @@
       "instruction": "rts/rti",
       "id": "control-03587",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source return relation ChkLrgObjLength -> Hole_Water through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this return handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "ChkLrgObjLength",
@@ -71279,10 +71323,13 @@
       "instruction": "rts/rti",
       "id": "control-03588",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source return relation ChkLrgObjLength -> QuestionBlockRow_Low through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this return handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "ChkLrgObjLength",
@@ -71292,10 +71339,13 @@
       "instruction": "rts/rti",
       "id": "control-03589",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source return relation ChkLrgObjLength -> Bridge_Low through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this return handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -71305,10 +71355,13 @@
       "instruction": "rts/rti",
       "id": "control-03590",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves the source return relation GetLrgObjAttrib -> FlagBalls_Residual through the shared parser-object helper path.",
+      "semanticEvidence": [
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The parser preserves this return handoff, including the selected row/length state and caller return ordering."
     },
     {
       "from": "RenderUnderPart",

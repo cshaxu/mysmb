@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 367 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 372 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,578 | Not yet processed by this re-audit. |
+| Unclassified | 1,573 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 752 control; 58 material RAM/table |
+| Needs evidence | 763 control; 58 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,504 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,493 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -576,3 +576,17 @@ allocation. Two material paths record vertical-pipe table consumption and the
 caller-specific slot-search handoff. No static discrepancy was found. These
 22 nodes, 39 relations and both data paths remain `needs-evidence` pending
 ROM/x86/x64 pipe, slot-full and piranha-route captures.
+
+### Cohort C — B10j water, question-row and bridge-object integration
+
+`Hole_Water` through `FlagBalls_Residual` (lines 3933–3989) now have individual
+shared-`area.c` node contracts and fourteen local control/return relations in the
+integration ledger. The audit preserves the source's intentional BIT-opcode
+fall-through selectors for high/low question rows and high/middle/low bridges,
+the large-object length handoff, fixed buffer rows, and the single-row versus
+vertical underpart rendering distinction. No static discrepancy was found. All
+seven nodes and fourteen relations remain `needs-evidence` until controlled
+original-ROM and current x86/x64 routes compare water, both question rows, all
+three bridge rows and flag-ball extent with the parser's persistent length and
+metatile-buffer state. `FlagpoleObject` is source-ordered in Cohort D and is
+intentionally excluded from this chain.
