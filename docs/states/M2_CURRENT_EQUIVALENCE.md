@@ -28,6 +28,15 @@ fall-through, return and vector dispatch) plus material game-state edges
 (source RAM/table producer to consuming node). The current edge count is
 therefore intentionally **not estimated** in advance.
 
+The reproducible control-graph extractor is
+[`Extract-M2RomGraph.py`](../../tools/Extract-M2RomGraph.py). Its current
+owner-local listing run reads all 1,992 inventory labels and establishes the
+control subledger at **4,342** edges: 611 calls, 247 direct jumps, 1,566
+branches, 1,058 fall-through relations, 611 return relations, two vector
+entries and 247 `JumpEngine` selector edges. This is a fixed subledger, not
+the final edge denominator: normalized RAM/table producer-consumer edges are
+still required.
+
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 0 |
