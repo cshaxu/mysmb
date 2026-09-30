@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 204,
+    "enumeratedCount": 210,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2869,6 +2869,90 @@
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00205",
+      "producer": "BlooberBitmasks",
+      "consumer": "MoveBloober",
+      "storage": "SecondaryHardMode-indexed random mask",
+      "feasiblePath": "Random LFSR mask controls whether direction is reconsidered before swimming.",
+      "status": "needs-evidence",
+      "currentCounterpart": "masks[SecondaryHardMode]",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00206",
+      "producer": "FBLeft",
+      "consumer": "SBMDir",
+      "storage": "PlayerEnemyDiff sign and carry",
+      "feasiblePath": "Even-slot player difference selects direction while preserving page-comparison carry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_player_difference and local carry",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00207",
+      "producer": "SBMDir",
+      "consumer": "BlooberSwim",
+      "storage": "Enemy moving direction and inherited carry",
+      "feasiblePath": "Swimming consumes stored direction and source carry semantics.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_bloobers_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00208",
+      "producer": "ProcSwimmingB",
+      "consumer": "ChkForFloatdown",
+      "storage": "movement counter bit one and interval timer",
+      "feasiblePath": "Float-state branch uses interval timer before near-player comparison.",
+      "status": "needs-evidence",
+      "currentCounterpart": "swim helper",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00209",
+      "producer": "ChkNearPlayer",
+      "consumer": "Floatdown",
+      "storage": "Y+16 plus inherited carry and player Y",
+      "feasiblePath": "Near-player test preserves source carry into the vertical threshold calculation.",
+      "status": "needs-evidence",
+      "currentCounterpart": "swim helper near_y",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00210",
+      "producer": "SwimX",
+      "consumer": "LeftSwim",
+      "storage": "X speed, direction and page carry/borrow",
+      "feasiblePath": "Each direction updates X and page with the original carry or borrow rule.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_bloobers_slot",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -17381,161 +17465,209 @@
       "label": "BlooberBitmasks",
       "asmLine": 9490,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds random masks {$3f,$03} indexed by SecondaryHardMode."
     },
     {
       "label": "MoveBloober",
       "asmLine": 9493,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes defeated state to slow vertical movement; otherwise applies difficulty mask and chooses direction from odd-slot player direction or even-slot player difference before swimming."
     },
     {
       "label": "FBLeft",
       "asmLine": 9506,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses player/enemy difference to choose left by default or right when enemy is left of player, while preserving source carry for downstream swim logic."
     },
     {
       "label": "SBMDir",
       "asmLine": 9510,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected Bloober direction then falls through swimming."
     },
     {
       "label": "BlooberSwim",
       "asmLine": 9512,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls swimming state progression, applies upward movement-force subtraction only if result stays at or below Y=$20 boundary, then chooses horizontal direction."
     },
     {
       "label": "SwimX",
       "asmLine": 9520,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For direction right, adds BlooberMoveSpeed to X and propagates carry to page before return."
     },
     {
       "label": "LeftSwim",
       "asmLine": 9532,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For direction left, subtracts BlooberMoveSpeed from X and propagates borrow to page before return."
     },
     {
       "label": "MoveDefeatedBloober",
       "asmLine": 9542,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to slow vertical downward movement."
     },
     {
       "label": "ProcSwimmingB",
       "asmLine": 9545,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects acceleration, deceleration, floating or near-player branches from movement counter and timer state."
     },
     {
       "label": "BSwimE",
       "asmLine": 9565,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after acceleration branch work or its every-eighth-frame gate."
     },
     {
       "label": "SlowSwim",
       "asmLine": 9567,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Every eighth frame decrements swim force/speed; when reaching zero advances movement state and assigns interval timer two."
     },
     {
       "label": "NoSSw",
       "asmLine": 9579,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after slow-swim frame gate or state update."
     },
     {
       "label": "ChkForFloatdown",
       "asmLine": 9581,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects near-player test when interval timer is zero; otherwise falls through alternating float-down."
     },
     {
       "label": "Floatdown",
       "asmLine": 9585,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "On alternate frames increments Y; otherwise returns."
     },
     {
       "label": "NoFD",
       "asmLine": 9590,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after float-down cadence decision."
     },
     {
       "label": "ChkNearPlayer",
       "asmLine": 9592,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/bloober.c",
+      "currentCounterpart": "shared Bloober slot state machine",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds sixteen plus inherited carry to Y; if still above player returns to float-down, otherwise clears movement counter and returns."
     },
     {
       "label": "MoveBulletBill",
@@ -55029,10 +55161,13 @@
       "instruction": "bne",
       "id": "control-01791",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveBloober -> MoveDefeatedBloober with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "MoveBloober",
@@ -55042,10 +55177,13 @@
       "instruction": "bne",
       "id": "control-01792",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveBloober -> BlooberSwim with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "MoveBloober",
@@ -55055,10 +55193,13 @@
       "instruction": "bcc",
       "id": "control-01793",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveBloober -> FBLeft with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "MoveBloober",
@@ -55068,10 +55209,13 @@
       "instruction": "bcs",
       "id": "control-01794",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveBloober -> SBMDir with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "MoveBloober",
@@ -55081,10 +55225,13 @@
       "instruction": "bcs",
       "id": "control-01795",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveBloober -> FBLeft with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "FBLeft",
@@ -55094,10 +55241,13 @@
       "instruction": "jsr",
       "id": "control-01796",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FBLeft -> PlayerEnemyDiff with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "FBLeft",
@@ -55107,10 +55257,13 @@
       "instruction": "bpl",
       "id": "control-01797",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FBLeft -> SBMDir with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "FBLeft",
@@ -55120,10 +55273,13 @@
       "instruction": "dey",
       "id": "control-01798",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FBLeft -> SBMDir with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "SBMDir",
@@ -55133,10 +55289,13 @@
       "instruction": "sty",
       "id": "control-01799",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SBMDir -> BlooberSwim with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "BlooberSwim",
@@ -55146,10 +55305,13 @@
       "instruction": "jsr",
       "id": "control-01800",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlooberSwim -> ProcSwimmingB with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "BlooberSwim",
@@ -55159,10 +55321,13 @@
       "instruction": "bcc",
       "id": "control-01801",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BlooberSwim -> SwimX with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "BlooberSwim",
@@ -55172,10 +55337,13 @@
       "instruction": "sta",
       "id": "control-01802",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BlooberSwim -> SwimX with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "SwimX",
@@ -55185,10 +55353,13 @@
       "instruction": "bne",
       "id": "control-01803",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SwimX -> LeftSwim with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "MoveDefeatedBloober",
@@ -55198,10 +55369,13 @@
       "instruction": "jmp",
       "id": "control-01804",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveDefeatedBloober -> MoveEnemySlowVert with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ProcSwimmingB",
@@ -55211,10 +55385,13 @@
       "instruction": "bne",
       "id": "control-01805",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcSwimmingB -> ChkForFloatdown with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ProcSwimmingB",
@@ -55224,10 +55401,13 @@
       "instruction": "bcs",
       "id": "control-01806",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcSwimmingB -> SlowSwim with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ProcSwimmingB",
@@ -55237,10 +55417,13 @@
       "instruction": "bne",
       "id": "control-01807",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcSwimmingB -> BSwimE with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ProcSwimmingB",
@@ -55250,10 +55433,13 @@
       "instruction": "bne",
       "id": "control-01808",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcSwimmingB -> BSwimE with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ProcSwimmingB",
@@ -55263,10 +55449,13 @@
       "instruction": "inc",
       "id": "control-01809",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcSwimmingB -> BSwimE with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "SlowSwim",
@@ -55276,10 +55465,13 @@
       "instruction": "bne",
       "id": "control-01810",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SlowSwim -> NoSSw with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "SlowSwim",
@@ -55289,10 +55481,13 @@
       "instruction": "bne",
       "id": "control-01811",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SlowSwim -> NoSSw with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "SlowSwim",
@@ -55302,10 +55497,13 @@
       "instruction": "sta",
       "id": "control-01812",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SlowSwim -> NoSSw with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ChkForFloatdown",
@@ -55315,10 +55513,13 @@
       "instruction": "beq",
       "id": "control-01813",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkForFloatdown -> ChkNearPlayer with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ChkForFloatdown",
@@ -55328,10 +55529,13 @@
       "instruction": "beq",
       "id": "control-01814",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkForFloatdown -> Floatdown with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "Floatdown",
@@ -55341,10 +55545,13 @@
       "instruction": "bcs",
       "id": "control-01815",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Floatdown -> NoFD with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "Floatdown",
@@ -55354,10 +55561,13 @@
       "instruction": "inc",
       "id": "control-01816",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Floatdown -> NoFD with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ChkNearPlayer",
@@ -55367,10 +55577,13 @@
       "instruction": "bcc",
       "id": "control-01817",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkNearPlayer -> Floatdown with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "MoveBulletBill",
@@ -82528,10 +82741,13 @@
       "instruction": "rts/rti",
       "id": "control-03835",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerEnemyDiff -> FBLeft with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "ProcSwimmingB",
@@ -82541,10 +82757,13 @@
       "instruction": "rts/rti",
       "id": "control-03836",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcSwimmingB -> BlooberSwim with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -89708,12 +89927,12 @@
       "id": "control-04317",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveBloober with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveBloober with Bloober state, timer, direction/carry and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",

@@ -1001,3 +1001,8 @@ branches.
 ### Cohort I — B15g green paratroopa and X-counter integration
 
 `MoveFlyGreenPTroopa` through `XMRight` now has ten node contracts, all incident calls, branches, fall-throughs and returns, and five feasible counter/direction handoffs. Static review matches every-fourth-frame counter and wave gates, endpoint primary updates, temporary two's-complement secondary displacement, direction selection and post-child secondary restoration. Entries remain `needs-evidence` pending controlled ROM/x86/x64 counter-cycle routes.
+
+
+### Cohort I — B15h Bloober integration
+
+`BlooberBitmasks` through `ChkNearPlayer` now has sixteen node contracts, all incident dispatches, branches, calls, fall-throughs, tails and returns, and six feasible table/state handoffs. Static review matches difficulty masks, slot-dependent direction, inherited carry into near-player evaluation, swim acceleration/deceleration cadence, status-bar Y limit, and bidirectional X/page carry rules. Entries remain `needs-evidence` pending controlled ROM/x86/x64 swim-cycle routes.
