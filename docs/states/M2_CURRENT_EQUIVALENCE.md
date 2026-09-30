@@ -815,3 +815,24 @@ two-slot replacement updater's Buffer1-idle gate. No static shared-C
 discrepancy was found. These entries remain `needs-evidence` pending
 controlled original-ROM/x86/x64 routes for top coins, broken bricks, bounce
 replacement, pair retirement and both updater slots.
+
+
+### Cohort H — B14h shared horizontal and vertical movement/gravity integration
+
+`MoveEnemyHorizontally` through `ExVMove` now has thirty-two node contracts,
+seventy-eight control/return relations and three feasible material handoffs.
+The audit records signed 4.4 horizontal speed expansion, both fractional and
+page carries, the player jumpspring gate, every enemy vertical force/maximum
+entry, block gravity table selection, BIT-overlap platform direction, and the
+wrapped-subtraction tests that implement both gravity clamps. The shared C
+logic is statically aligned.
+
+Three extracted graph entries are mismatches rather than implementation
+defects: `control-01405` and `control-01408` are fall-throughs after branches
+whose freshly loaded nonzero operands make them unconditional, and
+`control-01415` represents a BIT-overlap entry as a full target-label entry
+even though it skips that label’s first load. The affected graph relations are
+recorded as mismatches with an unnumbered governance repair candidate. The
+remaining entries stay `needs-evidence` pending controlled original-ROM/x86/x64
+routes spanning sign/carry boundaries, jumpspring, every force entry and both
+velocity clamps.

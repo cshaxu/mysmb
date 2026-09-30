@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 112,
+    "enumeratedCount": 115,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1581,6 +1581,48 @@
       "semanticContract": "Preserves source producer write, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00113",
+      "producer": "MaxSpdBlockData",
+      "consumer": "ImposeGravityBlock",
+      "storage": "index-one block maximum-speed table",
+      "feasiblePath": "ImposeGravityBlock selects MaxSpdBlockData[1] after loading force $50, then passes the value to common gravity.",
+      "status": "needs-evidence",
+      "currentCounterpart": "max_speed[1] block-gravity selection",
+      "semanticContract": "Preserves source producer values, consumer selection and feasible ordering.",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00114",
+      "producer": "SetXMoveAmt",
+      "consumer": "ImposeGravitySprObj",
+      "storage": "shared scratch $00 force and $02 maximum speed",
+      "feasiblePath": "All selected enemy vertical entries write force/max before SprObject gravity consumes both.",
+      "status": "needs-evidence",
+      "currentCounterpart": "explicit amount/maximum arguments to shared gravity adapter",
+      "semanticContract": "Preserves source producer values, consumer selection and feasible ordering.",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00115",
+      "producer": "MovePlatformUp",
+      "consumer": "RedPTroopaGrav",
+      "storage": "shared scratch $00/$01/$02 and direction selector",
+      "feasiblePath": "Platform direction entry installs the three gravity parameters and direction before the common red-gravity call.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_world_move_platform_vertically selected direction and gravity inputs",
+      "semanticContract": "Preserves source producer values, consumer selection and feasible ordering.",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -12924,321 +12966,417 @@
       "label": "MoveEnemyHorizontally",
       "asmLine": 7555,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects enemy SprObject offset by incrementing from ObjectOffset, runs horizontal movement, then restores ObjectOffset."
     },
     {
       "label": "MovePlayerHorizontally",
       "asmLine": 7561,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Blocks player horizontal movement only while JumpspringAnimCtrl is nonzero; otherwise enters common SprObject movement at offset zero."
     },
     {
       "label": "MoveObjectHorizontally",
       "asmLine": 7566,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Splits signed 4.4 X speed into fractional and signed integer parts, propagates both carries into X/page and returns the source displacement byte."
     },
     {
       "label": "SaveXSpd",
       "asmLine": 7581,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores sign-extended integer X speed before page-delta selection."
     },
     {
       "label": "UseAdder",
       "asmLine": 7586,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects page delta from signed integer speed and performs fractional, X and page accumulation in source order."
     },
     {
       "label": "ExXMove",
       "asmLine": 7604,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the movement displacement or the blocked jumpspring control value."
     },
     {
       "label": "MovePlayerVertically",
       "asmLine": 7611,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses TimerControl/Jumpspring gate, then supplies VerticalForce and maximum four to shared gravity."
     },
     {
       "label": "NoJSChk",
       "asmLine": 7617,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads VerticalForce into shared scratch and tail-jumps to SprObject gravity."
     },
     {
       "label": "MoveD_EnemyVertically",
       "asmLine": 7624,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects $3d downward force except for exact Enemy_State five, which falls into falling-platform force $20."
     },
     {
       "label": "MoveFallingPlatform",
       "asmLine": 7630,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads force $20 then uses the high-speed gravity entry."
     },
     {
       "label": "ContVMove",
       "asmLine": 7632,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps from selected downward force into maximum-three setup."
     },
     {
       "label": "MoveRedPTroopaDown",
       "asmLine": 7636,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects downward direction zero and tail-jumps to red-paratroopa gravity setup."
     },
     {
       "label": "MoveRedPTroopaUp",
       "asmLine": 7640,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects upward direction one then enters red-paratroopa gravity setup."
     },
     {
       "label": "MoveRedPTroopa",
       "asmLine": 7643,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Installs downward/upward force and maximum two at enemy SprObject offset before RedPTroopaGrav."
     },
     {
       "label": "MoveDropPlatform",
       "asmLine": 7656,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Installs force $7f and maximum two through the medium-speed entry."
     },
     {
       "label": "MoveEnemySlowVert",
       "asmLine": 7660,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Installs force $0f and maximum two through the medium-speed entry."
     },
     {
       "label": "SetMdMax",
       "asmLine": 7662,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets maximum two and unconditionally enters SetXMoveAmt because the loaded value is nonzero."
     },
     {
       "label": "MoveJ_EnemyVertically",
       "asmLine": 7667,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Installs force $1c then enters maximum-three setup."
     },
     {
       "label": "SetHiMax",
       "asmLine": 7669,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets maximum three then enters common SprObject gravity setup."
     },
     {
       "label": "SetXMoveAmt",
       "asmLine": 7670,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected force, offsets X into enemy SprObject arrays, calls gravity, and restores ObjectOffset."
     },
     {
       "label": "MaxSpdBlockData",
       "asmLine": 7678,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds exact block-gravity maximum-speed entries six and eight."
     },
     {
       "label": "ResidualGravityCode",
       "asmLine": 7681,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Retains the unreachable residual entry whose BIT opcode skips the normal Y=one initialization before block gravity setup."
     },
     {
       "label": "ImposeGravityBlock",
       "asmLine": 7685,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects block maximum-speed table index one and force $50 before common SprObject gravity."
     },
     {
       "label": "ImposeGravitySprObj",
       "asmLine": 7691,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores maximum speed, selects downward-only gravity input zero and tail-jumps to common gravity."
     },
     {
       "label": "MovePlatformDown",
       "asmLine": 7698,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the BIT-overlap entry to preserve direction zero while skipping MovePlatformUp’s LDA-one instruction."
     },
     {
       "label": "MovePlatformUp",
       "asmLine": 7702,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects direction one and initializes platform forces/maximum before shared red gravity."
     },
     {
       "label": "SetDplSpd",
       "asmLine": 7711,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores residual-ID-selected downward force, upward force ten and maximum three before shared red gravity."
     },
     {
       "label": "RedPTroopaGrav",
       "asmLine": 7719,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls common gravity with the selected direction and restores ObjectOffset."
     },
     {
       "label": "ImposeGravity",
       "asmLine": 7729,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Updates dummy/fraction/speed/Y/Y-high using source carry and sign rules, clamps downward and optionally upward velocity."
     },
     {
       "label": "AlterYP",
       "asmLine": 7739,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies current signed Y speed plus fractional carry to Y/Y-high before acceleration/clamp checks."
     },
     {
       "label": "ChkUpM",
       "asmLine": 7761,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Handles no-upward exit and the two’s-complement upward clamp after downward update."
     },
     {
       "label": "ExVMove",
       "asmLine": 7784,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared world movement/gravity and actor core",
+      "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after the selected gravity path."
     },
     {
       "label": "EnemiesAndLoopsCore",
@@ -46516,10 +46654,13 @@
       "instruction": "jsr",
       "id": "control-01385",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MoveEnemyHorizontally -> MoveObjectHorizontally with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MovePlayerHorizontally",
@@ -46529,10 +46670,13 @@
       "instruction": "bne",
       "id": "control-01386",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePlayerHorizontally -> ExXMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MovePlayerHorizontally",
@@ -46542,10 +46686,13 @@
       "instruction": "tax",
       "id": "control-01387",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MovePlayerHorizontally -> MoveObjectHorizontally with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -46555,10 +46702,13 @@
       "instruction": "bcc",
       "id": "control-01388",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveObjectHorizontally -> SaveXSpd with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -46568,10 +46718,13 @@
       "instruction": "ora",
       "id": "control-01389",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveObjectHorizontally -> SaveXSpd with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SaveXSpd",
@@ -46581,10 +46734,13 @@
       "instruction": "bpl",
       "id": "control-01390",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SaveXSpd -> UseAdder with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SaveXSpd",
@@ -46594,10 +46750,13 @@
       "instruction": "dey",
       "id": "control-01391",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SaveXSpd -> UseAdder with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "UseAdder",
@@ -46607,10 +46766,13 @@
       "instruction": "adc",
       "id": "control-01392",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation UseAdder -> ExXMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MovePlayerVertically",
@@ -46620,10 +46782,13 @@
       "instruction": "bne",
       "id": "control-01393",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePlayerVertically -> NoJSChk with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MovePlayerVertically",
@@ -46633,10 +46798,13 @@
       "instruction": "bne",
       "id": "control-01394",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePlayerVertically -> ExXMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MovePlayerVertically",
@@ -46646,10 +46814,13 @@
       "instruction": "bne",
       "id": "control-01395",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MovePlayerVertically -> NoJSChk with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "NoJSChk",
@@ -46659,10 +46830,13 @@
       "instruction": "jmp",
       "id": "control-01396",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation NoJSChk -> ImposeGravitySprObj with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveD_EnemyVertically",
@@ -46672,10 +46846,13 @@
       "instruction": "bne",
       "id": "control-01397",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveD_EnemyVertically -> ContVMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveD_EnemyVertically",
@@ -46685,10 +46862,13 @@
       "instruction": "bne",
       "id": "control-01398",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveD_EnemyVertically -> MoveFallingPlatform with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveFallingPlatform",
@@ -46698,10 +46878,13 @@
       "instruction": "ldy",
       "id": "control-01399",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveFallingPlatform -> ContVMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ContVMove",
@@ -46711,10 +46894,13 @@
       "instruction": "jmp",
       "id": "control-01400",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ContVMove -> SetHiMax with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveRedPTroopaDown",
@@ -46724,10 +46910,13 @@
       "instruction": "jmp",
       "id": "control-01401",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveRedPTroopaDown -> MoveRedPTroopa with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveRedPTroopaUp",
@@ -46737,10 +46926,13 @@
       "instruction": "ldy",
       "id": "control-01402",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveRedPTroopaUp -> MoveRedPTroopa with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveRedPTroopa",
@@ -46750,10 +46942,13 @@
       "instruction": "jmp",
       "id": "control-01403",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveRedPTroopa -> RedPTroopaGrav with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveDropPlatform",
@@ -46763,10 +46958,13 @@
       "instruction": "bne",
       "id": "control-01404",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveDropPlatform -> SetMdMax with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveDropPlatform",
@@ -46776,10 +46974,13 @@
       "instruction": "bne",
       "id": "control-01405",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: infeasible or instruction-skipping relation in current extracted graph; shared C uses an explicit selected direction/force",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "MoveDropPlatform loads Y=$7f then BNE is always taken to SetMdMax; there is no feasible fall-through to MoveEnemySlowVert."
     },
     {
       "from": "MoveEnemySlowVert",
@@ -46789,10 +46990,13 @@
       "instruction": "ldy",
       "id": "control-01406",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveEnemySlowVert -> SetMdMax with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SetMdMax",
@@ -46802,10 +47006,13 @@
       "instruction": "bne",
       "id": "control-01407",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetMdMax -> SetXMoveAmt with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SetMdMax",
@@ -46815,10 +47022,13 @@
       "instruction": "bne",
       "id": "control-01408",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: infeasible or instruction-skipping relation in current extracted graph; shared C uses an explicit selected direction/force",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "SetMdMax loads A=$02 then BNE is always taken to SetXMoveAmt; there is no feasible fall-through to MoveJ_EnemyVertically."
     },
     {
       "from": "MoveJ_EnemyVertically",
@@ -46828,10 +47038,13 @@
       "instruction": "ldy",
       "id": "control-01409",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveJ_EnemyVertically -> SetHiMax with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SetHiMax",
@@ -46841,10 +47054,13 @@
       "instruction": "lda",
       "id": "control-01410",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetHiMax -> SetXMoveAmt with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SetXMoveAmt",
@@ -46854,10 +47070,13 @@
       "instruction": "jsr",
       "id": "control-01411",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetXMoveAmt -> ImposeGravitySprObj with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ResidualGravityCode",
@@ -46867,10 +47086,13 @@
       "instruction": "ldy",
       "id": "control-01412",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ResidualGravityCode -> ImposeGravityBlock with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ImposeGravityBlock",
@@ -46880,10 +47102,13 @@
       "instruction": "lda",
       "id": "control-01413",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ImposeGravityBlock -> ImposeGravitySprObj with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ImposeGravitySprObj",
@@ -46893,10 +47118,13 @@
       "instruction": "jmp",
       "id": "control-01414",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ImposeGravitySprObj -> ImposeGravity with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MovePlatformDown",
@@ -46906,10 +47134,13 @@
       "instruction": "lda",
       "id": "control-01415",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: infeasible or instruction-skipping relation in current extracted graph; shared C uses an explicit selected direction/force",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "MovePlatformDown enters via BIT opcode and skips the LDA #$01 at MovePlatformUp; it joins the shared body after that instruction, not the full target-label entry."
     },
     {
       "from": "MovePlatformUp",
@@ -46919,10 +47150,13 @@
       "instruction": "bne",
       "id": "control-01416",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePlatformUp -> SetDplSpd with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MovePlatformUp",
@@ -46932,10 +47166,13 @@
       "instruction": "lda",
       "id": "control-01417",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MovePlatformUp -> SetDplSpd with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SetDplSpd",
@@ -46945,10 +47182,13 @@
       "instruction": "tay",
       "id": "control-01418",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetDplSpd -> RedPTroopaGrav with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "RedPTroopaGrav",
@@ -46958,10 +47198,13 @@
       "instruction": "jsr",
       "id": "control-01419",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RedPTroopaGrav -> ImposeGravity with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ImposeGravity",
@@ -46971,10 +47214,13 @@
       "instruction": "bpl",
       "id": "control-01420",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ImposeGravity -> AlterYP with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ImposeGravity",
@@ -46984,10 +47230,13 @@
       "instruction": "dey",
       "id": "control-01421",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ImposeGravity -> AlterYP with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "AlterYP",
@@ -46997,10 +47246,13 @@
       "instruction": "bmi",
       "id": "control-01422",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation AlterYP -> ChkUpM with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "AlterYP",
@@ -47010,10 +47262,13 @@
       "instruction": "bcc",
       "id": "control-01423",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation AlterYP -> ChkUpM with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "AlterYP",
@@ -47023,10 +47278,13 @@
       "instruction": "sta",
       "id": "control-01424",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation AlterYP -> ChkUpM with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ChkUpM",
@@ -47036,10 +47294,13 @@
       "instruction": "beq",
       "id": "control-01425",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkUpM -> ExVMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ChkUpM",
@@ -47049,10 +47310,13 @@
       "instruction": "bpl",
       "id": "control-01426",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkUpM -> ExVMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ChkUpM",
@@ -47062,10 +47326,13 @@
       "instruction": "bcs",
       "id": "control-01427",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkUpM -> ExVMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ChkUpM",
@@ -47075,10 +47342,13 @@
       "instruction": "sta",
       "id": "control-01428",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkUpM -> ExVMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "EnemiesAndLoopsCore",
@@ -76508,10 +76778,13 @@
       "instruction": "rts/rti",
       "id": "control-03663",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MovePlayerHorizontally -> GndMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "GetPlayerAnimSpeed",
@@ -76553,10 +76826,13 @@
       "instruction": "rts/rti",
       "id": "control-03666",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MovePlayerHorizontally -> JSMove with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "FireballObjCore",
@@ -76663,12 +76939,12 @@
       "id": "control-03673",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ImposeGravity -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation ImposeGravity -> RunFB with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -76679,12 +76955,12 @@
       "id": "control-03674",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> RunFB with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "RelativeFireballPosition",
@@ -77095,12 +77371,12 @@
       "id": "control-03700",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> ChkDSte with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> ChkDSte with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveEnemyHorizontally",
@@ -77111,12 +77387,12 @@
       "id": "control-03701",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> BBFly with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> BBFly with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -77207,12 +77483,12 @@
       "id": "control-03707",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ImposeGravity -> ProcHammerObj with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation ImposeGravity -> ProcHammerObj with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -77223,12 +77499,12 @@
       "id": "control-03708",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> ProcHammerObj with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> ProcHammerObj with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "PlayerHammerCollision",
@@ -77383,12 +77659,12 @@
       "id": "control-03718",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ImposeGravity -> JCoinRun with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation ImposeGravity -> JCoinRun with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "RelativeMiscPosition",
@@ -77895,12 +78171,12 @@
       "id": "control-03750",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BlockObjectsCore with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BlockObjectsCore with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -77911,12 +78187,12 @@
       "id": "control-03751",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> BlockObjectsCore with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> BlockObjectsCore with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ImposeGravityBlock",
@@ -77927,12 +78203,12 @@
       "id": "control-03752",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BlockObjectsCore with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BlockObjectsCore with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -77943,12 +78219,12 @@
       "id": "control-03753",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> BlockObjectsCore with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> BlockObjectsCore with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "RelativeBlockPosition",
@@ -78007,12 +78283,12 @@
       "id": "control-03757",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BouncingBlockHandler with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BouncingBlockHandler with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "RelativeBlockPosition",
@@ -78086,10 +78362,13 @@
       "instruction": "rts/rti",
       "id": "control-03762",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> MoveEnemyHorizontally with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ImposeGravitySprObj",
@@ -78099,10 +78378,13 @@
       "instruction": "rts/rti",
       "id": "control-03763",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ImposeGravitySprObj -> SetXMoveAmt with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ImposeGravity",
@@ -78112,10 +78394,13 @@
       "instruction": "rts/rti",
       "id": "control-03764",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ImposeGravity -> RedPTroopaGrav with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "ExecGameLoopback",
@@ -78934,10 +79219,13 @@
       "instruction": "rts/rti",
       "id": "control-03827",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> FallE with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveEnemyHorizontally",
@@ -78947,10 +79235,13 @@
       "instruction": "rts/rti",
       "id": "control-03828",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> AddHS with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveD_EnemyVertically",
@@ -78960,10 +79251,13 @@
       "instruction": "rts/rti",
       "id": "control-03829",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> MoveDefeatedEnemy with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "EraseEnemyObject",
@@ -78986,10 +79280,13 @@
       "instruction": "rts/rti",
       "id": "control-03831",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveJ_EnemyVertically -> MoveJumpingEnemy with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "XMoveCntr_GreenPTroopa",
@@ -79025,10 +79322,13 @@
       "instruction": "rts/rti",
       "id": "control-03834",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> XMRight with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -79181,10 +79481,13 @@
       "instruction": "rts/rti",
       "id": "control-03846",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> FlyCC with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SetXMoveAmt",
@@ -79194,10 +79497,13 @@
       "instruction": "rts/rti",
       "id": "control-03847",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetXMoveAmt -> FlyCC with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "PlayerLakituDiff",
@@ -79233,10 +79539,13 @@
       "instruction": "rts/rti",
       "id": "control-03850",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveEnemySlowVert -> MoveD_Bowser with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "RemBridge",
@@ -79311,10 +79620,13 @@
       "instruction": "rts/rti",
       "id": "control-03856",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveEnemySlowVert -> HammerChk with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "SpawnHammerObj",
@@ -79561,10 +79873,13 @@
       "instruction": "rts/rti",
       "id": "control-03875",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MovePlatformUp -> PlatUp with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "StopPlatforms",
@@ -79587,10 +79902,13 @@
       "instruction": "rts/rti",
       "id": "control-03877",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MovePlatformDown -> PlatDn with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -79678,10 +79996,13 @@
       "instruction": "rts/rti",
       "id": "control-03884",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveFallingPlatform -> PlatformFall with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MoveFallingPlatform",
@@ -79691,10 +80012,13 @@
       "instruction": "rts/rti",
       "id": "control-03885",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveFallingPlatform -> PlatformFall with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -79717,10 +80041,13 @@
       "instruction": "rts/rti",
       "id": "control-03887",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MovePlatformUp -> ChkYCenterPos with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "MovePlatformDown",
@@ -79730,10 +80057,13 @@
       "instruction": "rts/rti",
       "id": "control-03888",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MovePlatformDown -> YMDown with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -79795,10 +80125,13 @@
       "instruction": "rts/rti",
       "id": "control-03893",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveDropPlatform -> DropPlatform with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -79821,10 +80154,13 @@
       "instruction": "rts/rti",
       "id": "control-03895",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> RightPlatform with source predicate, carry/order handoff and return semantics."
     },
     {
       "from": "PositionPlayerOnHPlat",
