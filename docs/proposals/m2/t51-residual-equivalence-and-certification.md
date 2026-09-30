@@ -224,3 +224,11 @@ family pointer-table selection, record framing, end markers, the
 source read/call ordering. Operational evidence is the enemy-data audit plus a
 local-ROM current-stream consumer check on x86 and x64, platform purity, the
 existing OpenNT DOS16 compile/link, and refreshed three-target artifacts.
+
+## T51 S4 closure: original enemy-stream data and consumer chain
+
+S4 closes all 34 admitted labels from **1,958 / 1,992** to **1,992 / 1,992**. The local audit binds every original stream literal span to the owner-local ROM, validates all 34 pointer-table entries and record framing, and preserves the E_GroundArea9 / E_GroundArea10 shared terminator. The new local-ROM shared C consumer test selects every family/area pointer with GetAreaDataAddrs and invokes mysmb_enemy_stream_process_current; it checks the resulting pointer registers and first-record consumption or terminator branch. x86 and x64 stream tests pass, platform purity passes, and the same shared source compiles and links with OpenNT DOS16. No node was deferred or transferred.
+
+## T51 S5 admission: cross-route integration certification
+
+S5 owns no node credit. It begins at **1,992 / 1,992** and validates the complete translated graph through the T51 cross-route matrix, x86/x64 and OpenNT DOS16 artifacts, and platform-purity audit. It cannot alter game logic merely to satisfy a platform route.

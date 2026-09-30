@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1958 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 34 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| ROM-match complete | 1992 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 0 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
 | Open / unmatched | 0 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1958 / 1,992 (98.29%)**. The 34 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,992 / 1,992 (100.00%)**. No inventory mapping remains incomplete.
 
 Latest task review: [T51 S3 closure](../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s3-closure-killenemies-shared-primitive) closes the source-exact shared five-slot KillEnemies primitive through warp/flagpole caller IDs and the OpenNT DOS16 link.
 
@@ -1992,10 +1992,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 16362 | `BowserFlameEnvData` |
 | 16368 | `BrickShatterEnvData` |
 
-## Mapped but not yet matched (34)
-
-| ROM line | Node |
-| ---: | --- |
 | 4550 | `E_CastleArea1` |
 | 4558 | `E_CastleArea2` |
 | 4565 | `E_CastleArea3` |
@@ -2030,6 +2026,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
+
+## Mapped but not yet matched (0)
+
+No mapped inventory node remains incomplete.
 
 ## Reporting contract
 
