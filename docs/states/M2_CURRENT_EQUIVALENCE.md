@@ -1418,3 +1418,9 @@ branches.
 - Node-semantics result: two labels moved from `unclassified` to `needs-evidence`; current secondary setup preserves the residual `$06c9 = $ff` write and return behavior.
 - Independent integration result: 3 fall-through/return relations received `needs-evidence` contracts. Static review found no discrepancy; controlled startup route remains required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K41 — jumpspring tail audit
+
+- Source range: `PosJSpr` through `ExJSpring` (`SMBDIS.ASM` lines 6669–6698).
+- Node-semantics result: three labels moved from `unclassified` to `needs-evidence`, covering frame position, one-press bounce force and terminal animation lifecycle.
+- Independent integration result: 6 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

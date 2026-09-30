@@ -16630,21 +16630,27 @@
       "label": "PosJSpr",
       "asmLine": 6669,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/jumpspring.c",
+      "currentCounterpart": "mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Positions jumpspring from fixed Y plus frame table, and only arms force on new A press at applicable frame."
     },
     {
       "label": "BounceJS",
       "asmLine": 6682,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/jumpspring.c",
+      "currentCounterpart": "mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "At final frame transfers stored force to player Y speed and clears animation control."
     },
     {
       "label": "DrawJSpr",
@@ -16663,11 +16669,14 @@
       "label": "ExJSpring",
       "asmLine": 6698,
       "cohort": "G",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/jumpspring.c",
+      "currentCounterpart": "mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after rendering/offscreen handling and conditional animation timer advance."
     },
     {
       "label": "Setup_Vine",
@@ -50879,10 +50888,13 @@
       "instruction": "bcc",
       "id": "control-01154",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves jumpspring branch relation PosJSpr → BounceJS with source frame/input/timer ordering."
     },
     {
       "from": "PosJSpr",
@@ -50892,10 +50904,13 @@
       "instruction": "beq",
       "id": "control-01155",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves jumpspring branch relation PosJSpr → BounceJS with source frame/input/timer ordering."
     },
     {
       "from": "PosJSpr",
@@ -50905,10 +50920,13 @@
       "instruction": "bne",
       "id": "control-01156",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves jumpspring branch relation PosJSpr → BounceJS with source frame/input/timer ordering."
     },
     {
       "from": "PosJSpr",
@@ -50918,10 +50936,13 @@
       "instruction": "sta",
       "id": "control-01157",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves jumpspring fallthrough relation PosJSpr → BounceJS with source frame/input/timer ordering."
     },
     {
       "from": "BounceJS",
@@ -50931,10 +50952,13 @@
       "instruction": "bne",
       "id": "control-01158",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves jumpspring branch relation BounceJS → DrawJSpr with source frame/input/timer ordering."
     },
     {
       "from": "BounceJS",
@@ -50944,10 +50968,13 @@
       "instruction": "sta",
       "id": "control-01159",
       "cohort": "G",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
+      "semanticEvidence": [
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves jumpspring fallthrough relation BounceJS → DrawJSpr with source frame/input/timer ordering."
     },
     {
       "from": "DrawJSpr",
