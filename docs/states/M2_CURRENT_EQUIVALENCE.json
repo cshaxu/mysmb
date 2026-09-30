@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 95,
+    "enumeratedCount": 96,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1343,6 +1343,20 @@
       "semanticContract": "Preserves the two height thresholds and decrement-before-index ordering.",
       "semanticEvidence": [
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00096",
+      "producer": "VineHeightData",
+      "consumer": "VineObjectHandler",
+      "storage": "VineFlagOffset-1 indexed vine growth-height table",
+      "feasiblePath": "VineObjectHandler decrements VineFlagOffset and compares VineHeight with the selected table byte before growth.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_vine_height_data[index] in mysmb_objects_step_vine",
+      "semanticContract": "Preserves threshold selection and source growth gate.",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -11425,61 +11439,79 @@
       "label": "VineObjectHandler",
       "asmLine": 6730,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine, world and OAM core",
+      "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restricts growth to slot five, selects VineFlagOffset-1 threshold, applies the source two-of-four-frame growth gate and restores ObjectOffset on exit."
     },
     {
       "label": "RunVSubs",
       "asmLine": 6746,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine, world and OAM core",
+      "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates rendering below height eight, computes relative/offscreen state, then enters the ordered vine draw loop."
     },
     {
       "label": "VDrawLoop",
       "asmLine": 6752,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine, world and OAM core",
+      "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Draws each registered vine in ascending index order, then selects normal buffer write or offscreen cleanup."
     },
     {
       "label": "KillVine",
       "asmLine": 6760,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine, world and OAM core",
+      "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Erases registered vine slots in descending order and resets offset/height only after the final erase result."
     },
     {
       "label": "WrCMTile",
       "asmLine": 6766,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine, world and OAM core",
+      "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "At height at least $20, performs the source block-buffer probe and writes climbing metatile $26 only to an empty qualified cell."
     },
     {
       "label": "ExitVH",
       "asmLine": 6780,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared vine, world and OAM core",
+      "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns after every vine gate."
     },
     {
       "label": "CannonBitmasks",
@@ -42515,10 +42547,13 @@
       "instruction": "bne",
       "id": "control-01168",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VineObjectHandler -> ExitVH with source predicate, ordering and state handoff."
     },
     {
       "from": "VineObjectHandler",
@@ -42528,10 +42563,13 @@
       "instruction": "beq",
       "id": "control-01169",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VineObjectHandler -> RunVSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "VineObjectHandler",
@@ -42541,10 +42579,13 @@
       "instruction": "bcc",
       "id": "control-01170",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VineObjectHandler -> RunVSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "VineObjectHandler",
@@ -42554,10 +42595,13 @@
       "instruction": "inc",
       "id": "control-01171",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation VineObjectHandler -> RunVSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "RunVSubs",
@@ -42567,10 +42611,13 @@
       "instruction": "bcc",
       "id": "control-01172",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunVSubs -> ExitVH with source predicate, ordering and state handoff."
     },
     {
       "from": "RunVSubs",
@@ -42580,10 +42627,13 @@
       "instruction": "jsr",
       "id": "control-01173",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunVSubs -> RelativeEnemyPosition with source predicate, ordering and state handoff."
     },
     {
       "from": "RunVSubs",
@@ -42593,10 +42643,13 @@
       "instruction": "jsr",
       "id": "control-01174",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunVSubs -> GetEnemyOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "RunVSubs",
@@ -42606,10 +42659,13 @@
       "instruction": "ldy",
       "id": "control-01175",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunVSubs -> VDrawLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "VDrawLoop",
@@ -42619,10 +42675,13 @@
       "instruction": "jsr",
       "id": "control-01176",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation VDrawLoop -> DrawVine with source predicate, ordering and state handoff."
     },
     {
       "from": "VDrawLoop",
@@ -42632,10 +42691,13 @@
       "instruction": "bne",
       "id": "control-01177",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VDrawLoop -> VDrawLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "VDrawLoop",
@@ -42645,10 +42707,13 @@
       "instruction": "beq",
       "id": "control-01178",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VDrawLoop -> WrCMTile with source predicate, ordering and state handoff."
     },
     {
       "from": "VDrawLoop",
@@ -42658,10 +42723,13 @@
       "instruction": "dey",
       "id": "control-01179",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation VDrawLoop -> KillVine with source predicate, ordering and state handoff."
     },
     {
       "from": "KillVine",
@@ -42671,10 +42739,13 @@
       "instruction": "jsr",
       "id": "control-01180",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation KillVine -> EraseEnemyObject with source predicate, ordering and state handoff."
     },
     {
       "from": "KillVine",
@@ -42684,10 +42755,13 @@
       "instruction": "bpl",
       "id": "control-01181",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation KillVine -> KillVine with source predicate, ordering and state handoff."
     },
     {
       "from": "KillVine",
@@ -42697,10 +42771,13 @@
       "instruction": "sta",
       "id": "control-01182",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation KillVine -> WrCMTile with source predicate, ordering and state handoff."
     },
     {
       "from": "WrCMTile",
@@ -42710,10 +42787,13 @@
       "instruction": "bcc",
       "id": "control-01183",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WrCMTile -> ExitVH with source predicate, ordering and state handoff."
     },
     {
       "from": "WrCMTile",
@@ -42723,10 +42803,13 @@
       "instruction": "jsr",
       "id": "control-01184",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation WrCMTile -> BlockBufferCollision with source predicate, ordering and state handoff."
     },
     {
       "from": "WrCMTile",
@@ -42736,10 +42819,13 @@
       "instruction": "bcs",
       "id": "control-01185",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WrCMTile -> ExitVH with source predicate, ordering and state handoff."
     },
     {
       "from": "WrCMTile",
@@ -42749,10 +42835,13 @@
       "instruction": "bne",
       "id": "control-01186",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WrCMTile -> ExitVH with source predicate, ordering and state handoff."
     },
     {
       "from": "WrCMTile",
@@ -42762,10 +42851,13 @@
       "instruction": "sta",
       "id": "control-01187",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation WrCMTile -> ExitVH with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcessCannons",
@@ -75755,10 +75847,13 @@
       "instruction": "rts/rti",
       "id": "control-03691",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunVSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -75768,10 +75863,13 @@
       "instruction": "rts/rti",
       "id": "control-03692",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunVSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "DrawVine",
@@ -75781,10 +75879,13 @@
       "instruction": "rts/rti",
       "id": "control-03693",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawVine -> VDrawLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "EraseEnemyObject",
@@ -75794,10 +75895,13 @@
       "instruction": "rts/rti",
       "id": "control-03694",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillVine with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockBufferCollision",
@@ -75807,10 +75911,13 @@
       "instruction": "rts/rti",
       "id": "control-03695",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "semanticEvidence": [
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BlockBufferCollision -> WrCMTile with source predicate, ordering and state handoff."
     },
     {
       "from": "OffscreenBoundsCheck",
