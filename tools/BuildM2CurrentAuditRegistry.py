@@ -61,6 +61,8 @@ def main():
     for node in nodes:
         node["cohort"] = cohort_for(node["asmLine"])
         node["status"] = "unclassified"
+        node["currentOwner"] = None
+        node["currentCounterpart"] = None
         node["semanticEvidence"] = []
         node["operationalEvidence"] = []
 
@@ -76,6 +78,7 @@ def main():
         else:
             record["cohort"] = cohort_for(node_lines[edge["from"]])
         record["status"] = "unclassified"
+        record["currentCounterpart"] = None
         record["semanticEvidence"] = []
         record["operationalEvidence"] = []
         edges.append(record)
@@ -91,6 +94,7 @@ def main():
             "status": "not-yet-enumerated",
             "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges."
         },
+        "materialEdges": [],
         "cohorts": [
             {"id": name, "startLine": start, "endLine": end}
             for name, start, end in COHORTS

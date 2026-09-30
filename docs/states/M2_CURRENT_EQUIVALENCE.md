@@ -5,6 +5,16 @@ This registry is the current-build complement to
 `1,992 / 1,992`; it must never be read as a current end-to-end result until a
 row below records a fresh audit disposition.
 
+The machine-readable node/control-edge ledger is
+[`M2_CURRENT_EQUIVALENCE.json`](M2_CURRENT_EQUIVALENCE.json). It is generated
+by `BuildM2CurrentAuditRegistry.py` for the baseline and then updated only by
+cohort audit evidence. It contains no ROM bytes or source text: every node
+records its current C owner/counterpart and both evidence tracks, while every
+edge records its C integration counterpart and both evidence tracks.
+[`VerifyM2CurrentAuditRegistry.py`](../../tools/VerifyM2CurrentAuditRegistry.py)
+rejects an `exact` disposition lacking either track and rejects duplicate or
+incomplete node/control-edge identities.
+
 ## Baseline
 
 | Current-equivalence state | Labels | Meaning |
