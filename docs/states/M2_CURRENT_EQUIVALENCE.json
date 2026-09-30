@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 335,
+    "enumeratedCount": 339,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4703,6 +4703,62 @@
       "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00336",
+      "producer": "FireballEnemyCollision",
+      "consumer": "FireballEnemyCDLoop",
+      "storage": "fireball state/frame gate and box offset to descending enemy scan",
+      "feasiblePath": "Only active non-d7 fireball on even frame scans.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/fireball_enemy.c entry",
+      "semanticContract": "Preserves source producer-to-consumer fireball/enemy state and box handoff ordering.",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00337",
+      "producer": "FireballEnemyCDLoop",
+      "consumer": "GoombaDie",
+      "storage": "enemy ID range to Goomba special-state gate",
+      "feasiblePath": "IDs $24-$2a skip; Goomba alone has state>=2 exclusion.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/fireball_enemy.c eligibility",
+      "semanticContract": "Preserves source producer-to-consumer fireball/enemy state and box handoff ordering.",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00338",
+      "producer": "NotGoomba",
+      "consumer": "HandleEnemyFBallCol",
+      "storage": "enemy/fireball bounding boxes, collision result and fireball d7 mark",
+      "feasiblePath": "A hit marks fireball but scan continues after hit handler returns.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/fireball_enemy.c box/hit sequence",
+      "semanticContract": "Preserves source producer-to-consumer fireball/enemy state and box handoff ordering.",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00339",
+      "producer": "NoFToECol",
+      "consumer": "FireballEnemyCDLoop",
+      "storage": "restored fireball box and decremented enemy index",
+      "feasiblePath": "Slots 4..0 are all considered even after a hit.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/fireball_enemy.c loop",
+      "semanticContract": "Preserves source producer-to-consumer fireball/enemy state and box handoff ordering.",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -21838,61 +21894,79 @@
       "label": "FireballEnemyCollision",
       "asmLine": 11085,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: world/fireball_enemy.c",
+      "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns for zero/d7 fireball state or odd frame; otherwise computes fireball box slot*4+$1c and scans enemy slots four down to zero."
     },
     {
       "label": "FireballEnemyCDLoop",
       "asmLine": 11101,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: world/fireball_enemy.c",
+      "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Saves enemy and fireball box identity each iteration, excludes defeated/inactive/ID-range/ineligible-Goomba/offscreen enemies, tests boxes and marks fireball d7 on hit without ending scan."
     },
     {
       "label": "GoombaDie",
       "asmLine": 11115,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: world/fireball_enemy.c",
+      "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For Goomba only rejects state >=2 before common masked-offscreen and box path."
     },
     {
       "label": "NotGoomba",
       "asmLine": 11120,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: world/fireball_enemy.c",
+      "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rejects nonzero masked offscreen bits then computes enemy box slot*4+4 for collision child."
     },
     {
       "label": "NoFToECol",
       "asmLine": 11135,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: world/fireball_enemy.c",
+      "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores fireball box and decrements enemy slot; high-bit termination follows slot zero."
     },
     {
       "label": "ExitFBallEnemy",
       "asmLine": 11141,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: world/fireball_enemy.c",
+      "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores source ObjectOffset-equivalent fireball slot and returns."
     },
     {
       "label": "BowserIdentities",
@@ -46253,12 +46327,12 @@
       "id": "control-01089",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> FireballEnemyCollision with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunFB -> FireballEnemyCollision with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "RunFB",
@@ -63866,10 +63940,13 @@
       "instruction": "beq",
       "id": "control-02191",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballEnemyCollision -> ExitFBallEnemy with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "FireballEnemyCollision",
@@ -63879,10 +63956,13 @@
       "instruction": "bcs",
       "id": "control-02192",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballEnemyCollision -> ExitFBallEnemy with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "FireballEnemyCollision",
@@ -63892,10 +63972,13 @@
       "instruction": "bcs",
       "id": "control-02193",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballEnemyCollision -> ExitFBallEnemy with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "FireballEnemyCollision",
@@ -63905,10 +63988,13 @@
       "instruction": "ldx",
       "id": "control-02194",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FireballEnemyCollision -> FireballEnemyCDLoop with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "FireballEnemyCDLoop",
@@ -63918,10 +64004,13 @@
       "instruction": "bne",
       "id": "control-02195",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballEnemyCDLoop -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "FireballEnemyCDLoop",
@@ -63931,10 +64020,13 @@
       "instruction": "beq",
       "id": "control-02196",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballEnemyCDLoop -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "FireballEnemyCDLoop",
@@ -63944,10 +64036,13 @@
       "instruction": "bcc",
       "id": "control-02197",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballEnemyCDLoop -> GoombaDie with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "FireballEnemyCDLoop",
@@ -63957,10 +64052,13 @@
       "instruction": "bcc",
       "id": "control-02198",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireballEnemyCDLoop -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "FireballEnemyCDLoop",
@@ -63970,10 +64068,13 @@
       "instruction": "bcc",
       "id": "control-02199",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FireballEnemyCDLoop -> GoombaDie with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "GoombaDie",
@@ -63983,10 +64084,13 @@
       "instruction": "bne",
       "id": "control-02200",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GoombaDie -> NotGoomba with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "GoombaDie",
@@ -63996,10 +64100,13 @@
       "instruction": "bcs",
       "id": "control-02201",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GoombaDie -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "GoombaDie",
@@ -64009,10 +64116,13 @@
       "instruction": "bcs",
       "id": "control-02202",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GoombaDie -> NotGoomba with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "NotGoomba",
@@ -64022,10 +64132,13 @@
       "instruction": "bne",
       "id": "control-02203",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation NotGoomba -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "NotGoomba",
@@ -64035,10 +64148,13 @@
       "instruction": "jsr",
       "id": "control-02204",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation NotGoomba -> SprObjectCollisionCore with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "NotGoomba",
@@ -64048,10 +64164,13 @@
       "instruction": "bcc",
       "id": "control-02205",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation NotGoomba -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "NotGoomba",
@@ -64061,10 +64180,13 @@
       "instruction": "jsr",
       "id": "control-02206",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation NotGoomba -> HandleEnemyFBallCol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "NotGoomba",
@@ -64074,10 +64196,13 @@
       "instruction": "jsr",
       "id": "control-02207",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation NotGoomba -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "NoFToECol",
@@ -64087,10 +64212,13 @@
       "instruction": "bpl",
       "id": "control-02208",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation NoFToECol -> FireballEnemyCDLoop with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "NoFToECol",
@@ -64100,10 +64228,13 @@
       "instruction": "bpl",
       "id": "control-02209",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation NoFToECol -> ExitFBallEnemy with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "HandleEnemyFBallCol",
@@ -83652,12 +83783,12 @@
       "id": "control-03679",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation FireballEnemyCollision -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation FireballEnemyCollision -> RunFB with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "RelativeFireballPosition",
@@ -87203,10 +87334,13 @@
       "instruction": "rts/rti",
       "id": "control-03901",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SprObjectCollisionCore -> NotGoomba with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "HandleEnemyFBallCol",
@@ -87216,10 +87350,13 @@
       "instruction": "rts/rti",
       "id": "control-03902",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
+      "semanticEvidence": [
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation HandleEnemyFBallCol -> NotGoomba with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering."
     },
     {
       "from": "RelativeEnemyPosition",

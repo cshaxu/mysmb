@@ -1131,3 +1131,8 @@ branches.
 ### Cohort J — B16g offscreen-bounds integration
 
 `OffscreenBoundsCheck` through `ExScrnBd` now has five node contracts, all incident ID, carry, left/right bound, exception, erase and return relations, plus four feasible handoffs. Static review matches the non-obvious CPY carry propagation through special Hammer/Piranha left-edge arithmetic, cross-page comparisons and all retained right-side object IDs. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 left/right, special-ID and exception routes.
+
+
+### Cohort J — B16h fireball-enemy collision-core integration
+
+`FireballEnemyCollision` through `ExitFBallEnemy` now has six node contracts, all incident state/frame gates, descending loop, eligibility branches, geometry/hit calls and return relations, plus four feasible box/state handoffs. Static review matches d7/odd-frame suppression, both box offset formulas, five-slot scan, ID and Goomba filters, hit d7 marking without early loop exit and restored scan state. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 hit/miss, filters and multi-slot routes.
