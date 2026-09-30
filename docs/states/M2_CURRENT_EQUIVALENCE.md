@@ -1121,3 +1121,8 @@ branches.
 ### Cohort J — B16e X/drop/right platform integration
 
 `XMovingPlatform` through `ExRPl` now has nine node contracts, all incident counter/movement, collision, carry/borrow, rider, speed-assignment and return relations, plus five feasible platform/player handoffs. Static review matches `$0e` counter setup, movement-before-rider gate, negative page borrow semantics, scroll ordering, collision-only drop, and right-platform move-before-`$10` acceleration. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 positive/negative X, drop and right-platform routes.
+
+
+### Cohort J — B16f lift-platform integration
+
+`MoveLargeLiftPlat` through `ExLiftP` now has five node contracts, all incident TimerControl, call, large/small collision-tail and return relations, plus four feasible lift/rider handoffs. Static review matches frozen motion, fractional carry into Y, unconditional large rider path and nonzero-only small rider path. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 frozen, carry and both rider routes.

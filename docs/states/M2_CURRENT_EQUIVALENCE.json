@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 327,
+    "enumeratedCount": 331,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4591,6 +4591,62 @@
       "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00328",
+      "producer": "MoveLiftPlatforms",
+      "consumer": "MoveLargeLiftPlat",
+      "storage": "fractional dummy/Y state to large rider tail",
+      "feasiblePath": "Both frozen and moved states reach large collision gate.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_large_lift",
+      "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00329",
+      "producer": "MoveLiftPlatforms",
+      "consumer": "MoveSmallPlatform",
+      "storage": "fractional dummy/Y state to small rider tail",
+      "feasiblePath": "Both frozen and moved states reach small collision gate.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_small",
+      "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00330",
+      "producer": "MoveLiftPlatforms",
+      "consumer": "ChkSmallPlatCollision",
+      "storage": "force addition carry to Y and small collision eligibility",
+      "feasiblePath": "Movement completes before small collision counter is read.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c move_lift",
+      "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00331",
+      "producer": "ChkSmallPlatCollision",
+      "consumer": "ExLiftP",
+      "storage": "nonzero counter child return or zero direct return",
+      "feasiblePath": "Zero leaves player position untouched.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_small",
+      "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -21596,51 +21652,66 @@
       "label": "MoveLargeLiftPlat",
       "asmLine": 10999,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls common lift movement then always tails to large-platform rider collision gate."
     },
     {
       "label": "MoveSmallPlatform",
       "asmLine": 11003,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls common lift movement then tails to small-platform nonzero-counter collision gate."
     },
     {
       "label": "MoveLiftPlatforms",
       "asmLine": 11007,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "TimerControl nonzero leaves fractional/Y unchanged; otherwise adds force into dummy then speed plus resulting carry into Y."
     },
     {
       "label": "ChkSmallPlatCollision",
       "asmLine": 11019,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Only nonzero small-platform collision counter invokes small-rider positioning."
     },
     {
       "label": "ExLiftP",
       "asmLine": 11023,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common no-op/child return endpoint."
     },
     {
       "label": "OffscreenBoundsCheck",
@@ -55837,12 +55908,12 @@
       "id": "control-01698",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunSmallPlatform -> MoveSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> MoveSmallPlatform with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "RunSmallPlatform",
@@ -63356,10 +63427,13 @@
       "instruction": "jsr",
       "id": "control-02168",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MoveLargeLiftPlat -> MoveLiftPlatforms with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "MoveLargeLiftPlat",
@@ -63370,12 +63444,12 @@
       "id": "control-02169",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation MoveLargeLiftPlat -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering."
+      "semanticContract": "Preserves original jump relation MoveLargeLiftPlat -> ChkYPCollision with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "MoveSmallPlatform",
@@ -63385,10 +63459,13 @@
       "instruction": "jsr",
       "id": "control-02170",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MoveSmallPlatform -> MoveLiftPlatforms with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "MoveSmallPlatform",
@@ -63398,10 +63475,13 @@
       "instruction": "jmp",
       "id": "control-02171",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveSmallPlatform -> ChkSmallPlatCollision with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "MoveLiftPlatforms",
@@ -63411,10 +63491,13 @@
       "instruction": "bne",
       "id": "control-02172",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveLiftPlatforms -> ExLiftP with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "ChkSmallPlatCollision",
@@ -63424,10 +63507,13 @@
       "instruction": "beq",
       "id": "control-02173",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkSmallPlatCollision -> ExLiftP with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "ChkSmallPlatCollision",
@@ -63437,10 +63523,13 @@
       "instruction": "jsr",
       "id": "control-02174",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkSmallPlatCollision -> PositionPlayerOnS_Plat with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "ChkSmallPlatCollision",
@@ -63450,10 +63539,13 @@
       "instruction": "jsr",
       "id": "control-02175",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkSmallPlatCollision -> ExLiftP with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -85623,12 +85715,12 @@
       "id": "control-03815",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveSmallPlatform -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original return relation MoveSmallPlatform -> RunSmallPlatform with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -86934,10 +87026,13 @@
       "instruction": "rts/rti",
       "id": "control-03897",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveLiftPlatforms -> MoveLargeLiftPlat with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "MoveLiftPlatforms",
@@ -86947,10 +87042,13 @@
       "instruction": "rts/rti",
       "id": "control-03898",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveLiftPlatforms -> MoveSmallPlatform with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "PositionPlayerOnS_Plat",
@@ -86960,10 +87058,13 @@
       "instruction": "rts/rti",
       "id": "control-03899",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
+      "semanticEvidence": [
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PositionPlayerOnS_Plat -> ChkSmallPlatCollision with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "EraseEnemyObject",
@@ -93520,12 +93621,12 @@
       "id": "control-04333",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> MoveLargeLiftPlat with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> MoveLargeLiftPlat with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -93537,12 +93638,12 @@
       "id": "control-04334",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> MoveLargeLiftPlat with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> MoveLargeLiftPlat with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering."
     },
     {
       "from": "LargePlatformSubroutines",
