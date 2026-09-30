@@ -9712,413 +9712,534 @@
       "asmLine": 5899,
       "cohort": "E",
       "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "SetCrouch",
       "asmLine": 5907,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ProcMove",
       "asmLine": 5908,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "MoveSubs",
       "asmLine": 5916,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "NoMoveSub",
       "asmLine": 5923,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "OnGroundStateSub",
       "asmLine": 5928,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "GndMove",
       "asmLine": 5933,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "FallingSub",
       "asmLine": 5940,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "JumpSwimSub",
       "asmLine": 5947,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "DumpFall",
       "asmLine": 5959,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ProcSwim",
       "asmLine": 5961,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "LRWater",
       "asmLine": 5969,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "LRAir",
       "asmLine": 5972,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "JSMove",
       "asmLine": 5975,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ExitMov1",
       "asmLine": 5982,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ClimbAdderLow",
       "asmLine": 5986,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ClimbAdderHigh",
       "asmLine": 5988,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ClimbingSub",
       "asmLine": 5991,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "MoveOnVine",
       "asmLine": 6000,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ClimbFD",
       "asmLine": 6019,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "CSetFDir",
       "asmLine": 6022,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ExitCSub",
       "asmLine": 6032,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "InitCSTimer",
       "asmLine": 6033,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "JumpMForceData",
       "asmLine": 6039,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "FallMForceData",
       "asmLine": 6042,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "PlayerYSpdData",
       "asmLine": 6045,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "InitMForceData",
       "asmLine": 6048,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "MaxLeftXSpdData",
       "asmLine": 6051,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "MaxRightXSpdData",
       "asmLine": 6054,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "FrictionData",
       "asmLine": 6058,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "Climb_Y_SpeedData",
       "asmLine": 6061,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "Climb_Y_MForceData",
       "asmLine": 6064,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "PlayerPhysicsSub",
       "asmLine": 6067,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ProcClimb",
       "asmLine": 6079,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "SetCAnim",
       "asmLine": 6086,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "CheckForJumping",
       "asmLine": 6089,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "NoJump",
       "asmLine": 6097,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ProcJumping",
       "asmLine": 6099,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "InitJS",
       "asmLine": 6109,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "ChkWtr",
       "asmLine": 6133,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "GetYPhy",
       "asmLine": 6141,
       "cohort": "F",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player physics owners",
+      "currentCounterpart": "player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff."
     },
     {
       "label": "PJumpSnd",
@@ -38378,10 +38499,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source branch relation PlayerMovementSubs -> SetCrouch.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "PlayerMovementSubs",
@@ -38394,10 +38516,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source branch relation PlayerMovementSubs -> ProcMove.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "PlayerMovementSubs",
@@ -38410,10 +38533,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source fallthrough relation PlayerMovementSubs -> SetCrouch.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "SetCrouch",
@@ -38426,10 +38550,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source fallthrough relation SetCrouch -> ProcMove.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcMove",
@@ -38442,10 +38567,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source call relation ProcMove -> PlayerPhysicsSub.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcMove",
@@ -38458,10 +38584,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source branch relation ProcMove -> NoMoveSub.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcMove",
@@ -38474,10 +38601,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source branch relation ProcMove -> MoveSubs.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcMove",
@@ -38490,10 +38618,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source fallthrough relation ProcMove -> MoveSubs.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "MoveSubs",
@@ -38506,10 +38635,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source call relation MoveSubs -> JumpEngine.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "MoveSubs",
@@ -38522,10 +38652,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source fallthrough relation MoveSubs -> NoMoveSub.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "OnGroundStateSub",
@@ -38538,10 +38669,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source call relation OnGroundStateSub -> GetPlayerAnimSpeed.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "OnGroundStateSub",
@@ -38554,10 +38686,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source branch relation OnGroundStateSub -> GndMove.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "OnGroundStateSub",
@@ -38570,10 +38703,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source fallthrough relation OnGroundStateSub -> GndMove.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "GndMove",
@@ -38586,10 +38720,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source call relation GndMove -> ImposeFriction.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "GndMove",
@@ -38602,10 +38737,11 @@
       "status": "needs-evidence",
       "currentCounterpart": "shared player core preserves source call relation GndMove -> MovePlayerHorizontally.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering."
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "FallingSub",
@@ -38615,10 +38751,13 @@
       "instruction": "jmp",
       "id": "control-00961",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation FallingSub -> LRAir.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "JumpSwimSub",
@@ -38628,10 +38767,13 @@
       "instruction": "bpl",
       "id": "control-00962",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation JumpSwimSub -> DumpFall.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "JumpSwimSub",
@@ -38641,10 +38783,13 @@
       "instruction": "bne",
       "id": "control-00963",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation JumpSwimSub -> ProcSwim.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "JumpSwimSub",
@@ -38654,10 +38799,13 @@
       "instruction": "bcc",
       "id": "control-00964",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation JumpSwimSub -> ProcSwim.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "JumpSwimSub",
@@ -38667,10 +38815,13 @@
       "instruction": "bcc",
       "id": "control-00965",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation JumpSwimSub -> DumpFall.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "DumpFall",
@@ -38680,10 +38831,13 @@
       "instruction": "sta",
       "id": "control-00966",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation DumpFall -> ProcSwim.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcSwim",
@@ -38693,10 +38847,13 @@
       "instruction": "beq",
       "id": "control-00967",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcSwim -> LRAir.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcSwim",
@@ -38706,10 +38863,13 @@
       "instruction": "jsr",
       "id": "control-00968",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation ProcSwim -> GetPlayerAnimSpeed.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcSwim",
@@ -38719,10 +38879,13 @@
       "instruction": "bcs",
       "id": "control-00969",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcSwim -> LRWater.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcSwim",
@@ -38732,10 +38895,13 @@
       "instruction": "sta",
       "id": "control-00970",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ProcSwim -> LRWater.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "LRWater",
@@ -38745,10 +38911,13 @@
       "instruction": "beq",
       "id": "control-00971",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation LRWater -> LRAir.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "LRWater",
@@ -38758,10 +38927,13 @@
       "instruction": "sta",
       "id": "control-00972",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation LRWater -> LRAir.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "LRAir",
@@ -38771,10 +38943,13 @@
       "instruction": "beq",
       "id": "control-00973",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation LRAir -> JSMove.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "LRAir",
@@ -38784,10 +38959,13 @@
       "instruction": "jsr",
       "id": "control-00974",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation LRAir -> ImposeFriction.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "LRAir",
@@ -38797,10 +38975,13 @@
       "instruction": "jsr",
       "id": "control-00975",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation LRAir -> JSMove.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "JSMove",
@@ -38810,10 +38991,13 @@
       "instruction": "jsr",
       "id": "control-00976",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation JSMove -> MovePlayerHorizontally.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "JSMove",
@@ -38823,10 +39007,13 @@
       "instruction": "bne",
       "id": "control-00977",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation JSMove -> ExitMov1.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "JSMove",
@@ -38836,10 +39023,13 @@
       "instruction": "sta",
       "id": "control-00978",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation JSMove -> ExitMov1.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ExitMov1",
@@ -38849,10 +39039,13 @@
       "instruction": "jmp",
       "id": "control-00979",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation ExitMov1 -> MovePlayerVertically.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ClimbingSub",
@@ -38862,10 +39055,13 @@
       "instruction": "bpl",
       "id": "control-00980",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ClimbingSub -> MoveOnVine.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ClimbingSub",
@@ -38875,10 +39071,13 @@
       "instruction": "dey",
       "id": "control-00981",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ClimbingSub -> MoveOnVine.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "MoveOnVine",
@@ -38888,10 +39087,13 @@
       "instruction": "beq",
       "id": "control-00982",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation MoveOnVine -> InitCSTimer.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "MoveOnVine",
@@ -38901,10 +39103,13 @@
       "instruction": "bne",
       "id": "control-00983",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation MoveOnVine -> ExitCSub.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "MoveOnVine",
@@ -38914,10 +39119,13 @@
       "instruction": "bcs",
       "id": "control-00984",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation MoveOnVine -> ClimbFD.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "MoveOnVine",
@@ -38927,10 +39135,13 @@
       "instruction": "inx",
       "id": "control-00985",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation MoveOnVine -> ClimbFD.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ClimbFD",
@@ -38940,10 +39151,13 @@
       "instruction": "beq",
       "id": "control-00986",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ClimbFD -> CSetFDir.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ClimbFD",
@@ -38953,10 +39167,13 @@
       "instruction": "inx",
       "id": "control-00987",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ClimbFD -> CSetFDir.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "CSetFDir",
@@ -38966,10 +39183,13 @@
       "instruction": "sta",
       "id": "control-00988",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation CSetFDir -> ExitCSub.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "PlayerPhysicsSub",
@@ -38979,10 +39199,13 @@
       "instruction": "bne",
       "id": "control-00989",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerPhysicsSub -> CheckForJumping.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "PlayerPhysicsSub",
@@ -38992,10 +39215,13 @@
       "instruction": "beq",
       "id": "control-00990",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerPhysicsSub -> ProcClimb.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "PlayerPhysicsSub",
@@ -39005,10 +39231,13 @@
       "instruction": "bne",
       "id": "control-00991",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerPhysicsSub -> ProcClimb.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "PlayerPhysicsSub",
@@ -39018,10 +39247,13 @@
       "instruction": "iny",
       "id": "control-00992",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation PlayerPhysicsSub -> ProcClimb.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcClimb",
@@ -39031,10 +39263,13 @@
       "instruction": "bmi",
       "id": "control-00993",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcClimb -> SetCAnim.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcClimb",
@@ -39044,10 +39279,13 @@
       "instruction": "lsr",
       "id": "control-00994",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ProcClimb -> SetCAnim.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "CheckForJumping",
@@ -39057,10 +39295,13 @@
       "instruction": "bne",
       "id": "control-00995",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation CheckForJumping -> NoJump.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "CheckForJumping",
@@ -39070,10 +39311,13 @@
       "instruction": "beq",
       "id": "control-00996",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation CheckForJumping -> NoJump.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "CheckForJumping",
@@ -39083,10 +39327,13 @@
       "instruction": "beq",
       "id": "control-00997",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation CheckForJumping -> ProcJumping.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "CheckForJumping",
@@ -39096,10 +39343,13 @@
       "instruction": "beq",
       "id": "control-00998",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation CheckForJumping -> NoJump.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "NoJump",
@@ -39109,10 +39359,13 @@
       "instruction": "jmp",
       "id": "control-00999",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation NoJump -> X_Physics.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcJumping",
@@ -39122,10 +39375,13 @@
       "instruction": "beq",
       "id": "control-01000",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcJumping -> InitJS.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcJumping",
@@ -39135,10 +39391,13 @@
       "instruction": "beq",
       "id": "control-01001",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcJumping -> NoJump.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcJumping",
@@ -39148,10 +39407,13 @@
       "instruction": "bne",
       "id": "control-01002",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcJumping -> InitJS.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcJumping",
@@ -39161,10 +39423,13 @@
       "instruction": "bpl",
       "id": "control-01003",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcJumping -> InitJS.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ProcJumping",
@@ -39174,10 +39439,13 @@
       "instruction": "jmp",
       "id": "control-01004",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation ProcJumping -> X_Physics.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "InitJS",
@@ -39187,10 +39455,13 @@
       "instruction": "bcc",
       "id": "control-01005",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation InitJS -> ChkWtr.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "InitJS",
@@ -39200,10 +39471,13 @@
       "instruction": "bcc",
       "id": "control-01006",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation InitJS -> ChkWtr.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "InitJS",
@@ -39213,10 +39487,13 @@
       "instruction": "bcc",
       "id": "control-01007",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation InitJS -> ChkWtr.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "InitJS",
@@ -39226,10 +39503,13 @@
       "instruction": "bcc",
       "id": "control-01008",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation InitJS -> ChkWtr.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "InitJS",
@@ -39239,10 +39519,13 @@
       "instruction": "iny",
       "id": "control-01009",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation InitJS -> ChkWtr.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ChkWtr",
@@ -39252,10 +39535,13 @@
       "instruction": "beq",
       "id": "control-01010",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ChkWtr -> GetYPhy.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ChkWtr",
@@ -39265,10 +39551,13 @@
       "instruction": "beq",
       "id": "control-01011",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ChkWtr -> GetYPhy.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "ChkWtr",
@@ -39278,10 +39567,13 @@
       "instruction": "iny",
       "id": "control-01012",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ChkWtr -> GetYPhy.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "GetYPhy",
@@ -39291,10 +39583,13 @@
       "instruction": "beq",
       "id": "control-01013",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation GetYPhy -> PJumpSnd.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "GetYPhy",
@@ -39304,10 +39599,13 @@
       "instruction": "bcs",
       "id": "control-01014",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation GetYPhy -> X_Physics.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "GetYPhy",
@@ -39317,10 +39615,13 @@
       "instruction": "jmp",
       "id": "control-01015",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation GetYPhy -> X_Physics.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "PJumpSnd",
@@ -39330,10 +39631,13 @@
       "instruction": "beq",
       "id": "control-01016",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PJumpSnd -> SJumpSnd.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "PJumpSnd",
@@ -39343,10 +39647,13 @@
       "instruction": "lda",
       "id": "control-01017",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation PJumpSnd -> SJumpSnd.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "SJumpSnd",
@@ -39356,10 +39663,13 @@
       "instruction": "sta",
       "id": "control-01018",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation SJumpSnd -> X_Physics.",
+      "semanticEvidence": [
+        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source input, state and physics-table branch ordering."
     },
     {
       "from": "X_Physics",
