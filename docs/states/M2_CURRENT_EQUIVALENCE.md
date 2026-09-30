@@ -1081,3 +1081,8 @@ branches.
 ### Cohort J — B15w star-flag dispatcher-front integration
 
 `StarFlagYPosAdder` through `StarFlagExit` now has eight node contracts, all incident task-gate, digit-selection, dispatch, fall-through and return relations, plus five feasible table/state handoffs. Static review matches all three OAM tables, frenzy clear, task `>=5` exit and last-digit `1/3/6` selection. Two graph-only mismatches were found: the extractor represents both a sequential fall-through and a normal return across the `JumpEngine` vector table. Candidate H8 records this extractor repair; shared C has no discrepancy. All remaining entries stay `needs-evidence` pending controlled original-ROM/x86/x64 task and digit routes.
+
+
+### Cohort J — B15x star-flag endgame integration
+
+`AwardGameTimerPoints` through `DelayToAreaEnd` now has eleven node contracts, every incident timer, score, flag, frenzy, OAM loop, interval, music, dispatch and return relation, plus eight feasible handoffs. Static review matches zero-timer exit, d2 tick gate, `$ff` then `$05` modifier ordering, Mario/Luigi score offsets, flag `$72` threshold, signed fireworks eligibility, descending four-sprite table loop, interval `$06`, and final event-music gate. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 timer conversion, no/positive fireworks and final-delay routes.

@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 288,
+    "enumeratedCount": 296,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4045,6 +4045,118 @@
       "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00289",
+      "producer": "AwardGameTimerPoints",
+      "consumer": "NoTTick",
+      "storage": "three timer digits and FrameCounter bit two to decrement/tick path",
+      "feasiblePath": "Only all-zero digits advance task; otherwise bit two selects tick before shared decrement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c task 2",
+      "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00290",
+      "producer": "NoTTick",
+      "consumer": "EndAreaPoints",
+      "storage": "DigitModifier+5 $ff then $05 and digit math result",
+      "feasiblePath": "Source subtracts one before setting the 50-point modifier consumed by score tail.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c/status digit modifier sequence",
+      "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00291",
+      "producer": "EndAreaPoints",
+      "consumer": "ELPGive",
+      "storage": "CurrentPlayer to Mario/Luigi score offset",
+      "feasiblePath": "Current player selects $0b or $11 before the shared digit math call.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c mysmb_objects_end_area_points",
+      "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00292",
+      "producer": "RaiseFlagSetoffFWorks",
+      "consumer": "SetoffF",
+      "storage": "star-flag Y threshold to fireworks counter gate",
+      "feasiblePath": "Only after Y is above $72 reaches fireworks eligibility.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c task 3",
+      "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00293",
+      "producer": "SetoffF",
+      "consumer": "DrawStarFlag",
+      "storage": "eligible FireworksCounter to EnemyFrenzyBuffer and shared draw",
+      "feasiblePath": "Positive counter writes frenzy ID before every draw.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c task 3",
+      "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00294",
+      "producer": "DrawStarFlag",
+      "consumer": "DSFLoop",
+      "storage": "relative position, OAM offset and three indexed star tables",
+      "feasiblePath": "The four descending entries use matching table index with OAM stride four.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c draw_star_flag",
+      "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00295",
+      "producer": "DrawFlagSetTimer",
+      "consumer": "IncrementSFTask2",
+      "storage": "draw completion to interval timer $06/task advance",
+      "feasiblePath": "The draw child returns before source writes timer and increments task.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c task 3",
+      "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00296",
+      "producer": "DelayToAreaEnd",
+      "consumer": "IncrementSFTask2",
+      "storage": "EnemyIntervalTimer and EventMusicBuffer to final task advance",
+      "feasiblePath": "Task advances only once interval is zero and event music buffer is empty.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/star_flag.c task 4",
+      "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -20260,111 +20372,144 @@
       "label": "AwardGameTimerPoints",
       "asmLine": 10512,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ORs all three timer digits for zero exit; otherwise queues TimerTick only on FrameCounter bit two, subtracts one from the last digit through DigitModifier+5, then sets the same slot to five before score award."
     },
     {
       "label": "NoTTick",
       "asmLine": 10522,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets digit offset $23 and modifier $ff before the decrement math call, then changes only modifier+5 to five for subsequent score addition."
     },
     {
       "label": "EndAreaPoints",
       "asmLine": 10529,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects Mario score offset $0b or Luigi $11, applies digit math, composes current-player high nibble plus four and tails to UpdateNumber."
     },
     {
       "label": "ELPGive",
       "asmLine": 10534,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Is the selected-player digit-math call site shared by timer conversion and fireworks score tails."
     },
     {
       "label": "RaiseFlagSetoffFWorks",
       "asmLine": 10543,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Raises star flag one pixel while Y >=$72; once above, only nonzero nonnegative FireworksCounter queues the Fireworks frenzy object before draw."
     },
     {
       "label": "SetoffF",
       "asmLine": 10549,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rejects zero and negative fireworks counters, otherwise writes Fireworks to EnemyFrenzyBuffer then joins draw."
     },
     {
       "label": "DrawStarFlag",
       "asmLine": 10555,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes relative position, writes exactly four sprites from descending index three through zero using three source tables, fixed attribute $22 and OAM stride four, then restores ObjectOffset."
     },
     {
       "label": "DSFLoop",
       "asmLine": 10559,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "One iteration reads matching Y/tile/X table entries at current descending index and writes ordered OAM fields before decremented loop continuation."
     },
     {
       "label": "DrawFlagSetTimer",
       "asmLine": 10580,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Draws the flag, writes EnemyIntervalTimer $06, then advances task two."
     },
     {
       "label": "IncrementSFTask2",
       "asmLine": 10585,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments StarFlagTaskControl once and returns."
     },
     {
       "label": "DelayToAreaEnd",
       "asmLine": 10589,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/star_flag.c",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Draws the flag; nonzero interval returns, zero EventMusicBuffer advances task two, otherwise returns."
     },
     {
       "label": "StarFlagExit2",
@@ -60471,12 +60616,12 @@
       "id": "control-02033",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation FireworksSoundScore -> EndAreaPoints with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
+      "semanticContract": "Preserves original jump relation FireworksSoundScore -> EndAreaPoints with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -60631,12 +60776,12 @@
       "id": "control-02043",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation AwardGameTimerPoints -> IncrementSFTask1 with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
+      "semanticContract": "Preserves original branch relation AwardGameTimerPoints -> IncrementSFTask1 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "AwardGameTimerPoints",
@@ -60646,10 +60791,13 @@
       "instruction": "beq",
       "id": "control-02044",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation AwardGameTimerPoints -> NoTTick with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "AwardGameTimerPoints",
@@ -60659,10 +60807,13 @@
       "instruction": "sta",
       "id": "control-02045",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation AwardGameTimerPoints -> NoTTick with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "NoTTick",
@@ -60672,10 +60823,13 @@
       "instruction": "jsr",
       "id": "control-02046",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation NoTTick -> DigitsMathRoutine with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "NoTTick",
@@ -60685,10 +60839,13 @@
       "instruction": "sta",
       "id": "control-02047",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation NoTTick -> EndAreaPoints with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "EndAreaPoints",
@@ -60698,10 +60855,13 @@
       "instruction": "beq",
       "id": "control-02048",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation EndAreaPoints -> ELPGive with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "EndAreaPoints",
@@ -60711,10 +60871,13 @@
       "instruction": "ldy",
       "id": "control-02049",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation EndAreaPoints -> ELPGive with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "ELPGive",
@@ -60724,10 +60887,13 @@
       "instruction": "jsr",
       "id": "control-02050",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ELPGive -> DigitsMathRoutine with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "ELPGive",
@@ -60737,10 +60903,13 @@
       "instruction": "jmp",
       "id": "control-02051",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ELPGive -> UpdateNumber with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "RaiseFlagSetoffFWorks",
@@ -60750,10 +60919,13 @@
       "instruction": "bcc",
       "id": "control-02052",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RaiseFlagSetoffFWorks -> SetoffF with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "RaiseFlagSetoffFWorks",
@@ -60763,10 +60935,13 @@
       "instruction": "jmp",
       "id": "control-02053",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation RaiseFlagSetoffFWorks -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "SetoffF",
@@ -60776,10 +60951,13 @@
       "instruction": "beq",
       "id": "control-02054",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetoffF -> DrawFlagSetTimer with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "SetoffF",
@@ -60789,10 +60967,13 @@
       "instruction": "bmi",
       "id": "control-02055",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetoffF -> DrawFlagSetTimer with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "SetoffF",
@@ -60802,10 +60983,13 @@
       "instruction": "sta",
       "id": "control-02056",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetoffF -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DrawStarFlag",
@@ -60815,10 +60999,13 @@
       "instruction": "jsr",
       "id": "control-02057",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawStarFlag -> RelativeEnemyPosition with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DrawStarFlag",
@@ -60828,10 +61015,13 @@
       "instruction": "ldx",
       "id": "control-02058",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DrawStarFlag -> DSFLoop with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DSFLoop",
@@ -60841,10 +61031,13 @@
       "instruction": "bpl",
       "id": "control-02059",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DSFLoop -> DSFLoop with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DrawFlagSetTimer",
@@ -60854,10 +61047,13 @@
       "instruction": "jsr",
       "id": "control-02060",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawFlagSetTimer -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DrawFlagSetTimer",
@@ -60867,10 +61063,13 @@
       "instruction": "sta",
       "id": "control-02061",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DrawFlagSetTimer -> IncrementSFTask2 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DelayToAreaEnd",
@@ -60880,10 +61079,13 @@
       "instruction": "jsr",
       "id": "control-02062",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DelayToAreaEnd -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DelayToAreaEnd",
@@ -60893,10 +61095,13 @@
       "instruction": "bne",
       "id": "control-02063",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DelayToAreaEnd -> StarFlagExit2 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DelayToAreaEnd",
@@ -60906,10 +61111,13 @@
       "instruction": "beq",
       "id": "control-02064",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DelayToAreaEnd -> IncrementSFTask2 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DelayToAreaEnd",
@@ -60919,10 +61127,13 @@
       "instruction": "beq",
       "id": "control-02065",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DelayToAreaEnd -> StarFlagExit2 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "MovePiranhaPlant",
@@ -85394,10 +85605,13 @@
       "instruction": "rts/rti",
       "id": "control-03869",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DigitsMathRoutine -> NoTTick with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DigitsMathRoutine",
@@ -85407,10 +85621,13 @@
       "instruction": "rts/rti",
       "id": "control-03870",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DigitsMathRoutine -> ELPGive with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -85420,10 +85637,13 @@
       "instruction": "rts/rti",
       "id": "control-03871",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DrawStarFlag",
@@ -85433,10 +85653,13 @@
       "instruction": "rts/rti",
       "id": "control-03872",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawStarFlag -> DrawFlagSetTimer with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "DrawStarFlag",
@@ -85446,10 +85669,13 @@
       "instruction": "rts/rti",
       "id": "control-03873",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "semanticEvidence": [
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawStarFlag -> DelayToAreaEnd with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -92496,12 +92722,12 @@
       "id": "control-04340",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> AwardGameTimerPoints with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> AwardGameTimerPoints with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -92513,12 +92739,12 @@
       "id": "control-04341",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> RaiseFlagSetoffFWorks with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> RaiseFlagSetoffFWorks with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     },
     {
       "from": "RunStarFlagObj",
@@ -92530,12 +92756,12 @@
       "id": "control-04342",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> DelayToAreaEnd with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> DelayToAreaEnd with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering."
     }
   ]
 }
