@@ -239,3 +239,112 @@ owner-authorized refreshed executables:
 | `assets/mysmb16.exe` | `d07cfaec7e989328287cddbb976486287f180290a759890fc4e8db18dba5b8a` |
 | `assets/mysmb32.exe` | `c450dbec21e22573bb9aa61cdd3f0746d9360f6e295d819fa640531db5cdc104` |
 | `assets/mysmb64.exe` | `1a2fea06ec11eaac1c9634843aa87948c94f42217bfa41b6f94d775d2db8bec4` |
+
+## S3: player action and animation control
+
+Entry `ProcessPlayerAction` follows S2 `DrawPlayerLoop`; exit
+`ExAnimC` precedes S4 `GetGfxOffsetAdder`. The exact 13-label
+source-order chain is `ProcessPlayerAction`, `ProcOnGroundActs`,
+`NonAnimatedActs`, `ActionFalling`, `ActionWalkRun`,
+`ActionClimbing`, `ActionSwimming`, `GetCurrentAnimOffset`,
+`FourFrameExtent`, `ThreeFrameExtent`, `AnimationControl`,
+`SetAnimC`, `ExAnimC`. All remain incomplete under M2 T16 S4 until
+admission. Shared owner: `src/game/oam/player_gfx.c`. S1
+`FindPlayerAction` is the predecessor and calls this chain before S2
+row rendering; S4 `GetGfxOffsetAdder` supplies the size offset but
+is not credited here.
+
+The ROM-logic track observes the naturally reached GameEngine
+`PlayerGfxHandler -> ProcessPlayerAction` JSR and its stack-derived
+return. Bounded entry RAM variants cover normal standing/walk/run/skid,
+jumping/falling, climbing stationary/moving, swimming gated animation,
+and frame/timer expiry. At each original call, compare branch PCs,
+selected PRG offset, `PlayerAnimCtrl`, `PlayerAnimTimer`, scratch and
+full non-stack child RAM/OAM with native x86/x64. Original CPU PC,
+registers, stack and ROM remain untouched. The prior 26 source-reached
+pose variants and S1 player children are incoming evidence, not
+automatic S3 node credit. The separate operational track runs focused
+player OAM tests, complete x86/x64 builds, DOS16 link, platform purity
+and three refreshed owner-authorized EXEs.
+
+Admission baseline **1,684 / 1,992**; 13 exact labels, 13 expected
+new matches, maximum **1,697 / 1,992**.
+
+| ROM line | Label | Incoming |
+| ---: | --- | --- |
+| 14610 | `ProcessPlayerAction` | audited; mismatch D8 |
+| 14626 | `ProcOnGroundActs` | audited; evidence incomplete |
+| 14642 | `NonAnimatedActs` | audited; evidence incomplete |
+| 14649 | `ActionFalling` | audited; evidence incomplete |
+| 14654 | `ActionWalkRun` | audited; evidence incomplete |
+| 14659 | `ActionClimbing` | audited; evidence incomplete |
+| 14666 | `ActionSwimming` | audited; mismatch D8 |
+| 14676 | `GetCurrentAnimOffset` | audited; evidence incomplete |
+| 14680 | `FourFrameExtent` | audited; evidence incomplete |
+| 14684 | `ThreeFrameExtent` | audited; evidence incomplete |
+| 14687 | `AnimationControl` | audited; evidence incomplete |
+| 14701 | `SetAnimC` | audited; evidence incomplete |
+| 14702 | `ExAnimC` | audited; evidence incomplete |
+
+### S3 admission record
+
+The continuing owner-approved M2 source-order mandate admits
+**M2 T46 S3** for these 13 labels and accepts their exact custody
+transfer from M2 T16 S4. Admission and original-route records remain
+under ignored `build/m2-t46-s3/`.
+
+### S3 closure: action selection and animation control
+
+All **13 / 13** S3 labels are ROM-match complete. M2 advances from
+**1,684** to **1,697 / 1,992**, with no S3 deferral. The original
+GameEngine reaches the `ProcessPlayerAction` JSR at `$efec`; the recorder
+uses the original stack return and changes only bounded input RAM. It
+does not replace CPU PC, registers, stack or ROM. Twenty-four ordinary
+pose cases plus sixteen action-specific cases reach this child. Each of
+the **40** original returns matches the shared C function's selected
+graphics offset and entire non-stack 2 KB RAM/OAM image on both x86
+and x64: **80/80** native child comparisons, zero differences.
+
+| Label | Original PC | Control/read/write witness |
+| --- | ---: | --- |
+| `ProcessPlayerAction` | `$efec` | 40 source-reached entries dispatch by `Player_State`; return A and non-stack RAM/OAM match. |
+| `ProcOnGroundActs` | `$f00b` | 18 standing, crouching, walking and skid entries read speed/buttons/direction. |
+| `NonAnimatedActs` | `$f028` | 15 routes clear `PlayerAnimCtrl` and return the size-selected table offset. |
+| `ActionFalling` | `$f034` | Falling retains the existing animation frame instead of advancing its timer. |
+| `ActionWalkRun` | `$f03c` | Eight moving routes select the four-frame control path. |
+| `ActionClimbing` | `$f044` | Seven entries include zero and nonzero vertical speed, selecting still versus three-frame animation. |
+| `ActionSwimming` | `$f050` | Ten entries cover idle, jump/swim timer, existing frame and A-button gates. |
+| `GetCurrentAnimOffset` | `$f062` | 25 calls use current frame before any timer update. |
+| `FourFrameExtent` | `$f068` | 17 routes pass extent three to animation control. |
+| `ThreeFrameExtent` | `$f06d` | Six climbing routes pass extent two. |
+| `AnimationControl` | `$f06f` | 23 entries preserve current offset and store extent in zero-page `$00`, including unexpired timers. |
+| `SetAnimC` | `$f08c` | Four expired-timer routes exercise next-frame and wrap outcomes. |
+| `ExAnimC` | `$f08f` | 23 routes return the saved pre-advance offset. |
+
+The first direct comparison exposed a shared C omission: the original
+`AnimationControl` stores extent in `$00` before `GetCurrentAnimOffset`
+even when the frame timer is nonzero. `src/game/oam/player_gfx.c` now
+does that write and exposes a single `mysmb_oam_process_player_action`
+owner called by the existing player graphics dispatch. Death and
+size-change selection remain in the caller for S4 review; the S4
+`GetGfxOffsetAdder` / `GetOffsetFromAnimCtrl` labels receive no S3
+credit. The similar-issue sweep checked player animation timer, frame,
+action and graphics-offset consumers: the corrected scratch write is
+owned only by this shared game function; no platform adapter contains
+the selection or timing logic.
+
+The separate operational track passes strict C90 x86/x64 checker
+builds, 40 source-reached child cases on each width, full x86/x64
+builds, OpenNT DOS16 MZ link, product self-tests and platform purity.
+Each full CTest suite has the same eleven previously recorded failures;
+seven additional Python 3.13 temporary-directory ACL failures were
+reproduced independently and then all seven passed on both widths with
+a test-process-only writable temporary-directory setting. Effective
+regression is **222/233** on each width with no new game-code failure.
+Raw frame/child/coverage records remain only under ignored `build/`.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `bed4cf8d76c6b7ca45d36b075558bcf54e47764cab1022f93bf145e68802470f` |
+| `assets/mysmb32.exe` | `c85222d727bad632355692abb2483c8e71380072d2bb14abe0807a27baa3f607` |
+| `assets/mysmb64.exe` | `ab8351bf12e08f9b9c5e3d6dc89cb84940e0ba4988234af7ccd1582ac835d7a1` |

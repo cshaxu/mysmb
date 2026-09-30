@@ -43,9 +43,9 @@ enum {
     MYSMB_INTERMEDIATE_PLAYER_DATA = 0x6f9eU,
     MYSMB_INTERMEDIATE_PLAYER_DATA_END = 0x6fa4U
 };
-/* ROM $ee35-$ef25 action selection.  The source table remains in the
+/* ROM ProcessPlayerAction through ExAnimC.  The source table remains in the
  * owner-local PRG binding, rather than becoming tracked C data. */
-static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
+mysmb_u8 mysmb_oam_process_player_action(struct mysmb_game *game)
 {
     mysmb_u8 action;
     mysmb_u8 animation;
@@ -53,32 +53,6 @@ static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
     mysmb_u8 animated;
     mysmb_u8 offset;
 
-    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU) {
-        return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 14U];
-    }
-    if (game->ram[MYSMB_PLAYER_CHANGE_SIZE] != 0U) {
-        static const mysmb_u8 change_size_offset[20] = {
-            0U, 1U, 0U, 1U, 0U, 1U, 2U, 0U, 1U, 2U,
-            2U, 0U, 2U, 0U, 2U, 0U, 2U, 0U, 2U, 0U
-        };
-
-        animation = game->ram[MYSMB_PLAYER_ANIMATION];
-        if ((game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 3U) == 0U) {
-            animation++;
-            if (animation == 10U) {
-                animation = 0U;
-                game->ram[MYSMB_PLAYER_CHANGE_SIZE] = 0U;
-            }
-            game->ram[MYSMB_PLAYER_ANIMATION] = animation;
-        }
-        if (game->ram[MYSMB_PLAYER_SIZE] == 0U) {
-            return (mysmb_u8)(game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 15U] +
-                change_size_offset[animation] * 8U);
-        }
-        animation = (mysmb_u8)(animation + 10U);
-        action = change_size_offset[animation] == 0U ? 1U : 9U;
-        return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action];
-    }
     action = 2U;
     animated = 0U;
     extent = 0U;
@@ -141,6 +115,9 @@ static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
         game->ram[MYSMB_PLAYER_ANIMATION] = 0U;
         return offset;
     }
+    /* AnimationControl stores its frame extent in zero-page $00 before
+     * reading the current offset, even while the timer is running. */
+    game->ram[0x0000U] = extent;
     animation = game->ram[MYSMB_PLAYER_ANIMATION];
     offset = (mysmb_u8)(offset + animation * 8U);
     if (game->ram[MYSMB_PLAYER_ANIM_TIMER] == 0U) {
@@ -150,6 +127,42 @@ static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
         game->ram[MYSMB_PLAYER_ANIMATION] = animation;
     }
     return offset;
+}
+
+/* ROM PlayerGfxHandler death and size-change branches precede the
+ * ProcessPlayerAction call.  Their table translation belongs to T46 S4. */
+static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
+{
+    mysmb_u8 action;
+    mysmb_u8 animation;
+
+    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU) {
+        return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 14U];
+    }
+    if (game->ram[MYSMB_PLAYER_CHANGE_SIZE] != 0U) {
+        static const mysmb_u8 change_size_offset[20] = {
+            0U, 1U, 0U, 1U, 0U, 1U, 2U, 0U, 1U, 2U,
+            2U, 0U, 2U, 0U, 2U, 0U, 2U, 0U, 2U, 0U
+        };
+
+        animation = game->ram[MYSMB_PLAYER_ANIMATION];
+        if ((game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 3U) == 0U) {
+            animation++;
+            if (animation == 10U) {
+                animation = 0U;
+                game->ram[MYSMB_PLAYER_CHANGE_SIZE] = 0U;
+            }
+            game->ram[MYSMB_PLAYER_ANIMATION] = animation;
+        }
+        if (game->ram[MYSMB_PLAYER_SIZE] == 0U) {
+            return (mysmb_u8)(game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 15U] +
+                change_size_offset[animation] * 8U);
+        }
+        animation = (mysmb_u8)(animation + 10U);
+        action = change_size_offset[animation] == 0U ? 1U : 9U;
+        return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action];
+    }
+    return mysmb_oam_process_player_action(game);
 }
 
 /* ROM DrawSpriteObject: write a two-sprite OAM row and advance the row. */

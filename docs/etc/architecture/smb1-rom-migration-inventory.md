@@ -1862,19 +1862,19 @@ The labels and branches behind every line remain open until individually bound b
 | 14566 | `PIntLoop` | M2 T46 S2 shared src/game/oam/player_gfx.c; owner PRG data | ROM-match complete | [T46 S2 closure](../../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) |
 | 14587 | `RenderPlayerSub` | M2 T46 S2 shared src/game/oam/player_gfx.c; owner PRG data | ROM-match complete | [T46 S2 closure](../../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) |
 | 14601 | `DrawPlayerLoop` | M2 T46 S2 shared src/game/oam/player_gfx.c; owner PRG data | ROM-match complete | [T46 S2 closure](../../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) |
-| 14610 | `ProcessPlayerAction` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D8](m2-t24-s1-node-verification.md#node-processplayeraction) |
-| 14626 | `ProcOnGroundActs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-procongroundacts) |
-| 14642 | `NonAnimatedActs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-nonanimatedacts) |
-| 14649 | `ActionFalling` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-actionfalling) |
-| 14654 | `ActionWalkRun` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-actionwalkrun) |
-| 14659 | `ActionClimbing` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-actionclimbing) |
-| 14666 | `ActionSwimming` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D8](m2-t24-s1-node-verification.md#node-actionswimming) |
-| 14676 | `GetCurrentAnimOffset` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getcurrentanimoffset) |
-| 14680 | `FourFrameExtent` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-fourframeextent) |
-| 14684 | `ThreeFrameExtent` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-threeframeextent) |
-| 14687 | `AnimationControl` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-animationcontrol) |
-| 14701 | `SetAnimC` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-setanimc) |
-| 14702 | `ExAnimC` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-exanimc) |
+| 14610 | `ProcessPlayerAction` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14626 | `ProcOnGroundActs` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14642 | `NonAnimatedActs` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14649 | `ActionFalling` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14654 | `ActionWalkRun` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14659 | `ActionClimbing` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14666 | `ActionSwimming` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14676 | `GetCurrentAnimOffset` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14680 | `FourFrameExtent` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14684 | `ThreeFrameExtent` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14687 | `AnimationControl` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14701 | `SetAnimC` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
+| 14702 | `ExAnimC` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
 | 14705 | `GetGfxOffsetAdder` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getgfxoffsetadder) |
 | 14712 | `SzOfs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-szofs) |
 | 14714 | `ChangeSizeOffsetAdder` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-changesizeoffsetadder) |
