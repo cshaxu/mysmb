@@ -725,11 +725,14 @@
       "label": "TitleScreenMode",
       "asmLine": 982,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads OperMode_Task and dispatches exactly one title vector: initialization, screen routine, primary setup or game menu."
     },
     {
       "label": "WSelectBufferTemplate",
@@ -745,81 +748,105 @@
       "label": "GameMenuRoutine",
       "asmLine": 996,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Combines both saved controller latches and applies the source Start, A+Start, Select, demo and world-select decision tree."
     },
     {
       "label": "StartGame",
       "asmLine": 1004,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_start_from_title",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Transfers exact Start/A+Start input to ChkContinue without a separate title-side mutation."
     },
     {
       "label": "ChkSelect",
       "asmLine": 1005,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "When Start did not match, selects Select processing, active-demo/world-select processing, or DemoEngine at demo timeout."
     },
     {
       "label": "ChkWorldSel",
       "asmLine": 1013,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Requires WorldSelectEnableFlag and B before entering the same SelectBLogic path with the B origin."
     },
     {
       "label": "SelectBLogic",
       "asmLine": 1018,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Resets DemoTimer, gates SelectTimer, then toggles player count/icon or selects world according to the Select/B origin."
     },
     {
       "label": "IncWorldSel",
       "asmLine": 1033,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments WorldSelectNumber modulo eight, calls GoContinue and prepares the six-byte world-select VRAM template."
     },
     {
       "label": "UpdateShroom",
       "asmLine": 1039,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_title_step template loop",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies all six template bytes in source order and stores WorldNumber plus one in the template blank position."
     },
     {
       "label": "NullJoypad",
       "asmLine": 1047,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears SavedJoypad1Bits before the common demo/game-core result."
     },
     {
       "label": "RunDemo",
@@ -835,61 +862,79 @@
       "label": "ResetTitle",
       "asmLine": 1053,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_reset_title",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears OperMode, OperMode_Task and Sprite0HitDetectFlag, increments DisableScreenFlag, then returns."
     },
     {
       "label": "ChkContinue",
       "asmLine": 1059,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_chk_continue",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rejects Start when DemoTimer is zero; otherwise uses the A-bit carry condition to choose continuation world or StartWorld1."
     },
     {
       "label": "StartWorld1",
       "asmLine": 1065,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_start_world1",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads the area pointer, increments the two hidden-1UP flags and new-timer flag, advances mode, applies hard mode and clears task/demo timer before score initialization."
     },
     {
       "label": "InitScores",
       "asmLine": 1077,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_init_scores",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears the exact 24-byte ScoreAndCoinDisplay range in descending source order."
     },
     {
       "label": "ExitMenu",
       "asmLine": 1080,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_exit_menu",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without additional state mutation."
     },
     {
       "label": "GoContinue",
       "asmLine": 1081,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_go_continue",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores source world to both current/offscreen worlds and clears both current/offscreen area numbers."
     },
     {
       "label": "MushroomIconData",
@@ -21627,10 +21672,13 @@
       "instruction": "beq",
       "id": "control-00082",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation GameMenuRoutine -> StartGame at source line 1001 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "GameMenuRoutine",
@@ -21640,10 +21688,13 @@
       "instruction": "bne",
       "id": "control-00083",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation GameMenuRoutine -> ChkSelect at source line 1003 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "GameMenuRoutine",
@@ -21653,10 +21704,13 @@
       "instruction": "bne",
       "id": "control-00084",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation GameMenuRoutine -> StartGame at source line 1003 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "StartGame",
@@ -21666,10 +21720,13 @@
       "instruction": "jmp",
       "id": "control-00085",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original jump relation StartGame -> ChkContinue at source line 1004 (jmp) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkSelect",
@@ -21679,10 +21736,13 @@
       "instruction": "beq",
       "id": "control-00086",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation ChkSelect -> SelectBLogic at source line 1006 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkSelect",
@@ -21692,10 +21752,13 @@
       "instruction": "bne",
       "id": "control-00087",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation ChkSelect -> ChkWorldSel at source line 1008 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkSelect",
@@ -21718,10 +21781,13 @@
       "instruction": "bcs",
       "id": "control-00089",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation ChkSelect -> ResetTitle at source line 1011 (bcs) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkSelect",
@@ -21744,10 +21810,13 @@
       "instruction": "beq",
       "id": "control-00091",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation ChkWorldSel -> NullJoypad at source line 1014 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkWorldSel",
@@ -21757,10 +21826,13 @@
       "instruction": "bne",
       "id": "control-00092",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation ChkWorldSel -> NullJoypad at source line 1016 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkWorldSel",
@@ -21770,10 +21842,13 @@
       "instruction": "iny",
       "id": "control-00093",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation ChkWorldSel -> SelectBLogic at source line 1017 (iny) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "SelectBLogic",
@@ -21783,10 +21858,13 @@
       "instruction": "beq",
       "id": "control-00094",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation SelectBLogic -> ResetTitle at source line 1019 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "SelectBLogic",
@@ -21796,10 +21874,13 @@
       "instruction": "bne",
       "id": "control-00095",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation SelectBLogic -> NullJoypad at source line 1023 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "SelectBLogic",
@@ -21809,10 +21890,13 @@
       "instruction": "beq",
       "id": "control-00096",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation SelectBLogic -> IncWorldSel at source line 1027 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "SelectBLogic",
@@ -21822,10 +21906,13 @@
       "instruction": "jsr",
       "id": "control-00097",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation SelectBLogic -> DrawMushroomIcon at source line 1031 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "SelectBLogic",
@@ -21835,10 +21922,13 @@
       "instruction": "jmp",
       "id": "control-00098",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original jump relation SelectBLogic -> NullJoypad at source line 1032 (jmp) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "IncWorldSel",
@@ -21848,10 +21938,13 @@
       "instruction": "jsr",
       "id": "control-00099",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation IncWorldSel -> GoContinue at source line 1038 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "IncWorldSel",
@@ -21861,10 +21954,13 @@
       "instruction": "jsr",
       "id": "control-00100",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation IncWorldSel -> UpdateShroom at source line 1038 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "UpdateShroom",
@@ -21874,10 +21970,13 @@
       "instruction": "bmi",
       "id": "control-00101",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation UpdateShroom -> UpdateShroom at source line 1043 (bmi) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "UpdateShroom",
@@ -21887,10 +21986,13 @@
       "instruction": "sty",
       "id": "control-00102",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation UpdateShroom -> NullJoypad at source line 1046 (sty) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "NullJoypad",
@@ -21952,10 +22054,13 @@
       "instruction": "beq",
       "id": "control-00107",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation ChkContinue -> ResetTitle at source line 1060 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkContinue",
@@ -21965,10 +22070,13 @@
       "instruction": "bcc",
       "id": "control-00108",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation ChkContinue -> StartWorld1 at source line 1062 (bcc) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkContinue",
@@ -21978,10 +22086,13 @@
       "instruction": "jsr",
       "id": "control-00109",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation ChkContinue -> GoContinue at source line 1064 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "ChkContinue",
@@ -21991,10 +22102,13 @@
       "instruction": "jsr",
       "id": "control-00110",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation ChkContinue -> StartWorld1 at source line 1064 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "StartWorld1",
@@ -22004,10 +22118,13 @@
       "instruction": "jsr",
       "id": "control-00111",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation StartWorld1 -> LoadAreaPointer at source line 1065 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "StartWorld1",
@@ -22017,10 +22134,13 @@
       "instruction": "lda",
       "id": "control-00112",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation StartWorld1 -> InitScores at source line 1076 (lda) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "InitScores",
@@ -22030,10 +22150,13 @@
       "instruction": "bpl",
       "id": "control-00113",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation InitScores -> InitScores at source line 1079 (bpl) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "InitScores",
@@ -22043,10 +22166,13 @@
       "instruction": "bpl",
       "id": "control-00114",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation InitScores -> ExitMenu at source line 1079 (bpl) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "DrawMushroomIcon",
@@ -66085,10 +66211,13 @@
       "instruction": "rts/rti",
       "id": "control-03498",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation DemoEngine -> ChkSelect at source line 1010 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "DrawMushroomIcon",
@@ -66098,10 +66227,13 @@
       "instruction": "rts/rti",
       "id": "control-03499",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation DrawMushroomIcon -> SelectBLogic at source line 1031 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "GoContinue",
@@ -66111,10 +66243,13 @@
       "instruction": "rts/rti",
       "id": "control-03500",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation GoContinue -> IncWorldSel at source line 1038 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "GameCoreRoutine",
@@ -66137,10 +66272,13 @@
       "instruction": "rts/rti",
       "id": "control-03502",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation GoContinue -> ChkContinue at source line 1064 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "LoadAreaPointer",
@@ -66150,10 +66288,13 @@
       "instruction": "rts/rti",
       "id": "control-03503",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "semanticEvidence": [
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation LoadAreaPointer -> StartWorld1 at source line 1065 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
       "from": "VictoryModeSubroutines",

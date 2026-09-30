@@ -20,7 +20,7 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 19 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 16 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 31 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -54,7 +54,7 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 41 control; 3 material RAM/table |
-| Needs evidence | 55 |
+| Needs evidence | 87 |
 | Mismatch | 2 |
 | Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
@@ -226,3 +226,12 @@ the registry, all `needs-evidence`. The mode tree still requires controlled
 title/game/victory/game-over routes. The nonzero-sprite loop requires a route
 with the real sprite-zero hardware condition; ColdBoot's all-sprite pass is
 not substituted as evidence for that distinct entry.
+
+### Cohort A — A6 title-menu static pass
+
+The title-menu/start slice records 15 nodes from `TitleScreenMode` through
+`GoContinue`, together with 32 menu/start control relations. They remain
+`needs-evidence`: the source branches require controlled title state for
+Start, A+Start, Select, enabled/disabled world-select B, demo timeout,
+continue-world and score-clear paths. Demo action/timing data and `RunDemo`
+remain a separate source-route family.
