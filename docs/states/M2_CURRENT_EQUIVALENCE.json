@@ -799,6 +799,20 @@
         "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00057",
+      "producer": "AreaDataOffset",
+      "consumer": "DecodeAreaData",
+      "storage": "three-slot selected source offset to two-byte area-object record",
+      "feasiblePath": "Each ProcADLoop slot selects AreaDataOffset or its resident offset buffer; DecodeAreaData reads that record before NextAObj may advance the shared offset.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state address/offset selection",
+      "semanticContract": "Slot selection, byte wrapping, resident-offset substitution, record read order and source-offset advancement agree for every reachable object route.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -5382,231 +5396,300 @@
       "label": "ProcessAreaData",
       "asmLine": 3326,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Starts the three persistent object slots at two and repeats only when behind-object or backloading conditions require further stream consumption."
     },
     {
       "label": "ProcADLoop",
       "asmLine": 3328,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Resets BehindAreaParserFlag for every descending slot and selects resident buffered offset or AreaDataOffset before record inspection."
     },
     {
       "label": "Chk1Row13",
       "asmLine": 3345,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Recognizes row-13 page controls before decode, preserving d6 page-control versus object distinction."
     },
     {
       "label": "Chk1Row14",
       "asmLine": 3363,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sends row 14 directly to decode only when backloading; otherwise continues page-behind testing."
     },
     {
       "label": "CheckRear",
       "asmLine": 3367,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares object page with current renderer page and marks only prior-page records as behind."
     },
     {
       "label": "RdyDecode",
       "asmLine": 3370,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls DecodeAreaData then tails to object-length accounting."
     },
     {
       "label": "SetBehind",
       "asmLine": 3372,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets the behind flag before advancing to the next area record."
     },
     {
       "label": "NextAObj",
       "asmLine": 3373,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Advances the source area-data offset by two and clears page-select state before length accounting."
     },
     {
       "label": "ChkLength",
       "asmLine": 3374,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Leaves negative/resident object lengths intact or decrements an active length before the slot loop tail."
     },
     {
       "label": "ProcLoopb",
       "asmLine": 3378,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves from slot two to zero then repeats the stream pass only for behind records or active backloading."
     },
     {
       "label": "EndAParse",
       "asmLine": 3384,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common parser return without additional stream state mutation."
     },
     {
       "label": "IncAreaObjOffset",
       "asmLine": 3386,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Advances AreaDataOffset by exactly two and clears AreaObjectPageSel."
     },
     {
       "label": "DecodeAreaData",
       "asmLine": 3393,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects source record offset and normalizes rows, object families and JumpEngine addends before later placement gating."
     },
     {
       "label": "Chk1stB",
       "asmLine": 3397,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Ends decode on $fd; otherwise selects special row-15/row-12/default addends."
     },
     {
       "label": "ChkRow14",
       "asmLine": 3408,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps row 14 to $2e identity with zero addend, otherwise proceeds to row 13 classification."
     },
     {
       "label": "ChkRow13",
       "asmLine": 3416,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps row-13 object/control records, loop command and page-control return behavior."
     },
     {
       "label": "Mask2MSB",
       "asmLine": 3429,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Masks page-control bits before normal object normalization."
     },
     {
       "label": "ChkSRows",
       "asmLine": 3431,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Separates special rows, large d6-d4 objects and small-object identities."
     },
     {
       "label": "LrgObj",
       "asmLine": 3442,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies the vertical-pipe warp d3 override before object-id normalization."
     },
     {
       "label": "NotWPipe",
       "asmLine": 3450,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Transfers normalized large-object class into common four-bit move."
     },
     {
       "label": "SpecObj",
       "asmLine": 3452,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads special-row d6-d4 class before common normalization."
     },
     {
       "label": "MoveAOId",
       "asmLine": 3455,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves source class bits d6-d4 into low-nibble object identity."
     },
     {
       "label": "NormObj",
       "asmLine": 3459,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_process_object_state",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Chooses resident execution versus page/column/rear initialization for normalized object identity."
     },
     {
       "label": "LeavePar",
@@ -30460,10 +30543,13 @@
       "instruction": "ldx",
       "id": "control-00527",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation ProcessAreaData -> ProcADLoop at line 3327.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation ProcessAreaData -> ProcADLoop at line 3327."
     },
     {
       "from": "ProcADLoop",
@@ -30473,10 +30559,13 @@
       "instruction": "beq",
       "id": "control-00528",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ProcADLoop -> RdyDecode at line 3334.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ProcADLoop -> RdyDecode at line 3334."
     },
     {
       "from": "ProcADLoop",
@@ -30486,10 +30575,13 @@
       "instruction": "bpl",
       "id": "control-00529",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ProcADLoop -> RdyDecode at line 3336.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ProcADLoop -> RdyDecode at line 3336."
     },
     {
       "from": "ProcADLoop",
@@ -30499,10 +30591,13 @@
       "instruction": "bcc",
       "id": "control-00530",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ProcADLoop -> Chk1Row13 at line 3340.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ProcADLoop -> Chk1Row13 at line 3340."
     },
     {
       "from": "ProcADLoop",
@@ -30512,10 +30607,13 @@
       "instruction": "bne",
       "id": "control-00531",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ProcADLoop -> Chk1Row13 at line 3342.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ProcADLoop -> Chk1Row13 at line 3342."
     },
     {
       "from": "ProcADLoop",
@@ -30525,10 +30623,13 @@
       "instruction": "inc",
       "id": "control-00532",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation ProcADLoop -> Chk1Row13 at line 3344.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation ProcADLoop -> Chk1Row13 at line 3344."
     },
     {
       "from": "Chk1Row13",
@@ -30538,10 +30639,13 @@
       "instruction": "bne",
       "id": "control-00533",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row13 -> Chk1Row14 at line 3349.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row13 -> Chk1Row14 at line 3349."
     },
     {
       "from": "Chk1Row13",
@@ -30551,10 +30655,13 @@
       "instruction": "bne",
       "id": "control-00534",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row13 -> CheckRear at line 3354.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row13 -> CheckRear at line 3354."
     },
     {
       "from": "Chk1Row13",
@@ -30564,10 +30671,13 @@
       "instruction": "bne",
       "id": "control-00535",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row13 -> CheckRear at line 3356.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row13 -> CheckRear at line 3356."
     },
     {
       "from": "Chk1Row13",
@@ -30577,10 +30687,13 @@
       "instruction": "jmp",
       "id": "control-00536",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source jump relation Chk1Row13 -> NextAObj at line 3362.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source jump relation Chk1Row13 -> NextAObj at line 3362."
     },
     {
       "from": "Chk1Row14",
@@ -30590,10 +30703,13 @@
       "instruction": "bne",
       "id": "control-00537",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row14 -> CheckRear at line 3364.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row14 -> CheckRear at line 3364."
     },
     {
       "from": "Chk1Row14",
@@ -30603,10 +30719,13 @@
       "instruction": "bne",
       "id": "control-00538",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row14 -> RdyDecode at line 3366.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation Chk1Row14 -> RdyDecode at line 3366."
     },
     {
       "from": "Chk1Row14",
@@ -30616,10 +30735,13 @@
       "instruction": "bne",
       "id": "control-00539",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation Chk1Row14 -> CheckRear at line 3366.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation Chk1Row14 -> CheckRear at line 3366."
     },
     {
       "from": "CheckRear",
@@ -30629,10 +30751,13 @@
       "instruction": "bcc",
       "id": "control-00540",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation CheckRear -> SetBehind at line 3369.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation CheckRear -> SetBehind at line 3369."
     },
     {
       "from": "CheckRear",
@@ -30642,10 +30767,13 @@
       "instruction": "bcc",
       "id": "control-00541",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation CheckRear -> RdyDecode at line 3369.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation CheckRear -> RdyDecode at line 3369."
     },
     {
       "from": "RdyDecode",
@@ -30655,10 +30783,13 @@
       "instruction": "jsr",
       "id": "control-00542",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source call relation RdyDecode -> DecodeAreaData at line 3370.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source call relation RdyDecode -> DecodeAreaData at line 3370."
     },
     {
       "from": "RdyDecode",
@@ -30668,10 +30799,13 @@
       "instruction": "jmp",
       "id": "control-00543",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source jump relation RdyDecode -> ChkLength at line 3371.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source jump relation RdyDecode -> ChkLength at line 3371."
     },
     {
       "from": "SetBehind",
@@ -30681,10 +30815,13 @@
       "instruction": "inc",
       "id": "control-00544",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation SetBehind -> NextAObj at line 3372.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation SetBehind -> NextAObj at line 3372."
     },
     {
       "from": "NextAObj",
@@ -30694,10 +30831,13 @@
       "instruction": "jsr",
       "id": "control-00545",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source call relation NextAObj -> IncAreaObjOffset at line 3373.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source call relation NextAObj -> IncAreaObjOffset at line 3373."
     },
     {
       "from": "NextAObj",
@@ -30707,10 +30847,13 @@
       "instruction": "jsr",
       "id": "control-00546",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation NextAObj -> ChkLength at line 3373.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation NextAObj -> ChkLength at line 3373."
     },
     {
       "from": "ChkLength",
@@ -30720,10 +30863,13 @@
       "instruction": "bmi",
       "id": "control-00547",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ChkLength -> ProcLoopb at line 3376.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ChkLength -> ProcLoopb at line 3376."
     },
     {
       "from": "ChkLength",
@@ -30733,10 +30879,13 @@
       "instruction": "dec",
       "id": "control-00548",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation ChkLength -> ProcLoopb at line 3377.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation ChkLength -> ProcLoopb at line 3377."
     },
     {
       "from": "ProcLoopb",
@@ -30746,10 +30895,13 @@
       "instruction": "bpl",
       "id": "control-00549",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ProcLoopb -> ProcADLoop at line 3379.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ProcLoopb -> ProcADLoop at line 3379."
     },
     {
       "from": "ProcLoopb",
@@ -30759,10 +30911,13 @@
       "instruction": "bne",
       "id": "control-00550",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ProcLoopb -> ProcessAreaData at line 3381.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ProcLoopb -> ProcessAreaData at line 3381."
     },
     {
       "from": "ProcLoopb",
@@ -30772,10 +30927,13 @@
       "instruction": "bne",
       "id": "control-00551",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ProcLoopb -> ProcessAreaData at line 3383.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ProcLoopb -> ProcessAreaData at line 3383."
     },
     {
       "from": "ProcLoopb",
@@ -30785,10 +30943,13 @@
       "instruction": "bne",
       "id": "control-00552",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation ProcLoopb -> EndAParse at line 3383.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation ProcLoopb -> EndAParse at line 3383."
     },
     {
       "from": "DecodeAreaData",
@@ -30798,10 +30959,13 @@
       "instruction": "bmi",
       "id": "control-00553",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation DecodeAreaData -> Chk1stB at line 3395.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation DecodeAreaData -> Chk1stB at line 3395."
     },
     {
       "from": "DecodeAreaData",
@@ -30811,10 +30975,13 @@
       "instruction": "ldy",
       "id": "control-00554",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation DecodeAreaData -> Chk1stB at line 3396.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation DecodeAreaData -> Chk1stB at line 3396."
     },
     {
       "from": "Chk1stB",
@@ -30824,10 +30991,13 @@
       "instruction": "beq",
       "id": "control-00555",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation Chk1stB -> EndAParse at line 3400.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation Chk1stB -> EndAParse at line 3400."
     },
     {
       "from": "Chk1stB",
@@ -30837,10 +31007,13 @@
       "instruction": "beq",
       "id": "control-00556",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation Chk1stB -> ChkRow14 at line 3403.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation Chk1stB -> ChkRow14 at line 3403."
     },
     {
       "from": "Chk1stB",
@@ -30850,10 +31023,13 @@
       "instruction": "beq",
       "id": "control-00557",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation Chk1stB -> ChkRow14 at line 3406.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation Chk1stB -> ChkRow14 at line 3406."
     },
     {
       "from": "Chk1stB",
@@ -30863,10 +31039,13 @@
       "instruction": "ldx",
       "id": "control-00558",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation Chk1stB -> ChkRow14 at line 3407.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation Chk1stB -> ChkRow14 at line 3407."
     },
     {
       "from": "ChkRow14",
@@ -30876,10 +31055,13 @@
       "instruction": "bne",
       "id": "control-00559",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow14 -> ChkRow13 at line 3411.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow14 -> ChkRow13 at line 3411."
     },
     {
       "from": "ChkRow14",
@@ -30889,10 +31071,13 @@
       "instruction": "bne",
       "id": "control-00560",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow14 -> NormObj at line 3415.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow14 -> NormObj at line 3415."
     },
     {
       "from": "ChkRow14",
@@ -30902,10 +31087,13 @@
       "instruction": "bne",
       "id": "control-00561",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation ChkRow14 -> ChkRow13 at line 3415.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation ChkRow14 -> ChkRow13 at line 3415."
     },
     {
       "from": "ChkRow13",
@@ -30915,10 +31103,13 @@
       "instruction": "bne",
       "id": "control-00562",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow13 -> ChkSRows at line 3417.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow13 -> ChkSRows at line 3417."
     },
     {
       "from": "ChkRow13",
@@ -30928,10 +31119,13 @@
       "instruction": "beq",
       "id": "control-00563",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow13 -> LeavePar at line 3423.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow13 -> LeavePar at line 3423."
     },
     {
       "from": "ChkRow13",
@@ -30941,10 +31135,13 @@
       "instruction": "bne",
       "id": "control-00564",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow13 -> Mask2MSB at line 3427.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ChkRow13 -> Mask2MSB at line 3427."
     },
     {
       "from": "ChkRow13",
@@ -30954,10 +31151,13 @@
       "instruction": "inc",
       "id": "control-00565",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation ChkRow13 -> Mask2MSB at line 3428.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation ChkRow13 -> Mask2MSB at line 3428."
     },
     {
       "from": "Mask2MSB",
@@ -30967,10 +31167,13 @@
       "instruction": "jmp",
       "id": "control-00566",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source jump relation Mask2MSB -> NormObj at line 3430.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source jump relation Mask2MSB -> NormObj at line 3430."
     },
     {
       "from": "ChkSRows",
@@ -30980,10 +31183,13 @@
       "instruction": "bcs",
       "id": "control-00567",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ChkSRows -> SpecObj at line 3432.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ChkSRows -> SpecObj at line 3432."
     },
     {
       "from": "ChkSRows",
@@ -30993,10 +31199,13 @@
       "instruction": "bne",
       "id": "control-00568",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation ChkSRows -> LrgObj at line 3436.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation ChkSRows -> LrgObj at line 3436."
     },
     {
       "from": "ChkSRows",
@@ -31006,10 +31215,13 @@
       "instruction": "jmp",
       "id": "control-00569",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source jump relation ChkSRows -> NormObj at line 3441.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source jump relation ChkSRows -> NormObj at line 3441."
     },
     {
       "from": "LrgObj",
@@ -31019,10 +31231,13 @@
       "instruction": "bne",
       "id": "control-00570",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation LrgObj -> NotWPipe at line 3444.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation LrgObj -> NotWPipe at line 3444."
     },
     {
       "from": "LrgObj",
@@ -31032,10 +31247,13 @@
       "instruction": "beq",
       "id": "control-00571",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation LrgObj -> NotWPipe at line 3447.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation LrgObj -> NotWPipe at line 3447."
     },
     {
       "from": "LrgObj",
@@ -31045,10 +31263,13 @@
       "instruction": "sta",
       "id": "control-00572",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation LrgObj -> NotWPipe at line 3449.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation LrgObj -> NotWPipe at line 3449."
     },
     {
       "from": "NotWPipe",
@@ -31058,10 +31279,13 @@
       "instruction": "jmp",
       "id": "control-00573",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source jump relation NotWPipe -> MoveAOId at line 3451.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source jump relation NotWPipe -> MoveAOId at line 3451."
     },
     {
       "from": "SpecObj",
@@ -31071,10 +31295,13 @@
       "instruction": "and",
       "id": "control-00574",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation SpecObj -> MoveAOId at line 3454.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation SpecObj -> MoveAOId at line 3454."
     },
     {
       "from": "MoveAOId",
@@ -31084,10 +31311,13 @@
       "instruction": "lsr",
       "id": "control-00575",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation MoveAOId -> NormObj at line 3458.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation MoveAOId -> NormObj at line 3458."
     },
     {
       "from": "NormObj",
@@ -31097,10 +31327,13 @@
       "instruction": "bpl",
       "id": "control-00576",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation NormObj -> RunAObj at line 3461.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation NormObj -> RunAObj at line 3461."
     },
     {
       "from": "NormObj",
@@ -31110,10 +31343,13 @@
       "instruction": "beq",
       "id": "control-00577",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation NormObj -> InitRear at line 3464.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation NormObj -> InitRear at line 3464."
     },
     {
       "from": "NormObj",
@@ -31123,10 +31359,13 @@
       "instruction": "bne",
       "id": "control-00578",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation NormObj -> LeavePar at line 3469.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation NormObj -> LeavePar at line 3469."
     },
     {
       "from": "NormObj",
@@ -31136,10 +31375,13 @@
       "instruction": "bne",
       "id": "control-00579",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source branch relation NormObj -> StrAObj at line 3471.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source branch relation NormObj -> StrAObj at line 3471."
     },
     {
       "from": "NormObj",
@@ -31149,10 +31391,13 @@
       "instruction": "bne",
       "id": "control-00580",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation NormObj -> LeavePar at line 3471.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation NormObj -> LeavePar at line 3471."
     },
     {
       "from": "InitRear",
@@ -70067,12 +70312,12 @@
       "id": "control-03557",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "area.c backloading stream-state helper returns to parser-core before scenery construction.",
+      "currentCounterpart": "area.c preserves source return handoff ProcessAreaData -> AreaParserCore.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "area.c backloading stream-state helper returns to parser-core before scenery construction."
+      "semanticContract": "area.c preserves source return handoff ProcessAreaData -> AreaParserCore."
     },
     {
       "from": "ProcessAreaData",
@@ -70083,12 +70328,12 @@
       "id": "control-03558",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "area.c preserves the source return handoff ProcessAreaData -> RendBBuf before the following RenderSceneryTerrain phase.",
+      "currentCounterpart": "area.c preserves source return handoff ProcessAreaData -> RendBBuf.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "area.c preserves the source return handoff ProcessAreaData -> RendBBuf before the following RenderSceneryTerrain phase."
+      "semanticContract": "area.c preserves source return handoff ProcessAreaData -> RendBBuf."
     },
     {
       "from": "GetBlockBufferAddr",
@@ -70114,10 +70359,13 @@
       "instruction": "rts/rti",
       "id": "control-03560",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source return handoff DecodeAreaData -> RdyDecode.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source return handoff DecodeAreaData -> RdyDecode."
     },
     {
       "from": "IncAreaObjOffset",
@@ -70127,10 +70375,13 @@
       "instruction": "rts/rti",
       "id": "control-03561",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source return handoff IncAreaObjOffset -> NextAObj.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source return handoff IncAreaObjOffset -> NextAObj."
     },
     {
       "from": "IncAreaObjOffset",
@@ -70140,10 +70391,13 @@
       "instruction": "rts/rti",
       "id": "control-03562",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source return handoff IncAreaObjOffset -> StrAObj.",
+      "semanticEvidence": [
+        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source return handoff IncAreaObjOffset -> StrAObj."
     },
     {
       "from": "JumpEngine",

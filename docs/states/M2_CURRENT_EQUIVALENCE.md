@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 286 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 309 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,659 | Not yet processed by this re-audit. |
+| Unclassified | 1,636 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 544 control; 52 material RAM/table |
+| Needs evidence | 601 control; 53 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,712 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,655 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -529,3 +529,16 @@ producer-to-consumer path is recorded separately. No static discrepancy was
 found; these 20 nodes, 45 relations and the new material path remain
 `needs-evidence` pending controlled original-ROM/x86/x64 scenery and block
 buffer route comparisons.
+
+### Cohort C — B10f area-object stream entry and normalization
+
+`ProcessAreaData` through `NormObj` (lines 3326–3480) now have individual
+contracts and 57 control/return relations. The audit records the three-slot
+descending loop, resident-object offset selection, page-control sequencing,
+row-13 loop-control behavior, row-14 backloading exception, behind-page
+rescan, object-length handling, normalized small/large/special identity and
+pipe-warp override. One feasible material edge records slot-selected area-data
+offset to decoder record consumption. No static discrepancy was found. These
+23 nodes, 57 relations and the data path remain `needs-evidence` until ROM and
+x86/x64 routes cover control records, resident slots, backloading and each
+object-family entry.
