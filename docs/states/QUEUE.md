@@ -47,6 +47,9 @@ T allocation for accepted implementation work.
    to task 4 and reaches task 6 on the next invocation. This is an unnumbered
    candidate, not an admitted task.
 
+6. [H9 large-platform Y-source repair](../proposals/m2/h9-large-platform-y-source-repair-candidate.md)
+   — confirmed shared `small_platform_gfx.c` mismatch: the first four platform OAM Y records read relative Y rather than ROM `Enemy_Y_Position,x`. This is an unnumbered candidate, not an admitted task.
+
 [T42](../history/M2-T42-shared-collision-and-platforms.md#t42-closure) is closed:
 98/98 scoped nodes, total1,382/1,992. Its nine chains end at
 GetEnemyBoundBoxOfsArg. Final actual actor matches21,544/29,434; unresolved

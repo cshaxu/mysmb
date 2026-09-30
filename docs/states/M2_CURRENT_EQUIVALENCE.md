@@ -1214,3 +1214,7 @@ branches.
 ### Cohort K — K2 flagpole graphics and OAM dump integration
 
 `FlagpoleScoreNumTiles` through `ExitDumpSpr` now has nine node contracts, the local flagpole caller, score-row, offscreen and return relations, plus one feasible score-table handoff. Static review matches the three fixed flag sprites, score-row `$00/$01` setup and tile-pair indexing, d1-d3 offscreen hide condition, and all six/four/three/two dump fall-through stores in descending OAM order. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 flag-visible, score-visible and d1-d3-offscreen routes.
+
+### Cohort K — K3 large-platform OAM integration
+
+`DrawLargePlatform` through `ExDLPl` now has eleven node contracts and all local stack, tile, area/hard-mode, cloud, per-column and full-offscreen control relations. Static review found one confirmed shared-C discrepancy: ROM line 13366 supplies `Enemy_Y_Position,x` to `DumpFourSpr`, while `mysmb_objects_draw_large_platform` reads `MYSMB_SMALL_PLATFORM_REL_Y`. `DrawLargePlatform` is therefore `mismatch`; H9 is the ordered, unnumbered minimal repair candidate. The ten downstream nodes remain `needs-evidence`; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes are still required.

@@ -26339,111 +26339,145 @@
       "label": "DrawLargePlatform",
       "asmLine": 13357,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "Confirmed K3 discrepancy: ROM line 13366 reads Enemy_Y_Position,x for DumpFourSpr; current small_platform_gfx.c reads MYSMB_SMALL_PLATFORM_REL_Y (0x03b9) instead of Enemy_Y_Position (0x00cf)+slot."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses Enemy_Rel_XPos for six X records, Enemy_Y_Position,x for the first four Y records, then executes the platform tile/attribute/offscreen chain."
     },
     {
       "label": "ShrinkPlatform",
       "asmLine": 13374,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects A=$f8 for castle AreaType before SetLast2Platform."
     },
     {
       "label": "SetLast2Platform",
       "asmLine": 13377,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the final two Y records, selects girder/puff tile from CloudTypeOverride and enters common tile/attribute work."
     },
     {
       "label": "SetPlatformTilenum",
       "asmLine": 13386,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dumps six tile and attribute records, recomputes source X offscreen bits with X+1, then begins d7..d2 per-column hide handling."
     },
     {
       "label": "SChk2",
       "asmLine": 13402,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies original d6 second-column hide condition before next shift."
     },
     {
       "label": "SChk3",
       "asmLine": 13408,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies original d5 third-column hide condition before next shift."
     },
     {
       "label": "SChk4",
       "asmLine": 13414,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies original d4 fourth-column hide condition before next shift."
     },
     {
       "label": "SChk5",
       "asmLine": 13420,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies original d3 fifth-column hide condition before next shift."
     },
     {
       "label": "SChk6",
       "asmLine": 13426,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies original d2 sixth-column hide condition before final full-hide test."
     },
     {
       "label": "SLChk",
       "asmLine": 13431,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses Enemy_OffscreenBits d7 to choose full six-sprite hide or return."
     },
     {
       "label": "ExDLPl",
       "asmLine": 13435,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after per-column/full-hide processing."
     },
     {
       "label": "DrawFloateyNumber_Coin",
@@ -57730,12 +57764,12 @@
       "id": "control-01708",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SkipPT -> DrawLargePlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves ROM call relation SkipPT -> DrawLargePlatform with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SkipPT",
@@ -74299,12 +74333,12 @@
       "id": "control-02794",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DrawLargePlatform -> SixSpriteStacker with source OAM loop and coordinate handoff."
+      "semanticContract": "Preserves ROM call relation DrawLargePlatform -> SixSpriteStacker with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DrawLargePlatform",
@@ -74314,10 +74348,13 @@
       "instruction": "jsr",
       "id": "control-02795",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DrawLargePlatform -> DumpFourSpr with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DrawLargePlatform",
@@ -74327,10 +74364,13 @@
       "instruction": "beq",
       "id": "control-02796",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawLargePlatform -> ShrinkPlatform with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DrawLargePlatform",
@@ -74340,10 +74380,13 @@
       "instruction": "beq",
       "id": "control-02797",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawLargePlatform -> SetLast2Platform with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DrawLargePlatform",
@@ -74353,10 +74396,13 @@
       "instruction": "beq",
       "id": "control-02798",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawLargePlatform -> ShrinkPlatform with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "ShrinkPlatform",
@@ -74366,10 +74412,13 @@
       "instruction": "lda",
       "id": "control-02799",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ShrinkPlatform -> SetLast2Platform with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SetLast2Platform",
@@ -74379,10 +74428,13 @@
       "instruction": "beq",
       "id": "control-02800",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SetLast2Platform -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SetLast2Platform",
@@ -74392,10 +74444,13 @@
       "instruction": "lda",
       "id": "control-02801",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SetLast2Platform -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SetPlatformTilenum",
@@ -74405,10 +74460,13 @@
       "instruction": "jsr",
       "id": "control-02802",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation SetPlatformTilenum -> DumpSixSpr with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SetPlatformTilenum",
@@ -74418,10 +74476,13 @@
       "instruction": "jsr",
       "id": "control-02803",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation SetPlatformTilenum -> DumpSixSpr with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SetPlatformTilenum",
@@ -74431,10 +74492,13 @@
       "instruction": "jsr",
       "id": "control-02804",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation SetPlatformTilenum -> GetXOffscreenBits with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SetPlatformTilenum",
@@ -74444,10 +74508,13 @@
       "instruction": "bcc",
       "id": "control-02805",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SetPlatformTilenum -> SChk2 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SetPlatformTilenum",
@@ -74457,10 +74524,13 @@
       "instruction": "sta",
       "id": "control-02806",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SetPlatformTilenum -> SChk2 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk2",
@@ -74470,10 +74540,13 @@
       "instruction": "bcc",
       "id": "control-02807",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SChk2 -> SChk3 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk2",
@@ -74483,10 +74556,13 @@
       "instruction": "sta",
       "id": "control-02808",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SChk2 -> SChk3 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk3",
@@ -74496,10 +74572,13 @@
       "instruction": "bcc",
       "id": "control-02809",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SChk3 -> SChk4 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk3",
@@ -74509,10 +74588,13 @@
       "instruction": "sta",
       "id": "control-02810",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SChk3 -> SChk4 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk4",
@@ -74522,10 +74604,13 @@
       "instruction": "bcc",
       "id": "control-02811",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SChk4 -> SChk5 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk4",
@@ -74535,10 +74620,13 @@
       "instruction": "sta",
       "id": "control-02812",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SChk4 -> SChk5 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk5",
@@ -74548,10 +74636,13 @@
       "instruction": "bcc",
       "id": "control-02813",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SChk5 -> SChk6 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk5",
@@ -74561,10 +74652,13 @@
       "instruction": "sta",
       "id": "control-02814",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SChk5 -> SChk6 with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk6",
@@ -74574,10 +74668,13 @@
       "instruction": "bcc",
       "id": "control-02815",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SChk6 -> SLChk with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SChk6",
@@ -74587,10 +74684,13 @@
       "instruction": "sta",
       "id": "control-02816",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SChk6 -> SLChk with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SLChk",
@@ -74600,10 +74700,13 @@
       "instruction": "bcc",
       "id": "control-02817",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SLChk -> ExDLPl with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SLChk",
@@ -74613,10 +74716,13 @@
       "instruction": "jsr",
       "id": "control-02818",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation SLChk -> MoveSixSpritesOffscreen with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "SLChk",
@@ -74626,10 +74732,13 @@
       "instruction": "jsr",
       "id": "control-02819",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SLChk -> ExDLPl with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DrawFloateyNumber_Coin",
@@ -88533,12 +88642,12 @@
       "id": "control-03822",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawLargePlatform -> SkipPT with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves ROM return relation DrawLargePlatform -> SkipPT with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "JumpEngine",
@@ -91305,12 +91414,12 @@
       "id": "control-04002",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SixSpriteStacker -> DrawLargePlatform with source OAM loop and coordinate handoff."
+      "semanticContract": "Preserves ROM return relation SixSpriteStacker -> DrawLargePlatform with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DumpFourSpr",
@@ -91320,10 +91429,13 @@
       "instruction": "rts/rti",
       "id": "control-04003",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DrawLargePlatform with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DumpSixSpr",
@@ -91333,10 +91445,13 @@
       "instruction": "rts/rti",
       "id": "control-04004",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpSixSpr -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DumpSixSpr",
@@ -91346,10 +91461,13 @@
       "instruction": "rts/rti",
       "id": "control-04005",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpSixSpr -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "GetXOffscreenBits",
@@ -91359,10 +91477,13 @@
       "instruction": "rts/rti",
       "id": "control-04006",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation GetXOffscreenBits -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "MoveSixSpritesOffscreen",
@@ -91372,10 +91493,13 @@
       "instruction": "rts/rti",
       "id": "control-04007",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "semanticEvidence": [
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation MoveSixSpritesOffscreen -> SLChk with source branch condition, OAM handoff and return ordering."
     },
     {
       "from": "DumpTwoSpr",
