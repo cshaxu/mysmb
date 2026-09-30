@@ -1046,3 +1046,8 @@ branches.
 ### Cohort J — B15p common enemy-clear-loop integration
 
 `KillAllEnemies` and `KillLoop` now have node contracts, all incident call, loop, fall-through and return relations, and four feasible state handoffs. Static review matches initial slot four, exactly five descending erase calls, byte-wrap termination after slot zero, post-loop frenzy clear and caller-slot restoration semantics. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending a controlled original-ROM/x86/x64 terminal-clear route.
+
+
+### Cohort J — B15q Bowser normal-control integration
+
+`BowserControl` through `SetFBTmr` now has fifteen node contracts, every incident timer, world, mouth, movement-range, call, loop, tail and return relation, plus nine feasible state/table handoffs. Static review matches frenzy clearing, TimerControl bypass, feet cadence, chase/timer ordering, every-fourth-frame range selection, absolute range turn, hammer-world/frame gates, jump-expiry initialization, fire-world gate and mouth-toggle loop. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal, hammer, jump and flame routes.
