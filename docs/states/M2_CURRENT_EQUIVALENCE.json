@@ -1831,151 +1831,196 @@
       "label": "GetAlternatePalette1",
       "asmLine": 1507,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 11",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85da: AreaStyle 1 selects VRAM address control $0b; all styles then increment ScreenRoutineTask."
     },
     {
       "label": "SetVRAMAddr_B",
       "asmLine": 1512,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 11 address-control write",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85e0: stores accumulator into VRAM_Buffer_AddrCtrl before common task increment."
     },
     {
       "label": "NoAltPal",
       "asmLine": 1513,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 11 task increment",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85e2: tail-jumps to IncSubtask."
     },
     {
       "label": "WriteTopStatusLine",
       "asmLine": 1517,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 2",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85e6: calls WriteGameText selector zero then increments ScreenRoutineTask."
     },
     {
       "label": "WriteBottomStatusLine",
       "asmLine": 1524,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85ed: appends score/coin and world-area status bytes then increments ScreenRoutineTask."
     },
     {
       "label": "DisplayTimeUp",
       "asmLine": 1553,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 4",
+      "semanticEvidence": [
+        "Td S9 B3 confirmed mismatch: after an expired timer, ROM DisplayTimeUp returns from OutputInter with ScreenRoutineTask still 4; the next task-4 invocation takes NoTimeUp and advances directly to task 6. Current game.c case 4 writes task 5 in the expired branch, so case 5 waits for ScreenTimer expiry before reaching task 6."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8603: expired path clears GameTimerExpiredFlag and reaches OutputInter without changing ScreenRoutineTask; its following non-expired visit reaches task 6 through NoTimeUp/IncSubtask. Current C enters task 5 immediately and adds a timer wait."
     },
     {
       "label": "NoTimeUp",
       "asmLine": 1560,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 4 non-expired path",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8611: increments ScreenRoutineTask once, then IncSubtask increments it again to task 6."
     },
     {
       "label": "DisplayIntermediate",
       "asmLine": 1565,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 6",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8615: selects title/game-over/alternate/castle/intermediate route based on operating mode, entrance, area type and disable flag."
     },
     {
       "label": "PlayerInter",
       "asmLine": 1577,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 6 player-intermediate path",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8627: draws intermediate player then enters common output path with selector one."
     },
     {
       "label": "OutputInter",
       "asmLine": 1579,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine cases 4 and 6 output sequence",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $862b: calls WriteGameText, ResetScreenTimer and clears DisableScreenFlag in that order."
     },
     {
       "label": "GameOverInter",
       "asmLine": 1584,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 6 game-over path",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8633: stores ScreenTimer $12, queues selector three and increments OperMode_Task."
     },
     {
       "label": "NoInter",
       "asmLine": 1589,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 6 skip path",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $863e: writes ScreenRoutineTask $08 and returns."
     },
     {
       "label": "AreaParserTaskControl",
       "asmLine": 1595,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $86e6: disables screen, completes parser tasks for one column set, conditionally advances task, then selects VRAM buffer control six."
     },
     {
       "label": "TaskLoop",
       "asmLine": 1597,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control parser loop",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $86e8: repeatedly invokes AreaParserTaskHandler until its task count is zero."
     },
     {
       "label": "OutputCol",
       "asmLine": 1603,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control VRAM selector write",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $86f8: writes VRAM_Buffer_AddrCtrl $06 after each completed parser column set."
     },
     {
       "label": "DrawTitleScreen",
@@ -2291,11 +2336,14 @@
       "label": "ResetSpritesAndScreenTimer",
       "asmLine": 1804,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine cases 5 and 7",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $878d: only when ScreenTimer is zero, clears sprites, reloads timer seven and increments ScreenRoutineTask."
     },
     {
       "label": "ResetScreenTimer",
@@ -24166,10 +24214,13 @@
       "instruction": "bne",
       "id": "control-00216",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetAlternatePalette1 -> NoAltPal branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "GetAlternatePalette1",
@@ -24179,10 +24230,13 @@
       "instruction": "lda",
       "id": "control-00217",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetAlternatePalette1 -> SetVRAMAddr_B fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "SetVRAMAddr_B",
@@ -24192,10 +24246,13 @@
       "instruction": "sta",
       "id": "control-00218",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetVRAMAddr_B -> NoAltPal fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "NoAltPal",
@@ -24205,10 +24262,13 @@
       "instruction": "jmp",
       "id": "control-00219",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original NoAltPal -> IncSubtask jump relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "WriteTopStatusLine",
@@ -24218,10 +24278,13 @@
       "instruction": "jsr",
       "id": "control-00220",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteTopStatusLine -> WriteGameText call relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "WriteTopStatusLine",
@@ -24231,10 +24294,13 @@
       "instruction": "jmp",
       "id": "control-00221",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteTopStatusLine -> IncSubtask jump relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "WriteBottomStatusLine",
@@ -24244,10 +24310,13 @@
       "instruction": "jsr",
       "id": "control-00222",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBottomStatusLine -> GetSBNybbles call relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "WriteBottomStatusLine",
@@ -24257,10 +24326,13 @@
       "instruction": "jmp",
       "id": "control-00223",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBottomStatusLine -> IncSubtask jump relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DisplayTimeUp",
@@ -24270,10 +24342,13 @@
       "instruction": "beq",
       "id": "control-00224",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DisplayTimeUp -> NoTimeUp branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DisplayTimeUp",
@@ -24283,10 +24358,13 @@
       "instruction": "jmp",
       "id": "control-00225",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 4 expired branch",
+      "semanticEvidence": [
+        "Td S9 B3 confirmed mismatch: after an expired timer, ROM DisplayTimeUp returns from OutputInter with ScreenRoutineTask still 4; the next task-4 invocation takes NoTimeUp and advances directly to task 6. Current game.c case 4 writes task 5 in the expired branch, so case 5 waits for ScreenTimer expiry before reaching task 6."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original expired DisplayTimeUp reaches OutputInter without changing ScreenRoutineTask; current branch writes task 5 before the next frame."
     },
     {
       "from": "NoTimeUp",
@@ -24296,10 +24374,13 @@
       "instruction": "jmp",
       "id": "control-00226",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original NoTimeUp -> IncSubtask jump relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DisplayIntermediate",
@@ -24309,10 +24390,13 @@
       "instruction": "beq",
       "id": "control-00227",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DisplayIntermediate -> NoInter branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DisplayIntermediate",
@@ -24322,10 +24406,13 @@
       "instruction": "beq",
       "id": "control-00228",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DisplayIntermediate -> GameOverInter branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DisplayIntermediate",
@@ -24335,10 +24422,13 @@
       "instruction": "bne",
       "id": "control-00229",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DisplayIntermediate -> NoInter branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DisplayIntermediate",
@@ -24348,10 +24438,13 @@
       "instruction": "beq",
       "id": "control-00230",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DisplayIntermediate -> PlayerInter branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DisplayIntermediate",
@@ -24361,10 +24454,13 @@
       "instruction": "bne",
       "id": "control-00231",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DisplayIntermediate -> NoInter branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DisplayIntermediate",
@@ -24374,10 +24470,13 @@
       "instruction": "bne",
       "id": "control-00232",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DisplayIntermediate -> PlayerInter fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "PlayerInter",
@@ -24387,10 +24486,13 @@
       "instruction": "jsr",
       "id": "control-00233",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PlayerInter -> DrawPlayer_Intermediate call relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "PlayerInter",
@@ -24400,10 +24502,13 @@
       "instruction": "lda",
       "id": "control-00234",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PlayerInter -> OutputInter fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "OutputInter",
@@ -24413,10 +24518,13 @@
       "instruction": "jsr",
       "id": "control-00235",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original OutputInter -> WriteGameText call relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "OutputInter",
@@ -24426,10 +24534,13 @@
       "instruction": "jsr",
       "id": "control-00236",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original OutputInter -> ResetScreenTimer call relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "GameOverInter",
@@ -24439,10 +24550,13 @@
       "instruction": "jsr",
       "id": "control-00237",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GameOverInter -> WriteGameText call relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "GameOverInter",
@@ -24452,10 +24566,13 @@
       "instruction": "jmp",
       "id": "control-00238",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GameOverInter -> IncModeTask_B jump relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "AreaParserTaskControl",
@@ -24465,10 +24582,13 @@
       "instruction": "inc",
       "id": "control-00239",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AreaParserTaskControl -> TaskLoop fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "TaskLoop",
@@ -24478,10 +24598,13 @@
       "instruction": "jsr",
       "id": "control-00240",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TaskLoop -> AreaParserTaskHandler call relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "TaskLoop",
@@ -24491,10 +24614,13 @@
       "instruction": "bne",
       "id": "control-00241",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TaskLoop -> TaskLoop branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "TaskLoop",
@@ -24504,10 +24630,13 @@
       "instruction": "bpl",
       "id": "control-00242",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TaskLoop -> OutputCol branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "TaskLoop",
@@ -24517,10 +24646,13 @@
       "instruction": "inc",
       "id": "control-00243",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TaskLoop -> OutputCol fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DrawTitleScreen",
@@ -24530,10 +24662,13 @@
       "instruction": "bne",
       "id": "control-00244",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DrawTitleScreen -> IncModeTask_B branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DrawTitleScreen",
@@ -25024,10 +25159,13 @@
       "instruction": "bne",
       "id": "control-00282",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ResetSpritesAndScreenTimer -> NoReset branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "ResetSpritesAndScreenTimer",
@@ -25037,10 +25175,13 @@
       "instruction": "jsr",
       "id": "control-00283",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ResetSpritesAndScreenTimer -> MoveAllSpritesOffscreen call relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "ResetSpritesAndScreenTimer",
@@ -25050,10 +25191,13 @@
       "instruction": "jsr",
       "id": "control-00284",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ResetSpritesAndScreenTimer -> ResetScreenTimer fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "ResetScreenTimer",
@@ -67228,10 +67372,13 @@
       "instruction": "rts/rti",
       "id": "control-03519",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteGameText -> WriteTopStatusLine return relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "GetSBNybbles",
@@ -67241,10 +67388,13 @@
       "instruction": "rts/rti",
       "id": "control-03520",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetSBNybbles -> WriteBottomStatusLine return relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DrawPlayer_Intermediate",
@@ -67254,10 +67404,13 @@
       "instruction": "rts/rti",
       "id": "control-03521",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DrawPlayer_Intermediate -> PlayerInter return relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "WriteGameText",
@@ -67267,10 +67420,13 @@
       "instruction": "rts/rti",
       "id": "control-03522",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteGameText -> OutputInter return relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "ResetScreenTimer",
@@ -67280,10 +67436,13 @@
       "instruction": "rts/rti",
       "id": "control-03523",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ResetScreenTimer -> OutputInter return relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "WriteGameText",
@@ -67293,10 +67452,13 @@
       "instruction": "rts/rti",
       "id": "control-03524",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteGameText -> GameOverInter return relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "AreaParserTaskHandler",
@@ -67306,10 +67468,13 @@
       "instruction": "rts/rti",
       "id": "control-03525",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original AreaParserTaskHandler -> TaskLoop return relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "DrawMushroomIcon",
@@ -67345,10 +67510,13 @@
       "instruction": "rts/rti",
       "id": "control-03528",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "semanticEvidence": [
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original MoveAllSpritesOffscreen -> ResetSpritesAndScreenTimer return relation must preserve the source predicate, predecessor writes and successor/return handoff."
     },
     {
       "from": "PutBlockMetatile",

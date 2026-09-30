@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 190 control; 5 material RAM/table |
-| Mismatch | 9 control; 2 material RAM/table |
-| Unclassified | 4,067 control edges; material edge denominator pending feasible-path enumeration |
+| Needs evidence | 229 control; 5 material RAM/table |
+| Mismatch | 10 control; 2 material RAM/table |
+| Unclassified | 4,027 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -376,3 +376,14 @@ task increment, while current case 10 exits early for BackgroundColorCtrl
 4–7. `GetBackgroundColor`, `NoBGColor`, `control-00205`, `control-00206` and
 the `BGColorCtrl_Addr -> GetBackgroundColor` material path therefore remain
 explicitly non-exact; the repair candidate records the required route matrix.
+
+### Cohort B — B3 screen-flow and parser handoff
+
+The audit now maps `GetAlternatePalette1` through
+`AreaParserTaskControl`, including the parser loop, status-line helpers and
+`ResetSpritesAndScreenTimer` return relations. It found a second confirmed
+screen-state mismatch: on an expired timer, ROM `DisplayTimeUp` returns with
+task 4 and reaches task 6 on its next non-expired invocation; current C writes
+task 5 immediately and waits on its screen timer. `DisplayTimeUp` and its
+`OutputInter` jump are mismatched. The remaining nodes and relations are
+static-mapped but await route evidence.

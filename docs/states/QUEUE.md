@@ -41,6 +41,12 @@ T allocation for accepted implementation work.
    current C omits the ROM's unconditional palette-producer fall-through. This
    is an unnumbered candidate, not an admitted task.
 
+5. [B3 time-up task-handoff repair](../proposals/m2/b3-timeup-task-handoff-repair-candidate.md)
+   — confirmed shared `game.c` `DisplayTimeUp -> OutputInter -> NoTimeUp`
+   mismatch: current C inserts task 5 and a timer wait where the ROM returns
+   to task 4 and reaches task 6 on the next invocation. This is an unnumbered
+   candidate, not an admitted task.
+
 [T42](../history/M2-T42-shared-collision-and-platforms.md#t42-closure) is closed:
 98/98 scoped nodes, total1,382/1,992. Its nine chains end at
 GetEnemyBoundBoxOfsArg. Final actual actor matches21,544/29,434; unresolved
