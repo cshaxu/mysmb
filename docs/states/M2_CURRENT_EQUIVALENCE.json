@@ -883,6 +883,76 @@
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00063",
+      "producer": "CoinMetatileData",
+      "consumer": "RowOfCoins",
+      "storage": "AreaType-indexed ROM coin-metatile table value",
+      "feasiblePath": "RowOfCoins reads CoinMetatileData,AreaType immediately before tail-entering GetRow.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_coin_metatile_data -> mysmb_area_row_of_coins",
+      "semanticContract": "The same four-entry selection reaches horizontal coin-row rendering.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00064",
+      "producer": "C_ObjectRow",
+      "consumer": "ChainObj",
+      "storage": "row-13 decoder selector minus two to ROM row table",
+      "feasiblePath": "ChainObj reads C_ObjectRow-2,Y after the row-13 object decoder supplies Y in two through four.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_c_object_row -> mysmb_area_chain_obj",
+      "semanticContract": "The same decoder index selects the same row before ColObj.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00065",
+      "producer": "C_ObjectMetatile",
+      "consumer": "ChainObj",
+      "storage": "row-13 decoder selector minus two to ROM metatile table",
+      "feasiblePath": "ChainObj reads C_ObjectMetatile-2,Y on the same feasible row-13 object path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_c_object_metatile -> mysmb_area_chain_obj",
+      "semanticContract": "The paired decoder index selects the same metatile before ColObj.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00066",
+      "producer": "SolidBlockMetatiles",
+      "consumer": "RowOfSolidBlocks/ColumnOfSolidBlocks",
+      "storage": "AreaType-indexed solid-block metatile table",
+      "feasiblePath": "Each solid-block source entry reads SolidBlockMetatiles,AreaType before its shared row or column renderer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_solid_block_metatiles -> solid row/column helpers",
+      "semanticContract": "The same area-type value reaches the corresponding horizontal or vertical path.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00067",
+      "producer": "BrickMetatiles",
+      "consumer": "DrawBricks/ColumnOfBricks",
+      "storage": "AreaType or cloud-override indexed brick metatile table",
+      "feasiblePath": "RowOfBricks/DrawBricks and ColumnOfBricks read BrickMetatiles on their feasible parser paths; only the row path may force index four.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_brick_metatiles -> brick row/column helpers",
+      "semanticContract": "Cloud override applies only to the horizontal source path; vertical selection uses AreaType.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -6586,231 +6656,300 @@
       "label": "FlagpoleObject",
       "asmLine": 3991,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c plus src/game/oam/flagpole_gfx.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object -> mysmb_objects_start_flagpole",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes ball, shaft and base metatiles, then initializes slot five as the flag using object X minus eight with source borrow into page."
     },
     {
       "label": "EndlessRope",
       "asmLine": 4018,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-enters the common rope renderer at row zero with fifteen-row extent."
     },
     {
       "label": "BalancePlatRope",
       "asmLine": 4023,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears rows one through fifteen, restores parser slot, decodes low-nibble extent and tail-enters rope at row one."
     },
     {
       "label": "DrawRope",
       "asmLine": 4034,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-enters RenderUnderPart with rope metatile $40 and caller-selected row and extent."
     },
     {
       "label": "CoinMetatileData",
       "asmLine": 4039,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies $c3 for water and $c2 for the other three area types."
     },
     {
       "label": "RowOfCoins",
       "asmLine": 4042,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the area-type coin metatile and tail-enters the shared horizontal row renderer."
     },
     {
       "label": "C_ObjectRow",
       "asmLine": 4049,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps row-13 selector values two through four to rows six through eight."
     },
     {
       "label": "C_ObjectMetatile",
       "asmLine": 4052,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps the paired row-13 selector values to $c5, $0c and $89."
     },
     {
       "label": "CastleBridgeObj",
       "asmLine": 4055,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Installs fixed length twelve, then tail-enters the chained row-13 column renderer."
     },
     {
       "label": "AxeObj",
       "asmLine": 4060,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets VRAM address selector eight and falls through to the chained column renderer."
     },
     {
       "label": "ChainObj",
       "asmLine": 4064,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses decoder selector minus two to select the paired chain row and metatile before tail-entering one-column rendering."
     },
     {
       "label": "EmptyBlock",
       "asmLine": 4070,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decodes object row, selects $c4 and falls through to one-column rendering."
     },
     {
       "label": "ColObj",
       "asmLine": 4074,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-enters RenderUnderPart with zero vertical extent for exactly one selected column metatile."
     },
     {
       "label": "SolidBlockMetatiles",
       "asmLine": 4079,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps the four area types to $69, $61, $61 and $62."
     },
     {
       "label": "BrickMetatiles",
       "asmLine": 4082,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps area types to brick values and retains $88 solely for the cloud row override."
     },
     {
       "label": "RowOfBricks",
       "asmLine": 4086,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects BrickMetatiles by area type except CloudTypeOverride forces index four, then enters DrawBricks."
     },
     {
       "label": "DrawBricks",
       "asmLine": 4091,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads the caller-selected brick metatile and tail-enters the shared horizontal row path."
     },
     {
       "label": "RowOfSolidBlocks",
       "asmLine": 4094,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads SolidBlockMetatiles by area type and falls through to the horizontal row path."
     },
     {
       "label": "GetRow",
       "asmLine": 4097,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile across low-nibble length decode and falls through to one-row rendering at RAM $07."
     },
     {
       "label": "DrawRow",
       "asmLine": 4099,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reloads decoded row, uses zero extent and tail-enters RenderUnderPart with the preserved metatile."
     },
     {
       "label": "ColumnOfBricks",
       "asmLine": 4104,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects BrickMetatiles by area type without cloud override and tail-enters vertical rendering."
     },
     {
       "label": "ColumnOfSolidBlocks",
       "asmLine": 4109,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects SolidBlockMetatiles by area type and falls through to vertical rendering."
     },
     {
       "label": "GetRow2",
       "asmLine": 4112,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile across attribute decode, reloads RAM $07 and tail-enters RenderUnderPart with decoded vertical extent."
     },
     {
       "label": "BulletBillCannon",
@@ -33319,10 +33458,13 @@
       "instruction": "jsr",
       "id": "control-00684",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source call relation FlagpoleObject -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "FlagpoleObject",
@@ -33332,10 +33474,13 @@
       "instruction": "jsr",
       "id": "control-00685",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source call relation FlagpoleObject -> GetAreaObjXPosition.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "EndlessRope",
@@ -33345,10 +33490,13 @@
       "instruction": "jmp",
       "id": "control-00686",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation EndlessRope -> DrawRope.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "BalancePlatRope",
@@ -33358,10 +33506,13 @@
       "instruction": "jsr",
       "id": "control-00687",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source call relation BalancePlatRope -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "BalancePlatRope",
@@ -33371,10 +33522,13 @@
       "instruction": "jsr",
       "id": "control-00688",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source call relation BalancePlatRope -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "BalancePlatRope",
@@ -33384,10 +33538,13 @@
       "instruction": "ldx",
       "id": "control-00689",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source fallthrough relation BalancePlatRope -> DrawRope.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "DrawRope",
@@ -33397,10 +33554,13 @@
       "instruction": "jmp",
       "id": "control-00690",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation DrawRope -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "RowOfCoins",
@@ -33410,10 +33570,13 @@
       "instruction": "jmp",
       "id": "control-00691",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation RowOfCoins -> GetRow.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "CastleBridgeObj",
@@ -33423,10 +33586,13 @@
       "instruction": "jsr",
       "id": "control-00692",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source call relation CastleBridgeObj -> ChkLrgObjFixedLength.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "CastleBridgeObj",
@@ -33436,10 +33602,13 @@
       "instruction": "jmp",
       "id": "control-00693",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation CastleBridgeObj -> ChainObj.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "AxeObj",
@@ -33449,10 +33618,13 @@
       "instruction": "sta",
       "id": "control-00694",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source fallthrough relation AxeObj -> ChainObj.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "ChainObj",
@@ -33462,10 +33634,13 @@
       "instruction": "jmp",
       "id": "control-00695",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation ChainObj -> ColObj.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "EmptyBlock",
@@ -33475,10 +33650,13 @@
       "instruction": "jsr",
       "id": "control-00696",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source call relation EmptyBlock -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "EmptyBlock",
@@ -33488,10 +33666,13 @@
       "instruction": "lda",
       "id": "control-00697",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source fallthrough relation EmptyBlock -> ColObj.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "ColObj",
@@ -33501,10 +33682,13 @@
       "instruction": "jmp",
       "id": "control-00698",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation ColObj -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "RowOfBricks",
@@ -33514,10 +33698,13 @@
       "instruction": "beq",
       "id": "control-00699",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source branch relation RowOfBricks -> DrawBricks.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source branch handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "RowOfBricks",
@@ -33527,10 +33714,13 @@
       "instruction": "ldy",
       "id": "control-00700",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source fallthrough relation RowOfBricks -> DrawBricks.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "DrawBricks",
@@ -33540,10 +33730,13 @@
       "instruction": "jmp",
       "id": "control-00701",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation DrawBricks -> GetRow.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "RowOfSolidBlocks",
@@ -33553,10 +33746,13 @@
       "instruction": "lda",
       "id": "control-00702",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source fallthrough relation RowOfSolidBlocks -> GetRow.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetRow",
@@ -33566,10 +33762,13 @@
       "instruction": "jsr",
       "id": "control-00703",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source call relation GetRow -> ChkLrgObjLength.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetRow",
@@ -33579,10 +33778,13 @@
       "instruction": "jsr",
       "id": "control-00704",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source fallthrough relation GetRow -> DrawRow.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "DrawRow",
@@ -33592,10 +33794,13 @@
       "instruction": "jmp",
       "id": "control-00705",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation DrawRow -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "ColumnOfBricks",
@@ -33605,10 +33810,13 @@
       "instruction": "jmp",
       "id": "control-00706",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation ColumnOfBricks -> GetRow2.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "ColumnOfSolidBlocks",
@@ -33618,10 +33826,13 @@
       "instruction": "lda",
       "id": "control-00707",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source fallthrough relation ColumnOfSolidBlocks -> GetRow2.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetRow2",
@@ -33631,10 +33842,13 @@
       "instruction": "jsr",
       "id": "control-00708",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source call relation GetRow2 -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetRow2",
@@ -33644,10 +33858,13 @@
       "instruction": "jmp",
       "id": "control-00709",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation GetRow2 -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "BulletBillCannon",
@@ -34008,10 +34225,13 @@
       "instruction": "jmp",
       "id": "control-00737",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source jump relation DrawQBlk -> DrawRow.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetAreaObjectID",
@@ -71371,10 +71591,13 @@
       "instruction": "rts/rti",
       "id": "control-03591",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source return relation RenderUnderPart -> FlagpoleObject.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetAreaObjXPosition",
@@ -71384,10 +71607,13 @@
       "instruction": "rts/rti",
       "id": "control-03592",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source return relation GetAreaObjXPosition -> FlagpoleObject.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -71397,10 +71623,13 @@
       "instruction": "rts/rti",
       "id": "control-03593",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source return relation RenderUnderPart -> BalancePlatRope.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -71410,10 +71639,13 @@
       "instruction": "rts/rti",
       "id": "control-03594",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source return relation GetLrgObjAttrib -> BalancePlatRope.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -71423,10 +71655,13 @@
       "instruction": "rts/rti",
       "id": "control-03595",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source return relation ChkLrgObjFixedLength -> CastleBridgeObj.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -71436,10 +71671,13 @@
       "instruction": "rts/rti",
       "id": "control-03596",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source return relation GetLrgObjAttrib -> EmptyBlock.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "ChkLrgObjLength",
@@ -71449,10 +71687,13 @@
       "instruction": "rts/rti",
       "id": "control-03597",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source return relation ChkLrgObjLength -> GetRow.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -71462,10 +71703,13 @@
       "instruction": "rts/rti",
       "id": "control-03598",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "Shared game C preserves source return relation GetLrgObjAttrib -> GetRow2.",
+      "semanticEvidence": [
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
     },
     {
       "from": "GetLrgObjAttrib",

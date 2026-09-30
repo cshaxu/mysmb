@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 372 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 395 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,573 | Not yet processed by this re-audit. |
+| Unclassified | 1,550 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 763 control; 58 material RAM/table |
+| Needs evidence | 798 control; 63 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,493 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,458 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -590,3 +590,17 @@ original-ROM and current x86/x64 routes compare water, both question rows, all
 three bridge rows and flag-ball extent with the parser's persistent length and
 metatile-buffer state. `FlagpoleObject` is source-ordered in Cohort D and is
 intentionally excluded from this chain.
+
+### Cohort D — B11a flagpole, rope, object-row and block-row integration
+
+`FlagpoleObject` through `GetRow2` (lines 3991–4119) now have individual
+shared-game node contracts, thirty-five local/incoming control and return
+relations, and five feasible table-to-consumer paths. The audit preserves the
+flag's slot-five X/page borrow initialization; distinct endless and balance
+rope setup; paired row-13 tables; fixed castle-bridge length; axe's palette
+selector fall-through; and the source's cloud override applying only to brick
+rows, never brick columns. No static discrepancy was found. All twenty-three
+nodes, thirty-five relations and five material paths remain `needs-evidence`
+until controlled original-ROM and current x86/x64 parser routes compare flag
+initialization, both rope variants, all row-13 objects, coin rows, cloud and
+non-cloud brick rows, solid rows and both vertical column paths.
