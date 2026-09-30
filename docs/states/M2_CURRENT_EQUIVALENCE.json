@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 265,
+    "enumeratedCount": 270,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3723,6 +3723,76 @@
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00266",
+      "producer": "BowserGfxHandler",
+      "consumer": "CopyFToR",
+      "storage": "front direction bit to rear horizontal delta",
+      "feasiblePath": "Direction bit zero selects $10 for left-facing placement and $f0 for right-facing placement after front processing.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_gfx.c delta selection",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff, predicate and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00267",
+      "producer": "CopyFToR",
+      "consumer": "ProcessBowserHalf",
+      "storage": "duplicate slot position/state/direction and ObjectOffset handoff",
+      "feasiblePath": "Rear half receives copied values, current slot and Bowser ID before its drawing/collision child.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_gfx.c rear setup -> process_half",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff, predicate and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00268",
+      "producer": "ProcessBowserHalf",
+      "consumer": "GetEnemyBoundBox",
+      "storage": "normal-state box control $0a to bounding box generation",
+      "feasiblePath": "Only normal front/rear halves generate their collision box after retainer drawing.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_gfx.c process_half -> mysmb_objects_update_enemy_bounding_box",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff, predicate and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00269",
+      "producer": "ProcessBowserHalf",
+      "consumer": "PlayerEnemyCollision",
+      "storage": "current-slot bounding box to player-enemy collision tail",
+      "feasiblePath": "Collision receives the reloaded object slot immediately after box construction.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_gfx.c process_half -> mysmb_objects_player_enemy_current",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff, predicate and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00270",
+      "producer": "CopyFToR",
+      "consumer": "ExBGfxH",
+      "storage": "restored front ObjectOffset and cleared BowserGfxFlag to return tail",
+      "feasiblePath": "Normal two-half route restores the original slot then clears graphics-half state once.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_gfx.c final restoration",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff, predicate and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -19587,41 +19657,53 @@
       "label": "BowserGfxHandler",
       "asmLine": 10289,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_gfx.c:mysmb_objects_draw_bowsers_slot/process_half",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes the front half first, selects rear X delta $10 or $f0 from direction bit zero, then processes the rear and clears the front/rear graphics flag after restoring the original ObjectOffset."
     },
     {
       "label": "CopyFToR",
       "asmLine": 10296,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_gfx.c:mysmb_objects_draw_bowsers_slot/process_half",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies front X/Y/state/direction to the duplicate rear with Y+8, makes the rear current, writes Bowser ID, preserves/restores the front ObjectOffset and uses the second half processing call."
     },
     {
       "label": "ExBGfxH",
       "asmLine": 10321,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_gfx.c:mysmb_objects_draw_bowsers_slot/process_half",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Is the sole return tail after rear processing or non-normal half state; it leaves ObjectOffset restored and BowserGfxFlag zero for the normal two-half route."
     },
     {
       "label": "ProcessBowserHalf",
       "asmLine": 10323,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_gfx.c:mysmb_objects_draw_bowsers_slot/process_half",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments BowserGfxFlag, performs the retainer relative/offscreen/draw child, and only for normal state writes bounding box control $0a before bound-box generation and player collision tail."
     },
     {
       "label": "FlameTimerData",
@@ -58612,12 +58694,12 @@
       "id": "control-01942",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "bridge.c mysmb_enemy_move_d_bowser -> mysmb_objects_draw_bowsers_slot tail",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original jump relation MoveD_Bowser -> BowserGfxHandler with its source predicate, slot/scratch handoff, child ordering and return or tail behavior."
+      "semanticContract": "Preserves original jump relation MoveD_Bowser -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "RemoveBridge",
@@ -58724,12 +58806,12 @@
       "id": "control-01949",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "bridge.c draw_bowser tail -> mysmb_objects_draw_bowsers_slot",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original jump relation NoBFall -> BowserGfxHandler with its source predicate, slot/scratch handoff, child ordering and return or tail behavior."
+      "semanticContract": "Preserves original jump relation NoBFall -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "RunBowser",
@@ -59380,12 +59462,12 @@
       "id": "control-01990",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ChkFireB -> BowserGfxHandler with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order."
+      "semanticContract": "Preserves original branch relation ChkFireB -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "ChkFireB",
@@ -59412,12 +59494,12 @@
       "id": "control-01992",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation SpawnFBr -> BowserGfxHandler with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order."
+      "semanticContract": "Preserves original branch relation SpawnFBr -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "SpawnFBr",
@@ -59492,12 +59574,12 @@
       "id": "control-01997",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SetFBTmr -> BowserGfxHandler with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order."
+      "semanticContract": "Preserves original fallthrough relation SetFBTmr -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "BowserGfxHandler",
@@ -59507,10 +59589,13 @@
       "instruction": "jsr",
       "id": "control-01998",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BowserGfxHandler -> ProcessBowserHalf with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "BowserGfxHandler",
@@ -59520,10 +59605,13 @@
       "instruction": "bcc",
       "id": "control-01999",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BowserGfxHandler -> CopyFToR with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "BowserGfxHandler",
@@ -59533,10 +59621,13 @@
       "instruction": "ldy",
       "id": "control-02000",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BowserGfxHandler -> CopyFToR with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "CopyFToR",
@@ -59546,10 +59637,13 @@
       "instruction": "jsr",
       "id": "control-02001",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation CopyFToR -> ProcessBowserHalf with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "CopyFToR",
@@ -59559,10 +59653,13 @@
       "instruction": "sta",
       "id": "control-02002",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CopyFToR -> ExBGfxH with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "ProcessBowserHalf",
@@ -59573,12 +59670,12 @@
       "id": "control-02003",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ProcessBowserHalf -> RunRetainerObj with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original call relation ProcessBowserHalf -> RunRetainerObj with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "ProcessBowserHalf",
@@ -59588,10 +59685,13 @@
       "instruction": "bne",
       "id": "control-02004",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcessBowserHalf -> ExBGfxH with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "ProcessBowserHalf",
@@ -59601,10 +59701,13 @@
       "instruction": "jsr",
       "id": "control-02005",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ProcessBowserHalf -> GetEnemyBoundBox with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "ProcessBowserHalf",
@@ -59614,10 +59717,13 @@
       "instruction": "jmp",
       "id": "control-02006",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ProcessBowserHalf -> PlayerEnemyCollision with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "SetFlameTimer",
@@ -84712,10 +84818,13 @@
       "instruction": "rts/rti",
       "id": "control-03860",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcessBowserHalf -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "ProcessBowserHalf",
@@ -84725,10 +84834,13 @@
       "instruction": "rts/rti",
       "id": "control-03861",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcessBowserHalf -> CopyFToR with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "RunRetainerObj",
@@ -84739,12 +84851,12 @@
       "id": "control-03862",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RunRetainerObj -> ProcessBowserHalf with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original return relation RunRetainerObj -> ProcessBowserHalf with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -84754,10 +84866,13 @@
       "instruction": "rts/rti",
       "id": "control-03863",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "semanticEvidence": [
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> ProcessBowserHalf with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
     },
     {
       "from": "RelativeEnemyPosition",
