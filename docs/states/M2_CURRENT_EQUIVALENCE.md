@@ -1445,3 +1445,9 @@ branches.
 - Source range: `ExitProcessEColl` (`SMBDIS.ASM` line 11680).
 - Node-semantics result: one label moved from `unclassified` to `needs-evidence`; existing incident edge contracts remain applicable. Static review found no discrepancy; controlled pair-collision routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K46 — player background collision entry audit
+
+- Source range: `PlayerBGUpperExtent` through `HeadChk` (`SMBDIS.ASM` lines 11924–11971).
+- Node-semantics result: nine labels moved from `unclassified` to `needs-evidence`, covering guards, falling/swimming state, screen gate and probe-base selection.
+- Independent integration result: 18 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled collision routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

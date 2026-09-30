@@ -25138,91 +25138,118 @@
       "label": "PlayerBGUpperExtent",
       "asmLine": 11924,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies small/big upper-Y collision extents for head-probe gate."
     },
     {
       "label": "PlayerBGCollision",
       "asmLine": 11927,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies disable/routine guards, selects swimming/falling state, verifies on-screen Y, initializes collision bits and begins collision probes."
     },
     {
       "label": "SetFallS",
       "asmLine": 11942,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects falling player state two."
     },
     {
       "label": "SetPSte",
       "asmLine": 11943,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected swimming/falling state before screen guard."
     },
     {
       "label": "ChkOnScr",
       "asmLine": 11944,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Requires Player_Y_HighPos one, initializes collision bits and gates low-screen collision work."
     },
     {
       "label": "ExPBGCol",
       "asmLine": 11952,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without background collision work."
     },
     {
       "label": "ChkCollSize",
       "asmLine": 11954,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects block-buffer probe base from crouch, size and swimming state."
     },
     {
       "label": "GBBAdr",
       "asmLine": 11964,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads and stores selected block-buffer adder before head probe."
     },
     {
       "label": "HeadChk",
       "asmLine": 11971,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses size/crouch upper extent to choose head collision versus feet path."
     },
     {
       "label": "SolidOrClimb",
@@ -71351,10 +71378,13 @@
       "instruction": "bne",
       "id": "control-02426",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation PlayerBGCollision → ExPBGCol including guard predicate and state/probe ordering."
     },
     {
       "from": "PlayerBGCollision",
@@ -71364,10 +71394,13 @@
       "instruction": "beq",
       "id": "control-02427",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation PlayerBGCollision → ExPBGCol including guard predicate and state/probe ordering."
     },
     {
       "from": "PlayerBGCollision",
@@ -71377,10 +71410,13 @@
       "instruction": "bcc",
       "id": "control-02428",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation PlayerBGCollision → ExPBGCol including guard predicate and state/probe ordering."
     },
     {
       "from": "PlayerBGCollision",
@@ -71390,10 +71426,13 @@
       "instruction": "bne",
       "id": "control-02429",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation PlayerBGCollision → SetPSte including guard predicate and state/probe ordering."
     },
     {
       "from": "PlayerBGCollision",
@@ -71403,10 +71442,13 @@
       "instruction": "beq",
       "id": "control-02430",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation PlayerBGCollision → SetFallS including guard predicate and state/probe ordering."
     },
     {
       "from": "PlayerBGCollision",
@@ -71416,10 +71458,13 @@
       "instruction": "bne",
       "id": "control-02431",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation PlayerBGCollision → ChkOnScr including guard predicate and state/probe ordering."
     },
     {
       "from": "PlayerBGCollision",
@@ -71429,10 +71474,13 @@
       "instruction": "bne",
       "id": "control-02432",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry fallthrough relation PlayerBGCollision → SetFallS including guard predicate and state/probe ordering."
     },
     {
       "from": "SetFallS",
@@ -71442,10 +71490,13 @@
       "instruction": "lda",
       "id": "control-02433",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry fallthrough relation SetFallS → SetPSte including guard predicate and state/probe ordering."
     },
     {
       "from": "SetPSte",
@@ -71455,10 +71506,13 @@
       "instruction": "sta",
       "id": "control-02434",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry fallthrough relation SetPSte → ChkOnScr including guard predicate and state/probe ordering."
     },
     {
       "from": "ChkOnScr",
@@ -71468,10 +71522,13 @@
       "instruction": "bne",
       "id": "control-02435",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation ChkOnScr → ExPBGCol including guard predicate and state/probe ordering."
     },
     {
       "from": "ChkOnScr",
@@ -71481,10 +71538,13 @@
       "instruction": "bcc",
       "id": "control-02436",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation ChkOnScr → ChkCollSize including guard predicate and state/probe ordering."
     },
     {
       "from": "ChkOnScr",
@@ -71494,10 +71554,13 @@
       "instruction": "bcc",
       "id": "control-02437",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry fallthrough relation ChkOnScr → ExPBGCol including guard predicate and state/probe ordering."
     },
     {
       "from": "ChkCollSize",
@@ -71507,10 +71570,13 @@
       "instruction": "bne",
       "id": "control-02438",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation ChkCollSize → GBBAdr including guard predicate and state/probe ordering."
     },
     {
       "from": "ChkCollSize",
@@ -71520,10 +71586,13 @@
       "instruction": "bne",
       "id": "control-02439",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation ChkCollSize → GBBAdr including guard predicate and state/probe ordering."
     },
     {
       "from": "ChkCollSize",
@@ -71533,10 +71602,13 @@
       "instruction": "bne",
       "id": "control-02440",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation ChkCollSize → GBBAdr including guard predicate and state/probe ordering."
     },
     {
       "from": "ChkCollSize",
@@ -71546,10 +71618,13 @@
       "instruction": "dey",
       "id": "control-02441",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry fallthrough relation ChkCollSize → GBBAdr including guard predicate and state/probe ordering."
     },
     {
       "from": "GBBAdr",
@@ -71559,10 +71634,13 @@
       "instruction": "beq",
       "id": "control-02442",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry branch relation GBBAdr → HeadChk including guard predicate and state/probe ordering."
     },
     {
       "from": "GBBAdr",
@@ -71572,10 +71650,13 @@
       "instruction": "inx",
       "id": "control-02443",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "semanticEvidence": [
+        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves PlayerBG entry fallthrough relation GBBAdr → HeadChk including guard predicate and state/probe ordering."
     },
     {
       "from": "HeadChk",
