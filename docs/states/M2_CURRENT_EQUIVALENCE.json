@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 174,
+    "enumeratedCount": 179,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2449,6 +2449,76 @@
       "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00175",
+      "producer": "RunSmallPlatform",
+      "consumer": "MoveSmallPlatform",
+      "storage": "offscreen/relative coordinates, small bounding box, collision state and OAM",
+      "feasiblePath": "Small platform draws before movement and bounds consumption.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_run_small_platform",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00176",
+      "producer": "RunLargePlatform",
+      "consumer": "LargePlatformSubroutines",
+      "storage": "TimerControl, large collision state and current slot",
+      "feasiblePath": "Large platform movement vector is entered only when TimerControl is zero.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_run_large_platform",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00177",
+      "producer": "LargePlatformSubroutines",
+      "consumer": "BalancePlatform",
+      "storage": "Enemy_ID-$24, seven-entry target table and JumpEngine scratch $0004-$0007",
+      "feasiblePath": "Large-platform IDs $24-$2a select their original movement vector target.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_platform_movement_dispatch targets",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00178",
+      "producer": "SkipPT",
+      "consumer": "DrawLargePlatform",
+      "storage": "relative position state",
+      "feasiblePath": "The post-movement relative coordinate is what the large-platform renderer consumes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_run_large_platform",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00179",
+      "producer": "RunLargePlatform",
+      "consumer": "OffscreenBoundsCheck",
+      "storage": "post-movement position and offscreen bits",
+      "feasiblePath": "Terminal bounds executes after rendering on both timer branches.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_run_large_platform",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -16363,41 +16433,53 @@
       "label": "RunSmallPlatform",
       "asmLine": 9156,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_callers.c",
+      "currentCounterpart": "shared platform runner and movement dispatcher",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Executes offscreen, relative position, small box, small collision, relative position, drawing, small-platform movement and terminal bounds in source order."
     },
     {
       "label": "RunLargePlatform",
       "asmLine": 9168,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_callers.c",
+      "currentCounterpart": "shared platform runner and movement dispatcher",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Executes offscreen, relative position, large box, large collision, timer-gated movement dispatch, relative position, drawing and terminal bounds in source order."
     },
     {
       "label": "SkipPT",
       "asmLine": 9176,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_callers.c",
+      "currentCounterpart": "shared platform runner and movement dispatcher",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After either timer path, calls relative position then large-platform drawing and tail-jumps to terminal bounds."
     },
     {
       "label": "LargePlatformSubroutines",
       "asmLine": 9182,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_callers.c",
+      "currentCounterpart": "shared platform runner and movement dispatcher",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes Enemy_ID-$24, preserves JumpEngine scratch and selects the seven-entry large-platform movement vector."
     },
     {
       "label": "EraseEnemyObject",
@@ -52887,10 +52969,13 @@
       "instruction": "jsr",
       "id": "control-01692",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> GetEnemyOffscreenBits with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunSmallPlatform",
@@ -52900,10 +52985,13 @@
       "instruction": "jsr",
       "id": "control-01693",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> RelativeEnemyPosition with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunSmallPlatform",
@@ -52913,10 +53001,13 @@
       "instruction": "jsr",
       "id": "control-01694",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> SmallPlatformBoundBox with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunSmallPlatform",
@@ -52926,10 +53017,13 @@
       "instruction": "jsr",
       "id": "control-01695",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> SmallPlatformCollision with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunSmallPlatform",
@@ -52939,10 +53033,13 @@
       "instruction": "jsr",
       "id": "control-01696",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> RelativeEnemyPosition with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunSmallPlatform",
@@ -52952,10 +53049,13 @@
       "instruction": "jsr",
       "id": "control-01697",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> DrawSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunSmallPlatform",
@@ -52965,10 +53065,13 @@
       "instruction": "jsr",
       "id": "control-01698",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> MoveSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunSmallPlatform",
@@ -52978,10 +53081,13 @@
       "instruction": "jmp",
       "id": "control-01699",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation RunSmallPlatform -> OffscreenBoundsCheck with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunLargePlatform",
@@ -52991,10 +53097,13 @@
       "instruction": "jsr",
       "id": "control-01700",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunLargePlatform -> GetEnemyOffscreenBits with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunLargePlatform",
@@ -53004,10 +53113,13 @@
       "instruction": "jsr",
       "id": "control-01701",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunLargePlatform -> RelativeEnemyPosition with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunLargePlatform",
@@ -53017,10 +53129,13 @@
       "instruction": "jsr",
       "id": "control-01702",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformBoundBox with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunLargePlatform",
@@ -53030,10 +53145,13 @@
       "instruction": "jsr",
       "id": "control-01703",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformCollision with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunLargePlatform",
@@ -53043,10 +53161,13 @@
       "instruction": "bne",
       "id": "control-01704",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunLargePlatform -> SkipPT with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunLargePlatform",
@@ -53056,10 +53177,13 @@
       "instruction": "jsr",
       "id": "control-01705",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformSubroutines with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunLargePlatform",
@@ -53069,10 +53193,13 @@
       "instruction": "jsr",
       "id": "control-01706",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunLargePlatform -> SkipPT with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "SkipPT",
@@ -53082,10 +53209,13 @@
       "instruction": "jsr",
       "id": "control-01707",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SkipPT -> RelativeEnemyPosition with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "SkipPT",
@@ -53095,10 +53225,13 @@
       "instruction": "jsr",
       "id": "control-01708",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SkipPT -> DrawLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "SkipPT",
@@ -53108,10 +53241,13 @@
       "instruction": "jmp",
       "id": "control-01709",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation SkipPT -> OffscreenBoundsCheck with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -53121,10 +53257,13 @@
       "instruction": "jsr",
       "id": "control-01710",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation LargePlatformSubroutines -> JumpEngine with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -53134,10 +53273,13 @@
       "instruction": "jsr",
       "id": "control-01711",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LargePlatformSubroutines -> EraseEnemyObject with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "MovePodoboo",
@@ -81233,10 +81375,13 @@
       "instruction": "rts/rti",
       "id": "control-03809",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -81246,10 +81391,13 @@
       "instruction": "rts/rti",
       "id": "control-03810",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "SmallPlatformBoundBox",
@@ -81259,10 +81407,13 @@
       "instruction": "rts/rti",
       "id": "control-03811",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SmallPlatformBoundBox -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "SmallPlatformCollision",
@@ -81272,10 +81423,13 @@
       "instruction": "rts/rti",
       "id": "control-03812",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SmallPlatformCollision -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -81285,10 +81439,13 @@
       "instruction": "rts/rti",
       "id": "control-03813",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "DrawSmallPlatform",
@@ -81298,10 +81455,13 @@
       "instruction": "rts/rti",
       "id": "control-03814",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawSmallPlatform -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "MoveSmallPlatform",
@@ -81311,10 +81471,13 @@
       "instruction": "rts/rti",
       "id": "control-03815",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveSmallPlatform -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -81324,10 +81487,13 @@
       "instruction": "rts/rti",
       "id": "control-03816",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -81337,10 +81503,13 @@
       "instruction": "rts/rti",
       "id": "control-03817",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformBoundBox",
@@ -81350,10 +81519,13 @@
       "instruction": "rts/rti",
       "id": "control-03818",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation LargePlatformBoundBox -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformCollision",
@@ -81363,10 +81535,13 @@
       "instruction": "rts/rti",
       "id": "control-03819",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation LargePlatformCollision -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -81376,10 +81551,13 @@
       "instruction": "rts/rti",
       "id": "control-03820",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation LargePlatformSubroutines -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -81389,10 +81567,13 @@
       "instruction": "rts/rti",
       "id": "control-03821",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> SkipPT with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "DrawLargePlatform",
@@ -81402,10 +81583,13 @@
       "instruction": "rts/rti",
       "id": "control-03822",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawLargePlatform -> SkipPT with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JumpEngine",
@@ -81415,10 +81599,13 @@
       "instruction": "rts/rti",
       "id": "control-03823",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation JumpEngine -> LargePlatformSubroutines with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "InitPodoboo",
@@ -88329,12 +88516,12 @@
       "id": "control-04292",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88346,12 +88533,12 @@
       "id": "control-04293",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88363,12 +88550,12 @@
       "id": "control-04294",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88380,12 +88567,12 @@
       "id": "control-04295",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88397,12 +88584,12 @@
       "id": "control-04296",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88414,12 +88601,12 @@
       "id": "control-04297",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88431,12 +88618,12 @@
       "id": "control-04298",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88448,12 +88635,12 @@
       "id": "control-04299",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunSmallPlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88465,12 +88652,12 @@
       "id": "control-04300",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunSmallPlatform with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "JmpEO",
@@ -88991,10 +89178,13 @@
       "selector": 0,
       "id": "control-04331",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> BalancePlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -89005,10 +89195,13 @@
       "selector": 1,
       "id": "control-04332",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> YMovingPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -89019,10 +89212,13 @@
       "selector": 2,
       "id": "control-04333",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> MoveLargeLiftPlat with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -89033,10 +89229,13 @@
       "selector": 3,
       "id": "control-04334",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> MoveLargeLiftPlat with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -89047,10 +89246,13 @@
       "selector": 4,
       "id": "control-04335",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> XMovingPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -89061,10 +89263,13 @@
       "selector": 5,
       "id": "control-04336",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> DropPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -89075,10 +89280,13 @@
       "selector": 6,
       "id": "control-04337",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> RightPlatform with current slot, timer predicate, platform state and call/return order."
     },
     {
       "from": "RunStarFlagObj",

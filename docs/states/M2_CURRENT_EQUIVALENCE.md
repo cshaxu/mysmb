@@ -971,3 +971,8 @@ branches.
 ### Cohort I — B15a enemy-object dispatcher integration
 
 `EndOfEnemyInitCode` through `RunFirebarObj` now has eleven node contracts and every incident control relation recorded, including actor-vector and movement-vector dispatch selectors, calls, timer branches, terminal jumps and synthetic returns. Seven feasible material handoffs cover selector scratch, timer gating, vector selection and child-produced rendering/collision state. Static review found no shared-C order or selector discrepancy; all remain `needs-evidence` pending controlled original-ROM/x86/x64 paths.
+
+
+### Cohort I — B15b platform runner integration
+
+`RunSmallPlatform` through `LargePlatformSubroutines` now has four node contracts, all incident calls, timer branches, tail-jumps, returns and movement-vector edges, and five feasible material handoffs. Static source review matches small-platform draw-before-move, large-platform timer-gated move-before-draw, post-move relative-position refresh and the ID-$24 seven-entry dispatch table. All entries remain `needs-evidence` until the corresponding controlled ROM/x86/x64 paths run.
