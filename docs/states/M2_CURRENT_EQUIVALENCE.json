@@ -2026,81 +2026,105 @@
       "label": "DrawTitleScreen",
       "asmLine": 1612,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 12",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $86ff: non-title path increments OperMode_Task; title path copies exactly $13a PPU bytes to $0300, writes address control $05 and increments ScreenRoutineTask."
     },
     {
       "label": "OutputTScr",
       "asmLine": 1624,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 12 title-data copy loop",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8712: copies PPU data through the $0300 indirect destination and advances Y/high byte."
     },
     {
       "label": "ChkHiByte",
       "asmLine": 1629,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 12 fixed-size copy bound",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8717: stops only after destination reaches $043a, then selects control $05 and common task increment."
     },
     {
       "label": "ClearBuffersDrawIcon",
       "asmLine": 1639,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 13",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $872a: non-title path increments OperMode_Task; title path clears $0300-$03ff, calls DrawMushroomIcon and increments ScreenRoutineTask."
     },
     {
       "label": "TScrClear",
       "asmLine": 1643,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 13 buffer clear loop",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8730: descending X loop clears exactly $0300-$03ff before icon draw."
     },
     {
       "label": "IncSubtask",
       "asmLine": 1648,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine task increments",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8739: increments ScreenRoutineTask and returns after every shared screen-task tail."
     },
     {
       "label": "WriteTopScore",
       "asmLine": 1653,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 14",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $873d: invokes UpdateNumber selector $fa then falls into OperMode_Task increment."
     },
     {
       "label": "IncModeTask_B",
       "asmLine": 1656,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine OperMode_Task handoffs",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8742: increments OperMode_Task and returns."
     },
     {
       "label": "GameText",
@@ -24663,12 +24687,12 @@
       "id": "control-00244",
       "cohort": "B",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original DrawTitleScreen -> IncModeTask_B branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
+      "semanticContract": "Original DrawTitleScreen -> IncModeTask_B branch relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "DrawTitleScreen",
@@ -24678,10 +24702,13 @@
       "instruction": "lda",
       "id": "control-00245",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DrawTitleScreen -> OutputTScr fallthrough relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "OutputTScr",
@@ -24691,10 +24718,13 @@
       "instruction": "bne",
       "id": "control-00246",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original OutputTScr -> ChkHiByte branch relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "OutputTScr",
@@ -24704,10 +24734,13 @@
       "instruction": "inc",
       "id": "control-00247",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original OutputTScr -> ChkHiByte fallthrough relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "ChkHiByte",
@@ -24717,10 +24750,13 @@
       "instruction": "bne",
       "id": "control-00248",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkHiByte -> OutputTScr branch relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "ChkHiByte",
@@ -24730,10 +24766,13 @@
       "instruction": "bcc",
       "id": "control-00249",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkHiByte -> OutputTScr branch relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "ChkHiByte",
@@ -24743,10 +24782,13 @@
       "instruction": "jmp",
       "id": "control-00250",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkHiByte -> SetVRAMAddr_B jump relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "ClearBuffersDrawIcon",
@@ -24756,10 +24798,13 @@
       "instruction": "bne",
       "id": "control-00251",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClearBuffersDrawIcon -> IncModeTask_B branch relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "ClearBuffersDrawIcon",
@@ -24769,10 +24814,13 @@
       "instruction": "ldx",
       "id": "control-00252",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ClearBuffersDrawIcon -> TScrClear fallthrough relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "TScrClear",
@@ -24782,10 +24830,13 @@
       "instruction": "bne",
       "id": "control-00253",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TScrClear -> TScrClear branch relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "TScrClear",
@@ -24795,10 +24846,13 @@
       "instruction": "jsr",
       "id": "control-00254",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TScrClear -> DrawMushroomIcon call relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "TScrClear",
@@ -24808,10 +24862,13 @@
       "instruction": "jsr",
       "id": "control-00255",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TScrClear -> IncSubtask fallthrough relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "WriteTopScore",
@@ -24821,10 +24878,13 @@
       "instruction": "jsr",
       "id": "control-00256",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteTopScore -> UpdateNumber call relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "WriteTopScore",
@@ -24834,10 +24894,13 @@
       "instruction": "jsr",
       "id": "control-00257",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteTopScore -> IncModeTask_B fallthrough relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "WriteGameText",
@@ -67484,10 +67547,13 @@
       "instruction": "rts/rti",
       "id": "control-03526",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DrawMushroomIcon -> TScrClear return relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "UpdateNumber",
@@ -67497,10 +67563,13 @@
       "instruction": "rts/rti",
       "id": "control-03527",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C title-screen owner named by Td S9 B4",
+      "semanticEvidence": [
+        "Td S9 B4 title-screen static node/edge pass: SMB1 lines 1612-1657 was compared with the named shared-C owners; controlled original-ROM/x86/x64 title and non-title routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original UpdateNumber -> WriteTopScore return relation must preserve its source predicate, data transfer/count and successor or return handoff."
     },
     {
       "from": "MoveAllSpritesOffscreen",

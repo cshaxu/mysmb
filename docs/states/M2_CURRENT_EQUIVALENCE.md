@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 229 control; 5 material RAM/table |
+| Needs evidence | 244 control; 5 material RAM/table |
 | Mismatch | 10 control; 2 material RAM/table |
-| Unclassified | 4,027 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 4,012 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -387,3 +387,12 @@ task 4 and reaches task 6 on its next non-expired invocation; current C writes
 task 5 immediately and waits on its screen timer. `DisplayTimeUp` and its
 `OutputInter` jump are mismatched. The remaining nodes and relations are
 static-mapped but await route evidence.
+
+### Cohort B — B4 title-copy and handoff chain
+
+`DrawTitleScreen` through `WriteTopScore` are now node-mapped with all local
+loop, call, return, non-title branch and shared task/mode-handoff edges. The
+static pass found no new discrepancy: fixed `$13a` title-copy bounds, the
+descending buffer clear, mushroom-icon call and title-score update all have
+named shared-C counterparts. They remain `needs-evidence` until title and
+non-title ROM/x86/x64 routes compare their RAM, VRAM command and task state.
