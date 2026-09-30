@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 275,
+    "enumeratedCount": 279,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3863,6 +3863,62 @@
       "semanticContract": "Preserves source producer-to-consumer state handoff, carry/borrow behavior and ordering.",
       "semanticEvidence": [
         "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00276",
+      "producer": "SetGfxF",
+      "consumer": "FlmeAt",
+      "storage": "FrameCounter bit one to flame sprite attributes",
+      "feasiblePath": "The normal-state path selects $02 or $82 before all three OAM writes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_flame_gfx.c attribute selection",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00277",
+      "producer": "FlmeAt",
+      "consumer": "DrawFlameLoop",
+      "storage": "initial tile $51, attributes and sprite OAM offset",
+      "feasiblePath": "Loop receives the source-initialized tile/attribute/offset triple.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_flame_gfx.c OAM loop",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00278",
+      "producer": "DrawFlameLoop",
+      "consumer": "GetEnemyOffscreenBits",
+      "storage": "reloaded ObjectOffset to source offscreen-bit calculation",
+      "feasiblePath": "All three writes complete before current slot is reloaded for offscreen calculation.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_flame_gfx.c get_enemy_offscreen_bits",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00279",
+      "producer": "GetEnemyOffscreenBits",
+      "consumer": "M3FOfs",
+      "storage": "four low offscreen bits to reverse OAM-Y hide mapping",
+      "feasiblePath": "Bit 0 maps +12, bit 1 +8, bit 2 +4 and bit 3 +0 exactly as source shifts carry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "oam/bowser_flame_gfx.c bits mask tail",
+      "semanticContract": "Preserves source producer-to-consumer OAM/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -19844,71 +19900,92 @@
       "label": "SetGfxF",
       "asmLine": 10374,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes relative enemy position before the normal-state gate; normal state sets tile $51 and selects attribute $02/$82 from FrameCounter bit one."
     },
     {
       "label": "FlmeAt",
       "asmLine": 10384,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the selected attribute, loads the sprite-data offset and initializes the exact three-iteration OAM loop."
     },
     {
       "label": "DrawFlameLoop",
       "asmLine": 10388,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes Y,tile,attribute,X in that order for three sprites, increments tile and relative X by eight each iteration, restores ObjectOffset, then obtains offscreen bits."
     },
     {
       "label": "M3FOfs",
       "asmLine": 10417,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes offscreen bit zero and hides OAM Y at offset +12 before testing bit one."
     },
     {
       "label": "M2FOfs",
       "asmLine": 10423,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes offscreen bit one and hides OAM Y at offset +8 before testing bit two."
     },
     {
       "label": "M1FOfs",
       "asmLine": 10429,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes offscreen bit two and hides OAM Y at offset +4 before testing bit three."
     },
     {
       "label": "ExFlmeD",
       "asmLine": 10434,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes offscreen bit three and conditionally hides the first OAM Y entry before return."
     },
     {
       "label": "RunFireworks",
@@ -59835,12 +59912,12 @@
       "id": "control-02008",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
       "semanticEvidence": [
-        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ProcBowserFlame -> SetGfxF with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
+      "semanticContract": "Preserves original branch relation ProcBowserFlame -> SetGfxF with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "ProcBowserFlame",
@@ -59883,12 +59960,12 @@
       "id": "control-02011",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
       "semanticEvidence": [
-        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation SFlmX -> SetGfxF with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
+      "semanticContract": "Preserves original branch relation SFlmX -> SetGfxF with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "SFlmX",
@@ -59899,12 +59976,12 @@
       "id": "control-02012",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
       "semanticEvidence": [
-        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SFlmX -> SetGfxF with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
+      "semanticContract": "Preserves original fallthrough relation SFlmX -> SetGfxF with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "SetGfxF",
@@ -59914,10 +59991,13 @@
       "instruction": "jsr",
       "id": "control-02013",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetGfxF -> RelativeEnemyPosition with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "SetGfxF",
@@ -59928,12 +60008,12 @@
       "id": "control-02014",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/frenzy.c:mysmb_enemy_set_flame_timer and named callers",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
       "semanticEvidence": [
-        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation SetGfxF -> ExFl with old-index table read, masked counter update and source return/fall-through ordering."
+      "semanticContract": "Preserves original branch relation SetGfxF -> ExFl with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "SetGfxF",
@@ -59943,10 +60023,13 @@
       "instruction": "beq",
       "id": "control-02015",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetGfxF -> FlmeAt with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "SetGfxF",
@@ -59956,10 +60039,13 @@
       "instruction": "ldy",
       "id": "control-02016",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetGfxF -> FlmeAt with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "FlmeAt",
@@ -59969,10 +60055,13 @@
       "instruction": "ldx",
       "id": "control-02017",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FlmeAt -> DrawFlameLoop with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "DrawFlameLoop",
@@ -59982,10 +60071,13 @@
       "instruction": "bcc",
       "id": "control-02018",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DrawFlameLoop -> DrawFlameLoop with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "DrawFlameLoop",
@@ -59995,10 +60087,13 @@
       "instruction": "jsr",
       "id": "control-02019",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DrawFlameLoop -> GetEnemyOffscreenBits with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "DrawFlameLoop",
@@ -60008,10 +60103,13 @@
       "instruction": "bcc",
       "id": "control-02020",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DrawFlameLoop -> M3FOfs with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "DrawFlameLoop",
@@ -60021,10 +60119,13 @@
       "instruction": "sta",
       "id": "control-02021",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DrawFlameLoop -> M3FOfs with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "M3FOfs",
@@ -60034,10 +60135,13 @@
       "instruction": "bcc",
       "id": "control-02022",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation M3FOfs -> M2FOfs with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "M3FOfs",
@@ -60047,10 +60151,13 @@
       "instruction": "sta",
       "id": "control-02023",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation M3FOfs -> M2FOfs with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "M2FOfs",
@@ -60060,10 +60167,13 @@
       "instruction": "bcc",
       "id": "control-02024",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation M2FOfs -> M1FOfs with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "M2FOfs",
@@ -60073,10 +60183,13 @@
       "instruction": "sta",
       "id": "control-02025",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation M2FOfs -> M1FOfs with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "M1FOfs",
@@ -60086,10 +60199,13 @@
       "instruction": "bcc",
       "id": "control-02026",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation M1FOfs -> ExFlmeD with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "M1FOfs",
@@ -60099,10 +60215,13 @@
       "instruction": "sta",
       "id": "control-02027",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation M1FOfs -> ExFlmeD with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "RunFireworks",
@@ -84988,10 +85107,13 @@
       "instruction": "rts/rti",
       "id": "control-03864",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> SetGfxF with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -85001,10 +85123,13 @@
       "instruction": "rts/rti",
       "id": "control-03865",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "semanticEvidence": [
+        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> DrawFlameLoop with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
     },
     {
       "from": "RelativeEnemyPosition",

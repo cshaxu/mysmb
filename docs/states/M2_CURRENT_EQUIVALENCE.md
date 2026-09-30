@@ -1066,3 +1066,8 @@ branches.
 ### Cohort J — B15t Bowser-flame motion integration
 
 `ProcBowserFlame` and `SFlmX` now have node contracts, all incident TimerControl/hard-mode/Y-target branches, graphics-tail and caller-return relations, plus three feasible force/carry/position handoffs. Static review matches the crucial carry propagation from force subtraction through X and page movement, and the equality-gated vertical movement. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 timer-freeze, both force and page-borrow routes.
+
+
+### Cohort J — B15u Bowser-flame OAM integration
+
+`SetGfxF` through `ExFlmeD` now has seven node contracts, every incident state/frame/offscreen branch, three-iteration loop, child call and return relation, plus four feasible OAM/state handoffs. Static review matches relative-position-before-state gating, `$51` tiles, two-frame attribute flip, ordered three-sprite writes and the reverse `$0/$1/$2/$3` to `+12/+8/+4/+0` hide mapping. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 visible/hidden and flipped-frame routes.
