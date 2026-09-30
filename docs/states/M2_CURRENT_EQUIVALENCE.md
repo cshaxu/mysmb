@@ -268,3 +268,22 @@ The two executed upstream dispatch edges, `OperModeExecutionTree ->
 TitleScreenMode` and `TitleScreenMode -> GameMenuRoutine`, are independently
 exact. The `TitleScreenMode` node remains pending because its other task
 vectors have not yet received this route proof.
+
+### Cohort A — A7 Victory entry node and integration static passes
+
+The next source-order chain begins at `VictoryMode` and covers `AutoPlayer`,
+`VictoryModeSubroutines` and `SetupVictoryMode` (lines 1137–1165). The four
+node contracts are mapped to the shared `frame_root.c` and `terminal_modes.c`
+owners and remain `needs-evidence`. The integration ledger independently
+records every relation touching this entry chain: the outer leaf call,
+task-zero branch, optional enemy call and fall-through; the relative-position
+call and player-graphics tail; the JumpEngine call, return and five selector
+entries; SetupVictoryMode's task increment tail; and the relevant caller and
+callee returns. Eighteen newly recorded edges remain `needs-evidence`; the
+already recorded operation-mode dispatch edge remains `needs-evidence`.
+
+Promotion requires controlled original-ROM and current x86/x64 routes for at
+least the bridge-collapse task-zero path, setup task-one path, a nonzero
+post-leaf enemy path, and the shared relative-position/player-graphics tail.
+The route records must compare the task selector, ObjectOffset handoff,
+destination page, event music, player-relative output and OAM-visible result.

@@ -1097,41 +1097,53 @@
       "label": "VictoryMode",
       "asmLine": 1137,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c and src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory branch plus src/game/terminal_modes.c:mysmb_game_step_victory",
+      "semanticEvidence": [
+        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8471: calls the selected VictoryModeSubroutines leaf, then reads OperMode_Task; task zero bypasses enemy work, every nonzero task writes ObjectOffset=0 and executes one EnemiesAndLoopsCore turn, then all paths compute relative player coordinates and tail-enter player graphics."
     },
     {
       "label": "AutoPlayer",
       "asmLine": 1144,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory tail",
+      "semanticEvidence": [
+        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $847c: after the selected victory leaf and any required enemy turn, calls RelativePlayerPosition and tail-jumps PlayerGfxHandler. The task-zero bridge-collapse path uses the same tail."
     },
     {
       "label": "VictoryModeSubroutines",
       "asmLine": 1147,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory OperMode_Task selector",
+      "semanticEvidence": [
+        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8482: reads OperMode_Task and dispatches selectors 0..4 in order to BridgeCollapse, SetupVictoryMode, PlayerVictoryWalk, PrintVictoryMessages and PlayerEndWorld; control returns to VictoryMode before its post-leaf branch."
     },
     {
       "label": "SetupVictoryMode",
       "asmLine": 1159,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 1 branch",
+      "semanticEvidence": [
+        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8493: writes DestinationPageLoc as ScreenRight_PageLoc+1, queues EndOfCastleMusic ($08), then tail-enters IncModeTask_B to advance OperMode_Task exactly once."
     },
     {
       "label": "PlayerVictoryWalk",
@@ -22444,10 +22456,13 @@
       "instruction": "jsr",
       "id": "control-00123",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step calls mysmb_game_step_victory before the post-leaf victory tail",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call VictoryMode -> VictoryModeSubroutines must select one leaf before VictoryMode reads OperMode_Task for its post-leaf branch."
     },
     {
       "from": "VictoryMode",
@@ -22457,10 +22472,13 @@
       "instruction": "beq",
       "id": "control-00124",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory post-leaf task == 0 branch",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch VictoryMode -> AutoPlayer is taken only when the selected leaf leaves OperMode_Task at zero; it bypasses the enemy turn but not relative position or player graphics."
     },
     {
       "from": "VictoryMode",
@@ -22470,10 +22488,13 @@
       "instruction": "jsr",
       "id": "control-00125",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory post-leaf mysmb_enemy_core_step_slot(..., 0)",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call VictoryMode -> EnemiesAndLoopsCore runs only for nonzero task, first writes ObjectOffset=0, and executes one enemy core turn before AutoPlayer."
     },
     {
       "from": "VictoryMode",
@@ -22483,10 +22504,13 @@
       "instruction": "jsr",
       "id": "control-00126",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory tail after optional enemy step",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fall-through VictoryMode -> AutoPlayer reaches the shared relative-position/player-graphics tail after the optional enemy call returns."
     },
     {
       "from": "AutoPlayer",
@@ -22496,10 +22520,13 @@
       "instruction": "jsr",
       "id": "control-00127",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_oam_relative_player_position",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call AutoPlayer -> RelativePlayerPosition completes before graphics; its player relative-coordinate writes are the graphics input."
     },
     {
       "from": "AutoPlayer",
@@ -22509,10 +22536,13 @@
       "instruction": "jmp",
       "id": "control-00128",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_oam_render_player after mysmb_oam_relative_player_position",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original tail jump AutoPlayer -> PlayerGfxHandler ends VictoryMode after relative-position output is available; C preserves observable tail order without a host call-stack tail-jump requirement."
     },
     {
       "from": "VictoryModeSubroutines",
@@ -22522,10 +22552,13 @@
       "instruction": "jsr",
       "id": "control-00129",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory ordered OperMode_Task selector",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call VictoryModeSubroutines -> JumpEngine dispatches exactly the five inline selector entries from the current OperMode_Task and returns control to VictoryMode after the selected leaf."
     },
     {
       "from": "VictoryModeSubroutines",
@@ -22535,10 +22568,13 @@
       "instruction": "jsr",
       "id": "control-00130",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 1 selector",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original selector relation VictoryModeSubroutines -> SetupVictoryMode selects the second inline entry only for OperMode_Task=1."
     },
     {
       "from": "SetupVictoryMode",
@@ -22548,10 +22584,13 @@
       "instruction": "jmp",
       "id": "control-00131",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 1 writes OperMode_Task=2",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original tail jump SetupVictoryMode -> IncModeTask_B advances the major-mode task after destination page and event music writes, without an intervening game operation."
     },
     {
       "from": "PlayerVictoryWalk",
@@ -66472,10 +66511,13 @@
       "instruction": "rts/rti",
       "id": "control-03504",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step resumes victory post-leaf branch after mysmb_game_step_victory",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return VictoryModeSubroutines -> VictoryMode hands control back before VictoryMode reloads OperMode_Task for the task-zero/enemy decision."
     },
     {
       "from": "EnemiesAndLoopsCore",
@@ -66485,10 +66527,13 @@
       "instruction": "rts/rti",
       "id": "control-03505",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step optional enemy step completion",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return EnemiesAndLoopsCore -> VictoryMode reaches AutoPlayer only after the single ObjectOffset-zero enemy turn completes."
     },
     {
       "from": "RelativePlayerPosition",
@@ -66498,10 +66543,13 @@
       "instruction": "rts/rti",
       "id": "control-03506",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step calls render only after relative-player helper completes",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return RelativePlayerPosition -> AutoPlayer preserves relative-coordinate writes before the PlayerGfxHandler tail."
     },
     {
       "from": "JumpEngine",
@@ -66511,10 +66559,13 @@
       "instruction": "rts/rti",
       "id": "control-03507",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory selector completion returns to frame_root victory post-leaf path",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original JumpEngine return to VictoryModeSubroutines selects one target and returns the selected leaf result to VictoryMode; no second selector runs in the same invocation."
     },
     {
       "from": "AutoControlPlayer",
@@ -74306,10 +74357,13 @@
       "selector": 0,
       "id": "control-04104",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 0 branch",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original JumpEngine selector 0 dispatches VictoryModeSubroutines to BridgeCollapse only when OperMode_Task=0."
     },
     {
       "from": "VictoryModeSubroutines",
@@ -74320,10 +74374,13 @@
       "selector": 1,
       "id": "control-04105",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 1 branch",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original JumpEngine selector 1 dispatches VictoryModeSubroutines to SetupVictoryMode only when OperMode_Task=1."
     },
     {
       "from": "VictoryModeSubroutines",
@@ -74334,10 +74391,13 @@
       "selector": 2,
       "id": "control-04106",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 branch",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original JumpEngine selector 2 dispatches VictoryModeSubroutines to PlayerVictoryWalk only when OperMode_Task=2."
     },
     {
       "from": "VictoryModeSubroutines",
@@ -74348,10 +74408,13 @@
       "selector": 3,
       "id": "control-04107",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 3 branch",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original JumpEngine selector 3 dispatches VictoryModeSubroutines to PrintVictoryMessages only when OperMode_Task=3."
     },
     {
       "from": "VictoryModeSubroutines",
@@ -74362,10 +74425,13 @@
       "selector": 4,
       "id": "control-04108",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
+      "semanticEvidence": [
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original JumpEngine selector 4 dispatches VictoryModeSubroutines to PlayerEndWorld only when OperMode_Task=4; higher values require separate source-reachable analysis."
     },
     {
       "from": "ScreenRoutines",

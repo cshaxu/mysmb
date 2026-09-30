@@ -48,6 +48,17 @@ executes. Static source review checks every other edge. A node cannot be
 current-exact if an owned required edge is mismatched; an edge cannot be
 current-exact merely because both endpoints have local tests.
 
+`exact` is a whole-chain claim for the audited scope. For every candidate
+node, the audit must enumerate all original incoming and outgoing control
+relations, including call, tail-jump, conditional, fall-through, return and
+selector-dispatch relations. Each relation receives a separate current C
+counterpart, predicate/order contract and evidence. A node can therefore be
+locally output-equal yet remain `needs-evidence` when one of its relations has
+not been audited. The same rule applies to each proven feasible material data
+edge: producer write or table selection, consumer read/index and the state
+handoff path are independently compared. No endpoint result implies an edge
+result, and no edge result implies a node result.
+
 Each source-order cohort is reviewed in two ordered passes. First, the
 **node-semantics pass** writes a contract for every label: predicates,
 reads/writes, table binding, outputs and current shared-C owner. It compares
