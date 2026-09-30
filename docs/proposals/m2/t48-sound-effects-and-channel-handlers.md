@@ -385,3 +385,70 @@ branches, RAM writes and APU registers with shared C. The operational
 track runs focused audio and purity tests, full x86/x64 regression,
 Windows self-tests, DOS16 MZ link and three refreshed EXEs. Every label
 will receive an individual disposition at closure.
+
+### S5 ROM-logic evidence
+
+The unchanged owner ROM ran ten bounded square-two queue/buffer/counter
+routes through NMI SoundEngine. They produced **80 original calls**;
+the native checker compared Square2SoundBuffer, Square2SoundQueue,
+Squ2_SfxLenCounter and APU `$4004`–`$4007` plus `$4015` after each
+return: **160 x86/x64 call comparisons, zero S5-owned differences**.
+The source coverage hit every executable S5 label. Direct binding checks
+also compared all six `ExtraLifeFreqData`, 30 `PowerUpGrabFreqData` and
+32 `PUp_VGrow_FreqData` bytes with the owner ROM. No ROM byte, CPU PC
+or return stack was altered, and no frequency table was copied into
+tracked source.
+
+| Node / original PC | Hits | Source behavior and shared C mapping |
+| --- | ---: | --- |
+| `ExtraLifeFreqData` `$f4d4`, `PowerUpGrabFreqData` `$f4da`, `PUp_VGrow_FreqData` `$f4f8` | data | 68 owner-ROM bytes bound through three shared C accessors using the source's table-1,Y addressing. |
+| `PlayCoinGrab` `$f518`, `PlayTimerTick` `$f51e`, `CGrab_TTickRegL` `$f522` | 8, 8, 16 | Load `$35`/`$06`, X `$8d`/`$98`, Y `$7f`, frequency `$42`; shared square-two leaf. |
+| `ContinueCGrabTTick` `$f52c`, `N2Tone` `$f538` | 165, 165 | At remaining length `$30`, write `$54` to `$4006`; then common decrement. |
+| `PlayBlast` `$f53a`, `ContinueBlast` `$f545`, `SBlasJ` `$f550` | 8, 62, 17 | Start length `$20` with `$5e/$9f/$94`; at `$18`, change to `$18/$9f/$93`; then decrement. |
+| `PlayPowerUpGrab` `$f552`, `ContinuePowerUpGrab` `$f557`, `LoadSqu2Regs` `$f565` | 8, 144, 93 | Start length `$36`; on even lengths read `PowerUpGrabFreqData-1,Y` and write `$5d/$7f` plus source frequency. |
+| `DecrementSfx2Length` `$f568`, `EmptySfx2Buffer` `$f56d`, `StopSquare2Sfx` `$f571`, `ExSfx2` `$f57b` | 379, 11, 11, 379 | Decrement `$07bd`; on zero clear `$f2`, then write `$0d` and `$0f` to `$4015`; return. |
+
+The existing S6 square-two dispatcher remains outside this S's node
+credit. S5 only provides its source-accurate effect leaves and tables in
+shared `src/game/audio.c`; platforms do not choose queues or effects.
+
+### S5 closure: square-two effect data and phases
+
+**P1 result: 18 intended matches, 18 actual matches, no scoped
+deferments; 1,801 to 1,819/1,992.** The individual dispositions are
+the rows above. S4's eight continuation routes were regenerated and
+compared on both widths without regression. The operational track built
+Win32 x86/x64 and DOS16 from shared C; both Windows self-tests passed
+and DOS16 linked as a valid MZ executable. Full x86/x64 CTest each
+remain **222/233**, with precisely the documented 11 unresolved legacy
+failures and no new failure.
+
+| Owner-requested artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `7645b76cc5139f4fd9cd4b18f52eb0b75341bdee0e7f5806d5ccc64b0781b1c5` |
+| `assets/mysmb32.exe` | `2df0ca87fabeedde4143b64a67d1bbeb6727bb97eff3609bc7943ef0bf663fb1` |
+| `assets/mysmb64.exe` | `29241d6f854f39226a761573c84560e2fd957746b7aedf13c829a7b805033f86` |
+
+The similar-issue sweep covered all square-two data/leaf paths and
+confirmed that table indexing, APU writes, counters and stop policy are
+owned by shared C only. S6 retains queue-dispatch custody; this closure
+does not credit its selection or special extra-life path.
+
+## S6 admission: square-two queue dispatcher
+
+S5 closed at **1,819/1,992**. S6 accepts the final four T48 labels in
+source order: `Square2SfxHandler`, `CheckSfx2Buffer`, `ExS2H`, and
+`Cont_CGrab_TTick`. All four are intended ROM matches, for a maximum
+**1,823/1,992**. The chain begins at the square-two queue dispatcher
+after S5's `ExSfx2`, ends at its `ContinueCGrabTTick` trampoline, and
+uses S5's exact effect leaves as dependencies. Subsequent Bowser,
+extra-life and grow-item implementation labels are T49-or-later scope
+and receive no S6 credit.
+
+The ROM-logic track enters unchanged SoundEngine through NMI with
+bounded queue and buffer states. It covers sign/bit priority, the
+extra-life interruption guard, empty exits and each buffered selector,
+then compares PCs, queue shifts, RAM and APU output with shared C. The
+operational track reruns the focused audio/purity checks, x86/x64
+regression, Windows self-tests, DOS16 MZ link and three EXEs. Closure
+will name each of the four node dispositions before T48 can close.

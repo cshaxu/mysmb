@@ -35,4 +35,12 @@ void mysmb_audio_square1_continue_throw(struct mysmb_game *game);
 mysmb_u8 mysmb_audio_swim_stomp_envelope(const struct mysmb_game *game,
                                           mysmb_u8 length);
 
+/* ROM square-two S5 table bindings; table bytes stay in the owner ROM. */
+mysmb_u8 mysmb_audio_square2_extra_life_freq(const struct mysmb_game *game,
+                                               mysmb_u8 index);
+mysmb_u8 mysmb_audio_square2_power_up_freq(const struct mysmb_game *game,
+                                            mysmb_u8 index);
+mysmb_u8 mysmb_audio_square2_grow_vine_freq(const struct mysmb_game *game,
+                                             mysmb_u8 index);
+
 #endif

@@ -1216,7 +1216,7 @@ int main(int argument_count, char **arguments)
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 60ul) return 64;
+                value > 80ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -5077,7 +5077,14 @@ int main(int argument_count, char **arguments)
                         sound_case >= 52u && sound_case <= 55u ? 0x10u :
                         sound_case == 56u ? 0x40u :
                         sound_case == 57u ? 0x01u : 0u;
-                    ram[0x00f2u] = 0u;
+                    ram[0x00f2u] = sound_case == 62u || sound_case == 70u ||
+                        sound_case == 74u ?
+                        0x01u : sound_case == 64u || sound_case == 75u ? 0x10u :
+                        sound_case == 66u || sound_case == 76u ? 0x08u :
+                        sound_case >= 68u && sound_case <= 69u ||
+                        sound_case == 77u ? 0x20u :
+                        sound_case == 79u ? 0x11u :
+                        sound_case == 80u ? 0x41u : 0u;
                     ram[0x00f3u] = 0u;
                     ram[0x00f4u] = 0u;
                     ram[0x07b1u] = 0u;
@@ -5103,8 +5110,21 @@ int main(int argument_count, char **arguments)
                         sound_case == 50u || sound_case == 54u ? 8u :
                         sound_case == 52u ? 0x2fu :
                         sound_case == 53u ? 0x2cu : 0u;
-                    ram[0x00feu] = sound_case >= 21u && sound_case <= 28u ?
+                    ram[0x00feu] = sound_case == 61u ? 0x01u :
+                        sound_case == 63u ? 0x10u :
+                        sound_case == 65u ? 0x08u :
+                        sound_case == 67u ? 0x20u :
+                        sound_case == 72u ? 0x11u :
+                        sound_case == 78u ? 0x03u :
+                        sound_case == 80u ? 0x01u :
+                        sound_case >= 21u && sound_case <= 28u ?
                         (lib_u8)(1u << (sound_case - 21u)) : 0u;
+                    ram[0x07bdu] = sound_case == 62u || sound_case == 64u ?
+                        0x30u : sound_case == 74u || sound_case == 75u ||
+                        sound_case == 79u ? 0x30u :
+                        sound_case == 66u || sound_case == 76u ? 0x18u :
+                        sound_case == 68u || sound_case == 77u ? 0x36u : sound_case == 69u ?
+                        0x35u : sound_case == 70u ? 1u : 0u;
                     ram[0x00fdu] = 0u;
                 }
                 else if (sound_case != 0u) {
