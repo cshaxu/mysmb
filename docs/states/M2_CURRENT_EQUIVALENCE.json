@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 157,
+    "enumeratedCount": 158,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2211,6 +2211,20 @@
       "semanticContract": "Preserves source RAM/vector selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00158",
+      "producer": "InitJumpGPTroopa",
+      "consumer": "SetBBox2",
+      "storage": "Enemy_MovingDir, Enemy_X_Speed and box-control A=$03",
+      "feasiblePath": "Jump entry writes direction/speed then falls through TallBBox2 into the one-write box tail.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_jump_green_ptroopa and mysmb_enemy_init_tall_box_only",
+      "semanticContract": "Preserves ordered limited writes without generic vertical-state reset.",
+      "semanticEvidence": [
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -15696,31 +15710,40 @@
       "label": "InitJumpGPTroopa",
       "asmLine": 8893,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared box-only initializer tail",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes only left direction $02 and X speed $f8, then falls through box-only tall setup."
     },
     {
       "label": "TallBBox2",
       "asmLine": 8898,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared box-only initializer tail",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads box control $03 and falls through SetBBox2."
     },
     {
       "label": "SetBBox2",
       "asmLine": 8899,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared box-only initializer tail",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores only Enemy_BoundBoxCtrl and returns, preserving all other fields."
     },
     {
       "label": "InitBalPlatform",
@@ -49879,12 +49902,12 @@
       "id": "control-01525",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation SetupLakitu -> TallBBox2 with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original jump relation SetupLakitu -> TallBBox2 with exact limited write footprint."
     },
     {
       "from": "KillLakitu",
@@ -50391,12 +50414,12 @@
       "id": "control-01557",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation InitShortFirebar -> TallBBox2 with exact table index, timer/slot predicate, carry/borrow and return handoff."
+      "semanticContract": "Preserves original jump relation InitShortFirebar -> TallBBox2 with exact limited write footprint."
     },
     {
       "from": "InitFlyingCheepCheep",
@@ -51559,12 +51582,12 @@
       "id": "control-01630",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation InitPiranhaPlant -> SetBBox2 with slot/ID state, vector selector and return handoff."
+      "semanticContract": "Preserves original jump relation InitPiranhaPlant -> SetBBox2 with exact limited write footprint."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -51670,10 +51693,13 @@
       "instruction": "sta",
       "id": "control-01637",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitJumpGPTroopa -> TallBBox2 with exact limited write footprint."
     },
     {
       "from": "TallBBox2",
@@ -51683,10 +51709,13 @@
       "instruction": "lda",
       "id": "control-01638",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation TallBBox2 -> SetBBox2 with exact limited write footprint."
     },
     {
       "from": "InitBalPlatform",
@@ -86681,12 +86710,12 @@
       "id": "control-04229",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitJumpGPTroopa with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitJumpGPTroopa with exact limited write footprint."
     },
     {
       "from": "InitEnemyRoutines",

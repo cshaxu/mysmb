@@ -951,3 +951,8 @@ branches.
 ### Cohort I — B14s Piranha and frenzy dispatch integration
 
 `InitPiranhaPlant` through `NextFSlot` now has six node contracts, all incident initializer, vector, loop and return relations, and three feasible RAM/vector handoffs. The audit records Piranha alias writes, six-target frenzy dispatch and complete Lakitu-state shutdown. Two graph-only mismatches were found: the extractor treats frenzy vector words as fall-through and JumpEngine as returning to its caller label; both are impossible in ROM. All remaining entries are `needs-evidence`.
+
+
+### Cohort I — B14t jump-green-paratroopa box-tail integration
+
+`InitJumpGPTroopa` through `SetBBox2` now has three node contracts, all incident fall-through/dispatch relations and one feasible state handoff. The audit confirms its intentionally narrow direction/speed/box write footprint. No static shared-C discrepancy was found; entries remain `needs-evidence`.
