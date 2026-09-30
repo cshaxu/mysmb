@@ -5853,6 +5853,34 @@
         "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00418",
+      "producer": "PowerUpGfxTable",
+      "consumer": "DrawPowerUp",
+      "storage": "ROM type*4 PowerUpGfxTable bytes to DrawOneSpriteRow scratch $00/$01",
+      "feasiblePath": "DrawPowerUp shifts PowerUpType twice, reads each adjacent tile pair and calls DrawOneSpriteRow for both rows.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c graphics array in mysmb_objects_draw_power_up",
+      "semanticContract": "Each selected 2x2 source tile set is consumed in row order before OAM tile writes.",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00419",
+      "producer": "PowerUpAttributes",
+      "consumer": "DrawPowerUp",
+      "storage": "ROM PowerUpAttributes byte OR Enemy_SprAttrib+5 to DrawPowerUp scratch $04",
+      "feasiblePath": "DrawPowerUp indexes PowerUpAttributes by PowerUpType, ORs priority bits and passes the result to both row writes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c attributes array in mysmb_objects_draw_power_up",
+      "semanticContract": "The selected base attribute reaches each initial OAM attribute write before type-specific overrides.",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -26562,61 +26590,79 @@
       "label": "PowerUpGfxTable",
       "asmLine": 13500,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/power_up_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds four ordered 2x2 tile sets for mushroom, flower, star and 1UP."
     },
     {
       "label": "PowerUpAttributes",
       "asmLine": 13506,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/power_up_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds per-type base palette attributes 02,01,02,01."
     },
     {
       "label": "DrawPowerUp",
       "asmLine": 13509,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/power_up_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Prepares source scratch positions/attributes, derives type*4 tile offset and begins two-row sprite construction."
     },
     {
       "label": "PUpDrawLoop",
       "asmLine": 13530,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/power_up_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads adjacent tiles, calls DrawOneSpriteRow twice, then applies type-specific phase palettes and lower-star update."
     },
     {
       "label": "FlipPUpRightSide",
       "asmLine": 13555,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/power_up_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets horizontal flip on both right-side attribute records for flower and star paths."
     },
     {
       "label": "PUpOfs",
       "asmLine": 13562,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/power_up_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps into SprObjectOffscrChk with the power-up OAM state."
     },
     {
       "label": "EnemyGraphicsTable",
@@ -51329,12 +51375,12 @@
       "id": "control-01304",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Power-up graphics follow bounding-box construction."
+      "semanticContract": "Preserves ROM call relation RunPUSubs -> DrawPowerUp with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "RunPUSubs",
@@ -74889,10 +74935,13 @@
       "instruction": "sta",
       "id": "control-02827",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawPowerUp -> PUpDrawLoop with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "PUpDrawLoop",
@@ -74902,10 +74951,13 @@
       "instruction": "jsr",
       "id": "control-02828",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation PUpDrawLoop -> DrawOneSpriteRow with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "PUpDrawLoop",
@@ -74915,10 +74967,13 @@
       "instruction": "bpl",
       "id": "control-02829",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation PUpDrawLoop -> PUpDrawLoop with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "PUpDrawLoop",
@@ -74928,10 +74983,13 @@
       "instruction": "beq",
       "id": "control-02830",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation PUpDrawLoop -> PUpOfs with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "PUpDrawLoop",
@@ -74941,10 +74999,13 @@
       "instruction": "beq",
       "id": "control-02831",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation PUpDrawLoop -> PUpOfs with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "PUpDrawLoop",
@@ -74954,10 +75015,13 @@
       "instruction": "beq",
       "id": "control-02832",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation PUpDrawLoop -> FlipPUpRightSide with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "PUpDrawLoop",
@@ -74967,10 +75031,13 @@
       "instruction": "sta",
       "id": "control-02833",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation PUpDrawLoop -> FlipPUpRightSide with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "FlipPUpRightSide",
@@ -74980,10 +75047,13 @@
       "instruction": "sta",
       "id": "control-02834",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation FlipPUpRightSide -> PUpOfs with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "PUpOfs",
@@ -74993,10 +75063,13 @@
       "instruction": "jmp",
       "id": "control-02835",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation PUpOfs -> SprObjectOffscrChk with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "EnemyGfxHandler",
@@ -87268,12 +87341,12 @@
       "id": "control-03733",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
+      "semanticContract": "Preserves ROM return relation DrawPowerUp -> RunPUSubs with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -91591,10 +91664,13 @@
       "instruction": "rts/rti",
       "id": "control-04010",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "semanticEvidence": [
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DrawOneSpriteRow -> PUpDrawLoop with source type predicate, scratch/OAM handoff and return ordering."
     },
     {
       "from": "DrawEnemyObjRow",

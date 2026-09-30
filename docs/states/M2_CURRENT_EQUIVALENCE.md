@@ -1222,3 +1222,7 @@ branches.
 ### Cohort K — K4 jumping-coin and floatey-number OAM integration
 
 `DrawFloateyNumber_Coin` through `ExJCGfx` now has five node contracts, every local state/frame, helper, branch and return relation, plus the feasible jumping-tile table handoff. Static review matches the `>= $02` state split, even-frame rise, equal floatey Ys, frame d2-d1 tile selection, vertical-flip attribute and ObjectOffset restoration. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 rising, floatey and four animation-phase routes.
+
+### Cohort K — K5 power-up OAM integration
+
+`PowerUpGfxTable` through `PUpOfs` now has six node contracts, every local row-loop, type, flip, tail-jump and return relation, plus two feasible table handoffs. Static review matches all four tile sets, base attributes, two-row scratch protocol, flower/star frame palettes, star-only lower palette update, both right-side flips and the shared offscreen tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes.
