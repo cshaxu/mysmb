@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 162,
+    "enumeratedCount": 167,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2281,6 +2281,76 @@
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00163",
+      "producer": "InitVertPlatform",
+      "consumer": "SetYO",
+      "storage": "Enemy Y, signedness and selected center offset",
+      "feasiblePath": "Signed Y decides the original/direct top coordinate and $40/$c0 center-offset handoff.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_vertical_platform",
+      "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00164",
+      "producer": "PlatLiftUp",
+      "consumer": "CommonSmallLift",
+      "storage": "Enemy Y force and speed",
+      "feasiblePath": "Upward force/speed writes precede common offset/box setup.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_small_lift_up",
+      "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00165",
+      "producer": "PlatLiftDown",
+      "consumer": "CommonSmallLift",
+      "storage": "Enemy Y force and speed",
+      "feasiblePath": "Downward force/speed writes precede common offset/box setup.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_small_lift_down",
+      "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00166",
+      "producer": "CommonSmallLift",
+      "consumer": "PosPlatform",
+      "storage": "position selector index one, X/page position and box control",
+      "feasiblePath": "Position adjustment occurs before box control four.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_common_small_lift",
+      "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00167",
+      "producer": "LargeLiftBBox",
+      "consumer": "SPBBox",
+      "storage": "lift state and area/hard-mode box predicate",
+      "feasiblePath": "Large-lift path reaches the shared box selector after small-lift state initialization.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_large_lift_up/down",
+      "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -15870,21 +15940,27 @@
       "label": "InitVertPlatform",
       "asmLine": 8939,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/init_targets.c",
+      "currentCounterpart": "shared vertical/lift platform initializer",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets default center offset $40; for negative Y stores its two's-complement as top and selects $c0, then stores center Y+selected offset before falling through common platform setup."
     },
     {
       "label": "SetYO",
       "asmLine": 8947,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/init_targets.c",
+      "currentCounterpart": "shared vertical/lift platform initializer",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores top Y and stores center Y using the branch-selected $40/$c0 offset before falling through common platform setup."
     },
     {
       "label": "CommonPlatCode",
@@ -15929,61 +16005,79 @@
       "label": "LargeLiftUp",
       "asmLine": 8969,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/init_targets.c",
+      "currentCounterpart": "shared vertical/lift platform initializer",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls upward small-lift initializer, then tail-jumps to the large-platform box selector."
     },
     {
       "label": "LargeLiftDown",
       "asmLine": 8973,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/init_targets.c",
+      "currentCounterpart": "shared vertical/lift platform initializer",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls downward small-lift initializer and falls through the large-platform box selector."
     },
     {
       "label": "LargeLiftBBox",
       "asmLine": 8976,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/init_targets.c",
+      "currentCounterpart": "shared vertical/lift platform initializer",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to shared platform box selection."
     },
     {
       "label": "PlatLiftUp",
       "asmLine": 8981,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/init_targets.c",
+      "currentCounterpart": "shared vertical/lift platform initializer",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes Y force $10 and speed $ff, then tail-jumps to common small-lift setup."
     },
     {
       "label": "PlatLiftDown",
       "asmLine": 8990,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/init_targets.c",
+      "currentCounterpart": "shared vertical/lift platform initializer",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes Y force $f0 and speed $00, then falls through common small-lift setup."
     },
     {
       "label": "CommonSmallLift",
       "asmLine": 8998,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/init_targets.c",
+      "currentCounterpart": "shared vertical/lift platform initializer",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses position offset index one before writing bounding-box control four and returning."
     },
     {
       "label": "PlatPosDataLow",
@@ -51958,10 +52052,13 @@
       "instruction": "bpl",
       "id": "control-01648",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitVertPlatform -> SetYO with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "InitVertPlatform",
@@ -51971,10 +52068,13 @@
       "instruction": "ldy",
       "id": "control-01649",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitVertPlatform -> SetYO with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "SetYO",
@@ -51985,12 +52085,12 @@
       "id": "control-01650",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SetYO -> CommonPlatCode with platform state, position carry and box-selection handoff."
+      "semanticContract": "Preserves original fallthrough relation SetYO -> CommonPlatCode with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "CommonPlatCode",
@@ -52080,10 +52180,13 @@
       "instruction": "jsr",
       "id": "control-01656",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation LargeLiftUp -> PlatLiftUp with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "LargeLiftUp",
@@ -52093,10 +52196,13 @@
       "instruction": "jmp",
       "id": "control-01657",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation LargeLiftUp -> LargeLiftBBox with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "LargeLiftDown",
@@ -52106,10 +52212,13 @@
       "instruction": "jsr",
       "id": "control-01658",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation LargeLiftDown -> PlatLiftDown with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "LargeLiftDown",
@@ -52119,10 +52228,13 @@
       "instruction": "jsr",
       "id": "control-01659",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LargeLiftDown -> LargeLiftBBox with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "LargeLiftBBox",
@@ -52133,12 +52245,12 @@
       "id": "control-01660",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation LargeLiftBBox -> SPBBox with platform state, position carry and box-selection handoff."
+      "semanticContract": "Preserves original jump relation LargeLiftBBox -> SPBBox with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "PlatLiftUp",
@@ -52148,10 +52260,13 @@
       "instruction": "jmp",
       "id": "control-01661",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation PlatLiftUp -> CommonSmallLift with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "PlatLiftDown",
@@ -52161,10 +52276,13 @@
       "instruction": "sta",
       "id": "control-01662",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PlatLiftDown -> CommonSmallLift with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "CommonSmallLift",
@@ -52175,12 +52293,12 @@
       "id": "control-01663",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation CommonSmallLift -> PosPlatform with platform state, position carry and box-selection handoff."
+      "semanticContract": "Preserves original call relation CommonSmallLift -> PosPlatform with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "RunEnemyObjectsCore",
@@ -80561,10 +80679,13 @@
       "instruction": "rts/rti",
       "id": "control-03788",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlatLiftUp -> LargeLiftUp with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "PlatLiftDown",
@@ -80574,10 +80695,13 @@
       "instruction": "rts/rti",
       "id": "control-03789",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
+      "semanticEvidence": [
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlatLiftDown -> LargeLiftDown with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "PosPlatform",
@@ -80588,12 +80712,12 @@
       "id": "control-03790",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PosPlatform -> CommonSmallLift with platform state, position carry and box-selection handoff."
+      "semanticContract": "Preserves original return relation PosPlatform -> CommonSmallLift with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "JumpEngine",
@@ -87250,12 +87374,12 @@
       "id": "control-04252",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitVertPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitVertPlatform with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -87267,12 +87391,12 @@
       "id": "control-04253",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> LargeLiftUp with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> LargeLiftUp with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -87284,12 +87408,12 @@
       "id": "control-04254",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> LargeLiftDown with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> LargeLiftDown with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -87352,12 +87476,12 @@
       "id": "control-04258",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> PlatLiftUp with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> PlatLiftUp with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -87369,12 +87493,12 @@
       "id": "control-04259",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> PlatLiftDown with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> PlatLiftDown with vertical/lift state, call/return order and box-selection handoff."
     },
     {
       "from": "InitEnemyRoutines",

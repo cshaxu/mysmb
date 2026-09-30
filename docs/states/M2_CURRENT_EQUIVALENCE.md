@@ -961,3 +961,8 @@ branches.
 ### Cohort I — B14u balance/drop/horizontal platform integration
 
 `InitBalPlatform` through `PosPlatform` now has eleven node contracts, incident platform control relations and four feasible data handoffs. The audit records balance alignment alternation, collision/counter entries, vertical reset ordering, castle/hard box choice and all low/high page-carry position table use. No static shared-C discrepancy was found; entries remain `needs-evidence`.
+
+
+### Cohort I — B14v vertical and lift-platform integration
+
+`InitVertPlatform` through `CommonSmallLift` now has eight independent node contracts, all incident control relations (including dispatch, branch, fall-through, call, tail-jump and return) and five feasible material handoffs. The static shared-C audit matches signed top/center construction, force/speed ordering, position-before-box ordering and the large-lift box continuation. They remain `needs-evidence` until controlled original-ROM/x86/x64 routes cover both signed vertical branches and both lift directions.
