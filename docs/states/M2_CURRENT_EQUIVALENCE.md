@@ -1086,3 +1086,8 @@ branches.
 ### Cohort J — B15x star-flag endgame integration
 
 `AwardGameTimerPoints` through `DelayToAreaEnd` now has eleven node contracts, every incident timer, score, flag, frenzy, OAM loop, interval, music, dispatch and return relation, plus eight feasible handoffs. Static review matches zero-timer exit, d2 tick gate, `$ff` then `$05` modifier ordering, Mario/Luigi score offsets, flag `$72` threshold, signed fireworks eligibility, descending four-sprite table loop, interval `$06`, and final event-music gate. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 timer conversion, no/positive fireworks and final-delay routes.
+
+
+### Cohort J — B15y Piranha Plant integration
+
+`MovePiranhaPlant` through `PutinPipe` now has six node contracts, all incident state/timer/distance/endpoint branches, child call and return relations, plus four feasible handoffs. Static review matches the `$21` absolute-distance gate, two's-complement reversal, speed-sign endpoint selection, alternate-frame plus TimerControl move gate, endpoint `$40` delay and unconditional pipe-priority attribute. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 near/far, up/down and endpoint routes.

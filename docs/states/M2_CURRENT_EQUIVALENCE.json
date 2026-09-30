@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 296,
+    "enumeratedCount": 300,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4157,6 +4157,62 @@
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00297",
+      "producer": "MovePiranhaPlant",
+      "consumer": "ChkPlayerNearPipe",
+      "storage": "signed PlayerEnemyDiff scratch to absolute distance",
+      "feasiblePath": "Negative source difference is two-complemented before the $21 gate.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/piranha.c player difference block",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00298",
+      "producer": "ReversePlantSpeed",
+      "consumer": "SetupToMovePPlant",
+      "storage": "two-complemented Y speed and move flag",
+      "feasiblePath": "Reversal writes speed before flag and endpoint selection.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/piranha.c reversal block",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00299",
+      "producer": "SetupToMovePPlant",
+      "consumer": "RiseFallPiranhaPlant",
+      "storage": "speed sign to selected up/down endpoint",
+      "feasiblePath": "Endpoint selection precedes alternate-frame and timer gates.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/piranha.c endpoint selection",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00300",
+      "producer": "RiseFallPiranhaPlant",
+      "consumer": "PutinPipe",
+      "storage": "Y move/end-point match to move flag/timer and common attribute tail",
+      "feasiblePath": "Both move and nonmove outcomes write pipe priority before return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/piranha.c put_in_pipe",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -20525,61 +20581,79 @@
       "label": "MovePiranhaPlant",
       "asmLine": 10602,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/piranha.c",
+      "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "State and frame timer take immediate pipe tail; stopped/downward plants compute absolute player difference and suppress emergence within $21, while moving/rising plants bypass that gate."
     },
     {
       "label": "ChkPlayerNearPipe",
       "asmLine": 10619,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/piranha.c",
+      "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the absolute difference produced by PlayerEnemyDiff, entering pipe tail only for values below $21."
     },
     {
       "label": "ReversePlantSpeed",
       "asmLine": 10624,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/piranha.c",
+      "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Two-complements Y speed and increments move flag before endpoint selection."
     },
     {
       "label": "SetupToMovePPlant",
       "asmLine": 10632,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/piranha.c",
+      "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects down endpoint for nonnegative speed and up endpoint for negative speed."
     },
     {
       "label": "RiseFallPiranhaPlant",
       "asmLine": 10638,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/piranha.c",
+      "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves only on source alternate frames with TimerControl clear; on exact endpoint sets move flag zero and delay timer $40."
     },
     {
       "label": "PutinPipe",
       "asmLine": 10656,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/piranha.c",
+      "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Always writes background-priority sprite attribute $20 before return."
     },
     {
       "label": "FirebarSpin",
@@ -61143,10 +61217,13 @@
       "instruction": "bne",
       "id": "control-02066",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "MovePiranhaPlant",
@@ -61156,10 +61233,13 @@
       "instruction": "bne",
       "id": "control-02067",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "MovePiranhaPlant",
@@ -61169,10 +61249,13 @@
       "instruction": "bne",
       "id": "control-02068",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePiranhaPlant -> SetupToMovePPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "MovePiranhaPlant",
@@ -61182,10 +61265,13 @@
       "instruction": "bmi",
       "id": "control-02069",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePiranhaPlant -> ReversePlantSpeed with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "MovePiranhaPlant",
@@ -61195,10 +61281,13 @@
       "instruction": "jsr",
       "id": "control-02070",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MovePiranhaPlant -> PlayerEnemyDiff with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "MovePiranhaPlant",
@@ -61208,10 +61297,13 @@
       "instruction": "bpl",
       "id": "control-02071",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePiranhaPlant -> ChkPlayerNearPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "MovePiranhaPlant",
@@ -61221,10 +61313,13 @@
       "instruction": "sta",
       "id": "control-02072",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MovePiranhaPlant -> ChkPlayerNearPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "ChkPlayerNearPipe",
@@ -61234,10 +61329,13 @@
       "instruction": "bcc",
       "id": "control-02073",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkPlayerNearPipe -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "ChkPlayerNearPipe",
@@ -61247,10 +61345,13 @@
       "instruction": "bcc",
       "id": "control-02074",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkPlayerNearPipe -> ReversePlantSpeed with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "ReversePlantSpeed",
@@ -61260,10 +61361,13 @@
       "instruction": "inc",
       "id": "control-02075",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ReversePlantSpeed -> SetupToMovePPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "SetupToMovePPlant",
@@ -61273,10 +61377,13 @@
       "instruction": "bpl",
       "id": "control-02076",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetupToMovePPlant -> RiseFallPiranhaPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "SetupToMovePPlant",
@@ -61286,10 +61393,13 @@
       "instruction": "lda",
       "id": "control-02077",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetupToMovePPlant -> RiseFallPiranhaPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "RiseFallPiranhaPlant",
@@ -61299,10 +61409,13 @@
       "instruction": "bcc",
       "id": "control-02078",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RiseFallPiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "RiseFallPiranhaPlant",
@@ -61312,10 +61425,13 @@
       "instruction": "bne",
       "id": "control-02079",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RiseFallPiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "RiseFallPiranhaPlant",
@@ -61325,10 +61441,13 @@
       "instruction": "bne",
       "id": "control-02080",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RiseFallPiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "RiseFallPiranhaPlant",
@@ -61338,10 +61457,13 @@
       "instruction": "sta",
       "id": "control-02081",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RiseFallPiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "FirebarSpin",
@@ -85685,10 +85807,13 @@
       "instruction": "rts/rti",
       "id": "control-03874",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "semanticEvidence": [
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerEnemyDiff -> MovePiranhaPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "MovePlatformUp",
@@ -92433,12 +92558,12 @@
       "id": "control-04323",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MovePiranhaPlant with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MovePiranhaPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
