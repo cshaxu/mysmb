@@ -687,6 +687,104 @@
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00049",
+      "producer": "BSceneDataOffsets",
+      "consumer": "RenderSceneryTerrain",
+      "storage": "BackgroundScenery-indexed offset plus page/column to packed scenery byte",
+      "feasiblePath": "Valid background selectors 1-3 choose an offset, page modulo three and CurrentColumnPos before reading BackSceneryData.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00050",
+      "producer": "BackSceneryData",
+      "consumer": "RenderSceneryTerrain",
+      "storage": "packed row/metatile selector to background overlay",
+      "feasiblePath": "Nonzero packed byte sends high nibble to start row and low nibble minus one to a three-byte BackSceneryMetatiles triplet.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00051",
+      "producer": "BackSceneryMetatiles",
+      "consumer": "RenderSceneryTerrain",
+      "storage": "three-byte metatile overlay to MetatileBuffer",
+      "feasiblePath": "At most three source values overwrite consecutive rows and never cross staged row ten.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00052",
+      "producer": "FSceneDataOffsets",
+      "consumer": "RenderSceneryTerrain",
+      "storage": "ForegroundScenery-indexed offset to thirteen-row source record",
+      "feasiblePath": "Valid foreground selectors 1-3 choose one source record before the thirteen-row loop.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00053",
+      "producer": "ForeSceneryData",
+      "consumer": "RenderSceneryTerrain",
+      "storage": "foreground values to conditional MetatileBuffer overwrites",
+      "feasiblePath": "Each nonzero source byte overwrites exactly its staged row; zero retains existing staging.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00054",
+      "producer": "TerrainMetatiles",
+      "consumer": "RenderSceneryTerrain",
+      "storage": "AreaType/override terrain selector to staged terrain values",
+      "feasiblePath": "Area type table selection precedes World 8 water, cloud and underground-row exceptions.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00055",
+      "producer": "TerrainRenderBits",
+      "consumer": "RenderSceneryTerrain",
+      "storage": "TerrainControl two-byte mask to thirteen-row terrain overlay",
+      "feasiblePath": "Two source bytes are consumed low bit first across rows 0-12, with cloud masking on the second byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -4906,81 +5004,105 @@
       "label": "BSceneDataOffsets",
       "asmLine": 3106,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column background offset binding",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Three source offsets $00/$30/$60 select cloud, mountain/bush and tree/fence scenery pages."
     },
     {
       "label": "BackSceneryData",
       "asmLine": 3109,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column background packed-entry binding",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Three 48-byte scenery phases provide packed row and metatile selectors after page modulo three and column selection."
     },
     {
       "label": "BackSceneryMetatiles",
       "asmLine": 3131,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column background three-row overlay binding",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Twelve source triplets map packed low-nibble selector minus one into at most three staged metatiles."
     },
     {
       "label": "FSceneDataOffsets",
       "asmLine": 3145,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column foreground offset binding",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Three source offsets $00/$0d/$1a select the water, wall and over-water thirteen-row foreground records."
     },
     {
       "label": "ForeSceneryData",
       "asmLine": 3148,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column foreground overlay binding",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Nonzero foreground entries overwrite the staged row; source zero entries deliberately preserve background or empty staging."
     },
     {
       "label": "TerrainMetatiles",
       "asmLine": 3158,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column terrain selection",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Area type indexes water, ground, underground and castle terrain metatiles before World 8 water and cloud overrides."
     },
     {
       "label": "TerrainRenderBits",
       "asmLine": 3161,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column terrain bit scan",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sixteen two-byte masks drive a 13-row least-significant-bit-first terrain overlay with underground/cloud exceptions."
     },
     {
       "label": "AreaParserCore",
       "asmLine": 3179,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_parser_task_step parser-core selectors",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Backloading executes ProcessAreaData before scenery; ordinary entry falls to the same scenery/terrain construction."
     },
     {
       "label": "RenderSceneryTerrain",
@@ -29528,10 +29650,13 @@
       "instruction": "beq",
       "id": "control-00481",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c ordinary parser-core path enters scenery/terrain construction when BackloadingFlag is zero.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c ordinary parser-core path enters scenery/terrain construction when BackloadingFlag is zero."
     },
     {
       "from": "AreaParserCore",
@@ -29541,10 +29666,13 @@
       "instruction": "jsr",
       "id": "control-00482",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c backloading path processes stream state before scenery construction.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c backloading path processes stream state before scenery construction."
     },
     {
       "from": "AreaParserCore",
@@ -29554,10 +29682,13 @@
       "instruction": "jsr",
       "id": "control-00483",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c returns from the backloading stream call into common scenery/terrain construction.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c returns from the backloading stream call into common scenery/terrain construction."
     },
     {
       "from": "RenderSceneryTerrain",
@@ -69732,10 +69863,13 @@
       "instruction": "rts/rti",
       "id": "control-03557",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c backloading stream-state helper returns to parser-core before scenery construction.",
+      "semanticEvidence": [
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c backloading stream-state helper returns to parser-core before scenery construction."
     },
     {
       "from": "ProcessAreaData",
@@ -77329,12 +77463,12 @@
       "id": "control-04130",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "area.c selector three performs AreaParserCore scenery/object work.",
+      "currentCounterpart": "area.c parser task selector three reaches parser-core semantics.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "area.c selector three performs AreaParserCore scenery/object work."
+      "semanticContract": "area.c parser task selector three reaches parser-core semantics."
     },
     {
       "from": "AreaParserTasks",
@@ -77397,12 +77531,12 @@
       "id": "control-04134",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "area.c selector seven performs AreaParserCore scenery/object work.",
+      "currentCounterpart": "area.c parser task selector seven reaches parser-core semantics.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "area.c selector seven performs AreaParserCore scenery/object work."
+      "semanticContract": "area.c parser task selector seven reaches parser-core semantics."
     },
     {
       "from": "RunAObj",

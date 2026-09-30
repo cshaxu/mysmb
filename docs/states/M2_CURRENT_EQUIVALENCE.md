@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 258 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 266 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,687 | Not yet processed by this re-audit. |
+| Unclassified | 1,679 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 495 control; 44 material RAM/table |
+| Needs evidence | 499 control; 51 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,761 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,757 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -501,3 +501,17 @@ graphics entries, both parser-core entries, the 16-column page wrap and the
 32-column block-buffer wrap. No static discrepancy was found. The six nodes
 and newly reviewed relations remain `needs-evidence` pending controlled ROM
 and x86/x64 column-set and runtime scrolling routes.
+
+### Cohort C — B10d scenery tables, terrain masks and parser-core entry
+
+`BSceneDataOffsets` through `AreaParserCore` (lines 3106–3183) now have
+individual table and control contracts. Seven feasible data edges record the
+background/foreground offset and data tables, background triplets, terrain
+metatile selector and two-byte terrain masks. The integration pass separately
+records ordinary versus backloading parser-core entry and both task-selector
+edges. Current C's ROM-free unit-test entry skips stream processing only when
+no area PRG is bound; the audited production route has a loaded area stream
+and follows the ROM's unconditional call. No static production-route mismatch
+was found. These eight nodes, four newly classified control relations and
+seven data paths remain `needs-evidence` pending original-ROM/x86/x64 scenery,
+terrain and backloading route captures.
