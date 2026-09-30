@@ -946,3 +946,8 @@ branches.
 ### Cohort I — B14r group-enemy integration
 
 `HandleGroupEnemies` through `NextED` now has eight node contracts, all incident classification, loop, call, tail and return relations, and four feasible RAM handoffs. The audit records hard-mode substitution, d0/d1 group decoding, two/three member count, regular-slot restriction, $18 spacing with page carry and member-by-member initializer order. No static shared-C discrepancy was found; entries remain `needs-evidence` pending matched original-ROM/x86/x64 routes.
+
+
+### Cohort I — B14s Piranha and frenzy dispatch integration
+
+`InitPiranhaPlant` through `NextFSlot` now has six node contracts, all incident initializer, vector, loop and return relations, and three feasible RAM/vector handoffs. The audit records Piranha alias writes, six-target frenzy dispatch and complete Lakitu-state shutdown. Two graph-only mismatches were found: the extractor treats frenzy vector words as fall-through and JumpEngine as returning to its caller label; both are impossible in ROM. All remaining entries are `needs-evidence`.

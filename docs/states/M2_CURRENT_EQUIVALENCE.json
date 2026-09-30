@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 154,
+    "enumeratedCount": 157,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2169,6 +2169,48 @@
       "semanticContract": "Preserves source RAM/table selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00155",
+      "producer": "InitPiranhaPlant",
+      "consumer": "MovePiranhaPlant",
+      "storage": "Piranha down/up Y aliases and move flag",
+      "feasiblePath": "Initializer preserves exact source bounds consumed by later plant motion.",
+      "status": "needs-evidence",
+      "currentCounterpart": "Piranha aliases in mysmb_enemy_init_piranha_plant",
+      "semanticContract": "Preserves source RAM/vector selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00156",
+      "producer": "InitEnemyFrenzy",
+      "consumer": "InitBowserFlame",
+      "storage": "EnemyFrenzyBuffer and ID-$12 vector selector",
+      "feasiblePath": "Frenzy ID is buffered before dispatch selects one of six targets.",
+      "status": "needs-evidence",
+      "currentCounterpart": "frenzy_targets and native switch",
+      "semanticContract": "Preserves source RAM/vector selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00157",
+      "producer": "EndFrenzy",
+      "consumer": "LakituAndSpinyHandler",
+      "storage": "all Lakitu states plus cleared frenzy buffer",
+      "feasiblePath": "End path disables frenzy and changes all Lakitu entries before next handler turn.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_end_frenzy writes",
+      "semanticContract": "Preserves source RAM/vector selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -15576,61 +15618,79 @@
       "label": "InitPiranhaPlant",
       "asmLine": 8839,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Piranha and frenzy-dispatch core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes plant speed one, aliases state/move flag zero, records original/down and up-minus-$18 Y, then tail-selects box-only $09."
     },
     {
       "label": "InitEnemyFrenzy",
       "asmLine": 8855,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Piranha and frenzy-dispatch core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores current ID in frenzy buffer, subtracts $12 and dispatches exactly six frenzy targets through JumpEngine."
     },
     {
       "label": "NoFrenzyCode",
       "asmLine": 8872,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Piranha and frenzy-dispatch core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without further writes for selector one."
     },
     {
       "label": "EndFrenzy",
       "asmLine": 8877,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Piranha and frenzy-dispatch core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Scans all six slots, sets every Lakitu state to one, clears frenzy buffer and only controller flag."
     },
     {
       "label": "LakituChk",
       "asmLine": 8879,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Piranha and frenzy-dispatch core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tests current slot ID and conditionally writes state one."
     },
     {
       "label": "NextFSlot",
       "asmLine": 8884,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Piranha and frenzy-dispatch core",
+      "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements slot and loops while nonnegative before final clear/disable."
     },
     {
       "label": "InitJumpGPTroopa",
@@ -36073,12 +36133,12 @@
       "id": "control-00665",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "area.c preserves source call relation WarpPipe -> InitPiranhaPlant.",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "area.c preserves source call relation WarpPipe -> InitPiranhaPlant."
+      "semanticContract": "Preserves original call relation WarpPipe -> InitPiranhaPlant with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "WarpPipe",
@@ -51498,10 +51558,13 @@
       "instruction": "jmp",
       "id": "control-01630",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation InitPiranhaPlant -> SetBBox2 with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -51511,10 +51574,13 @@
       "instruction": "jsr",
       "id": "control-01631",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitEnemyFrenzy -> JumpEngine with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -51524,10 +51590,13 @@
       "instruction": "jsr",
       "id": "control-01632",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false control relation in current extracted graph; shared C selects frenzy target directly",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The bytes after JSR JumpEngine are the six frenzy pointer words, not reachable fall-through to NoFrenzyCode."
     },
     {
       "from": "EndFrenzy",
@@ -51537,10 +51606,13 @@
       "instruction": "ldy",
       "id": "control-01633",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation EndFrenzy -> LakituChk with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "LakituChk",
@@ -51550,10 +51622,13 @@
       "instruction": "bne",
       "id": "control-01634",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LakituChk -> NextFSlot with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "LakituChk",
@@ -51563,10 +51638,13 @@
       "instruction": "sta",
       "id": "control-01635",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LakituChk -> NextFSlot with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "NextFSlot",
@@ -51576,10 +51654,13 @@
       "instruction": "bpl",
       "id": "control-01636",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation NextFSlot -> LakituChk with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitJumpGPTroopa",
@@ -77149,10 +77230,13 @@
       "instruction": "rts/rti",
       "id": "control-03584",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitPiranhaPlant -> WarpPipe with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -80244,10 +80328,13 @@
       "instruction": "rts/rti",
       "id": "control-03784",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false control relation in current extracted graph; shared C selects frenzy target directly",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "JumpEngine removes the JSR return address and indirect-jumps to the selected frenzy target; it does not return to InitEnemyFrenzy."
     },
     {
       "from": "PosPlatform",
@@ -86577,12 +86664,12 @@
       "id": "control-04228",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitPiranhaPlant with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitPiranhaPlant with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86662,12 +86749,12 @@
       "id": "control-04233",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86696,12 +86783,12 @@
       "id": "control-04235",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86713,12 +86800,12 @@
       "id": "control-04236",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86730,12 +86817,12 @@
       "id": "control-04237",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86747,12 +86834,12 @@
       "id": "control-04238",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86764,12 +86851,12 @@
       "id": "control-04239",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> EndFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> EndFrenzy with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyRoutines",
@@ -87291,12 +87378,12 @@
       "id": "control-04270",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> LakituAndSpinyHandler with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> LakituAndSpinyHandler with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -87307,10 +87394,13 @@
       "selector": 1,
       "id": "control-04271",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> NoFrenzyCode with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -87322,12 +87412,12 @@
       "id": "control-04272",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitFlyingCheepCheep with exact table index, timer/slot predicate, carry/borrow and return handoff."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitFlyingCheepCheep with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -87339,12 +87429,12 @@
       "id": "control-04273",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitBowserFlame with timer, front-slot, random/table, carry and activation handoff."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitBowserFlame with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -87356,12 +87446,12 @@
       "id": "control-04274",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitFireworks with timer, star-slot, counter/state index and page-carry handoff."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitFireworks with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -87373,12 +87463,12 @@
       "id": "control-04275",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> BulletBillCheepCheep with area/slot predicate, random/world selection, filter state and actor handoff."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> BulletBillCheepCheep with slot/ID state, vector selector and return handoff."
     },
     {
       "from": "JmpEO",
