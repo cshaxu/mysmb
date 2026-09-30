@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 272,
+    "enumeratedCount": 275,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3821,6 +3821,48 @@
       "semanticContract": "Preserves source table/state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00273",
+      "producer": "ProcBowserFlame",
+      "consumer": "SFlmX",
+      "storage": "TimerControl and SecondaryHardMode force selection",
+      "feasiblePath": "Timer clear selects $40 or $60 before the source carry chain; timer set tails directly to graphics.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/bowser_flame.c motion gate",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, carry/borrow behavior and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00274",
+      "producer": "SFlmX",
+      "consumer": "SetGfxF",
+      "storage": "force subtraction carry, X/page result and random target/Y-force",
+      "feasiblePath": "Both equality and vertical-update paths deliver the same updated position state to graphics.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/bowser_flame.c -> oam/bowser_flame_gfx.c",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, carry/borrow behavior and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00275",
+      "producer": "FlameYPosData",
+      "consumer": "SFlmX",
+      "storage": "per-flame random offset to target vertical coordinate",
+      "feasiblePath": "Only a nonmatching Y applies the stored vertical force.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/bowser_flame.c mysmb_enemy_flame_y_positions",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, carry/borrow behavior and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -19776,21 +19818,27 @@
       "label": "ProcBowserFlame",
       "asmLine": 10349,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/bowser_flame.c",
+      "currentCounterpart": "src/game/enemy/bowser_flame.c:mysmb_enemy_proc_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "TimerControl freezes motion but still takes the graphics child; otherwise selects force $40/$60 by hard mode, preserves force-subtraction carry through X minus one and page borrow, and applies Y force only when current Y differs from the random target."
     },
     {
       "label": "SFlmX",
       "asmLine": 10356,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/bowser_flame.c",
+      "currentCounterpart": "src/game/enemy/bowser_flame.c:mysmb_enemy_proc_bowser_flame",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes the selected force, executes source carry-dependent horizontal/page movement, selects FlameYPosData through the stored random offset and joins the graphics tail whether or not vertical movement occurs."
     },
     {
       "label": "SetGfxF",
@@ -54603,12 +54651,12 @@
       "id": "control-01684",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunBowserFlame -> ProcBowserFlame with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original call relation RunBowserFlame -> ProcBowserFlame with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -59786,10 +59834,13 @@
       "instruction": "bne",
       "id": "control-02008",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcBowserFlame -> SetGfxF with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
     },
     {
       "from": "ProcBowserFlame",
@@ -59799,10 +59850,13 @@
       "instruction": "beq",
       "id": "control-02009",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcBowserFlame -> SFlmX with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
     },
     {
       "from": "ProcBowserFlame",
@@ -59812,10 +59866,13 @@
       "instruction": "lda",
       "id": "control-02010",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcBowserFlame -> SFlmX with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
     },
     {
       "from": "SFlmX",
@@ -59825,10 +59882,13 @@
       "instruction": "beq",
       "id": "control-02011",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SFlmX -> SetGfxF with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
     },
     {
       "from": "SFlmX",
@@ -59838,10 +59898,13 @@
       "instruction": "sta",
       "id": "control-02012",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
+      "semanticEvidence": [
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SFlmX -> SetGfxF with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
     },
     {
       "from": "SetGfxF",
@@ -83950,12 +84013,12 @@
       "id": "control-03803",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ProcBowserFlame -> RunBowserFlame with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original return relation ProcBowserFlame -> RunBowserFlame with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",

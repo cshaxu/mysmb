@@ -1061,3 +1061,8 @@ branches.
 ### Cohort J — B15s Bowser flame-timer integration
 
 `FlameTimerData`, `SetFlameTimer` and `ExFl` now have node contracts, all incident call, return, fall-through and common-exit relations, plus two feasible table/state handoffs. Static review matches the eight bytes and the essential old-index-read before increment-and-mask ordering. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 counter-wrap and both caller routes.
+
+
+### Cohort J — B15t Bowser-flame motion integration
+
+`ProcBowserFlame` and `SFlmX` now have node contracts, all incident TimerControl/hard-mode/Y-target branches, graphics-tail and caller-return relations, plus three feasible force/carry/position handoffs. Static review matches the crucial carry propagation from force subtraction through X and page movement, and the equality-gated vertical movement. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 timer-freeze, both force and page-borrow routes.
