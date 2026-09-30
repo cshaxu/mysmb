@@ -1358,3 +1358,9 @@ branches.
 - Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering brick/Bowser-flame queue handling, noise APU writes, length decrement and terminal mute.
 - Independent integration result: 18 outgoing control relations plus three feasible noise-table material edges received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 noise timing routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K31 — music dispatch and header-load audit
+
+- Source range: `ContinueMusic` through `LoadHeader` (`SMBDIS.ASM` lines 15632–15718).
+- Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering queue priority, death-event SFX stops, time-running-out length selection, ground-loop counter wrap, bit-mask header selection and six-byte header initialization.
+- Independent integration result: 25 outgoing control relations received `needs-evidence` contracts, including each event/area branch, SFX call, structural fall-through, loop-back and header-to-square-two transfer. Static review found no discrepancy; controlled original-ROM/x86/x64 event, area, death, time-running-out and ground-loop routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

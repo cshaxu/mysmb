@@ -30526,111 +30526,144 @@
       "label": "ContinueMusic",
       "asmLine": 15632,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers an already active music stream into square-two processing without re-reading either queue."
     },
     {
       "label": "MusicHandler",
       "asmLine": 15635,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Prioritizes nonzero event queue over area queue; with both queues clear, continues only when either active music buffer is nonzero."
     },
     {
       "label": "LoadEventMusic",
       "asmLine": 15645,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies event queue to active buffer, stops both square SFX only for death music, preserves area buffer alternate, selects length adder, clears active area buffer and loads event header."
     },
     {
       "label": "NoStopSfx",
       "asmLine": 15651,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves active area music in alternate buffer, resets length adder and active area buffer, and uses the time-running-out adder before the shared event-header scan."
     },
     {
       "label": "LoadAreaMusic",
       "asmLine": 15662,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stops square-one SFX only for underground area music, initializes ground header counter and enters common area-loop/header selection."
     },
     {
       "label": "NoStop1",
       "asmLine": 15666,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Seeds GroundMusicHeaderOfs with $10 before the common ground-loop path."
     },
     {
       "label": "GMLoopB",
       "asmLine": 15667,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the current ground music header offset then enters common area music loop processing."
     },
     {
       "label": "HandleAreaMusicLoopB",
       "asmLine": 15669,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears event music, activates area music, uses base-eight selector scan for non-ground music and advances/wraps the ground header selector before LoadHeader."
     },
     {
       "label": "FindAreaMusicHeader",
       "asmLine": 15682,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets residual square-two offset to eight then joins the shared one-based bit scan used to select an area music header."
     },
     {
       "label": "FindEventMusicHeader",
       "asmLine": 15686,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments selector before each right shift until the first set music-mask bit, then enters LoadHeader with the corresponding header-table index."
     },
     {
       "label": "LoadHeader",
       "asmLine": 15691,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads six-byte music header state, initializes all music counters and square-two offset, clears alternate square-one control data, and cycles triangle enable before immediate square-two processing."
     },
     {
       "label": "HandleSquare2Music",
@@ -84618,10 +84651,13 @@
       "instruction": "jmp",
       "id": "control-03361",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Unconditional active-stream transfer is represented by mysmb_audio_continue_music calling the square-two music step."
     },
     {
       "from": "MusicHandler",
@@ -84631,10 +84667,13 @@
       "instruction": "bne",
       "id": "control-03362",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "A nonzero event queue takes the first selection branch and invokes the event loader."
     },
     {
       "from": "MusicHandler",
@@ -84644,10 +84683,13 @@
       "instruction": "bne",
       "id": "control-03363",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "A zero event queue with nonzero area queue invokes the area loader."
     },
     {
       "from": "MusicHandler",
@@ -84657,10 +84699,13 @@
       "instruction": "bne",
       "id": "control-03364",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "With both queues clear and either active buffer nonzero, music selection returns and the dispatcher continues the active stream."
     },
     {
       "from": "LoadEventMusic",
@@ -84670,10 +84715,13 @@
       "instruction": "bne",
       "id": "control-03365",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After death SFX stops, execution joins common event setup."
     },
     {
       "from": "LoadEventMusic",
@@ -84683,10 +84731,13 @@
       "instruction": "jsr",
       "id": "control-03366",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Death music stops square-one SFX before square-two SFX."
     },
     {
       "from": "LoadEventMusic",
@@ -84696,10 +84747,13 @@
       "instruction": "jsr",
       "id": "control-03367",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Death music stops square-two SFX after square-one SFX."
     },
     {
       "from": "LoadEventMusic",
@@ -84709,10 +84763,13 @@
       "instruction": "jsr",
       "id": "control-03368",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After death SFX stops, execution joins common event setup."
     },
     {
       "from": "NoStopSfx",
@@ -84722,10 +84779,13 @@
       "instruction": "bne",
       "id": "control-03369",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Time-running-out sets length adder eight and unconditionally enters shared event-header scan."
     },
     {
       "from": "NoStopSfx",
@@ -84735,10 +84795,13 @@
       "instruction": "bne",
       "id": "control-03370",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Time-running-out sets length adder eight and unconditionally enters shared event-header scan."
     },
     {
       "from": "NoStopSfx",
@@ -84748,10 +84811,13 @@
       "instruction": "bne",
       "id": "control-03371",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through after the forced time-running-out branch is structurally present but unreachable when LDX #$08 sets nonzero."
     },
     {
       "from": "LoadAreaMusic",
@@ -84761,10 +84827,13 @@
       "instruction": "bne",
       "id": "control-03372",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After underground SFX stop, execution joins common area setup."
     },
     {
       "from": "LoadAreaMusic",
@@ -84774,10 +84843,13 @@
       "instruction": "jsr",
       "id": "control-03373",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Underground area music stops square-one SFX before common setup."
     },
     {
       "from": "LoadAreaMusic",
@@ -84787,10 +84859,13 @@
       "instruction": "jsr",
       "id": "control-03374",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After underground SFX stop, execution joins common area setup."
     },
     {
       "from": "NoStop1",
@@ -84800,10 +84875,13 @@
       "instruction": "ldy",
       "id": "control-03375",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Area loader seeds ground loop selector $10 before common loop processing."
     },
     {
       "from": "GMLoopB",
@@ -84813,10 +84891,13 @@
       "instruction": "sty",
       "id": "control-03376",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Ground-loop selector store falls through to the common area music loop."
     },
     {
       "from": "HandleAreaMusicLoopB",
@@ -84826,10 +84907,13 @@
       "instruction": "bne",
       "id": "control-03377",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through after forced ground-loop branch is structurally present but unreachable when Y is reset to $11."
     },
     {
       "from": "HandleAreaMusicLoopB",
@@ -84839,10 +84923,13 @@
       "instruction": "bne",
       "id": "control-03378",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Ground music advances selector below wrap limit and loads that header directly."
     },
     {
       "from": "HandleAreaMusicLoopB",
@@ -84852,10 +84939,13 @@
       "instruction": "bne",
       "id": "control-03379",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Ground selector reaching $32 resets to $11 then loops to store/process it."
     },
     {
       "from": "HandleAreaMusicLoopB",
@@ -84865,10 +84955,13 @@
       "instruction": "bne",
       "id": "control-03380",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through after forced ground-loop branch is structurally present but unreachable when Y is reset to $11."
     },
     {
       "from": "FindAreaMusicHeader",
@@ -84878,10 +84971,13 @@
       "instruction": "sty",
       "id": "control-03381",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Area selector residual setup falls through into the shared one-based bit scan."
     },
     {
       "from": "FindEventMusicHeader",
@@ -84891,10 +84987,13 @@
       "instruction": "bcc",
       "id": "control-03382",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "A clear shifted bit repeats increment and shift until the first set mask bit."
     },
     {
       "from": "FindEventMusicHeader",
@@ -84904,10 +85003,13 @@
       "instruction": "bcc",
       "id": "control-03383",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The first set mask bit ends the scan and selects the matching music header."
     },
     {
       "from": "LoadHeader",
@@ -84917,10 +85019,13 @@
       "instruction": "sta",
       "id": "control-03384",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Header initialization falls directly into square-two music handling in the same SoundEngine invocation."
     },
     {
       "from": "HandleSquare2Music",
@@ -95267,10 +95372,13 @@
       "instruction": "rts/rti",
       "id": "control-04065",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared music selection/header helpers",
+      "semanticEvidence": [
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "MusicHandler returns to SoundEngine after both queues and active buffers are clear."
     },
     {
       "from": "Dump_Squ1_Regs",
