@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 127,
+    "enumeratedCount": 131,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1791,6 +1791,62 @@
       "semanticContract": "Preserves source table/RAM value, consumer predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00128",
+      "producer": "PRDiffAdjustData",
+      "consumer": "DifLoop",
+      "storage": "PRDiffAdjustData[Y] to scratch $03/$02/$01",
+      "feasiblePath": "DifLoop starts with random low bits and copies exactly one value from each four-byte band before PlayerLakituDiff.",
+      "status": "needs-evidence",
+      "currentCounterpart": "difference_adjustment[seed], [seed + 4] and [seed + 8] in mysmb_enemy_init_lakitu_spiny_frenzy",
+      "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00129",
+      "producer": "CreateL",
+      "consumer": "SetupLakitu",
+      "storage": "Enemy_State/Enemy_ID selected inactive slot",
+      "feasiblePath": "An inactive slot is cleared and assigned Lakitu ID before SetupLakitu initializes its movement and box fields.",
+      "status": "needs-evidence",
+      "currentCounterpart": "selected slot writes before mysmb_enemy_setup_lakitu",
+      "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00130",
+      "producer": "SetupLakitu",
+      "consumer": "CreateL",
+      "storage": "LakituReappearTimer and initialized Lakitu actor state",
+      "feasiblePath": "After setup returns, CreateL passes the same slot to PutAtRightExtent for final positioning and activation.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_setup_lakitu followed by mysmb_enemy_put_at_right_extent",
+      "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00131",
+      "producer": "CreateSpiny",
+      "consumer": "SetSpSpd",
+      "storage": "copied Lakitu coordinates and computed difference scratch",
+      "feasiblePath": "The source copies Lakitu page/X/Y and selects its random adjustment before entering the common Spiny box/state tail.",
+      "status": "needs-evidence",
+      "currentCounterpart": "Lakitu coordinate copies and shared Spiny-tail call in mysmb_enemy_init_lakitu_spiny_frenzy",
+      "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -14304,161 +14360,209 @@
       "label": "InitLakitu",
       "asmLine": 8279,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Branches to erase the Lakitu only when EnemyFrenzyBuffer is occupied; otherwise falls through to setup."
     },
     {
       "label": "SetupLakitu",
       "asmLine": 8283,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears LakituReappearTimer, calls zero-speed horizontal/flying setup, then tail-selects the box-only tall setup."
     },
     {
       "label": "KillLakitu",
       "asmLine": 8289,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to EraseEnemyObject without additional writes."
     },
     {
       "label": "PRDiffAdjustData",
       "asmLine": 8295,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the twelve exact random difference-adjustment bytes consumed in three strides of four."
     },
     {
       "label": "LakituAndSpinyHandler",
       "asmLine": 8300,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates on frenzy timer and controller slot, arms timer $80, then reverse-searches Lakitu or begins reappearance handling."
     },
     {
       "label": "ChkLak",
       "asmLine": 8308,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Searches slots four down to zero for Lakitu; without one it increments the reappearance counter and begins inactive-slot search only from seven."
     },
     {
       "label": "ChkNoEn",
       "asmLine": 8318,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Searches slots four down to zero for an inactive flag and reaches the no-slot return only after the loop exhausts."
     },
     {
       "label": "CreateL",
       "asmLine": 8323,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes the selected Lakitu slot, calls setup and right-extent positioning, then restores the caller object offset."
     },
     {
       "label": "RetEOfs",
       "asmLine": 8330,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset after Lakitu creation before the common return."
     },
     {
       "label": "ExLSHand",
       "asmLine": 8331,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from every timer, controller-slot, availability and player/state gate."
     },
     {
       "label": "CreateSpiny",
       "asmLine": 8335,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates player Y and Lakitu normal state, copies Lakitu coordinates, seeds the three adjustment bytes and begins velocity selection."
     },
     {
       "label": "DifLoop",
       "asmLine": 8355,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies one value from each four-byte PRDiffAdjustData band into scratch $03/$02/$01, calls PlayerLakituDiff and selects speed sign path."
     },
     {
       "label": "UsePosv",
       "asmLine": 8376,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores the selected signed difference to A before the common Spiny setup entry."
     },
     {
       "label": "SetSpSpd",
       "asmLine": 8377,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls SmallBBox, intentionally loses the computed A value to the common tail, writes zero X speed and selects right-moving direction."
     },
     {
       "label": "SpinyRte",
       "asmLine": 8383,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes Spiny direction, upward Y speed, active flag and egg state five in source order."
     },
     {
       "label": "ChpChpEx",
       "asmLine": 8390,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
+      "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after a completed Spiny egg setup or upstream early exit."
     },
     {
       "label": "FirebarSpinSpdData",
@@ -49188,10 +49292,13 @@
       "instruction": "bne",
       "id": "control-01522",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitLakitu -> KillLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "InitLakitu",
@@ -49201,10 +49308,13 @@
       "instruction": "bne",
       "id": "control-01523",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitLakitu -> SetupLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "SetupLakitu",
@@ -49214,10 +49324,13 @@
       "instruction": "jsr",
       "id": "control-01524",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetupLakitu -> InitHorizFlySwimEnemy with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "SetupLakitu",
@@ -49227,10 +49340,13 @@
       "instruction": "jmp",
       "id": "control-01525",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation SetupLakitu -> TallBBox2 with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "KillLakitu",
@@ -49240,10 +49356,13 @@
       "instruction": "jmp",
       "id": "control-01526",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation KillLakitu -> EraseEnemyObject with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "LakituAndSpinyHandler",
@@ -49253,10 +49372,13 @@
       "instruction": "bne",
       "id": "control-01527",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LakituAndSpinyHandler -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "LakituAndSpinyHandler",
@@ -49266,10 +49388,13 @@
       "instruction": "bcs",
       "id": "control-01528",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LakituAndSpinyHandler -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "LakituAndSpinyHandler",
@@ -49279,10 +49404,13 @@
       "instruction": "ldy",
       "id": "control-01529",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LakituAndSpinyHandler -> ChkLak with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "ChkLak",
@@ -49292,10 +49420,13 @@
       "instruction": "beq",
       "id": "control-01530",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLak -> CreateSpiny with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "ChkLak",
@@ -49305,10 +49436,13 @@
       "instruction": "bpl",
       "id": "control-01531",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLak -> ChkLak with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "ChkLak",
@@ -49318,10 +49452,13 @@
       "instruction": "bcc",
       "id": "control-01532",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkLak -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "ChkLak",
@@ -49331,10 +49468,13 @@
       "instruction": "ldx",
       "id": "control-01533",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkLak -> ChkNoEn with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "ChkNoEn",
@@ -49344,10 +49484,13 @@
       "instruction": "beq",
       "id": "control-01534",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkNoEn -> CreateL with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "ChkNoEn",
@@ -49357,10 +49500,13 @@
       "instruction": "bpl",
       "id": "control-01535",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkNoEn -> ChkNoEn with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "ChkNoEn",
@@ -49370,10 +49516,13 @@
       "instruction": "bmi",
       "id": "control-01536",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkNoEn -> RetEOfs with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "ChkNoEn",
@@ -49383,10 +49532,13 @@
       "instruction": "bmi",
       "id": "control-01537",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false branch relation in current extracted graph; shared C takes the only feasible source path",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After ChkNoEn decrements an active slot, BPL has already taken every nonnegative case back to ChkNoEn; reaching BMI requires X=$ff, so the sequential fall-through to CreateL is infeasible."
     },
     {
       "from": "CreateL",
@@ -49396,10 +49548,13 @@
       "instruction": "jsr",
       "id": "control-01538",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation CreateL -> SetupLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "CreateL",
@@ -49409,10 +49564,13 @@
       "instruction": "jsr",
       "id": "control-01539",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation CreateL -> PutAtRightExtent with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "CreateL",
@@ -49422,10 +49580,13 @@
       "instruction": "jsr",
       "id": "control-01540",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CreateL -> RetEOfs with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "RetEOfs",
@@ -49435,10 +49596,13 @@
       "instruction": "ldx",
       "id": "control-01541",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RetEOfs -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "CreateSpiny",
@@ -49448,10 +49612,13 @@
       "instruction": "bcc",
       "id": "control-01542",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CreateSpiny -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "CreateSpiny",
@@ -49461,10 +49628,13 @@
       "instruction": "bne",
       "id": "control-01543",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CreateSpiny -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "CreateSpiny",
@@ -49474,10 +49644,13 @@
       "instruction": "ldx",
       "id": "control-01544",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CreateSpiny -> DifLoop with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "DifLoop",
@@ -49487,10 +49660,13 @@
       "instruction": "bpl",
       "id": "control-01545",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DifLoop -> DifLoop with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "DifLoop",
@@ -49500,10 +49676,13 @@
       "instruction": "jsr",
       "id": "control-01546",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DifLoop -> PlayerLakituDiff with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "DifLoop",
@@ -49513,10 +49692,13 @@
       "instruction": "bcs",
       "id": "control-01547",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DifLoop -> SetSpSpd with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "DifLoop",
@@ -49526,10 +49708,13 @@
       "instruction": "beq",
       "id": "control-01548",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DifLoop -> UsePosv with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "DifLoop",
@@ -49539,10 +49724,13 @@
       "instruction": "iny",
       "id": "control-01549",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DifLoop -> UsePosv with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "UsePosv",
@@ -49552,10 +49740,13 @@
       "instruction": "tya",
       "id": "control-01550",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation UsePosv -> SetSpSpd with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "SetSpSpd",
@@ -49565,10 +49756,13 @@
       "instruction": "jsr",
       "id": "control-01551",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetSpSpd -> SmallBBox with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "SetSpSpd",
@@ -49578,10 +49772,13 @@
       "instruction": "bmi",
       "id": "control-01552",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false branch relation in current extracted graph; shared C takes the only feasible source path",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "SmallBBox returns through InitVStf with A=$00. SetSpSpd then executes CMP #$00, so BMI SpinyRte is infeasible; the real path decrements Y and falls through to SpinyRte."
     },
     {
       "from": "SetSpSpd",
@@ -49591,10 +49788,13 @@
       "instruction": "dey",
       "id": "control-01553",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetSpSpd -> SpinyRte with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "SpinyRte",
@@ -49604,10 +49804,13 @@
       "instruction": "sta",
       "id": "control-01554",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SpinyRte -> ChpChpEx with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "InitLongFirebar",
@@ -49656,10 +49859,13 @@
       "instruction": "bne",
       "id": "control-01558",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitFlyingCheepCheep -> ChpChpEx with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "InitFlyingCheepCheep",
@@ -49708,10 +49914,13 @@
       "instruction": "bcs",
       "id": "control-01562",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MaxCC -> ChpChpEx with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "MaxCC",
@@ -79163,12 +79372,12 @@
       "id": "control-03773",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitHorizFlySwimEnemy -> SetupLakitu with its mode/slot predicate, exact write ordering and call/tail/return handoff."
+      "semanticContract": "Preserves original return relation InitHorizFlySwimEnemy -> SetupLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "SetupLakitu",
@@ -79178,10 +79387,13 @@
       "instruction": "rts/rti",
       "id": "control-03774",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetupLakitu -> CreateL with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "PutAtRightExtent",
@@ -79191,10 +79403,13 @@
       "instruction": "rts/rti",
       "id": "control-03775",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PutAtRightExtent -> CreateL with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "PlayerLakituDiff",
@@ -79204,10 +79419,13 @@
       "instruction": "rts/rti",
       "id": "control-03776",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerLakituDiff -> DifLoop with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "SmallBBox",
@@ -79218,12 +79436,12 @@
       "id": "control-03777",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SmallBBox -> SetSpSpd with its mode/slot predicate, exact write ordering and call/tail/return handoff."
+      "semanticContract": "Preserves original return relation SmallBBox -> SetSpSpd with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "DuplicateEnemyObj",
@@ -85718,12 +85936,12 @@
       "id": "control-04232",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitLakitu with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "InitEnemyRoutines",
@@ -86363,10 +86581,13 @@
       "selector": 0,
       "id": "control-04270",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> LakituAndSpinyHandler with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
     },
     {
       "from": "InitEnemyFrenzy",

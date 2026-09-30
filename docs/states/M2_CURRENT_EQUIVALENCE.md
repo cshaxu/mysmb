@@ -887,3 +887,21 @@ that not-taken path impossible. This is an extractor/registry repair
 candidate, not a shared-C game-logic defect. All other entries remain
 `needs-evidence` pending controlled original-ROM/x86/x64 routes for each
 mode table, direct target, common-tail and persistent-state consumer path.
+
+
+### Cohort I — B14l Lakitu/Spiny initializer and frenzy integration
+
+`InitLakitu` through `ChpChpEx` now has sixteen node contracts, including the
+reverse Lakitu and free-slot searches, timer and state gates, three-band random
+adjustment copy, intentional loss of the computed speed through `SmallBBox`,
+and final egg activation. The integration pass records every loop, early exit,
+setup/position call, dispatch and return relation plus four feasible RAM/table
+handoffs. Shared C is statically aligned with those source semantics.
+
+Two extracted graph edges are impossible source paths: `control-01537` is a
+sequential fall-through after the exhausted-slot `BMI`, and `control-01552` is
+a negative branch after `SmallBBox` has returned A=$00. They are graph-ledger
+mismatches in an unnumbered governance candidate, not C game-logic defects.
+All other entries remain `needs-evidence` pending controlled original-ROM/x86/x64
+routes for timer gates, both searches, reappearance, Spiny spawn/sign paths
+and egg activation.
