@@ -32,10 +32,12 @@ not own game logic.
 ## Current S5 Finding
 
 The prior S5 native matrix has x64 and x86 at 218 / 218 and owner-local area
-routing passing on both widths. P17 now also repairs the block-replacement
-high-row VRAM route: all 32 original snapshots match on each width, including
-the twelve former `$0301/$0306` differences. Focused core and replacement
-tests pass, and the OpenNT DOS16 link is current. The final full matrix must
+routing passing on both widths. P17 repairs the block-replacement high-row
+VRAM route: all 32 original snapshots match on each width, including the
+twelve former `$0301/$0306` differences. P18 independently revalidates the
+former jumpspring screen-origin concern through `JumpspringHandler` and the
+shared `OffscreenBoundsCheck`: a page-zero jumpspring remains live against the
+ROM-wrapped `$ff:$b8` left boundary on x86 and x64. The final full matrix must
 be rerun after the remaining shared-core repairs. S5 and M2 remain open because
 the review ledger still contains independently recorded original-ROM
 discrepancies; DOS resource binding is a separate M3 presentation delivery

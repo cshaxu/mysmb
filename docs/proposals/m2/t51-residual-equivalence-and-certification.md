@@ -435,6 +435,26 @@ contains independently recorded original-ROM discrepancies and the DOS16
 resource-binding gap. Passing a project-owned regression suite does not
 replace their source-route evidence or establish DOS16 playability.
 
+### S5 P18: jumpspring screen-origin offscreen revalidation
+
+This P closes no inventory node and changes no shared game behavior. It
+rechecks the historical T30/S7 report that a jumpspring could be erased before
+area creation near screen origin. The current shared `OffscreenBoundsCheck`
+already carries the ROM's byte-wise `CPY`, `ADC`, and `SBC` results: for
+object `$32`, `ScreenLeft = $00:$00` becomes the left boundary `$ff:$b8`.
+The original page-zero spring position is therefore inside the source range;
+the right-side object exception is not used to hide an erroneous left erase.
+
+`mysmb.jumpspring-origin-offscreen` enters the real
+`JumpspringHandler -> OffscreenBoundsCheck` sequence with that boundary. It
+asserts no erasure, preserves the object flag, and checks the original `$00`
+through `$03` scratch boundary bytes. The new x86 and x64 checks each pass;
+the exhaustive shared offscreen suite also passes 524,288 cases on each
+width. This removes the stale pre-T41 finding without granting node credit.
+No DOS-specific or platform source changed. The current three delivery
+artifacts remain P17's validated outputs while the DOS16 resource-binding
+requirement remains a separate M3 concern.
+
 ### S5 P9: historical-debt source-route adjudication
 
 S5 P9 audits four still-open ledger rows against their later, source-order
