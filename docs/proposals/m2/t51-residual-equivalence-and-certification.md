@@ -425,6 +425,30 @@ governance; delivery artifacts remain hash-verified as the P17 set:
 `mysmb32.exe` `0E7039F85B097899184561530CEA130E4508E1F1A9FAFD59DA9F8B50C213E65F`,
 and `mysmb64.exe` `855F7E7607B0AEBAC7F2BA5D39E540205B98AD0F6DFC96A6F18B2B13B2481432`.
 
+### S5 P23: restore NMI RTI PPU control
+
+This shared-core repair restores the final `NonMaskableInterrupt` physical
+`$2000` write. The ROM saves its d7-cleared control mirror after scroll setup,
+runs `OperModeExecutionTree`, then executes `PLA`, `ORA #$80`, and `STA
+$2000`. Mode code may update the RAM mirror for the next NMI, but cannot leave
+the current frame's physical PPU control at that new mirror. The C root had
+omitted this final restoration, allowing a mode-tree name-table write to leave
+the visible control at `$10` instead of `$90`.
+
+The repair keeps this state decision in `src/game/frame_root.c`, shared by
+Win32 x86/x64 and DOS16. Fresh owner-local original cold-start replay now
+matches the PPU-control scalar at the historical Start samples 1/202 and idle
+sample 1 on both native widths. The remaining differences in the wider old
+title route occur before this NMI tail and are retained separately for their
+audio/title owners; no unrelated output is treated as resolved here.
+
+Operational verification uses current x86/x64 NMI-parent, boot-NMI and frame
+snapshot checks, platform purity, and an OpenNT DOS16 compile/link. Refreshed
+owner-authorized artifacts are `mysmb16.exe`
+`40F217DAAFC549E6F32E1B1B73F04CC749CC6E4B137612A19276D6836A60E0E7`,
+`mysmb32.exe` `5DB4379CDE428FA4356F1FD1D17FC2FEAA8089E3AB29731AC196A5331E7C79C6`,
+and `mysmb64.exe` `FD3D1D06EDA57B33F54B1007C6CFF422D84DA052A18E52B626EE058144D4D963`.
+
 ### S5 P16: score and coin scratch-return repair
 
 S5 P16 repairs the T37 S4 score/coin scratch discrepancy in the shared game

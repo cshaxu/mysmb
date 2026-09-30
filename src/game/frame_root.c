@@ -57,6 +57,17 @@ static const mysmb_u8 mysmb_vram_address_low[19] = {
 };
 static void mysmb_frame_root_commit_scene_scroll(struct mysmb_game *game);
 
+/* ROM NonMaskableInterrupt saves the d7-cleared $2000 mirror immediately
+ * before OperModeExecutionTree, then restores that saved value with d7 set
+ * at RTI.  Mode code may change the mirror for the following NMI, but it
+ * cannot change the physical control register of the current frame. */
+static void mysmb_frame_root_restore_nmi_control(struct mysmb_game *game,
+                                                 mysmb_u8 saved_control)
+{
+    game->visible_ppu_control_0 = (mysmb_u8)(saved_control | 0x80U);
+    game->visible_ppu_name_table = (mysmb_u8)(saved_control & 3U);
+}
+
 static const mysmb_u8 mysmb_vram_address_high[19] = {
     0x03U, 0x8cU, 0x8cU, 0x8cU, 0x8dU, 0x03U, 0x03U, 0x03U, 0x8dU,
     0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU,
@@ -183,10 +194,14 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     struct mysmb_area_source area_source;
     mysmb_u8 paused;
     mysmb_u8 run_title_demo;
+    mysmb_u8 saved_control;
 
     paused = mysmb_frame_root_begin(game, input, &mode_before, &task_before);
+    /* This is the source PHA after the scroll register writes. */
+    saved_control = game->ppu_control_0;
     run_title_demo = 0U;
     if (paused != 0U) {
+        mysmb_frame_root_restore_nmi_control(game, saved_control);
         mysmb_frame_root_finish(game, frame);
         return;
     }
@@ -238,6 +253,8 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 6U)
             mysmb_game_reset_title(game);
     }
+    /* Source SkipMainOper: PLA / ORA #$80 / STA PPU_CTRL_REG1. */
+    mysmb_frame_root_restore_nmi_control(game, saved_control);
     mysmb_frame_root_finish(game, frame);
 }
 
