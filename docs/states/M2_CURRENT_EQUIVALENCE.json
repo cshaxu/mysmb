@@ -827,6 +827,34 @@
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00059",
+      "producer": "FrenzyIDData",
+      "consumer": "AreaFrenzy",
+      "storage": "row-13 selector minus eight to frenzy ID queue",
+      "feasiblePath": "AreaFrenzy reads one of three ID bytes, compares it against slots 4..0, then stores ID or zero to EnemyFrenzyQueue.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_frenzy",
+      "semanticContract": "The source table index, regular-slot scan order and queued value agree.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00060",
+      "producer": "CastleMetatiles",
+      "consumer": "CastleObject",
+      "storage": "castle length/row indexed grid to staged metatile column",
+      "feasiblePath": "CastleObject fixes source column by object length and walks rows in five-byte strides until the floor boundary.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:castle_metatiles in mysmb_area_apply_parser_object",
+      "semanticContract": "Grid indexing, row stride, stop row and post-column flag logic agree.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -5904,211 +5932,274 @@
       "label": "FrenzyIDData",
       "asmLine": 3629,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds flying cheep, bullet/cheep and stop-frenzy IDs in source order."
     },
     {
       "label": "AreaFrenzy",
       "asmLine": 3632,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects FrenzyIDData by row-13 selector and queues it only when absent from regular enemy slots."
     },
     {
       "label": "FreCompLoop",
       "asmLine": 3635,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Scans regular enemy IDs from slot four down through zero."
     },
     {
       "label": "ExitAFrenzy",
       "asmLine": 3640,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected ID or zero in EnemyFrenzyQueue."
     },
     {
       "label": "AreaStyleObject",
       "asmLine": 3646,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dispatches AreaStyle zero/one/two to tree ledge, mushroom ledge or bullet-bill cannon."
     },
     {
       "label": "TreeLedge",
       "asmLine": 3653,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes, continues or terminates a tree ledge and chooses under-part render behavior."
     },
     {
       "label": "MidTreeL",
       "asmLine": 3665,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes tree middle and under-part metatiles."
     },
     {
       "label": "EndTreeL",
       "asmLine": 3670,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects tree end metatile before no-under render."
     },
     {
       "label": "MushroomLedge",
       "asmLine": 3673,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes mushroom length/half length and selects its start geometry."
     },
     {
       "label": "EndMushL",
       "asmLine": 3682,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds mushroom middle/stem at center or terminal end geometry."
     },
     {
       "label": "AllUnder",
       "asmLine": 3696,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses all-way-down under-part rendering for stems."
     },
     {
       "label": "NoUnder",
       "asmLine": 3699,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses no-bottom under-part rendering for ledge ends."
     },
     {
       "label": "PulleyRopeMetatiles",
       "asmLine": 3706,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds left pulley, rope and right pulley metatiles."
     },
     {
       "label": "PulleyRopeObject",
       "asmLine": 3709,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects left/middle/right pulley geometry from large-object length state."
     },
     {
       "label": "RenderPul",
       "asmLine": 3717,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected pulley/rope metatile at staged top row."
     },
     {
       "label": "MushLExit",
       "asmLine": 3719,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common return after pulley or mushroom object work."
     },
     {
       "label": "CastleMetatiles",
       "asmLine": 3724,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the 11x5 castle metatile source grid."
     },
     {
       "label": "CastleObject",
       "asmLine": 3737,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Renders castle columns and performs post-page floor/star-flag conditions."
     },
     {
       "label": "CRendLoop",
       "asmLine": 3748,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes a castle column in five-byte vertical source strides through row ten."
     },
     {
       "label": "ChkCFloor",
       "asmLine": 3759,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects exit, floor brick or flag creation after castle column rendering."
     },
     {
       "label": "NotTall",
       "asmLine": 3772,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies tall/non-tall castle length gate before star-flag creation."
     },
     {
       "label": "PlayerStop",
@@ -31802,10 +31893,13 @@
       "instruction": "ldy",
       "id": "control-00602",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation AreaFrenzy -> FreCompLoop.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation AreaFrenzy -> FreCompLoop."
     },
     {
       "from": "FreCompLoop",
@@ -31815,10 +31909,13 @@
       "instruction": "bmi",
       "id": "control-00603",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation FreCompLoop -> ExitAFrenzy.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation FreCompLoop -> ExitAFrenzy."
     },
     {
       "from": "FreCompLoop",
@@ -31828,10 +31925,13 @@
       "instruction": "bne",
       "id": "control-00604",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation FreCompLoop -> FreCompLoop.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation FreCompLoop -> FreCompLoop."
     },
     {
       "from": "FreCompLoop",
@@ -31841,10 +31941,13 @@
       "instruction": "lda",
       "id": "control-00605",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation FreCompLoop -> ExitAFrenzy.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation FreCompLoop -> ExitAFrenzy."
     },
     {
       "from": "AreaStyleObject",
@@ -31854,10 +31957,13 @@
       "instruction": "jsr",
       "id": "control-00606",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation AreaStyleObject -> JumpEngine.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation AreaStyleObject -> JumpEngine."
     },
     {
       "from": "AreaStyleObject",
@@ -31867,10 +31973,13 @@
       "instruction": "jsr",
       "id": "control-00607",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation AreaStyleObject -> TreeLedge.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation AreaStyleObject -> TreeLedge."
     },
     {
       "from": "TreeLedge",
@@ -31880,10 +31989,13 @@
       "instruction": "jsr",
       "id": "control-00608",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation TreeLedge -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation TreeLedge -> GetLrgObjAttrib."
     },
     {
       "from": "TreeLedge",
@@ -31893,10 +32005,13 @@
       "instruction": "beq",
       "id": "control-00609",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation TreeLedge -> EndTreeL.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation TreeLedge -> EndTreeL."
     },
     {
       "from": "TreeLedge",
@@ -31906,10 +32021,13 @@
       "instruction": "bpl",
       "id": "control-00610",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation TreeLedge -> MidTreeL.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation TreeLedge -> MidTreeL."
     },
     {
       "from": "TreeLedge",
@@ -31919,10 +32037,13 @@
       "instruction": "beq",
       "id": "control-00611",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation TreeLedge -> MidTreeL.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation TreeLedge -> MidTreeL."
     },
     {
       "from": "TreeLedge",
@@ -31932,10 +32053,13 @@
       "instruction": "jmp",
       "id": "control-00612",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump relation TreeLedge -> NoUnder.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump relation TreeLedge -> NoUnder."
     },
     {
       "from": "MidTreeL",
@@ -31945,10 +32069,13 @@
       "instruction": "jmp",
       "id": "control-00613",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump relation MidTreeL -> AllUnder.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump relation MidTreeL -> AllUnder."
     },
     {
       "from": "EndTreeL",
@@ -31958,10 +32085,13 @@
       "instruction": "jmp",
       "id": "control-00614",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump relation EndTreeL -> NoUnder.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump relation EndTreeL -> NoUnder."
     },
     {
       "from": "MushroomLedge",
@@ -31971,10 +32101,13 @@
       "instruction": "jsr",
       "id": "control-00615",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation MushroomLedge -> ChkLrgObjLength.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation MushroomLedge -> ChkLrgObjLength."
     },
     {
       "from": "MushroomLedge",
@@ -31984,10 +32117,13 @@
       "instruction": "bcc",
       "id": "control-00616",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation MushroomLedge -> EndMushL.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation MushroomLedge -> EndMushL."
     },
     {
       "from": "MushroomLedge",
@@ -31997,10 +32133,13 @@
       "instruction": "jmp",
       "id": "control-00617",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump relation MushroomLedge -> NoUnder.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump relation MushroomLedge -> NoUnder."
     },
     {
       "from": "EndMushL",
@@ -32010,10 +32149,13 @@
       "instruction": "beq",
       "id": "control-00618",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation EndMushL -> NoUnder.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation EndMushL -> NoUnder."
     },
     {
       "from": "EndMushL",
@@ -32023,10 +32165,13 @@
       "instruction": "bne",
       "id": "control-00619",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation EndMushL -> MushLExit.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation EndMushL -> MushLExit."
     },
     {
       "from": "EndMushL",
@@ -32036,10 +32181,13 @@
       "instruction": "lda",
       "id": "control-00620",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation EndMushL -> AllUnder.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation EndMushL -> AllUnder."
     },
     {
       "from": "AllUnder",
@@ -32049,10 +32197,13 @@
       "instruction": "jmp",
       "id": "control-00621",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump relation AllUnder -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump relation AllUnder -> RenderUnderPart."
     },
     {
       "from": "NoUnder",
@@ -32062,10 +32213,13 @@
       "instruction": "jmp",
       "id": "control-00622",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump relation NoUnder -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump relation NoUnder -> RenderUnderPart."
     },
     {
       "from": "PulleyRopeObject",
@@ -32075,10 +32229,13 @@
       "instruction": "jsr",
       "id": "control-00623",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation PulleyRopeObject -> ChkLrgObjLength.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation PulleyRopeObject -> ChkLrgObjLength."
     },
     {
       "from": "PulleyRopeObject",
@@ -32088,10 +32245,13 @@
       "instruction": "bcs",
       "id": "control-00624",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation PulleyRopeObject -> RenderPul.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation PulleyRopeObject -> RenderPul."
     },
     {
       "from": "PulleyRopeObject",
@@ -32101,10 +32261,13 @@
       "instruction": "bne",
       "id": "control-00625",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation PulleyRopeObject -> RenderPul.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation PulleyRopeObject -> RenderPul."
     },
     {
       "from": "PulleyRopeObject",
@@ -32114,10 +32277,13 @@
       "instruction": "iny",
       "id": "control-00626",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation PulleyRopeObject -> RenderPul.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation PulleyRopeObject -> RenderPul."
     },
     {
       "from": "RenderPul",
@@ -32127,10 +32293,13 @@
       "instruction": "sta",
       "id": "control-00627",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation RenderPul -> MushLExit.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation RenderPul -> MushLExit."
     },
     {
       "from": "CastleObject",
@@ -32140,10 +32309,13 @@
       "instruction": "jsr",
       "id": "control-00628",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation CastleObject -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation CastleObject -> GetLrgObjAttrib."
     },
     {
       "from": "CastleObject",
@@ -32153,10 +32325,13 @@
       "instruction": "jsr",
       "id": "control-00629",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation CastleObject -> ChkLrgObjFixedLength.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation CastleObject -> ChkLrgObjFixedLength."
     },
     {
       "from": "CastleObject",
@@ -32166,10 +32341,13 @@
       "instruction": "sta",
       "id": "control-00630",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation CastleObject -> CRendLoop.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation CastleObject -> CRendLoop."
     },
     {
       "from": "CRendLoop",
@@ -32179,10 +32357,13 @@
       "instruction": "beq",
       "id": "control-00631",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation CRendLoop -> ChkCFloor.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation CRendLoop -> ChkCFloor."
     },
     {
       "from": "CRendLoop",
@@ -32192,10 +32373,13 @@
       "instruction": "dec",
       "id": "control-00632",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation CRendLoop -> ChkCFloor.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation CRendLoop -> ChkCFloor."
     },
     {
       "from": "ChkCFloor",
@@ -32205,10 +32389,13 @@
       "instruction": "bne",
       "id": "control-00633",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> CRendLoop.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation ChkCFloor -> CRendLoop."
     },
     {
       "from": "ChkCFloor",
@@ -32218,10 +32405,13 @@
       "instruction": "beq",
       "id": "control-00634",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> ExitCastle.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation ChkCFloor -> ExitCastle."
     },
     {
       "from": "ChkCFloor",
@@ -32231,10 +32421,13 @@
       "instruction": "beq",
       "id": "control-00635",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> PlayerStop.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation ChkCFloor -> PlayerStop."
     },
     {
       "from": "ChkCFloor",
@@ -32244,10 +32437,13 @@
       "instruction": "bne",
       "id": "control-00636",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> NotTall.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation ChkCFloor -> NotTall."
     },
     {
       "from": "ChkCFloor",
@@ -32257,10 +32453,13 @@
       "instruction": "beq",
       "id": "control-00637",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> PlayerStop.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation ChkCFloor -> PlayerStop."
     },
     {
       "from": "ChkCFloor",
@@ -32270,10 +32469,13 @@
       "instruction": "beq",
       "id": "control-00638",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation ChkCFloor -> NotTall.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation ChkCFloor -> NotTall."
     },
     {
       "from": "NotTall",
@@ -32283,10 +32485,13 @@
       "instruction": "bne",
       "id": "control-00639",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation NotTall -> ExitCastle.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation NotTall -> ExitCastle."
     },
     {
       "from": "NotTall",
@@ -32296,10 +32501,13 @@
       "instruction": "jsr",
       "id": "control-00640",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation NotTall -> GetAreaObjXPosition.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation NotTall -> GetAreaObjXPosition."
     },
     {
       "from": "NotTall",
@@ -32309,10 +32517,13 @@
       "instruction": "jsr",
       "id": "control-00641",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation NotTall -> FindEmptyEnemySlot.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation NotTall -> FindEmptyEnemySlot."
     },
     {
       "from": "PlayerStop",
@@ -78934,10 +79145,13 @@
       "selector": 0,
       "id": "control-04182",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> TreeLedge selector 0.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> TreeLedge selector 0."
     },
     {
       "from": "AreaStyleObject",
@@ -78948,10 +79162,13 @@
       "selector": 1,
       "id": "control-04183",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> MushroomLedge selector 1.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> MushroomLedge selector 1."
     },
     {
       "from": "AreaStyleObject",
@@ -78962,10 +79179,13 @@
       "selector": 2,
       "id": "control-04184",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> BulletBillCannon selector 2.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> BulletBillCannon selector 2."
     },
     {
       "from": "GameMode",

@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 324 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 345 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,621 | Not yet processed by this re-audit. |
+| Unclassified | 1,600 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 670 control; 54 material RAM/table |
+| Needs evidence | 713 control; 56 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,586 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,543 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -553,3 +553,14 @@ slots. The normalized-ID material handoff to the object-family selector is
 registered independently. No static discrepancy was found. These 15 nodes,
 69 relations and the data path remain `needs-evidence` until routes exercise
 every object family, warp variant, placement gate and enemy-slot outcome.
+
+### Cohort C — B10h frenzy, style ledges, pulleys and castle construction
+
+`FrenzyIDData` through `NotTall` (lines 3629–3780) now have individual
+contracts and 43 control/selector relations. The audit covers the exact
+regular-slot 4→0 frenzy scan, AreaStyle's three-way selector, tree/mushroom
+length states, pulley ends, castle grid row stride and star-flag gate. Two
+material paths record frenzy table consumption and castle grid use. No static
+discrepancy was found. These 21 nodes, 43 relations and both data paths remain
+`needs-evidence` pending ROM/x86/x64 routes for each style, frenzy occupancy,
+pulley phase and castle-column outcome.
