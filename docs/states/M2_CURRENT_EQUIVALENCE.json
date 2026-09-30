@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 109,
+    "enumeratedCount": 112,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1539,6 +1539,48 @@
       "semanticContract": "Preserves source table/result production, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00110",
+      "producer": "BrickShatter",
+      "consumer": "BlockObjMT_Updater",
+      "storage": "Block_RepFlag / Block_Metatile replacement handoff",
+      "feasiblePath": "BrickShatter sets the slot replacement flag; a later BlockObjMT_Updater turn restores the buffered metatile only when VRAM Buffer1 is idle.",
+      "status": "needs-evidence",
+      "currentCounterpart": "block replacement flag and slot metatile handoff",
+      "semanticContract": "Preserves source producer write, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00111",
+      "producer": "SpawnBrickChunks",
+      "consumer": "BlockObjectsCore",
+      "storage": "paired block chunk position/speed/force arrays",
+      "feasiblePath": "SpawnBrickChunks initializes the two paired SprObject records; BlockObjectsCore advances both in the chunk-state path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "paired chunk arrays consumed by lifetime core",
+      "semanticContract": "Preserves source producer write, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00112",
+      "producer": "BouncingBlockHandler",
+      "consumer": "BlockObjMT_Updater",
+      "storage": "Block_RepFlag after bounce Y-low wrap",
+      "feasiblePath": "BouncingBlockHandler sets replacement flag when the source Y-low threshold is crossed; the updater consumes it on an idle buffer turn.",
+      "status": "needs-evidence",
+      "currentCounterpart": "bounce replacement flag consumed by updater",
+      "semanticContract": "Preserves source producer write, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -12726,121 +12768,157 @@
       "label": "BrickShatter",
       "asmLine": 7404,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Checks the cell above, sets immediate replacement/noise, creates chunks, forces player Y speed, writes 50-point modifier, then adds score."
     },
     {
       "label": "CheckTopOfBlock",
       "asmLine": 7420,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For a nonzero buffer row, probes the cell one row above; only a normal coin is cleared, rendered blank and converted to a jump coin."
     },
     {
       "label": "TopEx",
       "asmLine": 7437,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after a top-cell boundary, non-coin, or completed coin path."
     },
     {
       "label": "SpawnBrickChunks",
       "asmLine": 7441,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes paired chunk coordinates, speeds and forces, retaining the original omission of chunk Y-high writes."
     },
     {
       "label": "BlockObjectsCore",
       "asmLine": 7468,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads block state, separates bouncing blocks from paired brick chunks, preserves child order and source low-nibble lifetime decisions."
     },
     {
       "label": "ChkTop",
       "asmLine": 7500,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies the paired-chunk bottom/top screen tests and selects preserved state versus kill."
     },
     {
       "label": "BouncingBlockHandler",
       "asmLine": 7506,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies block gravity, relative/offscreen/graphics tail, then replaces/kills once the Y low nibble wraps below five."
     },
     {
       "label": "KillBlock",
       "asmLine": 7519,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads zero state before the common block-state store."
     },
     {
       "label": "UpdSte",
       "asmLine": 7520,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the selected block state and returns."
     },
     {
       "label": "BlockObjMT_Updater",
       "asmLine": 7527,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes block slots one then zero; only when VRAM Buffer1 is free and replace flag is set does it restore buffer tile and submit replacement graphics."
     },
     {
       "label": "UpdateLoop",
       "asmLine": 7529,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Owns one selected slot, both skip gates, block-buffer pointer restoration, replacement call and replace-flag clear."
     },
     {
       "label": "NextBUpd",
       "asmLine": 7546,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared blocks, area, world and OAM core",
+      "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements the two-slot updater loop and returns after slot zero."
     },
     {
       "label": "MoveEnemyHorizontally",
@@ -45862,10 +45940,13 @@
       "instruction": "jsr",
       "id": "control-01349",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BrickShatter -> CheckTopOfBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "BrickShatter",
@@ -45875,10 +45956,13 @@
       "instruction": "jsr",
       "id": "control-01350",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BrickShatter -> SpawnBrickChunks with source predicate, ordering and state handoff."
     },
     {
       "from": "BrickShatter",
@@ -45888,10 +45972,13 @@
       "instruction": "jsr",
       "id": "control-01351",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BrickShatter -> AddToScore with source predicate, ordering and state handoff."
     },
     {
       "from": "CheckTopOfBlock",
@@ -45901,10 +45988,13 @@
       "instruction": "beq",
       "id": "control-01352",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckTopOfBlock -> TopEx with source predicate, ordering and state handoff."
     },
     {
       "from": "CheckTopOfBlock",
@@ -45914,10 +46004,13 @@
       "instruction": "bne",
       "id": "control-01353",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckTopOfBlock -> TopEx with source predicate, ordering and state handoff."
     },
     {
       "from": "CheckTopOfBlock",
@@ -45927,10 +46020,13 @@
       "instruction": "jsr",
       "id": "control-01354",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation CheckTopOfBlock -> RemoveCoin_Axe with source predicate, ordering and state handoff."
     },
     {
       "from": "CheckTopOfBlock",
@@ -45940,10 +46036,13 @@
       "instruction": "jsr",
       "id": "control-01355",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation CheckTopOfBlock -> SetupJumpCoin with source predicate, ordering and state handoff."
     },
     {
       "from": "CheckTopOfBlock",
@@ -45953,10 +46052,13 @@
       "instruction": "jsr",
       "id": "control-01356",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckTopOfBlock -> TopEx with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -45966,10 +46068,13 @@
       "instruction": "beq",
       "id": "control-01357",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BlockObjectsCore -> UpdSte with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -45979,10 +46084,13 @@
       "instruction": "beq",
       "id": "control-01358",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BlockObjectsCore -> BouncingBlockHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -45992,10 +46100,13 @@
       "instruction": "jsr",
       "id": "control-01359",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlockObjectsCore -> ImposeGravityBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46005,10 +46116,13 @@
       "instruction": "jsr",
       "id": "control-01360",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlockObjectsCore -> MoveObjectHorizontally with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46018,10 +46132,13 @@
       "instruction": "jsr",
       "id": "control-01361",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlockObjectsCore -> ImposeGravityBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46031,10 +46148,13 @@
       "instruction": "jsr",
       "id": "control-01362",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlockObjectsCore -> MoveObjectHorizontally with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46044,10 +46164,13 @@
       "instruction": "jsr",
       "id": "control-01363",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlockObjectsCore -> RelativeBlockPosition with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46057,10 +46180,13 @@
       "instruction": "jsr",
       "id": "control-01364",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlockObjectsCore -> GetBlockOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46070,10 +46196,13 @@
       "instruction": "jsr",
       "id": "control-01365",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlockObjectsCore -> DrawBrickChunks with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46083,10 +46212,13 @@
       "instruction": "beq",
       "id": "control-01366",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BlockObjectsCore -> UpdSte with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46096,10 +46228,13 @@
       "instruction": "bcs",
       "id": "control-01367",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BlockObjectsCore -> ChkTop with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -46109,10 +46244,13 @@
       "instruction": "sta",
       "id": "control-01368",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BlockObjectsCore -> ChkTop with source predicate, ordering and state handoff."
     },
     {
       "from": "ChkTop",
@@ -46122,10 +46260,13 @@
       "instruction": "bcc",
       "id": "control-01369",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkTop -> UpdSte with source predicate, ordering and state handoff."
     },
     {
       "from": "ChkTop",
@@ -46135,10 +46276,13 @@
       "instruction": "bcs",
       "id": "control-01370",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkTop -> KillBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "ChkTop",
@@ -46148,10 +46292,13 @@
       "instruction": "bcs",
       "id": "control-01371",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkTop -> BouncingBlockHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "BouncingBlockHandler",
@@ -46161,10 +46308,13 @@
       "instruction": "jsr",
       "id": "control-01372",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BouncingBlockHandler -> ImposeGravityBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "BouncingBlockHandler",
@@ -46174,10 +46324,13 @@
       "instruction": "jsr",
       "id": "control-01373",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BouncingBlockHandler -> RelativeBlockPosition with source predicate, ordering and state handoff."
     },
     {
       "from": "BouncingBlockHandler",
@@ -46187,10 +46340,13 @@
       "instruction": "jsr",
       "id": "control-01374",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BouncingBlockHandler -> GetBlockOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "BouncingBlockHandler",
@@ -46200,10 +46356,13 @@
       "instruction": "jsr",
       "id": "control-01375",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BouncingBlockHandler -> DrawBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "BouncingBlockHandler",
@@ -46213,10 +46372,13 @@
       "instruction": "bcs",
       "id": "control-01376",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BouncingBlockHandler -> UpdSte with source predicate, ordering and state handoff."
     },
     {
       "from": "BouncingBlockHandler",
@@ -46226,10 +46388,13 @@
       "instruction": "sta",
       "id": "control-01377",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BouncingBlockHandler -> KillBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "KillBlock",
@@ -46239,10 +46404,13 @@
       "instruction": "lda",
       "id": "control-01378",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation KillBlock -> UpdSte with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjMT_Updater",
@@ -46252,10 +46420,13 @@
       "instruction": "ldx",
       "id": "control-01379",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BlockObjMT_Updater -> UpdateLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "UpdateLoop",
@@ -46265,10 +46436,13 @@
       "instruction": "bne",
       "id": "control-01380",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation UpdateLoop -> NextBUpd with source predicate, ordering and state handoff."
     },
     {
       "from": "UpdateLoop",
@@ -46278,10 +46452,13 @@
       "instruction": "beq",
       "id": "control-01381",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation UpdateLoop -> NextBUpd with source predicate, ordering and state handoff."
     },
     {
       "from": "UpdateLoop",
@@ -46291,10 +46468,13 @@
       "instruction": "jsr",
       "id": "control-01382",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation UpdateLoop -> ReplaceBlockMetatile with source predicate, ordering and state handoff."
     },
     {
       "from": "UpdateLoop",
@@ -46304,10 +46484,13 @@
       "instruction": "sta",
       "id": "control-01383",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation UpdateLoop -> NextBUpd with source predicate, ordering and state handoff."
     },
     {
       "from": "NextBUpd",
@@ -46317,10 +46500,13 @@
       "instruction": "bpl",
       "id": "control-01384",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation NextBUpd -> UpdateLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveEnemyHorizontally",
@@ -75779,10 +75965,13 @@
       "instruction": "rts/rti",
       "id": "control-03624",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BlockObjMT_Updater -> ProcELoop with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -75792,10 +75981,13 @@
       "instruction": "rts/rti",
       "id": "control-03625",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BlockObjectsCore -> ProcELoop with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockObjectsCore",
@@ -75805,10 +75997,13 @@
       "instruction": "rts/rti",
       "id": "control-03626",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BlockObjectsCore -> ProcELoop with source predicate, ordering and state handoff."
     },
     {
       "from": "MiscObjectsCore",
@@ -77524,12 +77719,12 @@
       "id": "control-03739",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BrickShatter -> BigBP with its predicate, ordered state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original return relation BrickShatter -> BigBP with source predicate, ordering and state handoff."
     },
     {
       "from": "BumpBlock",
@@ -77556,12 +77751,12 @@
       "id": "control-03741",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation CheckTopOfBlock -> BumpBlock with its predicate, ordered state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original return relation CheckTopOfBlock -> BumpBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "BlockBumpedChk",
@@ -77619,10 +77814,13 @@
       "instruction": "rts/rti",
       "id": "control-03745",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation CheckTopOfBlock -> BrickShatter with source predicate, ordering and state handoff."
     },
     {
       "from": "SpawnBrickChunks",
@@ -77632,10 +77830,13 @@
       "instruction": "rts/rti",
       "id": "control-03746",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SpawnBrickChunks -> BrickShatter with source predicate, ordering and state handoff."
     },
     {
       "from": "AddToScore",
@@ -77646,9 +77847,9 @@
       "id": "control-03747",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves original return relation AddToScore -> BrickShatter with source predicate, ordering and state handoff."
@@ -77661,10 +77862,13 @@
       "instruction": "rts/rti",
       "id": "control-03748",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RemoveCoin_Axe -> CheckTopOfBlock with source predicate, ordering and state handoff."
     },
     {
       "from": "SetupJumpCoin",
@@ -77675,9 +77879,9 @@
       "id": "control-03749",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves original return relation SetupJumpCoin -> CheckTopOfBlock with source predicate, ordering and state handoff."
@@ -77690,10 +77894,13 @@
       "instruction": "rts/rti",
       "id": "control-03750",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BlockObjectsCore with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -77703,10 +77910,13 @@
       "instruction": "rts/rti",
       "id": "control-03751",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> BlockObjectsCore with source predicate, ordering and state handoff."
     },
     {
       "from": "ImposeGravityBlock",
@@ -77716,10 +77926,13 @@
       "instruction": "rts/rti",
       "id": "control-03752",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BlockObjectsCore with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveObjectHorizontally",
@@ -77729,10 +77942,13 @@
       "instruction": "rts/rti",
       "id": "control-03753",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveObjectHorizontally -> BlockObjectsCore with source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeBlockPosition",
@@ -77742,10 +77958,13 @@
       "instruction": "rts/rti",
       "id": "control-03754",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeBlockPosition -> BlockObjectsCore with source predicate, ordering and state handoff."
     },
     {
       "from": "GetBlockOffscreenBits",
@@ -77755,10 +77974,13 @@
       "instruction": "rts/rti",
       "id": "control-03755",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetBlockOffscreenBits -> BlockObjectsCore with source predicate, ordering and state handoff."
     },
     {
       "from": "DrawBrickChunks",
@@ -77768,10 +77990,13 @@
       "instruction": "rts/rti",
       "id": "control-03756",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawBrickChunks -> BlockObjectsCore with source predicate, ordering and state handoff."
     },
     {
       "from": "ImposeGravityBlock",
@@ -77781,10 +78006,13 @@
       "instruction": "rts/rti",
       "id": "control-03757",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ImposeGravityBlock -> BouncingBlockHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeBlockPosition",
@@ -77794,10 +78022,13 @@
       "instruction": "rts/rti",
       "id": "control-03758",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeBlockPosition -> BouncingBlockHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "GetBlockOffscreenBits",
@@ -77807,10 +78038,13 @@
       "instruction": "rts/rti",
       "id": "control-03759",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetBlockOffscreenBits -> BouncingBlockHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "DrawBlock",
@@ -77820,10 +78054,13 @@
       "instruction": "rts/rti",
       "id": "control-03760",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawBlock -> BouncingBlockHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "ReplaceBlockMetatile",
@@ -77833,10 +78070,13 @@
       "instruction": "rts/rti",
       "id": "control-03761",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ReplaceBlockMetatile -> UpdateLoop with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveObjectHorizontally",

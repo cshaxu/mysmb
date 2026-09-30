@@ -803,3 +803,15 @@ ledger** edges are recorded as mismatches and have an unnumbered governance
 repair candidate; they are not C game-logic defects. All remaining entries
 remain `needs-evidence` pending controlled original-ROM/x86/x64 head-hit,
 brick, question, hidden, coin, vine and content-dispatch routes.
+
+
+### Cohort H — B14g brick shatter, block lifetime and replacement integration
+
+`BrickShatter` through `NextBUpd` now has twelve node contracts, fifty-eight
+control/return relations and three feasible material handoffs. The integration
+pass records the above-block coin path, paired chunk initialization, distinct
+bounce/chunk lifetime branches, high/low Y retirement predicates, and the
+two-slot replacement updater's Buffer1-idle gate. No static shared-C
+discrepancy was found. These entries remain `needs-evidence` pending
+controlled original-ROM/x86/x64 routes for top coins, broken bricks, bounce
+replacement, pair retirement and both updater slots.
