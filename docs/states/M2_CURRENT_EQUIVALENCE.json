@@ -6721,6 +6721,20 @@
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-k50-01",
+      "producer": "AreaChangeTimerData",
+      "consumer": "SetCATmr",
+      "storage": "ROM AreaChangeTimerData page index",
+      "feasiblePath": "Sideways pipe entry selects timer by ScreenLeft_PageLoc.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c terrain_byte page-selected timer",
+      "semanticContract": "Page index selects same change-area timer before entry routine transition.",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -25425,93 +25439,117 @@
       "asmLine": 12094,
       "cohort": "J",
       "status": "needs-evidence",
-      "currentOwner": "src/game/player/terrain.c and terrain children",
-      "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Checks side coin and jumpspring paths before normal-state/facing/pipe decision."
+      "semanticContract": "Routes coin/jumpspring results into normal side tile logic."
     },
     {
       "label": "ChkPBtm",
       "asmLine": 12101,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Requires normal state and right-facing direction before accepting bottom-side pipe tiles; otherwise impedes movement."
     },
     {
       "label": "PipeDwnS",
       "asmLine": 12111,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Queues pipe sound only before priority bit is already set."
     },
     {
       "label": "PlyrPipe",
       "asmLine": 12115,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets player background priority and chooses change-area timer source from X low nibble/page."
     },
     {
       "label": "SetCATmr",
       "asmLine": 12124,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads page-dependent area-change timer."
     },
     {
       "label": "ChkGERtn",
       "asmLine": 12126,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Changes to sideways-pipe entry only from permitted engine routines."
     },
     {
       "label": "StopPlayerMove",
       "asmLine": 12140,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Invokes horizontal impedance using current collision side."
     },
     {
       "label": "ExCSM",
       "asmLine": 12142,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from side metatile processing."
     },
     {
       "label": "AreaChangeTimerData",
       "asmLine": 12144,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c",
+      "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies page-zero and nonzero area-change timer values."
     },
     {
       "label": "HandleCoinMetatile",
@@ -72701,12 +72739,12 @@
       "id": "control-02506",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves side-probe call relation ContSChk → CheckForCoinMTiles with half-loop, bounds and tile ordering."
+      "semanticContract": "Preserves side-pipe/impede call relation ContSChk → CheckForCoinMTiles and source state/timer ordering."
     },
     {
       "from": "ContSChk",
@@ -72716,10 +72754,13 @@
       "instruction": "bcs",
       "id": "control-02507",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ContSChk → HandleCoinMetatile and source state/timer ordering."
     },
     {
       "from": "ContSChk",
@@ -72729,10 +72770,13 @@
       "instruction": "jsr",
       "id": "control-02508",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede call relation ContSChk → ChkJumpspringMetatiles and source state/timer ordering."
     },
     {
       "from": "ContSChk",
@@ -72742,10 +72786,13 @@
       "instruction": "bcc",
       "id": "control-02509",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ContSChk → ChkPBtm and source state/timer ordering."
     },
     {
       "from": "ContSChk",
@@ -72755,10 +72802,13 @@
       "instruction": "bne",
       "id": "control-02510",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ContSChk → ExCSM and source state/timer ordering."
     },
     {
       "from": "ContSChk",
@@ -72768,10 +72818,13 @@
       "instruction": "jmp",
       "id": "control-02511",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede jump relation ContSChk → StopPlayerMove and source state/timer ordering."
     },
     {
       "from": "ChkPBtm",
@@ -72781,10 +72834,13 @@
       "instruction": "bne",
       "id": "control-02512",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ChkPBtm → StopPlayerMove and source state/timer ordering."
     },
     {
       "from": "ChkPBtm",
@@ -72794,10 +72850,13 @@
       "instruction": "bne",
       "id": "control-02513",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ChkPBtm → StopPlayerMove and source state/timer ordering."
     },
     {
       "from": "ChkPBtm",
@@ -72807,10 +72866,13 @@
       "instruction": "beq",
       "id": "control-02514",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ChkPBtm → PipeDwnS and source state/timer ordering."
     },
     {
       "from": "ChkPBtm",
@@ -72820,10 +72882,13 @@
       "instruction": "bne",
       "id": "control-02515",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ChkPBtm → StopPlayerMove and source state/timer ordering."
     },
     {
       "from": "ChkPBtm",
@@ -72833,10 +72898,13 @@
       "instruction": "bne",
       "id": "control-02516",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede fallthrough relation ChkPBtm → PipeDwnS and source state/timer ordering."
     },
     {
       "from": "PipeDwnS",
@@ -72846,10 +72914,13 @@
       "instruction": "bne",
       "id": "control-02517",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation PipeDwnS → PlyrPipe and source state/timer ordering."
     },
     {
       "from": "PipeDwnS",
@@ -72859,10 +72930,13 @@
       "instruction": "sty",
       "id": "control-02518",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede fallthrough relation PipeDwnS → PlyrPipe and source state/timer ordering."
     },
     {
       "from": "PlyrPipe",
@@ -72872,10 +72946,13 @@
       "instruction": "beq",
       "id": "control-02519",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation PlyrPipe → ChkGERtn and source state/timer ordering."
     },
     {
       "from": "PlyrPipe",
@@ -72885,10 +72962,13 @@
       "instruction": "beq",
       "id": "control-02520",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation PlyrPipe → SetCATmr and source state/timer ordering."
     },
     {
       "from": "PlyrPipe",
@@ -72898,10 +72978,13 @@
       "instruction": "iny",
       "id": "control-02521",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede fallthrough relation PlyrPipe → SetCATmr and source state/timer ordering."
     },
     {
       "from": "SetCATmr",
@@ -72911,10 +72994,13 @@
       "instruction": "sta",
       "id": "control-02522",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede fallthrough relation SetCATmr → ChkGERtn and source state/timer ordering."
     },
     {
       "from": "ChkGERtn",
@@ -72924,10 +73010,13 @@
       "instruction": "beq",
       "id": "control-02523",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ChkGERtn → ExCSM and source state/timer ordering."
     },
     {
       "from": "ChkGERtn",
@@ -72937,10 +73026,13 @@
       "instruction": "bne",
       "id": "control-02524",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede branch relation ChkGERtn → ExCSM and source state/timer ordering."
     },
     {
       "from": "StopPlayerMove",
@@ -72950,10 +73042,13 @@
       "instruction": "jsr",
       "id": "control-02525",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede call relation StopPlayerMove → ImpedePlayerMove and source state/timer ordering."
     },
     {
       "from": "StopPlayerMove",
@@ -72963,10 +73058,13 @@
       "instruction": "jsr",
       "id": "control-02526",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede fallthrough relation StopPlayerMove → ExCSM and source state/timer ordering."
     },
     {
       "from": "HandleCoinMetatile",
@@ -95299,12 +95397,12 @@
       "id": "control-03963",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves side-probe return relation CheckForCoinMTiles → ContSChk with half-loop, bounds and tile ordering."
+      "semanticContract": "Preserves side-pipe/impede return relation CheckForCoinMTiles → ContSChk and source state/timer ordering."
     },
     {
       "from": "ChkJumpspringMetatiles",
@@ -95314,10 +95412,13 @@
       "instruction": "rts/rti",
       "id": "control-03964",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede return relation ChkJumpspringMetatiles → ContSChk and source state/timer ordering."
     },
     {
       "from": "ImpedePlayerMove",
@@ -95327,10 +95428,13 @@
       "instruction": "rts/rti",
       "id": "control-03965",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side metatile path",
+      "semanticEvidence": [
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-pipe/impede return relation ImpedePlayerMove → StopPlayerMove and source state/timer ordering."
     },
     {
       "from": "ErACM",

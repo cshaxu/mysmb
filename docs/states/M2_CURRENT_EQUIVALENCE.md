@@ -1469,3 +1469,9 @@ branches.
 - Node-semantics result: six labels moved from `unclassified` to `needs-evidence`, covering two-half probes, bounds, climb/invisible and coin/jumpspring gates.
 - Independent integration result: 28 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled side routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K50 — player side pipe and impede audit
+
+- Source range: `ContSChk` through `AreaChangeTimerData` (`SMBDIS.ASM` lines 12094–12147).
+- Node-semantics result: nine labels moved from `unclassified` to `needs-evidence`, covering side pipe entry, timer choice and movement impedance.
+- Independent integration result: 24 control relations plus one timer-table material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled side-pipe routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
