@@ -287,3 +287,12 @@ second time after `GiveOEPoints`; each decrements Y twice. Starting at `$50`,
 the correct final Y is therefore `$4c`, not the former `$4e`. Focused x86 and
 x64 tests pass after that expectation correction. S5 remains open pending the
 remaining nine cross-route failures.
+
+### S5 P3: area-entry water-bubble expectation
+
+No production source changes or node credit occur in this P. `Entrance_GameTimerSetup`
+at `$9131` calls `SetupBubble` in water areas. `SetupBubble` at `$b6f9` falls
+directly into `MoveBubl` at `$b713`: with this fixture's random selector one,
+the initial Y `$08` borrows under force `$50`, compares below `$20`, and writes
+the offscreen sentinel `$f8`. The old test expected the pre-fall-through `$08`.
+The corrected x86/x64 focused test passes; S5 remains open for eight failures.

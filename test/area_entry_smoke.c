@@ -76,7 +76,7 @@ static int test_water_entry(void)
     game.ram[0x0007U] = 1U;
     mysmb_player_initialize_entrance(&game);
     if (game.ram[0x0704U] != 1U || game.ram[0x0083U] != 3U ||
-        game.ram[0x009cU] != 0x31U || game.ram[0x00e4U] != 8U ||
+        game.ram[0x009cU] != 0x31U || game.ram[0x00e4U] != 0xf8U ||
         game.ram[0x00cbU] != 1U || game.ram[0x0792U] != 0x20U ||
         game.ram[0x000eU] != 7U) return 1;
     return 0;
