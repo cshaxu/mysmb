@@ -1424,3 +1424,8 @@ branches.
 - Node-semantics result: three labels moved from `unclassified` to `needs-evidence`, covering frame position, one-press bounce force and terminal animation lifecycle.
 - Independent integration result: 6 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K42 — FireBulletBill node audit
+
+- Source range: `FireBulletBill` (`SMBDIS.ASM` lines 8767–8772).
+- Node-semantics result: one label moved from `unclassified` to `needs-evidence`; existing incident edge contracts remain applicable. Static review found no discrepancy; controlled fire route remains required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

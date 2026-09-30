@@ -19932,11 +19932,14 @@
       "label": "FireBulletBill",
       "asmLine": 8767,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/frenzy.c",
+      "currentCounterpart": "mysmb_enemy_step_bullet_bill_cheep_frenzy land branch",
+      "semanticEvidence": [
+        "Td S9 K42 FireBulletBill node audit: SMB1 lines 8767-8772 compared with shared src/game/enemy/frenzy.c bullet-bill frenzy path; controlled original-ROM/x86/x64 fire route remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ORs blast SFX bit and assigns Bullet Bill frenzy ID before common actor setup."
     },
     {
       "label": "HandleGroupEnemies",
