@@ -5881,6 +5881,76 @@
         "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00420",
+      "producer": "EnemyGraphicsTable",
+      "consumer": "EnemyGfxHandler",
+      "storage": "ROM EnemyGraphicsTable indexed table to enemy OAM branch",
+      "feasiblePath": "The applicable enemy graphics path indexes EnemyGraphicsTable and consumes the selected byte before the next branch/OAM write.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/normal_enemy_gfx.c contiguous table binding",
+      "semanticContract": "The source index selects the corresponding EnemyGraphicsTable value with preserved adjacency semantics.",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00421",
+      "producer": "EnemyGfxTableOffsets",
+      "consumer": "EnemyGfxHandler",
+      "storage": "ROM EnemyGfxTableOffsets indexed table to enemy OAM branch",
+      "feasiblePath": "The applicable enemy graphics path indexes EnemyGfxTableOffsets and consumes the selected byte before the next branch/OAM write.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/normal_enemy_gfx.c contiguous table binding",
+      "semanticContract": "The source index selects the corresponding EnemyGfxTableOffsets value with preserved adjacency semantics.",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00422",
+      "producer": "EnemyAttributeData",
+      "consumer": "EnemyGfxHandler",
+      "storage": "ROM EnemyAttributeData indexed table to enemy OAM branch",
+      "feasiblePath": "The applicable enemy graphics path indexes EnemyAttributeData and consumes the selected byte before the next branch/OAM write.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/normal_enemy_gfx.c contiguous table binding",
+      "semanticContract": "The source index selects the corresponding EnemyAttributeData value with preserved adjacency semantics.",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00423",
+      "producer": "EnemyAnimTimingBMask",
+      "consumer": "CheckToAnimateEnemy",
+      "storage": "ROM EnemyAnimTimingBMask indexed table to enemy OAM branch",
+      "feasiblePath": "The applicable enemy graphics path indexes EnemyAnimTimingBMask and consumes the selected byte before the next branch/OAM write.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/normal_enemy_gfx.c contiguous table binding",
+      "semanticContract": "The source index selects the corresponding EnemyAnimTimingBMask value with preserved adjacency semantics.",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00424",
+      "producer": "JumpspringFrameOffsets",
+      "consumer": "EnemyGfxHandler",
+      "storage": "ROM JumpspringFrameOffsets indexed table to enemy OAM branch",
+      "feasiblePath": "The applicable enemy graphics path indexes JumpspringFrameOffsets and consumes the selected byte before the next branch/OAM write.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/normal_enemy_gfx.c contiguous table binding",
+      "semanticContract": "The source index selects the corresponding JumpspringFrameOffsets value with preserved adjacency semantics.",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -26668,51 +26738,66 @@
       "label": "EnemyGraphicsTable",
       "asmLine": 13576,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c",
+      "currentCounterpart": "mysmb_enemy_graphics_table / mysmb_enemy_graphics_offsets / mysmb_enemy_attribute_data and jumpspring frame table",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the ordered six-tile graphics rows and preserves the source contiguous read into the following offset bytes."
     },
     {
       "label": "EnemyGfxTableOffsets",
       "asmLine": 13621,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c",
+      "currentCounterpart": "mysmb_enemy_graphics_table / mysmb_enemy_graphics_offsets / mysmb_enemy_attribute_data and jumpspring frame table",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds 27 source code-to-graphics offsets and remains contiguous with attribute bytes for source indexed-overrun semantics."
     },
     {
       "label": "EnemyAttributeData",
       "asmLine": 13627,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c",
+      "currentCounterpart": "mysmb_enemy_graphics_table / mysmb_enemy_graphics_offsets / mysmb_enemy_attribute_data and jumpspring frame table",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds 27 source code-to-attribute values and remains contiguous with timing/jumpspring bytes for source indexed-overrun semantics."
     },
     {
       "label": "EnemyAnimTimingBMask",
       "asmLine": 13633,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c",
+      "currentCounterpart": "mysmb_enemy_graphics_table / mysmb_enemy_graphics_offsets / mysmb_enemy_attribute_data and jumpspring frame table",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the two enemy animation timing masks 08 and 18."
     },
     {
       "label": "JumpspringFrameOffsets",
       "asmLine": 13636,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c",
+      "currentCounterpart": "mysmb_enemy_graphics_table / mysmb_enemy_graphics_offsets / mysmb_enemy_attribute_data and jumpspring frame table",
+      "semanticEvidence": [
+        "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the five jumpspring frame offsets 18,19,1a,19,18."
     },
     {
       "label": "EnemyGfxHandler",

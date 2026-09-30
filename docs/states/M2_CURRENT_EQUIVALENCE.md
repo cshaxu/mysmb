@@ -1226,3 +1226,7 @@ branches.
 ### Cohort K — K5 power-up OAM integration
 
 `PowerUpGfxTable` through `PUpOfs` now has six node contracts, every local row-loop, type, flip, tail-jump and return relation, plus two feasible table handoffs. Static review matches all four tile sets, base attributes, two-row scratch protocol, flower/star frame palettes, star-only lower palette update, both right-side flips and the shared offscreen tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes.
+
+### Cohort K — K6 enemy graphics-table integration
+
+`EnemyGraphicsTable` through `JumpspringFrameOffsets` now has five table contracts and five feasible consumer handoffs. Static review matches the ordered tile rows, 27 offsets, 27 attributes, two animation masks and five jumpspring offsets. The C arrays deliberately preserve the source tables' contiguous indexed-overrun behavior rather than adding a clamp. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal-actor and jumpspring table routes.
