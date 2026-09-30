@@ -1059,6 +1059,17 @@ int main(int argument_count, char **arguments)
     lib_u16 sound_child_return;
     lib_u8 sound_child_stack;
     unsigned int sound_case;
+    const char *sound_helper_path;
+    unsigned char sound_helpers[128][58];
+    unsigned int sound_helper_count;
+    unsigned int sound_helper_active[9];
+    unsigned int sound_helper_record[9];
+    lib_u16 sound_helper_return[9];
+    lib_u8 sound_helper_stack[9];
+    const lib_u16 sound_helper_pc[9] = {
+        0xf381u, 0xf388u, 0xf38bu, 0xf38du, 0xf39eu,
+        0xf39fu, 0xf3a6u, 0xf3a9u, 0xf3adu
+    };
     lib_u16 control_return;
     lib_u8 control_stack;
     lib_u16 transition_entry;
@@ -1157,6 +1168,9 @@ int main(int argument_count, char **arguments)
     sound_child_return = 0u;
     sound_child_stack = 0u;
     sound_case = 0u;
+    sound_helper_path = NULL;
+    sound_helper_count = 0u;
+    memset(sound_helper_active, 0, sizeof(sound_helper_active));
     control_return = 0u;
     control_stack = 0u;
     transition_entry = 0u;
@@ -1191,12 +1205,18 @@ int main(int argument_count, char **arguments)
             sound_child_path = arguments[recorded] + 14u;
             continue;
         }
+        if (strncmp(arguments[recorded], "--sound-helper=", 15u) == 0) {
+            if (sound_helper_path != NULL ||
+                arguments[recorded][15] == '\0') return 64;
+            sound_helper_path = arguments[recorded] + 15u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--sound-case=", 13u) == 0) {
             char *end;
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 12ul) return 64;
+                value > 36ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -4984,6 +5004,48 @@ int main(int argument_count, char **arguments)
                 sprite_row_child_active = 1u;
             }
         }
+        /* T48 S2: record the original helper's real CPU entry and RTS.
+         * Nested helper labels have independent stack-derived returns. */
+        if (sound_helper_path != NULL && elapsed >= warmup_frames) {
+            unsigned int helper;
+            for (helper = 0u; helper < 9u; ++helper) {
+                if (sound_helper_active[helper] != 0u &&
+                    before_pc == sound_helper_return[helper] &&
+                    driver->machine->s ==
+                    (lib_u8)(sound_helper_stack[helper] + 2u)) {
+                    unsigned char *row =
+                        sound_helpers[sound_helper_record[helper]];
+                    memcpy(row + 30u, driver->machine->apu.registers, 24u);
+                    row[54] = driver->machine->a;
+                    row[55] = driver->machine->x;
+                    row[56] = driver->machine->y;
+                    row[57] = driver->machine->s;
+                    sound_helper_active[helper] = 0u;
+                }
+                if (before_pc == sound_helper_pc[helper] &&
+                    sound_helper_active[helper] == 0u) {
+                    unsigned char *row;
+                    lib_u8 s;
+                    if (sound_helper_count >= 128u) return 69;
+                    row = sound_helpers[sound_helper_count];
+                    row[0] = (unsigned char)(before_pc & 0xffu);
+                    row[1] = (unsigned char)(before_pc >> 8u);
+                    row[2] = driver->machine->a;
+                    row[3] = driver->machine->x;
+                    row[4] = driver->machine->y;
+                    row[5] = driver->machine->s;
+                    memcpy(row + 6u, driver->machine->apu.registers, 24u);
+                    s = driver->machine->s;
+                    sound_helper_stack[helper] = s;
+                    sound_helper_return[helper] = (lib_u16)(1u +
+                        driver->machine->ram[0x100u + (lib_u8)(s + 1u)] +
+                        256u * driver->machine->ram[0x100u +
+                                                   (lib_u8)(s + 2u)]);
+                    sound_helper_record[helper] = sound_helper_count++;
+                    sound_helper_active[helper] = 1u;
+                }
+            }
+        }
         /* T48 S1: only entry RAM is varied.  The original SoundEngine
          * executes unchanged and returns through its real stack frame. */
         if (sound_child_path != NULL && elapsed >= warmup_frames) {
@@ -5001,7 +5063,26 @@ int main(int argument_count, char **arguments)
             }
             else if (sound_child_count < 8u && before_pc == 0xf2d0u) {
                 lib_u8 *ram = driver->machine->ram;
-                if (sound_case != 0u) {
+                if (sound_case >= 13u) {
+                    ram[0x0770u] = 1u;
+                    ram[0x07c6u] = 0u;
+                    ram[0x00fau] = 0u;
+                    ram[0x07b2u] = 0u;
+                    ram[0x00f1u] = 0u;
+                    ram[0x00f2u] = 0u;
+                    ram[0x00f3u] = 0u;
+                    ram[0x00f4u] = 0u;
+                    ram[0x07b1u] = 0u;
+                    ram[0x00fbu] = sound_case >= 29u ?
+                        (lib_u8)(1u << (sound_case - 29u)) : 0u;
+                    ram[0x00fcu] = 0u;
+                    ram[0x00ffu] = sound_case <= 20u ?
+                        (lib_u8)(1u << (sound_case - 13u)) : 0u;
+                    ram[0x00feu] = sound_case >= 21u && sound_case <= 28u ?
+                        (lib_u8)(1u << (sound_case - 21u)) : 0u;
+                    ram[0x00fdu] = 0u;
+                }
+                else if (sound_case != 0u) {
                     ram[0x0770u] = 1u;
                     ram[0x07c6u] = sound_case == 1u ||
                         sound_case == 9u || sound_case == 10u ? 0u : 1u;
@@ -5526,6 +5607,25 @@ int main(int argument_count, char **arguments)
             if (fwrite(sound_children[child], 1u, 4144u, children) !=
                 4144u) ok = 0;
         if (fclose(children) != 0) ok = 0;
+        if (!ok) return 69;
+    }
+    if (sound_helper_path != NULL) {
+        FILE *helpers;
+        unsigned char header[8] = { 'M', 'S', 'A', 'H', 1u, 0u, 0u, 0u };
+        unsigned int helper;
+        int ok;
+        if (sound_helper_count == 0u || sound_helper_count > 255u)
+            return 69;
+        for (helper = 0u; helper < 9u; ++helper)
+            if (sound_helper_active[helper] != 0u) return 69;
+        header[5] = (unsigned char)sound_helper_count;
+        helpers = fopen(sound_helper_path, "wb");
+        if (helpers == NULL) return 69;
+        ok = fwrite(header, 1u, 8u, helpers) == 8u;
+        for (helper = 0u; helper < sound_helper_count; ++helper)
+            if (fwrite(sound_helpers[helper], 1u, 58u, helpers) != 58u)
+                ok = 0;
+        if (fclose(helpers) != 0) ok = 0;
         if (!ok) return 69;
     }
     if (player_action_child_path != NULL) {

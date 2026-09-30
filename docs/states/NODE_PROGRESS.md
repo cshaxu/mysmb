@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1762 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1771 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 194 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 185 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1762 / 1,992 (88.45%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1771 / 1,992 (88.91%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T48 S1 closure](../proposals/m2/t48-sound-effects-and-channel-handlers.md#s1-closure-soundengine-entry) proves 13 exact SoundEngine entry labels on 42 original calls and 84 x86/x64 comparisons, with separate three-target operational checks.
+Latest task review: [T48 S2 closure](../proposals/m2/t48-sound-effects-and-channel-handlers.md#s2-closure-apu-register-and-frequency-helpers) proves nine exact register/frequency labels on 429 original helper calls and 858 x86/x64 comparisons, including both frequency branches, with separate three-target operational checks.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1762)
+## Completed matches (1771)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1795,6 +1795,15 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15134 | `SkipSoundSubroutines` |
 | 15147 | `NoIncDAC` |
 | 15150 | `StrWave` |
+| 15155 | `Dump_Squ1_Regs` |
+| 15160 | `PlaySqu1Sfx` |
+| 15163 | `SetFreq_Squ1` |
+| 15166 | `Dump_Freq_Regs` |
+| 15174 | `NoTone` |
+| 15176 | `Dump_Sq2_Regs` |
+| 15181 | `PlaySqu2Sfx` |
+| 15184 | `SetFreq_Squ2` |
+| 15188 | `SetFreq_Tri` |
 
 ## Mapped but not yet matched (36)
 

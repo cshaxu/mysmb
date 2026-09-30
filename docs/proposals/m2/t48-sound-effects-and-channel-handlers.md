@@ -129,3 +129,91 @@ receive no S2 credit. The independent operational track runs focused
 audio and platform-purity checks, full x86/x64 regression against the
 11-failure baseline, two Windows self-tests, DOS16 MZ build, and three
 refreshed owner-requested EXEs.
+
+### S2 ROM-logic evidence
+
+The unchanged owner ROM reached all nine helper PCs after naturally
+entering `SoundEngine` from NMI. The recorder varied only sound queue
+and music selection RAM at that entry. Twenty-two retained routes
+produced **429 original helper entry/return pairs**. Both native
+widths compared the input A/X/Y, full 24-register APU image, and
+resulting A/APU output at each pair: **858 comparisons, zero
+differences**. Source inspection separately confirms no helper writes
+CPU RAM and confirms the store order shown below. The original
+`Dump_Freq_Regs` path took the nonzero frequency branch 99 times and
+the zero-low-byte `NoTone` branch six times. Refactoring the S1 pause
+tone through these helpers retained 84/84 original SoundEngine-entry
+comparisons across both widths.
+
+| Node / original PC | Hits | Original branch, read, write and native owner |
+| --- | ---: | --- |
+| `Dump_Squ1_Regs` `$f381` | 39 | Y to `$4001`, then X to `$4000`; `mysmb_audio_dump_squ1_regs`. |
+| `PlaySqu1Sfx` `$f388` | 18 | Calls square-one control writer, then square-one frequency writer; `mysmb_audio_play_squ1_sfx`. |
+| `SetFreq_Squ1` `$f38b` | 39 | Selects X=0 and falls through; `mysmb_audio_set_freq_squ1`. |
+| `Dump_Freq_Regs` `$f38d` | 105 | Y=A, reads `$ff01+Y`; zero branches to `NoTone`, otherwise writes `$4002+X`, reads `$ff00+Y`, ORs `$08`, writes `$4003+X`; `mysmb_audio_dump_freq_regs`. The shared read preserves 16-bit CPU-address wrap. |
+| `NoTone` `$f39e` | 105 | RTS without another APU write; six entries came from zero-LSB branch; zero and nonzero return-A values were compared. |
+| `Dump_Sq2_Regs` `$f39f` | 39 | X to `$4004`, then Y to `$4005`; `mysmb_audio_dump_sq2_regs`. |
+| `PlaySqu2Sfx` `$f3a6` | 18 | Calls square-two control writer, then its frequency writer; `mysmb_audio_play_sq2_sfx`. |
+| `SetFreq_Squ2` `$f3a9` | 45 | Selects X=4 and branches into shared frequency writer; `mysmb_audio_set_freq_sq2`. Return A preserves the rest/non-rest decision for its later music caller. |
+| `SetFreq_Tri` `$f3ad` | 21 | Selects X=8 and branches into shared frequency writer; `mysmb_audio_set_freq_tri`. |
+
+This certifies the helper nodes as callable shared game logic. The
+existing square-effect and music dispatch paths remain provisional;
+S3–S6 and T49 must connect their original call sites to these helpers
+and prove whole-chain state and APU output before receiving credit.
+
+### S2 closure: APU register and frequency helpers
+
+**P1 result: nine intended matches, nine actual matches, no scoped
+deferments; 1,762 → 1,771/1,992.** The nine individual dispositions
+are the nine source-PC rows above. The ROM-logic track used the
+unchanged owner ROM and real helper stack returns, with no forced CPU
+branch or substituted program data. The helper checker compared all
+24 APU registers and return A on 429 original calls in each native
+width. The S1 pause entry was independently replayed on its original
+14 routes and 42 calls per width, with no S1-owned regression.
+
+The operational track rebuilt Win32 x86/x64 and DOS16 from the shared
+C source. The DOS16 toolchain linked a valid MZ executable; both
+Windows EXEs passed `--self-test`. The final x86 and x64 CTest matrices
+each passed **222/233** with exactly the 11 pre-existing T47 failures
+and no new failure; focused `mysmb.audio-smoke` and
+`mysmb.platform-purity` passed on both widths. The three packaged
+artifacts match their built sources byte-for-byte:
+
+| Owner-requested artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `a0834c14ff5dd54c6a8d2714e36a899d56a0a3917a4309edba0b21aa4fc1bdf9` |
+| `assets/mysmb32.exe` | `50a6ec76bedbb287465942c0f4cc23eb0ec534327ad803f9acc2b4220f2a0de0` |
+| `assets/mysmb64.exe` | `9f893232f84b213d6c5f4d2b779c4d951be367a9c43beef2604c8808bb1f2a39` |
+
+The similar-issue sweep found the helper implementations and the
+frequency-table access only in shared `src/game/audio.c`; no platform
+source owns APU lookup or branch policy. Pause tone now calls the
+shared square-one helper. The remaining provisional square effects,
+music callers, and frame-wide APU behavior stay with their named
+S3–S6/T49 nodes; S2's callable-helper proof does not close them.
+
+## S3 admission: square-one effect phases
+
+S2 closed at **1,771/1,992**. S3 accepts the next 14 **open** labels
+in source order: `SwimStompEnvelopeData`, `PlayFlagpoleSlide`,
+`PlaySmallJump`, `PlayBigJump`, `JumpRegContents`, `ContinueSndJump`,
+`N2Prt`, `FPS2nd`, `DmpJpFPS`, `PlayFireballThrow`, `PlayBump`,
+`Fthrow`, `ContinueBumpThrow`, `DecJpFPS`. All 14 are intended to
+become ROM matches, for a maximum **1,785/1,992**. The slice begins
+with the original envelope data immediately after `SetFreq_Tri` and
+ends at `DecJpFPS` before S4's `Square1SfxHandler`. The shared owner
+is `src/game/audio.c`; S2's frequency helpers are admitted dependencies.
+
+The ROM-logic track enters the unchanged ROM's `SoundEngine` through
+NMI and varies only original sound queue/RAM at that entry. It covers
+small/big jump, flagpole slide, fireball throw and bump, then advances
+their original counters into later phases. It compares source PCs,
+table reads, branch decisions, RAM counters and APU writes with the
+shared C owner. The envelope data is read from the owner ROM rather
+than copied into tracked source. S4's dispatcher and effect-lifetime
+nodes remain explicit dependencies, without premature credit. The
+operational track runs focused audio and purity checks, full x86/x64
+regression against the 11-failure baseline, both Windows self-tests,
+DOS16 MZ build, and three refreshed owner-requested EXEs.

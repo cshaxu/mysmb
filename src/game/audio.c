@@ -540,21 +540,87 @@ static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
     if (index == 23U) game->apu_frame_counter = value;
 }
 
-/* PlaySqu1Sfx is a T48 S2 dependency.  This directly follows its source
- * register writes for the pause tones; S2 still owns node certification. */
+/* A frequency-table fetch is a CPU address operation, including the 16-bit
+ * wrap if a caller supplies Y=$ff. The normal table resides at $ff00. */
+static mysmb_u8 mysmb_audio_read_cpu(const struct mysmb_game *game,
+                                     mysmb_u16 address)
+{
+    mysmb_u16 offset;
+
+    if (address < 0x0800U) return game->ram[address];
+    if (address < 0x8000U || game->area_prg == 0) return 0U;
+    offset = (mysmb_u16)(address - 0x8000U);
+    if (offset >= game->area_prg_size) return 0U;
+    return game->area_prg[offset];
+}
+
+/* ROM Dump_Squ1_Regs: Y is written before X. */
+void mysmb_audio_dump_squ1_regs(struct mysmb_game *game, mysmb_u8 x,
+                                 mysmb_u8 y)
+{
+    mysmb_audio_write_apu(game, 1U, y);
+    mysmb_audio_write_apu(game, 0U, x);
+}
+
+/* ROM Dump_Freq_Regs, including NoTone's zero-LSB return. */
+mysmb_u8 mysmb_audio_dump_freq_regs(struct mysmb_game *game, mysmb_u8 a,
+                                 mysmb_u8 x)
+{
+    mysmb_u8 low;
+    mysmb_u8 high;
+    mysmb_u16 address;
+
+    address = (mysmb_u16)(0xff01UL + a);
+    low = mysmb_audio_read_cpu(game, address);
+    if (low == 0U) return 0U;
+    mysmb_audio_write_apu(game, (mysmb_u8)(x + 2U), low);
+    address = (mysmb_u16)(0xff00UL + a);
+    high = (mysmb_u8)(mysmb_audio_read_cpu(game, address) | 8U);
+    mysmb_audio_write_apu(game, (mysmb_u8)(x + 3U), high);
+    return high;
+}
+
+mysmb_u8 mysmb_audio_set_freq_squ1(struct mysmb_game *game, mysmb_u8 a)
+{
+    return mysmb_audio_dump_freq_regs(game, a, 0U);
+}
+
+mysmb_u8 mysmb_audio_play_squ1_sfx(struct mysmb_game *game, mysmb_u8 a,
+                                mysmb_u8 x, mysmb_u8 y)
+{
+    mysmb_audio_dump_squ1_regs(game, x, y);
+    return mysmb_audio_set_freq_squ1(game, a);
+}
+
+/* ROM Dump_Sq2_Regs reverses the square-one write order. */
+void mysmb_audio_dump_sq2_regs(struct mysmb_game *game, mysmb_u8 x,
+                                mysmb_u8 y)
+{
+    mysmb_audio_write_apu(game, 4U, x);
+    mysmb_audio_write_apu(game, 5U, y);
+}
+
+mysmb_u8 mysmb_audio_set_freq_sq2(struct mysmb_game *game, mysmb_u8 a)
+{
+    return mysmb_audio_dump_freq_regs(game, a, 4U);
+}
+
+mysmb_u8 mysmb_audio_play_sq2_sfx(struct mysmb_game *game, mysmb_u8 a,
+                               mysmb_u8 x, mysmb_u8 y)
+{
+    mysmb_audio_dump_sq2_regs(game, x, y);
+    return mysmb_audio_set_freq_sq2(game, a);
+}
+
+mysmb_u8 mysmb_audio_set_freq_tri(struct mysmb_game *game, mysmb_u8 a)
+{
+    return mysmb_audio_dump_freq_regs(game, a, 8U);
+}
+
 static void mysmb_audio_pause_tone(struct mysmb_game *game, mysmb_u8 tone)
 {
-    mysmb_u16 frequency;
 
-    mysmb_audio_write_apu(game, 1U, 0x7fU);
-    mysmb_audio_write_apu(game, 0U, 0x84U);
-    frequency = (mysmb_u16)(0x7f00U + tone);
-    if (game->area_prg == 0 ||
-        frequency + 1U >= game->area_prg_size) return;
-    if (game->area_prg[frequency + 1U] == 0U) return;
-    mysmb_audio_write_apu(game, 2U, game->area_prg[frequency + 1U]);
-    mysmb_audio_write_apu(game, 3U,
-        (mysmb_u8)(game->area_prg[frequency] | 8U));
+    mysmb_audio_play_squ1_sfx(game, tone, 0x84U, 0x7fU);
 }
 
 void mysmb_audio_step(struct mysmb_game *game)
