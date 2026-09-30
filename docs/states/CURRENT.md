@@ -4,8 +4,9 @@
 
 **Idle.**
 
-M2 T49 S9 is closed at **1,924 / 1,992**. The next music-data chain has not
-been admitted.
+M2 T50 S1 is closed at **1,945 / 1,992**. Its 21 music-stream payload labels
+are ROM-match complete through the shared `audio.c` owner-ROM reader; T50 S2
+remains the next planned contiguous lookup/envelope chain.
 
 ## Current Technical Baseline
 

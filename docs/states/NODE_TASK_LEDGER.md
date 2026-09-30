@@ -220,7 +220,8 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T49 S7 | 8 | `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler` |
 | M2 T49 S8 | 9 | `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData` |
 | M2 T49 S9 | 23 | `MusicHeaderData`, `TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`, `UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`, `GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`, `GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`, `GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`, `GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, `DeathMusHdr` |
-| M2 Td S4 | 28 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData`, `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData`, `BowserFlameEnvData`, `BrickShatterEnvData` |
+| M2 T50 S1 | 21 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` |
+| M2 Td S4 | 7 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData`, `BowserFlameEnvData`, `BrickShatterEnvData` |
 
 ## Future admission packages and queued plans
 
@@ -233,7 +234,7 @@ transfer existing ownership or allocate a numeric T.
 | root-revalidation | 0 | not decomposed here | [record](../../docs/proposals/m2/frame-root.md); T14 is closed; a new admitted T/S must accept outstanding root verification. |
 | screen-status | 0 | not decomposed here | [record](../../docs/proposals/m2/screen-status.md); T27 S1 is admitted for the screen-task root; later T27 chains remain queued and their nodes retain T24 S2 custody until individual admission. |
 | game-dispatcher | 0 | not decomposed here | [record](../../docs/history/M2-T31-game-dispatcher.md); Candidate has no allocated implementation T/S yet. |
-| audio-engine-deferred | 28 | not decomposed here | [record](../../docs/proposals/m2/audio-engine.md); Prematurely numbered audio candidate held until later admission. |
+| audio-engine-deferred | 7 | not decomposed here | [record](../../docs/proposals/m2/audio-engine.md); Prematurely numbered audio candidate held until later admission. |
 | fireball-bubble-timer-warp-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T20 unfinished nodes await their source-order T32/T33 successors, not T21. |
 | t22-nmi-ppu-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T21 closure found that the boot root and queued NMI/PPU nodes share the first-NMI ownership boundary; pending source-order T22 admission. |
 
@@ -2205,27 +2206,27 @@ transfer existing ownership or allocate a numeric T.
 | 16046 | `GroundLevelPart4BHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
 | 16047 | `GroundLevelPart4CHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
 | 16048 | `DeathMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16077 | `Star_CloudMData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16089 | `GroundM_P1Data` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16094 | `SilenceData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16104 | `GroundM_P2AData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16114 | `GroundM_P2BData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16124 | `GroundM_P2CData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16134 | `GroundM_P3AData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16140 | `GroundM_P3BData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16148 | `GroundMLdInData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16158 | `GroundM_P4AData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16167 | `GroundM_P4BData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16176 | `DeathMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16179 | `GroundM_P4CData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16193 | `CastleMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16217 | `GameOverMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16226 | `TimeRunOutMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16236 | `WinLevelMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16253 | `UndergroundMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16264 | `WaterMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16295 | `EndOfCastleMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
-| 16313 | `VictoryMusData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
+| 16077 | `Star_CloudMData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16089 | `GroundM_P1Data` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16094 | `SilenceData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16104 | `GroundM_P2AData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16114 | `GroundM_P2BData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16124 | `GroundM_P2CData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16134 | `GroundM_P3AData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16140 | `GroundM_P3BData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16148 | `GroundMLdInData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16158 | `GroundM_P4AData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16167 | `GroundM_P4BData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16176 | `DeathMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16179 | `GroundM_P4CData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16193 | `CastleMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16217 | `GameOverMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16226 | `TimeRunOutMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16236 | `WinLevelMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16253 | `UndergroundMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16264 | `WaterMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16295 | `EndOfCastleMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
+| 16313 | `VictoryMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
 | 16326 | `FreqRegLookupTbl` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
 | 16341 | `MusicLengthLookupTbl` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
 | 16349 | `EndOfCastleMusicEnvData` | M2 Td S4 | audio-engine-deferred; deferred out-of-order audio custody | M2 T24 S1 |
@@ -2572,6 +2573,10 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T49 S8 | 0 | 9 | owner-approved-source-order, shared-music-helpers; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 | M2 T49 S9 | 0 | 23 | owner-approved-source-order, music-header-data; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 | M2 T5 | 2 | - | [record](../../docs/history/M2-T5-object-routes.md); S not recorded |
+| M2 T50 | 0 | - | [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
+| M2 T50 S1 | 0 | 21 | owner-approved-source-order, music-stream-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
+| M2 T50 S2 | 0 | 0 | declared-plan, music-lookup-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
+| M2 T50 S3 | 0 | 0 | declared-plan, noise-envelope-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2579,7 +2584,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S3 | 0 | 0 | explicit-reference; [record](../../docs/proposals/m2-rom-structural-recovery.md) |
 | M2 Td S2 | 0 | 0 | explicit-reference; [record](../../docs/states/QUEUE.md) |
-| M2 Td S4 | 0 | 28 | out-of-order-custody; [record](../../docs/proposals/m2/audio-engine.md) |
+| M2 Td S4 | 0 | 7 | out-of-order-custody; [record](../../docs/proposals/m2/audio-engine.md) |
 | M2 Td S5 | 0 | 0 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S6 | 0 | 0 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S7 | 0 | 0 | source-order-identifier-reconciliation; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
@@ -2891,6 +2896,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-273-to-t49-s7 | M2 Td S4 | M2 T49 S7 | 8 | Coordinator accepts the eight-label noise music beat chain under the continuing owner-approved M2 source-order mandate.; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 | transfer-274-to-t49-s8 | M2 Td S4 | M2 T49 S8 | 9 | Coordinator accepts the nine-label shared music helper chain under the continuing owner-approved M2 source-order mandate.; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 | transfer-275-to-t49-s9 | M2 Td S4 | M2 T49 S9 | 23 | Coordinator accepts the 23-label music-header table and record chain under the continuing owner-approved M2 source-order mandate.; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| transfer-276-to-t50-s1 | M2 Td S4 | M2 T50 S1 | 21 | Coordinator accepts the 21-label music-stream payload chain under the continuing owner-approved M2 source-order mandate.; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3149,3 +3155,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T49 S7 | 8 | 1884 | `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler` / 8 | `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler` / 8 | closed-rom-match-complete; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 | M2 T49 S8 | 9 | 1892 | `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData` / 9 | `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData` / 9 | closed-rom-match-complete; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 | M2 T49 S9 | 23 | 1901 | `MusicHeaderData`, `TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`, `UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`, `GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`, `GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`, `GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`, `GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, `DeathMusHdr` / 23 | `MusicHeaderData`, `TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`, `UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`, `GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`, `GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`, `GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`, `GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, `DeathMusHdr` / 23 | closed-rom-match-complete; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T50 S1 | 21 | 1924 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` / 21 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` / 21 | closed-rom-match-complete; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |

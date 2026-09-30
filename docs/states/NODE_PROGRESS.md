@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1924 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1945 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 32 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 11 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1924 / 1,992 (96.59%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1945 / 1,992 (97.64%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T49 S9 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s9-closure-music-header-table-and-records) closes 23 contiguous music-header labels. The original-ROM selector table is checked for all 63 legal selectors with zero failures on both Windows widths; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
+Latest task review: [T50 S1 closure](../proposals/m2/t50-music-data-and-audio-consumers.md#s1-closure-music-stream-payload-records) closes 21 music-stream payload labels. The original 49 selector routes resolve to their exact owner-ROM stream pointers and execute one shared SoundEngine tick with zero failures on both Windows widths; OpenNT DOS16 link and three-target artifacts are separate operational evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -1961,6 +1961,28 @@ of equivalent native nodes. No product repair is part of this audit.
 | 16046 | `GroundLevelPart4BHdr` |
 | 16047 | `GroundLevelPart4CHdr` |
 | 16048 | `DeathMusHdr` |
+
+| 16077 | `Star_CloudMData` |
+| 16089 | `GroundM_P1Data` |
+| 16094 | `SilenceData` |
+| 16104 | `GroundM_P2AData` |
+| 16114 | `GroundM_P2BData` |
+| 16124 | `GroundM_P2CData` |
+| 16134 | `GroundM_P3AData` |
+| 16140 | `GroundM_P3BData` |
+| 16148 | `GroundMLdInData` |
+| 16158 | `GroundM_P4AData` |
+| 16167 | `GroundM_P4BData` |
+| 16176 | `DeathMusData` |
+| 16179 | `GroundM_P4CData` |
+| 16193 | `CastleMusData` |
+| 16217 | `GameOverMusData` |
+| 16226 | `TimeRunOutMusData` |
+| 16236 | `WinLevelMusData` |
+| 16253 | `UndergroundMusData` |
+| 16264 | `WaterMusData` |
+| 16295 | `EndOfCastleMusData` |
+| 16313 | `VictoryMusData` |
 
 ## Mapped but not yet matched (36)
 
