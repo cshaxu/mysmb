@@ -31,11 +31,11 @@ not own game logic.
 
 ## Current S5 Finding
 
-S5 P15 has completed the project-owned native regression matrix: x64 and x86
-each pass 218 / 218 tests, owner-local area routing passes on both widths,
-and the OpenNT DOS16 link is current. It also removes the superseded star-pickup
-music record after T42 S4's source-route closure and a current x86/x64
-393,216-case pickup-chain check. This does not close S5 or M2: the remaining
-review ledger still contains independently recorded original-ROM discrepancies
-and the DOS16 owner-resource binding gap, each requiring source-route treatment
-before final certification can claim complete behavior.
+The prior S5 native matrix has x64 and x86 at 218 / 218 and owner-local area
+routing passing on both widths. P16 then repairs the score/coin scratch-return
+discrepancy: all 56 original score/HUD snapshots now match with `$00-$07`
+included on x86 and x64; focused core, score/HUD and coin tests pass, and the
+OpenNT DOS16 link is current. The final full matrix must be rerun after the
+remaining shared-core repairs. S5 and M2 remain open because the review ledger
+still contains independently recorded original-ROM discrepancies; DOS resource
+binding is a separate M3 presentation delivery requirement.

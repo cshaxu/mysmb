@@ -385,6 +385,30 @@ and pass their `--self-test` route. Refreshed artifact hashes are
 `mysmb32.exe` `DDCD4DC6A16C01E6DC8A50AAB29EF43A85E71A1124D007C494B0A18AD7DFEBF4`,
 and `mysmb64.exe` `DE701E81C81CA3F2AE408F463EBB6F85960340FC00CB362B975E3208A519CBFD`.
 
+### S5 P16: score and coin scratch-return repair
+
+S5 P16 repairs the T37 S4 score/coin scratch discrepancy in the shared game
+owner, `src/game/status.c`. The original `PrintStatusBarNumbers` saves its
+incoming selector in `$00`; each `OutputNumbers` pass writes its initial VRAM
+buffer command position to `$02`, decrements the digit counter in `$03` to
+zero, and then updates the buffer offset. The C body had kept all three values
+in locals, so `GiveOneCoin -> AddToScore -> GetSBNybbles -> UpdateNumber`
+returned the wrong visible scratch state. The repair restores only those
+source writes and makes no platform change.
+
+The local ROM route replays all 56 retained score/HUD snapshots with `$00-$07`
+included in comparison: x86 and x64 each match all 56, including the former
+AddToScore and SetupJumpCoin cases. The permanent shared `core_smoke` now
+checks the source scratch endpoint. It passes after direct x86/x64 relink,
+as do the 2,560-case score/HUD and 16,400-case coin-allocation checks on each
+width. OpenNT compiles and links the same C90 source; its established C4761
+and missing OLDNAMES warnings remain non-fatal. Platform code is unchanged.
+
+Refreshed artifacts are `mysmb16.exe`
+`7A242FBF2C74F80CB9BAD55EBA38B78B353165323894E1D5717D88144079B875`,
+`mysmb32.exe` `363F79073255697773E8438040BF7E85D833E557BCDCE75C42313D10D34C11B2`,
+and `mysmb64.exe` `C8264B98778F7C7209E6D1C81EC824C12F929982B6C0998DEEF9CBB2102BA5BF`.
+
 S5 remains open despite the complete native matrix. The review ledger still
 contains independently recorded original-ROM discrepancies and the DOS16
 resource-binding gap. Passing a project-owned regression suite does not

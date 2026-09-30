@@ -7,6 +7,7 @@
 #include "game/player.h"
 #include "game/objects.h"
 #include "game/fireball/fireball.h"
+#include "game/status.h"
 #include "game/world/world.h"
 #include "game/render.h"
 
@@ -1458,6 +1459,16 @@ int main(void)
         mysmb_game_engine_blocks(&game);
     }
     if (game.ram[0x0026U] != 0U || game.ram[0x03ecU] != 1U) return 1;
+    /* PrintStatusBarNumbers leaves source-visible zero-page scratch for
+     * callers: $00 retains the selector, $02 the second command's starting
+     * buffer offset and $03 reaches zero after its digit loop. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0300U] = 4U;
+    for (index = 0U; index < 36U; ++index)
+        game.ram[0x07d7U + index] = (mysmb_u8)(index % 10U);
+    (void)mysmb_status_print_numbers(&game, 0x02U);
+    if (game.ram[0x0000U] != 0x02U || game.ram[0x0002U] != 9U ||
+        game.ram[0x0003U] != 0U || game.ram[0x0300U] != 18U) return 1;
     /* NMI UpdateScreen consumes the prior frame's buffered palette command. */
     mysmb_game_initialize(&game);
     game.ram[0x0300U] = 7U;

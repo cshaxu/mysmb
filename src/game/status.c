@@ -31,13 +31,21 @@ static mysmb_u8 mysmb_status_output_numbers(struct mysmb_game *game, mysmb_u8 se
     if (selector >= 6U) return 1U;
     y = (mysmb_u8)(selector << 1U);
     offset = game->ram[MYSMB_STATUS_BUFFER_OFFSET];
+    /* OutputNumbers keeps X at the command's first byte while it writes
+     * the three-byte header, then stores that unchanged X in $02. */
+    game->ram[0x0002U] = offset;
     game->ram[MYSMB_STATUS_BUFFER + offset++] = selector == 0U ? 0x22U : 0x20U;
     game->ram[MYSMB_STATUS_BUFFER + offset++] = mysmb_status_data[y];
     length = mysmb_status_data[y + 1U];
     game->ram[MYSMB_STATUS_BUFFER + offset++] = length;
+    /* ROM OutputNumbers saves its live buffer pointer and digit count in
+     * zero-page $02/$03 before it calculates the source digit offset. */
+    game->ram[0x0003U] = length;
     digit = (mysmb_u8)(mysmb_status_offset[selector] - length);
-    while (length-- != 0U)
+    while (game->ram[0x0003U] != 0U) {
         game->ram[MYSMB_STATUS_BUFFER + offset++] = game->ram[MYSMB_STATUS_DIGITS + digit++];
+        --game->ram[0x0003U];
+    }
     game->ram[MYSMB_STATUS_BUFFER + offset] = 0U;
     game->ram[MYSMB_STATUS_BUFFER_OFFSET] = offset;
     return 1U;
@@ -45,8 +53,11 @@ static mysmb_u8 mysmb_status_output_numbers(struct mysmb_game *game, mysmb_u8 se
 
 mysmb_u8 mysmb_status_print_numbers(struct mysmb_game *game, mysmb_u8 nybbles)
 {
+    /* ROM PrintStatusBarNumbers retains the selector in $00 between its
+     * low-nybble and high-nybble OutputNumbers calls. */
+    game->ram[0x0000U] = nybbles;
     (void)mysmb_status_output_numbers(game, nybbles);
-    return mysmb_status_output_numbers(game, (mysmb_u8)(nybbles >> 4U));
+    return mysmb_status_output_numbers(game, (mysmb_u8)(game->ram[0x0000U] >> 4U));
 }
 
 mysmb_u8 mysmb_status_queue_timer(struct mysmb_game *game)
