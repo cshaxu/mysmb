@@ -6777,6 +6777,34 @@
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-k54-01",
+      "producer": "SolidMTileUpperExt",
+      "consumer": "CheckForSolidMTiles",
+      "storage": "ROM SolidMTileUpperExt group-indexed thresholds",
+      "feasiblePath": "CheckForSolidMTiles indexes SolidMTileUpperExt after GetMTileAttrib.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c threshold binding",
+      "semanticContract": "Top-two-bit group selects the same threshold before CMP carry result.",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k54-02",
+      "producer": "ClimbMTileUpperExt",
+      "consumer": "CheckForClimbMTiles",
+      "storage": "ROM ClimbMTileUpperExt group-indexed thresholds",
+      "feasiblePath": "CheckForClimbMTiles indexes ClimbMTileUpperExt after GetMTileAttrib.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c threshold binding",
+      "semanticContract": "Top-two-bit group selects the same threshold before CMP carry result.",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -26007,81 +26035,105 @@
       "label": "SolidMTileUpperExt",
       "asmLine": 12380,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c",
+      "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies four metatile-group solid thresholds."
     },
     {
       "label": "CheckForSolidMTiles",
       "asmLine": 12383,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c",
+      "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns CMP carry for tile against its group solid threshold."
     },
     {
       "label": "ClimbMTileUpperExt",
       "asmLine": 12388,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c",
+      "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies four metatile-group climb thresholds."
     },
     {
       "label": "CheckForClimbMTiles",
       "asmLine": 12391,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c",
+      "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns CMP carry for tile against its group climb threshold."
     },
     {
       "label": "CheckForCoinMTiles",
       "asmLine": 12396,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c",
+      "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Recognizes regular/underwater coins and returns carry clear otherwise."
     },
     {
       "label": "CoinSd",
       "asmLine": 12403,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c",
+      "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Queues coin-grab sound and returns match carry."
     },
     {
       "label": "GetMTileAttrib",
       "asmLine": 12407,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c",
+      "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Derives group index from top two metatile bits while retaining original tile."
     },
     {
       "label": "ExEBG",
       "asmLine": 12415,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c",
+      "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns metatile attribute result."
     },
     {
       "label": "EnemyBGCStateData",
@@ -74010,10 +74062,13 @@
       "instruction": "jsr",
       "id": "control-02578",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c predicates",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile predicate call relation CheckForSolidMTiles → GetMTileAttrib and source flag semantics."
     },
     {
       "from": "CheckForClimbMTiles",
@@ -74023,10 +74078,13 @@
       "instruction": "jsr",
       "id": "control-02579",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c predicates",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile predicate call relation CheckForClimbMTiles → GetMTileAttrib and source flag semantics."
     },
     {
       "from": "CheckForCoinMTiles",
@@ -74036,10 +74094,13 @@
       "instruction": "beq",
       "id": "control-02580",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c predicates",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile predicate branch relation CheckForCoinMTiles → CoinSd and source flag semantics."
     },
     {
       "from": "CheckForCoinMTiles",
@@ -74049,10 +74110,13 @@
       "instruction": "beq",
       "id": "control-02581",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c predicates",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile predicate branch relation CheckForCoinMTiles → CoinSd and source flag semantics."
     },
     {
       "from": "GetMTileAttrib",
@@ -74062,10 +74126,13 @@
       "instruction": "tya",
       "id": "control-02582",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c predicates",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile predicate fallthrough relation GetMTileAttrib → ExEBG and source flag semantics."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -95765,10 +95832,13 @@
       "instruction": "rts/rti",
       "id": "control-03969",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c predicates",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile predicate return relation GetMTileAttrib → CheckForSolidMTiles and source flag semantics."
     },
     {
       "from": "GetMTileAttrib",
@@ -95778,10 +95848,13 @@
       "instruction": "rts/rti",
       "id": "control-03970",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/metatiles.c predicates",
+      "semanticEvidence": [
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves metatile predicate return relation GetMTileAttrib → CheckForClimbMTiles and source flag semantics."
     },
     {
       "from": "SubtEnemyYPos",
