@@ -46,8 +46,14 @@
 
 - [ ] **T24 missing-path finding (`TODO(High)`): cannon scheduler and whirlpool activation.** T22 owns ProcessCannons, ProcessWhirlpools and WhirlpoolActivate; BulletBillHandler and player jump parameters are only collaborators. [Audit evidence](../etc/architecture/m2-t24-s1-full-node-census.md#additional-concrete-scope-findings); admission path: [blocks/items S4](../proposals/m2/blocks-items-misc.md). No repair is admitted here.
 
-- [ ] **T24 audit D1 (`TODO(High)`): non-fiery fireball dispatch.** T20 owns revalidation of the concurrently changed implementation; the recorded snapshot violates the ROM PlayerStatus guard. Evidence: [D1 and named nodes](../etc/architecture/m2-t24-s1-node-verification.md). Admission path: [fireballs and bubbles](../proposals/m2/fireballs-bubbles.md). Audit does not certify the subsequent repair.
-- [ ] **T24 audit D2 (`TODO(High)`): Goomba ID and score handoff.** T17 owns GoombaDie/GoombaPoints and the self-confirming collision fixture. Evidence: [paired probes](../etc/architecture/m2-t24-s1-node-verification.md). Admission path: [collision/world](../proposals/m2/collision-world.md).
+- [x] **T24 audit D1: non-fiery fireball dispatch.** T34 S1 supersedes the
+  historical snapshot: `ProcFireball_Bubble` uses the original single
+  PlayerStatus partition before its fireball/bubble branches. Current x86/x64
+  dispatch-chain checks pass. [T34 S1 proof](../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof).
+- [x] **T24 audit D2: Goomba ID and score handoff.** T42 S1/S2 supersede the
+  historical fixture: `GoombaDie` recognizes ID 6 and `GoombaPoints` preserves
+  the source score-control choices. Current x86/x64 fireball scan and hit-chain
+  checks pass. [T42 S1 proof](../history/M2-T42-shared-collision-and-platforms.md#s1-original-fireball-scan-proof), [T42 S2 proof](../history/M2-T42-shared-collision-and-platforms.md#s2-fireball-hit-proof).
 - [x] **T24 audit D3-D4: fireball flip phase and explosion sprite order.** T45 S3 supersedes both audits: it restores frame-bit-three attribute selection and the second/third explosion-sprite Y order, with source-reachable original OAM comparisons and current x86/x64 fireball OAM checks passing. [T45 S3 closure](../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam).
 - [ ] **T24 audit D6-D8 (`TODO(High)`): throw pose/timer, intermediate attributes and swimming animation freeze.** T45 S5 resolves former D5 swim-kick tile selection through the original table and consumer route. D6-D8 remain independently unverified; retain their exact nodes from the [77-node report](../etc/architecture/m2-t24-s1-node-verification.md) for source-route audit before closure.
 - [ ] **T24 audit D9 (`TODO(High)`): relative-position scroll write ownership.** T16/T23 owns RelativePlayerPosition versus RenderPlayerSub ordering. Evidence: [paired seeded-write probe](../etc/architecture/m2-t24-s1-node-verification.md). Admission path: [OAM](../proposals/m2/oam-graphics.md).

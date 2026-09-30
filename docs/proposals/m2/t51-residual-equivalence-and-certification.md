@@ -443,3 +443,12 @@ source chain. The later chain proves `DrawVine`, `ChkFTop` and `NextVSp` on
 original `VDrawLoop` routes, including the wrapped subtraction that caused the
 old discrepancy. The current vine OAM check passes on x86 and x64. This does
 not assert equivalence for the separate `GetMiscBoundBox` dependency.
+
+### S5 P14: fireball-dispatch and Goomba historical-route adjudication
+
+S5 P14 resolves T24 D1/D2 as historical findings superseded by later complete
+source chains. T34 S1 restores the single `PlayerStatus` partition in
+`ProcFireball_Bubble`. T42 S1/S2 restore the Goomba ID-six exclusion and score
+handoff inside fireball collision processing. Current x86/x64 dispatch, scan
+and hit-chain checks pass. No geometry or unrelated collision child is claimed
+by this adjudication.
