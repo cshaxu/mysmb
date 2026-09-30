@@ -981,3 +981,8 @@ branches.
 ### Cohort I — B15c lifecycle and Podoboo integration
 
 `EraseEnemyObject`, `MovePodoboo` and `PdbM` now have node contracts, all incident control relations and four feasible state handoffs. Static review matches all eight erase fields and both Podoboo timer paths. It also found one graph-only discrepancy: `control-01711` falsely treats a JumpEngine pointer table as fall-through into `EraseEnemyObject`; candidate H7 records the extractor repair, with no shared-C change. The three nodes otherwise remain `needs-evidence`.
+
+
+### Cohort I — B15d Hammer Bro front-chain integration
+
+`HammerThrowTmrData` through `SetShim` now has thirteen node contracts, every incident branch/call/fall-through/tail/return relation and six feasible table/state handoffs. Static review matches defeated-state priority, jump and throw timer progression, screen gating, spawn success/failure behavior, random/hard-mode jump selection and the direction-before-normal-move tail. These entries remain `needs-evidence` pending controlled ROM/x86/x64 hammer-spawn and jump routes.

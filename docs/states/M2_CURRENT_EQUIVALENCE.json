@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 183,
+    "enumeratedCount": 189,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2575,6 +2575,90 @@
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00184",
+      "producer": "HammerThrowTmrData",
+      "consumer": "ProcHammerBro",
+      "storage": "SecondaryHardMode-indexed throw timer",
+      "feasiblePath": "Expired throw timer receives $30 or $1c before hammer spawn attempt.",
+      "status": "needs-evidence",
+      "currentCounterpart": "throw_timers[SecondaryHardMode]",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00185",
+      "producer": "HammerBroJumpLData",
+      "consumer": "SetHJ",
+      "storage": "random/hard-mode jump-length selector",
+      "feasiblePath": "Selected jump-length table byte is stored before jump timer assignment.",
+      "status": "needs-evidence",
+      "currentCounterpart": "jump_lengths[index]",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00186",
+      "producer": "ProcHammerBro",
+      "consumer": "MoveHammerBroXDir",
+      "storage": "HammerBro state, jump/throw timers and spawn result",
+      "feasiblePath": "Every nondefeated processing path reaches horizontal movement with its source state updates.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_hammer_bros_slot move label",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00187",
+      "producer": "SetShim",
+      "consumer": "MoveNormalEnemy",
+      "storage": "Hammer Bro X speed and moving direction",
+      "feasiblePath": "Direction write precedes the shared normal-enemy movement tail.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_normal",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00188",
+      "producer": "XSpeedAdderData",
+      "consumer": "AddHS",
+      "storage": "direction-derived speed-addend index",
+      "feasiblePath": "Normal movement consumes signed speed addend selected by source direction state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "normal movement owner",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00189",
+      "producer": "RevivedXSpeed",
+      "consumer": "SetRSpd",
+      "storage": "frame/hard-mode revived-speed selector",
+      "feasiblePath": "Revive branch consumes selected table byte before return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "normal movement owner",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -16580,131 +16664,170 @@
       "label": "HammerThrowTmrData",
       "asmLine": 9229,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds throw timer table {$30,$1c} indexed by SecondaryHardMode."
     },
     {
       "label": "XSpeedAdderData",
       "asmLine": 9232,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds normal-enemy speed-addend table {$00,$e8,$00,$18}."
     },
     {
       "label": "RevivedXSpeed",
       "asmLine": 9235,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds revived-enemy X speed table {$08,$f8,$0c,$f4}."
     },
     {
       "label": "ProcHammerBro",
       "asmLine": 9238,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Prioritizes defeated state; otherwise applies jump-timer, offscreen, throw-timer and hammer-spawn logic before tail-entering horizontal Hammer Bro movement."
     },
     {
       "label": "ChkJH",
       "asmLine": 9243,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Branches to jump setup only when HammerBroJumpTimer is zero; nonzero path decrements then enters throw/offscreen handling."
     },
     {
       "label": "DecHT",
       "asmLine": 9260,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements HammerThrowingTimer and tail-jumps to Hammer Bro horizontal movement."
     },
     {
       "label": "HammerBroJumpLData",
       "asmLine": 9263,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds jump-length table {$20,$37}."
     },
     {
       "label": "HammerBroJumpCode",
       "asmLine": 9266,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For non-jumping low state derives vertical speed and a random/hard-mode jump-length selector, then falls through jump-state writes."
     },
     {
       "label": "SetHJ",
       "asmLine": 9285,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes jump Y speed, marks jumping state, selects jump length and writes high-bit jump timer before falling through horizontal movement."
     },
     {
       "label": "HJump",
       "asmLine": 9295,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects jump-length index from random bitmask only in secondary hard mode; normal mode forces index zero."
     },
     {
       "label": "MoveHammerBroXDir",
       "asmLine": 9301,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets frame-phase shimmy speed, chooses facing from player difference and expired walk timer, then falls through normal enemy movement."
     },
     {
       "label": "Shimmy",
       "asmLine": 9307,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected shimmy X speed before player-difference direction logic."
     },
     {
       "label": "SetShim",
       "asmLine": 9316,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/hammer_bro.c",
+      "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores Hammer Bro moving direction and falls through MoveNormalEnemy."
     },
     {
       "label": "MoveNormalEnemy",
@@ -53418,10 +53541,13 @@
       "instruction": "beq",
       "id": "control-01716",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcHammerBro -> ChkJH with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "ProcHammerBro",
@@ -53431,10 +53557,13 @@
       "instruction": "jmp",
       "id": "control-01717",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ProcHammerBro -> MoveDefeatedEnemy with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "ChkJH",
@@ -53444,10 +53573,13 @@
       "instruction": "beq",
       "id": "control-01718",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkJH -> HammerBroJumpCode with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "ChkJH",
@@ -53457,10 +53589,13 @@
       "instruction": "bne",
       "id": "control-01719",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkJH -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "ChkJH",
@@ -53470,10 +53605,13 @@
       "instruction": "bne",
       "id": "control-01720",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkJH -> DecHT with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "ChkJH",
@@ -53483,10 +53621,13 @@
       "instruction": "jsr",
       "id": "control-01721",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkJH -> SpawnHammerObj with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "ChkJH",
@@ -53496,10 +53637,13 @@
       "instruction": "bcc",
       "id": "control-01722",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkJH -> DecHT with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "ChkJH",
@@ -53509,10 +53653,13 @@
       "instruction": "jmp",
       "id": "control-01723",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkJH -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "DecHT",
@@ -53522,10 +53669,13 @@
       "instruction": "jmp",
       "id": "control-01724",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation DecHT -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "HammerBroJumpCode",
@@ -53535,10 +53685,13 @@
       "instruction": "beq",
       "id": "control-01725",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HammerBroJumpCode -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "HammerBroJumpCode",
@@ -53548,10 +53701,13 @@
       "instruction": "bmi",
       "id": "control-01726",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HammerBroJumpCode -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "HammerBroJumpCode",
@@ -53561,10 +53717,13 @@
       "instruction": "bcc",
       "id": "control-01727",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HammerBroJumpCode -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "HammerBroJumpCode",
@@ -53574,10 +53733,13 @@
       "instruction": "bne",
       "id": "control-01728",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HammerBroJumpCode -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "HammerBroJumpCode",
@@ -53587,10 +53749,13 @@
       "instruction": "ldy",
       "id": "control-01729",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation HammerBroJumpCode -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "SetHJ",
@@ -53600,10 +53765,13 @@
       "instruction": "bne",
       "id": "control-01730",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetHJ -> HJump with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "SetHJ",
@@ -53613,10 +53781,13 @@
       "instruction": "tay",
       "id": "control-01731",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetHJ -> HJump with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "HJump",
@@ -53626,10 +53797,13 @@
       "instruction": "sta",
       "id": "control-01732",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation HJump -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "MoveHammerBroXDir",
@@ -53639,10 +53813,13 @@
       "instruction": "bne",
       "id": "control-01733",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveHammerBroXDir -> Shimmy with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "MoveHammerBroXDir",
@@ -53652,10 +53829,13 @@
       "instruction": "ldy",
       "id": "control-01734",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveHammerBroXDir -> Shimmy with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "Shimmy",
@@ -53665,10 +53845,13 @@
       "instruction": "jsr",
       "id": "control-01735",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation Shimmy -> PlayerEnemyDiff with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "Shimmy",
@@ -53678,10 +53861,13 @@
       "instruction": "bmi",
       "id": "control-01736",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Shimmy -> SetShim with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "Shimmy",
@@ -53691,10 +53877,13 @@
       "instruction": "bne",
       "id": "control-01737",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Shimmy -> SetShim with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "Shimmy",
@@ -53704,10 +53893,13 @@
       "instruction": "sta",
       "id": "control-01738",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Shimmy -> SetShim with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "SetShim",
@@ -53717,10 +53909,13 @@
       "instruction": "sty",
       "id": "control-01739",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetShim -> MoveNormalEnemy with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "MoveNormalEnemy",
@@ -65877,10 +66072,13 @@
       "instruction": "jmp",
       "id": "control-02673",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation NoBump -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "InvEnemyDir",
@@ -81727,12 +81925,12 @@
       "id": "control-03825",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SpawnHammerObj -> ChkJH with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation SpawnHammerObj -> ChkJH with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -81742,10 +81940,13 @@
       "instruction": "rts/rti",
       "id": "control-03826",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerEnemyDiff -> Shimmy with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "MoveD_EnemyVertically",
@@ -89017,12 +89218,12 @@
       "id": "control-04315",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> ProcHammerBro with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> ProcHammerBro with Hammer Bro state, timer, random/table index and call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
