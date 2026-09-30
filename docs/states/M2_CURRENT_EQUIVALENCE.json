@@ -26589,191 +26589,248 @@
       "label": "DoEnemySideCheck",
       "asmLine": 12617,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
+      "currentCounterpart": "mysmb_objects_check_enemy_side",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips status-bar coordinates, then probes only the moving-direction side at source offsets 0x16 and 0x17, and bumps on a solid metatile."
     },
     {
       "label": "SdeCLoop",
       "asmLine": 12624,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
+      "currentCounterpart": "mysmb_objects_check_enemy_side",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares the source direction counter with Enemy_MovingDir before issuing the selected side block-buffer query."
     },
     {
       "label": "NextSdeC",
       "asmLine": 12632,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
+      "currentCounterpart": "mysmb_objects_check_enemy_side",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements the direction counter, advances the probe index, and loops only while the index remains below 0x18."
     },
     {
       "label": "ExESdeC",
       "asmLine": 12636,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
+      "currentCounterpart": "mysmb_objects_check_enemy_side",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after status-bar exclusion or both directional probes complete without a blocking solid."
     },
     {
       "label": "ChkForBump_HammerBroJ",
       "asmLine": 12638,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy",
+      "currentCounterpart": "mysmb_objects_bump_enemy",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Suppresses bump sound in slot five or without state d7, then selects Hammer Bro jump setup or ordinary direction inversion."
     },
     {
       "label": "NoBump",
       "asmLine": 12646,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy",
+      "currentCounterpart": "mysmb_objects_bump_enemy",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects Hammer Bro SetHJ with $00 clear and vertical speed $fa, otherwise preserves the ordinary direction-inversion successor."
     },
     {
       "label": "InvEnemyDir",
       "asmLine": 12654,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy/RXSpd owner",
+      "currentCounterpart": "mysmb_objects_bump_enemy/RXSpd owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Transfers to the shared RXSpd direction-reversal owner."
     },
     {
       "label": "PlayerEnemyDiff",
       "asmLine": 12660,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/distance.c:mysmb_enemy_player_difference",
+      "currentCounterpart": "mysmb_enemy_player_difference",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the low player/enemy X subtraction in $00 and returns the page subtraction with the original low-byte borrow."
     },
     {
       "label": "EnemyLanding",
       "asmLine": 12671,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c:mysmb_world_land_enemy",
+      "currentCounterpart": "mysmb_world_land_enemy",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes vertical movement state and aligns Enemy_Y_Position to its high nibble plus bit d3."
     },
     {
       "label": "SubtEnemyYPos",
       "asmLine": 12679,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain",
+      "currentCounterpart": "mysmb_objects_step_enemy_jump_terrain",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds $3e in eight-bit arithmetic and returns the CMP $44 flags used by the jumping-enemy ground gate."
     },
     {
       "label": "EnemyJump",
       "asmLine": 12686,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain",
+      "currentCounterpart": "mysmb_objects_step_enemy_jump_terrain",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Checks the wrapped Y threshold and falling speed, accepts only solid under-metatiles, lands, assigns speed $fd, then always performs the side check."
     },
     {
       "label": "DoSide",
       "asmLine": 12701,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain",
+      "currentCounterpart": "mysmb_objects_step_enemy_jump_terrain",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers the jumping-enemy route to DoEnemySideCheck."
     },
     {
       "label": "HammerBroBGColl",
       "asmLine": 12705,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
+      "currentCounterpart": "mysmb_objects_step_hammer_terrain",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Queries the under-metatile; no tile/fresh timer sets state d0, blank $23 kills above-block, otherwise lands and checks side blockage."
     },
     {
       "label": "KillEnemyAboveBlock",
       "asmLine": 12711,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c:mysmb_objects_kill_enemy_above_block",
+      "currentCounterpart": "mysmb_objects_kill_enemy_above_block",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses ShellOrBlockDefeat then sets Enemy_Y_Speed to $fc."
     },
     {
       "label": "UnderHammerBro",
       "asmLine": 12717,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
+      "currentCounterpart": "mysmb_objects_step_hammer_terrain",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "On an expired Hammer Bro frame timer preserves only state d7/d3, performs landing alignment, then tail-transfers to side checking."
     },
     {
       "label": "NoUnderHammerBro",
       "asmLine": 12726,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
+      "currentCounterpart": "mysmb_objects_step_hammer_terrain",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets state d0 to mark Hammer Bro jumping or falling and returns."
     },
     {
       "label": "ChkUnderEnemy",
       "asmLine": 12732,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/block_buffer.c:mysmb_world_query_enemy_under",
+      "currentCounterpart": "mysmb_world_query_enemy_under",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects vertical block-buffer probe flag A=0 and offset Y=$15."
     },
     {
       "label": "ChkForNonSolids",
       "asmLine": 12737,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c:mysmb_world_enemy_metatile_is_non_solid",
+      "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares exactly metatiles $26,$c2,$c3,$5f,$60 and preserves the equality/Z result for callers."
     },
     {
       "label": "NSFnd",
       "asmLine": 12747,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/metatiles.c:mysmb_world_enemy_metatile_is_non_solid",
+      "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the final non-solid comparison flags without changing the predicate result."
     },
     {
       "label": "FireballBGCollision",
@@ -75482,10 +75539,13 @@
       "instruction": "bcc",
       "id": "control-02659",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation DoEnemySideCheck → ExESdeC, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "DoEnemySideCheck",
@@ -75495,10 +75555,13 @@
       "instruction": "sta",
       "id": "control-02660",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain fallthrough relation DoEnemySideCheck → SdeCLoop, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "SdeCLoop",
@@ -75508,10 +75571,13 @@
       "instruction": "bne",
       "id": "control-02661",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation SdeCLoop → NextSdeC, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "SdeCLoop",
@@ -75522,12 +75588,12 @@
       "id": "control-02662",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SdeCLoop -> BlockBufferChk_Enemy with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves enemy side/terrain call relation SdeCLoop → BlockBufferChk_Enemy, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "SdeCLoop",
@@ -75537,10 +75603,13 @@
       "instruction": "beq",
       "id": "control-02663",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation SdeCLoop → NextSdeC, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "SdeCLoop",
@@ -75550,10 +75619,13 @@
       "instruction": "jsr",
       "id": "control-02664",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain call relation SdeCLoop → ChkForNonSolids, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "SdeCLoop",
@@ -75563,10 +75635,13 @@
       "instruction": "bne",
       "id": "control-02665",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation SdeCLoop → ChkForBump_HammerBroJ, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "SdeCLoop",
@@ -75576,10 +75651,13 @@
       "instruction": "bne",
       "id": "control-02666",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain fallthrough relation SdeCLoop → NextSdeC, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "NextSdeC",
@@ -75589,10 +75667,13 @@
       "instruction": "bcc",
       "id": "control-02667",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation NextSdeC → SdeCLoop, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "NextSdeC",
@@ -75602,10 +75683,13 @@
       "instruction": "bcc",
       "id": "control-02668",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain fallthrough relation NextSdeC → ExESdeC, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForBump_HammerBroJ",
@@ -75615,10 +75699,13 @@
       "instruction": "beq",
       "id": "control-02669",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation ChkForBump_HammerBroJ → NoBump, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForBump_HammerBroJ",
@@ -75628,10 +75715,13 @@
       "instruction": "bcc",
       "id": "control-02670",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation ChkForBump_HammerBroJ → NoBump, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForBump_HammerBroJ",
@@ -75641,10 +75731,13 @@
       "instruction": "sta",
       "id": "control-02671",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain fallthrough relation ChkForBump_HammerBroJ → NoBump, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "NoBump",
@@ -75654,10 +75747,13 @@
       "instruction": "bne",
       "id": "control-02672",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation NoBump → InvEnemyDir, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "NoBump",
@@ -75668,12 +75764,12 @@
       "id": "control-02673",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation NoBump -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering."
+      "semanticContract": "Preserves enemy side/terrain jump relation NoBump → SetHJ, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "InvEnemyDir",
@@ -75684,12 +75780,12 @@
       "id": "control-02674",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation InvEnemyDir -> RXSpd with source slot/mask/state predicate and pair collision handoff ordering."
+      "semanticContract": "Preserves enemy side/terrain jump relation InvEnemyDir → RXSpd, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyLanding",
@@ -75699,10 +75795,13 @@
       "instruction": "jsr",
       "id": "control-02675",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain call relation EnemyLanding → InitVStf, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75712,10 +75811,13 @@
       "instruction": "jsr",
       "id": "control-02676",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain call relation EnemyJump → SubtEnemyYPos, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75725,10 +75827,13 @@
       "instruction": "bcc",
       "id": "control-02677",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation EnemyJump → DoSide, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75738,10 +75843,13 @@
       "instruction": "bcc",
       "id": "control-02678",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation EnemyJump → DoSide, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75751,10 +75859,13 @@
       "instruction": "jsr",
       "id": "control-02679",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain call relation EnemyJump → ChkUnderEnemy, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75764,10 +75875,13 @@
       "instruction": "beq",
       "id": "control-02680",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation EnemyJump → DoSide, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75777,10 +75891,13 @@
       "instruction": "jsr",
       "id": "control-02681",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain call relation EnemyJump → ChkForNonSolids, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75790,10 +75907,13 @@
       "instruction": "beq",
       "id": "control-02682",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation EnemyJump → DoSide, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75803,10 +75923,13 @@
       "instruction": "jsr",
       "id": "control-02683",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain call relation EnemyJump → EnemyLanding, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -75816,10 +75939,13 @@
       "instruction": "sta",
       "id": "control-02684",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain fallthrough relation EnemyJump → DoSide, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "DoSide",
@@ -75829,10 +75955,13 @@
       "instruction": "jmp",
       "id": "control-02685",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain jump relation DoSide → DoEnemySideCheck, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "HammerBroBGColl",
@@ -75842,10 +75971,13 @@
       "instruction": "jsr",
       "id": "control-02686",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain call relation HammerBroBGColl → ChkUnderEnemy, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "HammerBroBGColl",
@@ -75855,10 +75987,13 @@
       "instruction": "beq",
       "id": "control-02687",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation HammerBroBGColl → NoUnderHammerBro, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "HammerBroBGColl",
@@ -75868,10 +76003,13 @@
       "instruction": "bne",
       "id": "control-02688",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation HammerBroBGColl → UnderHammerBro, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "HammerBroBGColl",
@@ -75881,10 +76019,13 @@
       "instruction": "bne",
       "id": "control-02689",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain fallthrough relation HammerBroBGColl → KillEnemyAboveBlock, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "KillEnemyAboveBlock",
@@ -75895,12 +76036,12 @@
       "id": "control-02690",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation KillEnemyAboveBlock -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering."
+      "semanticContract": "Preserves enemy side/terrain call relation KillEnemyAboveBlock → ShellOrBlockDefeat, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "UnderHammerBro",
@@ -75910,10 +76051,13 @@
       "instruction": "bne",
       "id": "control-02691",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation UnderHammerBro → NoUnderHammerBro, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "UnderHammerBro",
@@ -75923,10 +76067,13 @@
       "instruction": "jsr",
       "id": "control-02692",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain call relation UnderHammerBro → EnemyLanding, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "UnderHammerBro",
@@ -75936,10 +76083,13 @@
       "instruction": "jmp",
       "id": "control-02693",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain jump relation UnderHammerBro → DoEnemySideCheck, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkUnderEnemy",
@@ -75950,12 +76100,12 @@
       "id": "control-02694",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation ChkUnderEnemy -> BlockBufferChk_Enemy with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves enemy side/terrain jump relation ChkUnderEnemy → BlockBufferChk_Enemy, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForNonSolids",
@@ -75965,10 +76115,13 @@
       "instruction": "beq",
       "id": "control-02695",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation ChkForNonSolids → NSFnd, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForNonSolids",
@@ -75978,10 +76131,13 @@
       "instruction": "beq",
       "id": "control-02696",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation ChkForNonSolids → NSFnd, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForNonSolids",
@@ -75991,10 +76147,13 @@
       "instruction": "beq",
       "id": "control-02697",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation ChkForNonSolids → NSFnd, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForNonSolids",
@@ -76004,10 +76163,13 @@
       "instruction": "beq",
       "id": "control-02698",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain branch relation ChkForNonSolids → NSFnd, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForNonSolids",
@@ -76017,10 +76179,13 @@
       "instruction": "cmp",
       "id": "control-02699",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain fallthrough relation ChkForNonSolids → NSFnd, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "FireballBGCollision",
@@ -96374,12 +96539,12 @@
       "id": "control-03981",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BlockBufferChk_Enemy -> SdeCLoop with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves enemy side/terrain return relation BlockBufferChk_Enemy → SdeCLoop, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForNonSolids",
@@ -96389,10 +96554,13 @@
       "instruction": "rts/rti",
       "id": "control-03982",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain return relation ChkForNonSolids → SdeCLoop, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "InitVStf",
@@ -96403,12 +96571,12 @@
       "id": "control-03983",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitVStf -> EnemyLanding with its mode/slot predicate, exact write ordering and call/tail/return handoff."
+      "semanticContract": "Preserves enemy side/terrain return relation InitVStf → EnemyLanding, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "SubtEnemyYPos",
@@ -96418,10 +96586,13 @@
       "instruction": "rts/rti",
       "id": "control-03984",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain return relation SubtEnemyYPos → EnemyJump, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkUnderEnemy",
@@ -96431,10 +96602,13 @@
       "instruction": "rts/rti",
       "id": "control-03985",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain return relation ChkUnderEnemy → EnemyJump, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkForNonSolids",
@@ -96444,10 +96618,13 @@
       "instruction": "rts/rti",
       "id": "control-03986",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain return relation ChkForNonSolids → EnemyJump, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyLanding",
@@ -96457,10 +96634,13 @@
       "instruction": "rts/rti",
       "id": "control-03987",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain return relation EnemyLanding → EnemyJump, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ChkUnderEnemy",
@@ -96470,10 +96650,13 @@
       "instruction": "rts/rti",
       "id": "control-03988",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain return relation ChkUnderEnemy → HammerBroBGColl, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "ShellOrBlockDefeat",
@@ -96484,12 +96667,12 @@
       "id": "control-03989",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ShellOrBlockDefeat -> KillEnemyAboveBlock with its source predicate, selected slot and state/table handoff ordering."
+      "semanticContract": "Preserves enemy side/terrain return relation ShellOrBlockDefeat → KillEnemyAboveBlock, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "EnemyLanding",
@@ -96499,10 +96682,13 @@
       "instruction": "rts/rti",
       "id": "control-03990",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "semanticEvidence": [
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy side/terrain return relation EnemyLanding → UnderHammerBro, including its source predicate, state handoff and call/tail/return ordering."
     },
     {
       "from": "BlockBufferChk_FBall",
