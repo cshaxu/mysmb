@@ -4,10 +4,61 @@
   "nodeTotal": 1992,
   "controlEdgeTotal": 4342,
   "dataEdges": {
-    "status": "not-yet-enumerated",
-    "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges."
+    "status": "partially-enumerated",
+    "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
+    "enumeratedCount": 3,
+    "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
-  "materialEdges": [],
+  "materialEdges": [
+    {
+      "id": "material-00001",
+      "producer": "VRAM_AddrTable_Low",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector-indexed ROM low-byte table to zero-page $00",
+      "feasiblePath": "NonMaskableInterrupt loads X from $0773, reads VRAM_AddrTable_Low,X, stores $00, then calls UpdateScreen.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_vram_address_low selected by mysmb_game_commit_vram_buffer",
+      "semanticContract": "The selected low table byte is the UpdateScreen pointer low byte before buffer consumption.",
+      "semanticEvidence": [
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
+      ],
+      "operationalEvidence": [
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80c3, after both table loads and before UpdateScreen, match current x86 and x64 low/high bytes $00/$01 for selectors 0-18; x86 and x64 agree on every selector."
+      ]
+    },
+    {
+      "id": "material-00002",
+      "producer": "VRAM_AddrTable_High",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector-indexed ROM high-byte table to zero-page $01",
+      "feasiblePath": "NonMaskableInterrupt loads X from $0773, reads VRAM_AddrTable_High,X, stores $01, then calls UpdateScreen.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_vram_address_high selected by mysmb_game_commit_vram_buffer",
+      "semanticContract": "The selected high table byte is the UpdateScreen pointer high byte before buffer consumption.",
+      "semanticEvidence": [
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
+      ],
+      "operationalEvidence": [
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80c3, after both table loads and before UpdateScreen, match current x86 and x64 low/high bytes $00/$01 for selectors 0-18; x86 and x64 agree on every selector."
+      ]
+    },
+    {
+      "id": "material-00003",
+      "producer": "VRAM_Buffer_Offset",
+      "consumer": "InitBuffer",
+      "storage": "selector-dependent buffer-header selection at $0300/$0301 or $0340/$0341",
+      "feasiblePath": "After UpdateScreen, selector equals $06 selects Buffer_Offset[1] and clears buffer two; every other selector including $07 selects Buffer_Offset[0] and clears buffer one.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_commit_vram_buffer selector == 6 branch",
+      "semanticContract": "Only selector $06 clears buffer-two header; selector $07 may transfer buffer two but clears buffer-one header.",
+      "semanticEvidence": [
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
+      ],
+      "operationalEvidence": [
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80de, after UpdateScreen and InitBuffer, match current x86 and x64 buffer headers $0300/$0301 and $0340/$0341 plus cleared selector $0773 for selectors 0-18; x86 and x64 agree on every selector."
+      ]
+    }
+  ],
   "cohorts": [
     {
       "id": "A",
@@ -216,14 +267,14 @@
       "label": "VRAM_AddrTable_Low",
       "asmLine": 743,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_vram_address_low",
       "semanticEvidence": [
-        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80c3, after both table loads and before UpdateScreen, match current x86 and x64 low/high bytes $00/$01 for selectors 0-18; x86 and x64 agree on every selector."
       ],
       "semanticContract": "Binds all 19 low-byte entries selected by VRAM_Buffer_AddrCtrl into zero-page $00 before UpdateScreen."
     },
@@ -231,14 +282,14 @@
       "label": "VRAM_AddrTable_High",
       "asmLine": 752,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_vram_address_high",
       "semanticEvidence": [
-        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80c3, after both table loads and before UpdateScreen, match current x86 and x64 low/high bytes $00/$01 for selectors 0-18; x86 and x64 agree on every selector."
       ],
       "semanticContract": "Binds all 19 high-byte entries selected by VRAM_Buffer_AddrCtrl into zero-page $01 before UpdateScreen."
     },
@@ -246,14 +297,14 @@
       "label": "VRAM_Buffer_Offset",
       "asmLine": 761,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_commit_vram_buffer selector branch",
       "semanticEvidence": [
-        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80de, after UpdateScreen and InitBuffer, match current x86 and x64 buffer headers $0300/$0301 and $0340/$0341 plus cleared selector $0773 for selectors 0-18; x86 and x64 agree on every selector."
       ],
       "semanticContract": "Selects the second buffer header only when selector equals $06; selector $07 transfers buffer two but clears the ordinary buffer-one header."
     },

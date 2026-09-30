@@ -19,8 +19,8 @@ incomplete node/control-edge identities.
 
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
-| Exact | 6 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 3 | Current source audit exists but the current original-ROM route is incomplete. |
+| Exact | 9 | Current source audit and original-ROM route both prove the label. |
+| Needs evidence | 0 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 0 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -53,7 +53,7 @@ explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
-| Exact | 20 |
+| Exact | 20 control; 3 material RAM/table |
 | Needs evidence | 0 |
 | Mismatch | 0 |
 | Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
@@ -151,8 +151,14 @@ calls/returns, and the reset vector. Current x86/x64 snapshots at the same
 boundary are byte-identical and have no persistent RAM, CIRAM, palette, OAM,
 audio or PPU difference after the explicit sequence/CPU-stack exclusions.
 
-The three adjacent VRAM table labels remain `needs-evidence`: their current
-`frame_root.c` counterparts and default selector path have static/operational
-evidence, but the full 19-selector pointer and buffer-header matrix still
-needs a same-boundary ROM probe. The linked JSON ledger names all 29 stable
-identities and their current counterparts.
+The adjacent VRAM table labels are also **exact**. A controlled 19-selector
+matrix captures the ROM after its selected low/high bytes are loaded into
+`$00/$01`, before `UpdateScreen`, and compares those bytes with both current
+x86 and x64 owners. A second capture after `UpdateScreen` and `InitBuffer`
+compares the two buffer headers and cleared selector for all 19 choices. This
+also establishes three source-path material edges: each pointer table to the
+NMI consumer, and the buffer-offset table to `InitBuffer`. The ROM's pointer
+may advance while parsing a command packet, whereas the C owner traverses its
+buffer directly; the audit compares initial table binding separately from
+post-consumption header state. The linked JSON ledger records those distinct
+contracts without treating implementation shape as a mismatch.
