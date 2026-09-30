@@ -962,41 +962,61 @@
       "label": "MushroomIconData",
       "asmLine": 1090,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_draw_mushroom_icon",
+      "semanticEvidence": [
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Binds the exact eight-byte source icon packet, including VRAM buffer offset and terminator."
     },
     {
       "label": "DrawMushroomIcon",
       "asmLine": 1093,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_draw_mushroom_icon",
+      "semanticEvidence": [
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Initializes Y to seven and enters the descending icon data copy loop."
     },
     {
       "label": "IconDataRead",
       "asmLine": 1095,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_draw_mushroom_icon",
+      "semanticEvidence": [
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Copies all eight icon bytes in descending order, then branches on NumberOfPlayers before optional two-player tile overwrites."
     },
     {
       "label": "ExitIcon",
       "asmLine": 1105,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_draw_mushroom_icon",
+      "semanticEvidence": [
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Returns without further mutation after the selected icon layout is complete."
     },
     {
       "label": "DemoActionData",
@@ -21973,13 +21993,15 @@
       "instruction": "jsr",
       "id": "control-00097",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original call relation SelectBLogic -> DrawMushroomIcon at source line 1031 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner."
     },
     {
       "from": "SelectBLogic",
@@ -22278,10 +22300,15 @@
       "instruction": "ldy",
       "id": "control-00115",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner."
     },
     {
       "from": "IconDataRead",
@@ -22291,10 +22318,15 @@
       "instruction": "bpl",
       "id": "control-00116",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner."
     },
     {
       "from": "IconDataRead",
@@ -22304,10 +22336,15 @@
       "instruction": "beq",
       "id": "control-00117",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner."
     },
     {
       "from": "IconDataRead",
@@ -22317,10 +22354,15 @@
       "instruction": "sta",
       "id": "control-00118",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner."
     },
     {
       "from": "DemoEngine",
@@ -66345,13 +66387,15 @@
       "instruction": "rts/rti",
       "id": "control-03499",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original return relation DrawMushroomIcon -> SelectBLogic at source line 1031 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
+      "operationalEvidence": [
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+      ],
+      "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner."
     },
     {
       "from": "GoContinue",

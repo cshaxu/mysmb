@@ -19,10 +19,10 @@ incomplete node/control-edge identities.
 
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
-| Exact | 34 | Current source audit and original-ROM route both prove the label. |
+| Exact | 38 | Current source audit and original-ROM route both prove the label. |
 | Needs evidence | 20 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 4 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,934 | Not yet processed by this re-audit. |
+| Unclassified | 1,930 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -53,10 +53,10 @@ explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
-| Exact | 68 control; 3 material RAM/table |
-| Needs evidence | 66 |
+| Exact | 74 control; 3 material RAM/table |
+| Needs evidence | 64 |
 | Mismatch | 3 |
-| Unclassified | 4,205 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 4,201 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -259,3 +259,8 @@ eight caller, branch, fall-through and return relations. Controlled action
 switch, held-action and terminal-zero routes match ROM and x86/x64. `RunDemo`
 remains open because its `GameCoreRoutine` call and post-return reset condition
 belong to the later game-core route family.
+
+The preceding icon chain is also exact: `MushroomIconData`,
+`DrawMushroomIcon`, `IconDataRead` and `ExitIcon`, plus its Select caller,
+return, descending loop and player-count conditional relations. Both icon
+layouts match the original-ROM NMI path and current x86/x64 state.
