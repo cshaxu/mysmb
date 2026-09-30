@@ -63,6 +63,7 @@ def main():
         node["status"] = "unclassified"
         node["currentOwner"] = None
         node["currentCounterpart"] = None
+        node["semanticContract"] = None
         node["semanticEvidence"] = []
         node["operationalEvidence"] = []
 
@@ -83,6 +84,7 @@ def main():
             record["cohort"] = cohort_for(node_lines[edge["from"]])
         record["status"] = "unclassified"
         record["currentCounterpart"] = None
+        record["semanticContract"] = None
         record["semanticEvidence"] = []
         record["operationalEvidence"] = []
         edges.append(record)

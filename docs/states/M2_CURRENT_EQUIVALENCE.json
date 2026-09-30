@@ -132,7 +132,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Clears portable game container and publishes physical PPU control $10 before either VBlank timing gate; CPU interrupt/decimal/stack setup is an explicit nonportable ABI exclusion."
     },
     {
       "label": "VBlank1",
@@ -144,7 +145,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "First PPU-status polling barrier has no shared mutable game-state write and must complete before VBlank2."
     },
     {
       "label": "VBlank2",
@@ -156,7 +158,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Second PPU-status polling barrier has no shared mutable game-state write and must complete before WBootCheck."
     },
     {
       "label": "WBootCheck",
@@ -168,7 +171,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Reads TopScoreDisplay offsets 5 down through 0, cold-boots on any digit >= $0a, then accepts warm initialization only when $07ff equals $a5."
     },
     {
       "label": "ColdBoot",
@@ -180,7 +184,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Calls memory initialization with the selected Y origin, then writes DMC load/mode/marker/LFSR/APU/PPU state, initializes OAM/name tables, raises DisableScreenFlag and enables NMI in source order."
     },
     {
       "label": "EndlessLoop",
@@ -192,7 +197,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Performs no game-state write after ColdBoot; it waits for the independently scheduled first NMI boundary."
     },
     {
       "label": "VRAM_AddrTable_Low",
@@ -204,7 +210,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Binds all 19 low-byte entries selected by VRAM_Buffer_AddrCtrl into zero-page $00 before UpdateScreen."
     },
     {
       "label": "VRAM_AddrTable_High",
@@ -216,7 +223,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Binds all 19 high-byte entries selected by VRAM_Buffer_AddrCtrl into zero-page $01 before UpdateScreen."
     },
     {
       "label": "VRAM_Buffer_Offset",
@@ -228,7 +236,8 @@
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Selects the second buffer header only when selector equals $06; selector $07 transfers buffer two but clears the ordinary buffer-one header."
     },
     {
       "label": "NonMaskableInterrupt",
@@ -20075,7 +20084,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "Start falls through to the first VBlank barrier after physical PPU setup."
     },
     {
       "from": "VBlank1",
@@ -20090,7 +20100,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "VBlank1 loops while PPU status bit seven is clear."
     },
     {
       "from": "VBlank1",
@@ -20105,7 +20116,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "VBlank1 falls through to VBlank2 only after its status condition succeeds."
     },
     {
       "from": "VBlank2",
@@ -20120,7 +20132,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "VBlank2 loops while PPU status bit seven is clear."
     },
     {
       "from": "VBlank2",
@@ -20135,7 +20148,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "VBlank2 falls through to warm-boot inspection only after its status condition succeeds."
     },
     {
       "from": "WBootCheck",
@@ -20150,7 +20164,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "An invalid top-score digit branches directly to ColdBoot."
     },
     {
       "from": "WBootCheck",
@@ -20165,7 +20180,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "A valid digit decrements X and loops while unchecked digits remain."
     },
     {
       "from": "WBootCheck",
@@ -20180,7 +20196,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "A failed warm marker test branches to ColdBoot."
     },
     {
       "from": "WBootCheck",
@@ -20195,7 +20212,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "A valid warm marker falls through to ColdBoot with the warm clear origin."
     },
     {
       "from": "ColdBoot",
@@ -20210,7 +20228,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "ColdBoot invokes InitializeMemory before any cold-state writes."
     },
     {
       "from": "ColdBoot",
@@ -20225,7 +20244,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "ColdBoot invokes the full OAM offscreen pass before name-table initialization."
     },
     {
       "from": "ColdBoot",
@@ -20240,7 +20260,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "ColdBoot invokes name-table initialization before setting DisableScreenFlag."
     },
     {
       "from": "ColdBoot",
@@ -20255,7 +20276,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "ColdBoot invokes the PPU-control write after setting the NMI-enable bit in the mirror."
     },
     {
       "from": "ColdBoot",
@@ -20270,7 +20292,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "ColdBoot falls into the idle loop after its final PPU control write."
     },
     {
       "from": "EndlessLoop",
@@ -20285,7 +20308,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "EndlessLoop unconditionally repeats without game-state work."
     },
     {
       "from": "NonMaskableInterrupt",
@@ -65371,7 +65395,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "InitializeMemory returns to the remaining ColdBoot writes."
     },
     {
       "from": "MoveAllSpritesOffscreen",
@@ -65386,7 +65411,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "MoveAllSpritesOffscreen returns to ColdBoot before InitializeNameTables."
     },
     {
       "from": "InitializeNameTables",
@@ -65401,7 +65427,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "InitializeNameTables returns to ColdBoot before DisableScreenFlag increment."
     },
     {
       "from": "WritePPUReg1",
@@ -65416,7 +65443,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "WritePPUReg1 returns to the idle boundary."
     },
     {
       "from": "InitScroll",
@@ -73322,7 +73350,8 @@
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "semanticContract": "The reset vector enters Start."
     },
     {
       "from": "<vector>",

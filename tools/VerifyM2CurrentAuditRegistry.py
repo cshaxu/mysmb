@@ -18,6 +18,8 @@ def audit_fields(record, identity):
     if record["status"] != "unclassified":
         require(record.get("currentCounterpart"),
                 "%s has a disposition without a current counterpart" % identity)
+        require(record.get("semanticContract"),
+                "%s has a disposition without a semantic contract" % identity)
         require(record.get("semanticEvidence"),
                 "%s has a disposition without semantic evidence" % identity)
     if record["status"] == "exact":
