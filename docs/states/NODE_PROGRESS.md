@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1785 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1801 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 171 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 155 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1785 / 1,992 (89.61%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1801 / 1,992 (90.41%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T48 S3 closure](../proposals/m2/t48-sound-effects-and-channel-handlers.md#s3-closure-square-one-effect-phases) proves 14 exact square-one phase/data labels on 39 original calls and 78 x86/x64 phase comparisons plus the owner-ROM table binding, with separate three-target operational checks.
+Latest task review: [T48 S4 closure](../proposals/m2/t48-sound-effects-and-channel-handlers.md#s4-closure-square-one-dispatch-and-lifetime) proves 16 exact square-one dispatch/lifetime labels on 192 original calls and 384 x86/x64 comparisons, with separate three-target operational checks.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1785)
+## Completed matches (1801)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1818,6 +1818,22 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15242 | `Fthrow` |
 | 15247 | `ContinueBumpThrow` |
 | 15253 | `DecJpFPS` |
+| 15256 | `Square1SfxHandler` |
+| 15276 | `CheckSfx1Buffer` |
+| 15294 | `ExS1H` |
+| 15296 | `PlaySwimStomp` |
+| 15304 | `ContinueSwimStomp` |
+| 15313 | `BranchToDecLength1` |
+| 15316 | `PlaySmackEnemy` |
+| 15325 | `ContinueSmackEnemy` |
+| 15333 | `SmSpc` |
+| 15334 | `SmTick` |
+| 15336 | `DecrementSfx1Length` |
+| 15340 | `StopSquare1Sfx` |
+| 15347 | `ExSfx1` |
+| 15349 | `PlayPipeDownInj` |
+| 15353 | `ContinuePipeDownInj` |
+| 15365 | `NoPDwnL` |
 
 ## Mapped but not yet matched (36)
 

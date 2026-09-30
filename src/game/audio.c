@@ -179,12 +179,8 @@ static mysmb_u8 mysmb_audio_first_square1(mysmb_u8 queue)
     return 0x40U;
 }
 
-static mysmb_u8 mysmb_audio_square1_length(mysmb_u8 effect)
-{
-    if (effect == 0x04U || effect == 0x08U) return 0x0eU;
-    if (effect == 0x10U) return 0x2fU;
-    return 0x28U;
-}
+static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
+                                  mysmb_u8 value);
 
 static mysmb_u8 mysmb_audio_first_square2(mysmb_u8 queue)
 {
@@ -214,14 +210,22 @@ static void mysmb_audio_step_square1(struct mysmb_game *game)
 {
     mysmb_u8 queue;
     mysmb_u8 effect;
+    mysmb_u8 length;
 
     queue = game->ram[MYSMB_RAM_SQUARE1_QUEUE];
     if (queue != 0U) {
-        effect = mysmb_audio_first_square1(queue);
-        /* The ROM retains the complete bitset in the buffer.  The selected
-         * bit decides this frame's effect, while the raw command remains
-         * observable to a future audio adapter. */
+        /* Square1SfxHandler stores the unshifted queue in its buffer,
+         * then shifts the live queue once for each lower-priority test. */
         game->ram[MYSMB_RAM_SQUARE1_BUFFER] = queue;
+        if ((queue & 0x80U) != 0U) effect = 0x80U;
+        else {
+            effect = 0U;
+            for (length = 0U; length < 7U; ++length) {
+                effect = (mysmb_u8)(1U << length);
+                game->ram[MYSMB_RAM_SQUARE1_QUEUE] >>= 1U;
+                if ((queue & effect) != 0U) break;
+            }
+        }
         if (effect == 0x80U || effect == 0x01U)
             mysmb_audio_square1_play_jump(game,
                                            effect == 0x80U ? 1U : 0U);
@@ -230,9 +234,16 @@ static void mysmb_audio_step_square1(struct mysmb_game *game)
                                             effect == 0x20U ? 1U : 0U);
         else if (effect == 0x40U)
             mysmb_audio_square1_play_flagpole(game);
-        else
-            game->ram[MYSMB_RAM_SQUARE1_LENGTH] =
-                mysmb_audio_square1_length(effect);
+        else if (effect == 0x04U) {
+            game->ram[MYSMB_RAM_SQUARE1_LENGTH] = 0x0eU;
+            (void)mysmb_audio_play_squ1_sfx(game, 0x26U, 0x9eU, 0x9cU);
+        }
+        else if (effect == 0x08U) {
+            game->ram[MYSMB_RAM_SQUARE1_LENGTH] = 0x0eU;
+            (void)mysmb_audio_play_squ1_sfx(game, 0x28U, 0x9fU, 0xcbU);
+        }
+        else if (effect == 0x10U)
+            game->ram[MYSMB_RAM_SQUARE1_LENGTH] = 0x2fU;
     }
     if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) return;
     effect = mysmb_audio_first_square1(game->ram[MYSMB_RAM_SQUARE1_BUFFER]);
@@ -240,9 +251,27 @@ static void mysmb_audio_step_square1(struct mysmb_game *game)
         mysmb_audio_square1_continue_jump(game);
     else if (effect == 0x02U || effect == 0x20U)
         mysmb_audio_square1_continue_throw(game);
+    else if (effect == 0x04U) {
+        length = game->ram[MYSMB_RAM_SQUARE1_LENGTH];
+        mysmb_audio_write_apu(game, 0U,
+                               mysmb_audio_swim_stomp_envelope(game, length));
+        if (length == 0x06U) mysmb_audio_write_apu(game, 2U, 0x9eU);
+    }
+    else if (effect == 0x08U && queue == 0U) {
+        length = game->ram[MYSMB_RAM_SQUARE1_LENGTH];
+        if (length == 0x08U) mysmb_audio_write_apu(game, 2U, 0xa0U);
+        mysmb_audio_write_apu(game, 0U, length == 0x08U ? 0x9fU : 0x90U);
+    }
+    else if (effect == 0x10U) {
+        length = game->ram[MYSMB_RAM_SQUARE1_LENGTH];
+        if ((length & 0x0bU) == 0x08U)
+            (void)mysmb_audio_play_squ1_sfx(game, 0x44U, 0x9aU, 0x91U);
+    }
     game->ram[MYSMB_RAM_SQUARE1_LENGTH]--;
     if (game->ram[MYSMB_RAM_SQUARE1_LENGTH] == 0U) {
         game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
+        mysmb_audio_write_apu(game, 21U, 0x0eU);
+        mysmb_audio_write_apu(game, 21U, 0x0fU);
     }
 }
 

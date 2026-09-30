@@ -2,6 +2,8 @@
 
 ## Translation Debt
 
+- [ ] **Eleven failing legacy smoke tests require ROM adjudication and useful diagnostics.** At T48 S4, x86/x64 each pass 222/233; the failures are `core`, `area-entry`, `player-bounding-box`, `enemy-terrain-state`, `hammer-bro`, `enemy-collision`, `bowser`, `title-demo`, `end-to-end`, `local-area`, and `enemy-background-entry`. Ten exit without identifying the failing assertion; `enemy-background-entry` reports RAM `$0002/$0005` differences. Retain these tests until each assertion is compared with the original ROM: correct a wrong expectation or fix shared C in its receiving node's maintenance/source-order chain, and make failures identify their exact case. This baseline is not an acceptance waiver for M2 closure. [T48 S4 review](../proposals/m2/t48-sound-effects-and-channel-handlers.md#s4-closure-square-one-dispatch-and-lifetime).
+
 - [ ] **KillEnemies entry store:** T43 S3 independently proves64/64 original child calls differ at RAM00: original stores incoming33, existing area helper retains02. Its historical completion is revoked; maintenance receiver remains M2 T29 S8. Repair requires that original store plus both warp and flagpole callers in a separately admitted maintenance chain. No extra S3 child algorithm change. [Evidence](../history/M2-T43-terrain-and-bounding-boxes.md#s3-climbing-proof).
 
 

@@ -305,3 +305,83 @@ operational track runs focused audio and purity tests, x86/x64 full
 regression against the 11-failure baseline, both Windows self-tests,
 DOS16 MZ link and three refreshed EXEs. Any unresolved dependency is
 reported by exact label rather than silently credited.
+
+### S4 ROM-logic evidence
+
+The unchanged owner ROM was entered through NMI SoundEngine with only
+original queue, buffer and counter RAM varied at the entry. Twenty-four
+bounded routes produced 192 original entry/return calls. The shared C
+checker compared Square1SoundBuffer, Square1SoundQueue,
+Squ1_SfxLenCounter and APU `$4000`–`$4003` plus `$4015` after every
+call: **384 x86/x64 comparisons, zero S4-owned differences**. Eight
+S3 continuation routes were replayed separately on 64 original calls
+and both native widths without regression. The source coverage log hit
+all 16 S4 labels, including the zero-counter stop, no-effect exit,
+priority-bit overlap, swim envelope and pipe gating branches. No ROM
+byte, CPU PC or return stack was altered.
+
+| Node / original PC | Hits | Source behavior and shared C mapping |
+| --- | ---: | --- |
+| `Square1SfxHandler` `$f41b` | 1152 | Save unshifted queue in `$f1`, then test sign and shift `$ff` by source priority; `mysmb_audio_step_square1`. |
+| `CheckSfx1Buffer` `$f43f`, `ExS1H` `$f45a` | 1072, 555 | Empty buffer exits; otherwise bit priority selects continuation; same shared handler. |
+| `PlaySwimStomp` `$f45b`, `ContinueSwimStomp` `$f469` | 8, 84 | Length `$0e`, initial frequency/control, then indexed owner-ROM envelope write and `$9e` frequency at length six. |
+| `BranchToDecLength1` `$f47b` | 317 | Join the common decrement tail after continuation. |
+| `PlaySmackEnemy` `$f47d`, `ContinueSmackEnemy` `$f48d` | 8, 57 | Length `$0e`, initial frequency/control; later length eight changes frequency and control, other lengths write spacing control. |
+| `SmSpc` `$f49d`, `SmTick` `$f49f` | 47, 57 | `$90` spacing control or `$9f` accent control written to `$4000`. |
+| `DecrementSfx1Length` `$f4a2`, `StopSquare1Sfx` `$f4a7`, `ExSfx1` `$f4b5` | 597, 54, 597 | Decrement `$07bb`; on zero clear `$f1` and write `$0e` then `$0f` to `$4015`; return. |
+| `PlayPipeDownInj` `$f4b6`, `ContinuePipeDownInj` `$f4bb`, `NoPDwnL` `$f4d1` | 8, 167, 167 | Length `$2f`; write initial or continuation frequency/control only when original two shifts and bit-one gate allow, then decrement. |
+
+The S4 chain is contained in shared `src/game/audio.c`; neither Win32
+nor DOS selects an effect or modifies a game queue. S5's square-two
+effects and S6's square-two dispatcher retain their own node custody.
+
+### S4 closure: square-one dispatch and lifetime
+
+**P1 result: 16 intended matches, 16 actual matches, no scoped
+deferments; 1,785 to 1,801/1,992.** The individual dispositions are
+the 16 source-PC rows above. ROM logic proof covers the original bit
+priority, buffer continuation, three new effect families and common
+decrement/stop branches on 192 owner-ROM calls, with 384 cross-width
+comparisons and zero scoped differences. The 64-call S3 continuation
+replay also has zero regressions.
+
+The operational track rebuilt Win32 x86/x64 and DOS16 from shared C.
+The DOS16 toolchain linked a valid MZ executable and both Windows
+products passed `--self-test`. The final x86 and x64 CTest matrices
+each passed **222/233**, with exactly the 11 recorded baseline failures
+and no new failure; focused audio and platform-purity checks passed.
+
+| Owner-requested artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `449a92710eac74b73774a05d0862d10214da9e799c773350e2523380e1cdffed` |
+| `assets/mysmb32.exe` | `1b355ee98e127196deed003fec31aa426366c430590653b9f81de1cd42ebe688` |
+| `assets/mysmb64.exe` | `9172d2c71a10ae9386b4df47dee7ea39ff901b30ad0b0ebf5420fbfefff6411f` |
+
+The similar-issue sweep checked the whole square-one queue/buffer
+branch family and every shared audio/host boundary. All effect policy
+stays in `src/game/audio.c`; host adapters only consume audio output.
+The remaining square-two handlers retain S5/S6 custody. S4 neither
+credits nor substitutes their unfinished nodes.
+
+## S5 admission: square-two effect data and phases
+
+S4 closed at **1,801/1,992**. S5 accepts the next 18 **open** labels in
+source order: `ExtraLifeFreqData`, `PowerUpGrabFreqData`,
+`PUp_VGrow_FreqData`, `PlayCoinGrab`, `PlayTimerTick`,
+`CGrab_TTickRegL`, `ContinueCGrabTTick`, `N2Tone`, `PlayBlast`,
+`ContinueBlast`, `SBlasJ`, `PlayPowerUpGrab`, `ContinuePowerUpGrab`,
+`LoadSqu2Regs`, `DecrementSfx2Length`, `EmptySfx2Buffer`,
+`StopSquare2Sfx`, `ExSfx2`. All 18 are intended ROM matches, for a
+maximum **1,819/1,992**. This shared `src/game/audio.c` chain begins
+with the three original frequency-data tables immediately after
+`NoPDwnL` and ends at `ExSfx2` before S6's `Square2SfxHandler`.
+S2's register helpers and S4's channel separation are predecessors;
+S6's dispatcher is a named successor, without premature credit.
+
+The ROM-logic track binds tables through the owner ROM and enters the
+original square-two effects through NMI SoundEngine using bounded queue,
+buffer and counter states. It compares source PCs, table indices,
+branches, RAM writes and APU registers with shared C. The operational
+track runs focused audio and purity tests, full x86/x64 regression,
+Windows self-tests, DOS16 MZ link and three refreshed EXEs. Every label
+will receive an individual disposition at closure.
