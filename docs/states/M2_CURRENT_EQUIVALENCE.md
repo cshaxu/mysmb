@@ -54,7 +54,7 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 20 control; 3 material RAM/table |
-| Needs evidence | 0 |
+| Needs evidence | 47 |
 | Mismatch | 0 |
 | Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
@@ -175,5 +175,9 @@ labels' branch/state/table/output contracts and their shared `frame_root.c`
 counterparts. They are deliberately **needs-evidence**, rather than exact:
 the controlled original-ROM route must still cover timer, pause, sprite-zero
 and scroll alternatives, and the separate integration pass has not yet
-classified the 39 owned control relations. This preserves the distinction
-between a mapped node and a proven node/edge system.
+completed its ROM route proof. Its static integration pass has now recorded
+the counterpart and ordering contract for all 47 owned control relations:
+branches, fall-throughs, calls and matching returns through the first
+operation-mode-dispatch call. Those edges are also **needs-evidence** until
+the controlled route observes the corresponding alternatives. This preserves
+the distinction between a mapped node and a proven node/edge system.

@@ -20457,10 +20457,13 @@
       "instruction": "bne",
       "id": "control-00016",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation NonMaskableInterrupt -> ScreenOff at source line 773 (bne) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization."
     },
     {
       "from": "NonMaskableInterrupt",
@@ -20470,10 +20473,13 @@
       "instruction": "ora",
       "id": "control-00017",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation NonMaskableInterrupt -> ScreenOff at source line 775 (ora) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization."
     },
     {
       "from": "ScreenOff",
@@ -20483,10 +20489,13 @@
       "instruction": "jsr",
       "id": "control-00018",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation ScreenOff -> InitScroll at source line 781 (jsr) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization."
     },
     {
       "from": "ScreenOff",
@@ -20496,10 +20505,13 @@
       "instruction": "jsr",
       "id": "control-00019",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation ScreenOff -> UpdateScreen at source line 790 (jsr) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization."
     },
     {
       "from": "ScreenOff",
@@ -20509,10 +20521,13 @@
       "instruction": "bne",
       "id": "control-00020",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation ScreenOff -> InitBuffer at source line 794 (bne) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization."
     },
     {
       "from": "ScreenOff",
@@ -20522,10 +20537,13 @@
       "instruction": "iny",
       "id": "control-00021",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation ScreenOff -> InitBuffer at source line 795 (iny) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization."
     },
     {
       "from": "InitBuffer",
@@ -20535,10 +20553,13 @@
       "instruction": "jsr",
       "id": "control-00022",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation InitBuffer -> SoundEngine at source line 803 (jsr) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
     },
     {
       "from": "InitBuffer",
@@ -20548,10 +20569,13 @@
       "instruction": "jsr",
       "id": "control-00023",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation InitBuffer -> ReadJoypads at source line 804 (jsr) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
     },
     {
       "from": "InitBuffer",
@@ -20561,10 +20585,13 @@
       "instruction": "jsr",
       "id": "control-00024",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation InitBuffer -> PauseRoutine at source line 805 (jsr) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
     },
     {
       "from": "InitBuffer",
@@ -20574,10 +20601,13 @@
       "instruction": "jsr",
       "id": "control-00025",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation InitBuffer -> UpdateTopScore at source line 806 (jsr) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
     },
     {
       "from": "InitBuffer",
@@ -20587,10 +20617,13 @@
       "instruction": "bcs",
       "id": "control-00026",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation InitBuffer -> PauseSkip at source line 809 (bcs) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "InitBuffer",
@@ -20600,10 +20633,13 @@
       "instruction": "beq",
       "id": "control-00027",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation InitBuffer -> DecTimers at source line 811 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "InitBuffer",
@@ -20613,10 +20649,13 @@
       "instruction": "bne",
       "id": "control-00028",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation InitBuffer -> NoDecTimers at source line 813 (bne) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "InitBuffer",
@@ -20626,10 +20665,13 @@
       "instruction": "bne",
       "id": "control-00029",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation InitBuffer -> DecTimers at source line 813 (bne) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "DecTimers",
@@ -20639,10 +20681,13 @@
       "instruction": "bpl",
       "id": "control-00030",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation DecTimers -> DecTimersLoop at source line 816 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "DecTimers",
@@ -20652,10 +20697,13 @@
       "instruction": "ldx",
       "id": "control-00031",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation DecTimers -> DecTimersLoop at source line 819 (ldx) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "DecTimersLoop",
@@ -20665,10 +20713,13 @@
       "instruction": "beq",
       "id": "control-00032",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation DecTimersLoop -> SkipExpTimer at source line 821 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "DecTimersLoop",
@@ -20678,10 +20729,13 @@
       "instruction": "dec",
       "id": "control-00033",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation DecTimersLoop -> SkipExpTimer at source line 822 (dec) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "SkipExpTimer",
@@ -20691,10 +20745,13 @@
       "instruction": "bpl",
       "id": "control-00034",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation SkipExpTimer -> DecTimersLoop at source line 824 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "SkipExpTimer",
@@ -20704,10 +20761,13 @@
       "instruction": "bpl",
       "id": "control-00035",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation SkipExpTimer -> NoDecTimers at source line 824 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "NoDecTimers",
@@ -20717,10 +20777,13 @@
       "instruction": "inc",
       "id": "control-00036",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation NoDecTimers -> PauseSkip at source line 825 (inc) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "PauseSkip",
@@ -20730,10 +20793,13 @@
       "instruction": "beq",
       "id": "control-00037",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation PauseSkip -> RotPRandomBit at source line 835 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "PauseSkip",
@@ -20743,10 +20809,13 @@
       "instruction": "sec",
       "id": "control-00038",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation PauseSkip -> RotPRandomBit at source line 836 (sec) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
       "from": "RotPRandomBit",
@@ -20756,10 +20825,13 @@
       "instruction": "bne",
       "id": "control-00039",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation RotPRandomBit -> RotPRandomBit at source line 840 (bne) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "RotPRandomBit",
@@ -20769,10 +20841,13 @@
       "instruction": "beq",
       "id": "control-00040",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation RotPRandomBit -> SkipSprite0 at source line 842 (beq) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "RotPRandomBit",
@@ -20782,10 +20857,13 @@
       "instruction": "beq",
       "id": "control-00041",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation RotPRandomBit -> Sprite0Clr at source line 842 (beq) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "Sprite0Clr",
@@ -20795,10 +20873,13 @@
       "instruction": "bne",
       "id": "control-00042",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation Sprite0Clr -> Sprite0Clr at source line 845 (bne) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "Sprite0Clr",
@@ -20808,10 +20889,13 @@
       "instruction": "bcs",
       "id": "control-00043",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation Sprite0Clr -> Sprite0Hit at source line 848 (bcs) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "Sprite0Clr",
@@ -20821,10 +20905,13 @@
       "instruction": "jsr",
       "id": "control-00044",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation Sprite0Clr -> MoveSpritesOffscreen at source line 849 (jsr) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "Sprite0Clr",
@@ -20834,10 +20921,13 @@
       "instruction": "jsr",
       "id": "control-00045",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation Sprite0Clr -> SpriteShuffler at source line 850 (jsr) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "Sprite0Clr",
@@ -20847,10 +20937,13 @@
       "instruction": "jsr",
       "id": "control-00046",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation Sprite0Clr -> Sprite0Hit at source line 850 (jsr) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "Sprite0Hit",
@@ -20860,10 +20953,13 @@
       "instruction": "beq",
       "id": "control-00047",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation Sprite0Hit -> Sprite0Hit at source line 853 (beq) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
     },
     {
       "from": "Sprite0Hit",
@@ -20873,10 +20969,13 @@
       "instruction": "ldy",
       "id": "control-00048",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation Sprite0Hit -> HBlankDelay at source line 854 (ldy) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
     },
     {
       "from": "HBlankDelay",
@@ -20886,10 +20985,13 @@
       "instruction": "bne",
       "id": "control-00049",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation HBlankDelay -> HBlankDelay at source line 856 (bne) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
     },
     {
       "from": "HBlankDelay",
@@ -20899,10 +21001,13 @@
       "instruction": "bne",
       "id": "control-00050",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation HBlankDelay -> SkipSprite0 at source line 856 (bne) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
     },
     {
       "from": "SkipSprite0",
@@ -20912,10 +21017,13 @@
       "instruction": "bcs",
       "id": "control-00051",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original branch relation SkipSprite0 -> SkipMainOper at source line 866 (bcs) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
     },
     {
       "from": "SkipSprite0",
@@ -20925,10 +21033,13 @@
       "instruction": "jsr",
       "id": "control-00052",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original call relation SkipSprite0 -> OperModeExecutionTree at source line 867 (jsr) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
     },
     {
       "from": "SkipSprite0",
@@ -20938,10 +21049,13 @@
       "instruction": "jsr",
       "id": "control-00053",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original fallthrough relation SkipSprite0 -> SkipMainOper at source line 867 (jsr) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
     },
     {
       "from": "PauseRoutine",
@@ -65600,10 +65714,13 @@
       "instruction": "rts/rti",
       "id": "control-03487",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation InitScroll -> ScreenOff at source line 781 (rts/rti) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization."
     },
     {
       "from": "UpdateScreen",
@@ -65613,10 +65730,13 @@
       "instruction": "rts/rti",
       "id": "control-03488",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation UpdateScreen -> ScreenOff at source line 790 (rts/rti) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization."
     },
     {
       "from": "SoundEngine",
@@ -65626,10 +65746,13 @@
       "instruction": "rts/rti",
       "id": "control-03489",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation SoundEngine -> InitBuffer at source line 803 (rts/rti) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
     },
     {
       "from": "ReadJoypads",
@@ -65639,10 +65762,13 @@
       "instruction": "rts/rti",
       "id": "control-03490",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation ReadJoypads -> InitBuffer at source line 804 (rts/rti) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
     },
     {
       "from": "PauseRoutine",
@@ -65652,10 +65778,13 @@
       "instruction": "rts/rti",
       "id": "control-03491",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation PauseRoutine -> InitBuffer at source line 805 (rts/rti) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
     },
     {
       "from": "UpdateTopScore",
@@ -65665,10 +65794,13 @@
       "instruction": "rts/rti",
       "id": "control-03492",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation UpdateTopScore -> InitBuffer at source line 806 (rts/rti) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work."
     },
     {
       "from": "MoveSpritesOffscreen",
@@ -65678,10 +65810,13 @@
       "instruction": "rts/rti",
       "id": "control-03493",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation MoveSpritesOffscreen -> Sprite0Clr at source line 849 (rts/rti) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "SpriteShuffler",
@@ -65691,10 +65826,13 @@
       "instruction": "rts/rti",
       "id": "control-03494",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation SpriteShuffler -> Sprite0Clr at source line 850 (rts/rti) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit."
     },
     {
       "from": "OperModeExecutionTree",
@@ -65704,10 +65842,13 @@
       "instruction": "rts/rti",
       "id": "control-03495",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original return relation OperModeExecutionTree -> SkipSprite0 at source line 867 (rts/rti) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering."
     },
     {
       "from": "JumpEngine",
