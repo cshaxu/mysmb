@@ -59,7 +59,14 @@ int main(void)
         solid=tile>=6U;
         land=fall && solid;
         memcpy(before,game.ram,sizeof(before));
-        /* The final side query selects block-buffer column 5. */
+        /* EnemyJump falls through DoSide.  The selected rightward side
+         * probe is Y=$17, so BlockBufferCollision leaves its source scratch
+         * values behind: $05 = X+$10 and $02 = (Y+$14)&$f0-$20.  A landing
+         * first aligns Y to $68, changing that final row from $60 to $50.
+         * These are observable ROM writes in addition to $06/$07. */
+        before[2] = land ? 0x50U : 0x60U;
+        before[3] = wall && !land ? 0x51U : 0U;
+        before[5] = 0x50;
         before[6]=5;
         before[7]=5;
         before[0xeb]=wall && !land ? 1:0;

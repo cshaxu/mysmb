@@ -233,12 +233,38 @@ S4 closes all 34 admitted labels from **1,958 / 1,992** to **1,992 / 1,992**. Th
 
 S5 owns no node credit. It begins at **1,992 / 1,992** and validates the complete translated graph through the T51 cross-route matrix, x86/x64 and OpenNT DOS16 artifacts, and platform-purity audit. It cannot alter game logic merely to satisfy a platform route.
 
-## T51 S5 integration finding: full x64 matrix is not clean
+## T51 S5 integration finding: full matrix remains incomplete
 
-The first full x64 CTest matrix built 243 tests and exposed failures in core,
-area-entry, player bounding-box, enemy terrain state (segmentation fault),
-hammer-bro, enemy collision, Bowser, title/demo, end-to-end, local-area and
-enemy-background-entry routes. Therefore S5 remains open and M2 cannot close.
-This finding is operational evidence only: it does not by itself identify a
-specific translated ROM node to revoke. Each failure must be traced through its
-shared C owner and original route before a node status changes.
+The initial x64 matrix exposed eleven failures. S5 adjudicated
+`enemy-background-entry` against `BlockBufferCollision` at `$e1ae`: its final
+`DoEnemySideCheck` necessarily writes scratch `$02`, `$03`, `$05`, `$06` and
+`$07`. The former test expected `$02/$03/$05` to remain zero, so it did not
+describe the ROM route. Its corrected expectation passes the focused test on
+x86 and x64; the full x86 matrix now has 233 tests with exactly ten failures:
+core, area-entry, player bounding-box, enemy terrain state, hammer-bro, enemy
+collision, Bowser, title/demo, end-to-end and local-area. S5 remains open and
+M2 cannot close. Each remaining failure must be traced through its shared C
+owner and original route before a node status changes.
+
+### S5 P1: enemy-background-entry source-shaped expectation
+
+This P changes no translated game or platform code and earns no node credit.
+The final `EnemyJump -> DoEnemySideCheck -> BlockBufferCollision` route was
+re-read from `$e163`, `$e0fe`, and `$e1ae`.  `BlockBufferCollision` writes its
+probe scratch `$02`, `$03`, `$05`, `$06`, and `$07`; the legacy test preserved
+only the final two writes and therefore falsely diagnosed the shared C route.
+Its expectation now includes the ROM-selected right probe: `$05=$50`,
+`$02=$60` normally or `$50` after the landing alignment, and `$03=$51` only
+for the non-landing wall case.  No production behavior changed.
+
+Focused and complete matrices agree: x86 and x64 each pass this route, and
+each full 243-test matrix passes 233 tests with the same ten independently
+open legacy failures named above. OpenNT's original DOS16 compiler/linker
+also builds the same shared C90 source into a 264165-byte MZ executable, with
+only the established C4761 conversion and absent `OLDNAMES.LIB` warnings.
+The refreshed three-target artifacts are `mysmb16.exe`
+`D3FE87771AFA2EA86435F41EA954055A21750A59151F76491B972BC11E175C2C`,
+`mysmb32.exe` `07921E3F6374F992395BA33EFC350321E2CD30603CE145C171931B3BC800C3CD`,
+and `mysmb64.exe` `F0EFDAFBB738DFE0D170BE3368B9526485A3C91D6A6533CE6671373E9A57F328`.
+S5 remains open: this evidence removes one false test assertion, but does not
+waive the ten remaining cross-route adjudications.
