@@ -1191,3 +1191,8 @@ branches.
 ### Cohort J — B16s shared bounding-box and rectangle-core integration
 
 `BoundBoxCtrlData` through `CollisionFound` now has nine node contracts, every incident box-builder/caller, core fall-through, coordinate branch, two-axis loop and return relation, plus six feasible table/box/carry handoffs. Static review matches all 48 bounding offsets, source coordinate write order, player box zero entry, `$06/$07` scratch protocol, horizontal short-circuit, vertical wrap cases, equality boundaries and clear/set carry returns. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 separated, edge-touching, wrapped and two-axis overlap routes.
+
+
+### Cohort J — B16t bounding-box generation and screen-clip integration
+
+`GetFireballBoundBox` through `NoOfs2` now has sixteen node contracts and every incident object builder, mask/page branch, bounding-box core call, full-offscreen path, right/left clipping and return relation. Static review matches fireball/misc offset transforms, enemy/platform masks, screen-left borrow arithmetic, all-four `$ff` path, right-side `$ff` clipping, and the left-side `$80-$9f` visible versus `$a0-$ff` hidden distinction. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 fireball/misc/enemy/platform, left/right/edge and full-offscreen routes.

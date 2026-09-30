@@ -5803,15 +5803,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1347,
+    "needs-evidence": 1363,
     "mismatch": 9,
-    "unclassified": 598
+    "unclassified": 582
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 2969,
+    "needs-evidence": 2995,
     "mismatch": 25,
-    "unclassified": 1272
+    "unclassified": 1246
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -25356,101 +25356,131 @@
       "label": "GetFireballBoundBox",
       "asmLine": 12805,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Offsets fireball slot by seven, selects relative-coordinate pair two and builds/clips its source bounding box."
     },
     {
       "label": "GetMiscBoundBox",
       "asmLine": 12813,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Offsets misc slot by nine, selects relative-coordinate pair six and joins the shared build/clip path."
     },
     {
       "label": "FBallB",
       "asmLine": 12819,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls BoundingBoxCore then unconditionally applies right/left screen clipping."
     },
     {
       "label": "GetEnemyBoundBox",
       "asmLine": 12822,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects enemy offscreen masks $48/$44 and transfers to masked enemy-box routing."
     },
     {
       "label": "SmallPlatformBoundBox",
       "asmLine": 12828,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects small-platform masks $08/$04 then shares masked routing."
     },
     {
       "label": "GetMaskedOffScrBits",
       "asmLine": 12833,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes enemy position relative to screen-left with borrow, selects source mask by left/edge status, stores masked offscreen bits and chooses build or full-offscreen box."
     },
     {
       "label": "CMBits",
       "asmLine": 12844,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies selected offscreen mask and branches on nonzero result."
     },
     {
       "label": "LargePlatformBoundBox",
       "asmLine": 12850,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Temporarily increments slot to query X offscreen, restores it and sends fully offscreen platforms to all-$ff box path."
     },
     {
       "label": "SetupEOffsetFBBox",
       "asmLine": 12857,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Offsets enemy slot by one, selects relative pair one, builds box and clips it."
     },
     {
       "label": "MoveBoundBoxOffscreen",
       "asmLine": 12866,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes $ff to all four selected enemy bounding-box coordinates and returns."
     },
     {
       "label": "BoundingBoxCore",
@@ -25469,61 +25499,79 @@
       "label": "CheckRightScreenBBox",
       "asmLine": 12916,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares object world coordinate with screen middle and clips right-side box edges to $ff only when their signed relation requires it."
     },
     {
       "label": "SORte",
       "asmLine": 12935,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes right edge $ff and left edge when required, then restores ObjectOffset."
     },
     {
       "label": "NoOfs",
       "asmLine": 12936,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns from right-side clip path."
     },
     {
       "label": "CheckLeftScreenBBox",
       "asmLine": 12939,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Leaves $80-$9f wrapped near-left boxes visible, but changes $a0-$ff offscreen left edges and applicable right edge to zero."
     },
     {
       "label": "SOLft",
       "asmLine": 12948,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes left edge zero and conditionally right edge zero before restoring ObjectOffset."
     },
     {
       "label": "NoOfs2",
       "asmLine": 12949,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
+      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "semanticEvidence": [
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns from left-side clip path."
     },
     {
       "label": "PlayerCollisionCore",
@@ -47507,12 +47555,12 @@
       "id": "control-01086",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunFB -> GetFireballBoundBox with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunFB -> GetFireballBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunFB",
@@ -49633,12 +49681,12 @@
       "id": "control-01220",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunBBSubs -> GetEnemyBoundBox with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunBBSubs -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunBBSubs",
@@ -49969,12 +50017,12 @@
       "id": "control-01241",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunHSubs -> GetMiscBoundBox with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunHSubs -> GetMiscBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunHSubs",
@@ -50353,12 +50401,12 @@
       "id": "control-01265",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunJCSubs -> GetMiscBoundBox with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunJCSubs -> GetMiscBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunJCSubs",
@@ -50961,12 +51009,12 @@
       "id": "control-01303",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Bounding box follows relative/offscreen work."
+      "semanticContract": "Preserves original call relation RunPUSubs -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunPUSubs",
@@ -56897,12 +56945,12 @@
       "id": "control-01674",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunNormalEnemies -> GetEnemyBoundBox with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -57105,12 +57153,12 @@
       "id": "control-01687",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunBowserFlame -> GetEnemyBoundBox with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original call relation RunBowserFlame -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -57217,12 +57265,12 @@
       "id": "control-01694",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunSmallPlatform -> SmallPlatformBoundBox with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> SmallPlatformBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunSmallPlatform",
@@ -57345,12 +57393,12 @@
       "id": "control-01702",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformBoundBox with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RunLargePlatform",
@@ -62193,12 +62241,12 @@
       "id": "control-02005",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ProcessBowserHalf -> GetEnemyBoundBox with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
+      "semanticContract": "Preserves original call relation ProcessBowserHalf -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "ProcessBowserHalf",
@@ -72593,10 +72641,13 @@
       "instruction": "bne",
       "id": "control-02707",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GetFireballBoundBox -> FBallB with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "GetFireballBoundBox",
@@ -72606,10 +72657,13 @@
       "instruction": "bne",
       "id": "control-02708",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetFireballBoundBox -> GetMiscBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "GetMiscBoundBox",
@@ -72619,10 +72673,13 @@
       "instruction": "ldy",
       "id": "control-02709",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetMiscBoundBox -> FBallB with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "FBallB",
@@ -72633,12 +72690,12 @@
       "id": "control-02710",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation FBallB -> BoundingBoxCore with source box offsets, carry and coordinate-loop handoff ordering."
+      "semanticContract": "Preserves original call relation FBallB -> BoundingBoxCore with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "FBallB",
@@ -72648,10 +72705,13 @@
       "instruction": "jmp",
       "id": "control-02711",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation FBallB -> CheckRightScreenBBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -72661,10 +72721,13 @@
       "instruction": "jmp",
       "id": "control-02712",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation GetEnemyBoundBox -> GetMaskedOffScrBits with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "SmallPlatformBoundBox",
@@ -72674,10 +72737,13 @@
       "instruction": "ldy",
       "id": "control-02713",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SmallPlatformBoundBox -> GetMaskedOffScrBits with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "GetMaskedOffScrBits",
@@ -72687,10 +72753,13 @@
       "instruction": "bmi",
       "id": "control-02714",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GetMaskedOffScrBits -> CMBits with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "GetMaskedOffScrBits",
@@ -72700,10 +72769,13 @@
       "instruction": "beq",
       "id": "control-02715",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GetMaskedOffScrBits -> CMBits with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "GetMaskedOffScrBits",
@@ -72713,10 +72785,13 @@
       "instruction": "ldy",
       "id": "control-02716",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetMaskedOffScrBits -> CMBits with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CMBits",
@@ -72726,10 +72801,13 @@
       "instruction": "bne",
       "id": "control-02717",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CMBits -> MoveBoundBoxOffscreen with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CMBits",
@@ -72739,10 +72817,13 @@
       "instruction": "jmp",
       "id": "control-02718",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation CMBits -> SetupEOffsetFBBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "LargePlatformBoundBox",
@@ -72752,10 +72833,13 @@
       "instruction": "jsr",
       "id": "control-02719",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation LargePlatformBoundBox -> GetXOffscreenBits with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "LargePlatformBoundBox",
@@ -72765,10 +72849,13 @@
       "instruction": "bcs",
       "id": "control-02720",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LargePlatformBoundBox -> MoveBoundBoxOffscreen with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "LargePlatformBoundBox",
@@ -72778,10 +72865,13 @@
       "instruction": "bcs",
       "id": "control-02721",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LargePlatformBoundBox -> SetupEOffsetFBBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "SetupEOffsetFBBox",
@@ -72792,12 +72882,12 @@
       "id": "control-02722",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SetupEOffsetFBBox -> BoundingBoxCore with source box offsets, carry and coordinate-loop handoff ordering."
+      "semanticContract": "Preserves original call relation SetupEOffsetFBBox -> BoundingBoxCore with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "SetupEOffsetFBBox",
@@ -72807,10 +72897,13 @@
       "instruction": "jmp",
       "id": "control-02723",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation SetupEOffsetFBBox -> CheckRightScreenBBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CheckRightScreenBBox",
@@ -72820,10 +72913,13 @@
       "instruction": "bcc",
       "id": "control-02724",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightScreenBBox -> CheckLeftScreenBBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CheckRightScreenBBox",
@@ -72833,10 +72929,13 @@
       "instruction": "bmi",
       "id": "control-02725",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightScreenBBox -> NoOfs with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CheckRightScreenBBox",
@@ -72846,10 +72945,13 @@
       "instruction": "bmi",
       "id": "control-02726",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightScreenBBox -> SORte with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CheckRightScreenBBox",
@@ -72859,10 +72961,13 @@
       "instruction": "sta",
       "id": "control-02727",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckRightScreenBBox -> SORte with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "SORte",
@@ -72872,10 +72977,13 @@
       "instruction": "sta",
       "id": "control-02728",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SORte -> NoOfs with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CheckLeftScreenBBox",
@@ -72885,10 +72993,13 @@
       "instruction": "bpl",
       "id": "control-02729",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckLeftScreenBBox -> NoOfs2 with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CheckLeftScreenBBox",
@@ -72898,10 +73009,13 @@
       "instruction": "bcc",
       "id": "control-02730",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckLeftScreenBBox -> NoOfs2 with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CheckLeftScreenBBox",
@@ -72911,10 +73025,13 @@
       "instruction": "bpl",
       "id": "control-02731",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckLeftScreenBBox -> SOLft with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "CheckLeftScreenBBox",
@@ -72924,10 +73041,13 @@
       "instruction": "sta",
       "id": "control-02732",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckLeftScreenBBox -> SOLft with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "SOLft",
@@ -72937,10 +73057,13 @@
       "instruction": "sta",
       "id": "control-02733",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SOLft -> NoOfs2 with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "PlayerCollisionCore",
@@ -85693,12 +85816,12 @@
       "id": "control-03677",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetFireballBoundBox -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation GetFireballBoundBox -> RunFB with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "FireballBGCollision",
@@ -86125,12 +86248,12 @@
       "id": "control-03704",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunBBSubs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunBBSubs with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -86253,12 +86376,12 @@
       "id": "control-03712",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetMiscBoundBox -> RunHSubs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation GetMiscBoundBox -> RunHSubs with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "DrawHammer",
@@ -86397,12 +86520,12 @@
       "id": "control-03721",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetMiscBoundBox -> RunJCSubs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation GetMiscBoundBox -> RunJCSubs with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "JCoinGfxHandler",
@@ -86573,12 +86696,12 @@
       "id": "control-03732",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunPUSubs with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "DrawPowerUp",
@@ -87613,12 +87736,12 @@
       "id": "control-03797",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunNormalEnemies with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunNormalEnemies with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -87757,12 +87880,12 @@
       "id": "control-03806",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunBowserFlame with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunBowserFlame with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -87837,12 +87960,12 @@
       "id": "control-03811",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SmallPlatformBoundBox -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original return relation SmallPlatformBoundBox -> RunSmallPlatform with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "SmallPlatformCollision",
@@ -87949,12 +88072,12 @@
       "id": "control-03818",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation LargePlatformBoundBox -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original return relation LargePlatformBoundBox -> RunLargePlatform with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "LargePlatformCollision",
@@ -88669,12 +88792,12 @@
       "id": "control-03863",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> ProcessBowserHalf with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering."
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> ProcessBowserHalf with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -90620,12 +90743,12 @@
       "id": "control-03993",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BoundingBoxCore -> FBallB with source box offsets, carry and coordinate-loop handoff ordering."
+      "semanticContract": "Preserves original return relation BoundingBoxCore -> FBallB with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "GetXOffscreenBits",
@@ -90635,10 +90758,13 @@
       "instruction": "rts/rti",
       "id": "control-03994",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "semanticEvidence": [
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetXOffscreenBits -> LargePlatformBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "BoundingBoxCore",
@@ -90649,12 +90775,12 @@
       "id": "control-03995",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BoundingBoxCore -> SetupEOffsetFBBox with source box offsets, carry and coordinate-loop handoff ordering."
+      "semanticContract": "Preserves original return relation BoundingBoxCore -> SetupEOffsetFBBox with source offset/mask/page predicate and box-coordinate handoff ordering."
     },
     {
       "from": "BlockBufferCollision",
