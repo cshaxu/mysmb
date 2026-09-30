@@ -28681,111 +28681,144 @@
       "label": "GetPlayerOffscreenBits",
       "asmLine": 14846,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects player SprObject source and player offscreen destination offsets before common offscreen-bit calculation."
     },
     {
       "label": "GetFireballOffscreenBits",
       "asmLine": 14851,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies fireball ObjOffsetData displacement then selects the fixed fireball offscreen destination before common calculation."
     },
     {
       "label": "GetBubbleOffscreenBits",
       "asmLine": 14857,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies bubble ObjOffsetData displacement then selects the bubble offscreen destination before common calculation."
     },
     {
       "label": "GetMiscOffscreenBits",
       "asmLine": 14863,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies misc ObjOffsetData displacement then selects the misc offscreen destination before common calculation."
     },
     {
       "label": "ObjOffsetData",
       "asmLine": 14869,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_obj_offset_data and mysmb_oam_proper_source_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds ordered fireball, bubble and misc SprObject array displacements used by both relative-position and offscreen wrappers."
     },
     {
       "label": "GetProperObjOffset",
       "asmLine": 14872,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_obj_offset_data and mysmb_oam_proper_source_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds the selected ObjOffsetData displacement to the input object slot."
     },
     {
       "label": "GetEnemyOffscreenBits",
       "asmLine": 14879,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects enemy array displacement and enemy offscreen destination before common calculation."
     },
     {
       "label": "GetBlockOffscreenBits",
       "asmLine": 14884,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects block array displacement and block offscreen destination before common calculation."
     },
     {
       "label": "SetOffscrBitsOffset",
       "asmLine": 14888,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ObjectOffset in scratch, adds the supplied array displacement, and enters common offscreen-bit calculation."
     },
     {
       "label": "GetOffScreenBitsSet",
       "asmLine": 14894,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls the X/Y offscreen chain, combines X low and Y high nibbles, stores the composite to the selected offscreen byte and restores ObjectOffset."
     },
     {
       "label": "RunOffscrBitsSubs",
       "asmLine": 14911,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Obtains X offscreen bits, shifts them into scratch low nibble, then tail-transfers to Y offscreen calculation."
     },
     {
       "label": "XOffscreenBitsData",
@@ -80319,10 +80352,13 @@
       "instruction": "jmp",
       "id": "control-03127",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer GetPlayerOffscreenBits → GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation."
     },
     {
       "from": "GetFireballOffscreenBits",
@@ -80332,10 +80368,13 @@
       "instruction": "jsr",
       "id": "control-03128",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call GetFireballOffscreenBits → GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation."
     },
     {
       "from": "GetFireballOffscreenBits",
@@ -80345,10 +80384,13 @@
       "instruction": "jmp",
       "id": "control-03129",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer GetFireballOffscreenBits → GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation."
     },
     {
       "from": "GetBubbleOffscreenBits",
@@ -80358,10 +80400,13 @@
       "instruction": "jsr",
       "id": "control-03130",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call GetBubbleOffscreenBits → GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation."
     },
     {
       "from": "GetBubbleOffscreenBits",
@@ -80371,10 +80416,13 @@
       "instruction": "jmp",
       "id": "control-03131",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer GetBubbleOffscreenBits → GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation."
     },
     {
       "from": "GetMiscOffscreenBits",
@@ -80384,10 +80432,13 @@
       "instruction": "jsr",
       "id": "control-03132",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call GetMiscOffscreenBits → GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation."
     },
     {
       "from": "GetMiscOffscreenBits",
@@ -80397,10 +80448,13 @@
       "instruction": "jmp",
       "id": "control-03133",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer GetMiscOffscreenBits → GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -80410,10 +80464,13 @@
       "instruction": "jmp",
       "id": "control-03134",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer GetEnemyOffscreenBits → SetOffscrBitsOffset preserves the selected source/destination offsets without a local continuation."
     },
     {
       "from": "GetBlockOffscreenBits",
@@ -80423,10 +80480,13 @@
       "instruction": "ldy",
       "id": "control-03135",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through GetBlockOffscreenBits → SetOffscrBitsOffset preserves the preceding offset/scratch setup before entering the successor."
     },
     {
       "from": "SetOffscrBitsOffset",
@@ -80436,10 +80496,13 @@
       "instruction": "tax",
       "id": "control-03136",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SetOffscrBitsOffset → GetOffScreenBitsSet preserves the preceding offset/scratch setup before entering the successor."
     },
     {
       "from": "GetOffScreenBitsSet",
@@ -80449,10 +80512,13 @@
       "instruction": "jsr",
       "id": "control-03137",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call GetOffScreenBitsSet → RunOffscrBitsSubs receives the selected source/destination offsets and completes before the caller continuation."
     },
     {
       "from": "RunOffscrBitsSubs",
@@ -80462,10 +80528,13 @@
       "instruction": "jsr",
       "id": "control-03138",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call RunOffscrBitsSubs → GetXOffscreenBits receives the selected source/destination offsets and completes before the caller continuation."
     },
     {
       "from": "RunOffscrBitsSubs",
@@ -80475,10 +80544,13 @@
       "instruction": "jmp",
       "id": "control-03139",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer RunOffscrBitsSubs → GetYOffscreenBits preserves the selected source/destination offsets without a local continuation."
     },
     {
       "from": "GetXOffscreenBits",
@@ -87089,10 +87161,13 @@
       "instruction": "rts/rti",
       "id": "control-03621",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetPlayerOffscreenBits → ProcELoop exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativePlayerPosition",
@@ -87434,10 +87509,13 @@
       "instruction": "rts/rti",
       "id": "control-03645",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetPlayerOffscreenBits → PlayerSubs exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativePlayerPosition",
@@ -87812,12 +87890,12 @@
       "id": "control-03671",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetBubbleOffscreenBits -> BublLoop with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetBubbleOffscreenBits → BublLoop exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "DrawBubble",
@@ -87892,12 +87970,12 @@
       "id": "control-03676",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetFireballOffscreenBits -> RunFB with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetFireballOffscreenBits → RunFB exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "GetFireballBoundBox",
@@ -88020,12 +88098,12 @@
       "id": "control-03684",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> FPGfx with its source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → FPGfx exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -88068,12 +88146,12 @@
       "id": "control-03687",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> JumpspringHandler with its source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → JumpspringHandler exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -88148,12 +88226,12 @@
       "id": "control-03692",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunVSubs with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → RunVSubs exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "DrawVine",
@@ -88228,12 +88306,12 @@
       "id": "control-03697",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> Chk_BB with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → Chk_BB exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "BulletBillHandler",
@@ -88308,12 +88386,12 @@
       "id": "control-03702",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunBBSubs with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → RunBBSubs exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -88436,12 +88514,12 @@
       "id": "control-03710",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetMiscOffscreenBits -> RunHSubs with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetMiscOffscreenBits → RunHSubs exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeMiscPosition",
@@ -88596,12 +88674,12 @@
       "id": "control-03720",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetMiscOffscreenBits -> RunJCSubs with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetMiscOffscreenBits → RunJCSubs exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "GetMiscBoundBox",
@@ -88772,12 +88850,12 @@
       "id": "control-03731",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → RunPUSubs exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -89156,12 +89234,12 @@
       "id": "control-03755",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetBlockOffscreenBits -> BlockObjectsCore with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetBlockOffscreenBits → BlockObjectsCore exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "DrawBrickChunks",
@@ -89220,12 +89298,12 @@
       "id": "control-03759",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetBlockOffscreenBits -> BouncingBlockHandler with source predicate, ordering and state handoff."
+      "semanticContract": "The source return relation GetBlockOffscreenBits → BouncingBlockHandler exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "DrawBlock",
@@ -89748,12 +89826,12 @@
       "id": "control-03792",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunRetainerObj with object selector, slot and source call/return ordering."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → RunRetainerObj exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -89780,12 +89858,12 @@
       "id": "control-03794",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunNormalEnemies with object selector, slot and source call/return ordering."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → RunNormalEnemies exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -89940,12 +90018,12 @@
       "id": "control-03804",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunBowserFlame with object selector, slot and source call/return ordering."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → RunBowserFlame exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -90020,12 +90098,12 @@
       "id": "control-03809",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → RunSmallPlatform exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -90132,12 +90210,12 @@
       "id": "control-03816",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → RunLargePlatform exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -90468,12 +90546,12 @@
       "id": "control-03837",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> ProcFirebar with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → ProcFirebar exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "FirebarSpin",
@@ -90916,12 +90994,12 @@
       "id": "control-03865",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> DrawFlameLoop with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → DrawFlameLoop exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -91172,12 +91250,12 @@
       "id": "control-03881",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> InitPlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering."
+      "semanticContract": "The source return relation GetEnemyOffscreenBits → InitPlatformFall exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "SetupFloateyNumber",
@@ -93729,10 +93807,13 @@
       "instruction": "rts/rti",
       "id": "control-04048",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetProperObjOffset → RelativeBubblePosition exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "GetProperObjOffset",
@@ -93742,10 +93823,13 @@
       "instruction": "rts/rti",
       "id": "control-04049",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetProperObjOffset → RelativeFireballPosition exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "GetObjRelativePosition",
@@ -93771,10 +93855,13 @@
       "instruction": "rts/rti",
       "id": "control-04051",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetProperObjOffset → RelativeMiscPosition exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "VariableObjOfsRelPos",
@@ -93816,10 +93903,13 @@
       "instruction": "rts/rti",
       "id": "control-04054",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetProperObjOffset → GetFireballOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "GetProperObjOffset",
@@ -93829,10 +93919,13 @@
       "instruction": "rts/rti",
       "id": "control-04055",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetProperObjOffset → GetBubbleOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "GetProperObjOffset",
@@ -93842,10 +93935,13 @@
       "instruction": "rts/rti",
       "id": "control-04056",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetProperObjOffset → GetMiscOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "RunOffscrBitsSubs",
@@ -93855,10 +93951,13 @@
       "instruction": "rts/rti",
       "id": "control-04057",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "semanticEvidence": [
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation RunOffscrBitsSubs → GetOffScreenBitsSet exposes the completed offscreen byte and restored caller ObjectOffset."
     },
     {
       "from": "GetXOffscreenBits",

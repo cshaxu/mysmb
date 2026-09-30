@@ -1298,3 +1298,9 @@ branches.
 - Node-semantics result: nine labels moved from `unclassified` to `needs-evidence`: all player/bubble/fireball/misc/enemy/block position wrappers and their common helpers.
 - Independent integration result: 42 outgoing control relations and the feasible `ObjOffsetData → GetProperObjOffset` material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K21 — offscreen-bit entry and combination audit
+
+- Source range: `GetPlayerOffscreenBits` through `RunOffscrBitsSubs` (`SMBDIS.ASM` lines 14846–14918).
+- Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering all object-family wrapper offsets, common X/Y-nibble assembly and result write-back.
+- Independent integration result: 42 outgoing control relations received `needs-evidence` contracts. `ObjOffsetData` retains its previously-recorded feasible material edge; static review found no discrepancy. Controlled original-ROM/x86/x64 routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
