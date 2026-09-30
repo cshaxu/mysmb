@@ -4,9 +4,9 @@
 
 **Idle.**
 
-M2 T50 S1 is closed at **1,945 / 1,992**. Its 21 music-stream payload labels
-are ROM-match complete through the shared `audio.c` owner-ROM reader; T50 S2
-remains the next planned contiguous lookup/envelope chain.
+M2 T50 S2 closed at **1,950 / 1,992** after matching the shared
+music frequency, length and normal-envelope lookup chain. The next source-order
+candidate is M2 T50 S3, which retains the two noise-envelope tables.
 
 ## Current Technical Baseline
 

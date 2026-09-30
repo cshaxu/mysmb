@@ -486,6 +486,9 @@ target_link_libraries(mysmb_sound_music_header_table_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_music_stream_record_check
                test/sound_music_stream_record_check.c)
 target_link_libraries(mysmb_sound_music_stream_record_check PRIVATE mysmb_game)
+add_executable(mysmb_sound_music_lookup_table_check
+               test/sound_music_lookup_table_check.c)
+target_link_libraries(mysmb_sound_music_lookup_table_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_square2_music_snapshot_check
                test/sound_square2_music_snapshot_check.c)
 target_link_libraries(mysmb_sound_square2_music_snapshot_check PRIVATE mysmb_game)
@@ -1110,6 +1113,8 @@ if(MYSMB_ROM_PATH)
         COMMAND mysmb_sound_music_header_table_check "${MYSMB_ROM_PATH}")
     add_test(NAME mysmb.music-stream-records
         COMMAND mysmb_sound_music_stream_record_check "${MYSMB_ROM_PATH}")
+    add_test(NAME mysmb.music-lookup-tables
+        COMMAND mysmb_sound_music_lookup_table_check "${MYSMB_ROM_PATH}")
 
     set(MYSMB_LOCAL_ROM_DIR "${CMAKE_BINARY_DIR}/generated/smb1-local")
     add_custom_command(

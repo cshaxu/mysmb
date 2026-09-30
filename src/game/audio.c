@@ -452,8 +452,8 @@ static void mysmb_audio_step_noise(struct mysmb_game *game)
 
 /* ROM ProcessLengthData.  This helper belongs to the later shared-music
  * helper chain, but S4 calls it at exactly the source call boundary. */
-static mysmb_u8 mysmb_audio_process_music_length(struct mysmb_game *game,
-                                                  mysmb_u8 data)
+mysmb_u8 mysmb_audio_process_music_length(struct mysmb_game *game,
+                                          mysmb_u8 data)
 {
     mysmb_u8 index;
 
@@ -466,8 +466,8 @@ static mysmb_u8 mysmb_audio_process_music_length(struct mysmb_game *game,
 
 /* ROM LoadEnvelopeData.  The owner-local tables remain bound through the
  * common CPU-address reader; S8 owns independent completion credit. */
-static mysmb_u8 mysmb_audio_load_music_envelope(const struct mysmb_game *game,
-                                                 mysmb_u8 index)
+mysmb_u8 mysmb_audio_load_music_envelope(const struct mysmb_game *game,
+                                         mysmb_u8 index)
 {
     if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x08U) != 0U)
         return mysmb_audio_read_cpu(game, (mysmb_u16)(0xff96UL + index));

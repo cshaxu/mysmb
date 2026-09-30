@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1945 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1950 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 11 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 6 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1945 / 1,992 (97.64%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1950 / 1,992 (97.89%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T50 S1 closure](../proposals/m2/t50-music-data-and-audio-consumers.md#s1-closure-music-stream-payload-records) closes 21 music-stream payload labels. The original 49 selector routes resolve to their exact owner-ROM stream pointers and execute one shared SoundEngine tick with zero failures on both Windows widths; OpenNT DOS16 link and three-target artifacts are separate operational evidence.
+Latest task review: [T50 S2 closure](../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) closes five shared music lookup/envelope labels through direct owner-ROM table reads, source branch/write comparison, x86/x64 focused checks and the OpenNT DOS16 link.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1924)
+## Completed matches (1950)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1917,7 +1917,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15871 | `MediN` |
 | 15873 | `LongN` |
 | 15875 | `LoadTriCtrlReg` |
-
 | 15878 | `HandleNoiseMusic` |
 | 15885 | `FetchNoiseBeatData` |
 | 15894 | `NoiseBeatHandler` |
@@ -1926,8 +1925,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15923 | `SilentBeat` |
 | 15926 | `PlayBeat` |
 | 15931 | `ExitMusicHandler` |
-
-
 | 15934 | `AlternateLengthHandler` |
 | 15942 | `ProcessLengthData` |
 | 15951 | `LoadControlRegs` |
@@ -1937,7 +1934,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15967 | `LoadEnvelopeData` |
 | 15974 | `LoadUsualEnvData` |
 | 15981 | `LoadWaterEventMusEnvData` |
-
 | 15989 | `MusicHeaderData` |
 | 16027 | `TimeRunningOutHdr` |
 | 16028 | `Star_CloudHdr` |
@@ -1961,7 +1957,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 16046 | `GroundLevelPart4BHdr` |
 | 16047 | `GroundLevelPart4CHdr` |
 | 16048 | `DeathMusHdr` |
-
 | 16077 | `Star_CloudMData` |
 | 16089 | `GroundM_P1Data` |
 | 16094 | `SilenceData` |
@@ -1983,6 +1978,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 16264 | `WaterMusData` |
 | 16295 | `EndOfCastleMusData` |
 | 16313 | `VictoryMusData` |
+| 16326 | `FreqRegLookupTbl` |
+| 16341 | `MusicLengthLookupTbl` |
+| 16349 | `EndOfCastleMusicEnvData` |
+| 16352 | `AreaMusicEnvData` |
+| 16355 | `WaterEventMusEnvData` |
 
 ## Mapped but not yet matched (36)
 

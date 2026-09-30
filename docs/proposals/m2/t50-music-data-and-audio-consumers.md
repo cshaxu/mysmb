@@ -66,3 +66,50 @@ Similar-issue sweep: every legal event selector (1–8), area selector (9–16)
 and ground-layout selector (17–49) was checked; all duplicate headers resolve
 to the same source label and none introduces platform-local music state. S2
 retains the lookup/envelope records and S3 retains the noise-envelope records.
+
+## S2 admission: music lookup and envelope tables
+
+S2 receives **five** open labels: `FreqRegLookupTbl`, `MusicLengthLookupTbl`,
+`EndOfCastleMusicEnvData`, `AreaMusicEnvData`, and `WaterEventMusEnvData`.
+Its baseline is **1,945 / 1,992**; all five are expected matches, with a
+maximum of **1,950 / 1,992**. The chain follows S1's stream pointers and ends
+at the final normal-music envelope table before S3's noise-only tables.
+
+The ROM-logic track compares `Dump_Freq_Regs`' paired table reads, the exact
+`ProcessLengthData` index addition, and all three `LoadEnvelopeData` branches
+against the source CPU table addresses. The operational track adds a focused
+lookup-table test, runs the existing music-stream test and platform-purity
+check on x86/x64, links the OpenNT DOS16 target, and refreshes the three
+required executable artifacts. All reads remain in shared `audio.c`.
+
+## S2 closure: music lookup and envelope tables
+
+S2 closes all **five / five** admitted labels, moving verified conformance
+from **1,945 to 1,950 / 1,992**: `FreqRegLookupTbl`,
+`MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, and
+`WaterEventMusEnvData`. No labels were deferred or transferred.
+
+The ROM-logic evidence follows the source chain exactly. `Dump_Freq_Regs`
+reads each frequency pair as `table+1,Y` then `table,Y`, returns before writes
+when the low byte is zero, and writes the original channel-relative APU
+offsets. `ProcessLengthData` applies its low-three-bit mask and both source
+addends before its table read. `LoadEnvelopeData` selects the castle-event,
+water/event, or normal-area table in the source branch order. The focused
+owner-ROM checker covers all 51 frequency pairs through both square-one and
+triangle offsets, all 48 length entries plus indexed addition, and all 52
+normal-music envelope entries; it reports 203 checks and zero failures on
+both Windows widths. The test contains only source addresses and reads table
+bytes from the owner-local ROM at runtime.
+
+The operational track passed the music header, header table, stream record and
+platform-purity tests on Win32 x86 and x64. The same C90 shared core compiled
+and linked through the existing OpenNT DOS16 chain into a 264149-byte MZ
+program; established C4761 conversion and `OLDNAMES.LIB` warnings remain
+non-fatal. Refreshed artifact hashes are `mysmb16.exe`
+`0FE56863DA85261D8739D6BC709D24DCAA04C9D0288BB1D73EE512EFB17E847A`,
+`mysmb32.exe` `8428BA6DE8236BF0ED186ABC28BE09F0E5E9928D9035396F145146DEC5398E98`,
+and `mysmb64.exe` `733218FA79BDE49D3F28FF802742FE9D6AA59F4A9716068505DDB2301A6A49EE`.
+
+Similar-issue sweep: all three `Dump_Freq_Regs` channel offsets, every
+length-table index, and all three normal-music envelope branches route through
+shared `audio.c`; no platform adapter reads or interprets music-table data.

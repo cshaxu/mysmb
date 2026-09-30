@@ -2123,11 +2123,11 @@ The labels and branches behind every line remain open until individually bound b
 | 16264 | `WaterMusData` | M2 T50 S1 shared `src/game/audio.c` | ROM-match complete | [T50 S1 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s1-closure-music-stream-payload-records) |
 | 16295 | `EndOfCastleMusData` | M2 T50 S1 shared `src/game/audio.c` | ROM-match complete | [T50 S1 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s1-closure-music-stream-payload-records) |
 | 16313 | `VictoryMusData` | M2 T50 S1 shared `src/game/audio.c` | ROM-match complete | [T50 S1 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s1-closure-music-stream-payload-records) |
-| 16326 | `FreqRegLookupTbl` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-freqreglookuptbl) |
-| 16341 | `MusicLengthLookupTbl` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-musiclengthlookuptbl) |
-| 16349 | `EndOfCastleMusicEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endofcastlemusicenvdata) |
-| 16352 | `AreaMusicEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areamusicenvdata) |
-| 16355 | `WaterEventMusEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-watereventmusenvdata) |
+| 16326 | `FreqRegLookupTbl` | M2 T50 S2 shared `src/game/audio.c` | ROM-match complete | [T50 S2 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) |
+| 16341 | `MusicLengthLookupTbl` | M2 T50 S2 shared `src/game/audio.c` | ROM-match complete | [T50 S2 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) |
+| 16349 | `EndOfCastleMusicEnvData` | M2 T50 S2 shared `src/game/audio.c` | ROM-match complete | [T50 S2 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) |
+| 16352 | `AreaMusicEnvData` | M2 T50 S2 shared `src/game/audio.c` | ROM-match complete | [T50 S2 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) |
+| 16355 | `WaterEventMusEnvData` | M2 T50 S2 shared `src/game/audio.c` | ROM-match complete | [T50 S2 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) |
 | 16362 | `BowserFlameEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bowserflameenvdata) |
 | 16368 | `BrickShatterEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickshatterenvdata) |
 

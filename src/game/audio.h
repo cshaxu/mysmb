@@ -35,6 +35,13 @@ mysmb_u8 mysmb_audio_play_sq2_sfx(struct mysmb_game *game, mysmb_u8 a,
 mysmb_u8 mysmb_audio_set_freq_sq2(struct mysmb_game *game, mysmb_u8 a);
 mysmb_u8 mysmb_audio_set_freq_tri(struct mysmb_game *game, mysmb_u8 a);
 
+/* ROM ProcessLengthData and LoadEnvelopeData.  These retain the original
+ * table-index arithmetic and branch selection in the shared game owner. */
+mysmb_u8 mysmb_audio_process_music_length(struct mysmb_game *game,
+                                          mysmb_u8 data);
+mysmb_u8 mysmb_audio_load_music_envelope(const struct mysmb_game *game,
+                                         mysmb_u8 index);
+
 /* ROM square-one effect phases before Square1SfxHandler's S4 dispatch and
  * decrement tail.  A nonzero selector chooses the indicated start phase. */
 void mysmb_audio_square1_play_flagpole(struct mysmb_game *game);
