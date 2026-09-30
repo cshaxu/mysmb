@@ -991,3 +991,8 @@ branches.
 ### Cohort I — B15e normal-enemy movement integration
 
 `MoveNormalEnemy` through `NKGmba` now has eleven node contracts, every incident state branch, call, tail-jump, fall-through, return and vector relation, plus six feasible table/state handoffs. Static review matches state-bit precedence, gravity/horizontal order, temporary speed restoration, revived-speed selection and the timer-$0e Goomba-only erase predicate. These entries remain `needs-evidence` pending controlled ROM/x86/x64 state-matrix routes.
+
+
+### Cohort I — B15f jumping and red-paratroopa integration
+
+`MoveJumpingEnemy` through `MovPTDwn` now has five node contracts, all incident calls, branches, tails and returns, and four feasible Y-state handoffs. Static review matches gravity-before-horizontal ordering, the frame-gated anchor correction and center-height direction choice. The entries remain `needs-evidence` pending controlled ROM/x86/x64 jump and vertical-cycle routes.

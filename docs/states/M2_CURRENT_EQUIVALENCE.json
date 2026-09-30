@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 195,
+    "enumeratedCount": 199,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2743,6 +2743,62 @@
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00196",
+      "producer": "MoveJumpingEnemy",
+      "consumer": "MoveEnemyHorizontally",
+      "storage": "post-jump-gravity Y state",
+      "feasiblePath": "Horizontal movement observes vertical gravity result in the same source call sequence.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_jumping",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00197",
+      "producer": "ProcMoveRedPTroopa",
+      "consumer": "NoIncPT",
+      "storage": "Y speed/force, original-height anchor and FrameCounter low three bits",
+      "feasiblePath": "Idle red paratroopa only adjusts one pixel downward every eighth frame while above anchor.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_red_paratroopas_slot",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00198",
+      "producer": "MoveRedPTUpOrDown",
+      "consumer": "MovPTDwn",
+      "storage": "current and center Y positions",
+      "feasiblePath": "Below-center predicate selects the downward red-gravity entry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_red_down",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00199",
+      "producer": "MoveRedPTUpOrDown",
+      "consumer": "MoveRedPTroopaUp",
+      "storage": "current and center Y positions",
+      "feasiblePath": "At/above-center path selects upward red-gravity entry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_red_up",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -17060,51 +17116,66 @@
       "label": "MoveJumpingEnemy",
       "asmLine": 9396,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{movement,paratroopa}.c",
+      "currentCounterpart": "shared jumping and red paratroopa slot paths",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls jumping vertical gravity then tail-jumps to horizontal movement."
     },
     {
       "label": "ProcMoveRedPTroopa",
       "asmLine": 9402,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{movement,paratroopa}.c",
+      "currentCounterpart": "shared jumping and red paratroopa slot paths",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "When both vertical speed and force are zero, clears Y dummy, returns after a fourth-frame downward correction below original height; otherwise selects red vertical direction from center height."
     },
     {
       "label": "NoIncPT",
       "asmLine": 9414,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{movement,paratroopa}.c",
+      "currentCounterpart": "shared jumping and red paratroopa slot paths",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after the optional frame-gated one-pixel downward correction."
     },
     {
       "label": "MoveRedPTUpOrDown",
       "asmLine": 9416,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{movement,paratroopa}.c",
+      "currentCounterpart": "shared jumping and red paratroopa slot paths",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares current Y with center Y and tail-selects red down below center or red up at/above center."
     },
     {
       "label": "MovPTDwn",
       "asmLine": 9421,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{movement,paratroopa}.c",
+      "currentCounterpart": "shared jumping and red paratroopa slot paths",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to red paratroopa downward movement."
     },
     {
       "label": "MoveFlyGreenPTroopa",
@@ -46843,12 +46914,12 @@
       "id": "control-01290",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Active star first runs jumping-enemy gravity."
+      "semanticContract": "Preserves original call relation PowerUpObjHandler -> MoveJumpingEnemy with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "PowerUpObjHandler",
@@ -54474,10 +54545,13 @@
       "instruction": "jsr",
       "id": "control-01767",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MoveJumpingEnemy -> MoveJ_EnemyVertically with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "MoveJumpingEnemy",
@@ -54487,10 +54561,13 @@
       "instruction": "jmp",
       "id": "control-01768",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveJumpingEnemy -> MoveEnemyHorizontally with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "ProcMoveRedPTroopa",
@@ -54500,10 +54577,13 @@
       "instruction": "bne",
       "id": "control-01769",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcMoveRedPTroopa -> MoveRedPTUpOrDown with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "ProcMoveRedPTroopa",
@@ -54513,10 +54593,13 @@
       "instruction": "bcs",
       "id": "control-01770",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcMoveRedPTroopa -> MoveRedPTUpOrDown with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "ProcMoveRedPTroopa",
@@ -54526,10 +54609,13 @@
       "instruction": "bne",
       "id": "control-01771",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcMoveRedPTroopa -> NoIncPT with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "ProcMoveRedPTroopa",
@@ -54539,10 +54625,13 @@
       "instruction": "inc",
       "id": "control-01772",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcMoveRedPTroopa -> NoIncPT with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "MoveRedPTUpOrDown",
@@ -54552,10 +54641,13 @@
       "instruction": "bcc",
       "id": "control-01773",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveRedPTUpOrDown -> MovPTDwn with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "MoveRedPTUpOrDown",
@@ -54565,10 +54657,13 @@
       "instruction": "jmp",
       "id": "control-01774",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveRedPTUpOrDown -> MoveRedPTroopaUp with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "MovPTDwn",
@@ -54578,10 +54673,13 @@
       "instruction": "jmp",
       "id": "control-01775",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MovPTDwn -> MoveRedPTroopaDown with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "MoveFlyGreenPTroopa",
@@ -80536,12 +80634,12 @@
       "id": "control-03726",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
+      "semanticContract": "Preserves original return relation MoveJumpingEnemy -> PowerUpObjHandler with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "EnemyJump",
@@ -82216,12 +82314,12 @@
       "id": "control-03831",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveJ_EnemyVertically -> MoveJumpingEnemy with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveJ_EnemyVertically -> MoveJumpingEnemy with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "XMoveCntr_GreenPTroopa",
@@ -89566,12 +89664,12 @@
       "id": "control-04324",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveJumpingEnemy with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveJumpingEnemy with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89583,12 +89681,12 @@
       "id": "control-04325",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> ProcMoveRedPTroopa with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> ProcMoveRedPTroopa with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
