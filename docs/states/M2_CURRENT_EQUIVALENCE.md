@@ -1268,3 +1268,9 @@ branches.
 - Node-semantics result: three labels moved from `unclassified` to `needs-evidence`: `PlayerGfxTblOffsets`, `PlayerGraphicsTable`, and `SwimKickTileNum`. The current owner-local PRG bindings preserve their source offsets and consumers, but controlled original-ROM/x86/x64 routes are still required before any `exact` promotion.
 - Independent material integration result: recorded `PlayerGfxTblOffsets → PlayerGfxHandler`, `PlayerGraphicsTable → DrawPlayerLoop`, and `SwimKickTileNum → BigKTS` as `needs-evidence`; no discrepancy is claimed from this static pass.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K16 — player graphics handler control-chain audit
+
+- Source range: `PlayerGfxHandler` through `NPROffscr` (`SMBDIS.ASM` lines 14460–14557).
+- Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`: `PlayerGfxHandler`, `CntPl`, `SwimKT`, `BigKTS`, `ExPGH`, `FindPlayerAction`, `DoChangeSize`, `PlayerKilled`, `PlayerGfxProcessing`, `SUpdR`, `PlayerOffscreenChk`, `PROfsLoop`, and `NPROffscr`. The shared owner preserves the static dispatch, throw-row and OAM-mask structure; controlled routes are required before any `exact` promotion.
+- Independent control integration result: 35 outgoing relations received `needs-evidence` contracts, including injury exits, graphics-mode dispatch, swim-kick selection, tail transfers, common render calls and the four-row offscreen loop. No discrepancy is claimed from this static pass.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

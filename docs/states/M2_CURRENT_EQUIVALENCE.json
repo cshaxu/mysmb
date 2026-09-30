@@ -27950,131 +27950,170 @@
       "label": "PlayerGfxHandler",
       "asmLine": 14460,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Checks injury flashing before the graphics-mode dispatch, then routes ordinary, size-change, death and swimming paths in source order."
     },
     {
       "label": "CntPl",
       "asmLine": 14466,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dispatches death and size-change before the swimming-state continuation; only nonzero swimming player state returns from ordinary drawing to the kick-tile path."
     },
     {
       "label": "SwimKT",
       "asmLine": 14489,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Chooses the applicable seventh/eighth foot sprite from facing, size and replacement-tile predicates before selecting a swim-kick tile."
     },
     {
       "label": "BigKTS",
       "asmLine": 14495,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the selected SwimKickTileNum byte into the guarded foot sprite tile, then exits the graphics handler."
     },
     {
       "label": "ExPGH",
       "asmLine": 14497,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from the graphics handler without further OAM modification on the source early-exit routes."
     },
     {
       "label": "FindPlayerAction",
       "asmLine": 14499,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls ProcessPlayerAction and tail-transfers the selected offset to PlayerGfxProcessing."
     },
     {
       "label": "DoChangeSize",
       "asmLine": 14503,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls HandleChangeSize and tail-transfers the selected offset to PlayerGfxProcessing."
     },
     {
       "label": "PlayerKilled",
       "asmLine": 14507,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects index 14 from PlayerGfxTblOffsets and falls through to common player graphics processing."
     },
     {
       "label": "PlayerGfxProcessing",
       "asmLine": 14511,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores PlayerGfxOffset, renders rows, applies player attributes, conditionally rerenders throw rows, then enters vertical offscreen masking."
     },
     {
       "label": "SUpdR",
       "asmLine": 14532,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the source three-versus-four throw-row count and calls RenderPlayerSub before the offscreen stage."
     },
     {
       "label": "PlayerOffscreenChk",
       "asmLine": 14535,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves the vertical offscreen nibble into scratch and initializes a bottom-to-top four-row OAM masking loop."
     },
     {
       "label": "PROfsLoop",
       "asmLine": 14547,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tests one vertical-offscreen bit per iteration, conditionally dumps a pair offscreen, and advances upward through four rows."
     },
     {
       "label": "NPROffscr",
       "asmLine": 14551,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves to the preceding row and loops until all four player OAM rows are processed."
     },
     {
       "label": "IntermediatePlayerData",
@@ -78518,10 +78557,13 @@
       "instruction": "beq",
       "id": "control-03027",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch PlayerGfxHandler → CntPl preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "PlayerGfxHandler",
@@ -78531,10 +78573,13 @@
       "instruction": "bcs",
       "id": "control-03028",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch PlayerGfxHandler → ExPGH preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "PlayerGfxHandler",
@@ -78544,10 +78589,13 @@
       "instruction": "bcs",
       "id": "control-03029",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayerGfxHandler → CntPl preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "CntPl",
@@ -78557,10 +78605,13 @@
       "instruction": "beq",
       "id": "control-03030",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch CntPl → PlayerKilled preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "CntPl",
@@ -78570,10 +78621,13 @@
       "instruction": "bne",
       "id": "control-03031",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch CntPl → DoChangeSize preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "CntPl",
@@ -78583,10 +78637,13 @@
       "instruction": "beq",
       "id": "control-03032",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch CntPl → FindPlayerAction preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "CntPl",
@@ -78596,10 +78653,13 @@
       "instruction": "beq",
       "id": "control-03033",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch CntPl → FindPlayerAction preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "CntPl",
@@ -78609,10 +78669,13 @@
       "instruction": "jsr",
       "id": "control-03034",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call CntPl → FindPlayerAction completes its required state handoff before the caller's successor path."
     },
     {
       "from": "CntPl",
@@ -78622,10 +78685,13 @@
       "instruction": "bne",
       "id": "control-03035",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch CntPl → ExPGH preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "CntPl",
@@ -78635,10 +78701,13 @@
       "instruction": "bcs",
       "id": "control-03036",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch CntPl → SwimKT preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "CntPl",
@@ -78648,10 +78717,13 @@
       "instruction": "iny",
       "id": "control-03037",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through CntPl → SwimKT preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "SwimKT",
@@ -78661,10 +78733,13 @@
       "instruction": "beq",
       "id": "control-03038",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch SwimKT → BigKTS preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "SwimKT",
@@ -78674,10 +78749,13 @@
       "instruction": "beq",
       "id": "control-03039",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch SwimKT → ExPGH preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "SwimKT",
@@ -78687,10 +78765,13 @@
       "instruction": "inx",
       "id": "control-03040",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SwimKT → BigKTS preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "BigKTS",
@@ -78700,10 +78781,13 @@
       "instruction": "sta",
       "id": "control-03041",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through BigKTS → ExPGH preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "FindPlayerAction",
@@ -78713,10 +78797,13 @@
       "instruction": "jsr",
       "id": "control-03042",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call FindPlayerAction → ProcessPlayerAction completes its required state handoff before the caller's successor path."
     },
     {
       "from": "FindPlayerAction",
@@ -78726,10 +78813,13 @@
       "instruction": "jmp",
       "id": "control-03043",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer FindPlayerAction → PlayerGfxProcessing preserves the selected state and does not resume the local block."
     },
     {
       "from": "DoChangeSize",
@@ -78739,10 +78829,13 @@
       "instruction": "jsr",
       "id": "control-03044",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call DoChangeSize → HandleChangeSize completes its required state handoff before the caller's successor path."
     },
     {
       "from": "DoChangeSize",
@@ -78752,10 +78845,13 @@
       "instruction": "jmp",
       "id": "control-03045",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer DoChangeSize → PlayerGfxProcessing preserves the selected state and does not resume the local block."
     },
     {
       "from": "PlayerKilled",
@@ -78765,10 +78861,13 @@
       "instruction": "lda",
       "id": "control-03046",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayerKilled → PlayerGfxProcessing preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "PlayerGfxProcessing",
@@ -78778,10 +78877,13 @@
       "instruction": "jsr",
       "id": "control-03047",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PlayerGfxProcessing → RenderPlayerSub completes its required state handoff before the caller's successor path."
     },
     {
       "from": "PlayerGfxProcessing",
@@ -78791,10 +78893,13 @@
       "instruction": "jsr",
       "id": "control-03048",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PlayerGfxProcessing → ChkForPlayerAttrib completes its required state handoff before the caller's successor path."
     },
     {
       "from": "PlayerGfxProcessing",
@@ -78804,10 +78909,13 @@
       "instruction": "beq",
       "id": "control-03049",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch PlayerGfxProcessing → PlayerOffscreenChk preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "PlayerGfxProcessing",
@@ -78817,10 +78925,13 @@
       "instruction": "bcs",
       "id": "control-03050",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch PlayerGfxProcessing → PlayerOffscreenChk preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "PlayerGfxProcessing",
@@ -78830,10 +78941,13 @@
       "instruction": "beq",
       "id": "control-03051",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch PlayerGfxProcessing → SUpdR preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "PlayerGfxProcessing",
@@ -78843,10 +78957,13 @@
       "instruction": "dey",
       "id": "control-03052",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayerGfxProcessing → SUpdR preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "SUpdR",
@@ -78856,10 +78973,13 @@
       "instruction": "jsr",
       "id": "control-03053",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call SUpdR → RenderPlayerSub completes its required state handoff before the caller's successor path."
     },
     {
       "from": "SUpdR",
@@ -78869,10 +78989,13 @@
       "instruction": "jsr",
       "id": "control-03054",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SUpdR → PlayerOffscreenChk preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "PlayerOffscreenChk",
@@ -78882,10 +79005,13 @@
       "instruction": "tay",
       "id": "control-03055",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayerOffscreenChk → PROfsLoop preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "PROfsLoop",
@@ -78895,10 +79021,13 @@
       "instruction": "bcc",
       "id": "control-03056",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch PROfsLoop → NPROffscr preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "PROfsLoop",
@@ -78908,10 +79037,13 @@
       "instruction": "jsr",
       "id": "control-03057",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PROfsLoop → DumpTwoSpr completes its required state handoff before the caller's successor path."
     },
     {
       "from": "PROfsLoop",
@@ -78921,10 +79053,13 @@
       "instruction": "jsr",
       "id": "control-03058",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PROfsLoop → NPROffscr preserves all preceding instructions and follows only when its alternate branch is not taken."
     },
     {
       "from": "NPROffscr",
@@ -78934,10 +79069,13 @@
       "instruction": "bpl",
       "id": "control-03059",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch NPROffscr → PROfsLoop preserves its tested predicate and occurs before the fall-through work."
     },
     {
       "from": "DrawPlayer_Intermediate",
@@ -86614,10 +86752,13 @@
       "instruction": "rts/rti",
       "id": "control-03623",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlayerGfxHandler → ProcELoop exposes the same completed handler state to its caller continuation."
     },
     {
       "from": "BlockObjMT_Updater",
@@ -92985,10 +93126,13 @@
       "instruction": "rts/rti",
       "id": "control-04033",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation FindPlayerAction → CntPl exposes the same completed handler state to its caller continuation."
     },
     {
       "from": "ProcessPlayerAction",
