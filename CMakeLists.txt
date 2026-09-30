@@ -1236,6 +1236,14 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_local_area_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_local_area_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.local-area-smoke COMMAND mysmb_local_area_smoke)
+    add_executable(mysmb_enemy_stream_local_consumer_check
+        test/enemy_stream_local_consumer_check.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_enemy_stream_local_consumer_check PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_enemy_stream_local_consumer_check PRIVATE mysmb_game)
+    add_test(NAME mysmb.enemy-stream-local-consumer
+        COMMAND mysmb_enemy_stream_local_consumer_check)
     add_executable(mysmb_area_output_smoke test/area_output_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_area_output_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
