@@ -497,78 +497,90 @@
       "label": "PauseRoutine",
       "asmLine": 876,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+      ],
       "semanticContract": "Permits pause only in VictoryMode or GameMode task $03; otherwise returns existing pause bit without changing timer/status."
     },
     {
       "label": "ChkPauseTimer",
       "asmLine": 885,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+      ],
       "semanticContract": "When GamePauseTimer is nonzero decrements it and returns; when zero proceeds to Start input processing."
     },
     {
       "label": "ChkStart",
       "asmLine": 889,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+      ],
       "semanticContract": "Reads controller-one Start, honors the d7 debounce flag, initializes the $2b pause timer and sound queue, then toggles pause bit and sets d7."
     },
     {
       "label": "ClrPauseTimer",
       "asmLine": 904,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+      ],
       "semanticContract": "When Start is absent at timer zero, clears d7 while preserving the pause bit before storing GamePauseStatus."
     },
     {
       "label": "SetPause",
       "asmLine": 906,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+      ],
       "semanticContract": "Stores the source-computed pause status and falls through to the common return."
     },
     {
       "label": "ExitPause",
       "asmLine": 907,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step return",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+      ],
       "semanticContract": "Returns with GamePauseStatus and GamePauseTimer exactly as selected by the source branch."
     },
     {
@@ -21111,12 +21123,14 @@
       "instruction": "beq",
       "id": "control-00054",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original branch relation PauseRoutine -> ChkPauseTimer at source line 879 (beq) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21127,12 +21141,14 @@
       "instruction": "bne",
       "id": "control-00055",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original branch relation PauseRoutine -> ExitPause at source line 881 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21143,12 +21159,14 @@
       "instruction": "bne",
       "id": "control-00056",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original branch relation PauseRoutine -> ExitPause at source line 884 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21159,12 +21177,14 @@
       "instruction": "bne",
       "id": "control-00057",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original fallthrough relation PauseRoutine -> ChkPauseTimer at source line 884 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21175,12 +21195,14 @@
       "instruction": "beq",
       "id": "control-00058",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original branch relation ChkPauseTimer -> ChkStart at source line 886 (beq) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21191,12 +21213,14 @@
       "instruction": "beq",
       "id": "control-00059",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original branch relation ChkStart -> ClrPauseTimer at source line 891 (beq) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21207,12 +21231,14 @@
       "instruction": "bne",
       "id": "control-00060",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original branch relation ChkStart -> ExitPause at source line 894 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21223,12 +21249,14 @@
       "instruction": "bne",
       "id": "control-00061",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original branch relation ChkStart -> SetPause at source line 903 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21239,12 +21267,14 @@
       "instruction": "bne",
       "id": "control-00062",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original fallthrough relation ChkStart -> ClrPauseTimer at source line 903 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21255,12 +21285,14 @@
       "instruction": "and",
       "id": "control-00063",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original fallthrough relation ClrPauseTimer -> SetPause at source line 905 (and) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {
@@ -21271,12 +21303,14 @@
       "instruction": "sta",
       "id": "control-00064",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+      ],
       "semanticContract": "Original fallthrough relation SetPause -> ExitPause at source line 906 (sta) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff."
     },
     {

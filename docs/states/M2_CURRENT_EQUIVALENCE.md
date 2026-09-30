@@ -19,8 +19,8 @@ incomplete node/control-edge identities.
 
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
-| Exact | 9 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 22 | Current source audit exists but the current original-ROM route is incomplete. |
+| Exact | 15 | Current source audit and original-ROM route both prove the label. |
+| Needs evidence | 16 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -53,8 +53,8 @@ explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
-| Exact | 20 control; 3 material RAM/table |
-| Needs evidence | 66 |
+| Exact | 31 control; 3 material RAM/table |
+| Needs evidence | 55 |
 | Mismatch | 2 |
 | Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
@@ -201,3 +201,12 @@ are `needs-evidence`. The required controlled routes still need to cover the
 mode gate, timer-active and timer-zero paths, Start/debounce alternatives,
 shuffle overflow and non-overflow, modulo-three reset, and all three misc
 offset groups. No node or edge has been promoted from this static work.
+
+The pause subchain is now **exact** for `PauseRoutine`, `ChkPauseTimer`,
+`ChkStart`, `ClrPauseTimer`, `SetPause` and `ExitPause`, together with its 11
+owned control relations. Seven controlled cold-boot NMI-prefix routes cover
+the VictoryMode and GameMode gates, non-pausable and non-task alternatives,
+active and zero timer paths, Start, d7 debounce and the common return.
+ROM and current x86/x64 pause-owned state matches in every route. The known
+NMI `$00` and pre-dispatch `$2000` mismatches remain separately recorded and
+are not attributed to this proof.
