@@ -1101,3 +1101,8 @@ branches.
 ### Cohort J — B16a balance-platform entry integration
 
 `BalancePlatform` through `ChkOtherForFall` now has six node contracts, all incident dispatch, high-Y/state/peer/collision branches and fall/stop tails, plus four feasible paired-platform handoffs. Static review matches high-byte-three erase, signed peer-state exit, `$2d/$2f` threshold behavior and selector-matched fall versus clamp/stop behavior for both platforms. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal, current-threshold, peer-threshold and falling routes.
+
+
+### Cohort J — B16b balance-platform coupled-motion integration
+
+`ChkToMoveBalPlat` through `DoOtherPlatform` now has six node contracts, all incident force/speed/collision branches, gravity/stop calls, paired displacement, player-position and rope-tail relations, plus four feasible handoffs. Static review matches force-plus-five carry handling, signed movement selection, collision-slot equality, old-minus-new peer displacement and player-position ordering. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 up/down/stop and player-collision routes.

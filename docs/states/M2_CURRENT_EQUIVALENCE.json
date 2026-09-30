@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 306,
+    "enumeratedCount": 310,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4297,6 +4297,62 @@
       "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00307",
+      "producer": "ChkToMoveBalPlat",
+      "consumer": "ColFlg",
+      "storage": "collision flag and force/speed-derived motion state",
+      "feasiblePath": "No-collision force/speed cases select up/down/stop; collision equality selects direction.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c coupled motion",
+      "semanticContract": "Preserves source paired-platform state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00308",
+      "producer": "PlatUp",
+      "consumer": "DoOtherPlatform",
+      "storage": "new current Y after upward movement",
+      "feasiblePath": "Counterpart uses old-minus-new displacement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c paired Y adjustment",
+      "semanticContract": "Preserves source paired-platform state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00309",
+      "producer": "PlatDn",
+      "consumer": "DoOtherPlatform",
+      "storage": "new current Y after downward movement",
+      "feasiblePath": "Counterpart uses old-minus-new displacement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c paired Y adjustment",
+      "semanticContract": "Preserves source paired-platform state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00310",
+      "producer": "DoOtherPlatform",
+      "consumer": "DrawEraseRope",
+      "storage": "peer Y, collision state and current platform motion",
+      "feasiblePath": "Player positioning precedes rope update only when collision is present.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c post-motion tail",
+      "semanticContract": "Preserves source paired-platform state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -20847,61 +20903,79 @@
       "label": "ChkToMoveBalPlat",
       "asmLine": 10733,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Saves old current Y, distinguishes collision from no-collision, and selects down/up/stop from force+five carry and signed speed exactly as source."
     },
     {
       "label": "ColFlg",
       "asmLine": 10750,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses collision slot equality with ObjectOffset to select down versus up movement."
     },
     {
       "label": "PlatUp",
       "asmLine": 10752,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls upward platform gravity then tails to counterpart displacement."
     },
     {
       "label": "PlatSt",
       "asmLine": 10754,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls two-platform stop initialization then tails to counterpart displacement."
     },
     {
       "label": "PlatDn",
       "asmLine": 10756,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls downward platform gravity then falls through to counterpart displacement."
     },
     {
       "label": "DoOtherPlatform",
       "asmLine": 10758,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves peer by old-current minus new-current Y difference, repositions player only for nonnegative collision flag, then joins rope update."
     },
     {
       "label": "DrawEraseRope",
@@ -61742,12 +61816,12 @@
       "id": "control-02092",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ChkOtherForFall -> ChkToMoveBalPlat with high-Y/state/peer/collision predicate and tail ordering."
+      "semanticContract": "Preserves original branch relation ChkOtherForFall -> ChkToMoveBalPlat with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "ChkOtherForFall",
@@ -61789,10 +61863,13 @@
       "instruction": "bpl",
       "id": "control-02095",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> ColFlg with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "ChkToMoveBalPlat",
@@ -61802,10 +61879,13 @@
       "instruction": "bmi",
       "id": "control-02096",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> PlatDn with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "ChkToMoveBalPlat",
@@ -61815,10 +61895,13 @@
       "instruction": "bne",
       "id": "control-02097",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> PlatUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "ChkToMoveBalPlat",
@@ -61828,10 +61911,13 @@
       "instruction": "bcc",
       "id": "control-02098",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> PlatSt with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "ChkToMoveBalPlat",
@@ -61841,10 +61927,13 @@
       "instruction": "bcs",
       "id": "control-02099",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> PlatUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "ChkToMoveBalPlat",
@@ -61854,10 +61943,13 @@
       "instruction": "bcs",
       "id": "control-02100",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkToMoveBalPlat -> ColFlg with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "ColFlg",
@@ -61867,10 +61959,13 @@
       "instruction": "beq",
       "id": "control-02101",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ColFlg -> PlatDn with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "ColFlg",
@@ -61880,10 +61975,13 @@
       "instruction": "beq",
       "id": "control-02102",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ColFlg -> PlatUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "PlatUp",
@@ -61893,10 +61991,13 @@
       "instruction": "jsr",
       "id": "control-02103",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlatUp -> MovePlatformUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "PlatUp",
@@ -61906,10 +62007,13 @@
       "instruction": "jmp",
       "id": "control-02104",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation PlatUp -> DoOtherPlatform with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "PlatSt",
@@ -61919,10 +62023,13 @@
       "instruction": "jsr",
       "id": "control-02105",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlatSt -> StopPlatforms with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "PlatSt",
@@ -61932,10 +62039,13 @@
       "instruction": "jmp",
       "id": "control-02106",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation PlatSt -> DoOtherPlatform with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "PlatDn",
@@ -61945,10 +62055,13 @@
       "instruction": "jsr",
       "id": "control-02107",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlatDn -> MovePlatformDown with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "PlatDn",
@@ -61958,10 +62071,13 @@
       "instruction": "jsr",
       "id": "control-02108",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PlatDn -> DoOtherPlatform with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "DoOtherPlatform",
@@ -61971,10 +62087,13 @@
       "instruction": "bmi",
       "id": "control-02109",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DoOtherPlatform -> DrawEraseRope with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "DoOtherPlatform",
@@ -61984,10 +62103,13 @@
       "instruction": "jsr",
       "id": "control-02110",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DoOtherPlatform -> PositionPlayerOnVPlat with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "DoOtherPlatform",
@@ -61997,10 +62119,13 @@
       "instruction": "jsr",
       "id": "control-02111",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DoOtherPlatform -> DrawEraseRope with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "DrawEraseRope",
@@ -85968,12 +86093,12 @@
       "id": "control-03875",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlatformUp -> PlatUp with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MovePlatformUp -> PlatUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "StopPlatforms",
@@ -85983,10 +86108,13 @@
       "instruction": "rts/rti",
       "id": "control-03876",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation StopPlatforms -> PlatSt with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "MovePlatformDown",
@@ -85997,12 +86125,12 @@
       "id": "control-03877",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlatformDown -> PlatDn with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MovePlatformDown -> PlatDn with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -86012,10 +86140,13 @@
       "instruction": "rts/rti",
       "id": "control-03878",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "semanticEvidence": [
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> DoOtherPlatform with force/speed/collision predicate, paired Y handoff and call/tail/return ordering."
     },
     {
       "from": "SetupPlatformRope",
