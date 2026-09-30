@@ -1016,3 +1016,8 @@ branches.
 ### Cohort I — B15j Firebar state-preparation integration
 
 `FirebarPosLookupTbl` through `SkipFBar` now has twelve node contracts, all incident control relations and seven feasible table/state handoffs. Static review matches bit-three return, timer-gated spin, short-firebar 8/24 axis skip, anchor ordering, five/eleven loop bounds and fifth-part OAM source switch. Entries remain `needs-evidence` pending controlled ROM/x86/x64 short/long Firebar routes.
+
+
+### Cohort I — B15k Firebar segment and collision integration
+
+`DrawFirebar_Collision` through `GetVAdder` now has twenty node contracts, all incident branches, calls, fall-throughs, tails and returns, plus seven feasible OAM/mirror/player-probe handoffs. Static review matches dual mirror signs, `$59`/`$f8` hiding, phase lookup, injury gates, 8x8 tests, body-size probe count, loop-counter preservation and OAM +4 exit. Entries remain `needs-evidence` pending controlled ROM/x86/x64 visible/hidden, small/big/crouching and injury routes.

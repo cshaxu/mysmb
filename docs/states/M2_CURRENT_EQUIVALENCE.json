@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 223,
+    "enumeratedCount": 230,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3135,6 +3135,104 @@
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00224",
+      "producer": "GetFirebarPosition",
+      "consumer": "DrawFirebar_Collision",
+      "storage": "phase-derived horizontal/vertical adders and mirror byte",
+      "feasiblePath": "Segment positioning consumes the full position/mirror output of the phase lookup.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_firebar_get_position then mysmb_firebar_draw_collision",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00225",
+      "producer": "DrawFirebar_Collision",
+      "consumer": "FirebarCollision",
+      "storage": "segment OAM X/Y and collision scratch $06/$07",
+      "feasiblePath": "Collision consumes coordinates after visibility/mirror processing.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_firebar_draw_collision",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00226",
+      "producer": "FirebarCollision",
+      "consumer": "FBCLoop",
+      "storage": "star/timer, player page/size/crouch and OAM anchor state",
+      "feasiblePath": "Collision probe loop is entered only when all source gating allows it.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_firebar_collision",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00227",
+      "producer": "AdjSm",
+      "consumer": "FBCLoop",
+      "storage": "probe count and player Y+$18",
+      "feasiblePath": "Small/crouching path performs exactly the source probe configuration.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_firebar_collision",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00228",
+      "producer": "Chk2Ofs",
+      "consumer": "FBCLoop",
+      "storage": "FirebarYPos table and current probe counter",
+      "feasiblePath": "Big player path advances to source Y offsets before rechecking.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_firebar_collision",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00229",
+      "producer": "ChgSDir",
+      "consumer": "SetSDir",
+      "storage": "player/firebar X comparison direction and loop counter",
+      "feasiblePath": "Injury uses original direction and preserves current firebar part counter.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_firebar_collision",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00230",
+      "producer": "SetVFbr",
+      "consumer": "NoColFB",
+      "storage": "OAM stream offset and current ObjectOffset",
+      "feasiblePath": "Segment finish advances OAM offset by four and returns to original object slot.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_firebar_collision",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -18128,201 +18226,261 @@
       "label": "DrawFirebar_Collision",
       "asmLine": 9784,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies mirror-controlled horizontal/vertical adder signs, hides segments outside horizontal range or when anchor Y is $f8, writes OAM coordinates and falls through collision."
     },
     {
       "label": "AddHA",
       "asmLine": 9793,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds signed horizontal adder to anchor relative X and stores segment X before absolute-distance visibility test."
     },
     {
       "label": "SubtR1",
       "asmLine": 9803,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes absolute horizontal segment/anchor difference for left-side segment before visibility check."
     },
     {
       "label": "ChkFOfs",
       "asmLine": 9805,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects visible vertical-adder handling only for horizontal difference below $59; otherwise hides Y at $f8."
     },
     {
       "label": "VAHandl",
       "asmLine": 9809,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips vertical addition for anchor Y $f8; otherwise applies the second mirror bit to vertical adder."
     },
     {
       "label": "AddVA",
       "asmLine": 9817,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds signed vertical adder to relative Y before sprite Y write."
     },
     {
       "label": "SetVFbr",
       "asmLine": 9819,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores segment Y in OAM and collision scratch."
     },
     {
       "label": "FirebarCollision",
       "asmLine": 9822,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Draws tile, skips collision for star/timer/offscreen-page conditions, probes one or three player Y bands by size/crouch, tests 8x8 proximity, injures and restores loop counter."
     },
     {
       "label": "AdjSm",
       "asmLine": 9838,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects two extra Y probes and shifts player Y by $18 for small or crouching player."
     },
     {
       "label": "BigJp",
       "asmLine": 9844,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the selected player Y to enter the collision probe loop."
     },
     {
       "label": "FBCLoop",
       "asmLine": 9845,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes absolute Y difference, then conditionally absolute X difference and branches to injury on both distances below eight."
     },
     {
       "label": "ChkVFBD",
       "asmLine": 9851,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips X test when Y difference is at least eight or segment X is far right."
     },
     {
       "label": "ChkFBCl",
       "asmLine": 9866,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Branches to injury when absolute X difference is below eight."
     },
     {
       "label": "Chk2Ofs",
       "asmLine": 9868,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Advances player Y probe unless small/crouching three-probe sequence is complete."
     },
     {
       "label": "ChgSDir",
       "asmLine": 9877,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Chooses player injury direction from player sprite X versus firebar segment X then invokes injury."
     },
     {
       "label": "SetSDir",
       "asmLine": 9882,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected direction, preserves part loop counter across player injury and resumes collision exit."
     },
     {
       "label": "NoColFB",
       "asmLine": 9889,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores/increments OAM stream offset by four, reloads ObjectOffset and returns."
     },
     {
       "label": "GetFirebarPosition",
       "asmLine": 9896,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Derives oscillating horizontal and vertical magnitudes from phase/table rows, then selects mirror data from phase>>3."
     },
     {
       "label": "GetHAdder",
       "asmLine": 9904,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores folded horizontal phase before row-offset lookup."
     },
     {
       "label": "GetVAdder",
       "asmLine": 9922,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/firebar.c",
+      "currentCounterpart": "shared Firebar segment positioning/collision path",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores folded vertical phase before row-offset lookup."
     },
     {
       "label": "PRandomSubtracter",
@@ -56223,12 +56381,12 @@
       "id": "control-01842",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SetupGFB -> GetFirebarPosition with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "Preserves original call relation SetupGFB -> GetFirebarPosition with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "SetupGFB",
@@ -56239,12 +56397,12 @@
       "id": "control-01843",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SetupGFB -> FirebarCollision with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "Preserves original call relation SetupGFB -> FirebarCollision with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "SetupGFB",
@@ -56303,12 +56461,12 @@
       "id": "control-01847",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DrawFbar -> GetFirebarPosition with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "Preserves original call relation DrawFbar -> GetFirebarPosition with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "DrawFbar",
@@ -56319,12 +56477,12 @@
       "id": "control-01848",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DrawFbar -> DrawFirebar_Collision with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "Preserves original call relation DrawFbar -> DrawFirebar_Collision with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "DrawFbar",
@@ -56398,10 +56556,13 @@
       "instruction": "bcs",
       "id": "control-01853",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DrawFirebar_Collision -> AddHA with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "DrawFirebar_Collision",
@@ -56411,10 +56572,13 @@
       "instruction": "adc",
       "id": "control-01854",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DrawFirebar_Collision -> AddHA with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "AddHA",
@@ -56424,10 +56588,13 @@
       "instruction": "bcs",
       "id": "control-01855",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation AddHA -> SubtR1 with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "AddHA",
@@ -56437,10 +56604,13 @@
       "instruction": "jmp",
       "id": "control-01856",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation AddHA -> ChkFOfs with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "SubtR1",
@@ -56450,10 +56620,13 @@
       "instruction": "sbc",
       "id": "control-01857",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SubtR1 -> ChkFOfs with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkFOfs",
@@ -56463,10 +56636,13 @@
       "instruction": "bcc",
       "id": "control-01858",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkFOfs -> VAHandl with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkFOfs",
@@ -56476,10 +56652,13 @@
       "instruction": "bne",
       "id": "control-01859",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkFOfs -> SetVFbr with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkFOfs",
@@ -56489,10 +56668,13 @@
       "instruction": "bne",
       "id": "control-01860",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkFOfs -> VAHandl with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "VAHandl",
@@ -56502,10 +56684,13 @@
       "instruction": "beq",
       "id": "control-01861",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VAHandl -> SetVFbr with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "VAHandl",
@@ -56515,10 +56700,13 @@
       "instruction": "bcs",
       "id": "control-01862",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation VAHandl -> AddVA with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "VAHandl",
@@ -56528,10 +56716,13 @@
       "instruction": "adc",
       "id": "control-01863",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation VAHandl -> AddVA with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "AddVA",
@@ -56541,10 +56732,13 @@
       "instruction": "adc",
       "id": "control-01864",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation AddVA -> SetVFbr with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "SetVFbr",
@@ -56554,10 +56748,13 @@
       "instruction": "sta",
       "id": "control-01865",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetVFbr -> FirebarCollision with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FirebarCollision",
@@ -56567,10 +56764,13 @@
       "instruction": "jsr",
       "id": "control-01866",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FirebarCollision -> DrawFirebar with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FirebarCollision",
@@ -56580,10 +56780,13 @@
       "instruction": "bne",
       "id": "control-01867",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirebarCollision -> NoColFB with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FirebarCollision",
@@ -56593,10 +56796,13 @@
       "instruction": "bne",
       "id": "control-01868",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirebarCollision -> NoColFB with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FirebarCollision",
@@ -56606,10 +56812,13 @@
       "instruction": "bne",
       "id": "control-01869",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirebarCollision -> AdjSm with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FirebarCollision",
@@ -56619,10 +56828,13 @@
       "instruction": "beq",
       "id": "control-01870",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FirebarCollision -> BigJp with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FirebarCollision",
@@ -56632,10 +56844,13 @@
       "instruction": "beq",
       "id": "control-01871",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FirebarCollision -> AdjSm with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "AdjSm",
@@ -56645,10 +56860,13 @@
       "instruction": "tay",
       "id": "control-01872",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation AdjSm -> BigJp with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "BigJp",
@@ -56658,10 +56876,13 @@
       "instruction": "tya",
       "id": "control-01873",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BigJp -> FBCLoop with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FBCLoop",
@@ -56671,10 +56892,13 @@
       "instruction": "bpl",
       "id": "control-01874",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FBCLoop -> ChkVFBD with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FBCLoop",
@@ -56684,10 +56908,13 @@
       "instruction": "adc",
       "id": "control-01875",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FBCLoop -> ChkVFBD with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkVFBD",
@@ -56697,10 +56924,13 @@
       "instruction": "bcs",
       "id": "control-01876",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkVFBD -> Chk2Ofs with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkVFBD",
@@ -56710,10 +56940,13 @@
       "instruction": "bcs",
       "id": "control-01877",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkVFBD -> Chk2Ofs with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkVFBD",
@@ -56723,10 +56956,13 @@
       "instruction": "bpl",
       "id": "control-01878",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkVFBD -> ChkFBCl with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkVFBD",
@@ -56736,10 +56972,13 @@
       "instruction": "adc",
       "id": "control-01879",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkVFBD -> ChkFBCl with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkFBCl",
@@ -56749,10 +56988,13 @@
       "instruction": "bcc",
       "id": "control-01880",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkFBCl -> ChgSDir with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChkFBCl",
@@ -56762,10 +57004,13 @@
       "instruction": "bcc",
       "id": "control-01881",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkFBCl -> Chk2Ofs with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "Chk2Ofs",
@@ -56775,10 +57020,13 @@
       "instruction": "beq",
       "id": "control-01882",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Chk2Ofs -> NoColFB with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "Chk2Ofs",
@@ -56788,10 +57036,13 @@
       "instruction": "jmp",
       "id": "control-01883",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation Chk2Ofs -> FBCLoop with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChgSDir",
@@ -56801,10 +57052,13 @@
       "instruction": "bcs",
       "id": "control-01884",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChgSDir -> SetSDir with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "ChgSDir",
@@ -56814,10 +57068,13 @@
       "instruction": "inx",
       "id": "control-01885",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChgSDir -> SetSDir with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "SetSDir",
@@ -56827,10 +57084,13 @@
       "instruction": "jsr",
       "id": "control-01886",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetSDir -> InjurePlayer with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "SetSDir",
@@ -56840,10 +57100,13 @@
       "instruction": "sta",
       "id": "control-01887",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetSDir -> NoColFB with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "GetFirebarPosition",
@@ -56853,10 +57116,13 @@
       "instruction": "bcc",
       "id": "control-01888",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GetFirebarPosition -> GetHAdder with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "GetFirebarPosition",
@@ -56866,10 +57132,13 @@
       "instruction": "adc",
       "id": "control-01889",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetFirebarPosition -> GetHAdder with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "GetHAdder",
@@ -56879,10 +57148,13 @@
       "instruction": "bcc",
       "id": "control-01890",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation GetHAdder -> GetVAdder with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "GetHAdder",
@@ -56892,10 +57164,13 @@
       "instruction": "adc",
       "id": "control-01891",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetHAdder -> GetVAdder with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "MoveFlyingCheepCheep",
@@ -83172,12 +83447,12 @@
       "id": "control-03840",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetFirebarPosition -> SetupGFB with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "Preserves original return relation GetFirebarPosition -> SetupGFB with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "FirebarCollision",
@@ -83188,12 +83463,12 @@
       "id": "control-03841",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation FirebarCollision -> SetupGFB with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "Preserves original return relation FirebarCollision -> SetupGFB with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "GetFirebarPosition",
@@ -83204,12 +83479,12 @@
       "id": "control-03842",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetFirebarPosition -> DrawFbar with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "Preserves original return relation GetFirebarPosition -> DrawFbar with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "DrawFirebar_Collision",
@@ -83220,12 +83495,12 @@
       "id": "control-03843",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawFirebar_Collision -> DrawFbar with firebar phase, ID, OAM/part state and source call/return ordering."
+      "semanticContract": "Preserves original return relation DrawFirebar_Collision -> DrawFbar with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "DrawFirebar",
@@ -83235,10 +83510,13 @@
       "instruction": "rts/rti",
       "id": "control-03844",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DrawFirebar -> FirebarCollision with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "InjurePlayer",
@@ -83248,10 +83526,13 @@
       "instruction": "rts/rti",
       "id": "control-03845",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InjurePlayer -> SetSDir with Firebar OAM, mirror, player probe and source call/return ordering."
     },
     {
       "from": "MoveEnemyHorizontally",
