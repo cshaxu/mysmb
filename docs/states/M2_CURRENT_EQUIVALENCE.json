@@ -1331,41 +1331,53 @@
       "label": "PlayerEndWorld",
       "asmLine": 1256,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1–7 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check."
     },
     {
       "label": "EndExitOne",
       "asmLine": 1271,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8443: returns from PlayerEndWorld after either the active-timer branch or the completed next-world transition without additional writes."
     },
     {
       "label": "EndChkBButton",
       "asmLine": 1272,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8444: ORs both saved controller latches, tests B, returns on no B, otherwise sets WorldSelectEnableFlag and lives=$ff before TerminateGame."
     },
     {
       "label": "EndExitTwo",
       "asmLine": 1281,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8454: returns after the World 8 no-B result or after TerminateGame returns, preserving that helper result."
     },
     {
       "label": "FloateyNumTileData",
@@ -23170,10 +23182,13 @@
       "instruction": "bne",
       "id": "control-00165",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch WorldEndTimer != 0 return",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PlayerEndWorld -> EndExitOne returns with no terminal transition when WorldEndTimer is nonzero."
     },
     {
       "from": "PlayerEndWorld",
@@ -23183,10 +23198,13 @@
       "instruction": "bcs",
       "id": "control-00166",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch WorldNumber >= 7 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PlayerEndWorld -> EndChkBButton enters controller processing only after expired timer at World 8."
     },
     {
       "from": "PlayerEndWorld",
@@ -23196,10 +23214,13 @@
       "instruction": "jsr",
       "id": "control-00167",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1–7 mysmb_game_load_area_pointer call",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PlayerEndWorld -> LoadAreaPointer occurs after area/level/task reset and world increment, before FetchNewGameTimerFlag and GameMode writes."
     },
     {
       "from": "PlayerEndWorld",
@@ -23209,10 +23230,13 @@
       "instruction": "sta",
       "id": "control-00168",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1–7 next-world continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PlayerEndWorld -> EndExitOne completes the next-world writes only after LoadAreaPointer returns."
     },
     {
       "from": "EndChkBButton",
@@ -23222,10 +23246,13 @@
       "instruction": "beq",
       "id": "control-00169",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch World 8 combined saved joypad B clear branch",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EndChkBButton -> EndExitTwo returns when neither saved controller latch has B set."
     },
     {
       "from": "EndChkBButton",
@@ -23235,10 +23262,13 @@
       "instruction": "jsr",
       "id": "control-00170",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch World 8 B-set terminal helper sequence",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EndChkBButton -> TerminateGame writes WorldSelectEnableFlag and lives=$ff before terminal player switching/title transition."
     },
     {
       "from": "EndChkBButton",
@@ -23248,10 +23278,13 @@
       "instruction": "jsr",
       "id": "control-00171",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch World 8 B-set post-terminate continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EndChkBButton -> EndExitTwo returns after TerminateGame completes its selected player-continuation or title-return result."
     },
     {
       "from": "FloateyNumbersRoutine",
@@ -23261,10 +23294,13 @@
       "instruction": "beq",
       "id": "control-00172",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/score.c:mysmb_game_step_floatey_number zero-control return",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original FloateyNumbersRoutine -> EndExitOne uses EndExitOne only as a shared RTS leaf when the floatey control is zero; it must not enter PlayerEndWorld terminal logic."
     },
     {
       "from": "FloateyNumbersRoutine",
@@ -66764,10 +66800,13 @@
       "instruction": "rts/rti",
       "id": "control-03511",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch LoadAreaPointer completion",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original LoadAreaPointer -> PlayerEndWorld returns before FetchNewGameTimerFlag and OperMode=GameMode writes."
     },
     {
       "from": "TerminateGame",
@@ -66777,10 +66816,13 @@
       "instruction": "rts/rti",
       "id": "control-03512",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch TerminateGame completion",
+      "semanticEvidence": [
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original TerminateGame -> EndChkBButton returns its selected continuation/title state before EndExitTwo RTS."
     },
     {
       "from": "AddToScore",

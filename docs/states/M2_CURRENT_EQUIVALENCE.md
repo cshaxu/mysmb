@@ -314,3 +314,15 @@ counter/message/end-timer alternatives, World 8 pre-music/music message
 alternatives, nonzero secondary counter, and primary counter carry/terminal
 thresholds. Each record must compare both the selected VRAM control and the
 counter, music, timer and task state that reaches the successor.
+
+The Victory terminal-exit chain `PlayerEndWorld -> EndExitOne /
+EndChkBButton -> EndExitTwo` (lines 1256–1281) now has four node contracts
+and all ten associated control relations independently recorded as
+`needs-evidence`. The integration pass distinguishes active-timer return,
+worlds 1–7 next-world ordering around `LoadAreaPointer`, World 8 no-B return,
+World 8 B's pre-`TerminateGame` writes, its post-helper return, and the
+separate floatey-number use of the shared `EndExitOne` RTS leaf. Required
+current route evidence is an active-timer return, ordinary next-world
+transition, World 8 no-B, and B from each controller latch. It must compare
+area/level/world/task/mode order, fetch-timer flag, both controller latches,
+world-select/lives writes, and the complete `TerminateGame` handoff.
