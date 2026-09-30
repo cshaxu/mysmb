@@ -1334,3 +1334,9 @@ branches.
 - Node-semantics result: fourteen labels moved from `unclassified` to `needs-evidence`, covering flagpole, small/big jump, bump and fireball-throw setup and timing continuations.
 - Independent integration result: 26 outgoing control relations and the feasible `SwimStompEnvelopeData → ContinueSwimStomp` material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 SFX timing routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K27 — square-one queue, swim, smack and pipe SFX audit
+
+- Source range: `Square1SfxHandler` through `NoPDwnL` (`SMBDIS.ASM` lines 15256–15365).
+- Node-semantics result: sixteen labels moved from `unclassified` to `needs-evidence`, covering queue priority scan, buffer continuation, swim/stomp, smack, pipe/injury and terminal channel reset.
+- Independent integration result: 47 outgoing control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 priority and timing routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

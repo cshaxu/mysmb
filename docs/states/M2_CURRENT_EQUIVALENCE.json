@@ -29623,161 +29623,209 @@
       "label": "Square1SfxHandler",
       "asmLine": 15256,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies a nonzero queue into buffer, scans priority bits in source order while mutating the live queue, and dispatches the selected new effect."
     },
     {
       "label": "CheckSfx1Buffer",
       "asmLine": 15276,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dispatches the active buffered effect to its continuation using the same source priority-bit scan without mutating the buffer."
     },
     {
       "label": "ExS1H",
       "asmLine": 15294,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns when no square-one buffered effect is active."
     },
     {
       "label": "PlaySwimStomp",
       "asmLine": 15296,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes swim/stomp length and registers, then enters its continuation."
     },
     {
       "label": "ContinueSwimStomp",
       "asmLine": 15304,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes remaining-length indexed envelope, writes the frequency LSB at length six and transfers to common decrement."
     },
     {
       "label": "BranchToDecLength1",
       "asmLine": 15313,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers to common square-one length decrement."
     },
     {
       "label": "PlaySmackEnemy",
       "asmLine": 15316,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes smack length/registers and enters common decrement."
     },
     {
       "label": "ContinueSmackEnemy",
       "asmLine": 15325,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "At length eight writes the second smack tone; otherwise selects the source spacing envelope before common decrement."
     },
     {
       "label": "SmSpc",
       "asmLine": 15333,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the spacing envelope byte for non-threshold smack frames."
     },
     {
       "label": "SmTick",
       "asmLine": 15334,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected smack envelope then enters common decrement."
     },
     {
       "label": "DecrementSfx1Length",
       "asmLine": 15336,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements square-one effect length and either returns while active or enters terminal stop."
     },
     {
       "label": "StopSquare1Sfx",
       "asmLine": 15340,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears the square-one buffer and toggles master channel enable through 0x0e then 0x0f."
     },
     {
       "label": "ExSfx1",
       "asmLine": 15347,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after active decrement or terminal square-one stop."
     },
     {
       "label": "PlayPipeDownInj",
       "asmLine": 15349,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes pipe-down/injury length then enters its bit-timed continuation."
     },
     {
       "label": "ContinuePipeDownInj",
       "asmLine": 15353,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses source bit tests on remaining length to write pipe-down tone only at eligible frames, then decrements."
     },
     {
       "label": "NoPDwnL",
       "asmLine": 15365,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers a non-tone pipe-down frame to common square-one decrement."
     },
     {
       "label": "ExtraLifeFreqData",
@@ -82281,10 +82329,13 @@
       "instruction": "beq",
       "id": "control-03232",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → CheckSfx1Buffer preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82294,10 +82345,13 @@
       "instruction": "bmi",
       "id": "control-03233",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → PlaySmallJump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82307,10 +82361,13 @@
       "instruction": "bcs",
       "id": "control-03234",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → PlayBigJump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82320,10 +82377,13 @@
       "instruction": "bcs",
       "id": "control-03235",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → PlayBump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82333,10 +82393,13 @@
       "instruction": "bcs",
       "id": "control-03236",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → PlaySwimStomp preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82346,10 +82409,13 @@
       "instruction": "bcs",
       "id": "control-03237",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → PlaySmackEnemy preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82359,10 +82425,13 @@
       "instruction": "bcs",
       "id": "control-03238",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → PlayPipeDownInj preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82372,10 +82441,13 @@
       "instruction": "bcs",
       "id": "control-03239",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → PlayFireballThrow preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82385,10 +82457,13 @@
       "instruction": "bcs",
       "id": "control-03240",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square1SfxHandler → PlayFlagpoleSlide preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "Square1SfxHandler",
@@ -82398,10 +82473,13 @@
       "instruction": "bcs",
       "id": "control-03241",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through Square1SfxHandler → CheckSfx1Buffer preserves prior square-one state writes before the successor."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82411,10 +82489,13 @@
       "instruction": "beq",
       "id": "control-03242",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → ExS1H preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82424,10 +82505,13 @@
       "instruction": "bmi",
       "id": "control-03243",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → ContinueSndJump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82437,10 +82521,13 @@
       "instruction": "bcs",
       "id": "control-03244",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → ContinueSndJump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82450,10 +82537,13 @@
       "instruction": "bcs",
       "id": "control-03245",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → ContinueBumpThrow preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82463,10 +82553,13 @@
       "instruction": "bcs",
       "id": "control-03246",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → ContinueSwimStomp preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82476,10 +82569,13 @@
       "instruction": "bcs",
       "id": "control-03247",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → ContinueSmackEnemy preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82489,10 +82585,13 @@
       "instruction": "bcs",
       "id": "control-03248",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → ContinuePipeDownInj preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82502,10 +82601,13 @@
       "instruction": "bcs",
       "id": "control-03249",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → ContinueBumpThrow preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82515,10 +82617,13 @@
       "instruction": "bcs",
       "id": "control-03250",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx1Buffer → DecrementSfx1Length preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "CheckSfx1Buffer",
@@ -82528,10 +82633,13 @@
       "instruction": "bcs",
       "id": "control-03251",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through CheckSfx1Buffer → ExS1H preserves prior square-one state writes before the successor."
     },
     {
       "from": "PlaySwimStomp",
@@ -82541,10 +82649,13 @@
       "instruction": "jsr",
       "id": "control-03252",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PlaySwimStomp → PlaySqu1Sfx writes required APU state before the caller continuation."
     },
     {
       "from": "PlaySwimStomp",
@@ -82554,10 +82665,13 @@
       "instruction": "jsr",
       "id": "control-03253",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlaySwimStomp → ContinueSwimStomp preserves prior square-one state writes before the successor."
     },
     {
       "from": "ContinueSwimStomp",
@@ -82567,10 +82681,13 @@
       "instruction": "bne",
       "id": "control-03254",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueSwimStomp → BranchToDecLength1 preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "ContinueSwimStomp",
@@ -82580,10 +82697,13 @@
       "instruction": "sta",
       "id": "control-03255",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinueSwimStomp → BranchToDecLength1 preserves prior square-one state writes before the successor."
     },
     {
       "from": "BranchToDecLength1",
@@ -82593,10 +82713,13 @@
       "instruction": "bne",
       "id": "control-03256",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch BranchToDecLength1 → DecrementSfx1Length preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "BranchToDecLength1",
@@ -82606,10 +82729,13 @@
       "instruction": "bne",
       "id": "control-03257",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through BranchToDecLength1 → PlaySmackEnemy preserves prior square-one state writes before the successor."
     },
     {
       "from": "PlaySmackEnemy",
@@ -82619,10 +82745,13 @@
       "instruction": "jsr",
       "id": "control-03258",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PlaySmackEnemy → PlaySqu1Sfx writes required APU state before the caller continuation."
     },
     {
       "from": "PlaySmackEnemy",
@@ -82632,10 +82761,13 @@
       "instruction": "bne",
       "id": "control-03259",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch PlaySmackEnemy → DecrementSfx1Length preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "PlaySmackEnemy",
@@ -82645,10 +82777,13 @@
       "instruction": "bne",
       "id": "control-03260",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlaySmackEnemy → ContinueSmackEnemy preserves prior square-one state writes before the successor."
     },
     {
       "from": "ContinueSmackEnemy",
@@ -82658,10 +82793,13 @@
       "instruction": "bne",
       "id": "control-03261",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueSmackEnemy → SmSpc preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "ContinueSmackEnemy",
@@ -82671,10 +82809,13 @@
       "instruction": "bne",
       "id": "control-03262",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueSmackEnemy → SmTick preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "ContinueSmackEnemy",
@@ -82684,10 +82825,13 @@
       "instruction": "bne",
       "id": "control-03263",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinueSmackEnemy → SmSpc preserves prior square-one state writes before the successor."
     },
     {
       "from": "SmSpc",
@@ -82697,10 +82841,13 @@
       "instruction": "lda",
       "id": "control-03264",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SmSpc → SmTick preserves prior square-one state writes before the successor."
     },
     {
       "from": "SmTick",
@@ -82710,10 +82857,13 @@
       "instruction": "sta",
       "id": "control-03265",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SmTick → DecrementSfx1Length preserves prior square-one state writes before the successor."
     },
     {
       "from": "DecrementSfx1Length",
@@ -82723,10 +82873,13 @@
       "instruction": "bne",
       "id": "control-03266",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DecrementSfx1Length → ExSfx1 preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "DecrementSfx1Length",
@@ -82736,10 +82889,13 @@
       "instruction": "bne",
       "id": "control-03267",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DecrementSfx1Length → StopSquare1Sfx preserves prior square-one state writes before the successor."
     },
     {
       "from": "StopSquare1Sfx",
@@ -82749,10 +82905,13 @@
       "instruction": "stx",
       "id": "control-03268",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through StopSquare1Sfx → ExSfx1 preserves prior square-one state writes before the successor."
     },
     {
       "from": "PlayPipeDownInj",
@@ -82762,10 +82921,13 @@
       "instruction": "sta",
       "id": "control-03269",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayPipeDownInj → ContinuePipeDownInj preserves prior square-one state writes before the successor."
     },
     {
       "from": "ContinuePipeDownInj",
@@ -82775,10 +82937,13 @@
       "instruction": "bcs",
       "id": "control-03270",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinuePipeDownInj → NoPDwnL preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "ContinuePipeDownInj",
@@ -82788,10 +82953,13 @@
       "instruction": "bcs",
       "id": "control-03271",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinuePipeDownInj → NoPDwnL preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "ContinuePipeDownInj",
@@ -82801,10 +82969,13 @@
       "instruction": "beq",
       "id": "control-03272",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinuePipeDownInj → NoPDwnL preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path."
     },
     {
       "from": "ContinuePipeDownInj",
@@ -82814,10 +82985,13 @@
       "instruction": "jsr",
       "id": "control-03273",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call ContinuePipeDownInj → PlaySqu1Sfx writes required APU state before the caller continuation."
     },
     {
       "from": "ContinuePipeDownInj",
@@ -82827,10 +83001,13 @@
       "instruction": "jsr",
       "id": "control-03274",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinuePipeDownInj → NoPDwnL preserves prior square-one state writes before the successor."
     },
     {
       "from": "NoPDwnL",
@@ -82840,10 +83017,13 @@
       "instruction": "jmp",
       "id": "control-03275",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer NoPDwnL → DecrementSfx1Length preserves the selected SFX state without local continuation."
     },
     {
       "from": "PlayCoinGrab",
@@ -94559,10 +94739,13 @@
       "instruction": "rts/rti",
       "id": "control-04062",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation Square1SfxHandler → RunSoundSubroutines exposes the completed square-one state to its caller continuation."
     },
     {
       "from": "Square2SfxHandler",
@@ -94803,10 +94986,13 @@
       "instruction": "rts/rti",
       "id": "control-04078",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation StopSquare1Sfx → LoadEventMusic exposes the completed square-one state to its caller continuation."
     },
     {
       "from": "StopSquare2Sfx",
@@ -94829,10 +95015,13 @@
       "instruction": "rts/rti",
       "id": "control-04080",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation StopSquare1Sfx → LoadAreaMusic exposes the completed square-one state to its caller continuation."
     },
     {
       "from": "ProcessLengthData",
