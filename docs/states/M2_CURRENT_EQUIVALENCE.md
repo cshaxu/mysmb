@@ -1340,3 +1340,9 @@ branches.
 - Node-semantics result: sixteen labels moved from `unclassified` to `needs-evidence`, covering queue priority scan, buffer continuation, swim/stomp, smack, pipe/injury and terminal channel reset.
 - Independent integration result: 47 outgoing control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 priority and timing routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K28 — square-two tables, effects and queue audit
+
+- Source range: `ExtraLifeFreqData` through `JumpToDecLength2` (`SMBDIS.ASM` lines 15369–15502).
+- Node-semantics result: twenty-three labels moved from `unclassified` to `needs-evidence`, covering square-two effect tables, coin/timer, blast, power-up, terminal reset, one-up protection and queue/buffer priority dispatch.
+- Independent integration result: 49 outgoing control relations plus three feasible table-to-consumer material edges received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 timing and priority routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

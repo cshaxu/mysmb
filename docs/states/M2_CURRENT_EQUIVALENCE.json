@@ -6147,6 +6147,48 @@
         "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00439",
+      "producer": "ExtraLifeFreqData",
+      "consumer": "ContinueExtraLife",
+      "storage": "ROM ExtraLifeFreqData divided-length index to square-two frequency",
+      "feasiblePath": "ContinueExtraLife divides remaining length by eight then indexes ExtraLifeFreqData-1 before the shared register writer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c owner-local ROM table binding",
+      "semanticContract": "The divided remaining-length index selects the same ordered one-up frequency.",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00440",
+      "producer": "PowerUpGrabFreqData",
+      "consumer": "ContinuePowerUpGrab",
+      "storage": "ROM PowerUpGrabFreqData half-length index to square-two frequency",
+      "feasiblePath": "ContinuePowerUpGrab shifts remaining length once and indexes PowerUpGrabFreqData-1 only on even frames.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c owner-local ROM table binding",
+      "semanticContract": "The eligible half-length index selects the same ordered power-up frequency.",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00441",
+      "producer": "PUp_VGrow_FreqData",
+      "consumer": "ContinueGrowItems",
+      "storage": "ROM PUp_VGrow_FreqData secondary-counter index to grow/vine square-two frequency",
+      "feasiblePath": "ContinueGrowItems derives paired offsets from Sfx_SecondaryCounter before square-two register write.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c owner-local ROM table binding",
+      "semanticContract": "The secondary-counter index selects the same ordered grow/vine frequency pair.",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -29831,231 +29873,300 @@
       "label": "ExtraLifeFreqData",
       "asmLine": 15369,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds six ordered one-up frequency bytes indexed by the divided remaining length."
     },
     {
       "label": "PowerUpGrabFreqData",
       "asmLine": 15372,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds ordered power-up-grab frequency bytes indexed by remaining length divided by two."
     },
     {
       "label": "PUp_VGrow_FreqData",
       "asmLine": 15380,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds ordered power-up reveal and vine-grow frequency pairs indexed by their secondary counter."
     },
     {
       "label": "PlayCoinGrab",
       "asmLine": 15386,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects coin-grab length/control values before shared coin/timer setup."
     },
     {
       "label": "PlayTimerTick",
       "asmLine": 15391,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects timer-tick length/control values before shared coin/timer setup."
     },
     {
       "label": "CGrab_TTickRegL",
       "asmLine": 15395,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected square-two length and writes shared coin/timer register values."
     },
     {
       "label": "ContinueCGrabTTick",
       "asmLine": 15401,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the second coin/timer tone only at remaining length 0x30, then decrements."
     },
     {
       "label": "N2Tone",
       "asmLine": 15407,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers coin/timer continuation to common square-two decrement."
     },
     {
       "label": "PlayBlast",
       "asmLine": 15409,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes blast length/register values before shared blast setup."
     },
     {
       "label": "ContinueBlast",
       "asmLine": 15416,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the second blast tone only at remaining length 0x18, otherwise decrements."
     },
     {
       "label": "SBlasJ",
       "asmLine": 15422,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers selected blast register state to shared blast/bowser register setup."
     },
     {
       "label": "PlayPowerUpGrab",
       "asmLine": 15424,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes power-up-grab length before its per-two-frame continuation."
     },
     {
       "label": "ContinuePowerUpGrab",
       "asmLine": 15428,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Changes power-up-grab frequency only on even remaining lengths, then decrements."
     },
     {
       "label": "LoadSqu2Regs",
       "asmLine": 15437,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected square-two registers then enters common decrement."
     },
     {
       "label": "DecrementSfx2Length",
       "asmLine": 15440,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements square-two length and either returns while active or enters terminal buffer clear."
     },
     {
       "label": "EmptySfx2Buffer",
       "asmLine": 15444,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears square-two SFX buffer before terminal channel disable/enable sequence."
     },
     {
       "label": "StopSquare2Sfx",
       "asmLine": 15448,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Toggles master channel enable through 0x0d then 0x0f after SFX termination."
     },
     {
       "label": "ExSfx2",
       "asmLine": 15453,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after active decrement or terminal square-two reset."
     },
     {
       "label": "Square2SfxHandler",
       "asmLine": 15455,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Protects active one-up from interruption, otherwise copies queue into buffer and scans source priority bits to dispatch a new effect."
     },
     {
       "label": "CheckSfx2Buffer",
       "asmLine": 15478,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dispatches the active square-two buffer through source priority order without overwriting it."
     },
     {
       "label": "ExS2H",
       "asmLine": 15496,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns when no square-two buffered effect is active."
     },
     {
       "label": "Cont_CGrab_TTick",
       "asmLine": 15498,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers shared coin/timer continuation."
     },
     {
       "label": "JumpToDecLength2",
       "asmLine": 15501,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square2 and square-two effect helper paths",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-transfers to common square-two decrement."
     },
     {
       "label": "PlayBowserFall",
@@ -83033,10 +83144,13 @@
       "instruction": "bne",
       "id": "control-03276",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch PlayCoinGrab → CGrab_TTickRegL preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "PlayCoinGrab",
@@ -83046,10 +83160,13 @@
       "instruction": "bne",
       "id": "control-03277",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayCoinGrab → PlayTimerTick preserves prior square-two state writes before the successor."
     },
     {
       "from": "PlayTimerTick",
@@ -83059,10 +83176,13 @@
       "instruction": "ldx",
       "id": "control-03278",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayTimerTick → CGrab_TTickRegL preserves prior square-two state writes before the successor."
     },
     {
       "from": "CGrab_TTickRegL",
@@ -83072,10 +83192,13 @@
       "instruction": "jsr",
       "id": "control-03279",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call CGrab_TTickRegL → PlaySqu2Sfx writes required APU state before its caller continuation."
     },
     {
       "from": "CGrab_TTickRegL",
@@ -83085,10 +83208,13 @@
       "instruction": "jsr",
       "id": "control-03280",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through CGrab_TTickRegL → ContinueCGrabTTick preserves prior square-two state writes before the successor."
     },
     {
       "from": "ContinueCGrabTTick",
@@ -83098,10 +83224,13 @@
       "instruction": "bne",
       "id": "control-03281",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueCGrabTTick → N2Tone preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "ContinueCGrabTTick",
@@ -83111,10 +83240,13 @@
       "instruction": "sta",
       "id": "control-03282",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinueCGrabTTick → N2Tone preserves prior square-two state writes before the successor."
     },
     {
       "from": "N2Tone",
@@ -83124,10 +83256,13 @@
       "instruction": "bne",
       "id": "control-03283",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch N2Tone → DecrementSfx2Length preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "N2Tone",
@@ -83137,10 +83272,13 @@
       "instruction": "bne",
       "id": "control-03284",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through N2Tone → PlayBlast preserves prior square-two state writes before the successor."
     },
     {
       "from": "PlayBlast",
@@ -83150,10 +83288,13 @@
       "instruction": "bne",
       "id": "control-03285",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch PlayBlast → SBlasJ preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "PlayBlast",
@@ -83163,10 +83304,13 @@
       "instruction": "bne",
       "id": "control-03286",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayBlast → ContinueBlast preserves prior square-two state writes before the successor."
     },
     {
       "from": "ContinueBlast",
@@ -83176,10 +83320,13 @@
       "instruction": "bne",
       "id": "control-03287",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueBlast → DecrementSfx2Length preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "ContinueBlast",
@@ -83189,10 +83336,13 @@
       "instruction": "lda",
       "id": "control-03288",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinueBlast → SBlasJ preserves prior square-two state writes before the successor."
     },
     {
       "from": "SBlasJ",
@@ -83202,10 +83352,13 @@
       "instruction": "bne",
       "id": "control-03289",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch SBlasJ → BlstSJp preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "SBlasJ",
@@ -83215,10 +83368,13 @@
       "instruction": "bne",
       "id": "control-03290",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SBlasJ → PlayPowerUpGrab preserves prior square-two state writes before the successor."
     },
     {
       "from": "PlayPowerUpGrab",
@@ -83228,10 +83384,13 @@
       "instruction": "sta",
       "id": "control-03291",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayPowerUpGrab → ContinuePowerUpGrab preserves prior square-two state writes before the successor."
     },
     {
       "from": "ContinuePowerUpGrab",
@@ -83241,10 +83400,13 @@
       "instruction": "bcs",
       "id": "control-03292",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinuePowerUpGrab → DecrementSfx2Length preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "ContinuePowerUpGrab",
@@ -83254,10 +83416,13 @@
       "instruction": "ldy",
       "id": "control-03293",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinuePowerUpGrab → LoadSqu2Regs preserves prior square-two state writes before the successor."
     },
     {
       "from": "LoadSqu2Regs",
@@ -83267,10 +83432,13 @@
       "instruction": "jsr",
       "id": "control-03294",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call LoadSqu2Regs → PlaySqu2Sfx writes required APU state before its caller continuation."
     },
     {
       "from": "LoadSqu2Regs",
@@ -83280,10 +83448,13 @@
       "instruction": "jsr",
       "id": "control-03295",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through LoadSqu2Regs → DecrementSfx2Length preserves prior square-two state writes before the successor."
     },
     {
       "from": "DecrementSfx2Length",
@@ -83293,10 +83464,13 @@
       "instruction": "bne",
       "id": "control-03296",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DecrementSfx2Length → ExSfx2 preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "DecrementSfx2Length",
@@ -83306,10 +83480,13 @@
       "instruction": "bne",
       "id": "control-03297",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DecrementSfx2Length → EmptySfx2Buffer preserves prior square-two state writes before the successor."
     },
     {
       "from": "EmptySfx2Buffer",
@@ -83319,10 +83496,13 @@
       "instruction": "stx",
       "id": "control-03298",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through EmptySfx2Buffer → StopSquare2Sfx preserves prior square-two state writes before the successor."
     },
     {
       "from": "StopSquare2Sfx",
@@ -83332,10 +83512,13 @@
       "instruction": "stx",
       "id": "control-03299",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through StopSquare2Sfx → ExSfx2 preserves prior square-two state writes before the successor."
     },
     {
       "from": "Square2SfxHandler",
@@ -83345,10 +83528,13 @@
       "instruction": "bne",
       "id": "control-03300",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → ContinueExtraLife preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83358,10 +83544,13 @@
       "instruction": "beq",
       "id": "control-03301",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → CheckSfx2Buffer preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83371,10 +83560,13 @@
       "instruction": "bmi",
       "id": "control-03302",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → PlayBowserFall preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83384,10 +83576,13 @@
       "instruction": "bcs",
       "id": "control-03303",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → PlayCoinGrab preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83397,10 +83592,13 @@
       "instruction": "bcs",
       "id": "control-03304",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → PlayGrowPowerUp preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83410,10 +83608,13 @@
       "instruction": "bcs",
       "id": "control-03305",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → PlayGrowVine preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83423,10 +83624,13 @@
       "instruction": "bcs",
       "id": "control-03306",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → PlayBlast preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83436,10 +83640,13 @@
       "instruction": "bcs",
       "id": "control-03307",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → PlayTimerTick preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83449,10 +83656,13 @@
       "instruction": "bcs",
       "id": "control-03308",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → PlayPowerUpGrab preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83462,10 +83672,13 @@
       "instruction": "bcs",
       "id": "control-03309",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Square2SfxHandler → PlayExtraLife preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "Square2SfxHandler",
@@ -83475,10 +83688,13 @@
       "instruction": "bcs",
       "id": "control-03310",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through Square2SfxHandler → CheckSfx2Buffer preserves prior square-two state writes before the successor."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83488,10 +83704,13 @@
       "instruction": "beq",
       "id": "control-03311",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → ExS2H preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83501,10 +83720,13 @@
       "instruction": "bmi",
       "id": "control-03312",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → ContinueBowserFall preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83514,10 +83736,13 @@
       "instruction": "bcs",
       "id": "control-03313",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → Cont_CGrab_TTick preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83527,10 +83752,13 @@
       "instruction": "bcs",
       "id": "control-03314",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → ContinueGrowItems preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83540,10 +83768,13 @@
       "instruction": "bcs",
       "id": "control-03315",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → ContinueGrowItems preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83553,10 +83784,13 @@
       "instruction": "bcs",
       "id": "control-03316",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → ContinueBlast preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83566,10 +83800,13 @@
       "instruction": "bcs",
       "id": "control-03317",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → Cont_CGrab_TTick preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83579,10 +83816,13 @@
       "instruction": "bcs",
       "id": "control-03318",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → ContinuePowerUpGrab preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83592,10 +83832,13 @@
       "instruction": "bcs",
       "id": "control-03319",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch CheckSfx2Buffer → ContinueExtraLife preserves its queue priority, remaining-length or frame-parity predicate before alternate square-two path."
     },
     {
       "from": "CheckSfx2Buffer",
@@ -83605,10 +83848,13 @@
       "instruction": "bcs",
       "id": "control-03320",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through CheckSfx2Buffer → ExS2H preserves prior square-two state writes before the successor."
     },
     {
       "from": "Cont_CGrab_TTick",
@@ -83618,10 +83864,13 @@
       "instruction": "jmp",
       "id": "control-03321",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer Cont_CGrab_TTick → ContinueCGrabTTick preserves selected square-two state without local continuation."
     },
     {
       "from": "JumpToDecLength2",
@@ -83631,10 +83880,13 @@
       "instruction": "jmp",
       "id": "control-03322",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source tail transfer JumpToDecLength2 → DecrementSfx2Length preserves selected square-two state without local continuation."
     },
     {
       "from": "PlayBowserFall",
@@ -94755,10 +95007,13 @@
       "instruction": "rts/rti",
       "id": "control-04063",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation Square2SfxHandler → RunSoundSubroutines exposes completed square-two state to the caller continuation."
     },
     {
       "from": "NoiseSfxHandler",
@@ -95002,10 +95257,13 @@
       "instruction": "rts/rti",
       "id": "control-04079",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
+      "semanticEvidence": [
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation StopSquare2Sfx → LoadEventMusic exposes completed square-two state to the caller continuation."
     },
     {
       "from": "StopSquare1Sfx",
