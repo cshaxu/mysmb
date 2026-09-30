@@ -1230,3 +1230,7 @@ branches.
 ### Cohort K — K6 enemy graphics-table integration
 
 `EnemyGraphicsTable` through `JumpspringFrameOffsets` now has five table contracts and five feasible consumer handoffs. Static review matches the ordered tile rows, 27 offsets, 27 attributes, two animation masks and five jumpspring offsets. The C arrays deliberately preserve the source tables' contiguous indexed-overrun behavior rather than adding a clamp. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal-actor and jumpspring table routes.
+
+### Cohort K — K7 enemy graphics front-dispatch integration
+
+`EnemyGfxHandler` through `SBwsrGfxOfs` now has eight node contracts and every immediate actor selection, branch and return relation. Static review matches piranha's upward/timer early return, retainer code `$15`, cannon bullet Y/priority/state rewrite, jumpspring frame code, descending-Podoboo vertical flip, and Bowser front/rear code override. The shared C dispatch deliberately delegates the final specialized rendering to the corresponding actor owners. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 piranha, retainer, cannon, spring, Podoboo and both Bowser-half routes.

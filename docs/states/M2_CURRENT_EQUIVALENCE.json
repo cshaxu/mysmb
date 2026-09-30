@@ -26803,81 +26803,105 @@
       "label": "EnemyGfxHandler",
       "asmLine": 13639,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes source OAM scratch from current enemy, applies the piranha upward/timer early return, then enters special actor dispatch."
     },
     {
       "label": "CheckForRetainerObj",
       "asmLine": 13661,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Captures Enemy_State, masks the state code and maps RetainerObject to code $15 with fixed direction."
     },
     {
       "label": "CheckForBulletBillCV",
       "asmLine": 13674,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps cannon bullet to code $08, decremented Y, d5 priority when its frame timer is nonzero, and zero state work bytes."
     },
     {
       "label": "SBBAt",
       "asmLine": 13682,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Completes cannon attribute/state setup before common special-actor dispatch."
     },
     {
       "label": "CheckForJumpspring",
       "asmLine": 13687,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Maps JumpspringObject through its five-entry animation offset and state code three."
     },
     {
       "label": "CheckForPodoboo",
       "asmLine": 13694,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves selected code/state, sets vertical flip only for descending Podoboo, then enters Bowser flag selection."
     },
     {
       "label": "CheckBowserGfxFlag",
       "asmLine": 13704,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Overrides the selected code with Bowser front/rear code $16/$17 when BowserGfxFlag is nonzero."
     },
     {
       "label": "SBwsrGfxOfs",
       "asmLine": 13711,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the selected Bowser code and falls through to common graphics selection."
     },
     {
       "label": "CheckForGoomba",
@@ -49172,12 +49196,12 @@
       "id": "control-01161",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DrawJSpr -> EnemyGfxHandler with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM call relation DrawJSpr -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "DrawJSpr",
@@ -50148,12 +50172,12 @@
       "id": "control-01222",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation RunBBSubs -> EnemyGfxHandler with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM jump relation RunBBSubs -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "KillBB",
@@ -57316,12 +57340,12 @@
       "id": "control-01670",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation RunRetainerObj -> EnemyGfxHandler with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves ROM jump relation RunRetainerObj -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -57364,12 +57388,12 @@
       "id": "control-01673",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunNormalEnemies -> EnemyGfxHandler with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves ROM call relation RunNormalEnemies -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -75164,10 +75188,13 @@
       "instruction": "bne",
       "id": "control-02836",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation EnemyGfxHandler -> CheckForRetainerObj with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "EnemyGfxHandler",
@@ -75177,10 +75204,13 @@
       "instruction": "bmi",
       "id": "control-02837",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation EnemyGfxHandler -> CheckForRetainerObj with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "EnemyGfxHandler",
@@ -75190,10 +75220,13 @@
       "instruction": "beq",
       "id": "control-02838",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation EnemyGfxHandler -> CheckForRetainerObj with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForRetainerObj",
@@ -75203,10 +75236,13 @@
       "instruction": "bne",
       "id": "control-02839",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForRetainerObj -> CheckForBulletBillCV with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForRetainerObj",
@@ -75216,10 +75252,13 @@
       "instruction": "lda",
       "id": "control-02840",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForRetainerObj -> CheckForBulletBillCV with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForBulletBillCV",
@@ -75229,10 +75268,13 @@
       "instruction": "bne",
       "id": "control-02841",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForBulletBillCV -> CheckForJumpspring with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForBulletBillCV",
@@ -75242,10 +75284,13 @@
       "instruction": "beq",
       "id": "control-02842",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForBulletBillCV -> SBBAt with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForBulletBillCV",
@@ -75255,10 +75300,13 @@
       "instruction": "ora",
       "id": "control-02843",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForBulletBillCV -> SBBAt with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "SBBAt",
@@ -75268,10 +75316,13 @@
       "instruction": "lda",
       "id": "control-02844",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SBBAt -> CheckForJumpspring with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForJumpspring",
@@ -75281,10 +75332,13 @@
       "instruction": "bne",
       "id": "control-02845",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForJumpspring -> CheckForPodoboo with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForJumpspring",
@@ -75294,10 +75348,13 @@
       "instruction": "lda",
       "id": "control-02846",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForJumpspring -> CheckForPodoboo with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForPodoboo",
@@ -75307,10 +75364,13 @@
       "instruction": "bne",
       "id": "control-02847",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForPodoboo -> CheckBowserGfxFlag with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForPodoboo",
@@ -75320,10 +75380,13 @@
       "instruction": "bmi",
       "id": "control-02848",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForPodoboo -> CheckBowserGfxFlag with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForPodoboo",
@@ -75333,10 +75396,13 @@
       "instruction": "inc",
       "id": "control-02849",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForPodoboo -> CheckBowserGfxFlag with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckBowserGfxFlag",
@@ -75346,10 +75412,13 @@
       "instruction": "beq",
       "id": "control-02850",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckBowserGfxFlag -> CheckForGoomba with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckBowserGfxFlag",
@@ -75359,10 +75428,13 @@
       "instruction": "beq",
       "id": "control-02851",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckBowserGfxFlag -> SBwsrGfxOfs with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckBowserGfxFlag",
@@ -75372,10 +75444,13 @@
       "instruction": "iny",
       "id": "control-02852",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckBowserGfxFlag -> SBwsrGfxOfs with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "SBwsrGfxOfs",
@@ -75385,10 +75460,13 @@
       "instruction": "sty",
       "id": "control-02853",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "semanticEvidence": [
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SBwsrGfxOfs -> CheckForGoomba with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "CheckForGoomba",
@@ -86722,12 +86800,12 @@
       "id": "control-03689",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EnemyGfxHandler -> DrawJSpr with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM return relation EnemyGfxHandler -> DrawJSpr with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "OffscreenBoundsCheck",
@@ -88434,12 +88512,12 @@
       "id": "control-03796",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EnemyGfxHandler -> RunNormalEnemies with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves ROM return relation EnemyGfxHandler -> RunNormalEnemies with the source actor predicate, scratch-state handoff and return ordering."
     },
     {
       "from": "GetEnemyBoundBox",
