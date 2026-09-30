@@ -1246,3 +1246,7 @@ branches.
 ### Cohort K — K10 enemy OAM flip, mirror and offscreen integration
 
 `SkipToOffScrChk` through `AllRowC` now has seventeen node contracts and every local vertical-flip, symmetry, Lakitu/jumpspring and d2/d3/d5/d6/d7 offscreen relation. Static review matches row-pair exchanges, egg and shell attribute transforms, Lakitu timer branches, spring row attributes, ordered column/row hiding and the Podoboo/high-Y erase exception. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 flip, mirror, Lakitu, spring, every offscreen-bit and erase route.
+
+### Cohort K — K11 bouncing-block OAM integration
+
+`DefaultBlockObjTiles` through `ExDBlk` now has ten node contracts, every local draw-row, replacement, area-palette, column-hide and return relation, plus one feasible default-tile handoff. Static review matches the two source tile pairs, non-ground lineless replacement, used-block palette/flip bytes, d2 right and d3 left column hiding, and the shared two-row f8 helper. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal/used, ground/non-ground and each offscreen-column route.

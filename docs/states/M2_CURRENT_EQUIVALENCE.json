@@ -5951,6 +5951,20 @@
         "Td S9 K6 enemy graphics table node-semantics audit: SMB1 lines 13576-13638 compared with shared normal_enemy_gfx.c contiguous data arrays; controlled original-ROM/x86/x64 actor and jumpspring table routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00425",
+      "producer": "DefaultBlockObjTiles",
+      "consumer": "DrawBlock",
+      "storage": "ROM DefaultBlockObjTiles pair to DrawOneSpriteRow scratch $00/$01",
+      "feasiblePath": "DrawBlock walks two pairs from DefaultBlockObjTiles and invokes DrawOneSpriteRow for each row.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c default_tiles in mysmb_objects_draw_bouncing_block",
+      "semanticContract": "The two source tile pairs reach OAM rows in source order.",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -27464,101 +27478,131 @@
       "label": "DefaultBlockObjTiles",
       "asmLine": 14119,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the source two-row block tiles 85,85,86,86."
     },
     {
       "label": "DrawBlock",
       "asmLine": 14122,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes block OAM scratch and enters two-row default tile construction."
     },
     {
       "label": "DBlkLoop",
       "asmLine": 14133,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads adjacent default tiles and calls DrawOneSpriteRow until both rows are emitted."
     },
     {
       "label": "ChkRep",
       "asmLine": 14147,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies non-ground lineless tiles or used-block tile/attribute replacement."
     },
     {
       "label": "SetBFlip",
       "asmLine": 14159,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds the four source attribute variants for the used block by AreaType."
     },
     {
       "label": "BlkOffscr",
       "asmLine": 14167,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Handles d2 right-column hiding before restoring the original offscreen bits."
     },
     {
       "label": "PullOfsB",
       "asmLine": 14174,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores bits and enters d3 left-column handling."
     },
     {
       "label": "ChkLeftCo",
       "asmLine": 14175,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Hides the left column only for d3 and otherwise returns."
     },
     {
       "label": "MoveColOffscreen",
       "asmLine": 14178,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes f8 to the selected two-row/column OAM Y positions."
     },
     {
       "label": "ExDBlk",
       "asmLine": 14182,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after replacement and offscreen processing."
     },
     {
       "label": "DrawBrickChunks",
@@ -52737,12 +52781,12 @@
       "id": "control-01375",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation BouncingBlockHandler -> DrawBlock with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM call relation BouncingBlockHandler -> DrawBlock with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "BouncingBlockHandler",
@@ -77536,10 +77580,13 @@
       "instruction": "jsr",
       "id": "control-02976",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation MoveESprColOffscreen -> MoveColOffscreen with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawBlock",
@@ -77549,10 +77596,13 @@
       "instruction": "ldx",
       "id": "control-02977",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawBlock -> DBlkLoop with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DBlkLoop",
@@ -77562,10 +77612,13 @@
       "instruction": "jsr",
       "id": "control-02978",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DBlkLoop -> DrawOneSpriteRow with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DBlkLoop",
@@ -77575,10 +77628,13 @@
       "instruction": "bne",
       "id": "control-02979",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DBlkLoop -> DBlkLoop with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DBlkLoop",
@@ -77588,10 +77644,13 @@
       "instruction": "beq",
       "id": "control-02980",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DBlkLoop -> ChkRep with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DBlkLoop",
@@ -77601,10 +77660,13 @@
       "instruction": "sta",
       "id": "control-02981",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DBlkLoop -> ChkRep with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ChkRep",
@@ -77614,10 +77676,13 @@
       "instruction": "bne",
       "id": "control-02982",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ChkRep -> BlkOffscr with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ChkRep",
@@ -77627,10 +77692,13 @@
       "instruction": "jsr",
       "id": "control-02983",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation ChkRep -> DumpFourSpr with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ChkRep",
@@ -77640,10 +77708,13 @@
       "instruction": "beq",
       "id": "control-02984",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ChkRep -> SetBFlip with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ChkRep",
@@ -77653,10 +77724,13 @@
       "instruction": "lsr",
       "id": "control-02985",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ChkRep -> SetBFlip with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SetBFlip",
@@ -77666,10 +77740,13 @@
       "instruction": "sta",
       "id": "control-02986",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SetBFlip -> BlkOffscr with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "BlkOffscr",
@@ -77679,10 +77756,13 @@
       "instruction": "beq",
       "id": "control-02987",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation BlkOffscr -> PullOfsB with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "BlkOffscr",
@@ -77692,10 +77772,13 @@
       "instruction": "sta",
       "id": "control-02988",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation BlkOffscr -> PullOfsB with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "PullOfsB",
@@ -77705,10 +77788,13 @@
       "instruction": "pla",
       "id": "control-02989",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation PullOfsB -> ChkLeftCo with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ChkLeftCo",
@@ -77718,10 +77804,13 @@
       "instruction": "beq",
       "id": "control-02990",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ChkLeftCo -> ExDBlk with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ChkLeftCo",
@@ -77731,10 +77820,13 @@
       "instruction": "beq",
       "id": "control-02991",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ChkLeftCo -> MoveColOffscreen with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MoveColOffscreen",
@@ -77744,10 +77836,13 @@
       "instruction": "sta",
       "id": "control-02992",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation MoveColOffscreen -> ExDBlk with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawBrickChunks",
@@ -77783,10 +77878,13 @@
       "instruction": "jsr",
       "id": "control-02995",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77796,10 +77894,13 @@
       "instruction": "jsr",
       "id": "control-02996",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77822,10 +77923,13 @@
       "instruction": "jsr",
       "id": "control-02998",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DChunks -> ChkLeftCo with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -88407,12 +88511,12 @@
       "id": "control-03760",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawBlock -> BouncingBlockHandler with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM return relation DrawBlock -> BouncingBlockHandler with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ReplaceBlockMetatile",
@@ -92474,10 +92578,13 @@
       "instruction": "rts/rti",
       "id": "control-04021",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation MoveColOffscreen -> MoveESprColOffscreen with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawOneSpriteRow",
@@ -92487,10 +92594,13 @@
       "instruction": "rts/rti",
       "id": "control-04022",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DrawOneSpriteRow -> DBlkLoop with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpFourSpr",
@@ -92500,10 +92610,13 @@
       "instruction": "rts/rti",
       "id": "control-04023",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpFourSpr -> ChkRep with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpFourSpr",
@@ -92513,10 +92626,13 @@
       "instruction": "rts/rti",
       "id": "control-04024",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DChunks with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpFourSpr",
@@ -92526,10 +92642,13 @@
       "instruction": "rts/rti",
       "id": "control-04025",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DChunks with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpTwoSpr",
@@ -92552,10 +92671,13 @@
       "instruction": "rts/rti",
       "id": "control-04027",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "semanticEvidence": [
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation ChkLeftCo -> DChunks with source block/area/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpTwoSpr",
