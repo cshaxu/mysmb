@@ -9254,369 +9254,471 @@
       "asmLine": 5691,
       "cohort": "E",
       "status": "needs-evidence",
-      "currentOwner": "src/game shared entry/player/transition owners",
-      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
       "semanticEvidence": [
-        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required.",
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "AutoClimb",
       "asmLine": 5697,
       "cohort": "E",
       "status": "needs-evidence",
-      "currentOwner": "src/game shared entry/player/transition owners",
-      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
       "semanticEvidence": [
-        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required.",
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "SetEntr",
       "asmLine": 5702,
       "cohort": "E",
       "status": "needs-evidence",
-      "currentOwner": "src/game shared entry/player/transition owners",
-      "currentCounterpart": "mysmb_game_routines and player entry/control helpers",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
       "semanticEvidence": [
-        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required.",
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, controller partition, entrance/pipe/vine and hole-transition state ordering."
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "VerticalPipeEntry",
       "asmLine": 5708,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "MovePlayerYAxis",
       "asmLine": 5722,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "SideExitPipeEntry",
       "asmLine": 5730,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ChgAreaPipe",
       "asmLine": 5733,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ChgAreaMode",
       "asmLine": 5736,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ExitCAPipe",
       "asmLine": 5740,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "EnterSidePipe",
       "asmLine": 5742,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "RightPipe",
       "asmLine": 5751,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "PlayerChangeSize",
       "asmLine": 5757,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "EndChgSize",
       "asmLine": 5762,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ExitChgSize",
       "asmLine": 5765,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "PlayerInjuryBlink",
       "asmLine": 5769,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ExitBlink",
       "asmLine": 5776,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "InitChangeSize",
       "asmLine": 5778,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ExitBoth",
       "asmLine": 5786,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "PlayerDeath",
       "asmLine": 5791,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "DonePlayerTask",
       "asmLine": 5797,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "PlayerFireFlower",
       "asmLine": 5804,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "CyclePlayerPalette",
       "asmLine": 5812,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ResetPalFireFlower",
       "asmLine": 5821,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ResetPalStar",
       "asmLine": 5824,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ExitDeath",
       "asmLine": 5830,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "FlagpoleSlide",
       "asmLine": 5835,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "SlidePlayer",
       "asmLine": 5847,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "NoFPObj",
       "asmLine": 5848,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "Hidden1UpCoinAmts",
       "asmLine": 5853,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "PlayerEndLevel",
       "asmLine": 5856,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ChkStop",
       "asmLine": 5868,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "InCastle",
       "asmLine": 5874,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "RdyNextA",
       "asmLine": 5876,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "NextArea",
       "asmLine": 5888,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "ExitNA",
       "asmLine": 5895,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "PlayerMovementSubs",
       "asmLine": 5899,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared player transition/mode owners",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering."
     },
     {
       "label": "SetCrouch",
@@ -37392,10 +37494,13 @@
       "instruction": "bne",
       "id": "control-00891",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation Vine_AutoClimb -> AutoClimb.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "Vine_AutoClimb",
@@ -37405,10 +37510,13 @@
       "instruction": "bcc",
       "id": "control-00892",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation Vine_AutoClimb -> SetEntr.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "Vine_AutoClimb",
@@ -37418,10 +37526,13 @@
       "instruction": "bcc",
       "id": "control-00893",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation Vine_AutoClimb -> AutoClimb.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "AutoClimb",
@@ -37431,10 +37542,13 @@
       "instruction": "jmp",
       "id": "control-00894",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation AutoClimb -> AutoControlPlayer.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "SetEntr",
@@ -37444,10 +37558,13 @@
       "instruction": "jmp",
       "id": "control-00895",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation SetEntr -> ChgAreaMode.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "VerticalPipeEntry",
@@ -37457,10 +37574,13 @@
       "instruction": "jsr",
       "id": "control-00896",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation VerticalPipeEntry -> MovePlayerYAxis.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "VerticalPipeEntry",
@@ -37470,10 +37590,13 @@
       "instruction": "jsr",
       "id": "control-00897",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation VerticalPipeEntry -> ScrollHandler.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "VerticalPipeEntry",
@@ -37483,10 +37606,13 @@
       "instruction": "bne",
       "id": "control-00898",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation VerticalPipeEntry -> ChgAreaPipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "VerticalPipeEntry",
@@ -37496,10 +37622,13 @@
       "instruction": "bne",
       "id": "control-00899",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation VerticalPipeEntry -> ChgAreaPipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "VerticalPipeEntry",
@@ -37509,10 +37638,13 @@
       "instruction": "jmp",
       "id": "control-00900",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation VerticalPipeEntry -> ChgAreaPipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "SideExitPipeEntry",
@@ -37522,10 +37654,13 @@
       "instruction": "jsr",
       "id": "control-00901",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation SideExitPipeEntry -> EnterSidePipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "SideExitPipeEntry",
@@ -37535,10 +37670,13 @@
       "instruction": "ldy",
       "id": "control-00902",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation SideExitPipeEntry -> ChgAreaPipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ChgAreaPipe",
@@ -37548,10 +37686,13 @@
       "instruction": "bne",
       "id": "control-00903",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ChgAreaPipe -> ExitCAPipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ChgAreaPipe",
@@ -37561,10 +37702,13 @@
       "instruction": "sty",
       "id": "control-00904",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ChgAreaPipe -> ChgAreaMode.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ChgAreaMode",
@@ -37574,10 +37718,13 @@
       "instruction": "sta",
       "id": "control-00905",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ChgAreaMode -> ExitCAPipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "EnterSidePipe",
@@ -37587,10 +37734,13 @@
       "instruction": "bne",
       "id": "control-00906",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation EnterSidePipe -> RightPipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "EnterSidePipe",
@@ -37600,10 +37750,13 @@
       "instruction": "tay",
       "id": "control-00907",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation EnterSidePipe -> RightPipe.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "RightPipe",
@@ -37613,10 +37766,13 @@
       "instruction": "jsr",
       "id": "control-00908",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation RightPipe -> AutoControlPlayer.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerChangeSize",
@@ -37626,10 +37782,13 @@
       "instruction": "bne",
       "id": "control-00909",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerChangeSize -> EndChgSize.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerChangeSize",
@@ -37639,10 +37798,13 @@
       "instruction": "jmp",
       "id": "control-00910",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation PlayerChangeSize -> InitChangeSize.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "EndChgSize",
@@ -37652,10 +37814,13 @@
       "instruction": "bne",
       "id": "control-00911",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation EndChgSize -> ExitChgSize.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "EndChgSize",
@@ -37665,10 +37830,13 @@
       "instruction": "jsr",
       "id": "control-00912",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation EndChgSize -> DonePlayerTask.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "EndChgSize",
@@ -37678,10 +37846,13 @@
       "instruction": "jsr",
       "id": "control-00913",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation EndChgSize -> ExitChgSize.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerInjuryBlink",
@@ -37691,10 +37862,13 @@
       "instruction": "bcs",
       "id": "control-00914",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerInjuryBlink -> ExitBlink.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerInjuryBlink",
@@ -37704,10 +37878,13 @@
       "instruction": "beq",
       "id": "control-00915",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerInjuryBlink -> DonePlayerTask.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerInjuryBlink",
@@ -37717,10 +37894,13 @@
       "instruction": "jmp",
       "id": "control-00916",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation PlayerInjuryBlink -> PlayerCtrlRoutine.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ExitBlink",
@@ -37730,10 +37910,13 @@
       "instruction": "bne",
       "id": "control-00917",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ExitBlink -> ExitBoth.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ExitBlink",
@@ -37743,10 +37926,13 @@
       "instruction": "bne",
       "id": "control-00918",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ExitBlink -> InitChangeSize.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "InitChangeSize",
@@ -37756,10 +37942,13 @@
       "instruction": "bne",
       "id": "control-00919",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation InitChangeSize -> ExitBoth.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "InitChangeSize",
@@ -37769,10 +37958,13 @@
       "instruction": "sta",
       "id": "control-00920",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation InitChangeSize -> ExitBoth.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerDeath",
@@ -37782,10 +37974,13 @@
       "instruction": "bcs",
       "id": "control-00921",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerDeath -> ExitDeath.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerDeath",
@@ -37795,10 +37990,13 @@
       "instruction": "jmp",
       "id": "control-00922",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation PlayerDeath -> PlayerCtrlRoutine.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerFireFlower",
@@ -37808,10 +38006,13 @@
       "instruction": "beq",
       "id": "control-00923",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerFireFlower -> ResetPalFireFlower.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerFireFlower",
@@ -37821,10 +38022,13 @@
       "instruction": "lsr",
       "id": "control-00924",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation PlayerFireFlower -> CyclePlayerPalette.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ResetPalFireFlower",
@@ -37834,10 +38038,13 @@
       "instruction": "jsr",
       "id": "control-00925",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation ResetPalFireFlower -> DonePlayerTask.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ResetPalFireFlower",
@@ -37847,10 +38054,13 @@
       "instruction": "jsr",
       "id": "control-00926",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ResetPalFireFlower -> ResetPalStar.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "FlagpoleSlide",
@@ -37860,10 +38070,13 @@
       "instruction": "bne",
       "id": "control-00927",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation FlagpoleSlide -> NoFPObj.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "FlagpoleSlide",
@@ -37873,10 +38086,13 @@
       "instruction": "bcs",
       "id": "control-00928",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation FlagpoleSlide -> SlidePlayer.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "FlagpoleSlide",
@@ -37886,10 +38102,13 @@
       "instruction": "lda",
       "id": "control-00929",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation FlagpoleSlide -> SlidePlayer.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "SlidePlayer",
@@ -37899,10 +38118,13 @@
       "instruction": "jmp",
       "id": "control-00930",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source jump relation SlidePlayer -> AutoControlPlayer.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerEndLevel",
@@ -37912,10 +38134,13 @@
       "instruction": "jsr",
       "id": "control-00931",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation PlayerEndLevel -> AutoControlPlayer.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerEndLevel",
@@ -37925,10 +38150,13 @@
       "instruction": "bcc",
       "id": "control-00932",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerEndLevel -> ChkStop.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerEndLevel",
@@ -37938,10 +38166,13 @@
       "instruction": "beq",
       "id": "control-00933",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerEndLevel -> ChkStop.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerEndLevel",
@@ -37951,10 +38182,13 @@
       "instruction": "sta",
       "id": "control-00934",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation PlayerEndLevel -> ChkStop.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ChkStop",
@@ -37964,10 +38198,13 @@
       "instruction": "bcs",
       "id": "control-00935",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ChkStop -> RdyNextA.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ChkStop",
@@ -37977,10 +38214,13 @@
       "instruction": "bne",
       "id": "control-00936",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ChkStop -> InCastle.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ChkStop",
@@ -37990,10 +38230,13 @@
       "instruction": "inc",
       "id": "control-00937",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ChkStop -> InCastle.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "InCastle",
@@ -38003,10 +38246,13 @@
       "instruction": "sta",
       "id": "control-00938",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation InCastle -> RdyNextA.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "RdyNextA",
@@ -38016,10 +38262,13 @@
       "instruction": "bne",
       "id": "control-00939",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation RdyNextA -> ExitNA.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "RdyNextA",
@@ -38029,10 +38278,13 @@
       "instruction": "bne",
       "id": "control-00940",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation RdyNextA -> NextArea.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "RdyNextA",
@@ -38042,10 +38294,13 @@
       "instruction": "bcc",
       "id": "control-00941",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation RdyNextA -> NextArea.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "RdyNextA",
@@ -38055,10 +38310,13 @@
       "instruction": "inc",
       "id": "control-00942",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation RdyNextA -> NextArea.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "NextArea",
@@ -38069,12 +38327,13 @@
       "id": "control-00943",
       "cohort": "E",
       "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source call relation NextArea -> LoadAreaPointer.",
+      "currentCounterpart": "shared player core preserves source call relation NextArea -> LoadAreaPointer.",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required.",
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call order and pointer/header handoff."
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "NextArea",
@@ -38084,10 +38343,13 @@
       "instruction": "jsr",
       "id": "control-00944",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation NextArea -> ChgAreaMode.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "NextArea",
@@ -38097,10 +38359,13 @@
       "instruction": "sta",
       "id": "control-00945",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation NextArea -> ExitNA.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerMovementSubs",
@@ -38110,10 +38375,13 @@
       "instruction": "bne",
       "id": "control-00946",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerMovementSubs -> SetCrouch.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerMovementSubs",
@@ -38123,10 +38391,13 @@
       "instruction": "bne",
       "id": "control-00947",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation PlayerMovementSubs -> ProcMove.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "PlayerMovementSubs",
@@ -38136,10 +38407,13 @@
       "instruction": "and",
       "id": "control-00948",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation PlayerMovementSubs -> SetCrouch.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "SetCrouch",
@@ -38149,10 +38423,13 @@
       "instruction": "sta",
       "id": "control-00949",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation SetCrouch -> ProcMove.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ProcMove",
@@ -38162,10 +38439,13 @@
       "instruction": "jsr",
       "id": "control-00950",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation ProcMove -> PlayerPhysicsSub.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ProcMove",
@@ -38175,10 +38455,13 @@
       "instruction": "bne",
       "id": "control-00951",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcMove -> NoMoveSub.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ProcMove",
@@ -38188,10 +38471,13 @@
       "instruction": "beq",
       "id": "control-00952",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation ProcMove -> MoveSubs.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "ProcMove",
@@ -38201,10 +38487,13 @@
       "instruction": "sty",
       "id": "control-00953",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation ProcMove -> MoveSubs.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "MoveSubs",
@@ -38214,10 +38503,13 @@
       "instruction": "jsr",
       "id": "control-00954",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation MoveSubs -> JumpEngine.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "MoveSubs",
@@ -38227,10 +38519,13 @@
       "instruction": "jsr",
       "id": "control-00955",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation MoveSubs -> NoMoveSub.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "OnGroundStateSub",
@@ -38240,10 +38535,13 @@
       "instruction": "jsr",
       "id": "control-00956",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation OnGroundStateSub -> GetPlayerAnimSpeed.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "OnGroundStateSub",
@@ -38253,10 +38551,13 @@
       "instruction": "beq",
       "id": "control-00957",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source branch relation OnGroundStateSub -> GndMove.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "OnGroundStateSub",
@@ -38266,10 +38567,13 @@
       "instruction": "sta",
       "id": "control-00958",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source fallthrough relation OnGroundStateSub -> GndMove.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "GndMove",
@@ -38279,10 +38583,13 @@
       "instruction": "jsr",
       "id": "control-00959",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation GndMove -> ImposeFriction.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "GndMove",
@@ -38292,10 +38599,13 @@
       "instruction": "jsr",
       "id": "control-00960",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player core preserves source call relation GndMove -> MovePlayerHorizontally.",
+      "semanticEvidence": [
+        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate and transition state ordering."
     },
     {
       "from": "FallingSub",
