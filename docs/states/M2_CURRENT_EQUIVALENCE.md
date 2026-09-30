@@ -1196,3 +1196,8 @@ branches.
 ### Cohort J — B16t bounding-box generation and screen-clip integration
 
 `GetFireballBoundBox` through `NoOfs2` now has sixteen node contracts and every incident object builder, mask/page branch, bounding-box core call, full-offscreen path, right/left clipping and return relation. Static review matches fireball/misc offset transforms, enemy/platform masks, screen-left borrow arithmetic, all-four `$ff` path, right-side `$ff` clipping, and the left-side `$80-$9f` visible versus `$a0-$ff` hidden distinction. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 fireball/misc/enemy/platform, left/right/edge and full-offscreen routes.
+
+
+### Cohort J — B16u block-buffer query integration
+
+`BlockBufferChk_Enemy` through `RetYC` now has fourteen node contracts and every incident entry, table, query, coordinate-return and return relation. Static review matches enemy/misc/fireball object-offset transforms, `$1b/$1a` adders, 28-entry X/Y tables, wrapped page construction, status-bar row subtraction and low-nibble contact selection. No static shared-C discrepancy was found; entries remain `needs-evidence` pending controlled original-ROM/x86/x64 query routes.
