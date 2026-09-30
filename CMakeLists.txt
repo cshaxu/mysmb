@@ -462,6 +462,8 @@ target_link_libraries(mysmb_sound_square1_snapshot_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_square1_music_snapshot_check
                test/sound_square1_music_snapshot_check.c)
 target_link_libraries(mysmb_sound_square1_music_snapshot_check PRIVATE mysmb_game)
+add_executable(mysmb_sound_triangle_music_snapshot_check test/sound_triangle_music_snapshot_check.c)
+target_link_libraries(mysmb_sound_triangle_music_snapshot_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_square2_snapshot_check test/sound_square2_snapshot_check.c)
 target_link_libraries(mysmb_sound_square2_snapshot_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_square2_dispatch_smoke test/sound_square2_dispatch_smoke.c)

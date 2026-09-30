@@ -586,32 +586,49 @@ static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
     return 0U;
 }
 
-/* ROM HandleTriangleMusic through TriNoteHandler, excluding the APU writes. */
+/* ROM HandleTriangleMusic through LoadTriCtrlReg. */
 static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
 {
-    mysmb_u16 address;
-    mysmb_u16 length_address;
+    mysmb_u16 music_data;
     mysmb_u8 data;
+    mysmb_u8 length;
+    mysmb_u8 control;
 
-    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == 0U &&
-         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U) ||
-        game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return;
     game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER]--;
     if (game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] != 0U) return;
-    address = (mysmb_u16)(((mysmb_u16)(game->ram[0x00f6U] - 0x80U) << 8U) |
-                          game->ram[0x00f5U]);
-    address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]++);
-    if (address >= game->area_prg_size) return;
-    data = game->area_prg[address];
-    if ((data & 0x80U) != 0U) {
-        length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE +
-            (data & 7U) + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
-        if (length_address >= game->area_prg_size) return;
-        game->ram[MYSMB_RAM_TRIANGLE_NOTE_BUFFER] = game->area_prg[length_address];
-        game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]++;
+    music_data = (mysmb_u16)(((mysmb_u16)game->ram[0x00f6U] << 8U) |
+                              game->ram[0x00f5U]);
+    data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
+        game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]));
+    game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]++;
+    if (data == 0U) {
+        mysmb_audio_write_apu(game, 8U, 0U);
+        return;
     }
+    if ((data & 0x80U) != 0U) {
+        game->ram[MYSMB_RAM_TRIANGLE_NOTE_BUFFER] =
+            mysmb_audio_process_music_length(game, data);
+        mysmb_audio_write_apu(game, 8U, 0x1fU);
+        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
+            game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]));
+        game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]++;
+        if (data == 0U) {
+            mysmb_audio_write_apu(game, 8U, 0U);
+            return;
+        }
+    }
+    (void)mysmb_audio_set_freq_tri(game, data);
     game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_TRIANGLE_NOTE_BUFFER];
+    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x6eU) == 0U &&
+        (game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0x0aU) == 0U)
+        return;
+    length = game->ram[MYSMB_RAM_TRIANGLE_NOTE_BUFFER];
+    if (length >= 0x12U) control = 0xffU;
+    else if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x08U) != 0U)
+        control = 0x0fU;
+    else control = 0x1fU;
+    mysmb_audio_write_apu(game, 8U, control);
 }
 /* ROM HandleSquare1Music through DoAltLoad.  Square 1 encodes its three-bit
  * duration selector in bits 0, 7 and 6, unlike Square 2 and Triangle which

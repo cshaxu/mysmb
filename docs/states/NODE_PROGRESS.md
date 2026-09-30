@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1878 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1884 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 78 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 72 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1878 / 1,992 (94.28%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1884 / 1,992 (94.58%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T49 S5 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s5-closure-square-one-music-stream-and-alternate-control) closes eight square-one stream labels on four bounded original-ROM SoundEngine routes, eight calls each per route and width, with zero-difference RAM/APU parity; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
+Latest task review: [T49 S6 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s6-closure-triangle-music-stream-and-control-register) closes six triangle stream/control labels on four bounded original-ROM SoundEngine routes, eight calls each per route and width, with zero-difference RAM/APU parity; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -1911,6 +1911,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15828 | `NoDecEnv2` |
 | 15830 | `DeathMAltReg` |
 | 15833 | `DoAltLoad` |
+| 15835 | `HandleTriangleMusic` |
+| 15853 | `TriNoteHandler` |
+| 15863 | `NotDOrD4` |
+| 15871 | `MediN` |
+| 15873 | `LongN` |
+| 15875 | `LoadTriCtrlReg` |
 
 ## Mapped but not yet matched (36)
 

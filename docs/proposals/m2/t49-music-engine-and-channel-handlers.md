@@ -318,3 +318,20 @@ the event/area/length selector of `$4008` using bounded original `SoundEngine`
 records. The operational track will run focused audio tests, x86/x64 builds,
 the existing OpenNT DOS16 link, platform-purity audit and refreshed three EXEs.
 No S7+ node receives credit.
+
+## S6 closure: triangle music stream and control register
+
+All **6** admitted labels are ROM-match complete: **1,878 -> 1,884 / 1,992**.
+The shared `audio.c` owner now follows the source triangle path: unconditional
+counter decrement, CPU-address stream fetch, zero-byte `$4008` control write,
+length-plus-note pair, frequency dump and exact event/area/length control
+selection. No platform code contains audio logic.
+
+Four unchanged original-ROM SoundEngine record groups cover zero-byte control,
+length-plus-note, area control and Win-Castle control. Each group has eight
+calls; x86 and x64 each compare 32 triangle RAM/APU results with zero
+differences. Platform purity passes, both Win32 products build, and OpenNT16
+links the same shared C MZ image. Refreshed artifacts: mysmb16
+`D0DE7161D69E60238FFFA004CE2A49E3485ABBEAC60FE84F71C9006C97E3AF4F`,
+mysmb32 `6461D0772FCBAF99A16FB014F525D731C1D103D6B8FC2F447FE0F80AB934A28C`,
+and mysmb64 `22368DD5475B9CA2D6108DD5B40ECDF88027D83780C92E69A3B6C6377FCC65C2`.

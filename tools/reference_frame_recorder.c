@@ -1216,7 +1216,7 @@ int main(int argument_count, char **arguments)
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 110ul) return 64;
+                value > 114ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -5207,6 +5207,22 @@ int main(int argument_count, char **arguments)
                         ram[0x07b6u] = sound_case == 110u ? 2u : 1u;
                         ram[0x00f1u] = sound_case == 109u ? 0x01u : 0u;
                         ram[0x07b1u] = sound_case == 110u ? 0x01u : 0u;
+                    }
+                    if (sound_case >= 111u && sound_case <= 114u) {
+                        ram[0x00f0u] = 0u;
+                        ram[0x00f5u] = 0x00u;
+                        ram[0x00f6u] = 0xfau;
+                        ram[0x00f7u] = 1u;
+                        ram[0x07b4u] = 2u;
+                        ram[0x00f8u] = 0u;
+                        ram[0x07b6u] = 2u;
+                        ram[0x07b0u] = 1u;
+                        ram[0x07bau] = 2u;
+                        ram[0x00f9u] = sound_case == 111u ? 0u : 1u;
+                        ram[0x07b9u] = 1u;
+                        ram[0x00f4u] = sound_case == 113u ? 0x02u :
+                            (sound_case == 114u ? 0u : 1u);
+                        ram[0x07b1u] = sound_case == 114u ? 0x08u : 0u;
                     }
                 }
                 else if (sound_case != 0u) {
