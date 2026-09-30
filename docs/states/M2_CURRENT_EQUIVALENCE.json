@@ -6133,6 +6133,20 @@
         "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00438",
+      "producer": "SwimStompEnvelopeData",
+      "consumer": "ContinueSwimStomp",
+      "storage": "ROM SwimStompEnvelopeData remaining-length index to square-one envelope register",
+      "feasiblePath": "ContinueSwimStomp indexes SwimStompEnvelopeData-1 using the active square-one length before its source decrement path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_swim_stomp_envelope owner-local ROM binding",
+      "semanticContract": "The remaining-length index selects the same ordered envelope byte before the square-one control write.",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -29427,141 +29441,183 @@
       "label": "SwimStompEnvelopeData",
       "asmLine": 15194,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds fourteen ordered square-one envelope bytes indexed by remaining swim/stomp length minus one."
     },
     {
       "label": "PlayFlagpoleSlide",
       "asmLine": 15198,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes flagpole length, writes its initial frequency, then enters the shared third-jump-part register path."
     },
     {
       "label": "PlaySmallJump",
       "asmLine": 15206,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the small-jump initial frequency before shared jump register setup."
     },
     {
       "label": "PlayBigJump",
       "asmLine": 15210,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the big-jump initial frequency before shared jump register setup."
     },
     {
       "label": "JumpRegContents",
       "asmLine": 15213,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes initial jump controls/frequency then initializes the shared jump sound length."
     },
     {
       "label": "ContinueSndJump",
       "asmLine": 15220,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Changes jump tone at the two source length thresholds, otherwise proceeds to shared decrement."
     },
     {
       "label": "N2Prt",
       "asmLine": 15227,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the third jump tone at its threshold or proceeds to shared decrement."
     },
     {
       "label": "FPS2nd",
       "asmLine": 15230,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies the shared third-part control byte for jump or flagpole slide."
     },
     {
       "label": "DmpJpFPS",
       "asmLine": 15231,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the selected square-one control registers before shared decrement."
     },
     {
       "label": "PlayFireballThrow",
       "asmLine": 15234,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects fireball length/control values and joins shared fireball/bump setup."
     },
     {
       "label": "PlayBump",
       "asmLine": 15239,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects bump length/control values and joins shared fireball/bump setup."
     },
     {
       "label": "Fthrow",
       "asmLine": 15242,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores fireball/bump length, writes initial frequency/control registers and continues timing."
     },
     {
       "label": "ContinueBumpThrow",
       "asmLine": 15247,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the second bump/throw control byte only at remaining length six, then proceeds to shared decrement."
     },
     {
       "label": "DecJpFPS",
       "asmLine": 15253,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Transfers to the source shared square-one SFX length-decrement routine."
     },
     {
       "label": "Square1SfxHandler",
@@ -81809,10 +81865,13 @@
       "instruction": "jsr",
       "id": "control-03206",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PlayFlagpoleSlide → SetFreq_Squ1 writes its required APU state before the caller continuation."
     },
     {
       "from": "PlayFlagpoleSlide",
@@ -81822,10 +81881,13 @@
       "instruction": "bne",
       "id": "control-03207",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch PlayFlagpoleSlide → FPS2nd preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "PlayFlagpoleSlide",
@@ -81835,10 +81897,13 @@
       "instruction": "bne",
       "id": "control-03208",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayFlagpoleSlide → PlaySmallJump preserves prior SFX length/register state before the successor."
     },
     {
       "from": "PlaySmallJump",
@@ -81848,10 +81913,13 @@
       "instruction": "bne",
       "id": "control-03209",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch PlaySmallJump → JumpRegContents preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "PlaySmallJump",
@@ -81861,10 +81929,13 @@
       "instruction": "bne",
       "id": "control-03210",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlaySmallJump → PlayBigJump preserves prior SFX length/register state before the successor."
     },
     {
       "from": "PlayBigJump",
@@ -81874,10 +81945,13 @@
       "instruction": "lda",
       "id": "control-03211",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayBigJump → JumpRegContents preserves prior SFX length/register state before the successor."
     },
     {
       "from": "JumpRegContents",
@@ -81887,10 +81961,13 @@
       "instruction": "jsr",
       "id": "control-03212",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call JumpRegContents → PlaySqu1Sfx writes its required APU state before the caller continuation."
     },
     {
       "from": "JumpRegContents",
@@ -81900,10 +81977,13 @@
       "instruction": "sta",
       "id": "control-03213",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through JumpRegContents → ContinueSndJump preserves prior SFX length/register state before the successor."
     },
     {
       "from": "ContinueSndJump",
@@ -81913,10 +81993,13 @@
       "instruction": "bne",
       "id": "control-03214",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueSndJump → N2Prt preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "ContinueSndJump",
@@ -81926,10 +82009,13 @@
       "instruction": "bne",
       "id": "control-03215",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueSndJump → DmpJpFPS preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "ContinueSndJump",
@@ -81939,10 +82025,13 @@
       "instruction": "bne",
       "id": "control-03216",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinueSndJump → N2Prt preserves prior SFX length/register state before the successor."
     },
     {
       "from": "N2Prt",
@@ -81952,10 +82041,13 @@
       "instruction": "bne",
       "id": "control-03217",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch N2Prt → DecJpFPS preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "N2Prt",
@@ -81965,10 +82057,13 @@
       "instruction": "ldx",
       "id": "control-03218",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through N2Prt → FPS2nd preserves prior SFX length/register state before the successor."
     },
     {
       "from": "FPS2nd",
@@ -81978,10 +82073,13 @@
       "instruction": "ldy",
       "id": "control-03219",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through FPS2nd → DmpJpFPS preserves prior SFX length/register state before the successor."
     },
     {
       "from": "DmpJpFPS",
@@ -81991,10 +82089,13 @@
       "instruction": "jsr",
       "id": "control-03220",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call DmpJpFPS → Dump_Squ1_Regs writes its required APU state before the caller continuation."
     },
     {
       "from": "DmpJpFPS",
@@ -82004,10 +82105,13 @@
       "instruction": "bne",
       "id": "control-03221",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DmpJpFPS → DecJpFPS preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "DmpJpFPS",
@@ -82017,10 +82121,13 @@
       "instruction": "bne",
       "id": "control-03222",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DmpJpFPS → PlayFireballThrow preserves prior SFX length/register state before the successor."
     },
     {
       "from": "PlayFireballThrow",
@@ -82030,10 +82137,13 @@
       "instruction": "bne",
       "id": "control-03223",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch PlayFireballThrow → Fthrow preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "PlayFireballThrow",
@@ -82043,10 +82153,13 @@
       "instruction": "bne",
       "id": "control-03224",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayFireballThrow → PlayBump preserves prior SFX length/register state before the successor."
     },
     {
       "from": "PlayBump",
@@ -82056,10 +82169,13 @@
       "instruction": "ldy",
       "id": "control-03225",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlayBump → Fthrow preserves prior SFX length/register state before the successor."
     },
     {
       "from": "Fthrow",
@@ -82069,10 +82185,13 @@
       "instruction": "jsr",
       "id": "control-03226",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call Fthrow → PlaySqu1Sfx writes its required APU state before the caller continuation."
     },
     {
       "from": "Fthrow",
@@ -82082,10 +82201,13 @@
       "instruction": "jsr",
       "id": "control-03227",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through Fthrow → ContinueBumpThrow preserves prior SFX length/register state before the successor."
     },
     {
       "from": "ContinueBumpThrow",
@@ -82095,10 +82217,13 @@
       "instruction": "bne",
       "id": "control-03228",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch ContinueBumpThrow → DecJpFPS preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "ContinueBumpThrow",
@@ -82108,10 +82233,13 @@
       "instruction": "sta",
       "id": "control-03229",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ContinueBumpThrow → DecJpFPS preserves prior SFX length/register state before the successor."
     },
     {
       "from": "DecJpFPS",
@@ -82121,10 +82249,13 @@
       "instruction": "bne",
       "id": "control-03230",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch DecJpFPS → BranchToDecLength1 preserves its SFX type or remaining-length predicate before the alternate tone/decrement path."
     },
     {
       "from": "DecJpFPS",
@@ -82134,10 +82265,13 @@
       "instruction": "bne",
       "id": "control-03231",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
+      "semanticEvidence": [
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DecJpFPS → Square1SfxHandler preserves prior SFX length/register state before the successor."
     },
     {
       "from": "Square1SfxHandler",

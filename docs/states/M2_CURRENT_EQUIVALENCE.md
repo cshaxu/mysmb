@@ -1328,3 +1328,9 @@ branches.
 - Node-semantics result: nine labels moved from `unclassified` to `needs-evidence`, covering channel-specific control write order, shared frequency lookup and zero-frequency suppression.
 - Independent integration result: 29 outgoing control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 channel and zero/nonzero lookup routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K26 — square-one basic SFX audit
+
+- Source range: `SwimStompEnvelopeData` through `DecJpFPS` (`SMBDIS.ASM` lines 15194–15253).
+- Node-semantics result: fourteen labels moved from `unclassified` to `needs-evidence`, covering flagpole, small/big jump, bump and fireball-throw setup and timing continuations.
+- Independent integration result: 26 outgoing control relations and the feasible `SwimStompEnvelopeData → ContinueSwimStomp` material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 SFX timing routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
