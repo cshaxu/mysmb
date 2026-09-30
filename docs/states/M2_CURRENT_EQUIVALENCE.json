@@ -24774,11 +24774,14 @@
       "label": "ExitProcessEColl",
       "asmLine": 11680,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/enemy_collision.c",
+      "currentCounterpart": "enemy pair-collision return path",
+      "semanticEvidence": [
+        "Td S9 K45 ExitProcessEColl node audit: SMB1 line 11680 compared with shared enemy pair-collision return owner; controlled pair-collision routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from enemy-pair collision processing without additional state mutation."
     },
     {
       "label": "ProcSecondEnemyColl",
