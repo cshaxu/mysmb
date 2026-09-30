@@ -1052,6 +1052,13 @@ int main(int argument_count, char **arguments)
     lib_u16 sprite_row_child_return;
     lib_u8 sprite_row_child_stack;
     unsigned int sprite_row_flip_variant;
+    const char *sound_child_path;
+    unsigned char sound_children[8][4144];
+    unsigned int sound_child_count;
+    unsigned int sound_child_active;
+    lib_u16 sound_child_return;
+    lib_u8 sound_child_stack;
+    unsigned int sound_case;
     lib_u16 control_return;
     lib_u8 control_stack;
     lib_u16 transition_entry;
@@ -1144,6 +1151,12 @@ int main(int argument_count, char **arguments)
     sprite_row_child_return = 0u;
     sprite_row_child_stack = 0u;
     sprite_row_flip_variant = 0u;
+    sound_child_path = NULL;
+    sound_child_count = 0u;
+    sound_child_active = 0u;
+    sound_child_return = 0u;
+    sound_child_stack = 0u;
+    sound_case = 0u;
     control_return = 0u;
     control_stack = 0u;
     transition_entry = 0u;
@@ -1172,6 +1185,21 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--sound-child=", 14u) == 0) {
+            if (sound_child_path != NULL ||
+                arguments[recorded][14] == '\0') return 64;
+            sound_child_path = arguments[recorded] + 14u;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--sound-case=", 13u) == 0) {
+            char *end;
+            unsigned long value = strtoul(arguments[recorded] + 13u,
+                                          &end, 10);
+            if (end == arguments[recorded] + 13u || *end != '\0' ||
+                value > 12ul) return 64;
+            sound_case = (unsigned int)value;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--sprite-row-child=", 19u) == 0) {
             if (sprite_row_child_path != NULL ||
                 arguments[recorded][19] == '\0') return 64;
@@ -3000,6 +3028,7 @@ int main(int argument_count, char **arguments)
         (relative_kind == 0xffffffffu)) return 64;
     if (sprite_row_flip_variant != 0u &&
         sprite_row_child_path == NULL) return 64;
+    if (sound_case != 0u && sound_child_path == NULL) return 64;
     if (relative_coordinate_variant != 0xffffffffu &&
         relative_child_path == NULL) return 64;
     if (relative_child_path != NULL) {
@@ -4955,6 +4984,57 @@ int main(int argument_count, char **arguments)
                 sprite_row_child_active = 1u;
             }
         }
+        /* T48 S1: only entry RAM is varied.  The original SoundEngine
+         * executes unchanged and returns through its real stack frame. */
+        if (sound_child_path != NULL && elapsed >= warmup_frames) {
+            if (sound_child_active != 0u) {
+                if (before_pc == sound_child_return &&
+                    driver->machine->s ==
+                    (lib_u8)(sound_child_stack + 2u)) {
+                    memcpy(sound_children[sound_child_count] + 2072u,
+                           driver->machine->ram, 2048u);
+                    memcpy(sound_children[sound_child_count] + 4120u,
+                           driver->machine->apu.registers, 24u);
+                    ++sound_child_count;
+                    sound_child_active = 0u;
+                }
+            }
+            else if (sound_child_count < 8u && before_pc == 0xf2d0u) {
+                lib_u8 *ram = driver->machine->ram;
+                if (sound_case != 0u) {
+                    ram[0x0770u] = 1u;
+                    ram[0x07c6u] = sound_case == 1u ||
+                        sound_case == 9u || sound_case == 10u ? 0u : 1u;
+                    ram[0x00fau] = sound_case == 1u ? 1u : 0u;
+                    ram[0x07b2u] = sound_case == 1u || sound_case == 8u ||
+                        sound_case == 9u || sound_case == 10u ?
+                        0u : (sound_case == 6u ? 2u : 1u);
+                    ram[0x07bbu] = sound_case == 2u ? 0x25u :
+                        sound_case == 3u ? 0x24u :
+                        sound_case == 4u ? 0x1eu :
+                        sound_case == 5u ? 0x18u :
+                        sound_case == 6u || sound_case == 7u ? 1u :
+                        0x20u;
+                    ram[0x00f1u] = 0x40u;
+                    ram[0x00f2u] = 1u;
+                    ram[0x00f3u] = 2u;
+                    ram[0x00f4u] = sound_case == 9u ||
+                        sound_case >= 11u ? 1u : 0u;
+                    ram[0x07c0u] = sound_case == 9u ? 0x2fu :
+                        sound_case == 11u ? 0x30u :
+                        sound_case == 12u ? 0u : 3u;
+                }
+                memcpy(sound_children[sound_child_count], ram, 2048u);
+                memcpy(sound_children[sound_child_count] + 2048u,
+                       driver->machine->apu.registers, 24u);
+                sound_child_stack = driver->machine->s;
+                sound_child_return = (lib_u16)(1u +
+                    ram[0x100u + (lib_u8)(sound_child_stack + 1u)] +
+                    256u * ram[0x100u +
+                        (lib_u8)(sound_child_stack + 2u)]);
+                sound_child_active = 1u;
+            }
+        }
         /* Observe declared child entry/return states while the original
          * PlayerEntrance executes. Read the real return address and stack
          * depth; never replace the original child or alter CPU state. */
@@ -5429,6 +5509,22 @@ int main(int argument_count, char **arguments)
         for (child = 0u; child < sprite_row_child_count; ++child)
             if (fwrite(sprite_row_children[child], 1u, 4100u, children) !=
                 4100u) ok = 0;
+        if (fclose(children) != 0) ok = 0;
+        if (!ok) return 69;
+    }
+    if (sound_child_path != NULL) {
+        FILE *children;
+        unsigned char header[8] = { 'M', 'S', 'S', 'N', 1u, 0u, 0u, 0u };
+        unsigned int child;
+        int ok;
+        if (sound_child_count == 0u || sound_child_active != 0u) return 69;
+        header[5] = (unsigned char)sound_child_count;
+        children = fopen(sound_child_path, "wb");
+        if (children == NULL) return 69;
+        ok = fwrite(header, 1u, 8u, children) == 8u;
+        for (child = 0u; child < sound_child_count; ++child)
+            if (fwrite(sound_children[child], 1u, 4144u, children) !=
+                4144u) ok = 0;
         if (fclose(children) != 0) ok = 0;
         if (!ok) return 69;
     }

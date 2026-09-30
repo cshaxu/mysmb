@@ -42,6 +42,7 @@ void mysmb_game_reset(struct mysmb_game *game)
     /* ColdBoot returns from InitializeMemory with A == 0, then writes that
      * accumulator value to $4011 before it resets OperMode. */
     game->apu_delta_counter_load = 0U;
+    game->apu_registers[17U] = 0U;
     game->ram[MYSMB_BOOT_OPER_MODE] = 0U;
     game->ram[MYSMB_BOOT_WARM_BOOT_VALIDATION] = 0xa5U;
     game->ram[MYSMB_BOOT_PSEUDORANDOM] = 0xa5U;
@@ -49,6 +50,7 @@ void mysmb_game_reset(struct mysmb_game *game)
      * This portable output is shared by every target; the host may only
      * present it. */
     game->apu_channel_enable = 0x0fU;
+    game->apu_registers[21U] = 0x0fU;
     /* ColdBoot writes $06 directly to $2001; it is not the later NMI mirror. */
     game->ppu_mask = 0x06U;
     game->visible_ppu_mask = 0x06U;

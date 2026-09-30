@@ -530,23 +530,69 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
     mysmb_audio_step_noise_music(game);
 }
 
+/* ROM SoundEngine writes these APU registers from shared game logic. */
+static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
+                                  mysmb_u8 value)
+{
+    game->apu_registers[index] = value;
+    if (index == 17U) game->apu_delta_counter_load = value;
+    if (index == 21U) game->apu_channel_enable = value;
+    if (index == 23U) game->apu_frame_counter = value;
+}
+
+/* PlaySqu1Sfx is a T48 S2 dependency.  This directly follows its source
+ * register writes for the pause tones; S2 still owns node certification. */
+static void mysmb_audio_pause_tone(struct mysmb_game *game, mysmb_u8 tone)
+{
+    mysmb_u16 frequency;
+
+    mysmb_audio_write_apu(game, 1U, 0x7fU);
+    mysmb_audio_write_apu(game, 0U, 0x84U);
+    frequency = (mysmb_u16)(0x7f00U + tone);
+    if (game->area_prg == 0 ||
+        frequency + 1U >= game->area_prg_size) return;
+    if (game->area_prg[frequency + 1U] == 0U) return;
+    mysmb_audio_write_apu(game, 2U, game->area_prg[frequency + 1U]);
+    mysmb_audio_write_apu(game, 3U,
+        (mysmb_u8)(game->area_prg[frequency] | 8U));
+}
+
 void mysmb_audio_step(struct mysmb_game *game)
 {
-    if (game->ram[MYSMB_RAM_OPERATING_MODE] == 0U) return;
+    mysmb_u8 old_dac;
+    mysmb_u8 pause_length;
+    mysmb_u8 pause_started;
+
+    if (game->ram[MYSMB_RAM_OPERATING_MODE] == 0U) {
+        mysmb_audio_write_apu(game, 21U, 0U);
+        return;
+    }
+    mysmb_audio_write_apu(game, 23U, 0xffU);
+    mysmb_audio_write_apu(game, 21U, 0x0fU);
+    pause_started = 0U;
     if (game->ram[MYSMB_RAM_PAUSE_MODE] != 0U ||
         game->ram[MYSMB_RAM_PAUSE_QUEUE] == 1U) {
         if (game->ram[MYSMB_RAM_PAUSE_BUFFER] == 0U &&
             game->ram[MYSMB_RAM_PAUSE_QUEUE] != 0U) {
             game->ram[MYSMB_RAM_PAUSE_BUFFER] = game->ram[MYSMB_RAM_PAUSE_QUEUE];
             game->ram[MYSMB_RAM_PAUSE_MODE] = game->ram[MYSMB_RAM_PAUSE_QUEUE];
+            mysmb_audio_write_apu(game, 21U, 0U);
             game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
             game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
             game->ram[MYSMB_RAM_NOISE_BUFFER] = 0U;
+            mysmb_audio_write_apu(game, 21U, 0x0fU);
             game->ram[MYSMB_RAM_SQUARE1_LENGTH] = 0x2aU;
+            pause_started = 1U;
         }
-        else if (game->ram[MYSMB_RAM_PAUSE_BUFFER] != 0U) {
+        if (game->ram[MYSMB_RAM_PAUSE_BUFFER] != 0U) {
+            pause_length = game->ram[MYSMB_RAM_SQUARE1_LENGTH];
+            if (pause_length == 0x24U || pause_length == 0x18U)
+                mysmb_audio_pause_tone(game, 0x64U);
+            else if (pause_started != 0U || pause_length == 0x1eU)
+                mysmb_audio_pause_tone(game, 0x44U);
             game->ram[MYSMB_RAM_SQUARE1_LENGTH]--;
             if (game->ram[MYSMB_RAM_SQUARE1_LENGTH] == 0U) {
+                mysmb_audio_write_apu(game, 21U, 0U);
                 if (game->ram[MYSMB_RAM_PAUSE_BUFFER] == 2U) {
                     game->ram[MYSMB_RAM_PAUSE_MODE] = 0U;
                 }
@@ -559,19 +605,22 @@ void mysmb_audio_step(struct mysmb_game *game)
         mysmb_audio_step_square2(game);
         mysmb_audio_step_noise(game);
         mysmb_audio_step_music(game);
+        game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = 0U;
+        game->ram[MYSMB_RAM_EVENT_MUSIC_QUEUE] = 0U;
     }
     game->ram[MYSMB_RAM_SQUARE1_QUEUE] = 0U;
     game->ram[MYSMB_RAM_SQUARE2_QUEUE] = 0U;
     game->ram[MYSMB_RAM_NOISE_QUEUE] = 0U;
-    game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = 0U;
-    game->ram[MYSMB_RAM_EVENT_MUSIC_QUEUE] = 0U;
     game->ram[MYSMB_RAM_PAUSE_QUEUE] = 0U;
     /* ROM SoundEngine's final DAC_Counter update follows queue clearing. */
+    old_dac = game->ram[MYSMB_RAM_DAC_COUNTER];
     if ((game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 3U) != 0U) {
-        if (game->ram[MYSMB_RAM_DAC_COUNTER] < 0x30U)
-            game->ram[MYSMB_RAM_DAC_COUNTER]++;
+        game->ram[MYSMB_RAM_DAC_COUNTER]++;
+        if (old_dac >= 0x30U && old_dac != 0U)
+            game->ram[MYSMB_RAM_DAC_COUNTER]--;
     }
-    else if (game->ram[MYSMB_RAM_DAC_COUNTER] != 0U) {
+    else if (old_dac != 0U) {
         game->ram[MYSMB_RAM_DAC_COUNTER]--;
     }
+    mysmb_audio_write_apu(game, 17U, old_dac);
 }

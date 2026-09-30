@@ -1,9 +1,14 @@
 #include "game/dispatcher.h"
 #include "game/objects.h"
+#include <string.h>
 
 int main(void)
 {
     struct mysmb_game game;
+
+    /* Only CPU RAM is reset by the original InitializeMemory routine.
+     * Give the test's host-side ROM bindings defined null values. */
+    memset(&game, 0, sizeof(game));
 
     /* ImposeGravity uses SprObject_YMF_Dummy + ObjectOffset: block is $09,
      * jump coin is $0d.  The neighbouring bytes belong to other objects. */

@@ -64,6 +64,8 @@ struct mysmb_game {
      * consume them but may not infer or replace their values. */
     mysmb_u8 apu_delta_counter_load;
     mysmb_u8 apu_channel_enable;
+    mysmb_u8 apu_frame_counter;
+    mysmb_u8 apu_registers[24];
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
     /* Immutable owner-local CHR pattern data used by the shared PPU compositor. */
     const mysmb_u8 *chr_data;

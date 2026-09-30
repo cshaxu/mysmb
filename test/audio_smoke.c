@@ -48,7 +48,9 @@ int main(void)
     if (game.ram[0x00f2U] != 0x40U || game.ram[0x07bdU] != 0x2fU ||
         game.ram[0x00feU] != 0U) return 3;
 
-    /* Pause preempts active effects and deliberately does not run music. */
+    /* ROM pause-start plays its first tone and decrements 0x2a to 0x29
+     * in the same SoundEngine pass. Music queues are not cleared when
+     * RunSoundSubroutines is skipped. */
     game.ram[0x00f1U] = 0x40U;
     game.ram[0x00f2U] = 0x01U;
     game.ram[0x00f3U] = 0x02U;
@@ -65,8 +67,8 @@ int main(void)
     game.ram[0x00fcU] = 8U;
     mysmb_audio_step(&game);
     if (game.ram[0x07b2U] != 1U || game.ram[0x07c6U] != 1U ||
-        game.ram[0x07bbU] != 0x2aU || game.ram[0x00f1U] != 0U ||
+        game.ram[0x07bbU] != 0x29U || game.ram[0x00f1U] != 0U ||
         game.ram[0x00f2U] != 0U || game.ram[0x00f3U] != 0U ||
-        game.ram[0x07b1U] != 1U || game.ram[0x00fcU] != 0U) return 4;
+        game.ram[0x07b1U] != 1U || game.ram[0x00fcU] != 8U) return 4;
     return 0;
 }
