@@ -30812,81 +30812,105 @@
       "label": "HandleSquare1Music",
       "asmLine": 15788,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips directly to triangle when no square-one stream exists; otherwise decrements its counter and fetches a stream byte only at expiry."
     },
     {
       "label": "FetchSqu1MusicData",
       "asmLine": 15794,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Treats null stream bytes as audible control writes, records alternate control value and refetches until nonzero."
     },
     {
       "label": "Squ1NoteHandler",
       "asmLine": 15806,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Derives square-one length selector from bits 0/7/6, updates note counter, skips owned channel, then selects frequency/control/register writes."
     },
     {
       "label": "SkipCtrlL",
       "asmLine": 15816,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores envelope offset and dumps square-one register pair before tail tasks."
     },
     {
       "label": "MiscSqu1MusicTasks",
       "asmLine": 15819,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips tail writes when SFX owns square one; otherwise envelope-updates except death/D4 then selects alternate or $7f high control."
     },
     {
       "label": "NoDecEnv2",
       "asmLine": 15828,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses preserved envelope index for lookup, writes square-one envelope and enters alternate-control selection."
     },
     {
       "label": "DeathMAltReg",
       "asmLine": 15830,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects alternate register value when nonzero, otherwise default $7f."
     },
     {
       "label": "DoAltLoad",
       "asmLine": 15833,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected high control byte then enters triangle music."
     },
     {
       "label": "HandleTriangleMusic",
@@ -85516,10 +85540,13 @@
       "instruction": "beq",
       "id": "control-03413",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Zero Square1 stream offset skips directly to triangle processing."
     },
     {
       "from": "HandleSquare1Music",
@@ -85529,10 +85556,13 @@
       "instruction": "bne",
       "id": "control-03414",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Nonzero note counter bypasses fetch to tail tasks."
     },
     {
       "from": "HandleSquare1Music",
@@ -85542,10 +85572,13 @@
       "instruction": "bne",
       "id": "control-03415",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Expired counter falls through to stream fetch."
     },
     {
       "from": "FetchSqu1MusicData",
@@ -85555,10 +85588,13 @@
       "instruction": "bne",
       "id": "control-03416",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Nonzero fetched byte enters note processing."
     },
     {
       "from": "FetchSqu1MusicData",
@@ -85568,10 +85604,13 @@
       "instruction": "bne",
       "id": "control-03417",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Null byte performs controls and refetches."
     },
     {
       "from": "FetchSqu1MusicData",
@@ -85581,10 +85620,13 @@
       "instruction": "bne",
       "id": "control-03418",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Refetched nonzero byte enters note processing."
     },
     {
       "from": "Squ1NoteHandler",
@@ -85594,10 +85636,13 @@
       "instruction": "jsr",
       "id": "control-03419",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Square-one note derives duration through alternate bit rotation helper."
     },
     {
       "from": "Squ1NoteHandler",
@@ -85607,10 +85652,13 @@
       "instruction": "bne",
       "id": "control-03420",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Active square-one SFX skips note writes and enters triangle."
     },
     {
       "from": "Squ1NoteHandler",
@@ -85620,10 +85668,13 @@
       "instruction": "jsr",
       "id": "control-03421",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Unowned Square1 invokes frequency helper."
     },
     {
       "from": "Squ1NoteHandler",
@@ -85633,10 +85684,13 @@
       "instruction": "beq",
       "id": "control-03422",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rest frequency skips control loader."
     },
     {
       "from": "Squ1NoteHandler",
@@ -85646,10 +85700,13 @@
       "instruction": "jsr",
       "id": "control-03423",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Non-rest note loads controls before common dump path."
     },
     {
       "from": "Squ1NoteHandler",
@@ -85659,10 +85716,13 @@
       "instruction": "jsr",
       "id": "control-03424",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Control load returns to common envelope/register tail."
     },
     {
       "from": "SkipCtrlL",
@@ -85672,10 +85732,13 @@
       "instruction": "jsr",
       "id": "control-03425",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common path dumps Square1 registers."
     },
     {
       "from": "SkipCtrlL",
@@ -85685,10 +85748,13 @@
       "instruction": "jsr",
       "id": "control-03426",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dump returns to Square1 tail tasks."
     },
     {
       "from": "MiscSqu1MusicTasks",
@@ -85698,10 +85764,13 @@
       "instruction": "bne",
       "id": "control-03427",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Active Square1 SFX bypasses tail writes."
     },
     {
       "from": "MiscSqu1MusicTasks",
@@ -85711,10 +85780,13 @@
       "instruction": "bne",
       "id": "control-03428",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Death or D4 bypasses envelope update but still selects high control."
     },
     {
       "from": "MiscSqu1MusicTasks",
@@ -85724,10 +85796,13 @@
       "instruction": "beq",
       "id": "control-03429",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Zero envelope offset retains index and skips decrement."
     },
     {
       "from": "MiscSqu1MusicTasks",
@@ -85737,10 +85812,13 @@
       "instruction": "dec",
       "id": "control-03430",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Nonzero envelope decrements memory but retains original lookup index."
     },
     {
       "from": "NoDecEnv2",
@@ -85750,10 +85828,13 @@
       "instruction": "jsr",
       "id": "control-03431",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Envelope helper receives preserved index."
     },
     {
       "from": "NoDecEnv2",
@@ -85763,10 +85844,13 @@
       "instruction": "sta",
       "id": "control-03432",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Envelope write falls through to alternate high-control choice."
     },
     {
       "from": "DeathMAltReg",
@@ -85776,10 +85860,13 @@
       "instruction": "bne",
       "id": "control-03433",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Nonzero alternate register is selected."
     },
     {
       "from": "DeathMAltReg",
@@ -85789,10 +85876,13 @@
       "instruction": "lda",
       "id": "control-03434",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Zero alternate register falls through with $7f default."
     },
     {
       "from": "DoAltLoad",
@@ -85802,10 +85892,13 @@
       "instruction": "sta",
       "id": "control-03435",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "High-control write falls through to triangle processing."
     },
     {
       "from": "HandleTriangleMusic",
@@ -95825,10 +95918,13 @@
       "instruction": "rts/rti",
       "id": "control-04086",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Alternate length helper returns transformed selector/length to Square1 note path."
     },
     {
       "from": "SetFreq_Squ1",
@@ -95839,12 +95935,12 @@
       "id": "control-04087",
       "cohort": "M",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation SetFreq_Squ1 → Squ1NoteHandler exposes completed channel register state to its caller continuation."
+      "semanticContract": "Frequency helper returns rest/result state to Square1 note path."
     },
     {
       "from": "LoadControlRegs",
@@ -95854,10 +95950,13 @@
       "instruction": "rts/rti",
       "id": "control-04088",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Control helper returns register pair and envelope offset."
     },
     {
       "from": "Dump_Squ1_Regs",
@@ -95868,12 +95967,12 @@
       "id": "control-04089",
       "cohort": "M",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation Dump_Squ1_Regs → SkipCtrlL exposes completed channel register state to its caller continuation."
+      "semanticContract": "Square1 dump returns to common tail."
     },
     {
       "from": "LoadEnvelopeData",
@@ -95883,10 +95982,13 @@
       "instruction": "rts/rti",
       "id": "control-04090",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "semanticEvidence": [
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Envelope lookup returns selected byte to Square1 tail."
     },
     {
       "from": "ProcessLengthData",

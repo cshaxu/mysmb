@@ -1370,3 +1370,9 @@ branches.
 - Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering stream counter/fetch classification, terminator loops and reset, length/note paths, SFX channel ownership and envelope tail behavior.
 - Independent integration result: 33 outgoing and return control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 note, rest, length, terminator, loopback, SFX-owned and envelope routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K33 — square-one music stream audit
+
+- Source range: `HandleSquare1Music` through `DoAltLoad` (`SMBDIS.ASM` lines 15788–15834).
+- Node-semantics result: eight labels moved from `unclassified` to `needs-evidence`, covering absent-stream skip, null-byte controls, alternate length encoding, SFX ownership, death/D4 envelope behavior and alternate high control.
+- Independent integration result: 28 outgoing and return control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
