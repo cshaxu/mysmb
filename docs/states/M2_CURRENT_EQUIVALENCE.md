@@ -1364,3 +1364,9 @@ branches.
 - Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering queue priority, death-event SFX stops, time-running-out length selection, ground-loop counter wrap, bit-mask header selection and six-byte header initialization.
 - Independent integration result: 25 outgoing control relations received `needs-evidence` contracts, including each event/area branch, SFX call, structural fall-through, loop-back and header-to-square-two transfer. Static review found no discrepancy; controlled original-ROM/x86/x64 event, area, death, time-running-out and ground-loop routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K32 — square-two music stream audit
+
+- Source range: `HandleSquare2Music` through `NoDecEnv1` (`SMBDIS.ASM` lines 15720–15787).
+- Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering stream counter/fetch classification, terminator loops and reset, length/note paths, SFX channel ownership and envelope tail behavior.
+- Independent integration result: 33 outgoing and return control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 note, rest, length, terminator, loopback, SFX-owned and envelope routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
