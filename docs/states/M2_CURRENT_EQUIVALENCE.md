@@ -20,7 +20,7 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 9 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 0 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 13 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 0 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -166,3 +166,14 @@ may advance while parsing a command packet, whereas the C owner traverses its
 buffer directly; the audit compares initial table binding separately from
 post-consumption header state. The linked JSON ledger records those distinct
 contracts without treating implementation shape as a mismatch.
+
+### Cohort A — A2 NMI prologue node-semantics pass
+
+The next source-order slice covers `NonMaskableInterrupt` through
+`SkipSprite0` (lines 764–867). The node-semantics pass has recorded all 13
+labels' branch/state/table/output contracts and their shared `frame_root.c`
+counterparts. They are deliberately **needs-evidence**, rather than exact:
+the controlled original-ROM route must still cover timer, pause, sprite-zero
+and scroll alternatives, and the separate integration pass has not yet
+classified the 39 owned control relations. This preserves the distinction
+between a mapped node and a proven node/edge system.

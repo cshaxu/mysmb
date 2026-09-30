@@ -312,131 +312,170 @@
       "label": "NonMaskableInterrupt",
       "asmLine": 764,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_begin / mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Owns one NMI frame transaction: temporarily disables NMI in the mirror, prepares physical display state, resets scroll and OAM DMA, selects/consumes VRAM, runs input/timers/random/sprite split and exactly one operation-mode dispatch, then restores the saved control value with NMI enable."
     },
     {
       "label": "ScreenOff",
       "asmLine": 776,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_commit_display_state",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads the $2001 mirror, preserves only source-permitted bits while DisableScreenFlag is set or restores display bits otherwise, updates the mirror and physical mask for the NMI transaction."
     },
     {
       "label": "InitBuffer",
       "asmLine": 796,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_commit_vram_buffer and mysmb_frame_root_begin",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling."
     },
     {
       "label": "DecTimers",
       "asmLine": 814,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_tick_player_timers",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "When TimerControl is zero, decrements IntervalTimerControl and selects the source frame-only or frame-plus-interval timer range."
     },
     {
       "label": "DecTimersLoop",
       "asmLine": 820,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_tick_player_timers descending loop",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Visits timer bytes in descending source order, decrementing only nonzero entries until index zero is processed."
     },
     {
       "label": "SkipExpTimer",
       "asmLine": 823,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_tick_player_timers descending loop",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips decrement for an expired timer, decrements the index and continues while the index remains nonnegative."
     },
     {
       "label": "NoDecTimers",
       "asmLine": 825,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_begin",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments FrameCounter after the applicable timer branch, including the TimerControl nonzero path once its decrement does not reach zero."
     },
     {
       "label": "PauseSkip",
       "asmLine": 826,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_begin",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Begins pseudorandom rotation regardless of paused timer branch; a paused game bypasses frame-counter and timer work but not the LFSR update."
     },
     {
       "label": "RotPRandomBit",
       "asmLine": 837,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_rotate_pseudorandom",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes carry from bit one of the first two LFSR bytes and rotates that carry through exactly seven bytes in ascending address order."
     },
     {
       "label": "Sprite0Clr",
       "asmLine": 843,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_begin sprite-zero branch",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "When Sprite0HitDetectFlag is set, performs the source pre-split sprite-zero path: while unpaused, moves nonzero OAM sprites offscreen and shuffles offsets before hit synchronization."
     },
     {
       "label": "Sprite0Hit",
       "asmLine": 851,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_begin / shared frame output state",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the source sprite-zero synchronization condition before the scrolling/main-operation split; current shared state exposes the resulting split rather than host-owned game decisions."
     },
     {
       "label": "HBlankDelay",
       "asmLine": 855,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_begin / renderer frame boundary",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Represents the fixed source post-sprite-zero delay before scroll writes; its observable contract is that scrolling and mode dispatch start only after the sprite-zero synchronization phase."
     },
     {
       "label": "SkipSprite0",
       "asmLine": 857,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Commits horizontal/vertical scroll and the d7-cleared control mirror for the current frame, skips operating-mode work while paused, otherwise dispatches exactly one operating-mode tree call."
     },
     {
       "label": "SkipMainOper",
