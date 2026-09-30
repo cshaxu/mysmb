@@ -1238,3 +1238,7 @@ branches.
 ### Cohort K — K8 normal-enemy, Bowser, Spiny, Lakitu and shell graphics integration
 
 `CheckForGoomba` through `CheckForDefdGoomba` now has fifteen node contracts and all local Goomba animation, Bowser front/rear, Spiny egg, Lakitu alternate-frame and shell-state control relations. Static review matches the Goomba d5/timer/d3 gate, Bowser mouth/feet frames and defeated flip/Y path, Spiny egg rewrite, Lakitu timer threshold, Buzzy versus Koopa shell selections and Goomba defeat decrement. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal, defeated, Bowser, egg, Lakitu and shell routes.
+
+### Cohort K — K9 enemy animation and row-draw integration
+
+`CheckForHammerBro` through `DrawEnemyObject` now has seven node contracts and all local Hammer Bro, Bloober/Cheep, animation, defeated-state and three-row control relations. Static review matches Hammer Bro d3 handling, interval gates and Bloober Y adjustment, retainer WorldNumber path, timing masks, d7/d5/timer animation suppression, defeated flip setup and the ordered three-row writes. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 Hammer Bro, Cheep, Bloober, retainer, defeated and Bullet Bill routes.

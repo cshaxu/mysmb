@@ -27102,71 +27102,92 @@
       "label": "CheckForHammerBro",
       "asmLine": 13829,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes Hammer Bro state zero/d3 paths to normal animation, defeated state or its alternate graphics offset."
     },
     {
       "label": "CheckForBloober",
       "asmLine": 13841,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves Cheep fast path and applies the source interval-timer gates and three-pixel Bloober adjustment."
     },
     {
       "label": "CheckToAnimateEnemy",
       "asmLine": 13856,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Excludes Goomba, bullet, Podoboo and codes >=$18; maps the retainer WorldNumber branch before animation timing."
     },
     {
       "label": "CheckForSecondFrame",
       "asmLine": 13878,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses the source animation timing mask selected by the actor path before the common animation-stop gate."
     },
     {
       "label": "CheckAnimationStop",
       "asmLine": 13883,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Suppresses animation on state d7/d5 or TimerControl; otherwise advances the selected graphics offset by six."
     },
     {
       "label": "CheckDefeatedState",
       "asmLine": 13893,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For defeated codes >=4 enables vertical flip and resets alternate state before common row drawing."
     },
     {
       "label": "DrawEnemyObject",
       "asmLine": 13905,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls the three source rows in order, reloads ObjectOffset/OAM and routes Bullet Bill directly to offscreen processing."
     },
     {
       "label": "SkipToOffScrChk",
@@ -76113,10 +76134,13 @@
       "instruction": "bne",
       "id": "control-02891",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForHammerBro -> CheckForBloober with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForHammerBro",
@@ -76126,10 +76150,13 @@
       "instruction": "beq",
       "id": "control-02892",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForHammerBro -> CheckToAnimateEnemy with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForHammerBro",
@@ -76140,12 +76167,12 @@
       "id": "control-02893",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation CheckForHammerBro -> CheckDefeatedState with source state/ID predicate, graphics selection and control handoff."
+      "semanticContract": "Preserves ROM branch relation CheckForHammerBro -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForHammerBro",
@@ -76155,10 +76182,13 @@
       "instruction": "bne",
       "id": "control-02894",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForHammerBro -> CheckToAnimateEnemy with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForHammerBro",
@@ -76168,10 +76198,13 @@
       "instruction": "bne",
       "id": "control-02895",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForHammerBro -> CheckForBloober with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForBloober",
@@ -76181,10 +76214,13 @@
       "instruction": "beq",
       "id": "control-02896",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForBloober -> CheckToAnimateEnemy with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForBloober",
@@ -76194,10 +76230,13 @@
       "instruction": "bcs",
       "id": "control-02897",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForBloober -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForBloober",
@@ -76207,10 +76246,13 @@
       "instruction": "bne",
       "id": "control-02898",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForBloober -> CheckToAnimateEnemy with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForBloober",
@@ -76220,10 +76262,13 @@
       "instruction": "beq",
       "id": "control-02899",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForBloober -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForBloober",
@@ -76233,10 +76278,13 @@
       "instruction": "jmp",
       "id": "control-02900",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation CheckForBloober -> CheckAnimationStop with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckToAnimateEnemy",
@@ -76246,10 +76294,13 @@
       "instruction": "beq",
       "id": "control-02901",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToAnimateEnemy -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckToAnimateEnemy",
@@ -76259,10 +76310,13 @@
       "instruction": "beq",
       "id": "control-02902",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToAnimateEnemy -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckToAnimateEnemy",
@@ -76272,10 +76326,13 @@
       "instruction": "beq",
       "id": "control-02903",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToAnimateEnemy -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckToAnimateEnemy",
@@ -76285,10 +76342,13 @@
       "instruction": "bcs",
       "id": "control-02904",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToAnimateEnemy -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckToAnimateEnemy",
@@ -76298,10 +76358,13 @@
       "instruction": "bne",
       "id": "control-02905",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToAnimateEnemy -> CheckForSecondFrame with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckToAnimateEnemy",
@@ -76311,10 +76374,13 @@
       "instruction": "bcs",
       "id": "control-02906",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToAnimateEnemy -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckToAnimateEnemy",
@@ -76324,10 +76390,13 @@
       "instruction": "bne",
       "id": "control-02907",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToAnimateEnemy -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckToAnimateEnemy",
@@ -76337,10 +76406,13 @@
       "instruction": "bne",
       "id": "control-02908",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckToAnimateEnemy -> CheckForSecondFrame with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForSecondFrame",
@@ -76350,10 +76422,13 @@
       "instruction": "bne",
       "id": "control-02909",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForSecondFrame -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckForSecondFrame",
@@ -76363,10 +76438,13 @@
       "instruction": "bne",
       "id": "control-02910",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForSecondFrame -> CheckAnimationStop with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckAnimationStop",
@@ -76376,10 +76454,13 @@
       "instruction": "bne",
       "id": "control-02911",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckAnimationStop -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckAnimationStop",
@@ -76389,10 +76470,13 @@
       "instruction": "tax",
       "id": "control-02912",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckAnimationStop -> CheckDefeatedState with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckDefeatedState",
@@ -76403,12 +76487,12 @@
       "id": "control-02913",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation CheckDefeatedState -> DrawEnemyObject with source state/ID predicate, graphics selection and control handoff."
+      "semanticContract": "Preserves ROM branch relation CheckDefeatedState -> DrawEnemyObject with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckDefeatedState",
@@ -76419,12 +76503,12 @@
       "id": "control-02914",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation CheckDefeatedState -> DrawEnemyObject with source state/ID predicate, graphics selection and control handoff."
+      "semanticContract": "Preserves ROM branch relation CheckDefeatedState -> DrawEnemyObject with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "CheckDefeatedState",
@@ -76435,12 +76519,12 @@
       "id": "control-02915",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation CheckDefeatedState -> DrawEnemyObject with source state/ID predicate, graphics selection and control handoff."
+      "semanticContract": "Preserves ROM fallthrough relation CheckDefeatedState -> DrawEnemyObject with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "DrawEnemyObject",
@@ -76450,10 +76534,13 @@
       "instruction": "jsr",
       "id": "control-02916",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DrawEnemyObject -> DrawEnemyObjRow with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "DrawEnemyObject",
@@ -76463,10 +76550,13 @@
       "instruction": "jsr",
       "id": "control-02917",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DrawEnemyObject -> DrawEnemyObjRow with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "DrawEnemyObject",
@@ -76476,10 +76566,13 @@
       "instruction": "jsr",
       "id": "control-02918",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DrawEnemyObject -> DrawEnemyObjRow with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "DrawEnemyObject",
@@ -76489,10 +76582,13 @@
       "instruction": "bne",
       "id": "control-02919",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawEnemyObject -> CheckForVerticalFlip with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "DrawEnemyObject",
@@ -92011,10 +92107,13 @@
       "instruction": "rts/rti",
       "id": "control-04011",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DrawEnemyObjRow -> DrawEnemyObject with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "DrawEnemyObjRow",
@@ -92024,10 +92123,13 @@
       "instruction": "rts/rti",
       "id": "control-04012",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DrawEnemyObjRow -> DrawEnemyObject with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "DrawEnemyObjRow",
@@ -92037,10 +92139,13 @@
       "instruction": "rts/rti",
       "id": "control-04013",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "semanticEvidence": [
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DrawEnemyObjRow -> DrawEnemyObject with source actor/state predicate, graphics-offset handoff and row ordering."
     },
     {
       "from": "DumpSixSpr",
