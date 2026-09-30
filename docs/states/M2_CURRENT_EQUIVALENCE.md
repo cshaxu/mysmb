@@ -1535,3 +1535,9 @@ branches.
 - Node-semantics result: three labels moved from `unclassified` to `needs-evidence`, covering the status-bar/bottom-probe gate, bounce assignment and explosion state/sound handoff.
 - Independent integration result: 9 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 bounce, non-solid and explosion routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K61 — enemy OAM row leaf audit
+
+- Source range: `ExEGHandler` through `MoveESprColOffscreen` (`SMBDIS.ASM` lines 14085–14110).
+- Node-semantics result: five labels moved from `unclassified` to `needs-evidence`, covering two-tile row loading/drawing and row/column OAM hiding leaves.
+- Independent integration result: 5 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 normal-enemy OAM routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

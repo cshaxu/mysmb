@@ -28722,51 +28722,66 @@
       "label": "ExEGHandler",
       "asmLine": 14085,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c:mysmb_objects_draw_normal_enemy_graphics return",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics return",
+      "semanticEvidence": [
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from the enemy graphics handler after its final offscreen and deletion checks."
     },
     {
       "label": "DrawEnemyObjRow",
       "asmLine": 14088,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c:mysmb_enemy_draw_row",
+      "currentCounterpart": "mysmb_enemy_draw_row",
+      "semanticEvidence": [
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads two consecutive EnemyGraphicsTable bytes into source scratch $00/$01 before the shared row draw."
     },
     {
       "label": "DrawOneSpriteRow",
       "asmLine": 14093,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c:mysmb_enemy_draw_row + src/game/oam/sprite_row.c:mysmb_oam_draw_sprite_object",
+      "currentCounterpart": "mysmb_enemy_draw_row + src/game/oam/sprite_row.c:mysmb_oam_draw_sprite_object",
+      "semanticEvidence": [
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the second tile byte then tail-transfers to DrawSpriteObject."
     },
     {
       "label": "MoveESprRowOffscreen",
       "asmLine": 14097,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/enemy_offscreen_tail.h:mysmb_oam_enemy_offscreen_tail",
+      "currentCounterpart": "mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds the caller row offset to Enemy_SprDataOffset, selects that OAM row and tail-transfers to DumpTwoSpr with Y=$f8."
     },
     {
       "label": "MoveESprColOffscreen",
       "asmLine": 14104,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/enemy_offscreen_tail.h:mysmb_oam_enemy_offscreen_tail",
+      "currentCounterpart": "mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds the caller offset to Enemy_SprDataOffset, hides the first/second column row pair then writes $f8 to the third-row corresponding sprite."
     },
     {
       "label": "DefaultBlockObjTiles",
@@ -80572,10 +80587,13 @@
       "instruction": "lda",
       "id": "control-02973",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam normal-enemy row/row-offscreen helper counterpart",
+      "semanticEvidence": [
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy OAM row fallthrough relation DrawEnemyObjRow → DrawOneSpriteRow, including tile/scratch, OAM offset and tail-transfer ordering."
     },
     {
       "from": "DrawOneSpriteRow",
@@ -80585,10 +80603,13 @@
       "instruction": "jmp",
       "id": "control-02974",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam normal-enemy row/row-offscreen helper counterpart",
+      "semanticEvidence": [
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy OAM row jump relation DrawOneSpriteRow → DrawSpriteObject, including tile/scratch, OAM offset and tail-transfer ordering."
     },
     {
       "from": "MoveESprRowOffscreen",
@@ -80598,10 +80619,13 @@
       "instruction": "jmp",
       "id": "control-02975",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam normal-enemy row/row-offscreen helper counterpart",
+      "semanticEvidence": [
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy OAM row jump relation MoveESprRowOffscreen → DumpTwoSpr, including tile/scratch, OAM offset and tail-transfer ordering."
     },
     {
       "from": "MoveESprColOffscreen",
@@ -80612,12 +80636,12 @@
       "id": "control-02976",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "currentCounterpart": "src/game/oam normal-enemy row/row-offscreen helper counterpart",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation MoveESprColOffscreen -> MoveColOffscreen with source block/area/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves enemy OAM row call relation MoveESprColOffscreen → MoveColOffscreen, including tile/scratch, OAM offset and tail-transfer ordering."
     },
     {
       "from": "DrawBlock",
@@ -97206,12 +97230,12 @@
       "id": "control-04021",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "currentCounterpart": "src/game/oam normal-enemy row/row-offscreen helper counterpart",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation MoveColOffscreen -> MoveESprColOffscreen with source block/area/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves enemy OAM row return relation MoveColOffscreen → MoveESprColOffscreen, including tile/scratch, OAM offset and tail-transfer ordering."
     },
     {
       "from": "DrawOneSpriteRow",
