@@ -1171,3 +1171,8 @@ branches.
 ### Cohort J — B16o enemy-pair collision integration
 
 `SetBitsMask` through `ExTA` now has fifteen node contracts, every incident frame/area/ID/offscreen gate, descending loop, geometry, d7/d5/mask branch, defeat/score/turnaround child and return relation, plus nine feasible pair-state handoffs. Static review matches both unmasked seven-byte masks, source `$01` and stack preservation, candidate descending order, d7 fast path, one-hit latch and miss clear, alternate-state and Hammer Bro handling, shell-chain score ownership, dual turnaround order and the special turnable-ID filters. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 no-candidate, miss, repeated hit, d7 hit, shell-chain and dual-turn routes.
+
+
+### Cohort J — B16p large and small platform collision integration
+
+`LargePlatformCollision` through `ExSPC` now has seven node contracts, every incident platform runner, timer/state/vertical/offscreen gate, balance partner call, box/geometry/response child, two-box loop and return relation, plus six feasible platform/player handoffs. Static review matches `$ff` versus zero collision initialization, balance partner-first sequencing, saved `$00` platform Y, stack/current-slot restoration, small-platform d1 offscreen gate, Y `$20` threshold and byte-wrapped two-step `$80` box displacement. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 balance partner, large/small top/side/miss and shifted-box routes.

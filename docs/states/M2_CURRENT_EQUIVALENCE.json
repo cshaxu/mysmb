@@ -5419,6 +5419,90 @@
         "Td S9 B16o enemy-pair collision node-semantics and independent integration audit: SMB1 lines 11571-11729 compared with shared world/enemy_collision.c, geometry, defeat, score and turnaround children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00387",
+      "producer": "LargePlatformCollision",
+      "consumer": "ChkForPlayerC_LargeP",
+      "storage": "PlatformCollisionFlag, balance partner state index and ObjectOffset",
+      "feasiblePath": "Balance platform checks state-indexed partner first then restored original current slot.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/platform_collision.c large partner sequencing",
+      "semanticContract": "Each large platform check receives source current slot order and initialized collision flag.",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00388",
+      "producer": "ChkForPlayerC_LargeP",
+      "consumer": "ProcLPlatCollisions",
+      "storage": "argument-specific bounding box, saved platform Y $00 and restored platform slot",
+      "feasiblePath": "A hit reaches response only after box selection and stack slot restore.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/platform_collision.c check_large_platform to platform_response",
+      "semanticContract": "Response consumes the source selected platform box and saved Y coordinate.",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00389",
+      "producer": "SmallPlatformCollision",
+      "consumer": "ChkSmallPlatLoop",
+      "storage": "PlatformCollisionFlag zero and two-box counter $00",
+      "feasiblePath": "Active small platform begins exactly two candidate box positions.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/platform_collision.c small counter initialization",
+      "semanticContract": "Loop consumes source counter two with original current ObjectOffset reload.",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00390",
+      "producer": "ChkSmallPlatLoop",
+      "consumer": "MoveBoundBox",
+      "storage": "current box vertical coordinates and counter",
+      "feasiblePath": "Miss or high box shifts both box Y endpoints by $80 before next iteration.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/platform_collision.c shift branch",
+      "semanticContract": "The second physical platform box is reached by byte-wrapped source displacement.",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00391",
+      "producer": "MoveBoundBox",
+      "consumer": "ChkSmallPlatLoop",
+      "storage": "wrapped box Ys and decremented two-box counter",
+      "feasiblePath": "Nonzero counter repeats after moving both vertical coordinates.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/platform_collision.c do/while loop",
+      "semanticContract": "Loop retains source two-pass ordering and stops at zero.",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00392",
+      "producer": "ChkSmallPlatLoop",
+      "consumer": "ProcSPlatCollisions",
+      "storage": "eligible box collision and ObjectOffset",
+      "feasiblePath": "Eligible hit immediately transfers to common platform response with current platform slot.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/platform_collision.c platform_response call",
+      "semanticContract": "Common response sees source hit box and selected small platform.",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -5495,15 +5579,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1316,
+    "needs-evidence": 1323,
     "mismatch": 9,
-    "unclassified": 629
+    "unclassified": 622
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 2892,
+    "needs-evidence": 2924,
     "mismatch": 25,
-    "unclassified": 1349
+    "unclassified": 1317
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -23499,71 +23583,92 @@
       "label": "LargePlatformCollision",
       "asmLine": 11734,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_collision.c",
+      "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes current collision flag to $ff, rejects TimerControl/nonzero and d7 state, and for BalancePlatform visits its state-indexed partner before the original current slot."
     },
     {
       "label": "ChkForPlayerC_LargeP",
       "asmLine": 11748,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_collision.c",
+      "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rejects vertical-invalid player, gets argument-specific platform box, saves platform Y in $00 and slot on stack, then sends a collision to common large-platform response."
     },
     {
       "label": "ExLPC",
       "asmLine": 11762,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_collision.c",
+      "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns after every large-platform gate, miss or response."
     },
     {
       "label": "SmallPlatformCollision",
       "asmLine": 11768,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_collision.c",
+      "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rejects TimerControl, clears collision flag, rejects vertical-invalid player, initializes two-box counter and begins successive small-platform box checks."
     },
     {
       "label": "ChkSmallPlatLoop",
       "asmLine": 11777,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_collision.c",
+      "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reloads ObjectOffset, gets box/offscreen bits, rejects d1 offscreen, tests only boxes at Y >=$20, then either dispatches collision or advances the box."
     },
     {
       "label": "MoveBoundBox",
       "asmLine": 11788,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_collision.c",
+      "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds $80 with byte wrapping to both vertical box coordinates, decrements source counter and repeats until the two-box scan finishes."
     },
     {
       "label": "ExSPC",
       "asmLine": 11799,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/platform_collision.c",
+      "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
+      "semanticEvidence": [
+        "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns after small-platform gate, offscreen, hit or finished two-box scan."
     },
     {
       "label": "ProcSPlatCollisions",
@@ -56832,12 +56937,12 @@
       "id": "control-01695",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunSmallPlatform -> SmallPlatformCollision with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original call relation RunSmallPlatform -> SmallPlatformCollision with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "RunSmallPlatform",
@@ -56960,12 +57065,12 @@
       "id": "control-01703",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformCollision with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformCollision with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "RunLargePlatform",
@@ -67791,10 +67896,13 @@
       "instruction": "bne",
       "id": "control-02380",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LargePlatformCollision -> ExLPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "LargePlatformCollision",
@@ -67804,10 +67912,13 @@
       "instruction": "bmi",
       "id": "control-02381",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LargePlatformCollision -> ExLPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "LargePlatformCollision",
@@ -67817,10 +67928,13 @@
       "instruction": "bne",
       "id": "control-02382",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation LargePlatformCollision -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "LargePlatformCollision",
@@ -67830,10 +67944,13 @@
       "instruction": "jsr",
       "id": "control-02383",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation LargePlatformCollision -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "LargePlatformCollision",
@@ -67843,10 +67960,13 @@
       "instruction": "jsr",
       "id": "control-02384",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation LargePlatformCollision -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -67856,10 +67976,13 @@
       "instruction": "jsr",
       "id": "control-02385",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> CheckPlayerVertical with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -67869,10 +67992,13 @@
       "instruction": "bcs",
       "id": "control-02386",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkForPlayerC_LargeP -> ExLPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -67882,10 +68008,13 @@
       "instruction": "jsr",
       "id": "control-02387",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> GetEnemyBoundBoxOfsArg with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -67895,10 +68024,13 @@
       "instruction": "jsr",
       "id": "control-02388",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> PlayerCollisionCore with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -67908,10 +68040,13 @@
       "instruction": "bcc",
       "id": "control-02389",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkForPlayerC_LargeP -> ExLPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -67921,10 +68056,13 @@
       "instruction": "jsr",
       "id": "control-02390",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> ProcLPlatCollisions with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkForPlayerC_LargeP",
@@ -67934,10 +68072,13 @@
       "instruction": "jsr",
       "id": "control-02391",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkForPlayerC_LargeP -> ExLPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "SmallPlatformCollision",
@@ -67947,10 +68088,13 @@
       "instruction": "bne",
       "id": "control-02392",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SmallPlatformCollision -> ExSPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "SmallPlatformCollision",
@@ -67960,10 +68104,13 @@
       "instruction": "jsr",
       "id": "control-02393",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SmallPlatformCollision -> CheckPlayerVertical with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "SmallPlatformCollision",
@@ -67973,10 +68120,13 @@
       "instruction": "bcs",
       "id": "control-02394",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SmallPlatformCollision -> ExSPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "SmallPlatformCollision",
@@ -67986,10 +68136,13 @@
       "instruction": "sta",
       "id": "control-02395",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SmallPlatformCollision -> ChkSmallPlatLoop with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkSmallPlatLoop",
@@ -67999,10 +68152,13 @@
       "instruction": "jsr",
       "id": "control-02396",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkSmallPlatLoop -> GetEnemyBoundBoxOfs with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkSmallPlatLoop",
@@ -68012,10 +68168,13 @@
       "instruction": "bne",
       "id": "control-02397",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkSmallPlatLoop -> ExSPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkSmallPlatLoop",
@@ -68025,10 +68184,13 @@
       "instruction": "bcc",
       "id": "control-02398",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkSmallPlatLoop -> MoveBoundBox with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkSmallPlatLoop",
@@ -68038,10 +68200,13 @@
       "instruction": "jsr",
       "id": "control-02399",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkSmallPlatLoop -> PlayerCollisionCore with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkSmallPlatLoop",
@@ -68051,10 +68216,13 @@
       "instruction": "bcs",
       "id": "control-02400",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkSmallPlatLoop -> ProcSPlatCollisions with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ChkSmallPlatLoop",
@@ -68064,10 +68232,13 @@
       "instruction": "bcs",
       "id": "control-02401",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkSmallPlatLoop -> MoveBoundBox with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "MoveBoundBox",
@@ -68077,10 +68248,13 @@
       "instruction": "bne",
       "id": "control-02402",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveBoundBox -> ChkSmallPlatLoop with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "MoveBoundBox",
@@ -68090,10 +68264,13 @@
       "instruction": "bne",
       "id": "control-02403",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveBoundBox -> ExSPC with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ProcSPlatCollisions",
@@ -87254,12 +87431,12 @@
       "id": "control-03812",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SmallPlatformCollision -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original return relation SmallPlatformCollision -> RunSmallPlatform with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -87366,12 +87543,12 @@
       "id": "control-03819",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation LargePlatformCollision -> RunLargePlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original return relation LargePlatformCollision -> RunLargePlatform with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -89253,10 +89430,13 @@
       "instruction": "rts/rti",
       "id": "control-03937",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ChkForPlayerC_LargeP -> LargePlatformCollision with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "CheckPlayerVertical",
@@ -89266,10 +89446,13 @@
       "instruction": "rts/rti",
       "id": "control-03938",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation CheckPlayerVertical -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "GetEnemyBoundBoxOfsArg",
@@ -89279,10 +89462,13 @@
       "instruction": "rts/rti",
       "id": "control-03939",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfsArg -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "PlayerCollisionCore",
@@ -89292,10 +89478,13 @@
       "instruction": "rts/rti",
       "id": "control-03940",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerCollisionCore -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ProcLPlatCollisions",
@@ -89305,10 +89494,13 @@
       "instruction": "rts/rti",
       "id": "control-03941",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcLPlatCollisions -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "CheckPlayerVertical",
@@ -89318,10 +89510,13 @@
       "instruction": "rts/rti",
       "id": "control-03942",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation CheckPlayerVertical -> SmallPlatformCollision with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "GetEnemyBoundBoxOfs",
@@ -89331,10 +89526,13 @@
       "instruction": "rts/rti",
       "id": "control-03943",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> ChkSmallPlatLoop with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "PlayerCollisionCore",
@@ -89344,10 +89542,13 @@
       "instruction": "rts/rti",
       "id": "control-03944",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "semanticEvidence": [
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerCollisionCore -> ChkSmallPlatLoop with source timer/state/box predicate and current platform handoff ordering."
     },
     {
       "from": "ImpedePlayerMove",
