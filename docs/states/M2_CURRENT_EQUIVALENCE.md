@@ -1388,3 +1388,9 @@ branches.
 - Node-semantics result: seven labels moved from `unclassified` to `needs-evidence`, covering end-castle, water/event and usual area control/envelope selection.
 - Independent integration result: 9 control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K36 — music header table audit
+
+- Source range: `MusicHeaderData` through `DeathMusHdr` (`SMBDIS.ASM` lines 15989–16048).
+- Node-semantics result: 23 data labels moved from `unclassified` to `needs-evidence`; C reads owner-local PRG offsets rather than reproducing header data.
+- Independent material integration result: 23 selected-header-to-`LoadHeader` edges received `needs-evidence` contracts. Static review found no discrepancy; controlled selector/header routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

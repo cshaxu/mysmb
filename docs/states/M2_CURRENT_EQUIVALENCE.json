@@ -6231,6 +6231,328 @@
         "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-01",
+      "producer": "MusicHeaderData",
+      "consumer": "LoadHeader",
+      "storage": "ROM MusicHeaderData music header selection/data",
+      "feasiblePath": "LoadHeader selects MusicHeaderData through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-02",
+      "producer": "TimeRunningOutHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM TimeRunningOutHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects TimeRunningOutHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-03",
+      "producer": "Star_CloudHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM Star_CloudHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects Star_CloudHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-04",
+      "producer": "EndOfLevelMusHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM EndOfLevelMusHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects EndOfLevelMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-05",
+      "producer": "ResidualHeaderData",
+      "consumer": "LoadHeader",
+      "storage": "ROM ResidualHeaderData music header selection/data",
+      "feasiblePath": "LoadHeader selects ResidualHeaderData through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-06",
+      "producer": "UndergroundMusHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM UndergroundMusHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects UndergroundMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-07",
+      "producer": "SilenceHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM SilenceHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects SilenceHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-08",
+      "producer": "CastleMusHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM CastleMusHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects CastleMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-09",
+      "producer": "VictoryMusHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM VictoryMusHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects VictoryMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-10",
+      "producer": "GameOverMusHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GameOverMusHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GameOverMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-11",
+      "producer": "WaterMusHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM WaterMusHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects WaterMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-12",
+      "producer": "WinCastleMusHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM WinCastleMusHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects WinCastleMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-13",
+      "producer": "GroundLevelPart1Hdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart1Hdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart1Hdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-14",
+      "producer": "GroundLevelPart2AHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart2AHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart2AHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-15",
+      "producer": "GroundLevelPart2BHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart2BHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart2BHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-16",
+      "producer": "GroundLevelPart2CHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart2CHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart2CHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-17",
+      "producer": "GroundLevelPart3AHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart3AHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart3AHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-18",
+      "producer": "GroundLevelPart3BHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart3BHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart3BHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-19",
+      "producer": "GroundLevelLeadInHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelLeadInHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelLeadInHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-20",
+      "producer": "GroundLevelPart4AHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart4AHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart4AHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-21",
+      "producer": "GroundLevelPart4BHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart4BHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart4BHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-22",
+      "producer": "GroundLevelPart4CHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM GroundLevelPart4CHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects GroundLevelPart4CHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k36-23",
+      "producer": "DeathMusHdr",
+      "consumer": "LoadHeader",
+      "storage": "ROM DeathMusHdr music header selection/data",
+      "feasiblePath": "LoadHeader selects DeathMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -31215,231 +31537,300 @@
       "label": "MusicHeaderData",
       "asmLine": 15989,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "TimeRunningOutHdr",
       "asmLine": 16027,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "Star_CloudHdr",
       "asmLine": 16028,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "EndOfLevelMusHdr",
       "asmLine": 16029,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "ResidualHeaderData",
       "asmLine": 16030,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "UndergroundMusHdr",
       "asmLine": 16031,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "SilenceHdr",
       "asmLine": 16032,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "CastleMusHdr",
       "asmLine": 16033,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "VictoryMusHdr",
       "asmLine": 16034,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GameOverMusHdr",
       "asmLine": 16035,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "WaterMusHdr",
       "asmLine": 16036,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "WinCastleMusHdr",
       "asmLine": 16037,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart1Hdr",
       "asmLine": 16038,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart2AHdr",
       "asmLine": 16039,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart2BHdr",
       "asmLine": 16040,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart2CHdr",
       "asmLine": 16041,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart3AHdr",
       "asmLine": 16042,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart3BHdr",
       "asmLine": 16043,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelLeadInHdr",
       "asmLine": 16044,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart4AHdr",
       "asmLine": 16045,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart4BHdr",
       "asmLine": 16046,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "GroundLevelPart4CHdr",
       "asmLine": 16047,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "DeathMusHdr",
       "asmLine": 16048,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "semanticEvidence": [
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state."
     },
     {
       "label": "Star_CloudMData",
