@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 411 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 427 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,534 | Not yet processed by this re-audit. |
+| Unclassified | 1,518 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 838 control; 63 material RAM/table |
+| Needs evidence | 865 control; 63 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,418 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,391 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -617,3 +617,13 @@ sixteen nodes and forty relations remain `needs-evidence` until controlled
 original-ROM and current x86/x64 routes compare every cannon height, ring
 wrap, staircase continuation, full ordinary slot pool, hidden flag state, and
 ground/non-ground block selector outcomes.
+
+### Cohort D — B11c hole, underpart and parser-helper integration
+
+`HoleMetatiles` through `GetBlockBufferAddr` now have static node contracts and
+twenty-seven local control and return relations. The audit records water-only,
+first-column whirlpool registration, the five-slot wrap, every `RenderUnderPart`
+overwrite predicate, byte-length carry initialization, wrapped attribute read,
+and pixel coordinate conversion. No static discrepancy was found; all sixteen
+nodes and relations remain `needs-evidence` pending controlled ROM/x86/x64
+object routes.

@@ -7163,161 +7163,209 @@
       "label": "HoleMetatiles",
       "asmLine": 4237,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "Hole_Empty",
       "asmLine": 4240,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "StrWOffset",
       "asmLine": 4265,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "NoWhirlP",
       "asmLine": 4266,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "RenderUnderPart",
       "asmLine": 4273,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "DrawThisRow",
       "asmLine": 4289,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "WaitOneRow",
       "asmLine": 4290,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "ExitUPartR",
       "asmLine": 4296,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "ChkLrgObjLength",
       "asmLine": 4300,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "ChkLrgObjFixedLength",
       "asmLine": 4303,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "LenSet",
       "asmLine": 4310,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "GetLrgObjAttrib",
       "asmLine": 4313,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "GetAreaObjXPosition",
       "asmLine": 4326,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "GetAreaObjYPosition",
       "asmLine": 4336,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "BlockBufferAddr",
       "asmLine": 4349,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "GetBlockBufferAddr",
       "asmLine": 4353,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "shared area parser/render helper",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
     },
     {
       "label": "AreaDataOfsLoopback",
@@ -34387,10 +34435,13 @@
       "instruction": "jsr",
       "id": "control-00739",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation Hole_Empty -> ChkLrgObjLength.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call predicate, state handoff and ordering."
     },
     {
       "from": "Hole_Empty",
@@ -34400,10 +34451,13 @@
       "instruction": "bcc",
       "id": "control-00740",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation Hole_Empty -> NoWhirlP.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "Hole_Empty",
@@ -34413,10 +34467,13 @@
       "instruction": "bne",
       "id": "control-00741",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation Hole_Empty -> NoWhirlP.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "Hole_Empty",
@@ -34426,10 +34483,13 @@
       "instruction": "jsr",
       "id": "control-00742",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation Hole_Empty -> GetAreaObjXPosition.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call predicate, state handoff and ordering."
     },
     {
       "from": "Hole_Empty",
@@ -34439,10 +34499,13 @@
       "instruction": "bcc",
       "id": "control-00743",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation Hole_Empty -> StrWOffset.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "Hole_Empty",
@@ -34452,10 +34515,13 @@
       "instruction": "ldx",
       "id": "control-00744",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation Hole_Empty -> StrWOffset.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
     },
     {
       "from": "StrWOffset",
@@ -34465,10 +34531,13 @@
       "instruction": "stx",
       "id": "control-00745",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation StrWOffset -> NoWhirlP.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
     },
     {
       "from": "NoWhirlP",
@@ -34478,10 +34547,13 @@
       "instruction": "ldy",
       "id": "control-00746",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation NoWhirlP -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -34491,10 +34563,13 @@
       "instruction": "beq",
       "id": "control-00747",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation RenderUnderPart -> DrawThisRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -34504,10 +34579,13 @@
       "instruction": "beq",
       "id": "control-00748",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation RenderUnderPart -> WaitOneRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -34517,10 +34595,13 @@
       "instruction": "beq",
       "id": "control-00749",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation RenderUnderPart -> WaitOneRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -34530,10 +34611,13 @@
       "instruction": "beq",
       "id": "control-00750",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation RenderUnderPart -> DrawThisRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -34543,10 +34627,13 @@
       "instruction": "bcs",
       "id": "control-00751",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation RenderUnderPart -> WaitOneRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -34556,10 +34643,13 @@
       "instruction": "bne",
       "id": "control-00752",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation RenderUnderPart -> DrawThisRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -34569,10 +34659,13 @@
       "instruction": "beq",
       "id": "control-00753",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation RenderUnderPart -> WaitOneRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "RenderUnderPart",
@@ -34582,10 +34675,13 @@
       "instruction": "beq",
       "id": "control-00754",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation RenderUnderPart -> DrawThisRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
     },
     {
       "from": "DrawThisRow",
@@ -34595,10 +34691,13 @@
       "instruction": "sta",
       "id": "control-00755",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation DrawThisRow -> WaitOneRow.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
     },
     {
       "from": "WaitOneRow",
@@ -34608,10 +34707,13 @@
       "instruction": "bcs",
       "id": "control-00756",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation WaitOneRow -> ExitUPartR.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "WaitOneRow",
@@ -34621,10 +34723,13 @@
       "instruction": "bpl",
       "id": "control-00757",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation WaitOneRow -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "WaitOneRow",
@@ -34634,10 +34739,13 @@
       "instruction": "bpl",
       "id": "control-00758",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation WaitOneRow -> ExitUPartR.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
     },
     {
       "from": "ChkLrgObjLength",
@@ -34647,10 +34755,13 @@
       "instruction": "jsr",
       "id": "control-00759",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source call relation ChkLrgObjLength -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call predicate, state handoff and ordering."
     },
     {
       "from": "ChkLrgObjLength",
@@ -34660,10 +34771,13 @@
       "instruction": "jsr",
       "id": "control-00760",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation ChkLrgObjLength -> ChkLrgObjFixedLength.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -34673,10 +34787,13 @@
       "instruction": "bpl",
       "id": "control-00761",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source branch relation ChkLrgObjFixedLength -> LenSet.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -34686,10 +34803,13 @@
       "instruction": "sec",
       "id": "control-00762",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source fallthrough relation ChkLrgObjFixedLength -> LenSet.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
     },
     {
       "from": "LoadAreaPointer",
@@ -72044,10 +72164,13 @@
       "instruction": "rts/rti",
       "id": "control-03611",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation ChkLrgObjLength -> Hole_Empty.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return predicate, state handoff and ordering."
     },
     {
       "from": "GetAreaObjXPosition",
@@ -72057,10 +72180,13 @@
       "instruction": "rts/rti",
       "id": "control-03612",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjXPosition -> Hole_Empty.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return predicate, state handoff and ordering."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -72070,10 +72196,13 @@
       "instruction": "rts/rti",
       "id": "control-03613",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c preserves source return relation GetLrgObjAttrib -> ChkLrgObjLength.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return predicate, state handoff and ordering."
     },
     {
       "from": "FindAreaPointer",
