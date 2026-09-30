@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 115,
+    "enumeratedCount": 119,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1623,6 +1623,62 @@
       "semanticContract": "Preserves source producer values, consumer selection and feasible ordering.",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00116",
+      "producer": "LoopCmdWorldNumber",
+      "consumer": "FindLoop",
+      "storage": "reverse-indexed eleven-entry world selector table",
+      "feasiblePath": "FindLoop decrements from eleven and compares WorldNumber against LoopCmdWorldNumber[Y].",
+      "status": "needs-evidence",
+      "currentCounterpart": "loop_world[index]",
+      "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00117",
+      "producer": "LoopCmdPageNumber",
+      "consumer": "FindLoop",
+      "storage": "reverse-indexed eleven-entry page selector table",
+      "feasiblePath": "After world match, FindLoop compares CurrentPageLoc against LoopCmdPageNumber[Y].",
+      "status": "needs-evidence",
+      "currentCounterpart": "loop_page[index]",
+      "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00118",
+      "producer": "LoopCmdYPosition",
+      "consumer": "FindLoop",
+      "storage": "reverse-indexed eleven-entry player-Y selector table",
+      "feasiblePath": "After world/page match, FindLoop compares Player_Y_Position against LoopCmdYPosition[Y].",
+      "status": "needs-evidence",
+      "currentCounterpart": "loop_y[index]",
+      "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00119",
+      "producer": "AreaDataOfsLoopback",
+      "consumer": "ExecGameLoopback",
+      "storage": "matched-loop-indexed area data offset table",
+      "feasiblePath": "ExecGameLoopback consumes the retained matched Y index to reset AreaDataOffset after page rollback.",
+      "status": "needs-evidence",
+      "currentCounterpart": "loop_offset[index]",
+      "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -13382,161 +13438,209 @@
       "label": "EnemiesAndLoopsCore",
       "asmLine": 7788,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dispatches each enemy slot by flag: high-bit linked-slot cleanup, active object run, or parser/loop work unless parser task seven owns the turn."
     },
     {
       "label": "ChkAreaTsk",
       "asmLine": 7796,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Masks AreaParserTaskNum to three bits and returns only at task seven; otherwise tail-jumps into loop processing."
     },
     {
       "label": "ChkBowserF",
       "asmLine": 7801,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses Enemy_Flag low nibble as a linked-slot index and clears the current high-bit flag only when that referenced flag is zero."
     },
     {
       "label": "ExitELCore",
       "asmLine": 7807,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from the current enemy/loop slot invocation."
     },
     {
       "label": "LoopCmdWorldNumber",
       "asmLine": 7812,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the eleven reverse-searched world selector entries for castle loop commands."
     },
     {
       "label": "LoopCmdPageNumber",
       "asmLine": 7815,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the eleven reverse-searched page selector entries for castle loop commands."
     },
     {
       "label": "LoopCmdYPosition",
       "asmLine": 7818,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the eleven reverse-searched player-Y selector entries for castle loop commands."
     },
     {
       "label": "ExecGameLoopback",
       "asmLine": 7821,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Subtracts four pages from the five source page controls, clears parser page/offset controls and selects AreaDataOfsLoopback by matched loop index."
     },
     {
       "label": "ProcLoopCommand",
       "asmLine": 7851,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates loop evaluation on LoopCommand and CurrentColumnPos, then enters the reverse eleven-entry matcher or frenzy tail."
     },
     {
       "label": "FindLoop",
       "asmLine": 7857,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Searches tables from index ten down to zero and distinguishes correct grounded loop passage, wrong passage and no match."
     },
     {
       "label": "IncMLoop",
       "asmLine": 7875,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Advances World-7 multi-loop pass count and selects reset versus loopback after the third pass."
     },
     {
       "label": "WrongChk",
       "asmLine": 7883,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes wrong player Y/state through World-7 pass accounting or direct loopback."
     },
     {
       "label": "DoLpBack",
       "asmLine": 7886,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs page/area loopback before KillAllEnemies, restores ObjectOffset, then resets multi-loop counters."
     },
     {
       "label": "InitMLp",
       "asmLine": 7888,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears multi-loop pass and correct counters before clearing LoopCommand."
     },
     {
       "label": "InitLCmd",
       "asmLine": 7891,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears LoopCommand then enters the frenzy/stream tail."
     },
     {
       "label": "ChkEnemyFrenzy",
       "asmLine": 7896,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy core and loop-command core",
+      "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes a queued frenzy ID into current slot ID/flag/state, clears the queue and tail-jumps to initialization; otherwise enters stream processing."
     },
     {
       "label": "ProcessEnemyData",
@@ -47358,10 +47462,13 @@
       "instruction": "bcs",
       "id": "control-01429",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation EnemiesAndLoopsCore -> ChkBowserF with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "EnemiesAndLoopsCore",
@@ -47371,10 +47478,13 @@
       "instruction": "beq",
       "id": "control-01430",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation EnemiesAndLoopsCore -> ChkAreaTsk with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "EnemiesAndLoopsCore",
@@ -47384,10 +47494,13 @@
       "instruction": "jmp",
       "id": "control-01431",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation EnemiesAndLoopsCore -> RunEnemyObjectsCore with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ChkAreaTsk",
@@ -47397,10 +47510,13 @@
       "instruction": "beq",
       "id": "control-01432",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkAreaTsk -> ExitELCore with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ChkAreaTsk",
@@ -47410,10 +47526,13 @@
       "instruction": "jmp",
       "id": "control-01433",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkAreaTsk -> ProcLoopCommand with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ChkBowserF",
@@ -47423,10 +47542,13 @@
       "instruction": "bne",
       "id": "control-01434",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkBowserF -> ExitELCore with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ChkBowserF",
@@ -47436,10 +47558,13 @@
       "instruction": "sta",
       "id": "control-01435",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkBowserF -> ExitELCore with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ProcLoopCommand",
@@ -47449,10 +47574,13 @@
       "instruction": "beq",
       "id": "control-01436",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcLoopCommand -> ChkEnemyFrenzy with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ProcLoopCommand",
@@ -47462,10 +47590,13 @@
       "instruction": "bne",
       "id": "control-01437",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcLoopCommand -> ChkEnemyFrenzy with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ProcLoopCommand",
@@ -47475,10 +47606,13 @@
       "instruction": "ldy",
       "id": "control-01438",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcLoopCommand -> FindLoop with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "FindLoop",
@@ -47488,10 +47622,13 @@
       "instruction": "bmi",
       "id": "control-01439",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FindLoop -> ChkEnemyFrenzy with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "FindLoop",
@@ -47501,10 +47638,13 @@
       "instruction": "bne",
       "id": "control-01440",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FindLoop -> FindLoop with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "FindLoop",
@@ -47514,10 +47654,13 @@
       "instruction": "bne",
       "id": "control-01441",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FindLoop -> FindLoop with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "FindLoop",
@@ -47527,10 +47670,13 @@
       "instruction": "bne",
       "id": "control-01442",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FindLoop -> WrongChk with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "FindLoop",
@@ -47540,10 +47686,13 @@
       "instruction": "bne",
       "id": "control-01443",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FindLoop -> WrongChk with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "FindLoop",
@@ -47553,10 +47702,13 @@
       "instruction": "bne",
       "id": "control-01444",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FindLoop -> InitMLp with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "FindLoop",
@@ -47566,10 +47718,13 @@
       "instruction": "inc",
       "id": "control-01445",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FindLoop -> IncMLoop with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "IncMLoop",
@@ -47579,10 +47734,13 @@
       "instruction": "bne",
       "id": "control-01446",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation IncMLoop -> InitLCmd with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "IncMLoop",
@@ -47592,10 +47750,13 @@
       "instruction": "beq",
       "id": "control-01447",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation IncMLoop -> InitMLp with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "IncMLoop",
@@ -47605,10 +47766,13 @@
       "instruction": "bne",
       "id": "control-01448",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation IncMLoop -> DoLpBack with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "IncMLoop",
@@ -47618,10 +47782,13 @@
       "instruction": "bne",
       "id": "control-01449",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation IncMLoop -> WrongChk with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "WrongChk",
@@ -47631,10 +47798,13 @@
       "instruction": "beq",
       "id": "control-01450",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation WrongChk -> IncMLoop with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "WrongChk",
@@ -47644,10 +47814,13 @@
       "instruction": "beq",
       "id": "control-01451",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation WrongChk -> DoLpBack with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "DoLpBack",
@@ -47657,10 +47830,13 @@
       "instruction": "jsr",
       "id": "control-01452",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DoLpBack -> ExecGameLoopback with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "DoLpBack",
@@ -47670,10 +47846,13 @@
       "instruction": "jsr",
       "id": "control-01453",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DoLpBack -> KillAllEnemies with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "DoLpBack",
@@ -47683,10 +47862,13 @@
       "instruction": "jsr",
       "id": "control-01454",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DoLpBack -> InitMLp with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "InitMLp",
@@ -47696,10 +47878,13 @@
       "instruction": "sta",
       "id": "control-01455",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitMLp -> InitLCmd with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "InitLCmd",
@@ -47709,10 +47894,13 @@
       "instruction": "sta",
       "id": "control-01456",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitLCmd -> ChkEnemyFrenzy with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ChkEnemyFrenzy",
@@ -47722,10 +47910,13 @@
       "instruction": "beq",
       "id": "control-01457",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkEnemyFrenzy -> ProcessEnemyData with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ChkEnemyFrenzy",
@@ -47735,10 +47926,13 @@
       "instruction": "jmp",
       "id": "control-01458",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkEnemyFrenzy -> InitEnemyObject with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "ProcessEnemyData",
@@ -74425,12 +74619,12 @@
       "id": "control-03505",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step optional enemy step completion",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original return EnemiesAndLoopsCore -> VictoryMode reaches AutoPlayer only after the single ObjectOffset-zero enemy turn completes."
+      "semanticContract": "Preserves original return relation EnemiesAndLoopsCore -> VictoryMode with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "RelativePlayerPosition",
@@ -76167,10 +76361,13 @@
       "instruction": "rts/rti",
       "id": "control-03619",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EnemiesAndLoopsCore -> ProcELoop with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "FloateyNumbersRoutine",
@@ -78410,10 +78607,13 @@
       "instruction": "rts/rti",
       "id": "control-03765",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ExecGameLoopback -> DoLpBack with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "KillAllEnemies",
@@ -78423,10 +78623,13 @@
       "instruction": "rts/rti",
       "id": "control-03766",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation KillAllEnemies -> DoLpBack with source predicate, slot/page state handoff and return semantics."
     },
     {
       "from": "InitEnemyObject",

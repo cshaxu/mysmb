@@ -836,3 +836,15 @@ recorded as mismatches with an unnumbered governance repair candidate. The
 remaining entries stay `needs-evidence` pending controlled original-ROM/x86/x64
 routes spanning sign/carry boundaries, jumpspring, every force entry and both
 velocity clamps.
+
+
+### Cohort H — B14i enemy-loop core and castle loop-command integration
+
+`EnemiesAndLoopsCore` through `ChkEnemyFrenzy` now has sixteen node contracts,
+thirty-four control/return relations and four feasible table handoffs. The
+audit records high-bit linked-enemy cleanup, parser-task-seven suppression,
+reverse table search, World-7 three-pass logic, page rollback, parser-control
+reset, kill-after-loopback ordering and frenzy activation. No static shared-C
+discrepancy was found. These entries remain `needs-evidence` pending controlled
+original-ROM/x86/x64 routes for linked flags, task-seven, each loop selector,
+World-7 pass outcomes, loopback and queued frenzy activation.
