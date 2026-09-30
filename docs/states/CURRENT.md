@@ -2,40 +2,29 @@
 
 ## Current Work
 
-## M2 Td S9 Packet
+## M2 T51 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 Td S9 — current-equivalence re-audit and repair-queue governance |
-| Admission And Approval | Owner-directed re-audit after historical completion accounting proved insufficient to track present end-to-end equivalence. |
-| Objective | Establish current-build, source-order node and edge registries for the complete original ROM graph, then produce an ordered, unnumbered repair queue from confirmed discrepancies. |
-| Non-goals | No gameplay repair, node-credit promotion, platform logic, numeric implementation T allocation, or M2 closure. |
-| Reference Baseline | Historical accounting: 1,992 / 1,992. Current node registry: 38 exact, 1944 needs-evidence, 10 mismatch, 0 unclassified. Current control-edge registry: 76 exact, 4241 needs-evidence, 25 mismatch, 0 unclassified. Material RAM/table ledger: 3 exact, 1 mismatch and 440 needs-evidence; its final denominator remains pending feasible-path enumeration. Scope is all labels and extracted edges; expected match delta is zero. |
-| Candidate Proposal | docs/proposals/m2/current-equivalence-reaudit.md. |
-| Files And ABI Surface | Governance states, audit registry, queue and neutral build-local recorder outputs; no production source mutation. |
+| Identifier Mode | M2 T51 S6 — current-equivalence NMI-prefix repair |
+| Admission And Approval | Continuation under the owner-approved M2 completion mandate after Td S9 completed the whole-graph static classification and confirmed A2. |
+| Objective | Repair and prove the shared `RotPRandomBit -> SkipSprite0 -> OperModeExecutionTree` NMI-prefix chain against the original ROM. |
+| Non-goals | No platform-adapter game logic, historical node-credit increase, unrelated NMI migration, graph-extractor repair, or M2 closure. |
+| Reference Baseline | Historical accounting: 1,992 / 1,992. Current registry: 38 exact, 1944 needs-evidence, 10 mismatch and 0 unclassified nodes; 76 exact, 4241 needs-evidence, 25 mismatch and 0 unclassified control edges. S6 receives three historically complete labels in current mismatch state and forecasts no historical credit. |
+| Candidate Proposal | docs/proposals/m2/t51-residual-equivalence-and-certification.md and docs/proposals/m2/a2-nmi-prefix-repair-candidate.md. |
+| Files And ABI Surface | Shared `src/game/frame_root.c`, focused test/route support below `build/m2-t51-s6`, registry, tracker and local three-artifact refresh only. |
 | Applicable Rules | Execution, documentation, architecture, coding and source/research policy. |
-| Verification | Node and edge registry integrity/counts; source-order cohort allocation; fresh original-ROM/x86/x64 preflight; platform-purity and documentation governance. |
-| Expected Markers | 1,992 historical labels retained; every label and every extracted ROM graph edge assigned to one audit cohort; each node has a semantic contract, and each control or feasible material edge has an independently audited integration contract; no production artifact change. |
-| Asset Needs | Owner-local ROM only under ignored build paths; no ROM, generated source, trace or executable is committed. |
-| Reporting Requirements | Report historical count, current node counts and current edge counts separately; after every cohort report exact/needs-evidence/mismatch totals, routes, covered edges, and resulting unnumbered repair candidates. |
-| Stop Conditions | Stop implementation on a node or edge mismatch; record its minimal contiguous chain and continue only independent audit cohorts. |
-| Exit Criteria | Every label has a current semantic disposition; every extracted control edge and every proven feasible material edge has an independently recorded integration disposition; every mismatch has an ordered repair candidate; and the registries and queue pass governance review. |
+| Verification | Original ROM/x86/x64 controlled pre-dispatch NMI route for `$00` and `$2000`; focused NMI test; x86/x64 builds; OpenNT DOS16 link; platform-purity and documentation governance. |
+| Expected Markers | `$00` equals the source bit/rotation result; `$2000` retains d7 clear through mode dispatch and restores only at RTI equivalent; three nodes and two control edges become current-exact only with route evidence. |
+| Asset Needs | Owner-local ROM only below ignored build paths; no ROM, generated trace or executable is committed. |
+| Reporting Requirements | Report static source result and ROM/native route result separately; refresh and report local 16/32/64 artifacts after every implementation P. |
+| Stop Conditions | Stop on the first divergent NMI field/frame, record the smallest shared-owner chain, and do not repair through Win32 or DOS adapters. |
+| Exit Criteria | The three labels and `control-00040`/`control-00052` have fresh source and route evidence, registry dispositions are updated, and the T51 S5 matrix is re-run or its remaining route gap is explicitly recorded. |
 | Original Owner Request | Faithful original-ROM C logic shared by DOS16 and Win32; DOS16 stays active via OpenNT, without DOSBox. |
-| Similar-Issue Sweep | Audit every platform source for game-state decisions and every current mismatch for adjacent owner-chain effects. |
+| Similar-Issue Sweep | Examine all `frame_root.c` NMI scratch/control writes and all platform-source files for gameplay-state decisions. |
 
 ## Current Technical Baseline
 
 One shared native C90 game implementation serves DOS16 and Win32 x86/x64.
 DOS16 stays active through the existing OpenNT toolchain. Platform adapters do
 not own game logic.
-
-## Current Td S9 Preflight
-
-T51 S5 found that its historical 1,992 / 1,992 status did not itself express
-fresh full-graph behavior coverage. Its current T31 preflight replay confirms
-the previously recorded PPU and audio residuals are no longer reproducible,
-including the old pipe/vine diagnostic samples; this is retained as route
-evidence only, not a claim that every label is newly audited. Td S9 now turns
-that observation into an explicit whole-graph audit program. DOS resource
-binding remains an M3 presentation requirement and does not change the shared
-logic audit.

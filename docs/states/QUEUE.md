@@ -20,9 +20,7 @@ historical diagnostic debt from being selected piecemeal and preserves numeric
 T allocation for accepted implementation work.
 
 1. [A2 NMI-prefix state-handoff repair](../proposals/m2/a2-nmi-prefix-repair-candidate.md)
-   — confirmed shared `frame_root.c` chain for source scratch `$00` and
-   d7-clear `$2000` timing before operation-mode dispatch. This is an
-   unnumbered candidate, not an admitted task.
+   — admitted as `M2 T51 S6`: shared `frame_root.c` repair for source scratch `$00` and d7-clear `$2000` timing before operation-mode dispatch.
 
 2. [A6 title-menu timer-gate repair](../proposals/m2/a6-title-menu-order-repair-candidate.md)
    — confirmed shared `title_modes.c` `ChkSelect -> ChkWorldSel` ordering

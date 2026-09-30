@@ -646,3 +646,34 @@ three current delivery artifacts are retained after hash verification:
 `mysmb16.exe` `D3FE87771AFA2EA86435F41EA954055A21750A59151F76491B972BC11E175C2C`,
 `mysmb32.exe` `DDCD4DC6A16C01E6DC8A50AAB29EF43A85E71A1124D007C494B0A18AD7DFEBF4`,
 and `mysmb64.exe` `DE701E81C81CA3F2AE408F463EBB6F85960340FC00CB362B975E3208A519CBFD`.
+
+
+## T51 S6 admission: current-equivalence NMI-prefix repair
+
+Td S9 completed its static whole-graph classification with all labels,
+control edges and proven material edges receiving a current disposition. Its
+earliest source-order executable mismatch is A2. T51 S6 accepts the bounded
+shared `frame_root.c` chain below; it is a repair child of the still-open S5
+cross-route matrix, which resumes after this chain receives fresh route proof.
+No historical node-completion credit is forecast because all three labels were
+already historically complete; the current-equivalence registry is the sole
+status authority for this repair.
+
+| ROM line | Label | Incoming current state | Required result |
+| ---: | --- | --- | --- |
+| 764 | `NonMaskableInterrupt` | mismatch | Preserve NMI d7-clear `$2000` state through operation-mode dispatch, restoring it only at the RTI equivalent. |
+| 837 | `RotPRandomBit` | mismatch | Preserve the source scratch `$00` result of the LFSR/bit rotation before `SkipSprite0`. |
+| 857 | `SkipSprite0` | mismatch | Preserve the source NMI scroll/control handoff into `OperModeExecutionTree`. |
+
+The predecessor is the NMI timer/pause prefix. The successor is
+`OperModeExecutionTree` and then the NMI RTI tail. The sole game owner is
+`src/game/frame_root.c`; Win32 and DOS adapters remain excluded.
+
+Verification has two tracks. The ROM-logic track uses the existing controlled
+cold-boot NMI-prefix stop immediately before `OperModeExecutionTree`, comparing
+`$00` and physical `$2000` with the original ROM on x86 and x64. The
+operational track runs the focused NMI-prefix test, platform-purity audit,
+x86/x64 builds and the OpenNT DOS16 link, then refreshes all three local
+artifacts. S6 closes only after the three current-equivalence nodes and two
+control edges move from `mismatch` to `exact`, or records a narrower proven
+disposition and returns to the S5 matrix without concealing a residual.
