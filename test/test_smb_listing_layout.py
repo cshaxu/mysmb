@@ -3,8 +3,8 @@
 
 import importlib.util
 import sys
-import tempfile
 from pathlib import Path
+from writable_tempdir import writable_temporary_directory
 
 
 def load_module():
@@ -18,7 +18,7 @@ def load_module():
 
 def main():
     module = load_module()
-    with tempfile.TemporaryDirectory() as temporary:
+    with writable_temporary_directory() as temporary:
         listing = Path(temporary) / "synthetic.asm"
         listing.write_text(
             "RAM = $04\n.org $8000\nStart: lda RAM\n jsr Target\n.db $01,$02\n"

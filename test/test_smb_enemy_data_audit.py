@@ -1,7 +1,7 @@
 """Project-owned synthetic framing and binding rejection cases; no ROM needed."""
 import sys
-import tempfile
 from pathlib import Path
+from writable_tempdir import writable_temporary_directory
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from smb_enemy_data_audit import audit, check_literal_span, record_layout
@@ -43,7 +43,7 @@ def synthetic_binding():
         cursor += len(data)
     build = Path(__file__).resolve().parents[1] / "build"
     build.mkdir(exist_ok=True)
-    with tempfile.TemporaryDirectory(dir=build, prefix="enemy-audit-") as directory:
+    with writable_temporary_directory(dir=build, prefix="enemy-audit-") as directory:
         base = Path(directory)
         rom, asm = base / "synthetic.nes", base / "synthetic.asm"
         rom.write_bytes(image)

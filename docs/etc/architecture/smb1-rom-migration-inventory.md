@@ -1875,18 +1875,18 @@ The labels and branches behind every line remain open until individually bound b
 | 14687 | `AnimationControl` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
 | 14701 | `SetAnimC` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
 | 14702 | `ExAnimC` | M2 T46 S3 shared src/game/oam/player_gfx.c; owner PRG offset table | ROM-match complete | [T46 S3 closure](../../proposals/m2/t46-player-graphics-control.md#s3-closure-action-selection-and-animation-control) |
-| 14705 | `GetGfxOffsetAdder` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getgfxoffsetadder) |
-| 14712 | `SzOfs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-szofs) |
-| 14714 | `ChangeSizeOffsetAdder` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-changesizeoffsetadder) |
-| 14718 | `HandleChangeSize` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-handlechangesize) |
-| 14728 | `CSzNext` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-csznext) |
-| 14729 | `GorSLog` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-gorslog) |
-| 14734 | `GetOffsetFromAnimCtrl` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getoffsetfromanimctrl) |
-| 14741 | `ShrinkPlayer` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-shrinkplayer) |
-| 14750 | `ShrPlF` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-shrplf) |
-| 14753 | `ChkForPlayerAttrib` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-chkforplayerattrib) |
-| 14767 | `KilledAtt` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-killedatt) |
-| 14774 | `C_S_IGAtt` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-c_s_igatt) |
+| 14705 | `GetGfxOffsetAdder` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14712 | `SzOfs` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14714 | `ChangeSizeOffsetAdder` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14718 | `HandleChangeSize` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14728 | `CSzNext` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14729 | `GorSLog` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14734 | `GetOffsetFromAnimCtrl` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14741 | `ShrinkPlayer` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14750 | `ShrPlF` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14753 | `ChkForPlayerAttrib` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14767 | `KilledAtt` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
+| 14774 | `C_S_IGAtt` | M2 T46 S4 shared src/game/oam/player_gfx.c; owner PRG table | ROM-match complete | [T46 S4 closure](../../proposals/m2/t46-player-graphics-control.md#s4-closure-size-transformation-and-sprite-attributes) |
 | 14781 | `ExPlyrAt` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-explyrat) |
 | 14786 | `RelativePlayerPosition` | T16: `src/game/oam/object_position.c` | audited; mismatch | [T24 S1: D9](m2-t24-s1-node-verification.md#node-relativeplayerposition) |
 | 14791 | `RelativeBubblePosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativebubbleposition) |

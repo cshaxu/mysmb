@@ -1,7 +1,7 @@
 import importlib.util
 import sys
-import tempfile
 from pathlib import Path
+from writable_tempdir import writable_temporary_directory
 
 
 def load_module():
@@ -17,7 +17,7 @@ def load_module():
 
 def main():
     codegen = load_module()
-    with tempfile.TemporaryDirectory() as directory:
+    with writable_temporary_directory() as directory:
         root = Path(directory)
         rom = root / "synthetic.nes"
         output = root / "static"

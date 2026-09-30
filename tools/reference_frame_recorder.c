@@ -1028,6 +1028,12 @@ int main(int argument_count, char **arguments)
     unsigned int player_action_child_active;
     lib_u16 player_action_child_return;
     lib_u8 player_action_child_stack;
+    const char *player_size_child_path;
+    unsigned char player_size_children[8][4098];
+    unsigned int player_size_child_count;
+    unsigned int player_size_child_active;
+    lib_u16 player_size_child_return;
+    lib_u8 player_size_child_stack;
     lib_u16 control_return;
     lib_u8 control_stack;
     lib_u16 transition_entry;
@@ -1057,6 +1063,10 @@ int main(int argument_count, char **arguments)
     char *player_table_variant_end;
     unsigned int player_action_variant;
     char *player_action_variant_end;
+    unsigned int player_size_variant;
+    char *player_size_variant_end;
+    unsigned int player_attribute_variant;
+    char *player_attribute_variant_end;
     unsigned int player_control_variant;
     char *player_control_variant_end;
     unsigned int intermediate_player_variant;
@@ -1097,6 +1107,11 @@ int main(int argument_count, char **arguments)
     player_action_child_active = 0u;
     player_action_child_return = 0u;
     player_action_child_stack = 0u;
+    player_size_child_path = NULL;
+    player_size_child_count = 0u;
+    player_size_child_active = 0u;
+    player_size_child_return = 0u;
+    player_size_child_stack = 0u;
     control_return = 0u;
     control_stack = 0u;
     transition_entry = 0u;
@@ -1114,6 +1129,8 @@ int main(int argument_count, char **arguments)
     bubble_draw_variant = 0xffffffffu;
     player_table_variant = 0xffffffffu;
     player_action_variant = 0xffffffffu;
+    player_size_variant = 0xffffffffu;
+    player_attribute_variant = 0xffffffffu;
     player_control_variant = 0xffffffffu;
     intermediate_player_variant = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
@@ -1123,13 +1140,39 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--player-size-child=", 20u) == 0) {
+            if (player_size_child_path != NULL ||
+                arguments[recorded][20] == '\0') return 64;
+            player_size_child_path = arguments[recorded] + 20u;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--player-size-variant=", 22u) == 0) {
+            unsigned long value;
+            if (player_size_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 22u,
+                            &player_size_variant_end, 10);
+            if (player_size_variant_end == arguments[recorded] + 22u ||
+                *player_size_variant_end != '\0' || value >= 24u) return 64;
+            player_size_variant = (unsigned int)value;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--player-attribute-variant=", 27u) == 0) {
+            unsigned long value;
+            if (player_attribute_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 27u,
+                            &player_attribute_variant_end, 10);
+            if (player_attribute_variant_end == arguments[recorded] + 27u ||
+                *player_attribute_variant_end != '\0' || value >= 8u) return 64;
+            player_attribute_variant = (unsigned int)value;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--player-action-variant=", 24u) == 0) {
             unsigned long value;
             if (player_action_variant != 0xffffffffu) return 64;
             value = strtoul(arguments[recorded] + 24u,
                             &player_action_variant_end, 10);
             if (player_action_variant_end == arguments[recorded] + 24u ||
-                *player_action_variant_end != '\0' || value >= 16u) return 64;
+                *player_action_variant_end != '\0' || value >= 18u) return 64;
             player_action_variant = (unsigned int)value;
             continue;
         }
@@ -3918,6 +3961,40 @@ int main(int argument_count, char **arguments)
             if (v == 12u) ram[0x070du] = 1u;
             if (v == 13u || v == 14u || v == 15u)
                 ram[0x0754u] = 1u;
+            if (v == 16u || v == 17u) {
+                ram[0x001du] = 2u;
+                ram[0x070du] = (lib_u8)(v == 16u ? 0x20u : 0x3fu);
+            }
+        }
+        /* T46 S4: seed only player graphics input RAM at a naturally
+         * reached handler and attribute child; CPU and ROM are unchanged. */
+        if (elapsed >= warmup_frames && background_snapshot == 11u &&
+            player_size_variant != 0xffffffffu && before_pc == 0xeee9u) {
+            lib_u8 *ram = driver->machine->ram;
+            unsigned int v = player_size_variant;
+            ram[0x000eu] = 8u;
+            ram[0x070bu] = 1u;
+            ram[0x079eu] = 0u;
+            ram[0x0711u] = 0u;
+            ram[0x0754u] = (lib_u8)((v >= 10u && v < 20u) || v >= 22u);
+            ram[0x070du] = (lib_u8)(v < 20u ? v % 10u :
+                                    (v & 1u) != 0u ? 9u : 8u);
+            ram[9u] = (lib_u8)(v < 20u ? 1u : 0u);
+        }
+        if (elapsed >= warmup_frames && background_snapshot == 11u &&
+            player_attribute_variant != 0xffffffffu && before_pc == 0xf0e9u) {
+            static const lib_u8 offsets[8] = {
+                0u, 0x50u, 0xb8u, 0xc0u, 0xc8u, 0u, 0u, 0u
+            };
+            lib_u8 *ram = driver->machine->ram;
+            unsigned int v = player_attribute_variant;
+            ram[0x000eu] = (lib_u8)(v == 5u ? 0x0bu : 8u);
+            ram[0x06d5u] = offsets[v];
+            ram[0x06e4u] = 0x20u;
+            ram[0x0232u] = 0xc3u;
+            ram[0x0236u] = 0x83u;
+            ram[0x023au] = 0xc2u;
+            ram[0x023eu] = 0x82u;
         }
         /* T45 S4: vary the ROM graphics consumer's input RAM only after the
          * original actor reaches DrawSmallPlatform. */
@@ -4629,6 +4706,35 @@ int main(int argument_count, char **arguments)
                 player_action_child_active = 1u;
             }
         }
+        /* T46 S4: capture the original HandleChangeSize and
+         * ChkForPlayerAttrib JSRs with their stack-derived returns. */
+        if (player_size_child_path != NULL && background_snapshot == 11u &&
+            elapsed >= warmup_frames) {
+            if (player_size_child_active != 0u) {
+                if (before_pc == player_size_child_return &&
+                    driver->machine->s ==
+                    (lib_u8)(player_size_child_stack + 2u)) {
+                    player_size_children[player_size_child_count][1] =
+                        driver->machine->a;
+                    memcpy(player_size_children[player_size_child_count] +
+                           2050u, driver->machine->ram, 2048u);
+                    ++player_size_child_count;
+                    player_size_child_active = 0u;
+                }
+            }
+            else if (before_pc == 0xf0b0u || before_pc == 0xf0e9u) {
+                if (player_size_child_count >= 8u) return 69;
+                player_size_children[player_size_child_count][0] =
+                    (unsigned char)(before_pc == 0xf0b0u ? 1u : 2u);
+                memcpy(player_size_children[player_size_child_count] +
+                       2u, driver->machine->ram, 2048u);
+                player_size_child_stack = driver->machine->s;
+                player_size_child_return = (lib_u16)(1u +
+                    driver->machine->ram[0x100u + (lib_u8)(player_size_child_stack + 1u)] +
+                    256u * driver->machine->ram[0x100u + (lib_u8)(player_size_child_stack + 2u)]);
+                player_size_child_active = 1u;
+            }
+        }
         /* Observe declared child entry/return states while the original
          * PlayerEntrance executes. Read the real return address and stack
          * depth; never replace the original child or alter CPU state. */
@@ -5102,6 +5208,23 @@ int main(int argument_count, char **arguments)
         ok = fwrite(header, 1u, 8u, children) == 8u;
         for (child = 0u; child < player_action_child_count; ++child)
             if (fwrite(player_action_children[child], 1u, 4098u, children) !=
+                4098u) ok = 0;
+        if (fclose(children) != 0) ok = 0;
+        if (!ok) return 69;
+    }
+    if (player_size_child_path != NULL) {
+        FILE *children;
+        unsigned char header[8] = { 'M', 'S', 'S', 'C', 1u, 0u, 0u, 0u };
+        unsigned int child;
+        int ok;
+        if (player_size_child_count == 0u ||
+            player_size_child_active != 0u) return 69;
+        header[5] = (unsigned char)player_size_child_count;
+        children = fopen(player_size_child_path, "wb");
+        if (children == NULL) return 69;
+        ok = fwrite(header, 1u, 8u, children) == 8u;
+        for (child = 0u; child < player_size_child_count; ++child)
+            if (fwrite(player_size_children[child], 1u, 4098u, children) !=
                 4098u) ok = 0;
         if (fclose(children) != 0) ok = 0;
         if (!ok) return 69;

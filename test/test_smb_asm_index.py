@@ -1,7 +1,7 @@
 import importlib.util
 import sys
-import tempfile
 from pathlib import Path
+from writable_tempdir import writable_temporary_directory
 
 
 def load_module(name):
@@ -19,7 +19,7 @@ def main():
     indexer = load_module("smb_asm_index")
     build = Path(__file__).resolve().parents[1] / "build"
     build.mkdir(exist_ok=True)
-    with tempfile.TemporaryDirectory(dir=build, prefix="asm-index-") as directory:
+    with writable_temporary_directory(dir=build, prefix="asm-index-") as directory:
         root = Path(directory)
         rom = root / "synthetic.nes"
         asm = root / "synthetic.asm"

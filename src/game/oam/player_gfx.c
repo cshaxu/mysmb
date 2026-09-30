@@ -37,12 +37,36 @@ enum {
     MYSMB_PLAYER_GFX_TABLE_OFFSETS = 0x6e07U,
     MYSMB_PLAYER_GRAPHICS_TABLE = 0x6e17U,
     MYSMB_PLAYER_GRAPHICS_TABLE_END = 0x6ee7U,
+    MYSMB_CHANGE_SIZE_OFFSET_ADDER = 0x709cU,
     MYSMB_SWIM_KICK_TILE_NUM = 0x6ee7U,
     MYSMB_SWIM_KICK_TABLE_END = 0x6ee9U,
     MYSMB_SWIM_TILE_REP_OFFSET = 0x6eb5U,
     MYSMB_INTERMEDIATE_PLAYER_DATA = 0x6f9eU,
     MYSMB_INTERMEDIATE_PLAYER_DATA_END = 0x6fa4U
 };
+
+/* ROM GetGfxOffsetAdder/SzOfs and GetOffsetFromAnimCtrl.  The third
+ * 6502 ASL supplies ADC's carry from source bit five. */
+static mysmb_u8 mysmb_oam_get_gfx_offset_adder(struct mysmb_game *game,
+                                                mysmb_u8 action)
+{
+    if (game->ram[MYSMB_PLAYER_SIZE] != 0U)
+        action = (mysmb_u8)(action + 8U);
+    return action;
+}
+
+static mysmb_u8 mysmb_oam_get_offset_from_anim_ctrl(struct mysmb_game *game,
+                                                     mysmb_u8 action,
+                                                     mysmb_u8 frame)
+{
+    mysmb_u8 shifted;
+    mysmb_u8 carry;
+    shifted = (mysmb_u8)(frame << 3U);
+    carry = (mysmb_u8)((frame & 0x20U) != 0U);
+    return (mysmb_u8)(game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action] +
+                      shifted + carry);
+}
+
 /* ROM ProcessPlayerAction through ExAnimC.  The source table remains in the
  * owner-local PRG binding, rather than becoming tracked C data. */
 mysmb_u8 mysmb_oam_process_player_action(struct mysmb_game *game)
@@ -95,13 +119,14 @@ mysmb_u8 mysmb_oam_process_player_action(struct mysmb_game *game)
             extent = 3U;
         }
     }
-    if (game->ram[MYSMB_PLAYER_SIZE] != 0U) action = (mysmb_u8)(action + 8U);
+    action = mysmb_oam_get_gfx_offset_adder(game, action);
     offset = game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action];
     /* ROM ActionFalling jumps straight from GetCurrentAnimOffset to
      * GetOffsetFromAnimCtrl.  It retains PlayerAnimCtrl and does not run
      * AnimationControl, so the fall frame is the one selected while rising. */
     if (game->ram[MYSMB_PLAYER_STATE] == 2U) {
-        return (mysmb_u8)(offset + game->ram[MYSMB_PLAYER_ANIMATION] * 8U);
+        return mysmb_oam_get_offset_from_anim_ctrl(game, action,
+            game->ram[MYSMB_PLAYER_ANIMATION]);
     }
     /* ActionSwimming goes to GetCurrentAnimOffset without advancing the
      * animation unless JumpSwimTimer, PlayerAnimCtrl or button A is set. */
@@ -119,7 +144,7 @@ mysmb_u8 mysmb_oam_process_player_action(struct mysmb_game *game)
      * reading the current offset, even while the timer is running. */
     game->ram[0x0000U] = extent;
     animation = game->ram[MYSMB_PLAYER_ANIMATION];
-    offset = (mysmb_u8)(offset + animation * 8U);
+    offset = mysmb_oam_get_offset_from_anim_ctrl(game, action, animation);
     if (game->ram[MYSMB_PLAYER_ANIM_TIMER] == 0U) {
         game->ram[MYSMB_PLAYER_ANIM_TIMER] = game->ram[MYSMB_PLAYER_ANIM_TIMER_SET];
         animation++;
@@ -129,39 +154,42 @@ mysmb_u8 mysmb_oam_process_player_action(struct mysmb_game *game)
     return offset;
 }
 
-/* ROM PlayerGfxHandler death and size-change branches precede the
- * ProcessPlayerAction call.  Their table translation belongs to T46 S4. */
-static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
+/* ROM HandleChangeSize through ShrPlF.  The twenty source bytes are read
+ * from the bound owner PRG at $f09c rather than copied into tracked C. */
+mysmb_u8 mysmb_oam_handle_change_size(struct mysmb_game *game)
 {
     mysmb_u8 action;
     mysmb_u8 animation;
+    mysmb_u8 adder;
 
+    animation = game->ram[MYSMB_PLAYER_ANIMATION];
+    if ((game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 3U) == 0U) {
+        animation++;
+        if (animation == 10U) {
+            animation = 0U;
+            game->ram[MYSMB_PLAYER_CHANGE_SIZE] = 0U;
+        }
+        game->ram[MYSMB_PLAYER_ANIMATION] = animation;
+    }
+    if (game->ram[MYSMB_PLAYER_SIZE] == 0U) {
+        adder = game->area_prg[MYSMB_CHANGE_SIZE_OFFSET_ADDER + animation];
+        return mysmb_oam_get_offset_from_anim_ctrl(game, 15U, adder);
+    }
+    animation = (mysmb_u8)(animation + 10U);
+    adder = game->area_prg[MYSMB_CHANGE_SIZE_OFFSET_ADDER + animation];
+    action = adder == 0U ? 1U : 9U;
+    return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action];
+}
+
+/* ROM PlayerGfxHandler death and size-change branches precede the
+ * ProcessPlayerAction call. */
+static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
+{
     if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU) {
         return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 14U];
     }
-    if (game->ram[MYSMB_PLAYER_CHANGE_SIZE] != 0U) {
-        static const mysmb_u8 change_size_offset[20] = {
-            0U, 1U, 0U, 1U, 0U, 1U, 2U, 0U, 1U, 2U,
-            2U, 0U, 2U, 0U, 2U, 0U, 2U, 0U, 2U, 0U
-        };
-
-        animation = game->ram[MYSMB_PLAYER_ANIMATION];
-        if ((game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 3U) == 0U) {
-            animation++;
-            if (animation == 10U) {
-                animation = 0U;
-                game->ram[MYSMB_PLAYER_CHANGE_SIZE] = 0U;
-            }
-            game->ram[MYSMB_PLAYER_ANIMATION] = animation;
-        }
-        if (game->ram[MYSMB_PLAYER_SIZE] == 0U) {
-            return (mysmb_u8)(game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 15U] +
-                change_size_offset[animation] * 8U);
-        }
-        animation = (mysmb_u8)(animation + 10U);
-        action = change_size_offset[animation] == 0U ? 1U : 9U;
-        return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action];
-    }
+    if (game->ram[MYSMB_PLAYER_CHANGE_SIZE] != 0U)
+        return mysmb_oam_handle_change_size(game);
     return mysmb_oam_process_player_action(game);
 }
 
@@ -303,22 +331,13 @@ static void mysmb_oam_player_render_rows(struct mysmb_game *game,
     }
 }
 
-/* ROM PlayerGfxHandler and its PlayerGfxProcessing/RenderPlayerSub tail.
- * The caller owns the source-order relative-position and offscreen-bit calls. */
-void mysmb_oam_render_player(struct mysmb_game *game)
+/* ROM ChkForPlayerAttrib through C_S_IGAtt. */
+void mysmb_oam_check_player_attributes(struct mysmb_game *game)
 {
     mysmb_u8 graphics_offset;
-    mysmb_u8 row;
     mysmb_u8 oam_offset;
-    mysmb_u8 offscreen;
 
-    if (game->area_prg == 0 ||
-        game->area_prg_size < MYSMB_PLAYER_GRAPHICS_TABLE_END) return;
-    if (game->ram[MYSMB_PLAYER_INJURY_TIMER] != 0U &&
-        (game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 1U) != 0U) return;
-    graphics_offset = mysmb_oam_player_select_gfx(game);
-    game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
-    mysmb_oam_player_render_rows(game, graphics_offset, 4U);
+    graphics_offset = game->ram[MYSMB_PLAYER_GFX_OFFSET];
     oam_offset = game->ram[MYSMB_PLAYER_SPRITE_OFFSET];
     if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
         graphics_offset == 0xc8U) {
@@ -337,6 +356,25 @@ void mysmb_oam_render_player(struct mysmb_game *game)
             (mysmb_u8)((game->ram[(mysmb_u16)(0x0206U + oam_offset)] & 0x3fU) |
                       0x40U);
     }
+}
+
+/* ROM PlayerGfxHandler and its PlayerGfxProcessing/RenderPlayerSub tail.
+ * The caller owns the source-order relative-position and offscreen-bit calls. */
+void mysmb_oam_render_player(struct mysmb_game *game)
+{
+    mysmb_u8 graphics_offset;
+    mysmb_u8 row;
+    mysmb_u8 oam_offset;
+    mysmb_u8 offscreen;
+
+    if (game->area_prg == 0 ||
+        game->area_prg_size < MYSMB_PLAYER_GRAPHICS_TABLE_END) return;
+    if (game->ram[MYSMB_PLAYER_INJURY_TIMER] != 0U &&
+        (game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 1U) != 0U) return;
+    graphics_offset = mysmb_oam_player_select_gfx(game);
+    game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
+    mysmb_oam_player_render_rows(game, graphics_offset, 4U);
+    mysmb_oam_check_player_attributes(game);
     if (game->ram[MYSMB_FIREBALL_THROWING_TIMER] != 0U) {
         mysmb_u8 animation_timer;
         mysmb_u8 throw_timer;

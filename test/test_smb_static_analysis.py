@@ -3,8 +3,8 @@
 
 import importlib.util
 import sys
-import tempfile
 from pathlib import Path
+from writable_tempdir import writable_temporary_directory
 
 
 def load_module():
@@ -29,7 +29,7 @@ def main():
         raise SystemExit(1)
     if (0x8002, 0x8008, "call") not in result["edges"]:
         raise SystemExit(1)
-    with tempfile.TemporaryDirectory() as temporary:
+    with writable_temporary_directory() as temporary:
         output = Path(temporary) / "analysis.txt"
         analyzer.emit(result, "0" * 64, output)
         text = output.read_text(encoding="ascii")

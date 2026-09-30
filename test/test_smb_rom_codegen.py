@@ -1,6 +1,6 @@
 import importlib.util
-import tempfile
 from pathlib import Path
+from writable_tempdir import writable_temporary_directory
 
 
 def load_generator():
@@ -13,7 +13,7 @@ def load_generator():
 
 def main():
     module = load_generator()
-    with tempfile.TemporaryDirectory() as directory:
+    with writable_temporary_directory() as directory:
         root = Path(directory)
         rom = root / "synthetic.nes"
         image = bytearray(16 + 32768 + 8192)

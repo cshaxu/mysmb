@@ -1,7 +1,7 @@
 import importlib.util
 import sys
-import tempfile
 from pathlib import Path
+from writable_tempdir import writable_temporary_directory
 
 
 def main():
@@ -10,7 +10,7 @@ def main():
     spec = importlib.util.spec_from_file_location("smb_title_codegen", tool_dir / "smb_title_codegen.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    with tempfile.TemporaryDirectory() as directory:
+    with writable_temporary_directory() as directory:
         root = Path(directory)
         rom = root / "synthetic.nes"
         output = root / "title"

@@ -348,3 +348,131 @@ Raw frame/child/coverage records remain only under ignored `build/`.
 | `assets/mysmb16.exe` | `bed4cf8d76c6b7ca45d36b075558bcf54e47764cab1022f93bf145e68802470f` |
 | `assets/mysmb32.exe` | `c85222d727bad632355692abb2483c8e71380072d2bb14abe0807a27baa3f607` |
 | `assets/mysmb64.exe` | `ab8351bf12e08f9b9c5e3d6dc89cb84940e0ba4988234af7ccd1582ac835d7a1` |
+
+## S4: size offset, transformation and sprite attributes
+
+S4 follows S3 `ExAnimC` in the original listing. Its twelve exact
+source-order labels are `GetGfxOffsetAdder`, `SzOfs`,
+`ChangeSizeOffsetAdder`, `HandleChangeSize`, `CSzNext`, `GorSLog`,
+`GetOffsetFromAnimCtrl`, `ShrinkPlayer`, `ShrPlF`,
+`ChkForPlayerAttrib`, `KilledAtt`, and `C_S_IGAtt`. The first nine
+choose size, growth/shrink and animation graphics offsets; the last
+three adjust the third and fourth OAM row attributes after player
+rendering. The S3 and S1 shared player draw owners are predecessors;
+T47 `ExPlyrAt` is the successor and receives no S4 credit.
+
+The ROM-logic track must observe original GameEngine calls to
+`PlayerGfxHandler` and original `ChkForPlayerAttrib` entry/return,
+covering big/small offset addition, every 20-entry source table index,
+fourth-frame advancement/wrap, grow/shrink, killed/crouch/intermediate
+attribute branches and ordinary exit. Compare source PCs, return A,
+table reads, controller/timer RAM and full non-stack RAM/OAM against
+the same shared C implementation on x86/x64. Bounded RAM-only input
+variants may be applied at naturally reached entries; CPU PC,
+registers, stack and owner ROM must remain original. The source ROM
+table stays in the owner-local PRG binding; tracked C must not embed
+those bytes. The separate operational track uses focused player/OAM
+tests, three-platform builds, platform purity and three refreshed EXEs.
+
+Admission baseline **1,697 / 1,992**; exact scope 12, expected new 12,
+maximum **1,709 / 1,992**.
+
+| ROM line | Label | Incoming |
+| ---: | --- | --- |
+| 14705 | `GetGfxOffsetAdder` | audited; evidence incomplete |
+| 14712 | `SzOfs` | audited; evidence incomplete |
+| 14714 | `ChangeSizeOffsetAdder` | audited; evidence incomplete |
+| 14718 | `HandleChangeSize` | audited; evidence incomplete |
+| 14728 | `CSzNext` | audited; evidence incomplete |
+| 14729 | `GorSLog` | audited; evidence incomplete |
+| 14734 | `GetOffsetFromAnimCtrl` | audited; evidence incomplete |
+| 14741 | `ShrinkPlayer` | audited; evidence incomplete |
+| 14750 | `ShrPlF` | audited; evidence incomplete |
+| 14753 | `ChkForPlayerAttrib` | audited; evidence incomplete |
+| 14767 | `KilledAtt` | audited; evidence incomplete |
+| 14774 | `C_S_IGAtt` | audited; evidence incomplete |
+
+### S4 admission record
+
+The continuing owner-approved M2 source-order mandate admits
+**M2 T46 S4** for these twelve labels and accepts their exact custody
+transfer from M2 T16 S4. Admission and original-route records remain
+under ignored `build/m2-t46-s4/`.
+
+### S4 closure: size, transformation and sprite attributes
+
+All **12 / 12** S4 labels are ROM-match complete. M2 advances from
+**1,697** to **1,709 / 1,992**, with no S4 deferral. The original
+GameEngine naturally calls `HandleChangeSize` at `$f0b0` and
+`ChkForPlayerAttrib` at `$f0e9`. Twenty-four bounded growth/shrink
+cases and eight attribute cases capture **56** original JSR returns,
+their A value where applicable, and full non-stack 2 KB RAM/OAM.
+Shared C matches **112/112** child comparisons on x86/x64 with zero
+differences. The twenty-four complete original `PlayerGfxHandler`
+children also match both native widths. Two additional natural action
+children exercise bit-five carry in `GetOffsetFromAnimCtrl` and match
+both widths. CPU PC, registers, stack and ROM remain original; only
+bounded entry RAM is varied.
+
+| Label | Original PC | Control/read/write witness |
+| --- | ---: | --- |
+| `GetGfxOffsetAdder` | `$f091` | Eight action cases dispatch big/small offset; shared C selects the same graphics index. |
+| `SzOfs` | `$f09b` | Eight source-reached big/small returns preserve selected Y/table index. |
+| `ChangeSizeOffsetAdder` | `$f09c` | All twenty owner PRG bytes match the reviewed listing locally, and all twenty indexed growth/shrink reads are exercised through the original child. No table bytes remain in tracked C. |
+| `HandleChangeSize` | `$f0b0` | Twenty-four original calls cover both sizes, all ten frame indices and fourth-frame advancement/wrap; A and full RAM/OAM match. |
+| `CSzNext` | `$f0c3` | Four fourth-frame cases store incremented or wrapped `PlayerAnimCtrl` and clear `PlayerChangeSizeFlag` on wrap. |
+| `GorSLog` | `$f0c6` | All twenty-four size cases branch by `PlayerSize` after frame handling. |
+| `GetOffsetFromAnimCtrl` | `$f0d0` | Twelve growth cases plus two high-frame action cases confirm three ASLs, ADC carry from source bit five and table offset. |
+| `ShrinkPlayer` | `$f0d7` | Twelve small-player cases add ten to frame index and read the corresponding second half of the source table. |
+| `ShrPlF` | `$f0e5` | Twelve shrink cases select big versus small swimming pose according to the table byte. |
+| `ChkForPlayerAttrib` | `$f0e9` | Thirty-two source-reached calls include ordinary, crouch, intermediate and killed graphics offsets; full OAM agrees. |
+| `KilledAtt` | `$f105` | Five cases clear third-row flip bits and set the paired horizontal bit. |
+| `C_S_IGAtt` | `$f117` | Seventeen cases write the fourth-row pair; non-applicable routes leave both rows untouched. |
+
+The shared `oam/player_gfx.c` now has explicit native C owners for the
+size-change and attribute children. Its prior twenty-byte literal
+growth/shrink table has been removed; the source bytes are consumed
+through the owner-local PRG binding at `$f09c`. `GetGfxOffsetAdder`
+and `GetOffsetFromAnimCtrl` are shared helpers used by S3 action paths
+and S4 size paths, with the original carry behavior retained. A
+similar-issue sweep found no size-change table copy or graphics-offset
+decision in platform adapters. The seven Python synthetic tests now
+use a shared writable temporary-directory helper under ignored
+`build/`, fixing the recurring Python 3.13 Windows ACL failure without
+loosening permissions on the repository or adding a test-only game
+branch.
+
+The independent operational track passes strict C90 x86/x64 child
+checkers, 24 complete parent children on each width, all focused
+player/OAM/purity tests, both full x86/x64 builds and Win32 product
+self-tests, plus OpenNT DOS16 MZ link. Both complete CTest suites pass
+**222/233** with only the same eleven pre-existing unrelated failures;
+the seven previously ACL-failing synthetic tests now pass unmodified
+CTest runs on each width. Three owner-authorized refreshed EXEs:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `34d5d07f88bad46f8624cd03cced42b597dc66901587cdf176844d8898f35a14` |
+| `assets/mysmb32.exe` | `2e02ad6d5fe905894f1fd06ee93680049b3eec4becb3ed0df332be36fa1ab0b8` |
+| `assets/mysmb64.exe` | `a971e80a4d01085dec7ab298a3ab0e8bb27ca430eb7e059b64ef02c91a7564fe` |
+
+## T46 closure: player graphics control
+
+The source-order 14460–14774 slice closes **43/43** exact labels:
+**40** newly proven in S1–S4 and **three** retained/rechecked
+offscreen labels. Its complete count moves from **1,669** to
+**1,709 / 1,992**. No T46 label is deferred or transferred. The next
+unadmitted source-order slice begins T47 `ExPlyrAt` at line 14780.
+
+| Chain | Original caller/return proof | Native integration |
+| --- | --- | --- |
+| S1 dispatch/kick/throw/offscreen | 54 controlled GameEngine child routes cover injury, size, death, swim, throw and all four offscreen rows. | Full original child RAM/OAM and branch successors match; 10 new, three retained. |
+| S2 intermediate/row rendering | World/lives `DrawPlayer_Intermediate` and GameEngine ordinary/throw children cover data copy, four-row and three-row OAM loops. | Four intermediate variants and ordinary/throw parent children match on both widths; five new. |
+| S3 action/animation | Forty original `ProcessPlayerAction` JSR returns cover ground, jump, fall, climb, swim, timer and wrap. | Offset A and all non-stack RAM/OAM match on x86/x64; thirteen new. |
+| S4 size/attributes | Twenty-four growth/shrink and eight attribute cases reach 56 original JSR returns; owner table 20/20 and two carry-edge cases. | 112 direct native child comparisons and 24 full parent cases per width match; twelve new. |
+
+The final three-target regression is the S4 operational run above:
+DOS16 link, both complete Win32 builds and 222/233 baseline CTests,
+with product self-tests and platform purity passing. All original
+route records and generated logs remain below ignored `build/`;
+protected ROM/listing bytes are not included in tracked source.
