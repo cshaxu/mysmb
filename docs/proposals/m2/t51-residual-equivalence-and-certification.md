@@ -438,14 +438,37 @@ the visible control at `$10` instead of `$90`.
 The repair keeps this state decision in `src/game/frame_root.c`, shared by
 Win32 x86/x64 and DOS16. Fresh owner-local original cold-start replay now
 matches the PPU-control scalar at the historical Start samples 1/202 and idle
-sample 1 on both native widths. The remaining differences in the wider old
-title route occur before this NMI tail and are retained separately for their
-audio/title owners; no unrelated output is treated as resolved here.
+sample 1 on both native widths. P24 subsequently reruns the entire retained
+route corpus with the current library and confirms that its broader historical
+audio/title differences are no longer present.
 
 Operational verification uses current x86/x64 NMI-parent, boot-NMI and frame
 snapshot checks, platform purity, and an OpenNT DOS16 compile/link. Refreshed
 owner-authorized artifacts are `mysmb16.exe`
 `40F217DAAFC549E6F32E1B1B73F04CC749CC6E4B137612A19276D6836A60E0E7`,
+`mysmb32.exe` `5DB4379CDE428FA4356F1FD1D17FC2FEAA8089E3AB29731AC196A5331E7C79C6`,
+and `mysmb64.exe` `FD3D1D06EDA57B33F54B1007C6CFF422D84DA052A18E52B626EE058144D4D963`.
+
+### S5 P24: revalidate historical game-entry audio cursor
+
+This zero-code evidence delivery closes the remaining historical T31
+game-entry receipt. The old four-frame matrix had recorded a case-one
+`MusicOffset_Square2` (`$00f7`) difference after the game-entry child path.
+That record predated the source-order T48--T50 audio migrations. Rebuilding
+the current owner-local recorder against the current shared x86 and x64
+libraries replays all four original entry fixtures and both ordinary 600-frame
+Start and Idle scripts. Every entry fixture has zero persistent-RAM and output
+differences outside the established CPU scratch/stack exclusions; case one now
+has `$00f7 = $01` on both original and native records. Both 600-frame routes
+have zero retained persistent-RAM and output differences, including the former
+PPU-control samples. The x86/x64 records are byte-identical per route.
+
+This is a source-route revalidation, not new node credit or a behavior
+rewrite: the governance inventory remains 1,992 / 1,992. It establishes that
+the historical `$f7` receipt is obsolete, while the independently diagnostic
+pipe/vine routes remain outside this receipt. Platform purity remains
+unchanged; the three delivery artifacts are the current P23 set:
+`mysmb16.exe` `40F217DAAFC549E6F32E1B1B73F04CC749CC6E4B137612A19276D6836A60E0E7`,
 `mysmb32.exe` `5DB4379CDE428FA4356F1FD1D17FC2FEAA8089E3AB29731AC196A5331E7C79C6`,
 and `mysmb64.exe` `FD3D1D06EDA57B33F54B1007C6CFF422D84DA052A18E52B626EE058144D4D963`.
 
