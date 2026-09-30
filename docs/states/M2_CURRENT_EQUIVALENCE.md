@@ -50,6 +50,11 @@ mandatory normalization step of the source-order audit: no unresolved aggregate
 description can receive current-exact credit until its concrete shared-C
 owner/data consumer and integration counterpart are recorded.
 
+Cohort A is the first normalized slice: all 97 nodes, 239 control edges and
+six material edges now carry validated `currentSourcePaths` entries.  This
+records only where the current shared implementation resides; it does not
+change that cohort's semantic dispositions or its pending route obligations.
+
 ## Current evidence boundary
 
 The retired baseline tables below the static checkpoint have been removed:
