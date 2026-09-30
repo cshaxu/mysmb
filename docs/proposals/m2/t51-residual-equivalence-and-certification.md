@@ -385,6 +385,27 @@ and pass their `--self-test` route. Refreshed artifact hashes are
 `mysmb32.exe` `DDCD4DC6A16C01E6DC8A50AAB29EF43A85E71A1124D007C494B0A18AD7DFEBF4`,
 and `mysmb64.exe` `DE701E81C81CA3F2AE408F463EBB6F85960340FC00CB362B975E3208A519CBFD`.
 
+### S5 P21: coin/axe terrain-tail current replay
+
+This zero-credit audit resolves the final terrain coin/axe VRAM-status tail
+without changing production or platform source. The retained T43 S2 original
+ROM corpus has 128 parent `HandleCoinMetatile` / `HandleAxeMetatile` calls and
+192 ordered child records for `RemoveCoin_Axe` and `GiveOneCoin`. The current
+shared library matches every parent and child record on x86 and x64, including
+RAM `$00`, `$02`, and `$03`. The earlier mismatches were historical results
+from before P16 restored `PrintStatusBarNumbers` / `OutputNumbers` scratch
+returns; they are not a remaining terrain-route discrepancy.
+
+The ROM-logic route uses the retained original parent entry and ordered child
+boundaries, with owner-local PRG bound only below ignored build output. The
+separate operational route runs the project terrain-metatile chain on both
+native widths, platform purity, the documentation-governance gate, and hash
+verification of the required owner-local delivery artifacts. The retained
+artifacts are `mysmb16.exe`
+`4E09CEC47999ECEC0C9BA7EF3D6842F3D3285AA41C908A3FD5068F853A2639B7`,
+`mysmb32.exe` `0E7039F85B097899184561530CEA130E4508E1F1A9FAFD59DA9F8B50C213E65F`,
+and `mysmb64.exe` `855F7E7607B0AEBAC7F2BA5D39E540205B98AD0F6DFC96A6F18B2B13B2481432`.
+
 ### S5 P16: score and coin scratch-return repair
 
 S5 P16 repairs the T37 S4 score/coin scratch discrepancy in the shared game
