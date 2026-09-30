@@ -1406,3 +1406,9 @@ branches.
 - Node-semantics result: five table labels moved from `unclassified` to `needs-evidence`.
 - Independent material integration result: 5 table-reader edges received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K39 — early NMI/title-demo audit
+
+- Source range: `SkipMainOper`, `WSelectBufferTemplate` and `RunDemo` (`SMBDIS.ASM` lines 868, 993, 1049–1052).
+- Node-semantics result: three labels moved from `unclassified` to `needs-evidence`.
+- Independent integration result: 4 RunDemo call/return/reset relations and one world-select-template material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled title routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

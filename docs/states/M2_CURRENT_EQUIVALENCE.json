@@ -6623,6 +6623,20 @@
         "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-k39-01",
+      "producer": "WSelectBufferTemplate",
+      "consumer": "UpdateShroom",
+      "storage": "ROM WSelectBufferTemplate VRAM bytes",
+      "feasiblePath": "World-select update copies the six source template bytes before writing the world digit.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/title_modes.c world_select_template copy loop",
+      "semanticContract": "Template byte order and destination offsets match the source VRAM update.",
+      "semanticEvidence": [
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -7041,11 +7055,14 @@
       "label": "SkipMainOper",
       "asmLine": 868,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c and src/game/title_modes.c",
+      "currentCounterpart": "mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
+      "semanticEvidence": [
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores saved PPU control with NMI enable and ends the frame after either paused or normal operating-mode path."
     },
     {
       "label": "PauseRoutine",
@@ -7284,11 +7301,14 @@
       "label": "WSelectBufferTemplate",
       "asmLine": 993,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c and src/game/title_modes.c",
+      "currentCounterpart": "mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
+      "semanticEvidence": [
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies six-byte world-select VRAM template copied by title menu update loop."
     },
     {
       "label": "GameMenuRoutine",
@@ -7408,11 +7428,14 @@
       "label": "RunDemo",
       "asmLine": 1049,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c and src/game/title_modes.c",
+      "currentCounterpart": "mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
+      "semanticEvidence": [
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls GameCoreRoutine in the same title-menu frame, then resets title only when game-engine subroutine equals six."
     },
     {
       "label": "ResetTitle",
@@ -34014,10 +34037,13 @@
       "instruction": "jsr",
       "id": "control-00104",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
+      "semanticEvidence": [
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves RunDemo call relation RunDemo → GameCoreRoutine and same-frame game-core/reset ordering."
     },
     {
       "from": "RunDemo",
@@ -34027,10 +34053,13 @@
       "instruction": "bne",
       "id": "control-00105",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
+      "semanticEvidence": [
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves RunDemo branch relation RunDemo → ExitMenu and same-frame game-core/reset ordering."
     },
     {
       "from": "RunDemo",
@@ -34040,10 +34069,13 @@
       "instruction": "bne",
       "id": "control-00106",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
+      "semanticEvidence": [
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves RunDemo fallthrough relation RunDemo → ResetTitle and same-frame game-core/reset ordering."
     },
     {
       "from": "ChkContinue",
@@ -87567,10 +87599,13 @@
       "instruction": "rts/rti",
       "id": "control-03501",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
+      "semanticEvidence": [
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves RunDemo return relation GameCoreRoutine → RunDemo and same-frame game-core/reset ordering."
     },
     {
       "from": "GoContinue",
