@@ -848,3 +848,23 @@ reset, kill-after-loopback ordering and frenzy activation. No static shared-C
 discrepancy was found. These entries remain `needs-evidence` pending controlled
 original-ROM/x86/x64 routes for linked flags, task-seven, each loop selector,
 World-7 pass outcomes, loopback and queued frenzy activation.
+
+
+### Cohort H — B14j enemy stream, range gate and initializer-vector integration
+
+`ProcessEnemyData` through `InitEnemyRoutines` now has twenty-one node
+contracts, one hundred and three control/return/dispatch relations and four
+feasible material handoffs. The audit records the sixth-slot exception, normal
+and extended right boundary carry, page-control records, row-$0e reuse, hard
+mode gate, group range, Goomba mutation, fallback vine/frenzy initialization,
+two/three-byte advancement and all fifty-five initializer-vector bindings.
+The shared C stream and initializer semantics are statically aligned.
+
+As with the block vector, two extracted entries are graph mismatches:
+`control-01502` treats vector data after `JSR JumpEngine` as fall-through and
+`control-03769` treats JumpEngine as returning to `InitEnemyRoutines`. Both
+are infeasible in the ROM; the selected target returns to the caller context.
+They are recorded in an unnumbered graph-governance candidate, not as a shared
+C game-logic repair. All other entries remain `needs-evidence` pending
+controlled original-ROM/x86/x64 stream, boundary, hard-mode, group, fallback
+and vector routes.

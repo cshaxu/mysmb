@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 119,
+    "enumeratedCount": 123,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1679,6 +1679,62 @@
       "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00120",
+      "producer": "ProcessEnemyData",
+      "consumer": "CheckRightBounds",
+      "storage": "EnemyData current record bytes and EnemyDataOffset",
+      "feasiblePath": "Current record first/second bytes feed row, sixth-slot and boundary decisions before object positioning.",
+      "status": "needs-evidence",
+      "currentCounterpart": "eight-bit source record reads in mysmb_enemy_stream_process_current",
+      "semanticContract": "Preserves source data selection, consuming predicate/dispatch and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00121",
+      "producer": "CheckRightBounds",
+      "consumer": "CheckRightExtBounds",
+      "storage": "extended right boundary scratch $06/$07",
+      "feasiblePath": "CheckRightBounds writes carry-correct extended page/high-nibble boundary before CheckRightExtBounds compares object world position.",
+      "status": "needs-evidence",
+      "currentCounterpart": "extended boundary locals in stream processing",
+      "semanticContract": "Preserves source data selection, consuming predicate/dispatch and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00122",
+      "producer": "CheckFrenzyBuffer",
+      "consumer": "StrFre",
+      "storage": "EnemyFrenzyBuffer/VineFlagOffset selected fallback ID",
+      "feasiblePath": "Fallback selection writes the identifier subsequently stored by StrFre and initialized through CheckpointEnemyID.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_stream_activate_fallback ID selection",
+      "semanticContract": "Preserves source data selection, consuming predicate/dispatch and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00123",
+      "producer": "InitEnemyRoutines",
+      "consumer": "CheckpointEnemyID",
+      "storage": "fifty-five-entry initializer vector table",
+      "feasiblePath": "CheckpointEnemyID preserves vector scratch and selects the exact initializer target by Enemy_ID.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_addresses vector binding and native target switch",
+      "semanticContract": "Preserves source data selection, consuming predicate/dispatch and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -13646,211 +13702,274 @@
       "label": "ProcessEnemyData",
       "asmLine": 7911,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads current enemy record, routes end marker to fallback, protects sixth slot except power-up and otherwise enters right-bound processing."
     },
     {
       "label": "CheckEndofBuffer",
       "asmLine": 7918,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Distinguishes row-$0e, ordinary available slots and the source sixth-slot power-up exception before range setup."
     },
     {
       "label": "CheckRightBounds",
       "asmLine": 7931,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds extended right boundary with original carry, applies one-time page control, then handles row-$0f control records."
     },
     {
       "label": "CheckPageCtrlRow",
       "asmLine": 7950,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes row-$0f page-control records only before page selection is set; advances two bytes and tail-reenters loop processing."
     },
     {
       "label": "PositionEnemyObj",
       "asmLine": 7967,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies object page/X, tests normal right boundary, and routes behind-screen records to row-$0e or record advancement."
     },
     {
       "label": "CheckRightExtBounds",
       "asmLine": 7983,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tests extended right boundary, initializes visible object Y, applies row-$0e and hard-mode gates, then selects group or individual ID."
     },
     {
       "label": "CheckForEnemyGroup",
       "asmLine": 8006,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Classifies IDs below $37, group range $37-$3e and residual IDs at/above $3f."
     },
     {
       "label": "BuzzyBeetleMutate",
       "asmLine": 8014,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Mutates Goomba to Buzzy Beetle only when PrimaryHardMode is set, retaining all other IDs."
     },
     {
       "label": "StrID",
       "asmLine": 8020,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores individual ID/flag, initializes it, then advances the source record only if initialization leaves its flag active."
     },
     {
       "label": "CheckFrenzyBuffer",
       "asmLine": 8028,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses frenzy buffer first, otherwise produces a vine only for VineFlagOffset one, else exits."
     },
     {
       "label": "StrFre",
       "asmLine": 8035,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores fallback identifier into current enemy ID then enters common initialization."
     },
     {
       "label": "InitEnemyObject",
       "asmLine": 8037,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears current enemy state, calls CheckpointEnemyID and falls into return exit."
     },
     {
       "label": "ExEPar",
       "asmLine": 8041,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from parser/fallback initialization."
     },
     {
       "label": "DoGroup",
       "asmLine": 8043,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps group identifiers into HandleGroupEnemies."
     },
     {
       "label": "ParseRow0e",
       "asmLine": 8046,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads the third record byte; only matching world writes AreaPointer and EntrancePage before three-byte advancement."
     },
     {
       "label": "NotUse",
       "asmLine": 8064,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to three-byte record advancement regardless of row-$0e world match."
     },
     {
       "label": "CheckThreeBytes",
       "asmLine": 8066,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects two- versus three-byte advance based solely on current record row."
     },
     {
       "label": "Inc3B",
       "asmLine": 8072,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds the extra first increment for row-$0e records."
     },
     {
       "label": "Inc2B",
       "asmLine": 8073,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Advances two bytes, clears enemy page select, restores ObjectOffset and returns."
     },
     {
       "label": "CheckpointEnemyID",
       "asmLine": 8080,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For IDs below $15 adds eight to Y and sets masked offscreen bit, then enters initializer vector dispatch."
     },
     {
       "label": "InitEnemyRoutines",
       "asmLine": 8092,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy stream and initializer core",
+      "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Invokes JumpEngine over the fifty-five-entry initializer vector, including aliases and residual power-up/vine entries."
     },
     {
       "label": "NoInitCode",
@@ -47942,10 +48061,13 @@
       "instruction": "bne",
       "id": "control-01459",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcessEnemyData -> CheckEndofBuffer with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "ProcessEnemyData",
@@ -47955,10 +48077,13 @@
       "instruction": "jmp",
       "id": "control-01460",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ProcessEnemyData -> CheckFrenzyBuffer with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckEndofBuffer",
@@ -47968,10 +48093,13 @@
       "instruction": "beq",
       "id": "control-01461",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckEndofBuffer -> CheckRightBounds with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckEndofBuffer",
@@ -47981,10 +48109,13 @@
       "instruction": "bcc",
       "id": "control-01462",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckEndofBuffer -> CheckRightBounds with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckEndofBuffer",
@@ -47994,10 +48125,13 @@
       "instruction": "beq",
       "id": "control-01463",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckEndofBuffer -> CheckRightBounds with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckRightBounds",
@@ -48007,10 +48141,13 @@
       "instruction": "bcc",
       "id": "control-01464",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightBounds -> CheckPageCtrlRow with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckRightBounds",
@@ -48020,10 +48157,13 @@
       "instruction": "bne",
       "id": "control-01465",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightBounds -> CheckPageCtrlRow with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckRightBounds",
@@ -48033,10 +48173,13 @@
       "instruction": "inc",
       "id": "control-01466",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckRightBounds -> CheckPageCtrlRow with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckPageCtrlRow",
@@ -48046,10 +48189,13 @@
       "instruction": "bne",
       "id": "control-01467",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckPageCtrlRow -> PositionEnemyObj with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckPageCtrlRow",
@@ -48059,10 +48205,13 @@
       "instruction": "bne",
       "id": "control-01468",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckPageCtrlRow -> PositionEnemyObj with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckPageCtrlRow",
@@ -48072,10 +48221,13 @@
       "instruction": "jmp",
       "id": "control-01469",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation CheckPageCtrlRow -> ProcLoopCommand with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "PositionEnemyObj",
@@ -48085,10 +48237,13 @@
       "instruction": "bcs",
       "id": "control-01470",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PositionEnemyObj -> CheckRightExtBounds with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "PositionEnemyObj",
@@ -48098,10 +48253,13 @@
       "instruction": "beq",
       "id": "control-01471",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PositionEnemyObj -> ParseRow0e with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "PositionEnemyObj",
@@ -48111,10 +48269,13 @@
       "instruction": "jmp",
       "id": "control-01472",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation PositionEnemyObj -> CheckThreeBytes with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckRightExtBounds",
@@ -48124,10 +48285,13 @@
       "instruction": "bcc",
       "id": "control-01473",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightExtBounds -> CheckFrenzyBuffer with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckRightExtBounds",
@@ -48137,10 +48301,13 @@
       "instruction": "beq",
       "id": "control-01474",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightExtBounds -> ParseRow0e with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckRightExtBounds",
@@ -48150,10 +48317,13 @@
       "instruction": "beq",
       "id": "control-01475",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightExtBounds -> CheckForEnemyGroup with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckRightExtBounds",
@@ -48163,10 +48333,13 @@
       "instruction": "beq",
       "id": "control-01476",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckRightExtBounds -> Inc2B with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckRightExtBounds",
@@ -48176,10 +48349,13 @@
       "instruction": "beq",
       "id": "control-01477",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckRightExtBounds -> CheckForEnemyGroup with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckForEnemyGroup",
@@ -48189,10 +48365,13 @@
       "instruction": "bcc",
       "id": "control-01478",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckForEnemyGroup -> BuzzyBeetleMutate with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckForEnemyGroup",
@@ -48202,10 +48381,13 @@
       "instruction": "bcc",
       "id": "control-01479",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckForEnemyGroup -> DoGroup with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckForEnemyGroup",
@@ -48215,10 +48397,13 @@
       "instruction": "bcc",
       "id": "control-01480",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckForEnemyGroup -> BuzzyBeetleMutate with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "BuzzyBeetleMutate",
@@ -48228,10 +48413,13 @@
       "instruction": "bne",
       "id": "control-01481",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BuzzyBeetleMutate -> StrID with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "BuzzyBeetleMutate",
@@ -48241,10 +48429,13 @@
       "instruction": "beq",
       "id": "control-01482",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BuzzyBeetleMutate -> StrID with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "BuzzyBeetleMutate",
@@ -48254,10 +48445,13 @@
       "instruction": "lda",
       "id": "control-01483",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BuzzyBeetleMutate -> StrID with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "StrID",
@@ -48267,10 +48461,13 @@
       "instruction": "jsr",
       "id": "control-01484",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation StrID -> InitEnemyObject with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "StrID",
@@ -48280,10 +48477,13 @@
       "instruction": "bne",
       "id": "control-01485",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation StrID -> Inc2B with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckFrenzyBuffer",
@@ -48293,10 +48493,13 @@
       "instruction": "bne",
       "id": "control-01486",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckFrenzyBuffer -> StrFre with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckFrenzyBuffer",
@@ -48306,10 +48509,13 @@
       "instruction": "bne",
       "id": "control-01487",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckFrenzyBuffer -> ExEPar with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckFrenzyBuffer",
@@ -48319,10 +48525,13 @@
       "instruction": "lda",
       "id": "control-01488",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckFrenzyBuffer -> StrFre with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "StrFre",
@@ -48332,10 +48541,13 @@
       "instruction": "sta",
       "id": "control-01489",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation StrFre -> InitEnemyObject with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyObject",
@@ -48345,10 +48557,13 @@
       "instruction": "jsr",
       "id": "control-01490",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitEnemyObject -> CheckpointEnemyID with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyObject",
@@ -48358,10 +48573,13 @@
       "instruction": "jsr",
       "id": "control-01491",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitEnemyObject -> ExEPar with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "DoGroup",
@@ -48371,10 +48589,13 @@
       "instruction": "jmp",
       "id": "control-01492",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation DoGroup -> HandleGroupEnemies with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "ParseRow0e",
@@ -48384,10 +48605,13 @@
       "instruction": "bne",
       "id": "control-01493",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ParseRow0e -> NotUse with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "ParseRow0e",
@@ -48397,10 +48621,13 @@
       "instruction": "sta",
       "id": "control-01494",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ParseRow0e -> NotUse with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "NotUse",
@@ -48410,10 +48637,13 @@
       "instruction": "jmp",
       "id": "control-01495",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation NotUse -> Inc3B with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckThreeBytes",
@@ -48423,10 +48653,13 @@
       "instruction": "bne",
       "id": "control-01496",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckThreeBytes -> Inc2B with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckThreeBytes",
@@ -48436,10 +48669,13 @@
       "instruction": "bne",
       "id": "control-01497",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckThreeBytes -> Inc3B with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "Inc3B",
@@ -48449,10 +48685,13 @@
       "instruction": "inc",
       "id": "control-01498",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Inc3B -> Inc2B with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckpointEnemyID",
@@ -48462,10 +48701,13 @@
       "instruction": "bcs",
       "id": "control-01499",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckpointEnemyID -> InitEnemyRoutines with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckpointEnemyID",
@@ -48475,10 +48717,13 @@
       "instruction": "tya",
       "id": "control-01500",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation CheckpointEnemyID -> InitEnemyRoutines with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -48488,10 +48733,13 @@
       "instruction": "jsr",
       "id": "control-01501",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitEnemyRoutines -> JumpEngine with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -48501,10 +48749,13 @@
       "instruction": "jsr",
       "id": "control-01502",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false control relation in current extracted graph; shared C selects the initializer target directly",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The bytes after JSR JumpEngine are initializer vector words, not a reachable fall-through to NoInitCode. JumpEngine removes the return address and indirect-jumps to the selected entry."
     },
     {
       "from": "InitGoomba",
@@ -78639,10 +78890,13 @@
       "instruction": "rts/rti",
       "id": "control-03767",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitEnemyObject -> StrID with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckpointEnemyID",
@@ -78652,10 +78906,13 @@
       "instruction": "rts/rti",
       "id": "control-03768",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation CheckpointEnemyID -> InitEnemyObject with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "JumpEngine",
@@ -78665,10 +78922,13 @@
       "instruction": "rts/rti",
       "id": "control-03769",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false control relation in current extracted graph; shared C selects the initializer target directly",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "JumpEngine does not return to InitEnemyRoutines: it removes the JSR return address and indirect-jumps through the initializer vector, whose target RTS resumes InitEnemyObject caller context."
     },
     {
       "from": "InitNormalEnemy",
@@ -78847,10 +79107,13 @@
       "instruction": "rts/rti",
       "id": "control-03783",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation CheckpointEnemyID -> GSltLp with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "JumpEngine",
@@ -84944,10 +85207,13 @@
       "selector": 0,
       "id": "control-04215",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitNormalEnemy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -84958,10 +85224,13 @@
       "selector": 1,
       "id": "control-04216",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitNormalEnemy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -84972,10 +85241,13 @@
       "selector": 2,
       "id": "control-04217",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitNormalEnemy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -84986,10 +85258,13 @@
       "selector": 3,
       "id": "control-04218",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitRedKoopa with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85000,10 +85275,13 @@
       "selector": 4,
       "id": "control-04219",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85014,10 +85292,13 @@
       "selector": 5,
       "id": "control-04220",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitHammerBro with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85028,10 +85309,13 @@
       "selector": 6,
       "id": "control-04221",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitGoomba with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85042,10 +85326,13 @@
       "selector": 7,
       "id": "control-04222",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitBloober with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85056,10 +85343,13 @@
       "selector": 8,
       "id": "control-04223",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitBulletBill with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85070,10 +85360,13 @@
       "selector": 9,
       "id": "control-04224",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85084,10 +85377,13 @@
       "selector": 10,
       "id": "control-04225",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitCheepCheep with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85098,10 +85394,13 @@
       "selector": 11,
       "id": "control-04226",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitCheepCheep with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85112,10 +85411,13 @@
       "selector": 12,
       "id": "control-04227",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitPodoboo with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85126,10 +85428,13 @@
       "selector": 13,
       "id": "control-04228",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitPiranhaPlant with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85140,10 +85445,13 @@
       "selector": 14,
       "id": "control-04229",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitJumpGPTroopa with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85154,10 +85462,13 @@
       "selector": 15,
       "id": "control-04230",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitRedPTroopa with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85168,10 +85479,13 @@
       "selector": 16,
       "id": "control-04231",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitHorizFlySwimEnemy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85182,10 +85496,13 @@
       "selector": 17,
       "id": "control-04232",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitLakitu with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85196,10 +85513,13 @@
       "selector": 18,
       "id": "control-04233",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85210,10 +85530,13 @@
       "selector": 19,
       "id": "control-04234",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85224,10 +85547,13 @@
       "selector": 20,
       "id": "control-04235",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85238,10 +85564,13 @@
       "selector": 21,
       "id": "control-04236",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85252,10 +85581,13 @@
       "selector": 22,
       "id": "control-04237",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85266,10 +85598,13 @@
       "selector": 23,
       "id": "control-04238",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitEnemyFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85280,10 +85615,13 @@
       "selector": 24,
       "id": "control-04239",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> EndFrenzy with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85294,10 +85632,13 @@
       "selector": 25,
       "id": "control-04240",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85308,10 +85649,13 @@
       "selector": 26,
       "id": "control-04241",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85322,10 +85666,13 @@
       "selector": 27,
       "id": "control-04242",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85336,10 +85683,13 @@
       "selector": 28,
       "id": "control-04243",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85350,10 +85700,13 @@
       "selector": 29,
       "id": "control-04244",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85364,10 +85717,13 @@
       "selector": 30,
       "id": "control-04245",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitShortFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85378,10 +85734,13 @@
       "selector": 31,
       "id": "control-04246",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitLongFirebar with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85392,10 +85751,13 @@
       "selector": 32,
       "id": "control-04247",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85406,10 +85768,13 @@
       "selector": 33,
       "id": "control-04248",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85420,10 +85785,13 @@
       "selector": 34,
       "id": "control-04249",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85434,10 +85802,13 @@
       "selector": 35,
       "id": "control-04250",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85448,10 +85819,13 @@
       "selector": 36,
       "id": "control-04251",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitBalPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85462,10 +85836,13 @@
       "selector": 37,
       "id": "control-04252",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitVertPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85476,10 +85853,13 @@
       "selector": 38,
       "id": "control-04253",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> LargeLiftUp with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85490,10 +85870,13 @@
       "selector": 39,
       "id": "control-04254",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> LargeLiftDown with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85504,10 +85887,13 @@
       "selector": 40,
       "id": "control-04255",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitHoriPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85518,10 +85904,13 @@
       "selector": 41,
       "id": "control-04256",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitDropPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85532,10 +85921,13 @@
       "selector": 42,
       "id": "control-04257",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitHoriPlatform with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85546,10 +85938,13 @@
       "selector": 43,
       "id": "control-04258",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> PlatLiftUp with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85560,10 +85955,13 @@
       "selector": 44,
       "id": "control-04259",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> PlatLiftDown with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85574,10 +85972,13 @@
       "selector": 45,
       "id": "control-04260",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitBowser with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85588,10 +85989,13 @@
       "selector": 46,
       "id": "control-04261",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> PwrUpJmp with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85602,10 +86006,13 @@
       "selector": 47,
       "id": "control-04262",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> Setup_Vine with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85616,10 +86023,13 @@
       "selector": 48,
       "id": "control-04263",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85630,10 +86040,13 @@
       "selector": 49,
       "id": "control-04264",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85644,10 +86057,13 @@
       "selector": 50,
       "id": "control-04265",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85658,10 +86074,13 @@
       "selector": 51,
       "id": "control-04266",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85672,10 +86091,13 @@
       "selector": 52,
       "id": "control-04267",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> NoInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85686,10 +86108,13 @@
       "selector": 53,
       "id": "control-04268",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitRetainerObj with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",
@@ -85700,10 +86125,13 @@
       "selector": 54,
       "id": "control-04269",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> EndOfEnemyInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyFrenzy",
