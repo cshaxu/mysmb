@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1719 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 38 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| ROM-match complete | 1720 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 37 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
 | Open / unmatched | 235 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1719 / 1,992 (86.30%)**. The 38 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1720 / 1,992 (86.35%)**. The 37 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T47 S2 closure](../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) proves all nine source-order relative-position labels on 12 original actor routes with 30 original children and 60 matching native x86/x64 RAM/OAM comparisons; three-target operational verification is separate.
+Latest task review: [T47 S3 closure](../proposals/m2/t47-object-position-and-sprite-output.md#s3-closure-player-offscreen-entry) proves the player offscreen entry/register handoff and result on 16 original calls with 32 x86/x64 comparisons; downstream helper scratch remains S4 debt.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1719)
+## Completed matches (1720)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1752,8 +1752,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14816 | `RelativeBlockPosition` |
 | 14825 | `VariableObjOfsRelPos` |
 | 14834 | `GetObjRelativePosition` |
+| 14846 | `GetPlayerOffscreenBits` |
 
-## Mapped but not yet matched (38)
+## Mapped but not yet matched (37)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1793,7 +1794,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 14846 | `GetPlayerOffscreenBits` |
 | 14851 | `GetFireballOffscreenBits` |
 
 ## Reporting contract

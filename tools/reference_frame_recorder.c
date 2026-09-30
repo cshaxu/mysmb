@@ -1171,7 +1171,7 @@ int main(int argument_count, char **arguments)
             value = strtoul(arguments[recorded] + 16u,
                             &relative_kind_end, 10);
             if (relative_kind_end == arguments[recorded] + 16u ||
-                *relative_kind_end != '\0' || value >= 6u) return 64;
+                *relative_kind_end != '\0' || value >= 7u) return 64;
             relative_kind = (unsigned int)value;
             continue;
         }
@@ -2976,8 +2976,9 @@ int main(int argument_count, char **arguments)
     if (relative_coordinate_variant != 0xffffffffu &&
         relative_child_path == NULL) return 64;
     if (relative_child_path != NULL) {
-        static const lib_u16 entries[6] = {
-            0xf12au, 0xf131u, 0xf13bu, 0xf148u, 0xf152u, 0xf159u
+        static const lib_u16 entries[7] = {
+            0xf12au, 0xf131u, 0xf13bu, 0xf148u, 0xf152u, 0xf159u,
+            0xf180u
         };
         relative_child_entry = entries[relative_kind];
     }
@@ -4803,23 +4804,38 @@ int main(int argument_count, char **arguments)
                 0x008fu - 0x0086u
             };
             lib_u8 *ram = driver->machine->ram;
-            lib_u8 source = (lib_u8)(driver->machine->x +
-                                     coordinate_displacements[relative_kind]);
-            ram[0x071cu] = 0xf0u;
-            ram[0x0086u + source] = 5u;
-            ram[0x00ceu + source] = 0x95u;
-            if (relative_kind == 5u) {
-                source = (lib_u8)(source + 2u);
-                ram[0x0086u + source] = 7u;
-                ram[0x00ceu + source] = 0x96u;
+            if (relative_kind == 6u) {
+                /* T47 S3: boundary inputs only, at the natural player
+                 * offscreen entry.  CPU registers/PC/stack remain intact. */
+                ram[0x071cu] = 0xf0u;
+                ram[0x071du] = 0xf0u;
+                ram[0x0086u] = 5u;
+                ram[0x00ceu] = 0xf9u;
+                ram[0x00b5u] = 1u;
             }
-            ram[0u] = 0xccu;
-            ram[0x0755u] = 0xa5u;
+            else {
+                lib_u8 source = (lib_u8)(driver->machine->x +
+                                         coordinate_displacements[relative_kind]);
+                ram[0x071cu] = 0xf0u;
+                ram[0x0086u + source] = 5u;
+                ram[0x00ceu + source] = 0x95u;
+                if (relative_kind == 5u) {
+                    source = (lib_u8)(source + 2u);
+                    ram[0x0086u + source] = 7u;
+                    ram[0x00ceu + source] = 0x96u;
+                }
+                ram[0u] = 0xccu;
+                ram[0x0755u] = 0xa5u;
+            }
         }
         /* T47 S2: observe a source-reached relative-position call and
          * stack-derived return.  Never redirect the original CPU. */
         if (relative_child_path != NULL && elapsed >= warmup_frames) {
             if (relative_child_active != 0u) {
+                if (relative_kind == 6u && before_pc == 0xf1c0u &&
+                    driver->machine->x == 0u &&
+                    driver->machine->y == 0u)
+                    relative_children[relative_child_count][3] = 1u;
                 if (before_pc == relative_child_return &&
                     driver->machine->s ==
                     (lib_u8)(relative_child_stack + 2u)) {

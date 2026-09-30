@@ -120,7 +120,7 @@ The labels and branches behind every line remain open until individually bound b
   - [ ] `MusicHandler` — ROM line 15635; C owner/evidence pending
 - [ ] **Shared arithmetic, RNG, VRAM and utility primitives**
   - [ ] `InitializeMemory` — ROM line 2795; C owner/evidence pending
-  - [ ] `GetPlayerOffscreenBits` — ROM line 14846; C owner/evidence pending
+  - [x] `GetPlayerOffscreenBits` — ROM line 14846; C owner/evidence pending
   - [x] `RelativePlayerPosition` — ROM line 14786; C owner/evidence pending
   - [ ] `MoveObjectHorizontally` — ROM line 7566; C owner/evidence pending
   - [ ] `ImposeGravity` — ROM line 7729; C owner/evidence pending
@@ -1897,7 +1897,7 @@ The labels and branches behind every line remain open until individually bound b
 | 14816 | `RelativeBlockPosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
 | 14825 | `VariableObjOfsRelPos` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
 | 14834 | `GetObjRelativePosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
-| 14846 | `GetPlayerOffscreenBits` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getplayeroffscreenbits) |
+| 14846 | `GetPlayerOffscreenBits` | M2 T47 S3 shared `src/game/oam/player_gfx.c` | ROM-match complete | [T47 S3 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s3-closure-player-offscreen-entry) |
 | 14851 | `GetFireballOffscreenBits` | T16: `src/game/oam/object_position.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getfireballoffscreenbits) |
 | 14857 | `GetBubbleOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getbubbleoffscreenbits) |
 | 14863 | `GetMiscOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmiscoffscreenbits) |

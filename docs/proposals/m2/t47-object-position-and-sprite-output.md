@@ -162,3 +162,67 @@ comparisons above.
 
 S3 `GetPlayerOffscreenBits` is next in source order and remains
 unadmitted at this closure.
+
+## S3 admission: player offscreen entry
+
+The exact source-order scope is **one incomplete label**,
+`GetPlayerOffscreenBits` (line 14846, `$f180`, incoming **audited;
+evidence incomplete**); the intended ROM-match set is the same one
+label. The baseline is **1,719 / 1,992**, maximum **1,720 / 1,992**.
+M2 T16 S4 transfers this label to T47 S3. Predecessor is S2
+`GetObjRelativePosition`; the next source label, S4
+`GetFireballOffscreenBits`, and the shared `GetOffScreenBitsSet` child
+remain uncredited here. The shared owner is
+`src/game/oam/player_gfx.c`; the host platform must remain free of game
+logic.
+
+The original entry loads X=0 and Y=0, then jumps into the shared
+offscreen-bit chain. On a naturally reached GameEngine player route,
+record the entry PC, register setup and successor PC, plus the returned
+offscreen byte and RAM/OAM state. Compare the corresponding shared-C
+player entry on x86 and x64, and separate wrapper correctness from
+outgoing S4 helper obligations. The operational track runs player OAM
+and platform-purity tests, builds all three targets and refreshes the
+three EXEs. Only a source-reachable route and exact argument/dataflow
+proof can close this label; S4 child nodes keep their own future tests.
+
+### S3 closure: player offscreen entry
+
+`GetPlayerOffscreenBits` is **ROM-match complete**, one expected and one
+actual new match; **1,719 → 1,720 / 1,992**. The owner ROM bytes at
+`$f180` are `A2 00 A0 00 4C C0 F1`: X=0, Y=0, jump to
+`GetOffScreenBitsSet` at `$f1c0`. The natural GameEngine and bounded
+player-coordinate edge routes each hit `$f180`, `$f182`, `$f184` and
+`$f1c0` 11 times. Sixteen naturally entered child calls were captured
+at their stack-derived returns. Every one reached `$f1c0` with X=Y=0,
+restored X from `ObjectOffset`, and returned the player offscreen byte
+at `$03d0`. The corresponding shared-C entry matched that result and
+every non-stack RAM/OAM byte outside the downstream helper's scratch
+set on x86 and x64: **32 comparisons, zero entry/result differences**.
+The machine-checked summary and raw owner-ROM records remain under
+ignored `build/m2-t47-s3/`.
+
+The original child `GetOffScreenBitsSet` still differs from C in its
+`$00`, `$04–$07` scratch effects: 34 byte comparisons on the natural
+route and 37 on the edge route per native width. These exact gaps are
+**not waived** and do not count as S3 success for any S4 node. They
+remain assigned to S4's common offscreen-helper chain. The S3 wrapper
+itself has no branch or scratch write outside setting the two zero
+register arguments and tail-calling that child. The similar-issue sweep
+checked the player GameEngine caller and the shared helper handoff;
+no production or platform source change was needed.
+
+Operational verification rebuilt Win32 x86, x64 and DOS16; focused
+player route, player OAM and platform-purity tests passed **3/3 on each
+Windows architecture**. Both packaged Windows `--self-test` runs exited
+zero. DOS16 linked a valid MZ image. The three owner-authorized EXEs
+were refreshed and are byte-identical to S2 because production code
+did not change:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `b5b9ad5127acfb5bfed06694e8f9785123c65c6ab47b5a07c64822a6eee263c0` |
+| `assets/mysmb32.exe` | `4b5f76acec61ae49427dd31dc43b68465ab4bec39ec5d616694bbe7fd5c8b173` |
+| `assets/mysmb64.exe` | `fc91bd0c1813c78e664f121c73a3d68091e72f012641b8830bcf65b5d1365035` |
+
+S4 begins at `GetFireballOffscreenBits` and remains unadmitted here.
