@@ -53,10 +53,10 @@ explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
-| Exact | 74 control; 3 material RAM/table |
-| Needs evidence | 64 |
+| Exact | 76 control; 3 material RAM/table |
+| Needs evidence | 63 |
 | Mismatch | 3 |
-| Unclassified | 4,201 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 4,200 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -264,3 +264,7 @@ The preceding icon chain is also exact: `MushroomIconData`,
 `DrawMushroomIcon`, `IconDataRead` and `ExitIcon`, plus its Select caller,
 return, descending loop and player-count conditional relations. Both icon
 layouts match the original-ROM NMI path and current x86/x64 state.
+The two executed upstream dispatch edges, `OperModeExecutionTree ->
+TitleScreenMode` and `TitleScreenMode -> GameMenuRoutine`, are independently
+exact. The `TitleScreenMode` node remains pending because its other task
+vectors have not yet received this route proof.

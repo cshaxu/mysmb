@@ -74174,13 +74174,16 @@
       "selector": 0,
       "id": "control-04096",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode/task dispatch",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "Td S9 A5/A6 integration review: current frame-root mode/task dispatch was compared with the original nested JumpEngine selector relation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original jump-engine-dispatch relation OperModeExecutionTree -> TitleScreenMode at source line 956 (jsr JumpEngine) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior."
+      "operationalEvidence": [
+        "Td S9 A6 controlled ordinary, Select, world-select B, Start and demo title routes each execute this individual original dispatch relation and the current x86/x64 counterpart."
+      ],
+      "semanticContract": "Original JumpEngine dispatch relation must select this exact successor for the source mode/task selector, preserve dispatcher ordering and retain the caller return path."
     },
     {
       "from": "OperModeExecutionTree",
@@ -74284,10 +74287,15 @@
       "selector": 3,
       "id": "control-04103",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode/task dispatch",
+      "semanticEvidence": [
+        "Td S9 A5/A6 integration review: current frame-root mode/task dispatch was compared with the original nested JumpEngine selector relation."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled ordinary, Select, world-select B, Start and demo title routes each execute this individual original dispatch relation and the current x86/x64 counterpart."
+      ],
+      "semanticContract": "Original JumpEngine dispatch relation must select this exact successor for the source mode/task selector, preserve dispatcher ordering and retain the caller return path."
     },
     {
       "from": "VictoryModeSubroutines",
