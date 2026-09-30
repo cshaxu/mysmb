@@ -50,8 +50,8 @@ mandatory normalization step of the source-order audit: no unresolved aggregate
 description can receive current-exact credit until its concrete shared-C
 owner/data consumer and integration counterpart are recorded.
 
-Cohorts A through G are now normalized: all 761 nodes, 1,487 control edges and
-98 material edges in those source-order slices carry validated
+Cohorts A through H are now normalized: all 890 nodes, 1,831 control edges and
+117 material edges in those source-order slices carry validated
 `currentSourcePaths` entries.  Cohort D includes the 68 `E_*` and `L_*` area
 PRG-data labels: `area_data.c` selects their ROM pointer, then `enemy/stream.c`
 consumes `E_*` enemy records and `area.c` consumes `L_*` area-object records.
@@ -61,9 +61,10 @@ mode, movement and end-level units.  Cohort F records the continuous player
 movement/physics chain in `player_movement.c` and `player.c`, including its
 force, limit, friction and animation-table consumers.  Cohort G records the
 fireball/bubble, timer, whirlpool, flagpole, jumpspring and vine chains in
-their concrete shared owners.  This records only where the current shared
-implementation resides; it does not change those cohorts' semantic
-dispositions or their pending route obligations.
+their concrete shared owners.  Cohort H maps the object-generation, block,
+score and movement/gravity families to their shared C owners.  This records
+only where the current shared implementation resides; it does not change those
+cohorts' semantic dispositions or their pending route obligations.
 
 ## Current evidence boundary
 
