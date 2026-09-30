@@ -1166,3 +1166,8 @@ branches.
 ### Cohort J — B16n enemy stomp, demotion and score integration
 
 `EnemyStomped` through `ExSFN` now has nine node contracts, every incident injury, ID-class, score/stun/init, shell/demotion, direction, table, caller and return relation, plus seven feasible producer-to-consumer handoffs. Static review matches Spiny injury routing, all four fixed stomp-score classes, movement-direction preservation across stun, d5 defeat, `$fd/$fc` bounce split, ID-nine demotion threshold, low-bit Koopa conversion, hard-mode revival table, signed player-facing direction and all four floatey-number writes. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 fixed class, demotion, shell, normal/hard revival and direction routes.
+
+
+### Cohort J — B16o enemy-pair collision integration
+
+`SetBitsMask` through `ExTA` now has fifteen node contracts, every incident frame/area/ID/offscreen gate, descending loop, geometry, d7/d5/mask branch, defeat/score/turnaround child and return relation, plus nine feasible pair-state handoffs. Static review matches both unmasked seven-byte masks, source `$01` and stack preservation, candidate descending order, d7 fast path, one-hit latch and miss clear, alternate-state and Hammer Bro handling, shell-chain score ownership, dual turnaround order and the special turnable-ID filters. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 no-candidate, miss, repeated hit, d7 hit, shell-chain and dual-turn routes.
