@@ -161,11 +161,16 @@ int main(void)
     game.ram[0x0717U] = 1U;
     game.ram[0x0718U] = 1U;
     game.ram[0x000eU] = 6U;
+    /* RunDemo calls GameCoreRoutine before its post-return comparison.  A
+     * source-reachable PlayerLoseLife with one life left falls through
+     * ContinueGame, which changes mode/task and clears subroutine six. */
+    game.ram[0x075aU] = 1U;
     game.ram[0x0722U] = 1U;
     game.ram[0x0774U] = 0U;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
-        game.ram[0x0722U] != 0U || game.ram[0x0774U] != 1U) {
+    if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
+        game.ram[0x000eU] != 0U || game.ram[0x0722U] != 0U ||
+        game.ram[0x0774U] != 1U) {
         return 1;
     }
     return 0;

@@ -19,7 +19,7 @@ the conformance counts below.
 
 Verified conformance is **1,992 / 1,992 (100.00%)**. No inventory mapping remains incomplete.
 
-Latest task review: [T51 S3 closure](../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s3-closure-killenemies-shared-primitive) closes the source-exact shared five-slot KillEnemies primitive through warp/flagpole caller IDs and the OpenNT DOS16 link.
+Latest task review: [T51 S5 P8](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p8-legacy-suite-source-route-closure) closes the legacy project-owned regression-fixture audit with both native 218-test matrices passing. It grants no additional node credit and preserves independently recorded ROM-route discrepancies for later source-order treatment.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

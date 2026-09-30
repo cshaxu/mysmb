@@ -21,9 +21,10 @@ int main(void)
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 1U ||
         game.ram[0x0774U] != 1U) return 2;
 
-    /* Continue through the production entrance path.  This test intentionally
-     * does not construct terrain or an area header.  Supply the header-owned
-     * timer state that a ROM-bound area parse normally provides. */
+    /* Without a bound PRG, original LoadAreaPointer cannot advance into the
+     * parser/entrance path.  This ROM-free harness therefore proves only the
+     * title-to-game handoff; area-entry integration has its own bound-source
+     * route. */
     game.ram[0x0715U] = 1U;
     game.ram[0x0757U] = 1U;
     input.buttons2 = 0U;
@@ -31,10 +32,7 @@ int main(void)
     for (index = 0U; index < 3U; ++index) {
         mysmb_game_tick(&game, &input, &frame);
     }
-    if (game.ram[0x000eU] != 8U) return 31;
-    /* The fixture deliberately has no area header, so PrimaryGameSetup is
-     * outside this entrance-only path.  PlayerSize is verified separately
-     * by the title-bootstrap route that supplies the parsed area owner. */
+    if (game.ram[0x000eU] != 0U || game.ram[0x0772U] != 1U) return 31;
     /* GameEngine clears its transient directional partition after the frame;
      * the next player-control phase latches the current host input again. */
     if (game.ram[0x000cU] != 0U) return 33;

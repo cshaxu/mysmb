@@ -28,3 +28,12 @@
 One shared native C90 game implementation serves DOS16 and Win32 x86/x64.
 DOS16 stays active through the existing OpenNT toolchain. Platform adapters do
 not own game logic.
+
+## Current S5 Finding
+
+S5 P8 has completed the project-owned native regression matrix: x64 and x86
+each pass 218 / 218 tests, owner-local area routing passes on both widths,
+and the OpenNT DOS16 link is current. This does not close S5 or M2. The
+review ledger retains independently recorded original-ROM discrepancies and
+the DOS16 owner-resource binding gap; each requires source-route treatment
+before the final certification can claim complete game behavior.

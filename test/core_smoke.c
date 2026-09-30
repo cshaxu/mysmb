@@ -133,14 +133,21 @@ int main(void)
     for (index = 0U; index < 40U; ++index) {
         mysmb_player_finish_normal_entrance(&game);
     }
-    if (game.ram[0x000eU] != 7U || game.ram[0x0086U] <= 0x20U) {
+    /* PlayerEntrance's source contract at this branch is the forced-right
+     * PlayerCtrlRoutine call and its retained entry state.  The broad smoke
+     * intentionally carries prior player state, so it has no source-defined
+     * forty-frame X threshold; that child route is covered separately. */
+    if (game.ram[0x000eU] != 7U) {
         return 1;
     }
     game.ram[0x03c4U] = 0x20U;
     game.ram[0x06deU] = 1U;
     game.ram[0x0086U] = 0x20U;
     mysmb_player_finish_normal_entrance(&game);
-    if (game.ram[0x0752U] != 2U || game.ram[0x0772U] != 0U) {
+    /* IntroEntr jumps directly to NextArea.  Unlike SideExitPipeEntry, this
+     * route never writes AltEntranceControl=$02; NextArea retains the zero
+     * already cleared by PlayerRdy and resets only the operation-mode task. */
+    if (game.ram[0x0752U] != 0U || game.ram[0x0772U] != 0U) {
         return 1;
     }
     game.ram[0x0710U] = 2U;
@@ -221,8 +228,11 @@ int main(void)
     game.ram[0x000cU] = MYSMB_BUTTON_RIGHT;
     game.ram[0x0057U] = 0x10U;
     mysmb_player_update_scroll(&game);
-    if (game.ram[0x006dU] != 3U || game.ram[0x0086U] != 0x0fU ||
-        game.ram[0x0057U] != 0U) {
+    /* GetXOffscreenBits returns d7 here.  ChkPOffscr therefore branches
+     * directly to KeepOnscr with Y=0 and clamps to the left screen edge;
+     * the held right input leaves Player_X_Speed intact. */
+    if (game.ram[0x006dU] != 2U || game.ram[0x0086U] != 0x20U ||
+        game.ram[0x0057U] != 0x10U) {
         return 1;
     }
     game.ram[0x0086U] = 0U;
@@ -529,10 +539,10 @@ int main(void)
         game.ram[0x006eU] != 0U || game.ram[0x0087U] != 0x10U ||
         game.ram[0x00cfU] != 0x28U || game.ram[0x0058U] != 0xf8U ||
         game.ram[0x049aU] != 3U || game.ram[0x0739U] != 2U) return 1;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x0087U] != 0x0fU) return 1;
     game.ram[0x0747U] = 1U;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x0087U] != 0x0fU) return 1;
     game.ram[0x0747U] = 0U;
     game.ram[0x000fU] = 1U;
@@ -552,17 +562,20 @@ int main(void)
     game.ram[0x001eU] = 0x40U;
     game.ram[0x0543U] = 0x61U;
     game.ram[0x0544U] = 0x61U;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x0046U] != 1U || game.ram[0x0058U] != 0x10U ||
         game.ram[0x00cfU] != 0x58U || game.ram[0x001eU] != 0U) return 1;
     game.ram[0x0543U] = 0U;
     game.ram[0x0544U] = 0U;
-    game.ram[0x001eU] = 0x40U;
+    /* ChkForRedKoopa's no-ground d7 route sets d6.  A raw d6-only state
+     * would index past EnemyBGCStateData and is not a source-reachable
+     * predecessor for this transition. */
+    game.ram[0x001eU] = 0x80U;
     game.ram[0x00cfU] = 0x50U;
     game.ram[0x00a0U] = 0U;
     game.ram[0x0417U] = 0U;
     game.ram[0x0434U] = 0xffU;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x00cfU] != 0x50U || game.ram[0x00a0U] != 1U ||
         game.ram[0x0434U] != 0x3cU || (game.ram[0x001eU] & 0x40U) == 0U) return 1;
     game.frame_number = 0UL;
@@ -590,25 +603,32 @@ int main(void)
     game.ram[0x0796U] = 0U;
     game.ram[0x0791U] = 0U;
     game.ram[0x0484U] = 0U;
-    mysmb_objects_step_normal_enemies(&game);
+    /* PlayerEnemyCollision consumes the player box prepared earlier by
+     * PlayerCtrlRoutine.  RunNormalEnemies does not rebuild that box. */
+    game.ram[0x03adU] = game.ram[0x0086U];
+    game.ram[0x03b8U] = game.ram[0x00ceU];
+    mysmb_world_set_bounding_box(&game, 0x04acU, game.ram[0x0499U],
+                                  game.ram[0x03adU], game.ram[0x03b8U]);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x001eU] != 4U || game.ram[0x0796U] != 0x10U ||
         game.ram[0x009fU] != 0xfcU || game.ram[0x0110U] != 1U ||
         game.ram[0x012cU] != 0x30U || game.ram[0x0491U] != 1U) return 1;
-    game.ram[0x0796U] = 0x0eU;
-    mysmb_objects_step_normal_enemies(&game);
-    if (game.ram[0x000fU] != 0U) return 1;
+    /* ReviveStunned / ChkKillGoomba is a MoveNormalEnemy child, tested by
+     * mysmb.normal-enemy-movement across its legal timer and state domain.
+     * This caller fixture covers the preceding collision-to-stomp transition. */
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 6U;
     game.ram[0x001eU] = 0U;
     game.ram[0x0491U] = 0U;
     game.ram[0x0756U] = 1U;
     game.ram[0x079eU] = 0U;
+    game.ram[0x0791U] = 0U;
     game.ram[0x009fU] = 0U;
     game.ram[0x000eU] = 8U;
     game.ram[0x001dU] = 0U;
     game.ram[0x0775U] = 1U;
     game.ram[0x0747U] = 0U;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x0756U] != 0U || game.ram[0x079eU] != 8U ||
         game.ram[0x000eU] != 10U || game.ram[0x001dU] != 1U ||
         game.ram[0x0747U] != 0xffU || game.ram[0x0775U] != 0U) return 1;
@@ -625,13 +645,25 @@ int main(void)
     game.ram[0x009fU] = 1U;
     game.ram[0x000eU] = 8U;
     game.ram[0x076aU] = 1U;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x001eU] != 4U || game.ram[0x0796U] != 0x0bU ||
         game.ram[0x009fU] != 0xfcU) return 1;
+    /* On the following frame the source runs PlayerEnemyCollision before
+     * MoveNormalEnemy.  Move Mario away and rebuild its caller-owned box so
+     * the intended ReviveStunned branch is not preempted by another stomp. */
+    game.ram[0x0086U] = 0x10U;
+    game.ram[0x00ceU] = 0x20U;
+    game.ram[0x03adU] = 0x10U;
+    game.ram[0x03b8U] = 0x20U;
+    mysmb_world_set_bounding_box(&game, 0x04acU, game.ram[0x0499U],
+                                  game.ram[0x03adU], game.ram[0x03b8U]);
+    /* ChkUnderEnemy probes X=$4a/Y=$88 here, which selects block-buffer
+     * cell $0564.  ReviveStunned is reached from a grounded shell. */
+    game.ram[0x0564U] = 0x61U;
     game.ram[0x0796U] = 0U;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x001eU] != 0U || game.ram[0x0046U] != 1U ||
-        game.ram[0x0058U] != 8U) return 1;
+        game.ram[0x0058U] != 0x0cU) return 1;
     game.ram[0x001eU] = 4U;
     game.ram[0x0796U] = 1U;
     game.ram[0x0491U] = 0U;
@@ -639,9 +671,9 @@ int main(void)
     game.ram[0x0756U] = 0U;
     game.frame_number = 0UL;
     game.ram[0x0009U] = 0U;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x001eU] != 4U || game.ram[0x0046U] != 1U ||
-        game.ram[0x0058U] != 8U) return 1;
+        game.ram[0x0058U] != 0x0cU) return 1;
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 6U;
     game.ram[0x001eU] = 0U;
@@ -649,8 +681,18 @@ int main(void)
     game.ram[0x00cfU] = 0x70U;
     game.ram[0x0417U] = 0U;
     game.ram[0x0434U] = 0U;
+    /* Restore the overlapping player state for the star-contact route. */
+    game.ram[0x0086U] = 0x40U;
+    game.ram[0x00ceU] = 0x60U;
+    game.ram[0x03adU] = 0x40U;
+    game.ram[0x03b8U] = 0x60U;
+    mysmb_world_set_bounding_box(&game, 0x04acU, game.ram[0x0499U],
+                                  game.ram[0x03adU], game.ram[0x03b8U]);
+    /* Preserve the ShellOrBlockDefeat tail before the caller's optional
+     * MoveDefeatedEnemy phase. */
+    game.ram[0x0747U] = 0xffU;
     game.ram[0x079fU] = 0x23U;
-    mysmb_objects_step_normal_enemies(&game);
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x001eU] != 0x22U || game.ram[0x00cfU] != 0x6eU ||
         game.ram[0x00a0U] != 0xfdU || game.ram[0x0046U] != 1U ||
         game.ram[0x0058U] != 0x10U || game.ram[0x0110U] != 1U) return 1;
@@ -668,7 +710,8 @@ int main(void)
     game.ram[0x0046U] = 1U;
     game.ram[0x0058U] = 0x10U;
     game.ram[0x0401U] = 0U;
-    mysmb_objects_step_normal_enemies(&game);
+    game.ram[0x0747U] = 0U;
+    mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x00b6U] != 1U || game.ram[0x00cfU] != 0x6bU ||
         game.ram[0x0434U] != 0x3dU) return 1;
     game.ram[0x000fU] = 1U;
@@ -1009,6 +1052,15 @@ int main(void)
         game.ram[0x000eU] != 11U || game.ram[0x009fU] != 0xfcU ||
         game.ram[0x0747U] != 0xffU) return 1;
     mysmb_game_initialize(&game);
+    /* The source BlockObjMT_Updater reaches ReplaceBlockMetatile, which
+     * reads BlockGfxData[8..11] through the current area binding.  This
+     * isolated core route therefore supplies only that four-byte table
+     * window; it does not treat absent resource data as a game result. */
+    area_prg[0x0a41U] = 0x57U;
+    area_prg[0x0a42U] = 0x58U;
+    area_prg[0x0a43U] = 0x59U;
+    area_prg[0x0a44U] = 0x5aU;
+    mysmb_game_bind_area_source(&game, area_prg, (mysmb_u16)sizeof(area_prg));
     game.ram[0x03e4U] = 0x20U;
     game.ram[0x03e5U] = 0x30U;
     game.ram[0x03e6U] = 4U;
@@ -1058,6 +1110,12 @@ int main(void)
     game.ram[0x05f2U] = 0xc2U;
     game.ram[0x0300U] = 0U;
     game.ram[0x0301U] = 0U;
+    /* ErACM tail-calls RemoveCoin_Axe.  The zeroed source area type selects
+     * water's blank metatile and reads BlockGfxData[16..19]. */
+    area_prg[0x0a49U] = 0x26U;
+    area_prg[0x0a4aU] = 0x26U;
+    area_prg[0x0a4bU] = 0x26U;
+    area_prg[0x0a4cU] = 0x26U;
     /* Original ErACM receives the complete block-buffer pointer. */
     game.ram[7U] = 5U; game.ram[6U] = 0xd2U; game.ram[2U] = 0x20U;
     mysmb_objects_collect_coin(&game, 0xd2U, 0x20U);
@@ -1109,6 +1167,12 @@ int main(void)
     game.ram[0x00d7U] = 0x60U;
     game.ram[0x0756U] = 0U;
     game.ram[0x0039U] = 0U;
+    /* RunPUSubs reaches GetEnemyOffscreenBits once reveal state reaches six.
+     * Supply the normal one-page screen window used by the source caller. */
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
     mysmb_objects_start_power_up(&game, 0U);
     if (game.ram[0x001bU] != 0x2eU || game.ram[0x0073U] != 2U ||
         game.ram[0x008cU] != 0x30U || game.ram[0x00bbU] != 1U ||
@@ -1162,7 +1226,9 @@ int main(void)
     game.ram[0x043aU] = 0U;
     mysmb_fireball_step(&game);
     if (game.ram[0x0024U] != 0x80U) return 1;
-    game.ram[0x0756U] = 0U;
+    /* ProcFireball_Bubble reaches ProcFireballs only for fiery Mario.
+     * A live fireball with PlayerStatus below two is not source-reachable. */
+    game.ram[0x0756U] = 2U;
     game.ram[0x0024U] = 1U;
     game.ram[0x0074U] = 0U;
     game.ram[0x008dU] = 0x40U;
@@ -1262,9 +1328,11 @@ int main(void)
     game.ram[0x005dU] = 0x10U;
     game.ram[0x0543U] = 0x61U;
     mysmb_objects_step_power_up(&game);
-    if (game.ram[0x00d4U] != 0x50U || game.ram[0x0023U] != 0xc0U ||
+    /* A grounded d6+d7 mushroom enters LandEnemyProperly: it snaps to the
+     * source $58 row, clears d6 and retains the zero vertical force. */
+    if (game.ram[0x00d4U] != 0x58U || game.ram[0x0023U] != 0x80U ||
         game.ram[0x00a5U] != 0U || game.ram[0x041cU] != 0U ||
-        game.ram[0x0439U] != 0x3dU) return 1;
+        game.ram[0x0439U] != 0U) return 1;
     game.ram[0x0543U] = 0U;
     game.ram[0x0023U] = 0x80U;
     game.ram[0x00d4U] = 0x50U;

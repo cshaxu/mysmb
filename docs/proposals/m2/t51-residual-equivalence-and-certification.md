@@ -354,3 +354,38 @@ with only its established C4761 and `OLDNAMES.LIB` warnings. The three
 owner-local application artifacts are unchanged because this P changes only
 the test fixture. S5 remains open for four unrelated legacy failures: `core`,
 `title-demo`, `end-to-end`, and `local-area`.
+
+### S5 P8: legacy-suite source-route closure
+
+This P changes no shared game or platform behavior and earns no node credit.
+It resolves the final four legacy fixtures by comparing each precondition and
+postcondition with its selected original-ROM route. `core_smoke` no longer
+requires an invented forty-frame entrance X threshold; it uses the per-slot
+normal-enemy caller, legal terrain state, caller-owned player bounding box,
+current source-table windows and the valid fiery-fireball gate. Its power-up
+ground branch now expects `LandEnemyProperly` to align Y to `$58`, clear d6,
+and preserve zero vertical force. `title_demo_smoke` follows the actual
+`RunDemo -> GameCoreRoutine -> PlayerLoseLife -> ContinueGame` return path.
+The ROM-free end-to-end fixture proves only the title-to-game handoff because
+an unbound `LoadAreaPointer` cannot enter the parser. `local_area_smoke` is
+compiled against owner-local generated PRG/CHR/title data, retaining all
+protected data below ignored build output.
+
+The CMake-generated command manifests were executed directly because their
+Ninja regeneration wrapper stalls before producing targets. This changes no
+build rule: each manifest command used its configured compiler, flags and
+link inputs. Both complete native matrices pass, x64 218/218 in 57.97 seconds
+and x86 218/218 in 113.15 seconds. The owner-local area route passes on both
+widths; platform-purity and documentation-governance checks pass. OpenNT
+again compiles and links the complete shared C90 plus DOS adapter to a
+264165-byte MZ program, with only the established C4761 and `OLDNAMES.LIB`
+warnings. Owner-local Win32 x86/x64 packages embed generated local ROM data
+and pass their `--self-test` route. Refreshed artifact hashes are
+`mysmb16.exe` `D3FE87771AFA2EA86435F41EA954055A21750A59151F76491B972BC11E175C2C`,
+`mysmb32.exe` `DDCD4DC6A16C01E6DC8A50AAB29EF43A85E71A1124D007C494B0A18AD7DFEBF4`,
+and `mysmb64.exe` `DE701E81C81CA3F2AE408F463EBB6F85960340FC00CB362B975E3208A519CBFD`.
+
+S5 remains open despite the complete native matrix. The review ledger still
+contains independently recorded original-ROM discrepancies and the DOS16
+resource-binding gap. Passing a project-owned regression suite does not
+replace their source-route evidence or establish DOS16 playability.
