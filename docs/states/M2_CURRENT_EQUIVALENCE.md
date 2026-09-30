@@ -1434,3 +1434,9 @@ branches.
 - Source range: `StarFlagExit2` (`SMBDIS.ASM` line 10596).
 - Node-semantics result: one label moved from `unclassified` to `needs-evidence`; existing incident edge contracts remain applicable. Static review found no discrepancy; controlled flag route remains required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K44 — player/enemy collision table audit
+
+- Source range: collision speed, point and revival tables (`SMBDIS.ASM` lines 11309–11521).
+- Node-semantics result: six labels moved from `unclassified` to `needs-evidence`.
+- Independent material integration result: 6 table-consumer edges received `needs-evidence` contracts. Static review found no discrepancy; controlled collision routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

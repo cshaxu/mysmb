@@ -6637,6 +6637,90 @@
         "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-k44-01",
+      "producer": "ResidualXSpdData",
+      "consumer": "PlayerEnemyCollision",
+      "storage": "ROM ResidualXSpdData collision table",
+      "feasiblePath": "PlayerEnemyCollision selects ResidualXSpdData on the source collision state path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
+      "semanticContract": "Source index selects the same ordered table byte before collision state write.",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k44-02",
+      "producer": "KickedShellXSpdData",
+      "consumer": "HandlePECollisions",
+      "storage": "ROM KickedShellXSpdData collision table",
+      "feasiblePath": "HandlePECollisions selects KickedShellXSpdData on the source collision state path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
+      "semanticContract": "Source index selects the same ordered table byte before collision state write.",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k44-03",
+      "producer": "DemotedKoopaXSpdData",
+      "consumer": "EnemyStomped",
+      "storage": "ROM DemotedKoopaXSpdData collision table",
+      "feasiblePath": "EnemyStomped selects DemotedKoopaXSpdData on the source collision state path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
+      "semanticContract": "Source index selects the same ordered table byte before collision state write.",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k44-04",
+      "producer": "KickedShellPtsData",
+      "consumer": "HandlePECollisions",
+      "storage": "ROM KickedShellPtsData collision table",
+      "feasiblePath": "HandlePECollisions selects KickedShellPtsData on the source collision state path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
+      "semanticContract": "Source index selects the same ordered table byte before collision state write.",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k44-05",
+      "producer": "StompedEnemyPtsData",
+      "consumer": "EnemyStomped",
+      "storage": "ROM StompedEnemyPtsData collision table",
+      "feasiblePath": "EnemyStomped selects StompedEnemyPtsData on the source collision state path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
+      "semanticContract": "Source index selects the same ordered table byte before collision state write.",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-k44-06",
+      "producer": "RevivalRateData",
+      "consumer": "HandleStompedShellE",
+      "storage": "ROM RevivalRateData collision table",
+      "feasiblePath": "HandleStompedShellE selects RevivalRateData on the source collision state path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
+      "semanticContract": "Source index selects the same ordered table byte before collision state write.",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -24118,31 +24202,40 @@
       "label": "ResidualXSpdData",
       "asmLine": 11309,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "contact_data PRG bindings and collision handlers",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer."
     },
     {
       "label": "KickedShellXSpdData",
       "asmLine": 11312,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "contact_data PRG bindings and collision handlers",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer."
     },
     {
       "label": "DemotedKoopaXSpdData",
       "asmLine": 11315,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "contact_data PRG bindings and collision handlers",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer."
     },
     {
       "label": "PlayerEnemyCollision",
@@ -24200,11 +24293,14 @@
       "label": "KickedShellPtsData",
       "asmLine": 11350,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "contact_data PRG bindings and collision handlers",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer."
     },
     {
       "label": "HandlePECollisions",
@@ -24379,11 +24475,14 @@
       "label": "StompedEnemyPtsData",
       "asmLine": 11461,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "contact_data PRG bindings and collision handlers",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer."
     },
     {
       "label": "EnemyStomped",
@@ -24428,11 +24527,14 @@
       "label": "RevivalRateData",
       "asmLine": 11521,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "contact_data PRG bindings and collision handlers",
+      "semanticEvidence": [
+        "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer."
     },
     {
       "label": "HandleStompedShellE",
