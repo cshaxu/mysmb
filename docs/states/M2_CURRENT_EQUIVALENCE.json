@@ -8680,221 +8680,287 @@
       "label": "GameMode",
       "asmLine": 5315,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "GameCoreRoutine",
       "asmLine": 5326,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "GameEngine",
       "asmLine": 5336,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "ProcELoop",
       "asmLine": 5339,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "NoChgMus",
       "asmLine": 5371,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "CycleTwo",
       "asmLine": 5377,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "ClrPlrPal",
       "asmLine": 5380,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "SaveAB",
       "asmLine": 5381,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "UpdScrollVar",
       "asmLine": 5385,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "RunParser",
       "asmLine": 5398,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "ExitEng",
       "asmLine": 5399,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "ScrollHandler",
       "asmLine": 5403,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "ChkNearMid",
       "asmLine": 5422,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "ScrollScreen",
       "asmLine": 5427,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "InitScrlAmt",
       "asmLine": 5451,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "ChkPOffscr",
       "asmLine": 5453,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "KeepOnscr",
       "asmLine": 5463,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "InitPlatScrl",
       "asmLine": 5475,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "X_SubtracterData",
       "asmLine": 5479,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "OffscrJoypadBitsData",
       "asmLine": 5482,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "GetScreenPosition",
       "asmLine": 5487,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "GameRoutines",
       "asmLine": 5499,
       "cohort": "E",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering."
     },
     {
       "label": "PlayerEntrance",
@@ -35330,10 +35396,13 @@
       "instruction": "jsr",
       "id": "control-00770",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation GameMode -> JumpEngine.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "GameMode",
@@ -35343,10 +35412,13 @@
       "instruction": "jsr",
       "id": "control-00771",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation GameMode -> GameCoreRoutine.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "GameCoreRoutine",
@@ -35356,10 +35428,13 @@
       "instruction": "jsr",
       "id": "control-00772",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation GameCoreRoutine -> GameRoutines.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "GameCoreRoutine",
@@ -35369,10 +35444,13 @@
       "instruction": "bcs",
       "id": "control-00773",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation GameCoreRoutine -> GameEngine.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "GameEngine",
@@ -35382,10 +35460,13 @@
       "instruction": "jsr",
       "id": "control-00774",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation GameEngine -> ProcFireball_Bubble.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "GameEngine",
@@ -35395,10 +35476,13 @@
       "instruction": "ldx",
       "id": "control-00775",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation GameEngine -> ProcELoop.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35408,10 +35492,13 @@
       "instruction": "jsr",
       "id": "control-00776",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> EnemiesAndLoopsCore.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35422,12 +35509,13 @@
       "id": "control-00777",
       "cohort": "E",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/engine_slots.c:mysmb_game_engine_actors per-slot floatey call",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> FloateyNumbersRoutine.",
       "semanticEvidence": [
-        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original ProcELoop -> FloateyNumbersRoutine executes once for the same ObjectOffset immediately after the slot enemy core."
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35437,10 +35525,13 @@
       "instruction": "bne",
       "id": "control-00778",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> ProcELoop.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35450,10 +35541,13 @@
       "instruction": "jsr",
       "id": "control-00779",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> GetPlayerOffscreenBits.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35463,10 +35557,13 @@
       "instruction": "jsr",
       "id": "control-00780",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> RelativePlayerPosition.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35476,10 +35573,13 @@
       "instruction": "jsr",
       "id": "control-00781",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> PlayerGfxHandler.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35489,10 +35589,13 @@
       "instruction": "jsr",
       "id": "control-00782",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> BlockObjMT_Updater.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35502,10 +35605,13 @@
       "instruction": "jsr",
       "id": "control-00783",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> BlockObjectsCore.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35515,10 +35621,13 @@
       "instruction": "jsr",
       "id": "control-00784",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> BlockObjectsCore.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35528,10 +35637,13 @@
       "instruction": "jsr",
       "id": "control-00785",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> MiscObjectsCore.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35541,10 +35653,13 @@
       "instruction": "jsr",
       "id": "control-00786",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> ProcessCannons.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35554,10 +35669,13 @@
       "instruction": "jsr",
       "id": "control-00787",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> ProcessWhirlpools.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35567,10 +35685,13 @@
       "instruction": "jsr",
       "id": "control-00788",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> FlagpoleRoutine.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35580,10 +35701,13 @@
       "instruction": "jsr",
       "id": "control-00789",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> RunGameTimer.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35594,12 +35718,13 @@
       "id": "control-00790",
       "cohort": "E",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C renderer owner named by Td S9 B6",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> ColorRotation.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required.",
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original ProcELoop -> ColorRotation call relation must preserve source predicate, buffer/table state and successor or return handoff."
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35609,10 +35734,13 @@
       "instruction": "bpl",
       "id": "control-00791",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> NoChgMus.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35622,10 +35750,13 @@
       "instruction": "beq",
       "id": "control-00792",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> ClrPlrPal.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35635,10 +35766,13 @@
       "instruction": "bne",
       "id": "control-00793",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> NoChgMus.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35648,10 +35782,13 @@
       "instruction": "bne",
       "id": "control-00794",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> NoChgMus.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35661,10 +35798,13 @@
       "instruction": "jsr",
       "id": "control-00795",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ProcELoop -> GetAreaMusic.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ProcELoop",
@@ -35674,10 +35814,13 @@
       "instruction": "jsr",
       "id": "control-00796",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation ProcELoop -> NoChgMus.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "NoChgMus",
@@ -35687,10 +35830,13 @@
       "instruction": "bcs",
       "id": "control-00797",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation NoChgMus -> CycleTwo.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "NoChgMus",
@@ -35700,10 +35846,13 @@
       "instruction": "lsr",
       "id": "control-00798",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation NoChgMus -> CycleTwo.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "CycleTwo",
@@ -35713,10 +35862,13 @@
       "instruction": "jsr",
       "id": "control-00799",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation CycleTwo -> CyclePlayerPalette.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "CycleTwo",
@@ -35726,10 +35878,13 @@
       "instruction": "jmp",
       "id": "control-00800",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source jump relation CycleTwo -> SaveAB.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ClrPlrPal",
@@ -35739,10 +35894,13 @@
       "instruction": "jsr",
       "id": "control-00801",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ClrPlrPal -> ResetPalStar.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ClrPlrPal",
@@ -35752,10 +35910,13 @@
       "instruction": "jsr",
       "id": "control-00802",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation ClrPlrPal -> SaveAB.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "SaveAB",
@@ -35765,10 +35926,13 @@
       "instruction": "sta",
       "id": "control-00803",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation SaveAB -> UpdScrollVar.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "UpdScrollVar",
@@ -35778,10 +35942,13 @@
       "instruction": "beq",
       "id": "control-00804",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation UpdScrollVar -> ExitEng.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "UpdScrollVar",
@@ -35791,10 +35958,13 @@
       "instruction": "bne",
       "id": "control-00805",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation UpdScrollVar -> RunParser.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "UpdScrollVar",
@@ -35804,10 +35974,13 @@
       "instruction": "bmi",
       "id": "control-00806",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation UpdScrollVar -> ExitEng.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "UpdScrollVar",
@@ -35817,10 +35990,13 @@
       "instruction": "sta",
       "id": "control-00807",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation UpdScrollVar -> RunParser.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "RunParser",
@@ -35830,10 +36006,13 @@
       "instruction": "jsr",
       "id": "control-00808",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation RunParser -> AreaParserTaskHandler.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "RunParser",
@@ -35843,10 +36022,13 @@
       "instruction": "jsr",
       "id": "control-00809",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation RunParser -> ExitEng.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ScrollHandler",
@@ -35856,10 +36038,13 @@
       "instruction": "bne",
       "id": "control-00810",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> InitScrlAmt.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ScrollHandler",
@@ -35869,10 +36054,13 @@
       "instruction": "bcc",
       "id": "control-00811",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> InitScrlAmt.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ScrollHandler",
@@ -35882,10 +36070,13 @@
       "instruction": "bne",
       "id": "control-00812",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> InitScrlAmt.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ScrollHandler",
@@ -35895,10 +36086,13 @@
       "instruction": "bmi",
       "id": "control-00813",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> InitScrlAmt.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ScrollHandler",
@@ -35908,10 +36102,13 @@
       "instruction": "bcc",
       "id": "control-00814",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> ChkNearMid.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ScrollHandler",
@@ -35921,10 +36118,13 @@
       "instruction": "dey",
       "id": "control-00815",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation ScrollHandler -> ChkNearMid.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ChkNearMid",
@@ -35934,10 +36134,13 @@
       "instruction": "bcc",
       "id": "control-00816",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source branch relation ChkNearMid -> ScrollScreen.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ChkNearMid",
@@ -35947,10 +36150,13 @@
       "instruction": "ldy",
       "id": "control-00817",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation ChkNearMid -> ScrollScreen.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ScrollScreen",
@@ -35960,10 +36166,13 @@
       "instruction": "jsr",
       "id": "control-00818",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source call relation ScrollScreen -> GetScreenPosition.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ScrollScreen",
@@ -35973,10 +36182,13 @@
       "instruction": "jmp",
       "id": "control-00819",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source jump relation ScrollScreen -> ChkPOffscr.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "InitScrlAmt",
@@ -35986,10 +36198,13 @@
       "instruction": "sta",
       "id": "control-00820",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared game core preserves source fallthrough relation InitScrlAmt -> ChkPOffscr.",
+      "semanticEvidence": [
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source control predicate and frame-state handoff ordering."
     },
     {
       "from": "ChkPOffscr",
