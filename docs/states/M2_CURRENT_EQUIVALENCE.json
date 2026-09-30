@@ -855,6 +855,34 @@
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00061",
+      "producer": "VerticalPipeData",
+      "consumer": "DrawPipe",
+      "storage": "pipe phase-indexed top/body metatile pairs to staged buffer",
+      "feasiblePath": "VerticalPipe selects a source phase, DrawPipe reads its top then body pair before RenderUnderPart.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:vertical-pipe selection in mysmb_area_apply_parser_object",
+      "semanticContract": "Usage-control phase, top/body pair order and under-part height agree.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00062",
+      "producer": "FindEmptyEnemySlot",
+      "consumer": "NotTall/WarpPipe",
+      "storage": "regular-slot search carry result and selected X slot",
+      "feasiblePath": "Castle ignores carry and may use slot five; vertical pipe branches on carry and creates piranha only on success.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_find_empty_enemy_slot callers",
+      "semanticContract": "The same primitive result reaches distinct caller-specific successor behavior without conflation.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -6205,221 +6233,287 @@
       "label": "PlayerStop",
       "asmLine": 3789,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the terminal floor brick before common castle return."
     },
     {
       "label": "ExitCastle",
       "asmLine": 3791,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common castle return after page/length/flag decisions."
     },
     {
       "label": "WaterPipe",
       "asmLine": 3795,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes two water-pipe metatiles at decoded row."
     },
     {
       "label": "IntroPipe",
       "asmLine": 3810,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds fixed side pipe and conditionally clears upper vertical-pipe staging."
     },
     {
       "label": "VPipeSectLoop",
       "asmLine": 3817,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears staged rows six through zero before intro-pipe cap placement."
     },
     {
       "label": "NoBlankP",
       "asmLine": 3823,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Intro-pipe completion return."
     },
     {
       "label": "SidePipeShaftData",
       "asmLine": 3825,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds shaft-present selector and shaft metatile values."
     },
     {
       "label": "SidePipeTopPart",
       "asmLine": 3828,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds side-pipe top metatiles by horizontal phase."
     },
     {
       "label": "SidePipeBottomPart",
       "asmLine": 3831,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds side-pipe bottom metatiles by horizontal phase."
     },
     {
       "label": "ExitPipe",
       "asmLine": 3835,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Combines fixed horizontal length, decoded height and side-pipe rendering."
     },
     {
       "label": "RenderSidewaysPipe",
       "asmLine": 3840,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Separates vertical shaft height from horizontal phase and renders shaft before side pieces when present."
     },
     {
       "label": "DrawSidePart",
       "asmLine": 3855,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes source top/bottom side-pipe pair at selected staged row."
     },
     {
       "label": "VerticalPipeData",
       "asmLine": 3862,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds warp and decoration vertical pipe top/body pairs."
     },
     {
       "label": "VerticalPipe",
       "asmLine": 3868,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects pipe data, conditionally creates one piranha, then renders top/body/under-part."
     },
     {
       "label": "WarpPipe",
       "asmLine": 3876,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Skips or creates piranha according to 1-1, phase and empty-slot predicates before DrawPipe."
     },
     {
       "label": "DrawPipe",
       "asmLine": 3900,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes top/body pipe metatiles and tail-enters under-part rendering."
     },
     {
       "label": "GetPipeHeight",
       "asmLine": 3911,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decodes fixed pipe phase and three-bit vertical extent."
     },
     {
       "label": "FindEmptyEnemySlot",
       "asmLine": 3921,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Scans slots zero through four, returning success at first zero or carry failure after all occupied."
     },
     {
       "label": "EmptyChkLoop",
       "asmLine": 3923,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Per-slot empty test and bounded regular-slot increment."
     },
     {
       "label": "ExitEmptyChk",
       "asmLine": 3929,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common success/failure return preserving source carry outcome."
     },
     {
       "label": "Hole_Water",
       "asmLine": 3933,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes wave and water-underpart geometry from large-object length."
     },
     {
       "label": "QuestionBlockRow_High",
       "asmLine": 3944,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Falls into low-row question block handling after its high-row setup."
     },
     {
       "label": "QuestionBlockRow_Low",
@@ -32488,7 +32582,7 @@
       "status": "needs-evidence",
       "currentCounterpart": "area.c preserves source branch relation NotTall -> ExitCastle.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
       ],
       "operationalEvidence": [],
       "semanticContract": "area.c preserves source branch relation NotTall -> ExitCastle."
@@ -32504,7 +32598,7 @@
       "status": "needs-evidence",
       "currentCounterpart": "area.c preserves source call relation NotTall -> GetAreaObjXPosition.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
       ],
       "operationalEvidence": [],
       "semanticContract": "area.c preserves source call relation NotTall -> GetAreaObjXPosition."
@@ -32520,7 +32614,7 @@
       "status": "needs-evidence",
       "currentCounterpart": "area.c preserves source call relation NotTall -> FindEmptyEnemySlot.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
       ],
       "operationalEvidence": [],
       "semanticContract": "area.c preserves source call relation NotTall -> FindEmptyEnemySlot."
@@ -32533,10 +32627,13 @@
       "instruction": "sty",
       "id": "control-00642",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation PlayerStop -> ExitCastle.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation PlayerStop -> ExitCastle."
     },
     {
       "from": "WaterPipe",
@@ -32546,10 +32643,13 @@
       "instruction": "jsr",
       "id": "control-00643",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation WaterPipe -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation WaterPipe -> GetLrgObjAttrib."
     },
     {
       "from": "IntroPipe",
@@ -32559,10 +32659,13 @@
       "instruction": "jsr",
       "id": "control-00644",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation IntroPipe -> ChkLrgObjFixedLength.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation IntroPipe -> ChkLrgObjFixedLength."
     },
     {
       "from": "IntroPipe",
@@ -32572,10 +32675,13 @@
       "instruction": "jsr",
       "id": "control-00645",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation IntroPipe -> RenderSidewaysPipe.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation IntroPipe -> RenderSidewaysPipe."
     },
     {
       "from": "IntroPipe",
@@ -32585,10 +32691,13 @@
       "instruction": "bcs",
       "id": "control-00646",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation IntroPipe -> NoBlankP.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation IntroPipe -> NoBlankP."
     },
     {
       "from": "IntroPipe",
@@ -32598,10 +32707,13 @@
       "instruction": "ldx",
       "id": "control-00647",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation IntroPipe -> VPipeSectLoop.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation IntroPipe -> VPipeSectLoop."
     },
     {
       "from": "VPipeSectLoop",
@@ -32611,10 +32723,13 @@
       "instruction": "bpl",
       "id": "control-00648",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation VPipeSectLoop -> VPipeSectLoop.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation VPipeSectLoop -> VPipeSectLoop."
     },
     {
       "from": "VPipeSectLoop",
@@ -32624,10 +32739,13 @@
       "instruction": "sta",
       "id": "control-00649",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation VPipeSectLoop -> NoBlankP.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation VPipeSectLoop -> NoBlankP."
     },
     {
       "from": "ExitPipe",
@@ -32637,10 +32755,13 @@
       "instruction": "jsr",
       "id": "control-00650",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation ExitPipe -> ChkLrgObjFixedLength.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation ExitPipe -> ChkLrgObjFixedLength."
     },
     {
       "from": "ExitPipe",
@@ -32650,10 +32771,13 @@
       "instruction": "jsr",
       "id": "control-00651",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation ExitPipe -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation ExitPipe -> GetLrgObjAttrib."
     },
     {
       "from": "ExitPipe",
@@ -32663,10 +32787,13 @@
       "instruction": "jsr",
       "id": "control-00652",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation ExitPipe -> RenderSidewaysPipe.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation ExitPipe -> RenderSidewaysPipe."
     },
     {
       "from": "RenderSidewaysPipe",
@@ -32676,10 +32803,13 @@
       "instruction": "beq",
       "id": "control-00653",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation RenderSidewaysPipe -> DrawSidePart.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation RenderSidewaysPipe -> DrawSidePart."
     },
     {
       "from": "RenderSidewaysPipe",
@@ -32689,10 +32819,13 @@
       "instruction": "jsr",
       "id": "control-00654",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation RenderSidewaysPipe -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation RenderSidewaysPipe -> RenderUnderPart."
     },
     {
       "from": "RenderSidewaysPipe",
@@ -32702,10 +32835,13 @@
       "instruction": "clc",
       "id": "control-00655",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation RenderSidewaysPipe -> DrawSidePart.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation RenderSidewaysPipe -> DrawSidePart."
     },
     {
       "from": "VerticalPipe",
@@ -32715,10 +32851,13 @@
       "instruction": "jsr",
       "id": "control-00656",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation VerticalPipe -> GetPipeHeight.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation VerticalPipe -> GetPipeHeight."
     },
     {
       "from": "VerticalPipe",
@@ -32728,10 +32867,13 @@
       "instruction": "beq",
       "id": "control-00657",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation VerticalPipe -> WarpPipe.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation VerticalPipe -> WarpPipe."
     },
     {
       "from": "VerticalPipe",
@@ -32741,10 +32883,13 @@
       "instruction": "iny",
       "id": "control-00658",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation VerticalPipe -> WarpPipe.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation VerticalPipe -> WarpPipe."
     },
     {
       "from": "WarpPipe",
@@ -32754,10 +32899,13 @@
       "instruction": "beq",
       "id": "control-00659",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation WarpPipe -> DrawPipe."
     },
     {
       "from": "WarpPipe",
@@ -32767,10 +32915,13 @@
       "instruction": "beq",
       "id": "control-00660",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation WarpPipe -> DrawPipe."
     },
     {
       "from": "WarpPipe",
@@ -32780,10 +32931,13 @@
       "instruction": "jsr",
       "id": "control-00661",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation WarpPipe -> FindEmptyEnemySlot.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation WarpPipe -> FindEmptyEnemySlot."
     },
     {
       "from": "WarpPipe",
@@ -32793,10 +32947,13 @@
       "instruction": "bcs",
       "id": "control-00662",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation WarpPipe -> DrawPipe."
     },
     {
       "from": "WarpPipe",
@@ -32806,10 +32963,13 @@
       "instruction": "jsr",
       "id": "control-00663",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation WarpPipe -> GetAreaObjXPosition.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation WarpPipe -> GetAreaObjXPosition."
     },
     {
       "from": "WarpPipe",
@@ -32819,10 +32979,13 @@
       "instruction": "jsr",
       "id": "control-00664",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation WarpPipe -> GetAreaObjYPosition.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation WarpPipe -> GetAreaObjYPosition."
     },
     {
       "from": "WarpPipe",
@@ -32832,10 +32995,13 @@
       "instruction": "jsr",
       "id": "control-00665",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation WarpPipe -> InitPiranhaPlant.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation WarpPipe -> InitPiranhaPlant."
     },
     {
       "from": "WarpPipe",
@@ -32845,10 +33011,13 @@
       "instruction": "jsr",
       "id": "control-00666",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation WarpPipe -> DrawPipe.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation WarpPipe -> DrawPipe."
     },
     {
       "from": "DrawPipe",
@@ -32858,10 +33027,13 @@
       "instruction": "jmp",
       "id": "control-00667",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump relation DrawPipe -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump relation DrawPipe -> RenderUnderPart."
     },
     {
       "from": "GetPipeHeight",
@@ -32871,10 +33043,13 @@
       "instruction": "jsr",
       "id": "control-00668",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation GetPipeHeight -> ChkLrgObjFixedLength.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation GetPipeHeight -> ChkLrgObjFixedLength."
     },
     {
       "from": "GetPipeHeight",
@@ -32884,10 +33059,13 @@
       "instruction": "jsr",
       "id": "control-00669",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation GetPipeHeight -> GetLrgObjAttrib.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation GetPipeHeight -> GetLrgObjAttrib."
     },
     {
       "from": "FindEmptyEnemySlot",
@@ -32897,10 +33075,13 @@
       "instruction": "ldx",
       "id": "control-00670",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation FindEmptyEnemySlot -> EmptyChkLoop.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation FindEmptyEnemySlot -> EmptyChkLoop."
     },
     {
       "from": "EmptyChkLoop",
@@ -32910,10 +33091,13 @@
       "instruction": "beq",
       "id": "control-00671",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation EmptyChkLoop -> ExitEmptyChk.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation EmptyChkLoop -> ExitEmptyChk."
     },
     {
       "from": "EmptyChkLoop",
@@ -32923,10 +33107,13 @@
       "instruction": "bne",
       "id": "control-00672",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source branch relation EmptyChkLoop -> EmptyChkLoop.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source branch relation EmptyChkLoop -> EmptyChkLoop."
     },
     {
       "from": "EmptyChkLoop",
@@ -32936,10 +33123,13 @@
       "instruction": "bne",
       "id": "control-00673",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation EmptyChkLoop -> ExitEmptyChk.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation EmptyChkLoop -> ExitEmptyChk."
     },
     {
       "from": "Hole_Water",
@@ -32949,10 +33139,13 @@
       "instruction": "jsr",
       "id": "control-00674",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source call relation Hole_Water -> ChkLrgObjLength.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source call relation Hole_Water -> ChkLrgObjLength."
     },
     {
       "from": "Hole_Water",
@@ -32962,10 +33155,13 @@
       "instruction": "jmp",
       "id": "control-00675",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source jump relation Hole_Water -> RenderUnderPart.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source jump relation Hole_Water -> RenderUnderPart."
     },
     {
       "from": "QuestionBlockRow_High",
@@ -32975,10 +33171,13 @@
       "instruction": "lda",
       "id": "control-00676",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source fallthrough relation QuestionBlockRow_High -> QuestionBlockRow_Low.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source fallthrough relation QuestionBlockRow_High -> QuestionBlockRow_Low."
     },
     {
       "from": "QuestionBlockRow_Low",
@@ -70873,10 +71072,13 @@
       "instruction": "rts/rti",
       "id": "control-03573",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source return handoff FindEmptyEnemySlot -> NotTall, including caller-specific empty-slot result handling.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source return handoff FindEmptyEnemySlot -> NotTall, including caller-specific empty-slot result handling."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -70912,10 +71114,13 @@
       "instruction": "rts/rti",
       "id": "control-03576",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source return handoff RenderSidewaysPipe -> IntroPipe, including caller-specific empty-slot result handling.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source return handoff RenderSidewaysPipe -> IntroPipe, including caller-specific empty-slot result handling."
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -70964,10 +71169,13 @@
       "instruction": "rts/rti",
       "id": "control-03580",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source return handoff GetPipeHeight -> VerticalPipe, including caller-specific empty-slot result handling.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source return handoff GetPipeHeight -> VerticalPipe, including caller-specific empty-slot result handling."
     },
     {
       "from": "FindEmptyEnemySlot",
@@ -70977,10 +71185,13 @@
       "instruction": "rts/rti",
       "id": "control-03581",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves source return handoff FindEmptyEnemySlot -> WarpPipe, including caller-specific empty-slot result handling.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves source return handoff FindEmptyEnemySlot -> WarpPipe, including caller-specific empty-slot result handling."
     },
     {
       "from": "GetAreaObjXPosition",

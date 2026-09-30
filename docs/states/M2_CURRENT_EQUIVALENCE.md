@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 345 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 367 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,600 | Not yet processed by this re-audit. |
+| Unclassified | 1,578 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 713 control; 56 material RAM/table |
+| Needs evidence | 752 control; 58 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,543 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,504 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -564,3 +564,15 @@ material paths record frenzy table consumption and castle grid use. No static
 discrepancy was found. These 21 nodes, 43 relations and both data paths remain
 `needs-evidence` pending ROM/x86/x64 routes for each style, frenzy occupancy,
 pulley phase and castle-column outcome.
+
+### Cohort C — B10i castle finish, pipe variants and regular-slot search
+
+`PlayerStop` through `QuestionBlockRow_High` (lines 3772–3945) now have
+individual contracts and 39 control/return relations. The audit records water,
+intro, exit and vertical pipes; side-pipe shaft/part tables; piranha spawn
+gates; and the five-slot empty search. It explicitly distinguishes castle's
+carry-ignoring star-flag allocation from vertical-pipe's carry-gated piranha
+allocation. Two material paths record vertical-pipe table consumption and the
+caller-specific slot-search handoff. No static discrepancy was found. These
+22 nodes, 39 relations and both data paths remain `needs-evidence` pending
+ROM/x86/x64 pipe, slot-full and piranha-route captures.
