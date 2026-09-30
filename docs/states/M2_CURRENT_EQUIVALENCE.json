@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 143,
+    "enumeratedCount": 146,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2015,6 +2015,48 @@
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00144",
+      "producer": "FireworksXPosData",
+      "consumer": "InitFireworks",
+      "storage": "FireworksXPosData[FireworksCounter+star state]",
+      "feasiblePath": "StarFChk retains the source index after counter decrement and uses it for X with page carry.",
+      "status": "needs-evidence",
+      "currentCounterpart": "x_data[index]",
+      "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00145",
+      "producer": "FireworksYPosData",
+      "consumer": "InitFireworks",
+      "storage": "FireworksYPosData[FireworksCounter+star state]",
+      "feasiblePath": "The same source index selects final Y.",
+      "status": "needs-evidence",
+      "currentCounterpart": "y_data[index]",
+      "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00146",
+      "producer": "StarFChk",
+      "consumer": "InitFireworks",
+      "storage": "star X/page minus $30 and carry",
+      "feasiblePath": "The initial subtract borrow feeds star page and final X-add carry feeds fireworks page.",
+      "status": "needs-evidence",
+      "currentCounterpart": "x_before and page local in mysmb_enemy_init_fireworks_frenzy",
+      "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -15074,51 +15116,66 @@
       "label": "FireworksXPosData",
       "asmLine": 8653,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireworks frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds six exact X offsets indexed by decremented FireworksCounter plus star-flag state."
     },
     {
       "label": "FireworksYPosData",
       "asmLine": 8656,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireworks frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the matching six exact Y positions."
     },
     {
       "label": "InitFireworks",
       "asmLine": 8659,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireworks frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates frenzy timer, resets it to $20, decrements FireworksCounter and begins star-flag lookup."
     },
     {
       "label": "StarFChk",
       "asmLine": 8666,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireworks frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reverse-searches slots five through zero for StarFlagObject, then preserves subtract-$30 borrow into page and uses the counter/state index for both tables."
     },
     {
       "label": "ExitFWk",
       "asmLine": 8697,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared fireworks frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after timer gating or complete explosion initialization."
     },
     {
       "label": "Bitmasks",
@@ -50594,10 +50651,13 @@
       "instruction": "bne",
       "id": "control-01588",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitFireworks -> ExitFWk with timer, star-slot, counter/state index and page-carry handoff."
     },
     {
       "from": "InitFireworks",
@@ -50607,10 +50667,13 @@
       "instruction": "ldy",
       "id": "control-01589",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitFireworks -> StarFChk with timer, star-slot, counter/state index and page-carry handoff."
     },
     {
       "from": "StarFChk",
@@ -50620,10 +50683,13 @@
       "instruction": "bne",
       "id": "control-01590",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation StarFChk -> StarFChk with timer, star-slot, counter/state index and page-carry handoff."
     },
     {
       "from": "StarFChk",
@@ -50633,10 +50699,13 @@
       "instruction": "sta",
       "id": "control-01591",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation StarFChk -> ExitFWk with timer, star-slot, counter/state index and page-carry handoff."
     },
     {
       "from": "BulletBillCheepCheep",
@@ -87000,10 +87069,13 @@
       "selector": 4,
       "id": "control-04274",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitFireworks with timer, star-slot, counter/state index and page-carry handoff."
     },
     {
       "from": "InitEnemyFrenzy",
