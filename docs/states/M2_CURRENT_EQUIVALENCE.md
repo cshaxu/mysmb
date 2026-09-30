@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 237 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 252 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,708 | Not yet processed by this re-audit. |
+| Unclassified | 1,693 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 450 control; 42 material RAM/table |
+| Needs evidence | 480 control; 44 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,806 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,776 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -474,3 +474,17 @@ relations remain `needs-evidence` until controlled original-ROM and current
 x86/x64 route records cover title/non-title music, pipe/cloud selection,
 ordinary/water/alternate entrances, timer reload/no-reload and override/vine
 paths. This is intentionally not an `exact` claim.
+
+### Cohort C — B10b death restart, Game Over and player-record integration
+
+`HalfwayPageNybbles` through `ExTrans` (lines 2921–3049) now have individual
+node contracts. The independent edge pass records 30 control/return/dispatch
+relations: life-underflow, world/level checkpoint indexing and nibble choice,
+screen-page acceptance, death restart, all three Game Over task vectors,
+Start/timer termination, restart pointer ordering, and the two-player
+seven-byte exchange. Two feasible material paths record the checkpoint table
+and the player-record exchange. Static comparison found no new discrepancy.
+All 15 nodes, 30 relations and two material paths remain `needs-evidence`
+until controlled original-ROM and x86/x64 runs cover no-life Game Over,
+checkpoint accepted/rejected paths, Start/non-Start timer paths and both
+successful and failed two-player transpositions.
