@@ -27608,41 +27608,53 @@
       "label": "DrawBrickChunks",
       "asmLine": 14187,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_brick_chunks",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects end-level ball tile/palette or normal brick chunk tile/palette before common drawing."
     },
     {
       "label": "DChunks",
       "asmLine": 14197,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_brick_chunks",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes four tiles/attributes, computes source carry-sensitive reflected X positions, writes both chunk rows and applies left/top hides."
     },
     {
       "label": "ChnkOfs",
       "asmLine": 14242,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_brick_chunks",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses signed original-relative X and source X comparison to hide the right chunk column only on the wrapped-left overlap case."
     },
     {
       "label": "ExBCDr",
       "asmLine": 14250,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/block_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_brick_chunks",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after brick-chunk OAM and offscreen handling."
     },
     {
       "label": "DrawFireball",
@@ -52621,12 +52633,12 @@
       "id": "control-01365",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation BlockObjectsCore -> DrawBrickChunks with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM call relation BlockObjectsCore -> DrawBrickChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "BlockObjectsCore",
@@ -77852,10 +77864,13 @@
       "instruction": "beq",
       "id": "control-02993",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawBrickChunks -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DrawBrickChunks",
@@ -77865,10 +77880,13 @@
       "instruction": "lda",
       "id": "control-02994",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawBrickChunks -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77879,12 +77897,12 @@
       "id": "control-02995",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source block/area/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77895,12 +77913,12 @@
       "id": "control-02996",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source block/area/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77910,10 +77928,13 @@
       "instruction": "jsr",
       "id": "control-02997",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DChunks -> DumpTwoSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77924,12 +77945,12 @@
       "id": "control-02998",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DChunks -> ChkLeftCo with source block/area/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM call relation DChunks -> ChkLeftCo with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77939,10 +77960,13 @@
       "instruction": "bcc",
       "id": "control-02999",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DChunks -> ChnkOfs with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77952,10 +77976,13 @@
       "instruction": "jsr",
       "id": "control-03000",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DChunks -> DumpTwoSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DChunks",
@@ -77965,10 +77992,13 @@
       "instruction": "jsr",
       "id": "control-03001",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DChunks -> ChnkOfs with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "ChnkOfs",
@@ -77978,10 +78008,13 @@
       "instruction": "bpl",
       "id": "control-03002",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ChnkOfs -> ExBCDr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "ChnkOfs",
@@ -77991,10 +78024,13 @@
       "instruction": "bcc",
       "id": "control-03003",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ChnkOfs -> ExBCDr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "ChnkOfs",
@@ -78004,10 +78040,13 @@
       "instruction": "sta",
       "id": "control-03004",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ChnkOfs -> ExBCDr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DrawFireball",
@@ -88447,12 +88486,12 @@
       "id": "control-03756",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawBrickChunks -> BlockObjectsCore with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM return relation DrawBrickChunks -> BlockObjectsCore with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "ImposeGravityBlock",
@@ -92627,12 +92666,12 @@
       "id": "control-04024",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DChunks with source block/area/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DumpFourSpr",
@@ -92643,12 +92682,12 @@
       "id": "control-04025",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DChunks with source block/area/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DumpTwoSpr",
@@ -92658,10 +92697,13 @@
       "instruction": "rts/rti",
       "id": "control-04026",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "ChkLeftCo",
@@ -92672,12 +92714,12 @@
       "id": "control-04027",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation ChkLeftCo -> DChunks with source block/area/offscreen predicate, OAM handoff and return ordering."
+      "semanticContract": "Preserves ROM return relation ChkLeftCo -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DumpTwoSpr",
@@ -92687,10 +92729,13 @@
       "instruction": "rts/rti",
       "id": "control-04028",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "semanticEvidence": [
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering."
     },
     {
       "from": "DumpFourSpr",

@@ -1250,3 +1250,7 @@ branches.
 ### Cohort K — K11 bouncing-block OAM integration
 
 `DefaultBlockObjTiles` through `ExDBlk` now has ten node contracts, every local draw-row, replacement, area-palette, column-hide and return relation, plus one feasible default-tile handoff. Static review matches the two source tile pairs, non-ground lineless replacement, used-block palette/flip bytes, d2 right and d3 left column hiding, and the shared two-row f8 helper. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal/used, ground/non-ground and each offscreen-column route.
+
+### Cohort K — K12 brick-chunk OAM integration
+
+`DrawBrickChunks` through `ExBCDr` now has four node contracts and every local mode, helper, phase, offscreen and return relation. Static review matches end-level versus normal tile/palette selection, frame d3-d2 attribute phase, carry-sensitive reflected X arithmetic, left/top hide order and wrapped-left right-column suppression. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal/end-level, phase, offscreen and wrapped-left routes.
