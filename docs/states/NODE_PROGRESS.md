@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1953 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1957 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 35 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 4 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 0 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1953 / 1,992 (98.04%)**. The 35 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1957 / 1,992 (98.24%)**. The 35 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T51 S1 closure](../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s1-closure-nmi-parent-integration) closes the shared NMI parent through source-order audit, controlled normal/pause boundaries, x86/x64 checks and the OpenNT DOS16 link.
+Latest task review: [T51 S2 closure](../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s2-closure-screen-parser-output-chain) closes the source-contiguous screen/parser output chain through actual two-branch shared-core checks and the OpenNT DOS16 link.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1953)
+## Completed matches (1957)
 
 | ROM line | Node |
 | ---: | --- |
@@ -130,6 +130,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 1355 | `GetAltOffset` |
 | 1358 | `FloateyPart` |
 | 1363 | `SetupNumSpr` |
+| 1386 | `ScreenRoutines` |
+| 1595 | `AreaParserTaskControl` |
+| 1597 | `TaskLoop` |
+| 1603 | `OutputCol` |
 | 1408 | `InitScreen` |
 | 1418 | `SetupIntermediate` |
 | 1436 | `AreaPalette` |

@@ -27,7 +27,6 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
 | M2 T22 S9 | 1 | `ScreenOff` |
-| M2 T24 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
 | M2 T25 S10 | 1 | `ChkSelect` |
 | M2 T25 S11 | 1 | `ChkWorldSel` |
 | M2 T25 S12 | 1 | `SelectBLogic` |
@@ -224,6 +223,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T50 S2 | 5 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` |
 | M2 T50 S3 | 2 | `BowserFlameEnvData`, `BrickShatterEnvData` |
 | M2 T51 S1 | 1 | `NonMaskableInterrupt` |
+| M2 T51 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
 
 ## Future admission packages and queued plans
 
@@ -341,7 +341,7 @@ transfer existing ownership or allocate a numeric T.
 | 1355 | `GetAltOffset` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1358 | `FloateyPart` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1363 | `SetupNumSpr` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1386 | `ScreenRoutines` | M2 T24 S2 | existing closure backlog; M2 T27 S3 full dispatch-table integration after all target chains and parser owner are proven. | M2 T15 S2; M2 T15 S3; M2 T24 S1 |
+| 1386 | `ScreenRoutines` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T15 S2; M2 T15 S3; M2 T24 S1 |
 | 1408 | `InitScreen` | M2 T27 S1 | existing closure backlog; M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1418 | `SetupIntermediate` | M2 T27 S1 | existing closure backlog; M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1436 | `AreaPalette` | M2 T27 S1 | existing closure backlog; M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody. | M2 T24 S1 |
@@ -371,9 +371,9 @@ transfer existing ownership or allocate a numeric T.
 | 1579 | `OutputInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1584 | `GameOverInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1589 | `NoInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1595 | `AreaParserTaskControl` | M2 T24 S2 | existing closure backlog; Accepted T27 S3 parser-integration receipt; current external T18 S4 parser owner is required before credit. | M2 T24 S1 |
-| 1597 | `TaskLoop` | M2 T24 S2 | existing closure backlog; Accepted T27 S3 parser-loop integration receipt; current T18 S4 parser proof is required before credit. | M2 T24 S1 |
-| 1603 | `OutputCol` | M2 T24 S2 | existing closure backlog; Accepted T27 S3 parser-loop integration receipt; current T18 S4 parser proof is required before credit. | M2 T24 S1 |
+| 1595 | `AreaParserTaskControl` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
+| 1597 | `TaskLoop` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
+| 1603 | `OutputCol` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
 | 1612 | `DrawTitleScreen` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1624 | `OutputTScr` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1629 | `ChkHiByte` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
@@ -2340,7 +2340,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T23 S5 | 0 | 0 | declared-plan, declared-closure-plan; [record](../../docs/proposals/m2/player-route.md) |
 | M2 T24 | 1992 | - | [record](../../docs/history/M2-T24-S1-node-evidence-audit.md); [record](../../docs/proposals/m2/mapped-node-verification.md); [record](../../docs/proposals/m2/node-task-ledger.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
 | M2 T24 S1 | 1992 | 0 | explicit-reference, historical-record, closed-evidence-audit; [record](../../docs/history/M2-T24-S1-node-evidence-audit.md); [record](../../docs/proposals/m2/mapped-node-verification.md); [record](../../docs/states/QUEUE.md) |
-| M2 T24 S2 | 0 | 4 | explicit-reference, owner-authorized-ledger; [record](../../docs/proposals/m2/node-task-ledger.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
+| M2 T24 S2 | 0 | 0 | explicit-reference, owner-authorized-ledger; [record](../../docs/proposals/m2/node-task-ledger.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
 | M2 T25 | 26 | - | [record](../../docs/proposals/m2/t25-title-menu-demo.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T25 S1 | 26 | 0 | source-order-node-contract; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S2 | 26 | 0 | planned-shared-c-migration; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
@@ -2581,6 +2581,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T50 S3 | 0 | 2 | declared-plan, noise-envelope-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T51 | 0 | - | [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
 | M2 T51 S1 | 0 | 1 | owner-approved-completion, nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S2 | 0 | 4 | owner-approved-completion, screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2904,6 +2905,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-277-to-t50-s2 | M2 Td S4 | M2 T50 S2 | 5 | Coordinator; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | transfer-278-to-t50-s3 | M2 Td S4 | M2 T50 S3 | 2 | Coordinator under the continuing owner-approved M2 source-order mandate; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | transfer-279-to-t51-s1 | M2 T24 S2 | M2 T51 S1 | 1 | Coordinator under the continuing owner-approved M2 completion mandate; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| transfer-280-to-t51-s2 | M2 T24 S2 | M2 T51 S2 | 4 | Coordinator accepts the source-contiguous screen/parser output chain under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3166,3 +3168,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T50 S2 | 5 | 1945 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` / 5 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` / 5 | closed-music-lookup-envelope-chain; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T50 S3 | 2 | 1950 | `BowserFlameEnvData`, `BrickShatterEnvData` / 2 | `BowserFlameEnvData`, `BrickShatterEnvData` / 2 | closed-noise-envelope-chain; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T51 S1 | 1 | 1952 | `NonMaskableInterrupt` / 1 | `NonMaskableInterrupt` / 1 | closed-nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S2 | 4 | 1953 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` / 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` / 4 | closed-screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |

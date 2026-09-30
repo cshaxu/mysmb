@@ -14,8 +14,53 @@ exact target is `NonMaskableInterrupt`, `ScreenRoutines`,
 `AreaParserTaskControl`, `TaskLoop`, `OutputCol`, `KillEnemies`,
 `E_CastleArea1` through `E_CastleArea6`, `E_GroundArea1` through
 `E_GroundArea22`, `E_UndergroundArea1` through `E_UndergroundArea3`, and
-`E_WaterArea1` through `E_WaterArea3`. The ranges are inclusive; they name
-every source label in each numbered family.
+`E_WaterArea1` through `E_WaterArea3`. The ranges are inclusive; they name every source label in each numbered family.
+
+## Exact residual-node allocation
+
+| S | ROM line | Exact label |
+| --- | ---: | --- |
+| S1 | 764 | `NonMaskableInterrupt` |
+| S2 | 1386 | `ScreenRoutines` |
+| S2 | 1595 | `AreaParserTaskControl` |
+| S2 | 1597 | `TaskLoop` |
+| S2 | 1603 | `OutputCol` |
+| S3 | 3615 | `KillEnemies` |
+| S4 | 4550 | `E_CastleArea1` |
+| S4 | 4558 | `E_CastleArea2` |
+| S4 | 4565 | `E_CastleArea3` |
+| S4 | 4574 | `E_CastleArea4` |
+| S4 | 4583 | `E_CastleArea5` |
+| S4 | 4589 | `E_CastleArea6` |
+| S4 | 4598 | `E_GroundArea1` |
+| S4 | 4606 | `E_GroundArea2` |
+| S4 | 4613 | `E_GroundArea3` |
+| S4 | 4619 | `E_GroundArea4` |
+| S4 | 4627 | `E_GroundArea5` |
+| S4 | 4636 | `E_GroundArea6` |
+| S4 | 4643 | `E_GroundArea7` |
+| S4 | 4650 | `E_GroundArea8` |
+| S4 | 4656 | `E_GroundArea9` |
+| S4 | 4662 | `E_GroundArea10` |
+| S4 | 4666 | `E_GroundArea11` |
+| S4 | 4674 | `E_GroundArea12` |
+| S4 | 4679 | `E_GroundArea13` |
+| S4 | 4687 | `E_GroundArea14` |
+| S4 | 4695 | `E_GroundArea15` |
+| S4 | 4700 | `E_GroundArea16` |
+| S4 | 4704 | `E_GroundArea17` |
+| S4 | 4714 | `E_GroundArea18` |
+| S4 | 4722 | `E_GroundArea19` |
+| S4 | 4731 | `E_GroundArea20` |
+| S4 | 4738 | `E_GroundArea21` |
+| S4 | 4743 | `E_GroundArea22` |
+| S4 | 4751 | `E_UndergroundArea1` |
+| S4 | 4760 | `E_UndergroundArea2` |
+| S4 | 4769 | `E_UndergroundArea3` |
+| S4 | 4777 | `E_WaterArea1` |
+| S4 | 4783 | `E_WaterArea2` |
+| S4 | 4791 | `E_WaterArea3` |
+
 
 | S | Source-order chain | Exact target count | Primary owner | ROM route |
 | --- | --- | ---: | --- | --- |
@@ -80,3 +125,41 @@ and `mysmb64.exe` `CD8D5B0F3A09E741F7DCF5602EE4EF7153741B4F04FEAB97CB186B94E546E
 Similar-issue sweep: `src/platform` contains no NMI state decision, PPU mirror
 interpretation, VRAM packet routing, input debounce or pause/timer branch.
 Those all remain in the shared `src/game/frame_root.c` owner.
+
+## T51 S2 admission: screen parser output chain
+
+S2 receives exactly `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop` and
+`OutputCol`, all open at admission. Its baseline is **1,953 / 1,992** and all
+four are expected matches, for a maximum of **1,957 / 1,992**. The source route
+is `$852f ScreenRoutines` selector eight through `$86e6`: increment
+`DisableScreenFlag`; repeatedly run one `AreaParserTaskHandler` subtask until
+`AreaParserTaskNum` reaches zero; decrement `ColumnSets`; increment
+`ScreenRoutineTask` only after its negative result; then unconditionally write
+selector six to `$0773`. The shared C owners are `game.c` and `area.c`.
+
+ROM-logic verification compares the dispatch table entry, loop exit condition,
+underflow branch and writes in that exact order. Operational verification runs
+the parser schedule and buffer-commit routes plus the focused parent NMI check
+on x86/x64, platform purity, existing OpenNT DOS16 link and three artifact
+refreshes.
+
+## T51 S2 closure: screen parser output chain
+
+S2 closes all four admitted labels, `ScreenRoutines`, `AreaParserTaskControl`,
+`TaskLoop` and `OutputCol`, from **1,953** to **1,957 / 1,992**. The shared
+C switch dispatches selector eight to `mysmb_area_parser_task_control`; that
+owner increments `$0774`, executes all eight source parser subtasks until
+`$071f` reaches zero, decrements `$071e`, advances `$073c` only on the
+negative result, then writes `$0773 = 6`. No platform adapter participates.
+
+The new shared `mysmb.screen-parser-output-chain` check runs both source
+branches through the actual eight-subtask route: `ColumnSets=0` produces
+`$ff`, advances task eight to nine, and writes selector six; `ColumnSets=1`
+produces zero, retains task eight, and writes the same selector only after the
+loop. Existing parser schedule and buffer-commit checks also pass, as does the
+parent NMI check and platform-purity gate on x86/x64. OpenNT links the same C90
+core to a 264149-byte DOS16 MZ; its established C4761 and OLDNAMES warnings
+remain non-fatal. Artifacts: `mysmb16.exe`
+`0FE56863DA85261D8739D6BC709D24DCAA04C9D0288BB1D73EE512EFB17E847A`,
+`mysmb32.exe` `90A87B3A71D039F3A696DF45530474E32BDBF8FD76A3B1B029F546174D7B62D3`,
+`mysmb64.exe` `FD5225DF27F4279285D1C1AA9BF182BDFF15DB73AD2D5A59308EC6BD46C7ED65`.

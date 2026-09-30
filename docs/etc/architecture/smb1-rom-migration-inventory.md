@@ -235,7 +235,7 @@ The labels and branches behind every line remain open until individually bound b
 | 1355 | `GetAltOffset` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
 | 1358 | `FloateyPart` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
 | 1363 | `SetupNumSpr` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
-| 1386 | `ScreenRoutines` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-screenroutines) |
+| 1386 | `ScreenRoutines` | T51 S2: shared screen/parser output chain | ROM-match complete | [T51 S2 closure](../../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s2-closure-screen-parser-output-chain) |
 | 1408 | `InitScreen` | M2 T27 S1: screen initialization/palette chain; `game.c` + `area.c` | ROM-match complete | [T27 S1 closure](../../proposals/m2/screen-status.md#s1-closure-screen-initialization-and-palette-chain) |
 | 1418 | `SetupIntermediate` | M2 T27 S1: screen initialization/palette chain; `game.c` + `area.c` | ROM-match complete | [T27 S1 closure](../../proposals/m2/screen-status.md#s1-closure-screen-initialization-and-palette-chain) |
 | 1436 | `AreaPalette` | M2 T27 S1: screen initialization/palette chain; `game.c` + `area.c` | ROM-match complete | [T27 S1 closure](../../proposals/m2/screen-status.md#s1-closure-screen-initialization-and-palette-chain) |
@@ -265,9 +265,9 @@ The labels and branches behind every line remain open until individually bound b
 | 1579 | `OutputInter` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1584 | `GameOverInter` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1589 | `NoInter` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1595 | `AreaParserTaskControl` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsertaskcontrol) |
-| 1597 | `TaskLoop` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-taskloop) |
-| 1603 | `OutputCol` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-outputcol) |
+| 1595 | `AreaParserTaskControl` | T51 S2: shared screen/parser output chain | ROM-match complete | [T51 S2 closure](../../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s2-closure-screen-parser-output-chain) |
+| 1597 | `TaskLoop` | T51 S2: shared screen/parser output chain | ROM-match complete | [T51 S2 closure](../../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s2-closure-screen-parser-output-chain) |
+| 1603 | `OutputCol` | T51 S2: shared screen/parser output chain | ROM-match complete | [T51 S2 closure](../../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s2-closure-screen-parser-output-chain) |
 | 1612 | `DrawTitleScreen` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1624 | `OutputTScr` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1629 | `ChkHiByte` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
