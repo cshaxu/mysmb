@@ -996,3 +996,8 @@ branches.
 ### Cohort I — B15f jumping and red-paratroopa integration
 
 `MoveJumpingEnemy` through `MovPTDwn` now has five node contracts, all incident calls, branches, tails and returns, and four feasible Y-state handoffs. Static review matches gravity-before-horizontal ordering, the frame-gated anchor correction and center-height direction choice. The entries remain `needs-evidence` pending controlled ROM/x86/x64 jump and vertical-cycle routes.
+
+
+### Cohort I — B15g green paratroopa and X-counter integration
+
+`MoveFlyGreenPTroopa` through `XMRight` now has ten node contracts, all incident calls, branches, fall-throughs and returns, and five feasible counter/direction handoffs. Static review matches every-fourth-frame counter and wave gates, endpoint primary updates, temporary two's-complement secondary displacement, direction selection and post-child secondary restoration. Entries remain `needs-evidence` pending controlled ROM/x86/x64 counter-cycle routes.

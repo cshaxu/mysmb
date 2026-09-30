@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 199,
+    "enumeratedCount": 204,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2799,6 +2799,76 @@
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00200",
+      "producer": "MoveFlyGreenPTroopa",
+      "consumer": "YSway",
+      "storage": "FrameCounter bit 0-1 and bit 6",
+      "feasiblePath": "Fourth-frame gate and bit-six sign select the vertical wave adder.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_flying_green_paratroopas_slot",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00201",
+      "producer": "XMoveCntr_GreenPTroopa",
+      "consumer": "XMoveCntr_Platform",
+      "storage": "maximum secondary-counter literal $13",
+      "feasiblePath": "Green path supplies $13 to the shared counter endpoint comparison.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_x_counter_green",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00202",
+      "producer": "XMoveCntr_Platform",
+      "consumer": "MoveWithXMCntrs",
+      "storage": "primary/secondary X counters",
+      "feasiblePath": "Counter updates establish the subsequent mirrored horizontal displacement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_with_x_counters",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00203",
+      "producer": "MoveWithXMCntrs",
+      "consumer": "XMRight",
+      "storage": "primary bit one, mirrored secondary and direction",
+      "feasiblePath": "Direction and temporary mirrored counter state precede horizontal movement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_with_x_counters",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00204",
+      "producer": "XMRight",
+      "consumer": "MoveEnemyHorizontally",
+      "storage": "direction and temporary secondary X speed",
+      "feasiblePath": "World horizontal move consumes the selected direction and temporary counter.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_world_move_enemy_horizontally",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -17181,101 +17251,131 @@
       "label": "MoveFlyGreenPTroopa",
       "asmLine": 9427,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls green counter update then counter-driven horizontal movement; every fourth frame applies +1 with frame bit six set or -1 otherwise to Y."
     },
     {
       "label": "YSway",
       "asmLine": 9438,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the selected +/-1 Y adder and updates green paratroopa Y before falling through return."
     },
     {
       "label": "NoMGPT",
       "asmLine": 9443,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after either frame-gated no-sway branch or completed Y sway."
     },
     {
       "label": "XMoveCntr_GreenPTroopa",
       "asmLine": 9445,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies maximum secondary counter $13 and falls through shared counter update."
     },
     {
       "label": "XMoveCntr_Platform",
       "asmLine": 9448,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Every fourth frame increments/decrements secondary counter or advances primary counter at the two endpoints using the supplied maximum."
     },
     {
       "label": "NoIncXM",
       "asmLine": 9460,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns on a non-fourth frame or after secondary increment."
     },
     {
       "label": "IncPXM",
       "asmLine": 9461,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments primary counter and returns."
     },
     {
       "label": "DecSeXM",
       "asmLine": 9463,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "At nonzero secondary decrements and returns; at zero branches to primary increment."
     },
     {
       "label": "MoveWithXMCntrs",
       "asmLine": 9468,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Saves secondary X counter, mirrors it when primary bit one is clear, chooses direction, calls horizontal movement, saves returned A to scratch and restores secondary counter."
     },
     {
       "label": "XMRight",
       "asmLine": 9481,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
+      "currentCounterpart": "shared green paratroopa and X-counter paths",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores chosen direction, calls horizontal movement, then restores the saved secondary counter."
     },
     {
       "label": "BlooberBitmasks",
@@ -54689,10 +54789,13 @@
       "instruction": "jsr",
       "id": "control-01776",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MoveFlyGreenPTroopa -> XMoveCntr_GreenPTroopa with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveFlyGreenPTroopa",
@@ -54702,10 +54805,13 @@
       "instruction": "jsr",
       "id": "control-01777",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MoveFlyGreenPTroopa -> MoveWithXMCntrs with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveFlyGreenPTroopa",
@@ -54715,10 +54821,13 @@
       "instruction": "bne",
       "id": "control-01778",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveFlyGreenPTroopa -> NoMGPT with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveFlyGreenPTroopa",
@@ -54728,10 +54837,13 @@
       "instruction": "bne",
       "id": "control-01779",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveFlyGreenPTroopa -> YSway with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveFlyGreenPTroopa",
@@ -54741,10 +54853,13 @@
       "instruction": "ldy",
       "id": "control-01780",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveFlyGreenPTroopa -> YSway with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "YSway",
@@ -54754,10 +54869,13 @@
       "instruction": "sta",
       "id": "control-01781",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation YSway -> NoMGPT with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "XMoveCntr_GreenPTroopa",
@@ -54767,10 +54885,13 @@
       "instruction": "lda",
       "id": "control-01782",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation XMoveCntr_GreenPTroopa -> XMoveCntr_Platform with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "XMoveCntr_Platform",
@@ -54780,10 +54901,13 @@
       "instruction": "bne",
       "id": "control-01783",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation XMoveCntr_Platform -> NoIncXM with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "XMoveCntr_Platform",
@@ -54793,10 +54917,13 @@
       "instruction": "bcs",
       "id": "control-01784",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation XMoveCntr_Platform -> DecSeXM with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "XMoveCntr_Platform",
@@ -54806,10 +54933,13 @@
       "instruction": "beq",
       "id": "control-01785",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation XMoveCntr_Platform -> IncPXM with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "XMoveCntr_Platform",
@@ -54819,10 +54949,13 @@
       "instruction": "inc",
       "id": "control-01786",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation XMoveCntr_Platform -> NoIncXM with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "DecSeXM",
@@ -54832,10 +54965,13 @@
       "instruction": "beq",
       "id": "control-01787",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DecSeXM -> IncPXM with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveWithXMCntrs",
@@ -54845,10 +54981,13 @@
       "instruction": "bne",
       "id": "control-01788",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveWithXMCntrs -> XMRight with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveWithXMCntrs",
@@ -54858,10 +54997,13 @@
       "instruction": "ldy",
       "id": "control-01789",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveWithXMCntrs -> XMRight with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "XMRight",
@@ -54871,10 +55013,13 @@
       "instruction": "jsr",
       "id": "control-01790",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation XMRight -> MoveEnemyHorizontally with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveBloober",
@@ -59573,10 +59718,13 @@
       "instruction": "jsr",
       "id": "control-02151",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation XMovingPlatform -> XMoveCntr_Platform with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "XMovingPlatform",
@@ -59586,10 +59734,13 @@
       "instruction": "jsr",
       "id": "control-02152",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation XMovingPlatform -> MoveWithXMCntrs with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "XMovingPlatform",
@@ -82329,10 +82480,13 @@
       "instruction": "rts/rti",
       "id": "control-03832",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation XMoveCntr_GreenPTroopa -> MoveFlyGreenPTroopa with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveWithXMCntrs",
@@ -82342,10 +82496,13 @@
       "instruction": "rts/rti",
       "id": "control-03833",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveWithXMCntrs -> MoveFlyGreenPTroopa with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveEnemyHorizontally",
@@ -82356,12 +82513,12 @@
       "id": "control-03834",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> XMRight with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> XMRight with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -83134,10 +83291,13 @@
       "instruction": "rts/rti",
       "id": "control-03890",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation XMoveCntr_Platform -> XMovingPlatform with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "MoveWithXMCntrs",
@@ -83147,10 +83307,13 @@
       "instruction": "rts/rti",
       "id": "control-03891",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveWithXMCntrs -> XMovingPlatform with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -89698,12 +89861,12 @@
       "id": "control-04326",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveFlyGreenPTroopa with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveFlyGreenPTroopa with frame predicate, X counters, direction and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
