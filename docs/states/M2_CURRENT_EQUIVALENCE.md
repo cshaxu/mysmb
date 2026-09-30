@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 712 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 726 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,233 | Not yet processed by this re-audit. |
+| Unclassified | 1,219 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 1,319 control; 92 material RAM/table |
+| Needs evidence | 1,367 control; 94 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 2,937 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 2,889 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 The two ledgers are separate acceptance requirements. A node is not
@@ -737,3 +737,13 @@ slot-five gating, two-of-four-frame growth, ordered drawing, descending
 offscreen cleanup, and the qualified empty-cell climb-metatile write. No
 static discrepancy was found; all entries remain `needs-evidence` pending a
 controlled original-ROM/x86/x64 vine-growth route.
+
+### Cohort H — B14b cannon and Bullet Bill integration
+
+`CannonBitmasks` through `KillBB` now has fourteen node contracts,
+forty-eight control/return relations and two feasible data paths. The audit
+records the descending three-slot cannon scan, hard-mode random mask, timer
+borrow, cannon-spawn initialization, signed player-distance/carry test,
+defeated movement and the fixed collision/graphics tail. No static discrepancy
+was found; all entries remain `needs-evidence` pending controlled
+original-ROM/x86/x64 cannon and Bullet Bill routes.

@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 96,
+    "enumeratedCount": 98,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1357,6 +1357,34 @@
       "semanticContract": "Preserves threshold selection and source growth gate.",
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00097",
+      "producer": "CannonBitmasks",
+      "consumer": "ProcessCannons",
+      "storage": "SecondaryHardMode-indexed random mask table",
+      "feasiblePath": "ProcessCannons reads CannonBitmasks[SecondaryHardMode] before comparing the pseudo-random cannon index.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mask selection in mysmb_game_process_cannons",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00098",
+      "producer": "BulletBillXSpdData",
+      "consumer": "SetupBB",
+      "storage": "direction-indexed cannon Bullet Bill speed table",
+      "feasiblePath": "SetupBB decrements selected direction to index BulletBillXSpdData before writing Enemy_X_Speed.",
+      "status": "needs-evidence",
+      "currentCounterpart": "direction conditional speed assignment in mysmb_game_handle_cannon_bullet",
+      "semanticContract": "Preserves source table selection and consuming write/order.",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -11517,141 +11545,183 @@
       "label": "CannonBitmasks",
       "asmLine": 6785,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds normal/secondary-hard random masks $0f/$07."
     },
     {
       "label": "ProcessCannons",
       "asmLine": 6788,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs water gate and descending slots two through zero with source ObjectOffset ownership."
     },
     {
       "label": "ThreeSChk",
       "asmLine": 6792,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects an inactive cannon candidate, decrements its timer with source carry semantics, or reaches existing-bullet handling."
     },
     {
       "label": "FireCannon",
       "asmLine": 6809,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Creates a cannon Bullet Bill with exact timer, coordinates, state, box and identity writes."
     },
     {
       "label": "Chk_BB",
       "asmLine": 6832,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Bounds-checks only cannon bullets before offscreen bits and BulletBillHandler."
     },
     {
       "label": "Next3Slt",
       "asmLine": 6840,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements through the three cannon slots."
     },
     {
       "label": "ExCannon",
       "asmLine": 6842,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after water or slot exhaustion."
     },
     {
       "label": "BulletBillXSpdData",
       "asmLine": 6846,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds direction to right/left speeds $18/$e8."
     },
     {
       "label": "BulletBillHandler",
       "asmLine": 6849,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves timer gate, initial direction/distance choice, defeated movement, common offscreen/relative/box/collision/draw order."
     },
     {
       "label": "SetupBB",
       "asmLine": 6862,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected direction/speed and kills only within the source $50 proximity test."
     },
     {
       "label": "ChkDSte",
       "asmLine": 6876,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects defeated vertical movement only when bit five is set."
     },
     {
       "label": "BBFly",
       "asmLine": 6880,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs horizontal movement."
     },
     {
       "label": "RunBBSubs",
       "asmLine": 6881,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs offscreen, relative position, bounding box, player collision then graphics in order."
     },
     {
       "label": "KillBB",
       "asmLine": 6886,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared cannon, world, enemy and OAM core",
+      "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Erases selected cannon Bullet Bill and returns."
     },
     {
       "label": "HammerEnemyOfsData",
@@ -42867,10 +42937,13 @@
       "instruction": "beq",
       "id": "control-01188",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ProcessCannons -> ExCannon with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcessCannons",
@@ -42880,10 +42953,13 @@
       "instruction": "ldx",
       "id": "control-01189",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ProcessCannons -> ThreeSChk with source predicate, ordering and state handoff."
     },
     {
       "from": "ThreeSChk",
@@ -42893,10 +42969,13 @@
       "instruction": "bne",
       "id": "control-01190",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ThreeSChk -> Chk_BB with source predicate, ordering and state handoff."
     },
     {
       "from": "ThreeSChk",
@@ -42906,10 +42985,13 @@
       "instruction": "bcs",
       "id": "control-01191",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ThreeSChk -> Chk_BB with source predicate, ordering and state handoff."
     },
     {
       "from": "ThreeSChk",
@@ -42919,10 +43001,13 @@
       "instruction": "beq",
       "id": "control-01192",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ThreeSChk -> Chk_BB with source predicate, ordering and state handoff."
     },
     {
       "from": "ThreeSChk",
@@ -42932,10 +43017,13 @@
       "instruction": "beq",
       "id": "control-01193",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ThreeSChk -> FireCannon with source predicate, ordering and state handoff."
     },
     {
       "from": "ThreeSChk",
@@ -42945,10 +43033,13 @@
       "instruction": "jmp",
       "id": "control-01194",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ThreeSChk -> Chk_BB with source predicate, ordering and state handoff."
     },
     {
       "from": "FireCannon",
@@ -42958,10 +43049,13 @@
       "instruction": "bne",
       "id": "control-01195",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireCannon -> Chk_BB with source predicate, ordering and state handoff."
     },
     {
       "from": "FireCannon",
@@ -42971,10 +43065,13 @@
       "instruction": "jmp",
       "id": "control-01196",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation FireCannon -> Next3Slt with source predicate, ordering and state handoff."
     },
     {
       "from": "Chk_BB",
@@ -42984,10 +43081,13 @@
       "instruction": "bne",
       "id": "control-01197",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Chk_BB -> Next3Slt with source predicate, ordering and state handoff."
     },
     {
       "from": "Chk_BB",
@@ -42997,10 +43097,13 @@
       "instruction": "jsr",
       "id": "control-01198",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation Chk_BB -> OffscreenBoundsCheck with source predicate, ordering and state handoff."
     },
     {
       "from": "Chk_BB",
@@ -43010,10 +43113,13 @@
       "instruction": "beq",
       "id": "control-01199",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Chk_BB -> Next3Slt with source predicate, ordering and state handoff."
     },
     {
       "from": "Chk_BB",
@@ -43023,10 +43129,13 @@
       "instruction": "jsr",
       "id": "control-01200",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation Chk_BB -> GetEnemyOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "Chk_BB",
@@ -43036,10 +43145,13 @@
       "instruction": "jsr",
       "id": "control-01201",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation Chk_BB -> BulletBillHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "Chk_BB",
@@ -43049,10 +43161,13 @@
       "instruction": "jsr",
       "id": "control-01202",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Chk_BB -> Next3Slt with source predicate, ordering and state handoff."
     },
     {
       "from": "Next3Slt",
@@ -43062,10 +43177,13 @@
       "instruction": "bpl",
       "id": "control-01203",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Next3Slt -> ThreeSChk with source predicate, ordering and state handoff."
     },
     {
       "from": "Next3Slt",
@@ -43075,10 +43193,13 @@
       "instruction": "bpl",
       "id": "control-01204",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Next3Slt -> ExCannon with source predicate, ordering and state handoff."
     },
     {
       "from": "BulletBillHandler",
@@ -43088,10 +43209,13 @@
       "instruction": "bne",
       "id": "control-01205",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BulletBillHandler -> RunBBSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "BulletBillHandler",
@@ -43101,10 +43225,13 @@
       "instruction": "bne",
       "id": "control-01206",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BulletBillHandler -> ChkDSte with source predicate, ordering and state handoff."
     },
     {
       "from": "BulletBillHandler",
@@ -43114,10 +43241,13 @@
       "instruction": "beq",
       "id": "control-01207",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BulletBillHandler -> KillBB with source predicate, ordering and state handoff."
     },
     {
       "from": "BulletBillHandler",
@@ -43127,10 +43257,13 @@
       "instruction": "jsr",
       "id": "control-01208",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BulletBillHandler -> PlayerEnemyDiff with source predicate, ordering and state handoff."
     },
     {
       "from": "BulletBillHandler",
@@ -43140,10 +43273,13 @@
       "instruction": "bmi",
       "id": "control-01209",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BulletBillHandler -> SetupBB with source predicate, ordering and state handoff."
     },
     {
       "from": "BulletBillHandler",
@@ -43153,10 +43289,13 @@
       "instruction": "iny",
       "id": "control-01210",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BulletBillHandler -> SetupBB with source predicate, ordering and state handoff."
     },
     {
       "from": "SetupBB",
@@ -43166,10 +43305,13 @@
       "instruction": "bcc",
       "id": "control-01211",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SetupBB -> KillBB with source predicate, ordering and state handoff."
     },
     {
       "from": "SetupBB",
@@ -43179,10 +43321,13 @@
       "instruction": "sta",
       "id": "control-01212",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetupBB -> ChkDSte with source predicate, ordering and state handoff."
     },
     {
       "from": "ChkDSte",
@@ -43192,10 +43337,13 @@
       "instruction": "beq",
       "id": "control-01213",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkDSte -> BBFly with source predicate, ordering and state handoff."
     },
     {
       "from": "ChkDSte",
@@ -43205,10 +43353,13 @@
       "instruction": "jsr",
       "id": "control-01214",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkDSte -> MoveD_EnemyVertically with source predicate, ordering and state handoff."
     },
     {
       "from": "ChkDSte",
@@ -43218,10 +43369,13 @@
       "instruction": "jsr",
       "id": "control-01215",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkDSte -> BBFly with source predicate, ordering and state handoff."
     },
     {
       "from": "BBFly",
@@ -43231,10 +43385,13 @@
       "instruction": "jsr",
       "id": "control-01216",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BBFly -> MoveEnemyHorizontally with source predicate, ordering and state handoff."
     },
     {
       "from": "BBFly",
@@ -43244,10 +43401,13 @@
       "instruction": "jsr",
       "id": "control-01217",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BBFly -> RunBBSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "RunBBSubs",
@@ -43257,10 +43417,13 @@
       "instruction": "jsr",
       "id": "control-01218",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBBSubs -> GetEnemyOffscreenBits with source predicate, ordering and state handoff."
     },
     {
       "from": "RunBBSubs",
@@ -43270,10 +43433,13 @@
       "instruction": "jsr",
       "id": "control-01219",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBBSubs -> RelativeEnemyPosition with source predicate, ordering and state handoff."
     },
     {
       "from": "RunBBSubs",
@@ -43283,10 +43449,13 @@
       "instruction": "jsr",
       "id": "control-01220",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBBSubs -> GetEnemyBoundBox with source predicate, ordering and state handoff."
     },
     {
       "from": "RunBBSubs",
@@ -43296,10 +43465,13 @@
       "instruction": "jsr",
       "id": "control-01221",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBBSubs -> PlayerEnemyCollision with source predicate, ordering and state handoff."
     },
     {
       "from": "RunBBSubs",
@@ -43309,10 +43481,13 @@
       "instruction": "jmp",
       "id": "control-01222",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation RunBBSubs -> EnemyGfxHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "KillBB",
@@ -43322,10 +43497,13 @@
       "instruction": "jsr",
       "id": "control-01223",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation KillBB -> EraseEnemyObject with source predicate, ordering and state handoff."
     },
     {
       "from": "SpawnHammerObj",
@@ -74929,10 +75107,13 @@
       "instruction": "rts/rti",
       "id": "control-03628",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcessCannons -> ProcELoop with source predicate, ordering and state handoff."
     },
     {
       "from": "ProcessWhirlpools",
@@ -75927,10 +76108,13 @@
       "instruction": "rts/rti",
       "id": "control-03696",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> Chk_BB with source predicate, ordering and state handoff."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -75940,10 +76124,13 @@
       "instruction": "rts/rti",
       "id": "control-03697",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> Chk_BB with source predicate, ordering and state handoff."
     },
     {
       "from": "BulletBillHandler",
@@ -75953,10 +76140,13 @@
       "instruction": "rts/rti",
       "id": "control-03698",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BulletBillHandler -> Chk_BB with source predicate, ordering and state handoff."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -75966,10 +76156,13 @@
       "instruction": "rts/rti",
       "id": "control-03699",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerEnemyDiff -> BulletBillHandler with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveD_EnemyVertically",
@@ -75979,10 +76172,13 @@
       "instruction": "rts/rti",
       "id": "control-03700",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> ChkDSte with source predicate, ordering and state handoff."
     },
     {
       "from": "MoveEnemyHorizontally",
@@ -75992,10 +76188,13 @@
       "instruction": "rts/rti",
       "id": "control-03701",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> BBFly with source predicate, ordering and state handoff."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -76005,10 +76204,13 @@
       "instruction": "rts/rti",
       "id": "control-03702",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunBBSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -76018,10 +76220,13 @@
       "instruction": "rts/rti",
       "id": "control-03703",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunBBSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -76031,10 +76236,13 @@
       "instruction": "rts/rti",
       "id": "control-03704",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunBBSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -76044,10 +76252,13 @@
       "instruction": "rts/rti",
       "id": "control-03705",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunBBSubs with source predicate, ordering and state handoff."
     },
     {
       "from": "EraseEnemyObject",
@@ -76057,10 +76268,13 @@
       "instruction": "rts/rti",
       "id": "control-03706",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "semanticEvidence": [
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillBB with source predicate, ordering and state handoff."
     },
     {
       "from": "ImposeGravity",
