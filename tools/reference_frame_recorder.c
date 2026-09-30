@@ -1216,7 +1216,7 @@ int main(int argument_count, char **arguments)
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 114ul) return 64;
+                value > 120ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -5223,6 +5223,29 @@ int main(int argument_count, char **arguments)
                         ram[0x00f4u] = sound_case == 113u ? 0x02u :
                             (sound_case == 114u ? 0u : 1u);
                         ram[0x07b1u] = sound_case == 114u ? 0x08u : 0u;
+                    }
+                    if (sound_case >= 115u && sound_case <= 120u) {
+                        /* T49 S7: retain each byte in the original PRG and
+                         * isolate the area gate, counter, loopback and four
+                         * NoiseBeatHandler outcomes. */
+                        ram[0x00f0u] = 0u;
+                        ram[0x00f1u] = 0u;
+                        ram[0x00f2u] = 0u;
+                        ram[0x00f4u] = sound_case == 115u ? 0x04u : 0x01u;
+                        ram[0x00f5u] = sound_case == 118u ? 0x29u :
+                            (sound_case == 119u ? 0xd0u : 0x00u);
+                        ram[0x00f6u] = sound_case == 118u || sound_case == 120u ?
+                            0xf0u : (sound_case == 119u ? 0xfdu : 0xfau);
+                        ram[0x00f7u] = 1u;
+                        ram[0x07b4u] = 2u;
+                        ram[0x00f8u] = 0u;
+                        ram[0x07b6u] = 2u;
+                        ram[0x00f9u] = 2u;
+                        ram[0x07b9u] = 1u;
+                        ram[0x07b0u] = 0u;
+                        ram[0x07b9u] = 1u;
+                        ram[0x07bau] = sound_case == 116u ? 2u : 1u;
+                        ram[0x07c1u] = sound_case == 117u ? 1u : 0u;
                     }
                 }
                 else if (sound_case != 0u) {

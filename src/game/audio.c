@@ -701,38 +701,71 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
     if (control_y == 0U) control_y = 0x7fU;
     mysmb_audio_write_apu(game, 1U, control_y);
 }
-/* ROM HandleNoiseMusic through NoiseBeatHandler, excluding APU writes. */
+/* ROM HandleNoiseMusic through ExitMusicHandler.  The AlternateLengthHandler
+ * call is an S8-owned dependency; its source-visible A/Y result is retained
+ * here because NoiseBeatHandler immediately consumes it. */
 static void mysmb_audio_step_noise_music(struct mysmb_game *game)
 {
-    mysmb_u16 address;
-    mysmb_u16 length_address;
+    mysmb_u16 music_data;
     mysmb_u8 data;
-    mysmb_u8 length_index;
+    mysmb_u8 beat;
+    mysmb_u8 table_index;
+    mysmb_u8 x;
+    mysmb_u8 y;
 
-    if ((game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0xf3U) == 0U ||
-        game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return;
+    if ((game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0xf3U) == 0U) return;
     game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER]--;
     if (game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] != 0U) return;
-    address = (mysmb_u16)(((mysmb_u16)(game->ram[0x00f6U] - 0x80U) << 8U) |
-                          game->ram[0x00f5U]);
-    address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE]++);
-    if (address >= game->area_prg_size) return;
-    data = game->area_prg[address];
-    while (data == 0U) {
+
+    music_data = (mysmb_u16)(((mysmb_u16)game->ram[0x00f6U] << 8U) |
+                              game->ram[0x00f5U]);
+    for (;;) {
+        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
+            game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE]));
+        game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE]++;
+        if (data != 0U) break;
         game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE] =
             game->ram[MYSMB_RAM_NOISE_LOOPBACK_OFFSET];
-        address = (mysmb_u16)(((mysmb_u16)(game->ram[0x00f6U] - 0x80U) << 8U) |
-                              game->ram[0x00f5U]);
-        address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE]++);
-        if (address >= game->area_prg_size) return;
-        data = game->area_prg[address];
     }
-    length_index = (mysmb_u8)(((data & 1U) << 2U) |
+
+    /* AlternateLengthHandler preserves the original byte in X, rotates bits
+     * 0/7/6 into A, and ProcessLengthData leaves the lookup index in Y. */
+    x = data;
+    table_index = (mysmb_u8)(((data & 1U) << 2U) |
         ((data & 0x80U) >> 6U) | ((data & 0x40U) >> 6U));
-    length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE + length_index +
-        game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
-    if (length_address >= game->area_prg_size) return;
-    game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] = game->area_prg[length_address];
+    y = (mysmb_u8)(table_index + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET] +
+        game->ram[MYSMB_RAM_NOTE_LENGTH_TABLE_ADDER]);
+    game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] =
+        mysmb_audio_read_cpu(game, (mysmb_u16)(0xff66UL + y));
+
+    beat = (mysmb_u8)(x & 0x3eU);
+    if (beat == 0U) {
+        mysmb_audio_write_apu(game, 12U, 0x10U);
+        mysmb_audio_write_apu(game, 14U, x);
+        mysmb_audio_write_apu(game, 15U, y);
+        return;
+    }
+    if (beat == 0x30U) {
+        mysmb_audio_write_apu(game, 12U, 0x1cU);
+        mysmb_audio_write_apu(game, 14U, 0x03U);
+        mysmb_audio_write_apu(game, 15U, 0x58U);
+        return;
+    }
+    if (beat == 0x20U) {
+        mysmb_audio_write_apu(game, 12U, 0x1cU);
+        mysmb_audio_write_apu(game, 14U, 0x0cU);
+        mysmb_audio_write_apu(game, 15U, 0x18U);
+        return;
+    }
+    if ((beat & 0x10U) == 0U) {
+        mysmb_audio_write_apu(game, 12U, 0x10U);
+        mysmb_audio_write_apu(game, 14U, x);
+        mysmb_audio_write_apu(game, 15U, y);
+        return;
+    }
+    mysmb_audio_write_apu(game, 12U, 0x1cU);
+    mysmb_audio_write_apu(game, 14U, 0x03U);
+    mysmb_audio_write_apu(game, 15U, 0x18U);
 }
 /* ROM ContinueMusic is an unconditional jump to HandleSquare2Music.  Keeping
  * this entry explicit prevents queue/header work from being mistaken for the

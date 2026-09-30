@@ -335,3 +335,39 @@ links the same shared C MZ image. Refreshed artifacts: mysmb16
 `D0DE7161D69E60238FFFA004CE2A49E3485ABBEAC60FE84F71C9006C97E3AF4F`,
 mysmb32 `6461D0772FCBAF99A16FB014F525D731C1D103D6B8FC2F447FE0F80AB934A28C`,
 and mysmb64 `22368DD5475B9CA2D6108DD5B40ECDF88027D83780C92E69A3B6C6377FCC65C2`.
+
+
+## S7 admission: noise beat stream and exit
+
+S7 receives **8** source-order labels: `HandleNoiseMusic`, `FetchNoiseBeatData`,
+`NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, and
+`ExitMusicHandler`. The baseline is **1,884 / 1,992**; all eight are expected
+matches, for a maximum **1,892 / 1,992**. The contiguous chain is owned by
+`src/game/audio.c`; its predecessor is S6 `LoadTriCtrlReg` and its successor is
+S8 `AlternateLengthHandler`.
+
+The ROM-logic track will exercise unchanged `SoundEngine` routes for the
+underground/castle bypass, nonzero beat-counter exit, zero-byte noise loopback,
+and each short/strong/long/silent beat class. It compares the area gate, counter
+and offset mutations, source loop, duration conversion call boundary and
+`$400c/$400e/$400f` writes. The operational track will add one chain-level
+snapshot check, run x86/x64 builds, the existing OpenNT DOS16 link,
+platform-purity audit and refresh the three owner-authorized executables. No S8
+helper or later music-data node receives S7 credit.
+
+
+## S7 closure: noise beat stream and exit
+
+All **8** admitted labels are ROM-match complete: **1,884 -> 1,892 / 1,992**.
+The shared owner follows the source area gate, beat-counter exit, zero-byte
+loopback, `AlternateLengthHandler` boundary and source order for silent, short,
+strong and long noise writes. No platform layer selects or writes music state.
+
+Six unchanged original-ROM SoundEngine record groups cover the area bypass,
+counter exit, zero-loopback silent beat and short/strong/long beat cases. Each
+contains eight calls; x86 and x64 each compare 48 scoped RAM/APU results with
+zero differences. Platform purity passes; both Win32 products build; OpenNT16
+links the same shared C image. Refreshed artifacts: mysmb16
+`181FBACF36E268BFA96881A39C95872897C41A2735B7C91CA4EB95D7142045DF`, mysmb32
+`887DFBD4D34ED1F7301150AC68E04F3084B106666556A9C19635EF7E59297F65`, and mysmb64
+`FC0949910C662162115BC24EFAA42963A2497FCBF1E1DE2C332086C86A8B7595`.
