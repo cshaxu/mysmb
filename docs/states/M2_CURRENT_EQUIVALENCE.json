@@ -126,90 +126,108 @@
       "label": "Start",
       "asmLine": 699,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_power_on",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
       "label": "VBlank1",
       "asmLine": 706,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_power_on (host timing boundary pending)",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
       "label": "VBlank2",
       "asmLine": 708,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_power_on (host timing boundary pending)",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
       "label": "WBootCheck",
       "asmLine": 712,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_reset",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
       "label": "ColdBoot",
       "asmLine": 721,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_reset",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
       "label": "EndlessLoop",
       "asmLine": 737,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_reset -> shared NMI tick boundary",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
       "label": "VRAM_AddrTable_Low",
       "asmLine": 743,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_vram_address_low",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
       "label": "VRAM_AddrTable_High",
       "asmLine": 752,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_vram_address_high",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
       "label": "VRAM_Buffer_Offset",
       "asmLine": 761,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_commit_vram_buffer selector branch",
+      "semanticEvidence": [
+        "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20052,9 +20070,11 @@
       "instruction": "txs",
       "id": "control-00001",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20065,9 +20085,11 @@
       "instruction": "bpl",
       "id": "control-00002",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20078,9 +20100,11 @@
       "instruction": "bpl",
       "id": "control-00003",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20091,9 +20115,11 @@
       "instruction": "bpl",
       "id": "control-00004",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20104,9 +20130,11 @@
       "instruction": "ldx",
       "id": "control-00005",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20117,9 +20145,11 @@
       "instruction": "bcs",
       "id": "control-00006",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20130,9 +20160,11 @@
       "instruction": "bpl",
       "id": "control-00007",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20143,9 +20175,11 @@
       "instruction": "bne",
       "id": "control-00008",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20156,9 +20190,11 @@
       "instruction": "ldy",
       "id": "control-00009",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20169,9 +20205,11 @@
       "instruction": "jsr",
       "id": "control-00010",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20182,9 +20220,11 @@
       "instruction": "jsr",
       "id": "control-00011",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20195,9 +20235,11 @@
       "instruction": "jsr",
       "id": "control-00012",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20208,9 +20250,11 @@
       "instruction": "jsr",
       "id": "control-00013",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20221,9 +20265,11 @@
       "instruction": "jsr",
       "id": "control-00014",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -20234,9 +20280,11 @@
       "instruction": "jmp",
       "id": "control-00015",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -65318,9 +65366,11 @@
       "instruction": "rts/rti",
       "id": "control-03483",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -65331,9 +65381,11 @@
       "instruction": "rts/rti",
       "id": "control-03484",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -65344,9 +65396,11 @@
       "instruction": "rts/rti",
       "id": "control-03485",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -65357,9 +65411,11 @@
       "instruction": "rts/rti",
       "id": "control-03486",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {
@@ -73261,9 +73317,11 @@
       "instruction": "vector",
       "id": "control-04094",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "semanticEvidence": [
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+      ],
       "operationalEvidence": []
     },
     {

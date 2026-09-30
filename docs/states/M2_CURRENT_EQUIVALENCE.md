@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 0 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 0 | Owner/route exists but current proof is incomplete. |
+| Needs evidence | 9 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 0 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,992 | Not yet processed by this re-audit. |
+| Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 0 |
-| Needs evidence | 0 |
+| Needs evidence | 20 |
 | Mismatch | 0 |
-| Unclassified | 4,342 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -137,3 +137,15 @@ local audit input, not a data-edge list or a verdict.
 Confirmed mismatch chains are appended to `QUEUE.md` without a numeric task
 identifier. Only an owner-approved later implementation admission allocates
 the next numeric T and its S entries.
+
+### Cohort A — A1 boot and first-NMI boundary
+
+The first reviewed chain is `Start -> VBlank1 -> VBlank2 -> WBootCheck ->
+ColdBoot -> EndlessLoop`, with the adjacent `VRAM_AddrTable_Low`,
+`VRAM_AddrTable_High` and `VRAM_Buffer_Offset` data labels. Its 9 nodes and
+20 control edges are `needs-evidence`, never exact: current static review
+maps the reset sequence to `boot.c` and the table consumers to `frame_root.c`,
+including all two VBlank branches, warm/cold branches, calls and return paths.
+The x86/x64 boot-NMI smoke passes, but the fresh original-ROM route has not
+yet captured the reset-only boundary and selector matrix. The linked JSON
+ledger names all 29 stable identities and their current counterparts.
