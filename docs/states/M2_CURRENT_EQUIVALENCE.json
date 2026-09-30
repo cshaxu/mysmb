@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 105,
+    "enumeratedCount": 109,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1483,6 +1483,62 @@
       "semanticContract": "Preserves source producer write, consumer read and feasible frame-to-frame handoff order.",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00106",
+      "producer": "BlockYPosAdderData",
+      "consumer": "BigBP",
+      "storage": "PlayerSize/Crouching-indexed block Y addend table",
+      "feasiblePath": "PutMTileB selects index zero for standing big Mario and index one for small or crouching Mario before BigBP aligns Block_Y_Position.",
+      "status": "needs-evidence",
+      "currentCounterpart": "block_y_adder indexed by size/crouching",
+      "semanticContract": "Preserves source table/result production, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00107",
+      "producer": "BrickQBlockMetatiles",
+      "consumer": "BlockBumpedChk",
+      "storage": "descending fourteen-entry bumpable-metatile table",
+      "feasiblePath": "BlockBumpedChk begins at index thirteen and compares the stored metatile until match or clear-carry exhaustion.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_brick_question_metatiles descending search",
+      "semanticContract": "Preserves source table/result production, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00108",
+      "producer": "BlockBumpedChk",
+      "consumer": "PlayerHeadCollision",
+      "storage": "carry/index result for current block-buffer metatile",
+      "feasiblePath": "PlayerHeadCollision uses the classifier result to select original/empty/timer behavior before storing Block_Metatile.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_blocks_bumped_index result consumed by head collision",
+      "semanticContract": "Preserves source table/result production, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00109",
+      "producer": "BlockBumpedChk",
+      "consumer": "BumpBlock",
+      "storage": "carry/index result for original head-hit metatile",
+      "feasiblePath": "BumpBlock reclassifies the saved original metatile and uses the matched index to select one of nine content actions.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_blocks_bumped_index result consumed by bump dispatcher",
+      "semanticContract": "Preserves source table/result production, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -12358,241 +12414,313 @@
       "label": "BlockYPosAdderData",
       "asmLine": 7241,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the two exact head-bump Y alignment addends: big standing four and small/crouching eighteen."
     },
     {
       "label": "PlayerHeadCollision",
       "asmLine": 7244,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes the alternating block slot and breakability state, destroys the display metatile, captures block-buffer scratch, selects replacement behavior, then starts bump or shatter and toggles the slot."
     },
     {
       "label": "DBlockSte",
       "asmLine": 7251,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the PlayerSize-selected block state, destroys the metatile, captures buffer coordinates/tile, and enters matched-brick handling with original size-dependent A semantics."
     },
     {
       "label": "ChkBrick",
       "asmLine": 7265,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses BlockBumpedChk carry/index to choose original/blank replacement, including the two brick-with-coin timer metatiles."
     },
     {
       "label": "StartBTmr",
       "asmLine": 7274,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Starts the brick-coin timer and flag only when its flag is clear, then enters the timer decision."
     },
     {
       "label": "ContBTmr",
       "asmLine": 7279,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the retained original metatile while the brick-coin timer is nonzero, otherwise selects empty metatile."
     },
     {
       "label": "PutOldMT",
       "asmLine": 7282,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores the retained metatile selector into the common replacement store."
     },
     {
       "label": "PutMTileB",
       "asmLine": 7283,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected replacement, initializes block coordinates, clears the physical buffer cell, starts bounce timing and selects the correct PlayerSize/Crouching Y addend."
     },
     {
       "label": "SmallBP",
       "asmLine": 7297,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the small-or-crouching Y-addend entry before the common position calculation."
     },
     {
       "label": "BigBP",
       "asmLine": 7298,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Aligns block Y then selects unbreakable bump versus breakable shatter by block state."
     },
     {
       "label": "Unbreak",
       "asmLine": 7308,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs BumpBlock for an unbreakable/question block, then reaches the shared alternating-slot inversion."
     },
     {
       "label": "InvOBit",
       "asmLine": 7309,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Inverts SprDataOffset_Ctrl and returns after bump or shatter completion."
     },
     {
       "label": "InitBlock_XY_Pos",
       "asmLine": 7316,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Rounds Player X plus eight to a metatile boundary, preserves ADC carry into Player_PageLoc, and copies Y high byte into the block slot."
     },
     {
       "label": "BumpBlock",
       "asmLine": 7332,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Checks the cell above, initializes bump motion/audio/player vertical speed, classifies original metatile and dispatches its content action."
     },
     {
       "label": "BlockCode",
       "asmLine": 7349,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Normalizes the matched index and invokes JumpEngine over the nine-entry block-content vector."
     },
     {
       "label": "MushFlowerBlock",
       "asmLine": 7363,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads power-up type zero through the overlapping BIT entry into the common SetupPowerUp tail."
     },
     {
       "label": "StarBlock",
       "asmLine": 7367,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads power-up type two through the overlapping BIT entry into the common SetupPowerUp tail."
     },
     {
       "label": "ExtraLifeMushBlock",
       "asmLine": 7371,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores power-up type three then tail-jumps into SetupPowerUp."
     },
     {
       "label": "VineBlock",
       "asmLine": 7376,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects enemy slot five and current alternating block slot before Setup_Vine, then returns."
     },
     {
       "label": "ExitBlockChk",
       "asmLine": 7381,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without a content action when classification failed or a vine setup has completed."
     },
     {
       "label": "BrickQBlockMetatiles",
       "asmLine": 7386,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the exact fourteen bumpable question, hidden and area brick metatiles in source order."
     },
     {
       "label": "BlockBumpedChk",
       "asmLine": 7393,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes a descending search from table index thirteen."
     },
     {
       "label": "BumpChkLoop",
       "asmLine": 7395,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares each descending table entry, preserving matching index/carry or clear carry after exhaustion."
     },
     {
       "label": "MatchBump",
       "asmLine": 7400,
       "cohort": "H",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared player-terrain, block and area core",
+      "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns with the source carry/index result for its caller."
     },
     {
       "label": "BrickShatter",
@@ -45078,10 +45206,13 @@
       "instruction": "bne",
       "id": "control-01308",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerHeadCollision -> DBlockSte with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "PlayerHeadCollision",
@@ -45091,10 +45222,13 @@
       "instruction": "lda",
       "id": "control-01309",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PlayerHeadCollision -> DBlockSte with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "DBlockSte",
@@ -45104,10 +45238,13 @@
       "instruction": "jsr",
       "id": "control-01310",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DBlockSte -> DestroyBlockMetatile with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "DBlockSte",
@@ -45117,10 +45254,13 @@
       "instruction": "jsr",
       "id": "control-01311",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DBlockSte -> BlockBumpedChk with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "DBlockSte",
@@ -45130,10 +45270,13 @@
       "instruction": "bne",
       "id": "control-01312",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DBlockSte -> ChkBrick with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "DBlockSte",
@@ -45143,10 +45286,13 @@
       "instruction": "tya",
       "id": "control-01313",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DBlockSte -> ChkBrick with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "ChkBrick",
@@ -45156,10 +45302,13 @@
       "instruction": "bcc",
       "id": "control-01314",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkBrick -> PutMTileB with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "ChkBrick",
@@ -45169,10 +45318,13 @@
       "instruction": "beq",
       "id": "control-01315",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkBrick -> StartBTmr with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "ChkBrick",
@@ -45182,10 +45334,13 @@
       "instruction": "bne",
       "id": "control-01316",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkBrick -> PutMTileB with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "ChkBrick",
@@ -45195,10 +45350,13 @@
       "instruction": "bne",
       "id": "control-01317",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkBrick -> StartBTmr with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "StartBTmr",
@@ -45208,10 +45366,13 @@
       "instruction": "bne",
       "id": "control-01318",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation StartBTmr -> ContBTmr with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "StartBTmr",
@@ -45221,10 +45382,13 @@
       "instruction": "inc",
       "id": "control-01319",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation StartBTmr -> ContBTmr with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "ContBTmr",
@@ -45234,10 +45398,13 @@
       "instruction": "bne",
       "id": "control-01320",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ContBTmr -> PutOldMT with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "ContBTmr",
@@ -45247,10 +45414,13 @@
       "instruction": "ldy",
       "id": "control-01321",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ContBTmr -> PutOldMT with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "PutOldMT",
@@ -45260,10 +45430,13 @@
       "instruction": "tya",
       "id": "control-01322",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PutOldMT -> PutMTileB with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "PutMTileB",
@@ -45273,10 +45446,13 @@
       "instruction": "jsr",
       "id": "control-01323",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PutMTileB -> InitBlock_XY_Pos with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "PutMTileB",
@@ -45286,10 +45462,13 @@
       "instruction": "bne",
       "id": "control-01324",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PutMTileB -> SmallBP with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "PutMTileB",
@@ -45299,10 +45478,13 @@
       "instruction": "beq",
       "id": "control-01325",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PutMTileB -> BigBP with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "PutMTileB",
@@ -45312,10 +45494,13 @@
       "instruction": "beq",
       "id": "control-01326",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PutMTileB -> SmallBP with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "SmallBP",
@@ -45325,10 +45510,13 @@
       "instruction": "iny",
       "id": "control-01327",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SmallBP -> BigBP with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BigBP",
@@ -45338,10 +45526,13 @@
       "instruction": "beq",
       "id": "control-01328",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BigBP -> Unbreak with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BigBP",
@@ -45351,10 +45542,13 @@
       "instruction": "jsr",
       "id": "control-01329",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BigBP -> BrickShatter with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BigBP",
@@ -45364,10 +45558,13 @@
       "instruction": "jmp",
       "id": "control-01330",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation BigBP -> InvOBit with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "Unbreak",
@@ -45377,10 +45574,13 @@
       "instruction": "jsr",
       "id": "control-01331",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation Unbreak -> BumpBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "Unbreak",
@@ -45390,10 +45590,13 @@
       "instruction": "jsr",
       "id": "control-01332",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Unbreak -> InvOBit with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpBlock",
@@ -45403,10 +45606,13 @@
       "instruction": "jsr",
       "id": "control-01333",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BumpBlock -> CheckTopOfBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpBlock",
@@ -45416,10 +45622,13 @@
       "instruction": "jsr",
       "id": "control-01334",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BumpBlock -> BlockBumpedChk with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpBlock",
@@ -45429,10 +45638,13 @@
       "instruction": "bcc",
       "id": "control-01335",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BumpBlock -> ExitBlockChk with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpBlock",
@@ -45442,10 +45654,13 @@
       "instruction": "bcc",
       "id": "control-01336",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BumpBlock -> BlockCode with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpBlock",
@@ -45455,10 +45670,13 @@
       "instruction": "sbc",
       "id": "control-01337",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BumpBlock -> BlockCode with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -45468,10 +45686,13 @@
       "instruction": "jsr",
       "id": "control-01338",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation BlockCode -> JumpEngine with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -45481,10 +45702,13 @@
       "instruction": "jsr",
       "id": "control-01339",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false control relation in the current extracted graph, while shared C directly selects the content target",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The byte sequence after JSR JumpEngine is a pointer table, not a reachable fall-through to MushFlowerBlock. JumpEngine removes the return address and indirect-jumps to the selected vector target."
     },
     {
       "from": "MushFlowerBlock",
@@ -45494,10 +45718,13 @@
       "instruction": "lda",
       "id": "control-01340",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MushFlowerBlock -> StarBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "StarBlock",
@@ -45507,10 +45734,13 @@
       "instruction": "lda",
       "id": "control-01341",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation StarBlock -> ExtraLifeMushBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "ExtraLifeMushBlock",
@@ -45520,10 +45750,13 @@
       "instruction": "jmp",
       "id": "control-01342",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ExtraLifeMushBlock -> SetupPowerUp with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "VineBlock",
@@ -45533,10 +45766,13 @@
       "instruction": "jsr",
       "id": "control-01343",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation VineBlock -> Setup_Vine with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "VineBlock",
@@ -45546,10 +45782,13 @@
       "instruction": "jsr",
       "id": "control-01344",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation VineBlock -> ExitBlockChk with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockBumpedChk",
@@ -45559,10 +45798,13 @@
       "instruction": "ldy",
       "id": "control-01345",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BlockBumpedChk -> BumpChkLoop with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpChkLoop",
@@ -45572,10 +45814,13 @@
       "instruction": "beq",
       "id": "control-01346",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BumpChkLoop -> MatchBump with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpChkLoop",
@@ -45585,10 +45830,13 @@
       "instruction": "bpl",
       "id": "control-01347",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BumpChkLoop -> BumpChkLoop with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpChkLoop",
@@ -45598,10 +45846,13 @@
       "instruction": "clc",
       "id": "control-01348",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BumpChkLoop -> MatchBump with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BrickShatter",
@@ -74372,12 +74623,12 @@
       "id": "control-03547",
       "cohort": "C",
       "status": "needs-evidence",
-      "currentCounterpart": "mysmb_blocks_initialize_position returns before source block-Y overwrite.",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "mysmb_blocks_initialize_position returns before source block-Y overwrite."
+      "semanticContract": "Preserves original return relation InitBlock_XY_Pos -> ChkOverR with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "Setup_Vine",
@@ -77224,10 +77475,13 @@
       "instruction": "rts/rti",
       "id": "control-03736",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DestroyBlockMetatile -> DBlockSte with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockBumpedChk",
@@ -77237,10 +77491,13 @@
       "instruction": "rts/rti",
       "id": "control-03737",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BlockBumpedChk -> DBlockSte with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "InitBlock_XY_Pos",
@@ -77250,10 +77507,13 @@
       "instruction": "rts/rti",
       "id": "control-03738",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitBlock_XY_Pos -> PutMTileB with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BrickShatter",
@@ -77263,10 +77523,13 @@
       "instruction": "rts/rti",
       "id": "control-03739",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BrickShatter -> BigBP with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BumpBlock",
@@ -77276,10 +77539,13 @@
       "instruction": "rts/rti",
       "id": "control-03740",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BumpBlock -> Unbreak with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckTopOfBlock",
@@ -77289,10 +77555,13 @@
       "instruction": "rts/rti",
       "id": "control-03741",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation CheckTopOfBlock -> BumpBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockBumpedChk",
@@ -77302,10 +77571,13 @@
       "instruction": "rts/rti",
       "id": "control-03742",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation BlockBumpedChk -> BumpBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "JumpEngine",
@@ -77315,10 +77587,13 @@
       "instruction": "rts/rti",
       "id": "control-03743",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false control relation in the current extracted graph, while shared C directly selects the content target",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "JumpEngine does not return to BlockCode: it removes the JSR return address and indirect-jumps to a content handler, whose RTS returns to BumpBlock caller context."
     },
     {
       "from": "Setup_Vine",
@@ -77329,12 +77604,12 @@
       "id": "control-03744",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine initialization branch/return ordering counterpart",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation Setup_Vine -> VineBlock with source offset, ordering and state handoff."
+      "semanticContract": "Preserves original return relation Setup_Vine -> VineBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "CheckTopOfBlock",
@@ -80008,10 +80283,13 @@
       "instruction": "rts/rti",
       "id": "control-03949",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerHeadCollision -> HeadChk with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockBufferColli_Feet",
@@ -83734,10 +84012,13 @@
       "selector": 0,
       "id": "control-04206",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> MushFlowerBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -83748,10 +84029,13 @@
       "selector": 1,
       "id": "control-04207",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> CoinBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -83762,10 +84046,13 @@
       "selector": 2,
       "id": "control-04208",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> CoinBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -83776,10 +84063,13 @@
       "selector": 3,
       "id": "control-04209",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> ExtraLifeMushBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -83790,10 +84080,13 @@
       "selector": 4,
       "id": "control-04210",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> MushFlowerBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -83804,10 +84097,13 @@
       "selector": 5,
       "id": "control-04211",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> VineBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -83818,10 +84114,13 @@
       "selector": 6,
       "id": "control-04212",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> StarBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -83832,10 +84131,13 @@
       "selector": 7,
       "id": "control-04213",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> CoinBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "BlockCode",
@@ -83846,10 +84148,13 @@
       "selector": 8,
       "id": "control-04214",
       "cohort": "H",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> ExtraLifeMushBlock with its predicate, ordered state handoff and return/dispatch semantics."
     },
     {
       "from": "InitEnemyRoutines",

@@ -781,3 +781,25 @@ six, before its later active-state transition. No static discrepancy was
 found. These nodes, relations and material paths remain `needs-evidence` until
 controlled original-ROM/x86/x64 routes cover each type, timer gate, emergence
 threshold, collision and offscreen branch.
+
+
+### Cohort H — B14f player-head collision and block-content dispatch integration
+
+`BlockYPosAdderData` through `MatchBump` now has twenty-four node contracts,
+fifty-nine control/return/dispatch relations and four feasible RAM/table
+handoffs. The audit records both PlayerSize block-state paths, coin-brick
+timer behavior, buffer replacement and coordinate captures, alternating block
+slots, the fourteen-entry descending metatile classifier, and all nine content
+dispatch targets. The shared C control and state semantics are statically
+aligned.
+
+The integration pass also found two inaccurate control entries in the current
+extracted graph: `control-01339` records a fall-through from `BlockCode` into
+the first vector word and `control-03743` records a `JumpEngine` return to
+`BlockCode`. Neither is reachable in the original ROM. `JumpEngine` consumes
+the JSR return address and indirect-jumps through the selected vector; the
+selected target's `RTS` resumes the caller of `BumpBlock`. These two **graph
+ledger** edges are recorded as mismatches and have an unnumbered governance
+repair candidate; they are not C game-logic defects. All remaining entries
+remain `needs-evidence` pending controlled original-ROM/x86/x64 head-hit,
+brick, question, hidden, coin, vine and content-dispatch routes.
