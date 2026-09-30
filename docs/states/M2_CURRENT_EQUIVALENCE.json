@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 189,
+    "enumeratedCount": 195,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2659,6 +2659,90 @@
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00190",
+      "producer": "XSpeedAdderData",
+      "consumer": "AddHS",
+      "storage": "signed X-speed addend index",
+      "feasiblePath": "Steady/slow path temporarily adds source-selected speed before horizontal movement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "speed_adder[index]",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00191",
+      "producer": "RevivedXSpeed",
+      "consumer": "SetRSpd",
+      "storage": "frame/primary-hard-mode revived-speed index",
+      "feasiblePath": "Revive path selects the original direction/hard-mode speed table byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "revived_speed[index]",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00192",
+      "producer": "MoveNormalEnemy",
+      "consumer": "FallE",
+      "storage": "Enemy_State state-bit predicate",
+      "feasiblePath": "d6, egg and selected low-state paths enter downward movement in source order.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_normal fall",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00193",
+      "producer": "FallE",
+      "consumer": "MEHor",
+      "storage": "post-gravity Enemy_State",
+      "feasiblePath": "State two enters direct horizontal movement after gravity returns.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_normal state==2 path",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00194",
+      "producer": "ReviveStunned",
+      "consumer": "ChkKillGoomba",
+      "storage": "EnemyIntervalTimer comparison value and Enemy_ID",
+      "feasiblePath": "Only nonzero timer path tests Goomba expiry threshold.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_move_normal timer path",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00195",
+      "producer": "ChkKillGoomba",
+      "consumer": "EraseEnemyObject",
+      "storage": "timer==$0e and Enemy_ID==Goomba",
+      "feasiblePath": "Both source predicates must hold before lifecycle erasure.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_erase_enemy",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -16833,111 +16917,144 @@
       "label": "MoveNormalEnemy",
       "asmLine": 9318,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Orders state handling as d6 fall, d7 steady, d5 defeated, low state normal/egg/fall/revive; preserves source vertical/horizontal and temporary-speed restore behavior."
     },
     {
       "label": "FallE",
       "asmLine": 9336,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls downward vertical movement, then selects direct horizontal, steady, or slowed horizontal path from post-gravity state and object ID."
     },
     {
       "label": "MEHor",
       "asmLine": 9347,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to horizontal movement for state two after vertical movement."
     },
     {
       "label": "SlowM",
       "asmLine": 9349,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects slow-horizontal addend index one before falling through steady movement."
     },
     {
       "label": "SteadM",
       "asmLine": 9350,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Saves X speed, selects signed speed addend, moves horizontally, then restores the saved speed."
     },
     {
       "label": "AddHS",
       "asmLine": 9355,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds selected temporary X-speed addend, calls horizontal movement and restores the pre-addition speed on return."
     },
     {
       "label": "ReviveStunned",
       "asmLine": 9363,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "If interval timer is nonzero delegates Goomba expiry check; otherwise clears state, selects direction and hard-mode-aware revived speed, then returns."
     },
     {
       "label": "SetRSpd",
       "asmLine": 9377,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected revived X speed and returns."
     },
     {
       "label": "MoveDefeatedEnemy",
       "asmLine": 9381,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls downward vertical movement then tail-jumps to horizontal movement."
     },
     {
       "label": "ChkKillGoomba",
       "asmLine": 9385,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Erases only a Goomba whose incoming interval timer comparison equals $0e; otherwise falls through terminal return."
     },
     {
       "label": "NKGmba",
       "asmLine": 9392,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/movement.c",
+      "currentCounterpart": "shared normal enemy movement state machine",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without further state change."
     },
     {
       "label": "MoveJumpingEnemy",
@@ -46774,12 +46891,12 @@
       "id": "control-01293",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Mushroom path calls normal motion before terrain collision."
+      "semanticContract": "Preserves original call relation ShroomM -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ShroomM",
@@ -53558,12 +53675,12 @@
       "id": "control-01717",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation ProcHammerBro -> MoveDefeatedEnemy with Hammer Bro state, timer, random/table index and call/return ordering."
+      "semanticContract": "Preserves original jump relation ProcHammerBro -> MoveDefeatedEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ChkJH",
@@ -53910,12 +54027,12 @@
       "id": "control-01739",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SetShim -> MoveNormalEnemy with Hammer Bro state, timer, random/table index and call/return ordering."
+      "semanticContract": "Preserves original fallthrough relation SetShim -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveNormalEnemy",
@@ -53925,10 +54042,13 @@
       "instruction": "bne",
       "id": "control-01740",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveNormalEnemy -> FallE with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveNormalEnemy",
@@ -53938,10 +54058,13 @@
       "instruction": "bcs",
       "id": "control-01741",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveNormalEnemy -> SteadM with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveNormalEnemy",
@@ -53951,10 +54074,13 @@
       "instruction": "bne",
       "id": "control-01742",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveNormalEnemy -> MoveDefeatedEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveNormalEnemy",
@@ -53964,10 +54090,13 @@
       "instruction": "beq",
       "id": "control-01743",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveNormalEnemy -> SteadM with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveNormalEnemy",
@@ -53977,10 +54106,13 @@
       "instruction": "beq",
       "id": "control-01744",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveNormalEnemy -> FallE with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveNormalEnemy",
@@ -53990,10 +54122,13 @@
       "instruction": "bcs",
       "id": "control-01745",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MoveNormalEnemy -> ReviveStunned with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveNormalEnemy",
@@ -54003,10 +54138,13 @@
       "instruction": "bcs",
       "id": "control-01746",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MoveNormalEnemy -> FallE with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "FallE",
@@ -54016,10 +54154,13 @@
       "instruction": "jsr",
       "id": "control-01747",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation FallE -> MoveD_EnemyVertically with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "FallE",
@@ -54029,10 +54170,13 @@
       "instruction": "beq",
       "id": "control-01748",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FallE -> MEHor with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "FallE",
@@ -54042,10 +54186,13 @@
       "instruction": "beq",
       "id": "control-01749",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FallE -> SteadM with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "FallE",
@@ -54055,10 +54202,13 @@
       "instruction": "beq",
       "id": "control-01750",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FallE -> SteadM with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "FallE",
@@ -54068,10 +54218,13 @@
       "instruction": "bne",
       "id": "control-01751",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FallE -> SlowM with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "FallE",
@@ -54081,10 +54234,13 @@
       "instruction": "bne",
       "id": "control-01752",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FallE -> MEHor with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MEHor",
@@ -54094,10 +54250,13 @@
       "instruction": "jmp",
       "id": "control-01753",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MEHor -> MoveEnemyHorizontally with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "SlowM",
@@ -54107,10 +54266,13 @@
       "instruction": "ldy",
       "id": "control-01754",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SlowM -> SteadM with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "SteadM",
@@ -54120,10 +54282,13 @@
       "instruction": "bpl",
       "id": "control-01755",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SteadM -> AddHS with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "SteadM",
@@ -54133,10 +54298,13 @@
       "instruction": "iny",
       "id": "control-01756",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SteadM -> AddHS with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "AddHS",
@@ -54146,10 +54314,13 @@
       "instruction": "jsr",
       "id": "control-01757",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation AddHS -> MoveEnemyHorizontally with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ReviveStunned",
@@ -54159,10 +54330,13 @@
       "instruction": "bne",
       "id": "control-01758",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ReviveStunned -> ChkKillGoomba with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ReviveStunned",
@@ -54172,10 +54346,13 @@
       "instruction": "beq",
       "id": "control-01759",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ReviveStunned -> SetRSpd with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ReviveStunned",
@@ -54185,10 +54362,13 @@
       "instruction": "iny",
       "id": "control-01760",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ReviveStunned -> SetRSpd with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveDefeatedEnemy",
@@ -54198,10 +54378,13 @@
       "instruction": "jsr",
       "id": "control-01761",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MoveDefeatedEnemy -> MoveD_EnemyVertically with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveDefeatedEnemy",
@@ -54211,10 +54394,13 @@
       "instruction": "jmp",
       "id": "control-01762",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveDefeatedEnemy -> MoveEnemyHorizontally with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ChkKillGoomba",
@@ -54224,10 +54410,13 @@
       "instruction": "bne",
       "id": "control-01763",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkKillGoomba -> NKGmba with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ChkKillGoomba",
@@ -54237,10 +54426,13 @@
       "instruction": "bne",
       "id": "control-01764",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkKillGoomba -> NKGmba with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ChkKillGoomba",
@@ -54251,12 +54443,12 @@
       "id": "control-01765",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation ChkKillGoomba -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original call relation ChkKillGoomba -> EraseEnemyObject with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "ChkKillGoomba",
@@ -54266,10 +54458,13 @@
       "instruction": "jsr",
       "id": "control-01766",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkKillGoomba -> NKGmba with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveJumpingEnemy",
@@ -80373,12 +80568,12 @@
       "id": "control-03728",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Child return resumes the same source invocation at its next ordered instruction."
+      "semanticContract": "Preserves original return relation MoveNormalEnemy -> ShroomM with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -81957,12 +82152,12 @@
       "id": "control-03827",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> FallE with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> FallE with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveEnemyHorizontally",
@@ -81973,12 +82168,12 @@
       "id": "control-03828",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> AddHS with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> AddHS with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveD_EnemyVertically",
@@ -81989,12 +82184,12 @@
       "id": "control-03829",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> MoveDefeatedEnemy with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> MoveDefeatedEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EraseEnemyObject",
@@ -82005,12 +82200,12 @@
       "id": "control-03830",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EraseEnemyObject -> ChkKillGoomba with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> ChkKillGoomba with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "MoveJ_EnemyVertically",
@@ -89133,12 +89328,12 @@
       "id": "control-04310",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89150,12 +89345,12 @@
       "id": "control-04311",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89167,12 +89362,12 @@
       "id": "control-04312",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89184,12 +89379,12 @@
       "id": "control-04313",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89201,12 +89396,12 @@
       "id": "control-04314",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89235,12 +89430,12 @@
       "id": "control-04316",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -89439,12 +89634,12 @@
       "id": "control-04328",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",

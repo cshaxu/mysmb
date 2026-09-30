@@ -986,3 +986,8 @@ branches.
 ### Cohort I — B15d Hammer Bro front-chain integration
 
 `HammerThrowTmrData` through `SetShim` now has thirteen node contracts, every incident branch/call/fall-through/tail/return relation and six feasible table/state handoffs. Static review matches defeated-state priority, jump and throw timer progression, screen gating, spawn success/failure behavior, random/hard-mode jump selection and the direction-before-normal-move tail. These entries remain `needs-evidence` pending controlled ROM/x86/x64 hammer-spawn and jump routes.
+
+
+### Cohort I — B15e normal-enemy movement integration
+
+`MoveNormalEnemy` through `NKGmba` now has eleven node contracts, every incident state branch, call, tail-jump, fall-through, return and vector relation, plus six feasible table/state handoffs. Static review matches state-bit precedence, gravity/horizontal order, temporary speed restoration, revived-speed selection and the timer-$0e Goomba-only erase predicate. These entries remain `needs-evidence` pending controlled ROM/x86/x64 state-matrix routes.
