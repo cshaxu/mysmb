@@ -38,12 +38,15 @@ The audit has two mandatory and independent ledgers:
 | Edge | Every original connection | C counterpart for call/tail-jump, branch, fall-through, return, vector dispatch and material RAM/table producer-to-consumer relationship. |
 
 The edge extractor records a stable endpoint/type identity and a source
-address. It reports the canonical total before classification begins; no
-planning estimate may replace that total. A dynamic route can mark only the
-nodes and edges it actually executes. Static source review checks every other
-edge. A node cannot be current-exact if an owned required edge is mismatched;
-an edge cannot be current-exact merely because both endpoints have local
-tests.
+address. It reports the canonical control total before classification begins;
+no planning estimate may replace that total. The companion registry builder
+allocates every node and control edge once to a source-order cohort. Material
+RAM/table edges are added only after a source-path review proves a producer,
+consumer and feasible path; a static writer-reader cross product is not an
+edge registry. A dynamic route can mark only the nodes and edges it actually
+executes. Static source review checks every other edge. A node cannot be
+current-exact if an owned required edge is mismatched; an edge cannot be
+current-exact merely because both endpoints have local tests.
 
 ## Execution order
 

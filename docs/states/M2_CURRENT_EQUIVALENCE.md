@@ -29,21 +29,49 @@ fall-through, return and vector dispatch) plus material game-state edges
 therefore intentionally **not estimated** in advance.
 
 The reproducible control-graph extractor is
-[`Extract-M2RomGraph.py`](../../tools/Extract-M2RomGraph.py). Its current
-owner-local listing run reads all 1,992 inventory labels and establishes the
-control subledger at **4,342** edges: 611 calls, 247 direct jumps, 1,566
+[`Extract-M2RomGraph.py`](../../tools/Extract-M2RomGraph.py). The companion
+[`BuildM2CurrentAuditRegistry.py`](../../tools/BuildM2CurrentAuditRegistry.py)
+turns that graph and the label inventory into the neutral audit baseline. Its
+current owner-local listing run reads all 1,992 inventory labels and establishes
+the control subledger at **4,342** edges: 611 calls, 247 direct jumps, 1,566
 branches, 1,058 fall-through relations, 611 return relations, two vector
-entries and 247 `JumpEngine` selector edges. This is a fixed subledger, not
-the final edge denominator: normalized RAM/table producer-consumer edges are
-still required.
+entries and 247 `JumpEngine` selector edges. Every control edge has a stable
+identity and exactly one source-order cohort. This is a fixed subledger, not
+the final edge denominator: material RAM/table producer-consumer edges are
+enumerated only after source-path review. A writer-reader Cartesian product is
+explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 0 |
 | Needs evidence | 0 |
 | Mismatch | 0 |
-| Unclassified | established by Td S9 extraction |
-| **Total** | established by Td S9 extraction |
+| Unclassified | 4,342 control edges; material edge denominator pending feasible-path enumeration |
+| **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
+
+### Control-edge allocation
+
+The registry allocates **all 4,342 control edges** once, by the source label
+that emits the edge (vectors are owned by their target label's cohort). This
+is the integration-audit denominator for the first edge pass.
+
+| Cohort | Nodes | Control edges |
+| --- | ---: | ---: |
+| A | 97 | 221 |
+| B | 67 | 117 |
+| C | 260 | 531 |
+| D | 146 | 137 |
+| E | 80 | 219 |
+| F | 62 | 119 |
+| G | 49 | 119 |
+| H | 129 | 332 |
+| I | 165 | 411 |
+| J | 497 | 1,231 |
+| K | 154 | 335 |
+| L | 83 | 217 |
+| M | 126 | 293 |
+| N | 77 | 60 |
+| **Total** | **1,992** | **4,342** |
 
 ## Source-order cohort plan
 
@@ -82,6 +110,15 @@ For each cohort, record:
    explicitly justified ABI exclusions;
 4. the node and edge dispositions and any smallest contiguous shared-owner
    mismatch chain.
+
+For node semantics, the recorded comparison contains the original control
+predicates, read/write set, table binding, successor order and current shared
+C owner. For every control edge, it records the original endpoint/type, the
+C call/branch/dispatch counterpart and both source and route evidence. For a
+material RAM/table edge, it records the producing write or table selection,
+the consuming read/index, the feasible original path between them and the
+corresponding shared-C data flow. A route may mark only the items it executes;
+all unexecuted items remain `needs-evidence` until source review closes them.
 
 Confirmed mismatch chains are appended to `QUEUE.md` without a numeric task
 identifier. Only an owner-approved later implementation admission allocates
