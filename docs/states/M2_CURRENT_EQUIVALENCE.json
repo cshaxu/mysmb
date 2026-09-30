@@ -25939,21 +25939,27 @@
       "label": "JSFnd",
       "asmLine": 12292,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_jumpspring_metatile true return",
+      "semanticEvidence": [
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets carry-equivalent true result for either jumpspring metatile then returns."
     },
     {
       "label": "NoJSFnd",
       "asmLine": 12293,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_jumpspring_metatile false/true return",
+      "semanticEvidence": [
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns final jumpspring predicate result."
     },
     {
       "label": "HandlePipeEntry",
@@ -73845,10 +73851,13 @@
       "instruction": "beq",
       "id": "control-02558",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c mysmb_player_jumpspring_metatile",
+      "semanticEvidence": [
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves two-metatile predicate branch relation ChkJumpspringMetatiles → JSFnd."
     },
     {
       "from": "ChkJumpspringMetatiles",
@@ -73858,10 +73867,13 @@
       "instruction": "bne",
       "id": "control-02559",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c mysmb_player_jumpspring_metatile",
+      "semanticEvidence": [
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves two-metatile predicate branch relation ChkJumpspringMetatiles → NoJSFnd."
     },
     {
       "from": "ChkJumpspringMetatiles",
@@ -73871,10 +73883,13 @@
       "instruction": "bne",
       "id": "control-02560",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c mysmb_player_jumpspring_metatile",
+      "semanticEvidence": [
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves two-metatile predicate fallthrough relation ChkJumpspringMetatiles → JSFnd."
     },
     {
       "from": "JSFnd",
@@ -73884,10 +73899,13 @@
       "instruction": "sec",
       "id": "control-02561",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c mysmb_player_jumpspring_metatile",
+      "semanticEvidence": [
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves two-metatile predicate fallthrough relation JSFnd → NoJSFnd."
     },
     {
       "from": "HandlePipeEntry",

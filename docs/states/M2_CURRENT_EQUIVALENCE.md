@@ -1511,3 +1511,9 @@ branches.
 - Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering block-hit stun, landing alignment and state dispatch.
 - Independent integration result: 35 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled enemy terrain routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K57 — jumpspring predicate terminals audit
+
+- Source range: `JSFnd` through `NoJSFnd` (`SMBDIS.ASM` lines 12292–12293).
+- Node-semantics result: two labels moved from `unclassified` to `needs-evidence`.
+- Independent integration result: 4 predicate relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
