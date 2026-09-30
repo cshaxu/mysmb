@@ -1457,3 +1457,9 @@ branches.
 - Node-semantics result: four labels moved from `unclassified` to `needs-evidence`, covering head/coin/solid handling and vertical-speed reset.
 - Independent integration result: 20 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled head routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K48 — player feet and landing audit
+
+- Source range: `DoFootCheck` through `InitSteP` (`SMBDIS.ASM` lines 12000–12051).
+- Node-semantics result: six labels moved from `unclassified` to `needs-evidence`, covering dual feet probes, coin/axe/invisible/jumpspring paths and landing resets.
+- Independent integration result: 33 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled feet routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

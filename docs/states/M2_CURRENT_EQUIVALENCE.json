@@ -25283,62 +25283,77 @@
       "cohort": "J",
       "status": "needs-evidence",
       "currentOwner": "src/game/player/terrain.c and terrain children",
-      "currentCounterpart": "mysmb_player_background_collision head path",
+      "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Begins feet collision stage after head-stage completion or bypass."
+      "semanticContract": "Queries left then right feet, preserves source scratch ordering and routes coins or nonempty feet tile into foot processing."
     },
     {
       "label": "AwardTouchedCoin",
       "asmLine": 12019,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_feet and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps coin handling after a head or foot coin hit."
     },
     {
       "label": "ChkFootMTile",
       "asmLine": 12022,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_feet and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies climb, upward, axe and invisible-tile gates before jumpspring/landing decision."
     },
     {
       "label": "ContChk",
       "asmLine": 12030,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_feet and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes invisible tile result, active jumpspring and low-nibble wall/landing threshold."
     },
     {
       "label": "LandPlyr",
       "asmLine": 12040,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_feet and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Handles land-jumpspring and pipe entry, aligns Y, clears vertical motion/stomp chain and enters normal state."
     },
     {
       "label": "InitSteP",
       "asmLine": 12049,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_feet and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes normal player state before side collision checks."
     },
     {
       "label": "DoPlayerSideCheck",
@@ -71931,10 +71946,13 @@
       "instruction": "bcs",
       "id": "control-02460",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation DoFootCheck → DoPlayerSideCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -71945,12 +71963,12 @@
       "id": "control-02461",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DoFootCheck -> BlockBufferColli_Feet with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves feet/landing call relation DoFootCheck → BlockBufferColli_Feet including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -71960,10 +71978,13 @@
       "instruction": "jsr",
       "id": "control-02462",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing call relation DoFootCheck → CheckForCoinMTiles including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -71973,10 +71994,13 @@
       "instruction": "bcs",
       "id": "control-02463",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation DoFootCheck → AwardTouchedCoin including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -71987,12 +72011,12 @@
       "id": "control-02464",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DoFootCheck -> BlockBufferColli_Feet with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves feet/landing call relation DoFootCheck → BlockBufferColli_Feet including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -72002,10 +72026,13 @@
       "instruction": "bne",
       "id": "control-02465",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation DoFootCheck → ChkFootMTile including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -72015,10 +72042,13 @@
       "instruction": "beq",
       "id": "control-02466",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation DoFootCheck → DoPlayerSideCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -72028,10 +72058,13 @@
       "instruction": "jsr",
       "id": "control-02467",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing call relation DoFootCheck → CheckForCoinMTiles including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -72041,10 +72074,13 @@
       "instruction": "bcc",
       "id": "control-02468",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation DoFootCheck → ChkFootMTile including dual-probe scratch and state ordering."
     },
     {
       "from": "DoFootCheck",
@@ -72054,10 +72090,13 @@
       "instruction": "bcc",
       "id": "control-02469",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing fallthrough relation DoFootCheck → AwardTouchedCoin including dual-probe scratch and state ordering."
     },
     {
       "from": "AwardTouchedCoin",
@@ -72067,10 +72106,13 @@
       "instruction": "jmp",
       "id": "control-02470",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing jump relation AwardTouchedCoin → HandleCoinMetatile including dual-probe scratch and state ordering."
     },
     {
       "from": "ChkFootMTile",
@@ -72080,10 +72122,13 @@
       "instruction": "jsr",
       "id": "control-02471",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing call relation ChkFootMTile → CheckForClimbMTiles including dual-probe scratch and state ordering."
     },
     {
       "from": "ChkFootMTile",
@@ -72093,10 +72138,13 @@
       "instruction": "bcs",
       "id": "control-02472",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation ChkFootMTile → DoPlayerSideCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "ChkFootMTile",
@@ -72106,10 +72154,13 @@
       "instruction": "bmi",
       "id": "control-02473",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation ChkFootMTile → DoPlayerSideCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "ChkFootMTile",
@@ -72119,10 +72170,13 @@
       "instruction": "bne",
       "id": "control-02474",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation ChkFootMTile → ContChk including dual-probe scratch and state ordering."
     },
     {
       "from": "ChkFootMTile",
@@ -72132,10 +72186,13 @@
       "instruction": "jmp",
       "id": "control-02475",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing jump relation ChkFootMTile → HandleAxeMetatile including dual-probe scratch and state ordering."
     },
     {
       "from": "ContChk",
@@ -72145,10 +72202,13 @@
       "instruction": "jsr",
       "id": "control-02476",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing call relation ContChk → ChkInvisibleMTiles including dual-probe scratch and state ordering."
     },
     {
       "from": "ContChk",
@@ -72158,10 +72218,13 @@
       "instruction": "beq",
       "id": "control-02477",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation ContChk → DoPlayerSideCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "ContChk",
@@ -72171,10 +72234,13 @@
       "instruction": "bne",
       "id": "control-02478",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation ContChk → InitSteP including dual-probe scratch and state ordering."
     },
     {
       "from": "ContChk",
@@ -72184,10 +72250,13 @@
       "instruction": "bcc",
       "id": "control-02479",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing branch relation ContChk → LandPlyr including dual-probe scratch and state ordering."
     },
     {
       "from": "ContChk",
@@ -72197,10 +72266,13 @@
       "instruction": "jmp",
       "id": "control-02480",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing jump relation ContChk → ImpedePlayerMove including dual-probe scratch and state ordering."
     },
     {
       "from": "LandPlyr",
@@ -72210,10 +72282,13 @@
       "instruction": "jsr",
       "id": "control-02481",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing call relation LandPlyr → ChkForLandJumpSpring including dual-probe scratch and state ordering."
     },
     {
       "from": "LandPlyr",
@@ -72223,10 +72298,13 @@
       "instruction": "jsr",
       "id": "control-02482",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing call relation LandPlyr → HandlePipeEntry including dual-probe scratch and state ordering."
     },
     {
       "from": "LandPlyr",
@@ -72236,10 +72314,13 @@
       "instruction": "sta",
       "id": "control-02483",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing fallthrough relation LandPlyr → InitSteP including dual-probe scratch and state ordering."
     },
     {
       "from": "InitSteP",
@@ -72249,10 +72330,13 @@
       "instruction": "sta",
       "id": "control-02484",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing fallthrough relation InitSteP → DoPlayerSideCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "DoPlayerSideCheck",
@@ -94929,12 +95013,12 @@
       "id": "control-03950",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BlockBufferColli_Feet -> DoFootCheck with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves feet/landing return relation BlockBufferColli_Feet → DoFootCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "CheckForCoinMTiles",
@@ -94944,10 +95028,13 @@
       "instruction": "rts/rti",
       "id": "control-03951",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing return relation CheckForCoinMTiles → DoFootCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "BlockBufferColli_Feet",
@@ -94958,12 +95045,12 @@
       "id": "control-03952",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BlockBufferColli_Feet -> DoFootCheck with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves feet/landing return relation BlockBufferColli_Feet → DoFootCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "CheckForCoinMTiles",
@@ -94973,10 +95060,13 @@
       "instruction": "rts/rti",
       "id": "control-03953",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing return relation CheckForCoinMTiles → DoFootCheck including dual-probe scratch and state ordering."
     },
     {
       "from": "CheckForClimbMTiles",
@@ -94986,10 +95076,13 @@
       "instruction": "rts/rti",
       "id": "control-03954",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing return relation CheckForClimbMTiles → ChkFootMTile including dual-probe scratch and state ordering."
     },
     {
       "from": "ChkInvisibleMTiles",
@@ -94999,10 +95092,13 @@
       "instruction": "rts/rti",
       "id": "control-03955",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing return relation ChkInvisibleMTiles → ContChk including dual-probe scratch and state ordering."
     },
     {
       "from": "ChkForLandJumpSpring",
@@ -95012,10 +95108,13 @@
       "instruction": "rts/rti",
       "id": "control-03956",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing return relation ChkForLandJumpSpring → LandPlyr including dual-probe scratch and state ordering."
     },
     {
       "from": "HandlePipeEntry",
@@ -95025,10 +95124,13 @@
       "instruction": "rts/rti",
       "id": "control-03957",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
+      "semanticEvidence": [
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves feet/landing return relation HandlePipeEntry → LandPlyr including dual-probe scratch and state ordering."
     },
     {
       "from": "BlockBufferColli_Side",
