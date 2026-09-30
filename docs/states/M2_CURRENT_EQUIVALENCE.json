@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 136,
+    "enumeratedCount": 139,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1917,6 +1917,48 @@
       "semanticContract": "Preserves source table selection, consuming predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00137",
+      "producer": "DuplicateEnemyObj",
+      "consumer": "InitBowser",
+      "storage": "DuplicateObj_Offset and original/rear Enemy_Flag records",
+      "feasiblePath": "InitBowser consumes duplication before it establishes front slot and Bowser-wide state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_duplicate_object before mysmb_enemy_init_bowser writes",
+      "semanticContract": "Preserves exact source producer write, later consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00138",
+      "producer": "InitBowser",
+      "consumer": "BowserGfxHandler",
+      "storage": "BowserFront_Offset, BowserBodyControls and timers",
+      "feasiblePath": "The initializer writes persistent Bowser fields later consumed by graphics and body control.",
+      "status": "needs-evidence",
+      "currentCounterpart": "Bowser RAM aliases established in mysmb_enemy_init_bowser",
+      "semanticContract": "Preserves exact source producer write, later consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00139",
+      "producer": "DuplicateEnemyObj",
+      "consumer": "RunFirebarObj",
+      "storage": "DuplicateObj_Offset and copied rear coordinates",
+      "feasiblePath": "Long-firebar and Bowser actor paths consume the recorded duplicate slot and copied coordinate state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "0x06cf and copied flag/page/X/Y fields in mysmb_enemy_duplicate_object",
+      "semanticContract": "Preserves exact source producer write, later consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -14820,41 +14862,53 @@
       "label": "InitBowser",
       "asmLine": 8529,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser initializer and duplicate-object core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls DuplicateEnemyObj then writes front offset, body/bridge controls, origin X, breath/direction $df, paired $20 timers, hit points five and movement speed two."
     },
     {
       "label": "DuplicateEnemyObj",
       "asmLine": 8551,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser initializer and duplicate-object core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Wraps upward from Y=$ff until an inactive Enemy_Flag slot, records DuplicateObj_Offset and copies exactly the source fields in source order."
     },
     {
       "label": "FSLoop",
       "asmLine": 8553,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser initializer and duplicate-object core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Increments the duplicate slot and loops while Enemy_Flag is nonzero; the first zero slot enters the copy sequence."
     },
     {
       "label": "FlmEx",
       "asmLine": 8569,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser initializer and duplicate-object core",
+      "currentCounterpart": "enemy/init_targets.c",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after duplication or the upstream flame-timer early exit."
     },
     {
       "label": "FlameYPosData",
@@ -49933,12 +49987,12 @@
       "id": "control-01555",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation InitLongFirebar -> DuplicateEnemyObj with exact table index, timer/slot predicate, carry/borrow and return handoff."
+      "semanticContract": "Preserves original call relation InitLongFirebar -> DuplicateEnemyObj with selected-slot, copied-field and return ordering."
     },
     {
       "from": "InitLongFirebar",
@@ -50236,10 +50290,13 @@
       "instruction": "jsr",
       "id": "control-01574",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitBowser -> DuplicateEnemyObj with selected-slot, copied-field and return ordering."
     },
     {
       "from": "DuplicateEnemyObj",
@@ -50249,10 +50306,13 @@
       "instruction": "ldy",
       "id": "control-01575",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DuplicateEnemyObj -> FSLoop with selected-slot, copied-field and return ordering."
     },
     {
       "from": "FSLoop",
@@ -50262,10 +50322,13 @@
       "instruction": "bne",
       "id": "control-01576",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FSLoop -> FSLoop with selected-slot, copied-field and return ordering."
     },
     {
       "from": "FSLoop",
@@ -50275,10 +50338,13 @@
       "instruction": "sta",
       "id": "control-01577",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation FSLoop -> FlmEx with selected-slot, copied-field and return ordering."
     },
     {
       "from": "InitBowserFlame",
@@ -50288,10 +50354,13 @@
       "instruction": "bne",
       "id": "control-01578",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitBowserFlame -> FlmEx with selected-slot, copied-field and return ordering."
     },
     {
       "from": "InitBowserFlame",
@@ -79615,12 +79684,12 @@
       "id": "control-03778",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DuplicateEnemyObj -> InitLongFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff."
+      "semanticContract": "Preserves original return relation DuplicateEnemyObj -> InitLongFirebar with selected-slot, copied-field and return ordering."
     },
     {
       "from": "SmallBBox",
@@ -79646,10 +79715,13 @@
       "instruction": "rts/rti",
       "id": "control-03780",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation DuplicateEnemyObj -> InitBowser with selected-slot, copied-field and return ordering."
     },
     {
       "from": "SetFlameTimer",
@@ -86578,12 +86650,12 @@
       "id": "control-04260",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitBowser with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> InitBowser with selected-slot, copied-field and return ordering."
     },
     {
       "from": "InitEnemyRoutines",

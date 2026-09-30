@@ -921,3 +921,8 @@ These entries remain `needs-evidence` pending controlled original-ROM/x86/x64
 routes for every firebar ID, X wrap, timer gate, hard-mode capacity gate,
 player-speed bias, random override, direction reversal and both position
 branches.
+
+
+### Cohort I — B14n Bowser initializer and object-duplication integration
+
+`InitBowser` through `FlmEx` now has four node contracts, all incident call, loop, fall-through, return and dispatch relations, and three feasible material handoffs. The audit records the byte-wrapping free-slot scan and exact rear-object copy footprint separately from Bowser persistent control/timer initialization. No static shared-C discrepancy was found; entries remain `needs-evidence` pending controlled original-ROM/x86/x64 routes.
