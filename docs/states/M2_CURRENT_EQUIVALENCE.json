@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 318,
+    "enumeratedCount": 322,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4465,6 +4465,62 @@
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00319",
+      "producer": "YMovingPlatform",
+      "consumer": "SkipIY",
+      "storage": "zero speed/force, top endpoint and FrameCounter low three bits",
+      "feasiblePath": "Only stopped/below-top platform increments Y once each eighth frame.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_y",
+      "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00320",
+      "producer": "ChkYCenterPos",
+      "consumer": "YMDown",
+      "storage": "current Y versus center endpoint to gravity direction",
+      "feasiblePath": "Below center selects down; at/above selects up.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_y",
+      "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00321",
+      "producer": "YMDown",
+      "consumer": "ChkYPCollision",
+      "storage": "post-gravity current slot and PlatformCollisionFlag",
+      "feasiblePath": "Gravity reloads ObjectOffset before rider decision.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_y",
+      "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00322",
+      "producer": "ChkYPCollision",
+      "consumer": "ExYPl",
+      "storage": "nonnegative collision slot to vertical player position",
+      "feasiblePath": "Only an existing rider is vertically repositioned.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c position_large_rider",
+      "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -21275,61 +21331,79 @@
       "label": "YMovingPlatform",
       "asmLine": 10921,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "When both speed/force are zero, clears Y dummy, performs one-pixel descent only below top endpoint on every eighth frame, then takes rider gate; otherwise enters center-based gravity."
     },
     {
       "label": "SkipIY",
       "asmLine": 10933,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Unconditionally joins rider gate after optional eighth-frame descent."
     },
     {
       "label": "ChkYCenterPos",
       "asmLine": 10935,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Current Y below center chooses downward gravity; current Y at/above center chooses upward gravity."
     },
     {
       "label": "YMDown",
       "asmLine": 10941,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls downward gravity then falls through shared rider gate."
     },
     {
       "label": "ChkYPCollision",
       "asmLine": 10943,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Only nonnegative PlatformCollisionFlag positions the large-platform rider."
     },
     {
       "label": "ExYPl",
       "asmLine": 10947,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after optional rider positioning."
     },
     {
       "label": "XMovingPlatform",
@@ -62705,10 +62779,13 @@
       "instruction": "bne",
       "id": "control-02138",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation YMovingPlatform -> ChkYCenterPos with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "YMovingPlatform",
@@ -62718,10 +62795,13 @@
       "instruction": "bcs",
       "id": "control-02139",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation YMovingPlatform -> ChkYCenterPos with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "YMovingPlatform",
@@ -62731,10 +62811,13 @@
       "instruction": "bne",
       "id": "control-02140",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation YMovingPlatform -> SkipIY with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "YMovingPlatform",
@@ -62744,10 +62827,13 @@
       "instruction": "inc",
       "id": "control-02141",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation YMovingPlatform -> SkipIY with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "SkipIY",
@@ -62757,10 +62843,13 @@
       "instruction": "jmp",
       "id": "control-02142",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation SkipIY -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "ChkYCenterPos",
@@ -62770,10 +62859,13 @@
       "instruction": "bcc",
       "id": "control-02143",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkYCenterPos -> YMDown with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "ChkYCenterPos",
@@ -62783,10 +62875,13 @@
       "instruction": "jsr",
       "id": "control-02144",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkYCenterPos -> MovePlatformUp with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "ChkYCenterPos",
@@ -62796,10 +62891,13 @@
       "instruction": "jmp",
       "id": "control-02145",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkYCenterPos -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "YMDown",
@@ -62809,10 +62907,13 @@
       "instruction": "jsr",
       "id": "control-02146",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation YMDown -> MovePlatformDown with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "YMDown",
@@ -62822,10 +62923,13 @@
       "instruction": "jsr",
       "id": "control-02147",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation YMDown -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "ChkYPCollision",
@@ -62835,10 +62939,13 @@
       "instruction": "bmi",
       "id": "control-02148",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkYPCollision -> ExYPl with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "ChkYPCollision",
@@ -62848,10 +62955,13 @@
       "instruction": "jsr",
       "id": "control-02149",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkYPCollision -> PositionPlayerOnVPlat with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "ChkYPCollision",
@@ -62861,10 +62971,13 @@
       "instruction": "jsr",
       "id": "control-02150",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkYPCollision -> ExYPl with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "XMovingPlatform",
@@ -63114,10 +63227,13 @@
       "instruction": "jmp",
       "id": "control-02169",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MoveLargeLiftPlat -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "MoveSmallPlatform",
@@ -86517,12 +86633,12 @@
       "id": "control-03887",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlatformUp -> ChkYCenterPos with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MovePlatformUp -> ChkYCenterPos with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "MovePlatformDown",
@@ -86533,12 +86649,12 @@
       "id": "control-03888",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlatformDown -> YMDown with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MovePlatformDown -> YMDown with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -86548,10 +86664,13 @@
       "instruction": "rts/rti",
       "id": "control-03889",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "semanticEvidence": [
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "XMoveCntr_Platform",
@@ -93233,12 +93352,12 @@
       "id": "control-04332",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> YMovingPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> YMovingPlatform with speed/force/position/collision predicate and call/tail/return ordering."
     },
     {
       "from": "LargePlatformSubroutines",

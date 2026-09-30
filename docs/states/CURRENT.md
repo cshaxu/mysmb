@@ -10,7 +10,7 @@
 | Admission And Approval | Owner-directed re-audit after historical completion accounting proved insufficient to track present end-to-end equivalence. |
 | Objective | Establish current-build, source-order node and edge registries for the complete original ROM graph, then produce an ordered, unnumbered repair queue from confirmed discrepancies. |
 | Non-goals | No gameplay repair, node-credit promotion, platform logic, numeric implementation T allocation, or M2 closure. |
-| Reference Baseline | Historical accounting: 1,992 / 1,992. Current node registry: 38 exact, 1222 needs-evidence, 9 mismatch, 723 unclassified. Current control-edge registry: 76 exact, 2610 needs-evidence, 25 mismatch, 1631 unclassified. Material RAM/table ledger: 3 exact, 1 mismatch and 314 needs-evidence; its final denominator remains pending feasible-path enumeration. Scope is all labels and extracted edges; expected match delta is zero. |
+| Reference Baseline | Historical accounting: 1,992 / 1,992. Current node registry: 38 exact, 1228 needs-evidence, 9 mismatch, 717 unclassified. Current control-edge registry: 76 exact, 2625 needs-evidence, 25 mismatch, 1616 unclassified. Material RAM/table ledger: 3 exact, 1 mismatch and 318 needs-evidence; its final denominator remains pending feasible-path enumeration. Scope is all labels and extracted edges; expected match delta is zero. |
 | Candidate Proposal | docs/proposals/m2/current-equivalence-reaudit.md. |
 | Files And ABI Surface | Governance states, audit registry, queue and neutral build-local recorder outputs; no production source mutation. |
 | Applicable Rules | Execution, documentation, architecture, coding and source/research policy. |
