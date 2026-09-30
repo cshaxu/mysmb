@@ -1171,7 +1171,7 @@ int main(int argument_count, char **arguments)
             value = strtoul(arguments[recorded] + 16u,
                             &relative_kind_end, 10);
             if (relative_kind_end == arguments[recorded] + 16u ||
-                *relative_kind_end != '\0' || value >= 7u) return 64;
+                *relative_kind_end != '\0' || value >= 12u) return 64;
             relative_kind = (unsigned int)value;
             continue;
         }
@@ -2976,9 +2976,9 @@ int main(int argument_count, char **arguments)
     if (relative_coordinate_variant != 0xffffffffu &&
         relative_child_path == NULL) return 64;
     if (relative_child_path != NULL) {
-        static const lib_u16 entries[7] = {
+        static const lib_u16 entries[12] = {
             0xf12au, 0xf131u, 0xf13bu, 0xf148u, 0xf152u, 0xf159u,
-            0xf180u
+            0xf180u, 0xf187u, 0xf191u, 0xf19bu, 0xf1afu, 0xf1b6u
         };
         relative_child_entry = entries[relative_kind];
     }
@@ -4812,6 +4812,26 @@ int main(int argument_count, char **arguments)
                 ram[0x0086u] = 5u;
                 ram[0x00ceu] = 0xf9u;
                 ram[0x00b5u] = 1u;
+            }
+            else if (relative_kind >= 7u) {
+                static const lib_u8 offscreen_displacements[5] = {
+                    7u, 22u, 13u, 1u, 9u
+                };
+                lib_u8 source = (lib_u8)(driver->machine->x +
+                    offscreen_displacements[relative_kind - 7u]);
+                ram[0x071au] = 1u;
+                ram[0x071bu] = 2u;
+                ram[0x071cu] = 0xf0u;
+                ram[0x071du] = 0x40u;
+                ram[0x006du + source] = 2u;
+                ram[0x0086u + source] = 0x30u;
+                ram[0x00b5u + source] = 1u;
+                ram[0x00ceu + source] = 0xf8u;
+                ram[0u] = 0xccu;
+                ram[4u] = 0xa4u;
+                ram[5u] = 0xa5u;
+                ram[6u] = 0xa6u;
+                ram[7u] = 0xa7u;
             }
             else {
                 lib_u8 source = (lib_u8)(driver->machine->x +

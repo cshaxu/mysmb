@@ -226,3 +226,96 @@ did not change:
 | `assets/mysmb64.exe` | `fc91bd0c1813c78e664f121c73a3d68091e72f012641b8830bcf65b5d1365035` |
 
 S4 begins at `GetFireballOffscreenBits` and remains unadmitted here.
+
+## S4 admission: shared offscreen-bit chain
+
+The exact **26 incomplete source-order labels** are the S4 row in the
+task table, from `GetFireballOffscreenBits` (14851) through `ExDivPD`
+(15016). All 26 are intended new ROM matches; **1,720 → 1,746 /
+1,992** maximum. `GetFireballOffscreenBits` is incoming **audited;
+evidence incomplete**; the other 25 are **open**. M2 T16 S4 transfers
+their custody to T47 S4. S3 `GetPlayerOffscreenBits` is the caller-side
+predecessor; S5 `DrawSpriteObject` is the next source label and remains
+uncredited. The shared game owner is `src/game/oam/object_position.c`;
+actor callers may delegate to it, while host adapters do no offscreen
+calculation.
+
+The original `GetOffScreenBitsSet` combines horizontal and vertical
+nibbles after `RunOffscrBitsSubs`, restoring X from `ObjectOffset`.
+The X/Y loops and `DividePDiff` preserve `$00`, `$04–$07` scratch
+effects, table indices and eight-bit arithmetic. Prove the fixed PRG
+tables against the owner ROM, then compare each entry variant
+(player, fireball, bubble, misc, enemy, block) on source-reachable
+GameEngine routes, including edge inputs at natural entries. Each
+of the 26 labels requires a source PC or data-consumer proof and
+individual control/read/write disposition. The S3 player scratch
+discrepancy is an explicit S4 regression input. The independent
+operational track runs relevant actor OAM tests, x86/x64 builds,
+DOS16 link, platform purity and all three executable artifacts.
+
+### S4 closure: shared offscreen-bit chain
+
+All **26 expected labels are ROM-match complete**, with no S4 deferral;
+the count advances **1,720 → 1,746 / 1,992**. The original GameEngine
+reached player, fireball, bubble, misc, enemy and block offscreen
+entrances in natural and bounded edge variants. Across **12 routes and
+32 original child calls**, the shared C chain matched every non-stack
+RAM/OAM byte after each call on x86 and x64: **64 comparisons, zero
+differences**. This includes the S3 discrepancy in `$00`, `$04–$07`:
+the player route now also matches those scratch bytes. Return X equals
+`ObjectOffset` in all captured calls. The original CPU PC/stack/ROM was
+never redirected or modified; only selected actor RAM was varied at
+naturally reached entries. Raw records and machine-checked node/route
+summaries stay in ignored `build/m2-t47-s4/`.
+
+| Source PC | Node | Control/data evidence and shared C mapping |
+| --- | --- | --- |
+| `$f187` | `GetFireballOffscreenBits` | 3 PC hits; table-adjusted source slot, destination 2; `mysmb_oam_get_fireball_offscreen_bits` |
+| `$f191` | `GetBubbleOffscreenBits` | 6 hits; table-adjusted source slot, destination 3; bubble delegates to `mysmb_oam_get_bubble_offscreen_bits` |
+| `$f19b` | `GetMiscOffscreenBits` | 2 hits; table-adjusted source slot, destination 6; `mysmb_oam_get_misc_offscreen_bits` |
+| `$f1a5` | `ObjOffsetData` | ROM bytes `07 16 0d` bound to `mysmb_obj_offset_data`, exercised by the three preceding actor wrappers |
+| `$f1a8` | `GetProperObjOffset` | 22 hits; slot + selected table byte; `mysmb_oam_proper_source_offset` |
+| `$f1af` | `GetEnemyOffscreenBits` | 4 hits; source displacement 1, destination 1; `mysmb_oam_get_enemy_offscreen_bits` |
+| `$f1b6` | `GetBlockOffscreenBits` | 4 hits; source displacement 9, destination 4; `mysmb_oam_get_block_offscreen_bits` |
+| `$f1ba` | `SetOffscrBitsOffset` | 8 hits; write incoming slot to `$00`, add displacement; `mysmb_oam_set_offscreen_bits_offset` |
+| `$f1c0` | `GetOffScreenBitsSet` | 59 hits; combine horizontal low and vertical high nibbles, write fixed result and `$00`; `mysmb_oam_get_offscreen_bits_set` |
+| `$f1d7` | `RunOffscrBitsSubs` | 59 hits; X high nibble to `$00`, then Y helper; `mysmb_oam_run_offscreen_bits_subs` |
+| `$f1e3` | `XOffscreenBitsData` | 16 original ROM bytes bound to `mysmb_x_offscreen_bits_data` and consumed by both X loop edges |
+| `$f1f3` | `DefaultXOnscreenOfs` | ROM bytes `07 0f 07` bound to `mysmb_default_x_onscreen_ofs` |
+| `$f1f6` | `GetXOffscreenBits` | 68 hits; source X to `$04`, right-edge-first scan; `mysmb_oam_get_x_offscreen_bits` |
+| `$f1fa` | `XOfsLoop` | 127 hits; edge/page subtraction writes `$07`, signed/page branches; X helper loop |
+| `$f21e` | `XLdBData` | 127 hits; indexed X table read and source X restoration; X helper load |
+| `$f22a` | `ExXOfsBS` | 68 hits; nonzero result or exhausted left edge returns; X helper exit |
+| `$f22b` | `YOffscreenBitsData` | 9 original ROM bytes bound to `mysmb_y_offscreen_bits_data` and consumed by Y loop |
+| `$f234` | `DefaultYOnscreenOfs` | ROM bytes `04 00 04` bound to `mysmb_default_y_onscreen_ofs` |
+| `$f237` | `HighPosUnitData` | ROM bytes `ff 00` bound to `mysmb_high_pos_unit_data` |
+| `$f239` | `GetYOffscreenBits` | 59 hits; source X to `$04`, top-edge-first scan; `mysmb_oam_get_y_offscreen_bits` |
+| `$f23d` | `YOfsLoop` | 107 hits; vertical high/low subtraction writes `$07`; Y helper loop |
+| `$f260` | `YLdBData` | 107 hits; indexed Y table read and source X restoration; Y helper load |
+| `$f26c` | `ExYOfsBS` | 59 hits; nonzero result or exhausted bottom edge returns; Y helper exit |
+| `$f26d` | `DividePDiff` | 138 hits; always write adder to `$05`, compare `$07` with `$06`, divide near edge; `mysmb_oam_divide_pixel_diff` |
+| `$f280` | `SetOscrO` | 44 hits; select divided offset, add side-specific adder for left/bottom; divide helper branch |
+| `$f281` | `ExDivPD` | 138 hits; preserve default offset on far side; divide helper return |
+
+The shared game chain now has one source-order table/loop/scratch owner.
+The duplicate player and bubble calculations were removed; all six
+actor callers use the same nibble-packing routine. The similar-issue
+sweep also checked the explicit X helper used by player scrolling and
+small-platform graphics. Those callers remain in game code; no host
+adapter contains offscreen logic.
+
+The separate operational track built Win32 x86, x64 and DOS16. Focused
+player scroll, five actor OAM, small-platform OAM and platform-purity
+tests passed **8/8 on each Windows architecture**. Both packaged
+Win32 `--self-test` runs exited zero; DOS16 linked a valid
+260,245-byte MZ image. Full CTest was **222/233 on both x86 and x64**,
+with precisely the same 11 previously recorded baseline failures and
+no new failures. The owner-authorized three EXEs were refreshed:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `43b96d62449e5f677df4736e3e10621c6d1c6e46ee3cd344f3c500619bf33e3a` |
+| `assets/mysmb32.exe` | `abd2b7b6a17e74b968f76319a752ec53f4806029544ec1a9ed68f703fa174f5a` |
+| `assets/mysmb64.exe` | `31caa48109875babd74ab1ea575f6818a30db3d7954c43c8395a776d423a5909` |
+
+S5 begins at `DrawSpriteObject` and remains unadmitted here.

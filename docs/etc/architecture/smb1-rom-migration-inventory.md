@@ -110,8 +110,8 @@ The labels and branches behind every line remain open until individually bound b
   - [x] `PlayerGfxHandler` — ROM line 14460; [T46 S1 dispatch proof](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen)
   - [ ] `EnemyGraphicsEngine` — label lookup pending
   - [ ] `MiscObjOffset` — label lookup pending
-  - [ ] `GetEnemyOffscreenBits` — ROM line 14879; C owner/evidence pending
-  - [ ] `GetFireballOffscreenBits` — ROM line 14851; C owner/evidence pending
+  - [x] `GetEnemyOffscreenBits` — ROM line 14879; C owner/evidence pending
+  - [x] `GetFireballOffscreenBits` — ROM line 14851; C owner/evidence pending
 - [ ] **Audio engine, music and sound effects**
   - [ ] `SoundEngine` — ROM line 15070; C owner/evidence pending
   - [ ] `Square1SfxHandler` — ROM line 15256; C owner/evidence pending
@@ -1898,32 +1898,32 @@ The labels and branches behind every line remain open until individually bound b
 | 14825 | `VariableObjOfsRelPos` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
 | 14834 | `GetObjRelativePosition` | M2 T47 S2 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S2 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s2-closure-shared-relative-object-coordinates) |
 | 14846 | `GetPlayerOffscreenBits` | M2 T47 S3 shared `src/game/oam/player_gfx.c` | ROM-match complete | [T47 S3 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s3-closure-player-offscreen-entry) |
-| 14851 | `GetFireballOffscreenBits` | T16: `src/game/oam/object_position.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getfireballoffscreenbits) |
-| 14857 | `GetBubbleOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getbubbleoffscreenbits) |
-| 14863 | `GetMiscOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmiscoffscreenbits) |
-| 14869 | `ObjOffsetData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-objoffsetdata) |
-| 14872 | `GetProperObjOffset` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getproperobjoffset) |
-| 14879 | `GetEnemyOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getenemyoffscreenbits); [S8 child diagnostic](../../history/M2-T40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): missing original scratch writes |
-| 14884 | `GetBlockOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getblockoffscreenbits) |
-| 14888 | `SetOffscrBitsOffset` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setoffscrbitsoffset) |
-| 14894 | `GetOffScreenBitsSet` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getoffscreenbitsset) |
-| 14911 | `RunOffscrBitsSubs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runoffscrbitssubs) |
-| 14927 | `XOffscreenBitsData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xoffscreenbitsdata) |
-| 14931 | `DefaultXOnscreenOfs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultxonscreenofs) |
-| 14934 | `GetXOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getxoffscreenbits) |
-| 14937 | `XOfsLoop` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xofsloop) |
-| 14953 | `XLdBData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xldbdata) |
-| 14959 | `ExXOfsBS` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exxofsbs) |
-| 14963 | `YOffscreenBitsData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yoffscreenbitsdata) |
-| 14968 | `DefaultYOnscreenOfs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultyonscreenofs) |
-| 14971 | `HighPosUnitData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-highposunitdata) |
-| 14974 | `GetYOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getyoffscreenbits) |
-| 14977 | `YOfsLoop` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yofsloop) |
-| 14993 | `YLdBData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yldbdata) |
-| 14999 | `ExYOfsBS` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exyofsbs) |
-| 15003 | `DividePDiff` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dividepdiff) |
-| 15015 | `SetOscrO` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setoscro) |
-| 15016 | `ExDivPD` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdivpd) |
+| 14851 | `GetFireballOffscreenBits` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14857 | `GetBubbleOffscreenBits` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14863 | `GetMiscOffscreenBits` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14869 | `ObjOffsetData` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14872 | `GetProperObjOffset` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14879 | `GetEnemyOffscreenBits` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14884 | `GetBlockOffscreenBits` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14888 | `SetOffscrBitsOffset` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14894 | `GetOffScreenBitsSet` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14911 | `RunOffscrBitsSubs` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14927 | `XOffscreenBitsData` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14931 | `DefaultXOnscreenOfs` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14934 | `GetXOffscreenBits` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14937 | `XOfsLoop` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14953 | `XLdBData` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14959 | `ExXOfsBS` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14963 | `YOffscreenBitsData` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14968 | `DefaultYOnscreenOfs` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14971 | `HighPosUnitData` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14974 | `GetYOffscreenBits` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14977 | `YOfsLoop` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14993 | `YLdBData` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 14999 | `ExYOfsBS` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 15003 | `DividePDiff` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 15015 | `SetOscrO` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
+| 15016 | `ExDivPD` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
 | 15025 | `DrawSpriteObject` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawspriteobject) |
 | 15036 | `NoHFlip` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nohflip) |
 | 15040 | `SetHFAt` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethfat) |

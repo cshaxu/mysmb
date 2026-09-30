@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1720 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 37 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 235 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 1746 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 210 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1720 / 1,992 (86.35%)**. The 37 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1746 / 1,992 (87.65%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T47 S3 closure](../proposals/m2/t47-object-position-and-sprite-output.md#s3-closure-player-offscreen-entry) proves the player offscreen entry/register handoff and result on 16 original calls with 32 x86/x64 comparisons; downstream helper scratch remains S4 debt.
+Latest task review: [T47 S4 closure](../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) proves 26 exact shared offscreen labels, including six ROM-bound data tables, on 32 original actor child calls with 64 matching x86/x64 full RAM/OAM comparisons and separate three-target operational checks.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1720)
+## Completed matches (1746)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1753,8 +1753,34 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14825 | `VariableObjOfsRelPos` |
 | 14834 | `GetObjRelativePosition` |
 | 14846 | `GetPlayerOffscreenBits` |
+| 14851 | `GetFireballOffscreenBits` |
+| 14857 | `GetBubbleOffscreenBits` |
+| 14863 | `GetMiscOffscreenBits` |
+| 14869 | `ObjOffsetData` |
+| 14872 | `GetProperObjOffset` |
+| 14879 | `GetEnemyOffscreenBits` |
+| 14884 | `GetBlockOffscreenBits` |
+| 14888 | `SetOffscrBitsOffset` |
+| 14894 | `GetOffScreenBitsSet` |
+| 14911 | `RunOffscrBitsSubs` |
+| 14927 | `XOffscreenBitsData` |
+| 14931 | `DefaultXOnscreenOfs` |
+| 14934 | `GetXOffscreenBits` |
+| 14937 | `XOfsLoop` |
+| 14953 | `XLdBData` |
+| 14959 | `ExXOfsBS` |
+| 14963 | `YOffscreenBitsData` |
+| 14968 | `DefaultYOnscreenOfs` |
+| 14971 | `HighPosUnitData` |
+| 14974 | `GetYOffscreenBits` |
+| 14977 | `YOfsLoop` |
+| 14993 | `YLdBData` |
+| 14999 | `ExYOfsBS` |
+| 15003 | `DividePDiff` |
+| 15015 | `SetOscrO` |
+| 15016 | `ExDivPD` |
 
-## Mapped but not yet matched (37)
+## Mapped but not yet matched (36)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1794,7 +1820,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 14851 | `GetFireballOffscreenBits` |
 
 ## Reporting contract
 

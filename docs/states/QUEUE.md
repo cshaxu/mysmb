@@ -21,7 +21,7 @@ children keep their ledger receivers and original source-order slices.
 
 [T44](../history/M2-T44-block-buffer-and-object-graphics.md#t44-closure) is closed: 109/109 scoped labels, 107 new and two retained/rechecked completions, ending at 1,624 / 1,992. T45 is the next unadmitted source-order candidate, beginning at `CheckToMirrorLakitu` after the `EggExc` boundary.
 
-[T45 object OAM tail and graphics](../history/M2-T45-object-oam-tail-and-graphics.md#t45-closure) is closed: 45/45 scoped labels match, ending at 1,669 / 1,992. [T46 player graphics control](../proposals/m2/t46-player-graphics-control.md) is closed at 1,709 / 1,992: all 43 scoped labels match, including three retained/rechecked and 40 new across S1–S4. [T47](../proposals/m2/t47-object-position-and-sprite-output.md) is active: S1–S3 closed at 1,720 / 1,992; S4 shared offscreen helpers is next and unadmitted.
+[T45 object OAM tail and graphics](../history/M2-T45-object-oam-tail-and-graphics.md#t45-closure) is closed: 45/45 scoped labels match, ending at 1,669 / 1,992. [T46 player graphics control](../proposals/m2/t46-player-graphics-control.md) is closed at 1,709 / 1,992: all 43 scoped labels match, including three retained/rechecked and 40 new across S1–S4. [T47](../proposals/m2/t47-object-position-and-sprite-output.md) is active: S1–S4 closed at 1,746 / 1,992; S5 sprite output is next and unadmitted.
 
 ## M1 Candidates
 

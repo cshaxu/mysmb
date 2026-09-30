@@ -14,7 +14,12 @@ void mysmb_oam_relative_bubble_position(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_oam_get_x_offscreen_bits(struct mysmb_game *game,
                                        mysmb_u8 source_offset,
                                        mysmb_u8 page, mysmb_u8 x);
+/* ROM GetOffScreenBitsSet: common actor source offset and fixed result cell. */
+void mysmb_oam_get_offscreen_bits_set(struct mysmb_game *game,
+                                     mysmb_u8 source_offset,
+                                     mysmb_u8 destination_offset);
 void mysmb_oam_get_player_offscreen_bits(struct mysmb_game *game);
+void mysmb_oam_get_bubble_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM ProcessPlayerAction through ExAnimC; returns the graphics table offset. */
 mysmb_u8 mysmb_oam_process_player_action(struct mysmb_game *game);
 /* ROM HandleChangeSize through ShrPlF; returns graphics table offset. */

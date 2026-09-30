@@ -223,77 +223,12 @@ static void mysmb_oam_player_draw_row(struct mysmb_game *game, mysmb_u8 *oam_off
     *oam_offset = (mysmb_u8)(*oam_offset + 8U);
 }
 
-/* ROM GetPlayerOffscreenBits.  GetOffScreenBitsSet combines the horizontal
- * low nibble and vertical high nibble before PlayerGfxHandler writes OAM. */
-static mysmb_u8 mysmb_oam_player_get_offscreen_bits(const struct mysmb_game *game)
-{
-    static const mysmb_u8 x_offscreen_bits[16] = {
-        0x7fU, 0x3fU, 0x1fU, 0x0fU, 0x07U, 0x03U, 0x01U, 0x00U,
-        0x80U, 0xc0U, 0xe0U, 0xf0U, 0xf8U, 0xfcU, 0xfeU, 0xffU
-    };
-    static const mysmb_u8 y_offscreen_bits[9] = {
-        0x00U, 0x08U, 0x0cU, 0x0eU, 0x0fU, 0x07U, 0x03U, 0x01U, 0x00U
-    };
-    static const mysmb_u8 default_x[3] = { 0x07U, 0x0fU, 0x07U };
-    static const mysmb_u8 default_y[3] = { 0x04U, 0x00U, 0x04U };
-    static const mysmb_u8 vertical_edge[2] = { 0xffU, 0x00U };
-    mysmb_u8 edge;
-    mysmb_u8 difference;
-    mysmb_u8 borrow;
-    mysmb_u8 page_difference;
-    mysmb_u8 index;
-    mysmb_u8 x_bits;
-    mysmb_u8 y_bits;
-
-    x_bits = 0U;
-    edge = 1U;
-    for (;;) {
-        difference = (mysmb_u8)(game->ram[(mysmb_u16)(0x071cU + edge)] -
-                                game->ram[MYSMB_PLAYER_X]);
-        borrow = game->ram[(mysmb_u16)(0x071cU + edge)] <
-            game->ram[MYSMB_PLAYER_X] ? 1U : 0U;
-        page_difference = (mysmb_u8)(game->ram[(mysmb_u16)(0x071aU + edge)] -
-                                      game->ram[MYSMB_PLAYER_PAGE] - borrow);
-        index = default_x[edge];
-        if ((page_difference & 0x80U) == 0U) {
-            index = default_x[(mysmb_u8)(edge + 1U)];
-            if (page_difference == 0U && difference < 0x38U) {
-                index = (mysmb_u8)(difference >> 3U);
-                if (edge == 0U) index = (mysmb_u8)(index + 8U);
-            }
-        }
-        x_bits = x_offscreen_bits[index];
-        if (x_bits != 0U || edge == 0U) break;
-        edge--;
-    }
-
-    y_bits = 0U;
-    edge = 1U;
-    for (;;) {
-        difference = (mysmb_u8)(vertical_edge[edge] - game->ram[MYSMB_PLAYER_Y]);
-        borrow = vertical_edge[edge] < game->ram[MYSMB_PLAYER_Y] ? 1U : 0U;
-        page_difference = (mysmb_u8)(1U - game->ram[MYSMB_PLAYER_Y_HIGH] - borrow);
-        index = default_y[edge];
-        if ((page_difference & 0x80U) == 0U) {
-            index = default_y[(mysmb_u8)(edge + 1U)];
-            if (page_difference == 0U && difference < 0x20U) {
-                index = (mysmb_u8)(difference >> 3U);
-                if (edge == 0U) index = (mysmb_u8)(index + 4U);
-            }
-        }
-        y_bits = y_offscreen_bits[index];
-        if (y_bits != 0U || edge == 0U) break;
-        edge--;
-    }
-    return (mysmb_u8)((x_bits >> 4U) | (y_bits << 4U));
-}
 /* ROM GetPlayerOffscreenBits.  Keep this entry distinct from the graphics
  * handler: VictoryMode reaches RelativePlayerPosition and PlayerGfxHandler
  * without this GameEngine-only predecessor. */
 void mysmb_oam_get_player_offscreen_bits(struct mysmb_game *game)
 {
-    game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] =
-        mysmb_oam_player_get_offscreen_bits(game);
+    mysmb_oam_get_offscreen_bits_set(game, 0U, 0U);
 }
 
 /* ROM RenderPlayerSub/DrawPlayerLoop: consume a selected graphics offset and
