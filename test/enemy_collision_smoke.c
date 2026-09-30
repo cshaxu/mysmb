@@ -31,6 +31,10 @@ int main(void)
     game.ram[0x0047U] = 1U;
     game.ram[0x0058U] = 0xf0U;
     game.ram[0x0059U] = 0x10U;
+    /* EnemiesCollision enters with ObjectOffset already selecting the
+     * current normal-enemy slot; its explicit C argument does not replace
+     * the source-owned RAM register used by GetEnemyBoundBoxOfs. */
+    game.ram[8U] = 1U;
     game.frame_number = 1U;
     game.ram[0x0009U] = (mysmb_u8)(1U);
     mysmb_world_set_bounding_box(&game, 0x04b0U, game.ram[0x0058U], 0x40U, 0x50U);

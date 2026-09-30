@@ -317,3 +317,14 @@ empty block buffer reaches `NoUnderHammerBro`, which sets state d0 before
 After restoring these source preconditions, the focused Hammer Bro route
 passes on x86 and x64; the complete x86 and x64 243-test matrices each retain
 the same six unrelated legacy failures. S5 remains open for their ROM adjudication.
+
+### S5 P6: enemy-pair current-slot fixture
+
+No production code changes or node credit occur here. `EnemiesCollision` at
+`$DA33` enters from `RunNormalEnemies` with `ObjectOffset` already selecting
+the current object; `GetEnemyBoundBoxOfs` reads that RAM register before the
+descending candidate loop. The smoke fixture supplied C argument one but left
+`$08` at zero, so it compared slot zero's box with itself and set its collision
+latch. Initializing `$08 = 1` restores the original caller precondition. The
+newly built x86 and x64 focused test both pass. S5 remains open for five
+unrelated legacy failures.
