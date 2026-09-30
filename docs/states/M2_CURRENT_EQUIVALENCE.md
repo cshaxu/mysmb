@@ -1254,3 +1254,7 @@ branches.
 ### Cohort K — K12 brick-chunk OAM integration
 
 `DrawBrickChunks` through `ExBCDr` now has four node contracts and every local mode, helper, phase, offscreen and return relation. Static review matches end-level versus normal tile/palette selection, frame d3-d2 attribute phase, carry-sensitive reflected X arithmetic, left/top hide order and wrapped-left right-column suppression. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal/end-level, phase, offscreen and wrapped-left routes.
+
+### Cohort K — K13 fireball, firebar and explosion OAM integration
+
+`DrawFireball` through `KillFireBall` now has seven node contracts, every local fall-through, frame phase, explosion state and return relation, plus the feasible explosion-tile handoff. Static review matches fireball-to-firebar fall-through, d2/d3 phase selection, pre-increment explosion indexing, three-frame termination, four-sprite offsets and attributes. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 fireball, firebar phase, explosion frames and termination routes.

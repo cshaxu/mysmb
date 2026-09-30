@@ -5965,6 +5965,20 @@
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00426",
+      "producer": "ExplosionTiles",
+      "consumer": "DrawExplosion_Fireworks",
+      "storage": "ROM ExplosionTiles indexed frame to four OAM tile records",
+      "feasiblePath": "The explosion branch selects frame zero through two and writes the selected tile to all four OAM records.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/fireball_gfx.c and fireworks_gfx.c three-tile arrays",
+      "semanticContract": "The selected source explosion tile reaches all four records before attributes and coordinates.",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -27660,71 +27674,92 @@
       "label": "DrawFireball",
       "asmLine": 14254,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes fireball relative Y/X then falls through to the common firebar tile/attribute phase."
     },
     {
       "label": "DrawFirebar",
       "asmLine": 14261,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses FrameCounter d2 for tile 64/65 and d3 for the two-way attribute flip phase."
     },
     {
       "label": "FireA",
       "asmLine": 14275,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the selected fireball/firebar attribute and returns."
     },
     {
       "label": "ExplosionTiles",
       "asmLine": 14280,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the three ordered explosion tiles 68,67,66."
     },
     {
       "label": "DrawExplosion_Fireball",
       "asmLine": 14283,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses pre-increment state bits d3-d1 to select a three-frame explosion or clear Fireball_State."
     },
     {
       "label": "DrawExplosion_Fireworks",
       "asmLine": 14292,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes four identical tiles and source +/-4 coordinates with the four flip/palette attributes."
     },
     {
       "label": "KillFireBall",
       "asmLine": 14327,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
+      "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears Fireball_State for the completed explosion."
     },
     {
       "label": "DrawSmallPlatform",
@@ -48251,12 +48286,12 @@
       "id": "control-01090",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation RunFB -> DrawFireball with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM jump relation RunFB -> DrawFireball with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "EraseFB",
@@ -48299,12 +48334,12 @@
       "id": "control-01093",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation FireballExplosion -> DrawExplosion_Fireball with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM jump relation FireballExplosion -> DrawExplosion_Fireball with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "BubbleCheck",
@@ -60649,12 +60684,12 @@
       "id": "control-01866",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation FirebarCollision -> DrawFirebar with Firebar OAM, mirror, player probe and source call/return ordering."
+      "semanticContract": "Preserves ROM call relation FirebarCollision -> DrawFirebar with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "FirebarCollision",
@@ -63305,12 +63340,12 @@
       "id": "control-02032",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SetupExpl -> DrawExplosion_Fireworks with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
+      "semanticContract": "Preserves ROM call relation SetupExpl -> DrawExplosion_Fireworks with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "FireworksSoundScore",
@@ -78056,10 +78091,13 @@
       "instruction": "sta",
       "id": "control-03005",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawFireball -> DrawFirebar with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawFirebar",
@@ -78069,10 +78107,13 @@
       "instruction": "bcc",
       "id": "control-03006",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawFirebar -> FireA with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawFirebar",
@@ -78082,10 +78123,13 @@
       "instruction": "ora",
       "id": "control-03007",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawFirebar -> FireA with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawExplosion_Fireball",
@@ -78095,10 +78139,13 @@
       "instruction": "bcs",
       "id": "control-03008",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawExplosion_Fireball -> KillFireBall with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawExplosion_Fireball",
@@ -78108,10 +78155,13 @@
       "instruction": "bcs",
       "id": "control-03009",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawExplosion_Fireball -> DrawExplosion_Fireworks with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawExplosion_Fireworks",
@@ -78121,10 +78171,13 @@
       "instruction": "jsr",
       "id": "control-03010",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DrawExplosion_Fireworks -> DumpFourSpr with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawSmallPlatform",
@@ -89894,12 +89947,12 @@
       "id": "control-03844",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawFirebar -> FirebarCollision with Firebar OAM, mirror, player probe and source call/return ordering."
+      "semanticContract": "Preserves ROM return relation DrawFirebar -> FirebarCollision with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "InjurePlayer",
@@ -90262,12 +90315,12 @@
       "id": "control-03867",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawExplosion_Fireworks -> SetupExpl with timer/frame predicate, relative/OAM handoff and call, tail or return ordering."
+      "semanticContract": "Preserves ROM return relation DrawExplosion_Fireworks -> SetupExpl with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "JumpEngine",
@@ -92745,10 +92798,13 @@
       "instruction": "rts/rti",
       "id": "control-04029",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "semanticEvidence": [
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DrawExplosion_Fireworks with source frame/state predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpSixSpr",
