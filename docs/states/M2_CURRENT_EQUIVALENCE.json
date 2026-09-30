@@ -26271,131 +26271,170 @@
       "label": "HandleEToBGCollision",
       "asmLine": 12461,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes non-solid terrain to no-ground, ordinary solid terrain to landing, and block $23 to erase/score/stun path."
     },
     {
       "label": "GiveOEPoints",
       "asmLine": 12476,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Awards enemy-above-block score then enters stun handling."
     },
     {
       "label": "ChkToStunEnemies",
       "asmLine": 12480,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Demotes eligible enemy IDs before stun."
     },
     {
       "label": "Demote",
       "asmLine": 12489,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reduces eligible ID to base enemy form."
     },
     {
       "label": "SetStun",
       "asmLine": 12491,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets stunned state/Y behavior, faces player except bullet variants and selects facing speed."
     },
     {
       "label": "SetWYSpd",
       "asmLine": 12503,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses water/spiny condition for stunned Y speed."
     },
     {
       "label": "SetNotW",
       "asmLine": 12504,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses normal stunned Y speed."
     },
     {
       "label": "ChkBBill",
       "asmLine": 12509,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves cannon/frenzy bullet direction exceptions."
     },
     {
       "label": "NoCDirF",
       "asmLine": 12515,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores facing direction for non-bullet actor."
     },
     {
       "label": "ExEBGChk",
       "asmLine": 12518,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from stun/background check."
     },
     {
       "label": "LandEnemyProperly",
       "asmLine": 12523,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Aligns landed enemy and clears/fixes state bits."
     },
     {
       "label": "SChkA",
       "asmLine": 12535,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tests special IDs/states before landing state dispatch."
     },
     {
       "label": "ChkLandedEnemyState",
       "asmLine": 12537,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes state to side check, direction/bump, timed transition or return."
     },
     {
       "label": "SetForStn",
@@ -74482,10 +74521,13 @@
       "instruction": "jsr",
       "id": "control-02601",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun call relation HandleEToBGCollision → ChkForNonSolids with source terrain/state ordering."
     },
     {
       "from": "HandleEToBGCollision",
@@ -74495,10 +74537,13 @@
       "instruction": "beq",
       "id": "control-02602",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation HandleEToBGCollision → NoEToBGCollision with source terrain/state ordering."
     },
     {
       "from": "HandleEToBGCollision",
@@ -74508,10 +74553,13 @@
       "instruction": "bne",
       "id": "control-02603",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation HandleEToBGCollision → LandEnemyProperly with source terrain/state ordering."
     },
     {
       "from": "HandleEToBGCollision",
@@ -74521,10 +74569,13 @@
       "instruction": "bcs",
       "id": "control-02604",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation HandleEToBGCollision → ChkToStunEnemies with source terrain/state ordering."
     },
     {
       "from": "HandleEToBGCollision",
@@ -74534,10 +74585,13 @@
       "instruction": "bne",
       "id": "control-02605",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation HandleEToBGCollision → GiveOEPoints with source terrain/state ordering."
     },
     {
       "from": "HandleEToBGCollision",
@@ -74547,10 +74601,13 @@
       "instruction": "jsr",
       "id": "control-02606",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun call relation HandleEToBGCollision → KillEnemyAboveBlock with source terrain/state ordering."
     },
     {
       "from": "HandleEToBGCollision",
@@ -74560,10 +74617,13 @@
       "instruction": "jsr",
       "id": "control-02607",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation HandleEToBGCollision → GiveOEPoints with source terrain/state ordering."
     },
     {
       "from": "GiveOEPoints",
@@ -74574,12 +74634,12 @@
       "id": "control-02608",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
+      "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation GiveOEPoints -> SetupFloateyNumber with source ID/direction/table predicate and current-slot score/motion handoff ordering."
+      "semanticContract": "Preserves enemy landing/stun call relation GiveOEPoints → SetupFloateyNumber with source terrain/state ordering."
     },
     {
       "from": "GiveOEPoints",
@@ -74589,10 +74649,13 @@
       "instruction": "jsr",
       "id": "control-02609",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation GiveOEPoints → ChkToStunEnemies with source terrain/state ordering."
     },
     {
       "from": "ChkToStunEnemies",
@@ -74602,10 +74665,13 @@
       "instruction": "bcc",
       "id": "control-02610",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation ChkToStunEnemies → SetStun with source terrain/state ordering."
     },
     {
       "from": "ChkToStunEnemies",
@@ -74615,10 +74681,13 @@
       "instruction": "bcs",
       "id": "control-02611",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation ChkToStunEnemies → SetStun with source terrain/state ordering."
     },
     {
       "from": "ChkToStunEnemies",
@@ -74628,10 +74697,13 @@
       "instruction": "bcc",
       "id": "control-02612",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation ChkToStunEnemies → Demote with source terrain/state ordering."
     },
     {
       "from": "ChkToStunEnemies",
@@ -74641,10 +74713,13 @@
       "instruction": "bcc",
       "id": "control-02613",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation ChkToStunEnemies → SetStun with source terrain/state ordering."
     },
     {
       "from": "ChkToStunEnemies",
@@ -74654,10 +74729,13 @@
       "instruction": "bcc",
       "id": "control-02614",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation ChkToStunEnemies → Demote with source terrain/state ordering."
     },
     {
       "from": "Demote",
@@ -74667,10 +74745,13 @@
       "instruction": "sta",
       "id": "control-02615",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation Demote → SetStun with source terrain/state ordering."
     },
     {
       "from": "SetStun",
@@ -74680,10 +74761,13 @@
       "instruction": "beq",
       "id": "control-02616",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation SetStun → SetWYSpd with source terrain/state ordering."
     },
     {
       "from": "SetStun",
@@ -74693,10 +74777,13 @@
       "instruction": "bne",
       "id": "control-02617",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation SetStun → SetNotW with source terrain/state ordering."
     },
     {
       "from": "SetStun",
@@ -74706,10 +74793,13 @@
       "instruction": "bne",
       "id": "control-02618",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation SetStun → SetWYSpd with source terrain/state ordering."
     },
     {
       "from": "SetWYSpd",
@@ -74719,10 +74809,13 @@
       "instruction": "lda",
       "id": "control-02619",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation SetWYSpd → SetNotW with source terrain/state ordering."
     },
     {
       "from": "SetNotW",
@@ -74732,10 +74825,13 @@
       "instruction": "jsr",
       "id": "control-02620",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun call relation SetNotW → PlayerEnemyDiff with source terrain/state ordering."
     },
     {
       "from": "SetNotW",
@@ -74745,10 +74841,13 @@
       "instruction": "bpl",
       "id": "control-02621",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation SetNotW → ChkBBill with source terrain/state ordering."
     },
     {
       "from": "SetNotW",
@@ -74758,10 +74857,13 @@
       "instruction": "iny",
       "id": "control-02622",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation SetNotW → ChkBBill with source terrain/state ordering."
     },
     {
       "from": "ChkBBill",
@@ -74771,10 +74873,13 @@
       "instruction": "beq",
       "id": "control-02623",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation ChkBBill → NoCDirF with source terrain/state ordering."
     },
     {
       "from": "ChkBBill",
@@ -74784,10 +74889,13 @@
       "instruction": "beq",
       "id": "control-02624",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation ChkBBill → NoCDirF with source terrain/state ordering."
     },
     {
       "from": "ChkBBill",
@@ -74797,10 +74905,13 @@
       "instruction": "sty",
       "id": "control-02625",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation ChkBBill → NoCDirF with source terrain/state ordering."
     },
     {
       "from": "NoCDirF",
@@ -74810,10 +74921,13 @@
       "instruction": "sta",
       "id": "control-02626",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation NoCDirF → ExEBGChk with source terrain/state ordering."
     },
     {
       "from": "LandEnemyProperly",
@@ -74823,10 +74937,13 @@
       "instruction": "bcs",
       "id": "control-02627",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation LandEnemyProperly → ChkForRedKoopa with source terrain/state ordering."
     },
     {
       "from": "LandEnemyProperly",
@@ -74836,10 +74953,13 @@
       "instruction": "bne",
       "id": "control-02628",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation LandEnemyProperly → LandEnemyInitState with source terrain/state ordering."
     },
     {
       "from": "LandEnemyProperly",
@@ -74849,10 +74969,13 @@
       "instruction": "bcc",
       "id": "control-02629",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun branch relation LandEnemyProperly → ChkLandedEnemyState with source terrain/state ordering."
     },
     {
       "from": "LandEnemyProperly",
@@ -74862,10 +74985,13 @@
       "instruction": "bcc",
       "id": "control-02630",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun fallthrough relation LandEnemyProperly → SChkA with source terrain/state ordering."
     },
     {
       "from": "SChkA",
@@ -74875,10 +75001,13 @@
       "instruction": "jmp",
       "id": "control-02631",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun jump relation SChkA → DoEnemySideCheck with source terrain/state ordering."
     },
     {
       "from": "ChkLandedEnemyState",
@@ -96002,10 +96131,13 @@
       "instruction": "rts/rti",
       "id": "control-03973",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun return relation ChkForNonSolids → HandleEToBGCollision with source terrain/state ordering."
     },
     {
       "from": "KillEnemyAboveBlock",
@@ -96015,10 +96147,13 @@
       "instruction": "rts/rti",
       "id": "control-03974",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun return relation KillEnemyAboveBlock → HandleEToBGCollision with source terrain/state ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -96029,12 +96164,12 @@
       "id": "control-03975",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
+      "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetupFloateyNumber -> GiveOEPoints with source ID/direction/table predicate and current-slot score/motion handoff ordering."
+      "semanticContract": "Preserves enemy landing/stun return relation SetupFloateyNumber → GiveOEPoints with source terrain/state ordering."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -96044,10 +96179,13 @@
       "instruction": "rts/rti",
       "id": "control-03976",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing/stun return relation PlayerEnemyDiff → SetNotW with source terrain/state ordering."
     },
     {
       "from": "EnemyLanding",

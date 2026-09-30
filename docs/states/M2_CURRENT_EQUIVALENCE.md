@@ -1505,3 +1505,9 @@ branches.
 - Node-semantics result: eight labels moved from `unclassified` to `needs-evidence`, covering ID dispatch, under-enemy eligibility and no-ground path.
 - Independent integration result: 20 relations plus two state/speed table edges received `needs-evidence` contracts. Static review found no discrepancy; controlled enemy terrain routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K56 — enemy background landing and stun audit
+
+- Source range: `HandleEToBGCollision` through `ChkLandedEnemyState` (`SMBDIS.ASM` lines 12461–12537).
+- Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering block-hit stun, landing alignment and state dispatch.
+- Independent integration result: 35 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled enemy terrain routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
