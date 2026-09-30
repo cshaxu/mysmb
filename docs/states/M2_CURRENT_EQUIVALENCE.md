@@ -19,8 +19,8 @@ incomplete node/control-edge identities.
 
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
-| Exact | 15 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 16 | Current source audit exists but the current original-ROM route is incomplete. |
+| Exact | 19 | Current source audit and original-ROM route both prove the label. |
+| Needs evidence | 12 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -53,8 +53,8 @@ explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
-| Exact | 31 control; 3 material RAM/table |
-| Needs evidence | 55 |
+| Exact | 41 control; 3 material RAM/table |
+| Needs evidence | 45 |
 | Mismatch | 2 |
 | Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
@@ -210,3 +210,10 @@ active and zero timer paths, Start, d7 debounce and the common return.
 ROM and current x86/x64 pause-owned state matches in every route. The known
 NMI `$00` and pre-dispatch `$2000` mismatches remain separately recorded and
 are not attributed to this proof.
+
+The timer subchain is **exact** for `DecTimers`, `DecTimersLoop`,
+`SkipExpTimer` and `NoDecTimers`, with all ten of their owned control
+relations. Controlled routes cover master timer nonzero and expiry, interval
+timer non-expiry and expiry, zero/nonzero timer cells and loop termination.
+Timer-owned RAM and `FrameCounter` agree between ROM and current x86/x64;
+the independently confirmed NMI-prefix mismatches remain outside this proof.

@@ -353,52 +353,60 @@
       "label": "DecTimers",
       "asmLine": 814,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof."
+      ],
       "semanticContract": "When TimerControl is zero, decrements IntervalTimerControl and selects the source frame-only or frame-plus-interval timer range."
     },
     {
       "label": "DecTimersLoop",
       "asmLine": 820,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_tick_player_timers descending loop",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof."
+      ],
       "semanticContract": "Visits timer bytes in descending source order, decrementing only nonzero entries until index zero is processed."
     },
     {
       "label": "SkipExpTimer",
       "asmLine": 823,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_tick_player_timers descending loop",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof."
+      ],
       "semanticContract": "Skips decrement for an expired timer, decrements the index and continues while the index remains nonnegative."
     },
     {
       "label": "NoDecTimers",
       "asmLine": 825,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_begin",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof."
+      ],
       "semanticContract": "Increments FrameCounter after the applicable timer branch, including the TimerControl nonzero path once its decrement does not reach zero."
     },
     {
@@ -20687,12 +20695,14 @@
       "instruction": "beq",
       "id": "control-00027",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original branch relation InitBuffer -> DecTimers at source line 811 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20703,12 +20713,14 @@
       "instruction": "bne",
       "id": "control-00028",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original branch relation InitBuffer -> NoDecTimers at source line 813 (bne) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20719,12 +20731,14 @@
       "instruction": "bne",
       "id": "control-00029",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original fallthrough relation InitBuffer -> DecTimers at source line 813 (bne) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20735,12 +20749,14 @@
       "instruction": "bpl",
       "id": "control-00030",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original branch relation DecTimers -> DecTimersLoop at source line 816 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20751,12 +20767,14 @@
       "instruction": "ldx",
       "id": "control-00031",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original fallthrough relation DecTimers -> DecTimersLoop at source line 819 (ldx) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20767,12 +20785,14 @@
       "instruction": "beq",
       "id": "control-00032",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original branch relation DecTimersLoop -> SkipExpTimer at source line 821 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20783,12 +20803,14 @@
       "instruction": "dec",
       "id": "control-00033",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original fallthrough relation DecTimersLoop -> SkipExpTimer at source line 822 (dec) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20799,12 +20821,14 @@
       "instruction": "bpl",
       "id": "control-00034",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original branch relation SkipExpTimer -> DecTimersLoop at source line 824 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20815,12 +20839,14 @@
       "instruction": "bpl",
       "id": "control-00035",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original fallthrough relation SkipExpTimer -> NoDecTimers at source line 824 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
@@ -20831,12 +20857,14 @@
       "instruction": "inc",
       "id": "control-00036",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+      ],
       "semanticContract": "Original fallthrough relation NoDecTimers -> PauseSkip at source line 825 (inc) must preserve pause gating, timer branch predicates and the descending timer-loop successor order."
     },
     {
