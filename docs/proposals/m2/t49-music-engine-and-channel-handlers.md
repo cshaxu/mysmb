@@ -98,3 +98,21 @@ The similar-issue sweep searched all square-two queue/buffer routes. The only
 production dispatch point is `src/game/audio.c`; no platform adapter selects
 an effect, branches on game state, or mutates game RAM/APU state. S2's noise
 and music labels remain out of scope and retain their existing custody.
+
+## S2 admission: noise effects and music handoff
+
+S2 receives the next **12** source-order labels from `BrickShatterFreqData`
+through `ContinueMusic`. Baseline is **1,837 / 1,992**; all 12 are intended
+matches, for a maximum **1,849 / 1,992**. This bounded `audio.c` chain
+contains the brick table/phase, the square-two-independent noise queue and
+buffer dispatcher, Bowser flame phase, and the final tail into the S3
+square-two music entry. Its predecessors are the S1 square-two chain and
+the already-complete shared APU writers; S3's music handler is its successor.
+
+ROM-logic evidence will enter unchanged `SoundEngine` through NMI on brick,
+Bowser flame, buffered phase, end-of-length, and no-noise states. It compares
+the original branch selection, `$fd/$f3/$7f` reads and writes, owner-ROM
+table bytes, APU noise registers, and the `ContinueMusic` handoff. Operational
+evidence is one chain-level focused test set plus x86/x64 builds and self-tests,
+the original OpenNT DOS16 link, platform-purity audit, and all three artifacts.
+No music stream node is credited by this admission.
