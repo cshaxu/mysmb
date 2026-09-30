@@ -5839,6 +5839,20 @@
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00417",
+      "producer": "JumpingCoinTiles",
+      "consumer": "JCoinGfxHandler",
+      "storage": "ROM JumpingCoinTiles indexed by FrameCounter bits d2-d1 to coin OAM tile bytes",
+      "feasiblePath": "JCoinGfxHandler shifts FrameCounter, masks d2-d1, reads JumpingCoinTiles and dumps the selected tile to both sprite records.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c computed 0x60 + ((FrameCounter >> 1) & 3) in mysmb_objects_draw_jump_coin",
+      "semanticContract": "The four source tile choices map to the same frame index before both jumping-coin tile writes.",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -26483,51 +26497,66 @@
       "label": "DrawFloateyNumber_Coin",
       "asmLine": 13439,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "On even FrameCounter decrements Misc_Y_Position,x, then writes equal two-sprite Y values, fixed 200 tiles/attributes and X/X+8."
     },
     {
       "label": "NotRsNum",
       "asmLine": 13444,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Passes the current misc Y through DumpTwoSpr then writes 200 tile/attribute/X records and transfers to the shared exit."
     },
     {
       "label": "JumpingCoinTiles",
       "asmLine": 13460,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four frame-indexed jumping-coin tile bytes 60-63."
     },
     {
       "label": "JCoinGfxHandler",
       "asmLine": 13463,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the floatey branch for Misc_State >=2; otherwise writes two-row jumping-coin OAM using FrameCounter bits d2-d1 and the source vertical flip."
     },
     {
       "label": "ExJCGfx",
       "asmLine": 13489,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns."
     },
     {
       "label": "PowerUpGfxTable",
@@ -50692,12 +50721,12 @@
       "id": "control-01266",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunJCSubs -> JCoinGfxHandler with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM call relation RunJCSubs -> JCoinGfxHandler with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "RunJCSubs",
@@ -74748,10 +74777,13 @@
       "instruction": "bcs",
       "id": "control-02820",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawFloateyNumber_Coin -> NotRsNum with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawFloateyNumber_Coin",
@@ -74761,10 +74793,13 @@
       "instruction": "dec",
       "id": "control-02821",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawFloateyNumber_Coin -> NotRsNum with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "NotRsNum",
@@ -74774,10 +74809,13 @@
       "instruction": "jsr",
       "id": "control-02822",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation NotRsNum -> DumpTwoSpr with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "NotRsNum",
@@ -74787,10 +74825,13 @@
       "instruction": "jmp",
       "id": "control-02823",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation NotRsNum -> ExJCGfx with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "JCoinGfxHandler",
@@ -74800,10 +74841,13 @@
       "instruction": "bcs",
       "id": "control-02824",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation JCoinGfxHandler -> DrawFloateyNumber_Coin with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "JCoinGfxHandler",
@@ -74813,10 +74857,13 @@
       "instruction": "jsr",
       "id": "control-02825",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation JCoinGfxHandler -> DumpTwoSpr with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "JCoinGfxHandler",
@@ -74826,10 +74873,13 @@
       "instruction": "ldx",
       "id": "control-02826",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation JCoinGfxHandler -> ExJCGfx with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawPowerUp",
@@ -87042,12 +87092,12 @@
       "id": "control-03722",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation JCoinGfxHandler -> RunJCSubs with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM return relation JCoinGfxHandler -> RunJCSubs with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "DigitsMathRoutine",
@@ -91509,10 +91559,13 @@
       "instruction": "rts/rti",
       "id": "control-04008",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> NotRsNum with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpTwoSpr",
@@ -91522,10 +91575,13 @@
       "instruction": "rts/rti",
       "id": "control-04009",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> JCoinGfxHandler with source state/frame predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawOneSpriteRow",

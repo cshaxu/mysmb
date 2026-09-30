@@ -1218,3 +1218,7 @@ branches.
 ### Cohort K — K3 large-platform OAM integration
 
 `DrawLargePlatform` through `ExDLPl` now has eleven node contracts and all local stack, tile, area/hard-mode, cloud, per-column and full-offscreen control relations. Static review found one confirmed shared-C discrepancy: ROM line 13366 supplies `Enemy_Y_Position,x` to `DumpFourSpr`, while `mysmb_objects_draw_large_platform` reads `MYSMB_SMALL_PLATFORM_REL_Y`. `DrawLargePlatform` is therefore `mismatch`; H9 is the ordered, unnumbered minimal repair candidate. The ten downstream nodes remain `needs-evidence`; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes are still required.
+
+### Cohort K — K4 jumping-coin and floatey-number OAM integration
+
+`DrawFloateyNumber_Coin` through `ExJCGfx` now has five node contracts, every local state/frame, helper, branch and return relation, plus the feasible jumping-tile table handoff. Static review matches the `>= $02` state split, even-frame rise, equal floatey Ys, frame d2-d1 tile selection, vertical-flip attribute and ObjectOffset restoration. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 rising, floatey and four animation-phase routes.
