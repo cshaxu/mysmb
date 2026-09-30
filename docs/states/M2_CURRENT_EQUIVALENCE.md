@@ -1376,3 +1376,9 @@ branches.
 - Node-semantics result: eight labels moved from `unclassified` to `needs-evidence`, covering absent-stream skip, null-byte controls, alternate length encoding, SFX ownership, death/D4 envelope behavior and alternate high control.
 - Independent integration result: 28 outgoing and return control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K34 — triangle/noise music and length-helper audit
+
+- Source range: `HandleTriangleMusic` through `ProcessLengthData` (`SMBDIS.ASM` lines 15835–15947).
+- Node-semantics result: sixteen labels moved from `unclassified` to `needs-evidence`, covering triangle stream/control selection, noise stream loopback and beats, and both shared length transforms.
+- Independent integration result: 41 outgoing and return control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

@@ -30916,161 +30916,209 @@
       "label": "HandleTriangleMusic",
       "asmLine": 15835,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Decrements triangle counter, fetches stream data on expiry, handles zero/length/note forms and selects final triangle control."
     },
     {
       "label": "TriNoteHandler",
       "asmLine": 15853,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets triangle frequency, restores buffered length and selects long/death/normal control value."
     },
     {
       "label": "NotDOrD4",
       "asmLine": 15863,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects normal triangle control according to buffered note length and event/area masks."
     },
     {
       "label": "MediN",
       "asmLine": 15871,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Chooses medium normal triangle control."
     },
     {
       "label": "LongN",
       "asmLine": 15873,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Chooses long normal triangle control."
     },
     {
       "label": "LoadTriCtrlReg",
       "asmLine": 15875,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes final triangle control before entering noise music."
     },
     {
       "label": "HandleNoiseMusic",
       "asmLine": 15878,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates noise music by area mask, decrements beat counter and fetches beat data at expiry."
     },
     {
       "label": "FetchNoiseBeatData",
       "asmLine": 15885,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Fetches noise stream bytes and loops to saved noise offset on zero terminator."
     },
     {
       "label": "NoiseBeatHandler",
       "asmLine": 15894,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Derives alternate length then classifies beat format/control constants."
     },
     {
       "label": "StrongBeat",
       "asmLine": 15911,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects strong beat control constants."
     },
     {
       "label": "LongBeat",
       "asmLine": 15917,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects long beat control constants."
     },
     {
       "label": "SilentBeat",
       "asmLine": 15923,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects silence control."
     },
     {
       "label": "PlayBeat",
       "asmLine": 15926,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected noise control, period and length values."
     },
     {
       "label": "ExitMusicHandler",
       "asmLine": 15931,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from music processing."
     },
     {
       "label": "AlternateLengthHandler",
       "asmLine": 15934,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source byte and rotates bits 0/7/6 into duration selector before shared length lookup."
     },
     {
       "label": "ProcessLengthData",
       "asmLine": 15942,
       "cohort": "N",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds header and event length offsets to low-three-bit selector and reads duration table."
     },
     {
       "label": "LoadControlRegs",
@@ -85908,10 +85956,13 @@
       "instruction": "bne",
       "id": "control-03436",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation HandleTriangleMusic → HandleNoiseMusic at source line 15838 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "HandleTriangleMusic",
@@ -85921,10 +85972,13 @@
       "instruction": "beq",
       "id": "control-03437",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation HandleTriangleMusic → LoadTriCtrlReg at source line 15842 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "HandleTriangleMusic",
@@ -85934,10 +85988,13 @@
       "instruction": "bpl",
       "id": "control-03438",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation HandleTriangleMusic → TriNoteHandler at source line 15843 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "HandleTriangleMusic",
@@ -85947,10 +86004,13 @@
       "instruction": "jsr",
       "id": "control-03439",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM call relation HandleTriangleMusic → ProcessLengthData at source line 15844 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "HandleTriangleMusic",
@@ -85960,10 +86020,13 @@
       "instruction": "beq",
       "id": "control-03440",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation HandleTriangleMusic → LoadTriCtrlReg at source line 15851 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "HandleTriangleMusic",
@@ -85973,10 +86036,13 @@
       "instruction": "beq",
       "id": "control-03441",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation HandleTriangleMusic → TriNoteHandler at source line 15851 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "TriNoteHandler",
@@ -85986,10 +86052,13 @@
       "instruction": "jsr",
       "id": "control-03442",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM call relation TriNoteHandler → SetFreq_Tri at source line 15854 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "TriNoteHandler",
@@ -85999,10 +86068,13 @@
       "instruction": "bne",
       "id": "control-03443",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation TriNoteHandler → NotDOrD4 at source line 15859 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "TriNoteHandler",
@@ -86012,10 +86084,13 @@
       "instruction": "beq",
       "id": "control-03444",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation TriNoteHandler → HandleNoiseMusic at source line 15862 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "TriNoteHandler",
@@ -86025,10 +86100,13 @@
       "instruction": "beq",
       "id": "control-03445",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation TriNoteHandler → NotDOrD4 at source line 15862 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NotDOrD4",
@@ -86038,10 +86116,13 @@
       "instruction": "bcs",
       "id": "control-03446",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation NotDOrD4 → LongN at source line 15865 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NotDOrD4",
@@ -86051,10 +86132,13 @@
       "instruction": "beq",
       "id": "control-03447",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation NotDOrD4 → MediN at source line 15868 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NotDOrD4",
@@ -86064,10 +86148,13 @@
       "instruction": "bne",
       "id": "control-03448",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation NotDOrD4 → LoadTriCtrlReg at source line 15870 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NotDOrD4",
@@ -86077,10 +86164,13 @@
       "instruction": "bne",
       "id": "control-03449",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation NotDOrD4 → MediN at source line 15870 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "MediN",
@@ -86090,10 +86180,13 @@
       "instruction": "bne",
       "id": "control-03450",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation MediN → LoadTriCtrlReg at source line 15872 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "MediN",
@@ -86103,10 +86196,13 @@
       "instruction": "bne",
       "id": "control-03451",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation MediN → LongN at source line 15872 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "LongN",
@@ -86116,10 +86212,13 @@
       "instruction": "lda",
       "id": "control-03452",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation LongN → LoadTriCtrlReg at source line 15873 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "LoadTriCtrlReg",
@@ -86129,10 +86228,13 @@
       "instruction": "sta",
       "id": "control-03453",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation LoadTriCtrlReg → HandleNoiseMusic at source line 15876 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "HandleNoiseMusic",
@@ -86142,10 +86244,13 @@
       "instruction": "beq",
       "id": "control-03454",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation HandleNoiseMusic → ExitMusicHandler at source line 15881 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "HandleNoiseMusic",
@@ -86155,10 +86260,13 @@
       "instruction": "bne",
       "id": "control-03455",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation HandleNoiseMusic → ExitMusicHandler at source line 15883 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "HandleNoiseMusic",
@@ -86168,10 +86276,13 @@
       "instruction": "bne",
       "id": "control-03456",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation HandleNoiseMusic → FetchNoiseBeatData at source line 15883 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "FetchNoiseBeatData",
@@ -86181,10 +86292,13 @@
       "instruction": "bne",
       "id": "control-03457",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation FetchNoiseBeatData → NoiseBeatHandler at source line 15889 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "FetchNoiseBeatData",
@@ -86194,10 +86308,13 @@
       "instruction": "bne",
       "id": "control-03458",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation FetchNoiseBeatData → FetchNoiseBeatData at source line 15892 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "FetchNoiseBeatData",
@@ -86207,10 +86324,13 @@
       "instruction": "bne",
       "id": "control-03459",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation FetchNoiseBeatData → NoiseBeatHandler at source line 15892 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NoiseBeatHandler",
@@ -86220,10 +86340,13 @@
       "instruction": "jsr",
       "id": "control-03460",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM call relation NoiseBeatHandler → AlternateLengthHandler at source line 15895 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NoiseBeatHandler",
@@ -86233,10 +86356,13 @@
       "instruction": "beq",
       "id": "control-03461",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation NoiseBeatHandler → SilentBeat at source line 15899 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NoiseBeatHandler",
@@ -86246,10 +86372,13 @@
       "instruction": "beq",
       "id": "control-03462",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation NoiseBeatHandler → LongBeat at source line 15901 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NoiseBeatHandler",
@@ -86259,10 +86388,13 @@
       "instruction": "beq",
       "id": "control-03463",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation NoiseBeatHandler → StrongBeat at source line 15903 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NoiseBeatHandler",
@@ -86272,10 +86404,13 @@
       "instruction": "beq",
       "id": "control-03464",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation NoiseBeatHandler → SilentBeat at source line 15905 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NoiseBeatHandler",
@@ -86285,10 +86420,13 @@
       "instruction": "bne",
       "id": "control-03465",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation NoiseBeatHandler → PlayBeat at source line 15909 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "NoiseBeatHandler",
@@ -86298,10 +86436,13 @@
       "instruction": "bne",
       "id": "control-03466",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation NoiseBeatHandler → StrongBeat at source line 15909 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "StrongBeat",
@@ -86311,10 +86452,13 @@
       "instruction": "bne",
       "id": "control-03467",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation StrongBeat → PlayBeat at source line 15915 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "StrongBeat",
@@ -86324,10 +86468,13 @@
       "instruction": "bne",
       "id": "control-03468",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation StrongBeat → LongBeat at source line 15915 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "LongBeat",
@@ -86337,10 +86484,13 @@
       "instruction": "bne",
       "id": "control-03469",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM branch relation LongBeat → PlayBeat at source line 15921 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "LongBeat",
@@ -86350,10 +86500,13 @@
       "instruction": "bne",
       "id": "control-03470",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation LongBeat → SilentBeat at source line 15921 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "SilentBeat",
@@ -86363,10 +86516,13 @@
       "instruction": "lda",
       "id": "control-03471",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation SilentBeat → PlayBeat at source line 15924 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "PlayBeat",
@@ -86376,10 +86532,13 @@
       "instruction": "sty",
       "id": "control-03472",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation PlayBeat → ExitMusicHandler at source line 15929 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "AlternateLengthHandler",
@@ -86389,10 +86548,13 @@
       "instruction": "rol",
       "id": "control-03473",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM fallthrough relation AlternateLengthHandler → ProcessLengthData at source line 15940 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "LoadControlRegs",
@@ -95998,10 +96160,13 @@
       "instruction": "rts/rti",
       "id": "control-04091",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM return relation ProcessLengthData → HandleTriangleMusic at source line 15844 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "SetFreq_Tri",
@@ -96012,12 +96177,12 @@
       "id": "control-04092",
       "cohort": "N",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The source return relation SetFreq_Tri → TriNoteHandler exposes completed channel register state to its caller continuation."
+      "semanticContract": "ROM return relation SetFreq_Tri → TriNoteHandler at source line 15854 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "AlternateLengthHandler",
@@ -96027,10 +96192,13 @@
       "instruction": "rts/rti",
       "id": "control-04093",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_audio_step_triangle_music, mysmb_audio_step_noise_music and length helpers",
+      "semanticEvidence": [
+        "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM return relation AlternateLengthHandler → NoiseBeatHandler at source line 15895 is represented by the shared triangle/noise music control path with equivalent predicate/order pending runtime evidence."
     },
     {
       "from": "<vector>",
