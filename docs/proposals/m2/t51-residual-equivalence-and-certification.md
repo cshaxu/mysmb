@@ -406,6 +406,25 @@ artifacts are `mysmb16.exe`
 `mysmb32.exe` `0E7039F85B097899184561530CEA130E4508E1F1A9FAFD59DA9F8B50C213E65F`,
 and `mysmb64.exe` `855F7E7607B0AEBAC7F2BA5D39E540205B98AD0F6DFC96A6F18B2B13B2481432`.
 
+### S5 P22: enemy loop, parser and initializer current replay
+
+This zero-credit audit resolves three historic child-route ledger rows without
+changing production or platform source. The current shared library replays all
+96 retained enemy-loop records, all 80 `ProcessEnemyData` parser records, and
+all 110 `CheckpointEnemyID` / initializer-vector records on each native width.
+Every one matches its original-ROM RAM result: 286 / 286 on x86 and 286 / 286
+on x64. In particular, the old loop/parser/initializer `$04-$07` scratch
+differences are absent from the current library.
+
+The ROM-logic track binds the owner-local PRG only in ignored replay output and
+invokes the original-route entry selected by each retained record, with no
+child substitution or masked game RAM. Operational verification runs the
+shared enemy-loop check on x86/x64, platform purity and documentation
+governance; delivery artifacts remain hash-verified as the P17 set:
+`mysmb16.exe` `4E09CEC47999ECEC0C9BA7EF3D6842F3D3285AA41C908A3FD5068F853A2639B7`,
+`mysmb32.exe` `0E7039F85B097899184561530CEA130E4508E1F1A9FAFD59DA9F8B50C213E65F`,
+and `mysmb64.exe` `855F7E7607B0AEBAC7F2BA5D39E540205B98AD0F6DFC96A6F18B2B13B2481432`.
+
 ### S5 P16: score and coin scratch-return repair
 
 S5 P16 repairs the T37 S4 score/coin scratch discrepancy in the shared game

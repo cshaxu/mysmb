@@ -10,15 +10,6 @@
 - [x] **Platform vertical preflight carry:** T42 S9 restores original carry for high-Y exits. Four cross-width S7 cases now retain only independently owned geometry scratch differences. [Proof](../history/M2-T42-shared-collision-and-platforms.md#s9-original-collision-preflight-proof).
 - [x] **Side response speed80 and scratch:** The earlier T42 S7 finding is superseded by T43 S6. `RImpd` now preserves the source `CPY #$01`/`BPL` speed80 exit, while `PlatF` writes the RAM00 high adder and preserves carry/page wrap. The current exhaustive x86/x64 impede route passes. [T43 S6 proof](../history/M2-T43-terrain-and-bounding-boxes.md#s6-impede-proof).
 
-- [ ] **Remaining initializer child bodies after S6:** Common and firebar initializers now match; the full vector retains 64/220 actual child failures (piranha, frenzy generators, platforms and Bowser). S7 has proven the flying-fish child; the containing frenzy dispatcher still has nested JumpEngine scratch debt. Other bodies retain their existing source-order custody. [S6 evidence](../history/M2-T38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof).
-
-
-- [ ] **Remaining parser descendants:** S6 improves actual parser comparisons to 150/160; ten remaining initializer/group failures retain their existing custody and source slices. [S6 evidence](../history/M2-T38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof).
-
-
-- [ ] **Enemy successor scratch-state fidelity:** T38 S1 independently reproduces 180/192 integrated failures at $04-$07 in existing parser/initializer/actor-dispatch children. ProcessEnemyData and CheckpointEnemyID/InitEnemyRoutines await T38 S2/S3 admission; RunEnemyObjectsCore/JmpEO remain with existing T19 S5 for the later actor-dispatch slice. No child credit or waiver. The related bridge.c five-flag clear also remains with the later bridge caller slice; it must use the full kill-all semantics when migrated. [Exact scope and evidence](../history/M2-T38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).
-
-
 - [x] **ForceInjury timer gate:** The earlier T35 scenario is superseded by T42 S5. `InjurePlayer` retains its timer guard, while timer expiry calls the direct source-shaped `ForceInjury(A)` entry; the current cross-width player/enemy contact route passes both guarded and direct cases. [T42 S5 proof](../history/M2-T42-shared-collision-and-platforms.md#s5-player-enemy-response-and-score-proof).
 
 - [x] **Legacy core entry fixture:** T51 S5 P8 compared its entrance-loop assertion with the `PlayerEntrance` forced-right child route and removed the unsupported forty-frame X threshold. The core route now reaches its subsequent source-shaped checks on both widths. [T51 S5 P8](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p8-legacy-suite-source-route-closure).
