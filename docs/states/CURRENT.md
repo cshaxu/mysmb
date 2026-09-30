@@ -31,11 +31,11 @@ not own game logic.
 
 ## Current S5 Finding
 
-S5 P14 has completed the project-owned native regression matrix: x64 and x86
+S5 P15 has completed the project-owned native regression matrix: x64 and x86
 each pass 218 / 218 tests, owner-local area routing passes on both widths,
-and the OpenNT DOS16 link is current. It also removes the superseded fireball
-dispatch and Goomba collision records after T34/T42 source-route closures and
-current x86/x64 checks. This does not close S5 or M2: the remaining review
-ledger still contains independently recorded original-ROM discrepancies and the
-DOS16 owner-resource binding gap, each requiring source-route treatment before
-final certification can claim complete behavior.
+and the OpenNT DOS16 link is current. It also removes the superseded star-pickup
+music record after T42 S4's source-route closure and a current x86/x64
+393,216-case pickup-chain check. This does not close S5 or M2: the remaining
+review ledger still contains independently recorded original-ROM discrepancies
+and the DOS16 owner-resource binding gap, each requiring source-route treatment
+before final certification can claim complete behavior.

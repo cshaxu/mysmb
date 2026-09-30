@@ -69,7 +69,7 @@
 
 - [x] **Power-up drawing attributes and offscreen hiding:** Resolved by T44 S7. `DrawPowerUp` now follows `PUpDrawLoop`, `FlipPUpRightSide` and `PUpOfs`, including flower flip `$40` and inherited third-row hiding; all 50 original child records and root snapshots match on both Windows widths. [Closure](../history/M2-T44-block-buffer-and-object-graphics.md#s7-closure-power-up-graphics).
 
-- [ ] **Star pickup music:** T37 S1 case 46 isolates PlayerEnemyCollision/HandlePowerUpCollision leaving AreaMusicQueue $FB=$00 instead of original $40 on both widths. Keep existing M2 T17 S6 collision custody until source-order admission. [Proof](../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof).
+- [x] **Star pickup music:** The T37 S1 case 46 finding is superseded by T42 S4's complete `PlayerEnemyCollision -> HandlePowerUpCollision` source chain.  Its star branch writes `AreaMusicQueue` `$fb = $40` after common pickup setup, and the original actor comparison now matches that case on both Windows widths.  The current direct pickup chain still passes 393,216 type/status/slot cases per width. [Closure](../history/M2-T42-shared-collision-and-platforms.md#s4-power-up-collision-and-palette).
 
 - [x] **BrickShatter second chunk and audio:** T37 S2 original child snapshots isolate second-chunk high Y at $00C0/$00C1 (original zero/native one), missing NoiseSoundQueue $01 and extra Square1SoundQueue $02. Sixteen actual-child comparisons fail across both widths. Keep BrickShatter/SpawnBrickChunks with existing M2 T24 S2 custody until the already planned T37 S4 admission. [Proof](../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof).
 

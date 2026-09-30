@@ -19,7 +19,7 @@ the conformance counts below.
 
 Verified conformance is **1,992 / 1,992 (100.00%)**. No inventory mapping remains incomplete.
 
-Latest task review: [T51 S5 P14](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p14-fireball-dispatch-and-goomba-historical-route-adjudication) removes superseded fireball-dispatch and Goomba collision records. It grants no additional node credit and preserves the independently recorded ROM-route discrepancies that remain under review.
+Latest task review: [T51 S5 P15](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p15-star-pickup-music-historical-route-adjudication) removes the superseded star-pickup music record. It grants no additional node credit and preserves the independently recorded ROM-route discrepancies that remain under review.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

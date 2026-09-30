@@ -452,3 +452,20 @@ source chains. T34 S1 restores the single `PlayerStatus` partition in
 handoff inside fireball collision processing. Current x86/x64 dispatch, scan
 and hit-chain checks pass. No geometry or unrelated collision child is claimed
 by this adjudication.
+
+### S5 P15: star-pickup music historical-route adjudication
+
+S5 P15 resolves T37 S1 case 46 as a historical finding superseded by T42 S4's
+complete `PlayerEnemyCollision -> HandlePowerUpCollision` chain. The source
+star branch queues `$40` in `AreaMusicQueue` `$fb` after the common pickup
+setup. T42's original actor comparison records the case as matching on both
+Windows widths. The current shared direct pickup-chain executable covers
+393,216 type/status/slot cases, including child-mutated type/status inputs,
+with zero failures on x86 and x64. This is an evidence adjudication only: it
+does not claim the separate score/coin scratch-return discrepancy.
+
+No translated C source or build input changes in this evidence-only P, so the
+three current delivery artifacts are retained after hash verification:
+`mysmb16.exe` `D3FE87771AFA2EA86435F41EA954055A21750A59151F76491B972BC11E175C2C`,
+`mysmb32.exe` `DDCD4DC6A16C01E6DC8A50AAB29EF43A85E71A1124D007C494B0A18AD7DFEBF4`,
+and `mysmb64.exe` `DE701E81C81CA3F2AE408F463EBB6F85960340FC00CB362B975E3208A519CBFD`.
