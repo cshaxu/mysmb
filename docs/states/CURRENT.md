@@ -4,13 +4,13 @@
 
 **Idle.**
 
-M2 T50 S2 closed at **1,950 / 1,992** after matching the shared
-music frequency, length and normal-envelope lookup chain. The next source-order
-candidate is M2 T50 S3, which retains the two noise-envelope tables.
+M2 T50 S3 closed at **1,952 / 1,992** after matching the shared noise-envelope
+consumer chain. T50 is complete; the next source-order candidate is the
+cross-route certification task.
 
 ## Current Technical Baseline
 
 One shared native C90 game implementation serves DOS16 and Win32 x86/x64.
-DOS16 remains active: every P uses the existing OpenNT toolchain to compile and
-link the same shared C core, then refreshes `mysmb16.exe` with the Win32
-artifacts. DOSBox is not part of this workflow.
+DOS16 remains active: every M2 P uses the existing OpenNT toolchain to compile
+and link the same shared C core, then refreshes `mysmb16.exe` alongside the
+Win32 artifacts. DOSBox is not part of this workflow.

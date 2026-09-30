@@ -2128,8 +2128,8 @@ The labels and branches behind every line remain open until individually bound b
 | 16349 | `EndOfCastleMusicEnvData` | M2 T50 S2 shared `src/game/audio.c` | ROM-match complete | [T50 S2 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) |
 | 16352 | `AreaMusicEnvData` | M2 T50 S2 shared `src/game/audio.c` | ROM-match complete | [T50 S2 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) |
 | 16355 | `WaterEventMusEnvData` | M2 T50 S2 shared `src/game/audio.c` | ROM-match complete | [T50 S2 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s2-closure-music-lookup-and-envelope-tables) |
-| 16362 | `BowserFlameEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bowserflameenvdata) |
-| 16368 | `BrickShatterEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickshatterenvdata) |
+| 16362 | `BowserFlameEnvData` | M2 T50 S3 shared `src/game/audio.c` | ROM-match complete | [T50 S3 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s3-closure-noise-envelope-consumers) |
+| 16368 | `BrickShatterEnvData` | M2 T50 S3 shared `src/game/audio.c` | ROM-match complete | [T50 S3 closure](../../proposals/m2/t50-music-data-and-audio-consumers.md#s3-closure-noise-envelope-consumers) |
 
 ## Control-graph size
 

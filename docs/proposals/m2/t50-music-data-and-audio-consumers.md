@@ -113,3 +113,51 @@ and `mysmb64.exe` `733218FA79BDE49D3F28FF802742FE9D6AA59F4A9716068505DDB2301A6A4
 Similar-issue sweep: all three `Dump_Freq_Regs` channel offsets, every
 length-table index, and all three normal-music envelope branches route through
 shared `audio.c`; no platform adapter reads or interprets music-table data.
+
+## S3 admission: noise-envelope consumers
+
+S3 receives **2** open labels in source order: `BowserFlameEnvData` and
+`BrickShatterEnvData`. Its baseline is **1,950 / 1,992**; both are expected
+matches, for a maximum of **1,952 / 1,992**. The contiguous shared-owner route
+is `NoiseSfxHandler -> PlayBrickShatter/ContinueBrickShatter` and
+`PlayBowserFlame/ContinueBowserFlame -> PlayNoiseSfx`. The ROM-logic track
+compares queue and active-buffer branches, length shift/index semantics,
+CPU-address table reads, APU writes and decrement order. The operational track
+runs focused noise envelope and snapshot checks, x86/x64 builds, the existing
+OpenNT DOS16 compile/link, platform purity, and refreshes all three artifacts.
+DOS16 remains active through that original toolchain; DOSBox is not used.
+
+## S3 closure: noise-envelope consumers
+
+S3 closes both admitted labels, `BowserFlameEnvData` and
+`BrickShatterEnvData`, raising verified conformance from **1,950 to 1,952 /
+1,992**. No scoped label was deferred or transferred.
+
+The ROM-logic track follows `NoiseSfxHandler` exactly. A queued brick-shatter
+bit selects `PlayBrickShatter`, initializes length `$20`, and then only odd
+length phases execute `LSR`, `TAY`, `BrickShatterEnvData,Y`, `PlayNoiseSfx`,
+and the decrement tail. The shared C reader uses CPU `$ffea + Y`. The brick
+terminal phase retains the source order: it writes the envelope, then the
+decrement tail mutes noise at zero. A Bowser-flame bit selects
+`PlayBowserFlame`, initializes `$40`, shifts the live length and reads
+`BowserFlameEnvData-1,Y`; the C reader deliberately starts at `$ffc9`, so
+`Y=1..32` selects source bytes `$ffca..$ffe9`. It writes the source `$0f`
+period and `$18` length register before the common decrement. No platform
+source reads either table or implements these branches.
+
+The focused owner-ROM test drives the shared `mysmb_audio_step` route for all
+16 brick phases and all 32 Bowser phases, checking the selected envelope,
+noise registers and length transition. It reports **48 checks, zero failures**
+on both Win32 x86 and x64. Existing music lookup verification also reports
+203 checks, zero failures on both widths; the platform-purity gate passes on
+both widths. The same shared C90 source compiled and linked with the existing
+OpenNT DOS16 toolchain to a 264149-byte MZ executable; its established C4761
+conversion and `OLDNAMES.LIB` warnings remain non-fatal. Refreshed artifacts:
+`mysmb16.exe` `0FE56863DA85261D8739D6BC709D24DCAA04C9D0288BB1D73EE512EFB17E847A`,
+`mysmb32.exe` `2262FBB943A56995DA323F9803829549AD35EDDB419BB4265CD4F809E6432E7E`,
+and `mysmb64.exe` `58EF871A0B1588811932A056A966556FCDB21B491E32B9ECF23FA85F2F9F18B7`.
+
+Similar-issue sweep: both noise-envelope reads in `src/game/audio.c` were
+reviewed for CPU base, index calculation, queue versus active-buffer routing,
+APU write order and decrement order. Both are shared-game-only; no platform
+adapter has a matching production read or branch.

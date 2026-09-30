@@ -474,6 +474,8 @@ add_executable(mysmb_sound_noise_dispatch_smoke test/sound_noise_dispatch_smoke.
 target_link_libraries(mysmb_sound_noise_dispatch_smoke PRIVATE mysmb_game)
 add_executable(mysmb_sound_noise_snapshot_check test/sound_noise_snapshot_check.c)
 target_link_libraries(mysmb_sound_noise_snapshot_check PRIVATE mysmb_game)
+add_executable(mysmb_sound_noise_envelope_table_check test/sound_noise_envelope_table_check.c)
+target_link_libraries(mysmb_sound_noise_envelope_table_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_music_handoff_snapshot_check
                test/sound_music_handoff_snapshot_check.c)
 target_link_libraries(mysmb_sound_music_handoff_snapshot_check PRIVATE mysmb_game)
@@ -1115,6 +1117,8 @@ if(MYSMB_ROM_PATH)
         COMMAND mysmb_sound_music_stream_record_check "${MYSMB_ROM_PATH}")
     add_test(NAME mysmb.music-lookup-tables
         COMMAND mysmb_sound_music_lookup_table_check "${MYSMB_ROM_PATH}")
+    add_test(NAME mysmb.noise-envelope-tables
+        COMMAND mysmb_sound_noise_envelope_table_check "${MYSMB_ROM_PATH}")
 
     set(MYSMB_LOCAL_ROM_DIR "${CMAKE_BINARY_DIR}/generated/smb1-local")
     add_custom_command(
