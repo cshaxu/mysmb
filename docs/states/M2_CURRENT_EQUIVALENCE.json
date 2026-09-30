@@ -25754,103 +25754,130 @@
       "asmLine": 12218,
       "cohort": "J",
       "status": "needs-evidence",
-      "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
-      "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Starts flagpole slide and transfers to player-on-vine positioning."
+      "semanticContract": "Sets flagpole-slide routine and tail-transfers to common vine positioning."
     },
     {
       "label": "VineCollision",
       "asmLine": 12222,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Starts autoclimb only for vine metatile above status bar, then joins common positioning."
     },
     {
       "label": "PutPlayerOnVine",
       "asmLine": 12231,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets climbing state, stops horizontal motion and aligns facing/X/page from collision block address."
     },
     {
       "label": "SetVXPl",
       "asmLine": 12244,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Computes aligned player X from block address nibble and facing table."
     },
     {
       "label": "ExPVne",
       "asmLine": 12259,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from climbing positioning."
     },
     {
       "label": "ChkInvisibleMTiles",
       "asmLine": 12263,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns zero flag for hidden coin/1-up metatiles only."
     },
     {
       "label": "ExCInvT",
       "asmLine": 12267,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns invisible-metatile predicate result."
     },
     {
       "label": "ChkForLandJumpSpring",
       "asmLine": 12273,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes vertical force, spring force/timer/animation after a landing spring tile."
     },
     {
       "label": "ExCJSp",
       "asmLine": 12284,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from landing-spring check."
     },
     {
       "label": "ChkJumpspringMetatiles",
       "asmLine": 12286,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
+      "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns carry set for either spring metatile and clear otherwise."
     },
     {
       "label": "JSFnd",
@@ -73443,10 +73470,13 @@
       "instruction": "jmp",
       "id": "control-02545",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile jump relation RunFR → PutPlayerOnVine with source predicate and state ordering."
     },
     {
       "from": "VineCollision",
@@ -73456,10 +73486,13 @@
       "instruction": "bne",
       "id": "control-02546",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile branch relation VineCollision → PutPlayerOnVine with source predicate and state ordering."
     },
     {
       "from": "VineCollision",
@@ -73469,10 +73502,13 @@
       "instruction": "bcs",
       "id": "control-02547",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile branch relation VineCollision → PutPlayerOnVine with source predicate and state ordering."
     },
     {
       "from": "VineCollision",
@@ -73482,10 +73518,13 @@
       "instruction": "sta",
       "id": "control-02548",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile fallthrough relation VineCollision → PutPlayerOnVine with source predicate and state ordering."
     },
     {
       "from": "PutPlayerOnVine",
@@ -73495,10 +73534,13 @@
       "instruction": "bcs",
       "id": "control-02549",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile branch relation PutPlayerOnVine → SetVXPl with source predicate and state ordering."
     },
     {
       "from": "PutPlayerOnVine",
@@ -73508,10 +73550,13 @@
       "instruction": "sta",
       "id": "control-02550",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile fallthrough relation PutPlayerOnVine → SetVXPl with source predicate and state ordering."
     },
     {
       "from": "SetVXPl",
@@ -73521,10 +73566,13 @@
       "instruction": "bne",
       "id": "control-02551",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile branch relation SetVXPl → ExPVne with source predicate and state ordering."
     },
     {
       "from": "SetVXPl",
@@ -73534,10 +73582,13 @@
       "instruction": "sta",
       "id": "control-02552",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile fallthrough relation SetVXPl → ExPVne with source predicate and state ordering."
     },
     {
       "from": "ChkInvisibleMTiles",
@@ -73547,10 +73598,13 @@
       "instruction": "beq",
       "id": "control-02553",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile branch relation ChkInvisibleMTiles → ExCInvT with source predicate and state ordering."
     },
     {
       "from": "ChkInvisibleMTiles",
@@ -73560,10 +73614,13 @@
       "instruction": "cmp",
       "id": "control-02554",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile fallthrough relation ChkInvisibleMTiles → ExCInvT with source predicate and state ordering."
     },
     {
       "from": "ChkForLandJumpSpring",
@@ -73573,10 +73630,13 @@
       "instruction": "jsr",
       "id": "control-02555",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile call relation ChkForLandJumpSpring → ChkJumpspringMetatiles with source predicate and state ordering."
     },
     {
       "from": "ChkForLandJumpSpring",
@@ -73586,10 +73646,13 @@
       "instruction": "bcc",
       "id": "control-02556",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile branch relation ChkForLandJumpSpring → ExCJSp with source predicate and state ordering."
     },
     {
       "from": "ChkForLandJumpSpring",
@@ -73599,10 +73662,13 @@
       "instruction": "sta",
       "id": "control-02557",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile fallthrough relation ChkForLandJumpSpring → ExCJSp with source predicate and state ordering."
     },
     {
       "from": "ChkJumpspringMetatiles",
@@ -95611,10 +95677,13 @@
       "instruction": "rts/rti",
       "id": "control-03968",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/climbing.c and terrain_metatiles.c",
+      "semanticEvidence": [
+        "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves climbing/metatile return relation ChkJumpspringMetatiles → ChkForLandJumpSpring with source predicate and state ordering."
     },
     {
       "from": "GetMTileAttrib",

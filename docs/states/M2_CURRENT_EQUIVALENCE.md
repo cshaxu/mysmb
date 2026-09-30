@@ -1481,3 +1481,9 @@ branches.
 - Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering coin/axe erase tails, vine/flag entry and flag score selection.
 - Independent integration result: 20 relations plus three climb/flag table edges received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K52 — climbing and jumpspring metatile audit
+
+- Source range: `RunFR` through `ChkJumpspringMetatiles` (`SMBDIS.ASM` lines 12218–12286).
+- Node-semantics result: ten labels moved from `unclassified` to `needs-evidence`, covering vine alignment, hidden blocks and landing-spring setup.
+- Independent integration result: 14 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
