@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 244 control; 5 material RAM/table |
+| Needs evidence | 269 control; 9 material RAM/table |
 | Mismatch | 10 control; 2 material RAM/table |
-| Unclassified | 4,012 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,987 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -396,3 +396,14 @@ static pass found no new discrepancy: fixed `$13a` title-copy bounds, the
 descending buffer clear, mushroom-icon call and title-score update all have
 named shared-C counterparts. They remain `needs-evidence` until title and
 non-title ROM/x86/x64 routes compare their RAM, VRAM command and task state.
+
+### Cohort B — B5 status-text, mutable fields and timer-tail chain
+
+`GameText` through `NoReset` are now mapped, with independent control edges
+for text selection, player-count/name routing, mutable lives fields, Warp
+numbering and timer return behavior. Four feasible data paths are registered:
+offset-table selection, message stream copy, LUIGI replacement and Warp
+numbers. Current static mapping retains the source behavior for normal
+resource-bound routes, but all entries remain `needs-evidence` until fixtures
+cover selectors 0–6, one/two players, Mario/Luigi, Time Up/Game Over, crown
+lives and each Warp table row.

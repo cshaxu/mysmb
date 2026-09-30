@@ -141,6 +141,62 @@
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00010",
+      "producer": "GameTextOffsets",
+      "consumer": "WriteGameText",
+      "storage": "selector/player-count indexed ROM offsets to GameText",
+      "feasiblePath": "WriteGameText doubles selector, applies one/two-player rule, then reads GameTextOffsets.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:offset_index and area_prg GameTextOffsets lookup",
+      "semanticContract": "Each valid selector/player-count combination selects the same stream start.",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00011",
+      "producer": "GameText",
+      "consumer": "WriteGameText",
+      "storage": "$ff-terminated ROM command stream to VRAM_Buffer1",
+      "feasiblePath": "LdGameText copies selected GameText bytes until $ff.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_game_text source loop",
+      "semanticContract": "Selected command bytes and terminator position agree for every reachable text stream.",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00012",
+      "producer": "LuigiName",
+      "consumer": "CheckPlayerName",
+      "storage": "five-byte ROM name table to Buffer1 replacement",
+      "feasiblePath": "Nonzero selected player causes NameLoop to replace Buffer1+3 through +7.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_game_text name_player copy",
+      "semanticContract": "LUIGI replacement bytes and condition agree.",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00013",
+      "producer": "WarpZoneNumbers",
+      "consumer": "PrintWarpZoneNumbers",
+      "storage": "selector-indexed WarpZone number table to three fixed Buffer1 cells",
+      "feasiblePath": "Warp route copies three source bytes with destination stride four.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_game_text selector >= 4 loop",
+      "semanticContract": "Every reachable warp selector produces the same three mutable number tiles and offset.",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -2130,231 +2186,300 @@
       "label": "GameText",
       "asmLine": 1661,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text ROM-authored stream base",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8745: selector-addressed status and message stream base terminated by $ff."
     },
     {
       "label": "TopStatusBarLine",
       "asmLine": 1662,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector 0",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8745: fixed main status-bar command stream."
     },
     {
       "label": "WorldLivesDisplay",
       "asmLine": 1671,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector 1",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8764: world/lives command stream with mutable life/world/level tiles."
     },
     {
       "label": "TwoPlayerTimeUp",
       "asmLine": 1680,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector 2 two-player stream",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $877b: two-player TIME UP prefix stream."
     },
     {
       "label": "OnePlayerTimeUp",
       "asmLine": 1682,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector 2 one-player stream",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8781: one-player TIME UP stream."
     },
     {
       "label": "TwoPlayerGameOver",
       "asmLine": 1686,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector 3 two-player stream",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $878b: two-player GAME OVER prefix stream."
     },
     {
       "label": "OnePlayerGameOver",
       "asmLine": 1688,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector 3 one-player stream",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8791: one-player GAME OVER stream."
     },
     {
       "label": "WarpZoneWelcome",
       "asmLine": 1693,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selectors 4-6",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $879e: WARP ZONE message with three mutable number positions."
     },
     {
       "label": "LuigiName",
       "asmLine": 1704,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text five-byte replacement copy",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $87d4: five-character LUIGI replacement source."
     },
     {
       "label": "WarpZoneNumbers",
       "asmLine": 1707,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text warp-number copy",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $87d9: selector-indexed three-number WarpZone source table."
     },
     {
       "label": "GameTextOffsets",
       "asmLine": 1712,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text offset_index selection",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $87e5: selector and player-count indexed offsets into GameText."
     },
     {
       "label": "WriteGameText",
       "asmLine": 1719,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $87ef: selects text variant, copies through $ff terminator and dispatches mutable post-processing."
     },
     {
       "label": "Chk2Players",
       "asmLine": 1728,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector < 4 player-count branch",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $87f8: one-player TIME UP/GAME OVER selects odd offset, two-player retains even offset."
     },
     {
       "label": "LdGameText",
       "asmLine": 1731,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text stream source selection",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $87fc: obtains GameText offset then starts destination at VRAM_Buffer1."
     },
     {
       "label": "GameTextLoop",
       "asmLine": 1733,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text terminator copy loop",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8800: copies bytes in order until $ff."
     },
     {
       "label": "EndGameText",
       "asmLine": 1740,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text post-copy dispatch",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8808: installs zero terminator then selects warp, lives or name post-processing."
     },
     {
       "label": "PutLives",
       "asmLine": 1756,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector 1 patch",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $881d: writes displayed lives and one-based world/level fields."
     },
     {
       "label": "CheckPlayerName",
       "asmLine": 1765,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text player-name branch",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8827: controls LUIGI replacement and TIME UP player inversion."
     },
     {
       "label": "ChkLuigi",
       "asmLine": 1775,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text name_player branch",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8831: only nonzero selected player reaches five-byte name overwrite."
     },
     {
       "label": "NameLoop",
       "asmLine": 1778,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text Luigi replacement loop",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8838: copies LUIGI in reverse source index into Buffer1+3..+7."
     },
     {
       "label": "ExitChkName",
       "asmLine": 1782,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text completion",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $883e: returns after text post-processing."
     },
     {
       "label": "PrintWarpZoneNumbers",
       "asmLine": 1784,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text selector >= 4 patch",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $883f: selector-4 times four indexes WarpZoneNumbers before fixed-stride copy."
     },
     {
       "label": "WarpNumLoop",
       "asmLine": 1790,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_queue_game_text warp number loop",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8846: copies three numbers at Buffer1+27 with stride four then sets offset $2c."
     },
     {
       "label": "ResetSpritesAndScreenTimer",
@@ -2373,21 +2498,27 @@
       "label": "ResetScreenTimer",
       "asmLine": 1809,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_step_screen_routine timer reset paths",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $885d: stores ScreenTimer seven and increments ScreenRoutineTask."
     },
     {
       "label": "NoReset",
       "asmLine": 1813,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "mysmb_game_step_screen_routine cases 5 and 7 no-reset paths",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8861: returns unchanged while ScreenTimer remains nonzero."
     },
     {
       "label": "RenderAreaGraphics",
@@ -24910,10 +25041,13 @@
       "instruction": "bcc",
       "id": "control-00258",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteGameText -> LdGameText branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "WriteGameText",
@@ -24923,10 +25057,13 @@
       "instruction": "bcc",
       "id": "control-00259",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteGameText -> Chk2Players branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "WriteGameText",
@@ -24936,10 +25073,13 @@
       "instruction": "ldy",
       "id": "control-00260",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteGameText -> Chk2Players fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "Chk2Players",
@@ -24949,10 +25089,13 @@
       "instruction": "bne",
       "id": "control-00261",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original Chk2Players -> LdGameText branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "Chk2Players",
@@ -24962,10 +25105,13 @@
       "instruction": "iny",
       "id": "control-00262",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original Chk2Players -> LdGameText fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "LdGameText",
@@ -24975,10 +25121,13 @@
       "instruction": "ldy",
       "id": "control-00263",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original LdGameText -> GameTextLoop fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "GameTextLoop",
@@ -24988,10 +25137,13 @@
       "instruction": "beq",
       "id": "control-00264",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GameTextLoop -> EndGameText branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "GameTextLoop",
@@ -25001,10 +25153,13 @@
       "instruction": "bne",
       "id": "control-00265",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GameTextLoop -> GameTextLoop branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "GameTextLoop",
@@ -25014,10 +25169,13 @@
       "instruction": "bne",
       "id": "control-00266",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GameTextLoop -> EndGameText fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "EndGameText",
@@ -25027,10 +25185,13 @@
       "instruction": "bcs",
       "id": "control-00267",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EndGameText -> PrintWarpZoneNumbers branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "EndGameText",
@@ -25040,10 +25201,13 @@
       "instruction": "bne",
       "id": "control-00268",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EndGameText -> CheckPlayerName branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "EndGameText",
@@ -25053,10 +25217,13 @@
       "instruction": "bcc",
       "id": "control-00269",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EndGameText -> PutLives branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "EndGameText",
@@ -25066,10 +25233,13 @@
       "instruction": "sty",
       "id": "control-00270",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EndGameText -> PutLives fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "CheckPlayerName",
@@ -25079,10 +25249,13 @@
       "instruction": "beq",
       "id": "control-00271",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original CheckPlayerName -> ExitChkName branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "CheckPlayerName",
@@ -25092,10 +25265,13 @@
       "instruction": "bne",
       "id": "control-00272",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original CheckPlayerName -> ChkLuigi branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "CheckPlayerName",
@@ -25105,10 +25281,13 @@
       "instruction": "beq",
       "id": "control-00273",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original CheckPlayerName -> ChkLuigi branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "CheckPlayerName",
@@ -25118,10 +25297,13 @@
       "instruction": "eor",
       "id": "control-00274",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original CheckPlayerName -> ChkLuigi fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "ChkLuigi",
@@ -25131,10 +25313,13 @@
       "instruction": "bcc",
       "id": "control-00275",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkLuigi -> ExitChkName branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "ChkLuigi",
@@ -25144,10 +25329,13 @@
       "instruction": "ldy",
       "id": "control-00276",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ChkLuigi -> NameLoop fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "NameLoop",
@@ -25157,10 +25345,13 @@
       "instruction": "bpl",
       "id": "control-00277",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original NameLoop -> NameLoop branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "NameLoop",
@@ -25170,10 +25361,13 @@
       "instruction": "bpl",
       "id": "control-00278",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original NameLoop -> ExitChkName fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "PrintWarpZoneNumbers",
@@ -25183,10 +25377,13 @@
       "instruction": "ldy",
       "id": "control-00279",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PrintWarpZoneNumbers -> WarpNumLoop fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "WarpNumLoop",
@@ -25196,10 +25393,13 @@
       "instruction": "bcc",
       "id": "control-00280",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WarpNumLoop -> WarpNumLoop branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "WarpNumLoop",
@@ -25209,10 +25409,13 @@
       "instruction": "jmp",
       "id": "control-00281",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WarpNumLoop -> SetVRAMOffset jump relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "ResetSpritesAndScreenTimer",
@@ -25223,12 +25426,12 @@
       "id": "control-00282",
       "cohort": "B",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original ResetSpritesAndScreenTimer -> NoReset branch relation must preserve the source predicate, predecessor writes and successor/return handoff."
+      "semanticContract": "Original ResetSpritesAndScreenTimer -> NoReset branch relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "ResetSpritesAndScreenTimer",
@@ -25239,12 +25442,12 @@
       "id": "control-00283",
       "cohort": "B",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original ResetSpritesAndScreenTimer -> MoveAllSpritesOffscreen call relation must preserve the source predicate, predecessor writes and successor/return handoff."
+      "semanticContract": "Original ResetSpritesAndScreenTimer -> MoveAllSpritesOffscreen call relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "ResetSpritesAndScreenTimer",
@@ -25255,12 +25458,12 @@
       "id": "control-00284",
       "cohort": "B",
       "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original ResetSpritesAndScreenTimer -> ResetScreenTimer fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff."
+      "semanticContract": "Original ResetSpritesAndScreenTimer -> ResetScreenTimer fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "ResetScreenTimer",
@@ -25270,10 +25473,13 @@
       "instruction": "inc",
       "id": "control-00285",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "semanticEvidence": [
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ResetScreenTimer -> NoReset fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff."
     },
     {
       "from": "RenderAreaGraphics",
