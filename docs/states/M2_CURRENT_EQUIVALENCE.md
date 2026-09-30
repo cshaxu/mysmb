@@ -1258,3 +1258,7 @@ branches.
 ### Cohort K — K13 fireball, firebar and explosion OAM integration
 
 `DrawFireball` through `KillFireBall` now has seven node contracts, every local fall-through, frame phase, explosion state and return relation, plus the feasible explosion-tile handoff. Static review matches fireball-to-firebar fall-through, d2/d3 phase selection, pre-increment explosion indexing, three-frame termination, four-sprite offsets and attributes. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 fireball, firebar phase, explosion frames and termination routes.
+
+### Cohort K — K14 small-platform and bubble OAM integration
+
+`DrawSmallPlatform` through `ExDBub` now has eight node contracts and all local helper, status-bar, offscreen, bubble-gate and return relations. Static review matches the six-sprite rows, top/bottom wrapped clipping, d3/d2/d1 column hides, and the exact Player_Y_HighPos-one plus bubble d3 gate. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 platform clipping/columns and bubble visible/hidden routes.

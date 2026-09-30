@@ -27765,81 +27765,105 @@
       "label": "DrawSmallPlatform",
       "asmLine": 14334,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes six tiles/attributes and three X columns, then applies source top/bottom status-bar clipping."
     },
     {
       "label": "TopSP",
       "asmLine": 14361,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dumps the first three Ys after the source below-status-bar test."
     },
     {
       "label": "BotSP",
       "asmLine": 14369,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the lower three Ys after the wrapped +$80 status-bar test."
     },
     {
       "label": "SOfs",
       "asmLine": 14379,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies Enemy_OffscreenBits d3 first/fourth-column hide."
     },
     {
       "label": "SOfs2",
       "asmLine": 14386,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies d2 second/fifth-column hide before d1 third/sixth handling."
     },
     {
       "label": "ExSPl",
       "asmLine": 14392,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/small_platform_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Restores ObjectOffset and returns."
     },
     {
       "label": "DrawBubble",
       "asmLine": 14397,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/fireball/bubble.c",
+      "currentCounterpart": "mysmb_fireball_draw_bubble",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Draws a bubble only when Player_Y_HighPos is one and Bubble_OffscreenBits d3 is clear."
     },
     {
       "label": "ExDBub",
       "asmLine": 14413,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/fireball/bubble.c",
+      "currentCounterpart": "mysmb_fireball_draw_bubble",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after bubble draw or either early gate."
     },
     {
       "label": "PlayerGfxTblOffsets",
@@ -48046,12 +48070,12 @@
       "id": "control-01075",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation BublLoop -> DrawBubble with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM call relation BublLoop -> DrawBubble with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "BublLoop",
@@ -48062,12 +48086,12 @@
       "id": "control-01076",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation BublLoop -> BublLoop with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM branch relation BublLoop -> BublLoop with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "BublLoop",
@@ -57980,12 +58004,12 @@
       "id": "control-01697",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunSmallPlatform -> DrawSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves ROM call relation RunSmallPlatform -> DrawSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "RunSmallPlatform",
@@ -78187,10 +78211,13 @@
       "instruction": "jsr",
       "id": "control-03011",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DrawSmallPlatform -> DumpSixSpr with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawSmallPlatform",
@@ -78200,10 +78227,13 @@
       "instruction": "jsr",
       "id": "control-03012",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation DrawSmallPlatform -> DumpSixSpr with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawSmallPlatform",
@@ -78213,10 +78243,13 @@
       "instruction": "bcs",
       "id": "control-03013",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawSmallPlatform -> TopSP with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawSmallPlatform",
@@ -78226,10 +78259,13 @@
       "instruction": "lda",
       "id": "control-03014",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawSmallPlatform -> TopSP with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "TopSP",
@@ -78239,10 +78275,13 @@
       "instruction": "jsr",
       "id": "control-03015",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation TopSP -> DumpThreeSpr with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "TopSP",
@@ -78252,10 +78291,13 @@
       "instruction": "bcs",
       "id": "control-03016",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation TopSP -> BotSP with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "TopSP",
@@ -78265,10 +78307,13 @@
       "instruction": "lda",
       "id": "control-03017",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation TopSP -> BotSP with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "BotSP",
@@ -78278,10 +78323,13 @@
       "instruction": "beq",
       "id": "control-03018",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation BotSP -> SOfs with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "BotSP",
@@ -78291,10 +78339,13 @@
       "instruction": "sta",
       "id": "control-03019",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation BotSP -> SOfs with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SOfs",
@@ -78304,10 +78355,13 @@
       "instruction": "beq",
       "id": "control-03020",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SOfs -> SOfs2 with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SOfs",
@@ -78317,10 +78371,13 @@
       "instruction": "sta",
       "id": "control-03021",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SOfs -> SOfs2 with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SOfs2",
@@ -78330,10 +78387,13 @@
       "instruction": "beq",
       "id": "control-03022",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SOfs2 -> ExSPl with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SOfs2",
@@ -78343,10 +78403,13 @@
       "instruction": "sta",
       "id": "control-03023",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SOfs2 -> ExSPl with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawBubble",
@@ -78356,10 +78419,13 @@
       "instruction": "bne",
       "id": "control-03024",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawBubble -> ExDBub with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawBubble",
@@ -78369,10 +78435,13 @@
       "instruction": "bne",
       "id": "control-03025",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawBubble -> ExDBub with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawBubble",
@@ -78382,10 +78451,13 @@
       "instruction": "sta",
       "id": "control-03026",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawBubble -> ExDBub with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "PlayerGfxHandler",
@@ -87195,12 +87267,12 @@
       "id": "control-03672",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawBubble -> BublLoop with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves ROM return relation DrawBubble -> BublLoop with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ImposeGravity",
@@ -89467,12 +89539,12 @@
       "id": "control-03814",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DrawSmallPlatform -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves ROM return relation DrawSmallPlatform -> RunSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MoveSmallPlatform",
@@ -92814,10 +92886,13 @@
       "instruction": "rts/rti",
       "id": "control-04030",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpSixSpr -> DrawSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpSixSpr",
@@ -92827,10 +92902,13 @@
       "instruction": "rts/rti",
       "id": "control-04031",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpSixSpr -> DrawSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DumpThreeSpr",
@@ -92840,10 +92918,13 @@
       "instruction": "rts/rti",
       "id": "control-04032",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "semanticEvidence": [
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpThreeSpr -> TopSP with source clipping/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "FindPlayerAction",
