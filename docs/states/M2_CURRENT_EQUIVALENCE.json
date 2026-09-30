@@ -813,39 +813,45 @@
       "label": "IncWorldSel",
       "asmLine": 1033,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64."
+      ],
       "semanticContract": "Increments WorldSelectNumber modulo eight, calls GoContinue and prepares the six-byte world-select VRAM template."
     },
     {
       "label": "UpdateShroom",
       "asmLine": 1039,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step template loop",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64."
+      ],
       "semanticContract": "Copies all six template bytes in source order and stores WorldNumber plus one in the template blank position."
     },
     {
       "label": "NullJoypad",
       "asmLine": 1047,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64."
+      ],
       "semanticContract": "Clears SavedJoypad1Bits before the common demo/game-core result."
     },
     {
@@ -927,13 +933,15 @@
       "label": "GoContinue",
       "asmLine": 1081,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_go_continue",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64."
+      ],
       "semanticContract": "Stores source world to both current/offscreen worlds and clears both current/offscreen area numbers."
     },
     {
@@ -21938,12 +21946,14 @@
       "instruction": "jsr",
       "id": "control-00099",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+      ],
       "semanticContract": "Original call relation IncWorldSel -> GoContinue at source line 1038 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -21954,12 +21964,14 @@
       "instruction": "jsr",
       "id": "control-00100",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+      ],
       "semanticContract": "Original fallthrough relation IncWorldSel -> UpdateShroom at source line 1038 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -21970,12 +21982,14 @@
       "instruction": "bmi",
       "id": "control-00101",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+      ],
       "semanticContract": "Original branch relation UpdateShroom -> UpdateShroom at source line 1043 (bmi) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -21986,12 +22000,14 @@
       "instruction": "sty",
       "id": "control-00102",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+      ],
       "semanticContract": "Original fallthrough relation UpdateShroom -> NullJoypad at source line 1046 (sty) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22002,10 +22018,15 @@
       "instruction": "sta",
       "id": "control-00103",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step success return -> src/game/frame_root.c:mysmb_frame_root_step GameCoreRoutine call",
+      "semanticEvidence": [
+        "Td S9 A6 integration static pass: original NullJoypad fallthrough reaches RunDemo; the current title-step success return transfers exactly to frame_root.c, which performs the source-owned GameCoreRoutine call."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+      ],
+      "semanticContract": "Original fallthrough relation NullJoypad -> RunDemo at source line 1048 must clear player-one latch, preserve the ordered transfer, and invoke the shared GameCore route only after the title menu returns success."
     },
     {
       "from": "RunDemo",
@@ -66243,12 +66264,14 @@
       "instruction": "rts/rti",
       "id": "control-03500",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+      ],
       "semanticContract": "Original return relation GoContinue -> IncWorldSel at source line 1038 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {

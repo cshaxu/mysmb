@@ -19,8 +19,8 @@ incomplete node/control-edge identities.
 
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
-| Exact | 19 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 31 | Current source audit exists but the current original-ROM route is incomplete. |
+| Exact | 23 | Current source audit and original-ROM route both prove the label. |
+| Needs evidence | 27 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,939 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -53,10 +53,10 @@ explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
-| Exact | 41 control; 3 material RAM/table |
-| Needs evidence | 87 |
+| Exact | 47 control; 3 material RAM/table |
+| Needs evidence | 82 |
 | Mismatch | 2 |
-| Unclassified | 4,212 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 4,211 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -227,11 +227,21 @@ title/game/victory/game-over routes. The nonzero-sprite loop requires a route
 with the real sprite-zero hardware condition; ColdBoot's all-sprite pass is
 not substituted as evidence for that distinct entry.
 
-### Cohort A — A6 title-menu static pass
+### Cohort A — A6 title-menu node and edge passes
 
 The title-menu/start slice records 15 nodes from `TitleScreenMode` through
-`GoContinue`, together with 32 menu/start control relations. They remain
-`needs-evidence`: the source branches require controlled title state for
-Start, A+Start, Select, enabled/disabled world-select B, demo timeout,
-continue-world and score-clear paths. Demo action/timing data and `RunDemo`
-remain a separate source-route family.
+`GoContinue`, together with 32 menu/start control relations. A controlled
+original-ROM route now enters through the ordinary NMI mode dispatcher, reaches
+`GameMenuRoutine`, and captures immediately before `RunDemo` calls
+`GameCoreRoutine`. Its ordinary, Select, world-select B and initial-demo cases
+match current x86/x64 on their title-owned state. The complete world-select B
+subchain is exact: `GoContinue`, `IncWorldSel`, `UpdateShroom` and
+`NullJoypad`, plus its six individual call/return, loop and fall-through
+relations.
+
+The remaining title labels and relations stay `needs-evidence`. In particular,
+`TitleScreenMode` must still prove all four dispatch vectors; `GameMenuRoutine`,
+`ChkSelect`, `ChkWorldSel` and `SelectBLogic` need their unobserved Start,
+debounce, disabled/enabled and reset branches; and `RunDemo` with its
+post-`GameCoreRoutine` reset condition remains a separate route family. Demo
+action/timing data is also deferred to that route family.
