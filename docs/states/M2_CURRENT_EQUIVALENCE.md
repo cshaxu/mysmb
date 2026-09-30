@@ -301,3 +301,16 @@ already been proved by a current route. The required route pair is the
 same-page no-walk/task-advance case and the walking/non-destination-page case;
 both must compare auto buttons, walk control, fractional carry, screen pages,
 parser handoff and task result.
+
+The next `PrintVictoryMessages -> ExitMsgs` message chain (lines 1201–1252)
+has ten node contracts and all twenty-three currently associated control
+relations recorded independently. Every item remains `needs-evidence`.
+The edge pass covers the secondary-counter early branch; primary/world
+threshold tree; Mario/Luigi first-message fork; World 8 music ordering;
+message-control-to-counter handoff; carry into the primary counter; and the
+WorldEndTimer/task-increment terminal path. Promotion requires controlled ROM
+and current x86/x64 records for Mario and Luigi initial messages, worlds 1–7
+counter/message/end-timer alternatives, World 8 pre-music/music message
+alternatives, nonzero secondary counter, and primary counter carry/terminal
+thresholds. Each record must compare both the selected VRAM control and the
+counter, music, timer and task state that reaches the successor.

@@ -1201,101 +1201,131 @@
       "label": "PrintVictoryMessages",
       "asmLine": 1201,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $83c9: branches on SecondaryMsgCounter, then PrimaryMsgCounter, WorldNumber and source thresholds to choose a message/control write or counters; it must not select a message on a nonzero secondary counter."
     },
     {
       "label": "MRetainerMsg",
       "asmLine": 1215,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $83da: on worlds 1–7, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer."
     },
     {
       "label": "ThankPlayer",
       "asmLine": 1217,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $83df: turns the primary value into message index Y; at zero it selects Mario or Luigi first-message index, otherwise enters the second-message transform."
     },
     {
       "label": "SecondPartMsg",
       "asmLine": 1223,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1–7, choosing ordinary message, counter-only, or end-timer paths."
     },
     {
       "label": "EvalForMusic",
       "asmLine": 1232,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $83fd: queues VictoryMusic only for World 8 message index three, then reaches PrintMsg; other indexes print without changing EventMusicQueue."
     },
     {
       "label": "PrintMsg",
       "asmLine": 1236,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8404: writes VRAM_Buffer_AddrCtrl as the selected message index plus $0c, then continues to counter update."
     },
     {
       "label": "IncMsgCounter",
       "asmLine": 1240,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $840d: adds four to SecondaryMsgCounter, carries into PrimaryMsgCounter, and passes its post-add primary result to SetEndTimer."
     },
     {
       "label": "SetEndTimer",
       "asmLine": 1248,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $841a: returns without terminal writes while post-add primary is below seven; otherwise writes WorldEndTimer=$06 then enters the common task increment."
     },
     {
       "label": "IncModeTask_A",
       "asmLine": 1251,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8422: increments OperMode_Task exactly once before the common return."
     },
     {
       "label": "ExitMsgs",
       "asmLine": 1252,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/terminal_modes.c",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8423: returns from the victory message leaf without further game-state writes."
     },
     {
       "label": "PlayerEndWorld",
@@ -22772,10 +22802,13 @@
       "instruction": "bne",
       "id": "control-00142",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary != 0 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PrintVictoryMessages -> IncMsgCounter branches immediately for nonzero SecondaryMsgCounter without a message selection."
     },
     {
       "from": "PrintVictoryMessages",
@@ -22785,10 +22818,13 @@
       "instruction": "beq",
       "id": "control-00143",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary == 0 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PrintVictoryMessages -> ThankPlayer reaches first-message selection only when the secondary divider and primary counter are zero."
     },
     {
       "from": "PrintVictoryMessages",
@@ -22798,10 +22834,13 @@
       "instruction": "bcs",
       "id": "control-00144",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary >= 9 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PrintVictoryMessages -> IncMsgCounter preserves the residual primary-at-least-nine branch rather than printing a message."
     },
     {
       "from": "PrintVictoryMessages",
@@ -22811,10 +22850,13 @@
       "instruction": "bne",
       "id": "control-00145",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary in 1..8 && world != 7 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PrintVictoryMessages -> MRetainerMsg selects the worlds 1–7 message threshold path only after the secondary/primary gates."
     },
     {
       "from": "PrintVictoryMessages",
@@ -22824,10 +22866,13 @@
       "instruction": "bcc",
       "id": "control-00146",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary in 1..2 && world == 7 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PrintVictoryMessages -> IncMsgCounter holds World 8 primary values below three on the counter-only path."
     },
     {
       "from": "PrintVictoryMessages",
@@ -22837,10 +22882,13 @@
       "instruction": "jmp",
       "id": "control-00147",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary in 3..8 && world == 7 continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original tail jump PrintVictoryMessages -> ThankPlayer subtracts one before the World 8 message-index transform."
     },
     {
       "from": "MRetainerMsg",
@@ -22850,10 +22898,13 @@
       "instruction": "bcc",
       "id": "control-00148",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 primary < 2 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original MRetainerMsg -> IncMsgCounter selects counter-only behavior for worlds 1–7 before their second message."
     },
     {
       "from": "MRetainerMsg",
@@ -22863,10 +22914,13 @@
       "instruction": "bcc",
       "id": "control-00149",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 primary >= 2 fall-through",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original MRetainerMsg -> ThankPlayer preserves the primary-derived message index for worlds 1–7."
     },
     {
       "from": "ThankPlayer",
@@ -22876,10 +22930,13 @@
       "instruction": "bne",
       "id": "control-00150",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages ThankPlayer primary-derived index != 0 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ThankPlayer -> SecondPartMsg skips first-player selection whenever its message index is nonzero."
     },
     {
       "from": "ThankPlayer",
@@ -22889,10 +22946,13 @@
       "instruction": "beq",
       "id": "control-00151",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages first message CurrentPlayer == 0 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ThankPlayer -> EvalForMusic selects Mario index zero without modifying it."
     },
     {
       "from": "ThankPlayer",
@@ -22902,10 +22962,13 @@
       "instruction": "bne",
       "id": "control-00152",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages first message CurrentPlayer != 0 continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ThankPlayer -> EvalForMusic increments the first-message index for Luigi before common music evaluation."
     },
     {
       "from": "ThankPlayer",
@@ -22915,10 +22978,13 @@
       "instruction": "bne",
       "id": "control-00153",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages nonzero message-index continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ThankPlayer -> SecondPartMsg enters the world-specific second-message transform after a nonzero index."
     },
     {
       "from": "SecondPartMsg",
@@ -22928,10 +22994,13 @@
       "instruction": "beq",
       "id": "control-00154",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages World 8 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SecondPartMsg -> EvalForMusic retains the incremented World 8 message index."
     },
     {
       "from": "SecondPartMsg",
@@ -22941,10 +23010,13 @@
       "instruction": "bcs",
       "id": "control-00155",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index >= 4 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SecondPartMsg -> SetEndTimer terminates worlds 1–7 messaging at transformed index four."
     },
     {
       "from": "SecondPartMsg",
@@ -22954,10 +23026,13 @@
       "instruction": "bcs",
       "id": "control-00156",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index == 3 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SecondPartMsg -> IncMsgCounter retains the counter-only path at transformed index three."
     },
     {
       "from": "SecondPartMsg",
@@ -22967,10 +23042,13 @@
       "instruction": "bcs",
       "id": "control-00157",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index < 3 continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SecondPartMsg -> EvalForMusic reaches ordinary message output only below the two terminal thresholds."
     },
     {
       "from": "EvalForMusic",
@@ -22980,10 +23058,13 @@
       "instruction": "bne",
       "id": "control-00158",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages message index != 3 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EvalForMusic -> PrintMsg emits a message without queuing VictoryMusic except at World 8 index three."
     },
     {
       "from": "EvalForMusic",
@@ -22993,10 +23074,13 @@
       "instruction": "sta",
       "id": "control-00159",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages message index == 3 continuation after EventMusicQueue write",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original EvalForMusic -> PrintMsg queues VictoryMusic before the corresponding control write."
     },
     {
       "from": "PrintMsg",
@@ -23006,10 +23090,13 @@
       "instruction": "sta",
       "id": "control-00160",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages message-control write continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PrintMsg -> IncMsgCounter updates counters after writing VRAM_Buffer_AddrCtrl."
     },
     {
       "from": "IncMsgCounter",
@@ -23019,10 +23106,13 @@
       "instruction": "cmp",
       "id": "control-00161",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages post-add primary handoff",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original IncMsgCounter -> SetEndTimer compares the carry-adjusted PrimaryMsgCounter after the secondary add-four operation."
     },
     {
       "from": "SetEndTimer",
@@ -23032,10 +23122,13 @@
       "instruction": "bcc",
       "id": "control-00162",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages post-add primary < 7 branch",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetEndTimer -> ExitMsgs returns without WorldEndTimer or task writes below terminal primary seven."
     },
     {
       "from": "SetEndTimer",
@@ -23045,10 +23138,13 @@
       "instruction": "sta",
       "id": "control-00163",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages post-add primary >= 7 continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetEndTimer -> IncModeTask_A writes WorldEndTimer=$06 before the common task increment."
     },
     {
       "from": "IncModeTask_A",
@@ -23058,10 +23154,13 @@
       "instruction": "inc",
       "id": "control-00164",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages common increment continuation",
+      "semanticEvidence": [
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original IncModeTask_A -> ExitMsgs returns only after incrementing OperMode_Task."
     },
     {
       "from": "PlayerEndWorld",
