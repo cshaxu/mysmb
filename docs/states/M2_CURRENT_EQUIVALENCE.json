@@ -126,14 +126,14 @@
       "label": "Start",
       "asmLine": 699,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_power_on",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
       ],
       "semanticContract": "Clears portable game container and publishes physical PPU control $10 before either VBlank timing gate; CPU interrupt/decimal/stack setup is an explicit nonportable ABI exclusion."
     },
@@ -141,14 +141,14 @@
       "label": "VBlank1",
       "asmLine": 706,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_power_on (host timing boundary pending)",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
       ],
       "semanticContract": "First PPU-status polling barrier has no shared mutable game-state write and must complete before VBlank2."
     },
@@ -156,14 +156,14 @@
       "label": "VBlank2",
       "asmLine": 708,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_power_on (host timing boundary pending)",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
       ],
       "semanticContract": "Second PPU-status polling barrier has no shared mutable game-state write and must complete before WBootCheck."
     },
@@ -171,14 +171,14 @@
       "label": "WBootCheck",
       "asmLine": 712,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_reset",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
       ],
       "semanticContract": "Reads TopScoreDisplay offsets 5 down through 0, cold-boots on any digit >= $0a, then accepts warm initialization only when $07ff equals $a5."
     },
@@ -186,14 +186,14 @@
       "label": "ColdBoot",
       "asmLine": 721,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_reset",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
       ],
       "semanticContract": "Calls memory initialization with the selected Y origin, then writes DMC load/mode/marker/LFSR/APU/PPU state, initializes OAM/name tables, raises DisableScreenFlag and enables NMI in source order."
     },
@@ -201,14 +201,14 @@
       "label": "EndlessLoop",
       "asmLine": 737,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_reset -> shared NMI tick boundary",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
       ],
       "semanticContract": "Performs no game-state write after ColdBoot; it waits for the independently scheduled first NMI boundary."
     },
@@ -20097,13 +20097,13 @@
       "instruction": "txs",
       "id": "control-00001",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "Start falls through to the first VBlank barrier after physical PPU setup."
     },
@@ -20115,13 +20115,13 @@
       "instruction": "bpl",
       "id": "control-00002",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "VBlank1 loops while PPU status bit seven is clear."
     },
@@ -20133,13 +20133,13 @@
       "instruction": "bpl",
       "id": "control-00003",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "VBlank1 falls through to VBlank2 only after its status condition succeeds."
     },
@@ -20151,13 +20151,13 @@
       "instruction": "bpl",
       "id": "control-00004",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "VBlank2 loops while PPU status bit seven is clear."
     },
@@ -20169,13 +20169,13 @@
       "instruction": "ldx",
       "id": "control-00005",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "VBlank2 falls through to warm-boot inspection only after its status condition succeeds."
     },
@@ -20187,13 +20187,13 @@
       "instruction": "bcs",
       "id": "control-00006",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "An invalid top-score digit branches directly to ColdBoot."
     },
@@ -20205,13 +20205,13 @@
       "instruction": "bpl",
       "id": "control-00007",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "A valid digit decrements X and loops while unchecked digits remain."
     },
@@ -20223,13 +20223,13 @@
       "instruction": "bne",
       "id": "control-00008",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "A failed warm marker test branches to ColdBoot."
     },
@@ -20241,13 +20241,13 @@
       "instruction": "ldy",
       "id": "control-00009",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "A valid warm marker falls through to ColdBoot with the warm clear origin."
     },
@@ -20259,13 +20259,13 @@
       "instruction": "jsr",
       "id": "control-00010",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "ColdBoot invokes InitializeMemory before any cold-state writes."
     },
@@ -20277,13 +20277,13 @@
       "instruction": "jsr",
       "id": "control-00011",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "ColdBoot invokes the full OAM offscreen pass before name-table initialization."
     },
@@ -20295,13 +20295,13 @@
       "instruction": "jsr",
       "id": "control-00012",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "ColdBoot invokes name-table initialization before setting DisableScreenFlag."
     },
@@ -20313,13 +20313,13 @@
       "instruction": "jsr",
       "id": "control-00013",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "ColdBoot invokes the PPU-control write after setting the NMI-enable bit in the mirror."
     },
@@ -20331,13 +20331,13 @@
       "instruction": "jsr",
       "id": "control-00014",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "ColdBoot falls into the idle loop after its final PPU control write."
     },
@@ -20349,13 +20349,13 @@
       "instruction": "jmp",
       "id": "control-00015",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "EndlessLoop unconditionally repeats without game-state work."
     },
@@ -65438,13 +65438,13 @@
       "instruction": "rts/rti",
       "id": "control-03483",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "InitializeMemory returns to the remaining ColdBoot writes."
     },
@@ -65456,13 +65456,13 @@
       "instruction": "rts/rti",
       "id": "control-03484",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "MoveAllSpritesOffscreen returns to ColdBoot before InitializeNameTables."
     },
@@ -65474,13 +65474,13 @@
       "instruction": "rts/rti",
       "id": "control-03485",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "InitializeNameTables returns to ColdBoot before DisableScreenFlag increment."
     },
@@ -65492,13 +65492,13 @@
       "instruction": "rts/rti",
       "id": "control-03486",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "WritePPUReg1 returns to the idle boundary."
     },
@@ -73401,13 +73401,13 @@
       "instruction": "vector",
       "id": "control-04094",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
       ],
       "operationalEvidence": [
-        "Td S9 A1 fresh cold route: reference.exe ran reset through first NMI return with PC coverage for $8000-$8036; current x86/x64 local recorders produced byte-identical frames and zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences versus ROM after excluding sequence and CPU stack bytes."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
       ],
       "semanticContract": "The reset vector enters Start."
     },

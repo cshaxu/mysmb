@@ -19,8 +19,8 @@ incomplete node/control-edge identities.
 
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
-| Exact | 0 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 9 | Current source audit exists but the current original-ROM route is incomplete. |
+| Exact | 6 | Current source audit and original-ROM route both prove the label. |
+| Needs evidence | 3 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 0 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,983 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -53,8 +53,8 @@ explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
-| Exact | 0 |
-| Needs evidence | 20 |
+| Exact | 20 |
+| Needs evidence | 0 |
 | Mismatch | 0 |
 | Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
@@ -142,16 +142,17 @@ the next numeric T and its S entries.
 
 The first reviewed chain is `Start -> VBlank1 -> VBlank2 -> WBootCheck ->
 ColdBoot -> EndlessLoop`, with the adjacent `VRAM_AddrTable_Low`,
-`VRAM_AddrTable_High` and `VRAM_Buffer_Offset` data labels. Its 9 nodes and
-20 control edges are `needs-evidence`, never exact: current static review
-maps the reset sequence to `boot.c` and the table consumers to `frame_root.c`,
-including all two VBlank branches, warm/cold branches, calls and return paths.
-The fresh cold route now records the original reset through its first NMI
-return: it reaches the two VBlank loops and exits, checks all six score digits,
-takes the cold-marker branch, completes ColdBoot and enters the idle boundary.
-Current x86/x64 frames are byte-identical and have no persistent RAM, CIRAM,
-palette, OAM, audio or PPU difference from that record after the explicit
-sequence/CPU-stack exclusions. This remains `needs-evidence`: the warm-marker
-outcome, invalid-score outcome and complete 19-selector VRAM matrix are not
-yet exercised. The linked JSON ledger names all 29 stable identities and their
-current counterparts.
+`VRAM_AddrTable_High` and `VRAM_Buffer_Offset` data labels. The six executable
+reset labels and all 20 control edges are **exact**. Current static review maps
+the reset sequence to `boot.c`, and three original-ROM pre-NMI captures cover
+cold-marker failure, valid warm marker and an invalid top-score digit. Together
+they execute both VBlank loops and exits, every WBootCheck branch, all ColdBoot
+calls/returns, and the reset vector. Current x86/x64 snapshots at the same
+boundary are byte-identical and have no persistent RAM, CIRAM, palette, OAM,
+audio or PPU difference after the explicit sequence/CPU-stack exclusions.
+
+The three adjacent VRAM table labels remain `needs-evidence`: their current
+`frame_root.c` counterparts and default selector path have static/operational
+evidence, but the full 19-selector pointer and buffer-header matrix still
+needs a same-boundary ROM probe. The linked JSON ledger names all 29 stable
+identities and their current counterparts.
