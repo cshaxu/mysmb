@@ -1352,3 +1352,9 @@ branches.
 - Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering Bowser tone transition, one-up divisibility scan and grow/vine secondary-counter lifecycle.
 - Independent integration result: 21 outgoing control relations received `needs-evidence` contracts. Existing feasible frequency-table edges remain linked; static review found no discrepancy.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K30 — noise SFX audit
+
+- Source range: `BrickShatterFreqData` through `ContinueBowserFlame` (`SMBDIS.ASM` lines 15569–15628).
+- Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering brick/Bowser-flame queue handling, noise APU writes, length decrement and terminal mute.
+- Independent integration result: 18 outgoing control relations plus three feasible noise-table material edges received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 noise timing routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
