@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 322,
+    "enumeratedCount": 327,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4521,6 +4521,76 @@
       "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00323",
+      "producer": "XMovingPlatform",
+      "consumer": "PositionPlayerOnHPlat",
+      "storage": "X-counter movement delta and collision flag to player follow",
+      "feasiblePath": "Counter update/move precedes rider gate.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_x",
+      "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00324",
+      "producer": "PositionPlayerOnHPlat",
+      "consumer": "PPHSubt",
+      "storage": "negative delta addition carry to player page borrow",
+      "feasiblePath": "SBC #0 consumes the add carry complement for negative movement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c position_player_horizontal",
+      "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00325",
+      "producer": "SetPVar",
+      "consumer": "ExXMP",
+      "storage": "updated X/page and Platform_X_Scroll to vertical rider child",
+      "feasiblePath": "Scroll write precedes vertical positioning.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c position_player_horizontal",
+      "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00326",
+      "producer": "DropPlatform",
+      "consumer": "ExDPl",
+      "storage": "collision slot to fast vertical move and rider position",
+      "feasiblePath": "No collision leaves both untouched.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_drop",
+      "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00327",
+      "producer": "RightPlatform",
+      "consumer": "PositionPlayerOnHPlat",
+      "storage": "pre-acceleration horizontal delta, collision and speed $10",
+      "feasiblePath": "Move happens before source speed assignment and rider position.",
+      "status": "needs-evidence",
+      "currentCounterpart": "platform.c mysmb_platform_move_right",
+      "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -21409,91 +21479,118 @@
       "label": "XMovingPlatform",
       "asmLine": 10952,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets X-counter maximum $0e, updates counter then applies movement; only nonnegative collision flag enters player horizontal/vertical positioning."
     },
     {
       "label": "PositionPlayerOnHPlat",
       "asmLine": 10959,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds movement delta to player X, uses source add carry for positive page update or its borrow complement for negative page subtraction, stores Platform_X_Scroll, then positions vertically."
     },
     {
       "label": "PPHSubt",
       "asmLine": 10969,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes the carry from adding a negative delta with SBC #0 to update player page exactly as source."
     },
     {
       "label": "SetPVar",
       "asmLine": 10970,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores page and X scroll before vertical rider positioning."
     },
     {
       "label": "ExXMP",
       "asmLine": 10973,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Common return after optional horizontal/vertical rider positioning."
     },
     {
       "label": "DropPlatform",
       "asmLine": 10977,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Only an existing collision calls fast downward movement then vertical rider position."
     },
     {
       "label": "ExDPl",
       "asmLine": 10982,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after untouched no-collision or completed drop route."
     },
     {
       "label": "RightPlatform",
       "asmLine": 10987,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Moves horizontally first, retains returned delta, then only with collision sets speed $10 and invokes shared horizontal/vertical rider positioning."
     },
     {
       "label": "ExRPl",
       "asmLine": 10995,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/platform.c",
+      "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after untouched no-collision or right-platform route."
     },
     {
       "label": "MoveLargeLiftPlat",
@@ -62988,12 +63085,12 @@
       "id": "control-02151",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation XMovingPlatform -> XMoveCntr_Platform with frame predicate, X counters, direction and source call/return ordering."
+      "semanticContract": "Preserves original call relation XMovingPlatform -> XMoveCntr_Platform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "XMovingPlatform",
@@ -63004,12 +63101,12 @@
       "id": "control-02152",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation XMovingPlatform -> MoveWithXMCntrs with frame predicate, X counters, direction and source call/return ordering."
+      "semanticContract": "Preserves original call relation XMovingPlatform -> MoveWithXMCntrs with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "XMovingPlatform",
@@ -63019,10 +63116,13 @@
       "instruction": "bmi",
       "id": "control-02153",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation XMovingPlatform -> ExXMP with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "XMovingPlatform",
@@ -63032,10 +63132,13 @@
       "instruction": "bmi",
       "id": "control-02154",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation XMovingPlatform -> PositionPlayerOnHPlat with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "PositionPlayerOnHPlat",
@@ -63045,10 +63148,13 @@
       "instruction": "bmi",
       "id": "control-02155",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PositionPlayerOnHPlat -> PPHSubt with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "PositionPlayerOnHPlat",
@@ -63058,10 +63164,13 @@
       "instruction": "jmp",
       "id": "control-02156",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation PositionPlayerOnHPlat -> SetPVar with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "PPHSubt",
@@ -63071,10 +63180,13 @@
       "instruction": "sbc",
       "id": "control-02157",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation PPHSubt -> SetPVar with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "SetPVar",
@@ -63084,10 +63196,13 @@
       "instruction": "jsr",
       "id": "control-02158",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation SetPVar -> PositionPlayerOnVPlat with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "SetPVar",
@@ -63097,10 +63212,13 @@
       "instruction": "jsr",
       "id": "control-02159",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetPVar -> ExXMP with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "DropPlatform",
@@ -63110,10 +63228,13 @@
       "instruction": "bmi",
       "id": "control-02160",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DropPlatform -> ExDPl with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "DropPlatform",
@@ -63123,10 +63244,13 @@
       "instruction": "jsr",
       "id": "control-02161",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DropPlatform -> MoveDropPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "DropPlatform",
@@ -63136,10 +63260,13 @@
       "instruction": "jsr",
       "id": "control-02162",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation DropPlatform -> PositionPlayerOnVPlat with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "DropPlatform",
@@ -63149,10 +63276,13 @@
       "instruction": "jsr",
       "id": "control-02163",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DropPlatform -> ExDPl with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "RightPlatform",
@@ -63162,10 +63292,13 @@
       "instruction": "jsr",
       "id": "control-02164",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RightPlatform -> MoveEnemyHorizontally with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "RightPlatform",
@@ -63175,10 +63308,13 @@
       "instruction": "bmi",
       "id": "control-02165",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RightPlatform -> ExRPl with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "RightPlatform",
@@ -63188,10 +63324,13 @@
       "instruction": "jsr",
       "id": "control-02166",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RightPlatform -> PositionPlayerOnHPlat with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "RightPlatform",
@@ -63201,10 +63340,13 @@
       "instruction": "jsr",
       "id": "control-02167",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RightPlatform -> ExRPl with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "MoveLargeLiftPlat",
@@ -86681,12 +86823,12 @@
       "id": "control-03890",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation XMoveCntr_Platform -> XMovingPlatform with frame predicate, X counters, direction and source call/return ordering."
+      "semanticContract": "Preserves original return relation XMoveCntr_Platform -> XMovingPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "MoveWithXMCntrs",
@@ -86697,12 +86839,12 @@
       "id": "control-03891",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveWithXMCntrs -> XMovingPlatform with frame predicate, X counters, direction and source call/return ordering."
+      "semanticContract": "Preserves original return relation MoveWithXMCntrs -> XMovingPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -86712,10 +86854,13 @@
       "instruction": "rts/rti",
       "id": "control-03892",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> SetPVar with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "MoveDropPlatform",
@@ -86726,12 +86871,12 @@
       "id": "control-03893",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveDropPlatform -> DropPlatform with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveDropPlatform -> DropPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "PositionPlayerOnVPlat",
@@ -86741,10 +86886,13 @@
       "instruction": "rts/rti",
       "id": "control-03894",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> DropPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "MoveEnemyHorizontally",
@@ -86755,12 +86903,12 @@
       "id": "control-03895",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> RightPlatform with source predicate, carry/order handoff and return semantics."
+      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> RightPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "PositionPlayerOnHPlat",
@@ -86770,10 +86918,13 @@
       "instruction": "rts/rti",
       "id": "control-03896",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "semanticEvidence": [
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PositionPlayerOnHPlat -> RightPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "MoveLiftPlatforms",
@@ -93403,12 +93554,12 @@
       "id": "control-04335",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> XMovingPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> XMovingPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -93420,12 +93571,12 @@
       "id": "control-04336",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> DropPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> DropPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "LargePlatformSubroutines",
@@ -93437,12 +93588,12 @@
       "id": "control-04337",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> RightPlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> RightPlatform with collision/delta/carry predicate and call/tail/return ordering."
     },
     {
       "from": "RunStarFlagObj",
