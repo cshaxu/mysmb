@@ -1002,51 +1002,76 @@
       "label": "DemoActionData",
       "asmLine": 1109,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_step_title_demo",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Binds the 21 source demo controller-action bytes in exact source order to DemoEngine action indexes 1 through 21."
     },
     {
       "label": "DemoTimingData",
       "asmLine": 1114,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_step_title_demo",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Binds the 22 source demo timing bytes in exact source order, including the terminal zero entry at index 22."
     },
     {
       "label": "DemoEngine",
       "asmLine": 1119,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_step_title_demo",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Reads action and action timer; branches to held action when nonzero, otherwise increments action, loads timing data, sets terminal carry on zero and falls through to action execution."
     },
     {
       "label": "DoAction",
       "asmLine": 1129,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_step_title_demo",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Loads the selected action byte into SavedJoypad1Bits, decrements the selected action timer and clears carry before return."
     },
     {
       "label": "DemoOver",
       "asmLine": 1133,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentOwner": "src/game/title_modes.c",
+      "currentCounterpart": "mysmb_game_step_title_demo",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Returns the DemoEngine carry result without additional state mutation."
     },
     {
       "label": "VictoryMode",
@@ -21798,10 +21823,15 @@
       "instruction": "jsr",
       "id": "control-00088",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Original call relation ChkSelect -> DemoEngine at source line 1010 must invoke the demo action/timing owner only after the zero-demo-timer gate, preserving the returned terminal condition."
     },
     {
       "from": "ChkSelect",
@@ -21811,13 +21841,15 @@
       "instruction": "bcs",
       "id": "control-00089",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original branch relation ChkSelect -> ResetTitle at source line 1011 (bcs) must preserve the title-menu predicate, ordered helper call/return and state handoff."
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Original branch relation ChkSelect -> ResetTitle at source line 1011 must transfer only the terminal carry result returned by DemoEngine into the reset path."
     },
     {
       "from": "ChkSelect",
@@ -21827,10 +21859,15 @@
       "instruction": "jmp",
       "id": "control-00090",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Original jump relation ChkSelect -> RunDemo at source line 1012 must preserve the nonterminal demo return and transfer to the GameCore caller."
     },
     {
       "from": "ChkWorldSel",
@@ -22293,10 +22330,15 @@
       "instruction": "bne",
       "id": "control-00119",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Original branch relation DemoEngine -> DoAction at source line 1122 must preserve a nonzero action-timer held-action route."
     },
     {
       "from": "DemoEngine",
@@ -22306,10 +22348,15 @@
       "instruction": "beq",
       "id": "control-00120",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Original branch relation DemoEngine -> DemoOver at source line 1128 must preserve terminal zero-timing return behavior."
     },
     {
       "from": "DemoEngine",
@@ -22319,10 +22366,15 @@
       "instruction": "beq",
       "id": "control-00121",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Original fallthrough relation DemoEngine -> DoAction at source line 1128 must preserve action increment, timing-table load and nonzero timer action execution order."
     },
     {
       "from": "DoAction",
@@ -22332,10 +22384,15 @@
       "instruction": "clc",
       "id": "control-00122",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
+      "semanticEvidence": [
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+      ],
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Original fallthrough relation DoAction -> DemoOver at source line 1132 must preserve input write, timer decrement, carry clear and return ordering."
     },
     {
       "from": "VictoryMode",
@@ -66270,13 +66327,15 @@
       "instruction": "rts/rti",
       "id": "control-03498",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original return relation DemoEngine -> ChkSelect at source line 1010 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
+      "operationalEvidence": [
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+      ],
+      "semanticContract": "Original return relation DemoEngine -> ChkSelect at source line 1010 must preserve the terminal/nonterminal condition used by the caller."
     },
     {
       "from": "DrawMushroomIcon",
