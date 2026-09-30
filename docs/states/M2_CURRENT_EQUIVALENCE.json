@@ -25359,61 +25359,79 @@
       "label": "DoPlayerSideCheck",
       "asmLine": 12052,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes side-probe adder and two-half counter after foot stage."
     },
     {
       "label": "SideCheckLoop",
       "asmLine": 12059,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Probes first half with top/bottom bounds and side-pipe exceptions, then routes climb or second half."
     },
     {
       "label": "BHalf",
       "asmLine": 12075,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Probes second half within its distinct vertical bounds and loops until both halves complete."
     },
     {
       "label": "ExSCH",
       "asmLine": 12086,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from side collision processing."
     },
     {
       "label": "CheckSideMTiles",
       "asmLine": 12088,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates invisible and climbable side tiles before common side metatile handling."
     },
     {
       "label": "ContSChk",
       "asmLine": 12094,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Checks side coin and jumpspring paths before normal-state/facing/pipe decision."
     },
     {
       "label": "ChkPBtm",
@@ -72346,10 +72364,13 @@
       "instruction": "sta",
       "id": "control-02485",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe fallthrough relation DoPlayerSideCheck → SideCheckLoop with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72359,10 +72380,13 @@
       "instruction": "bcc",
       "id": "control-02486",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation SideCheckLoop → BHalf with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72372,10 +72396,13 @@
       "instruction": "bcs",
       "id": "control-02487",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation SideCheckLoop → ExSCH with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72386,12 +72413,12 @@
       "id": "control-02488",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SideCheckLoop -> BlockBufferColli_Side with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves side-probe call relation SideCheckLoop → BlockBufferColli_Side with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72401,10 +72428,13 @@
       "instruction": "beq",
       "id": "control-02489",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation SideCheckLoop → BHalf with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72414,10 +72444,13 @@
       "instruction": "beq",
       "id": "control-02490",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation SideCheckLoop → BHalf with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72427,10 +72460,13 @@
       "instruction": "beq",
       "id": "control-02491",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation SideCheckLoop → BHalf with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72440,10 +72476,13 @@
       "instruction": "jsr",
       "id": "control-02492",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe call relation SideCheckLoop → CheckForClimbMTiles with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72453,10 +72492,13 @@
       "instruction": "bcc",
       "id": "control-02493",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation SideCheckLoop → CheckSideMTiles with half-loop, bounds and tile ordering."
     },
     {
       "from": "SideCheckLoop",
@@ -72466,10 +72508,13 @@
       "instruction": "bcc",
       "id": "control-02494",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe fallthrough relation SideCheckLoop → BHalf with half-loop, bounds and tile ordering."
     },
     {
       "from": "BHalf",
@@ -72479,10 +72524,13 @@
       "instruction": "bcc",
       "id": "control-02495",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation BHalf → ExSCH with half-loop, bounds and tile ordering."
     },
     {
       "from": "BHalf",
@@ -72492,10 +72540,13 @@
       "instruction": "bcs",
       "id": "control-02496",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation BHalf → ExSCH with half-loop, bounds and tile ordering."
     },
     {
       "from": "BHalf",
@@ -72506,12 +72557,12 @@
       "id": "control-02497",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation BHalf -> BlockBufferColli_Side with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves side-probe call relation BHalf → BlockBufferColli_Side with half-loop, bounds and tile ordering."
     },
     {
       "from": "BHalf",
@@ -72521,10 +72572,13 @@
       "instruction": "bne",
       "id": "control-02498",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation BHalf → CheckSideMTiles with half-loop, bounds and tile ordering."
     },
     {
       "from": "BHalf",
@@ -72534,10 +72588,13 @@
       "instruction": "bne",
       "id": "control-02499",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation BHalf → SideCheckLoop with half-loop, bounds and tile ordering."
     },
     {
       "from": "BHalf",
@@ -72547,10 +72604,13 @@
       "instruction": "bne",
       "id": "control-02500",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe fallthrough relation BHalf → ExSCH with half-loop, bounds and tile ordering."
     },
     {
       "from": "CheckSideMTiles",
@@ -72560,10 +72620,13 @@
       "instruction": "jsr",
       "id": "control-02501",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe call relation CheckSideMTiles → ChkInvisibleMTiles with half-loop, bounds and tile ordering."
     },
     {
       "from": "CheckSideMTiles",
@@ -72573,10 +72636,13 @@
       "instruction": "beq",
       "id": "control-02502",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation CheckSideMTiles → ExCSM with half-loop, bounds and tile ordering."
     },
     {
       "from": "CheckSideMTiles",
@@ -72586,10 +72652,13 @@
       "instruction": "jsr",
       "id": "control-02503",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe call relation CheckSideMTiles → CheckForClimbMTiles with half-loop, bounds and tile ordering."
     },
     {
       "from": "CheckSideMTiles",
@@ -72599,10 +72668,13 @@
       "instruction": "bcc",
       "id": "control-02504",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe branch relation CheckSideMTiles → ContSChk with half-loop, bounds and tile ordering."
     },
     {
       "from": "CheckSideMTiles",
@@ -72612,10 +72684,13 @@
       "instruction": "jmp",
       "id": "control-02505",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe jump relation CheckSideMTiles → HandleClimbing with half-loop, bounds and tile ordering."
     },
     {
       "from": "ContSChk",
@@ -72625,10 +72700,13 @@
       "instruction": "jsr",
       "id": "control-02506",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe call relation ContSChk → CheckForCoinMTiles with half-loop, bounds and tile ordering."
     },
     {
       "from": "ContSChk",
@@ -95141,12 +95219,12 @@
       "id": "control-03958",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BlockBufferColli_Side -> SideCheckLoop with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves side-probe return relation BlockBufferColli_Side → SideCheckLoop with half-loop, bounds and tile ordering."
     },
     {
       "from": "CheckForClimbMTiles",
@@ -95156,10 +95234,13 @@
       "instruction": "rts/rti",
       "id": "control-03959",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe return relation CheckForClimbMTiles → SideCheckLoop with half-loop, bounds and tile ordering."
     },
     {
       "from": "BlockBufferColli_Side",
@@ -95170,12 +95251,12 @@
       "id": "control-03960",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BlockBufferColli_Side -> BHalf with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves side-probe return relation BlockBufferColli_Side → BHalf with half-loop, bounds and tile ordering."
     },
     {
       "from": "ChkInvisibleMTiles",
@@ -95185,10 +95266,13 @@
       "instruction": "rts/rti",
       "id": "control-03961",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe return relation ChkInvisibleMTiles → CheckSideMTiles with half-loop, bounds and tile ordering."
     },
     {
       "from": "CheckForClimbMTiles",
@@ -95198,10 +95282,13 @@
       "instruction": "rts/rti",
       "id": "control-03962",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe return relation CheckForClimbMTiles → CheckSideMTiles with half-loop, bounds and tile ordering."
     },
     {
       "from": "CheckForCoinMTiles",
@@ -95211,10 +95298,13 @@
       "instruction": "rts/rti",
       "id": "control-03963",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "semanticEvidence": [
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves side-probe return relation CheckForCoinMTiles → ContSChk with half-loop, bounds and tile ordering."
     },
     {
       "from": "ChkJumpspringMetatiles",

@@ -1463,3 +1463,9 @@ branches.
 - Node-semantics result: six labels moved from `unclassified` to `needs-evidence`, covering dual feet probes, coin/axe/invisible/jumpspring paths and landing resets.
 - Independent integration result: 33 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled feet routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K49 — player side-probe first-half audit
+
+- Source range: `DoPlayerSideCheck` through `ContSChk` (`SMBDIS.ASM` lines 12052–12094).
+- Node-semantics result: six labels moved from `unclassified` to `needs-evidence`, covering two-half probes, bounds, climb/invisible and coin/jumpspring gates.
+- Independent integration result: 28 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled side routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
