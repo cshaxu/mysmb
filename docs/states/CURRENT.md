@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M2 Td S9 Packet
+## M2 T51 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 Td S9 — current-equivalence re-audit and repair-queue governance |
-| Admission And Approval | Owner-directed re-audit after historical completion accounting proved insufficient to track present end-to-end equivalence. |
-| Objective | Establish current-build, source-order node and edge registries for the complete original ROM graph, then produce an ordered, unnumbered repair queue from confirmed discrepancies. |
-| Non-goals | No gameplay repair, node-credit promotion, platform logic, numeric implementation T allocation, or M2 closure. |
-| Reference Baseline | Historical accounting: 1,992 / 1,992. Current node registry: 38 exact, 1944 needs-evidence, 10 mismatch, 0 unclassified. Current control-edge registry: 76 exact, 4241 needs-evidence, 25 mismatch, 0 unclassified. Proven material RAM/table ledger: 3 exact, 483 needs-evidence and 1 mismatch (487 currently proven feasible relations, all allocated to a source-order cohort; later source-path review may add newly proven relations). Scope is all labels and extracted edges; expected match delta is zero. |
-| Candidate Proposal | docs/proposals/m2/current-equivalence-reaudit.md. |
-| Files And ABI Surface | Governance states, audit registry, queue and neutral build-local recorder outputs; no production source mutation. |
+| Identifier Mode | M2 T51 S5 — cross-route integration certification and discrepancy disposition |
+| Admission And Approval | Continuation of the owner-approved M2 ROM-equivalence program; Td S9 has closed its zero-credit current-equivalence governance audit. |
+| Objective | Complete the existing T51 integration review by dispositioning its cross-route findings, preserving evidence boundaries, and admitting any necessary shared-core repair only as the next T51 subtask. |
+| Non-goals | No unplanned game logic repair, node-credit promotion, platform-owned game behavior, M2 closure, or new numeric T allocation. |
+| Reference Baseline | Historical accounting: 1,992 / 1,992. Current re-audit: 38 exact, 1,944 needs-evidence and 10 mismatch nodes; 76 exact, 4,241 needs-evidence and 25 mismatch control edges; 3 exact, 483 needs-evidence and 1 mismatch material relations. S5 owns zero implementation labels. |
+| Candidate Proposal | docs/proposals/m2/t51-residual-equivalence-and-certification.md; audit evidence in docs/proposals/m2/current-equivalence-reaudit.md and docs/states/M2_CURRENT_EQUIVALENCE.md. |
+| Files And ABI Surface | Governance states, integration evidence and test expectations only. Any later repair must use a separately admitted T51 S6 packet and shared `src/game/` owner. |
 | Applicable Rules | Execution, documentation, architecture, coding and source/research policy. |
-| Verification | Node and edge registry integrity/counts; source-order cohort allocation; fresh original-ROM/x86/x64 preflight; platform-purity and documentation governance. |
-| Expected Markers | 1,992 historical labels retained; every label and every extracted ROM graph edge assigned to one audit cohort; each node has a semantic contract, and each control or feasible material edge has an independently audited integration contract; no production artifact change. |
-| Asset Needs | Owner-local ROM only under ignored build paths; no ROM, generated source, trace or executable is committed. |
-| Reporting Requirements | Report historical count, current node counts and current edge counts separately; after every cohort report exact/needs-evidence/mismatch totals, routes, covered edges, and resulting unnumbered repair candidates. |
-| Stop Conditions | Stop implementation on a node or edge mismatch; record its minimal contiguous chain and continue only independent audit cohorts. |
-| Exit Criteria | Every label has a current semantic disposition; every extracted control edge and every proven feasible material edge has an independently recorded integration disposition; every mismatch has an ordered repair candidate; and the registries and queue pass governance review. |
-| Original Owner Request | Faithful original-ROM C logic shared by DOS16 and Win32; DOS16 stays active via OpenNT, without DOSBox. |
-| Similar-Issue Sweep | Audit every platform source for game-state decisions and every current mismatch for adjacent owner-chain effects. |
+| Verification | Cross-route source and ROM review; current node/edge registry integrity; x86/x64 operational routes; OpenNT DOS16 build; platform-purity and documentation governance. |
+| Expected Markers | No S5 node-count increase; every S5 finding is either source-proved, retained as a current discrepancy, or handed to one bounded next-S shared-core repair chain. |
+| Asset Needs | Owner-local ROM only below ignored build paths; no ROM, derived source, trace or executable is committed. |
+| Reporting Requirements | Report historical and current-equivalence counts separately; identify each finding's ROM entry, shared owner, predecessor/successor and repair disposition. |
+| Stop Conditions | Stop any code change until a bounded next-S packet has named its source-order chain, custody, original route and dual verification tracks. |
+| Exit Criteria | Existing S5 integration findings are dispositioned without suppressing current mismatches; the next required repair is bounded under T51 or S5 is closed if no repair remains. |
+| Original Owner Request | Faithful original-ROM C logic shared by DOS16 and Win32; platform adapters contain no gameplay logic; DOS16 remains active through OpenNT. |
+| Similar-Issue Sweep | For every current mismatch, inspect adjacent shared-owner entry/exit and scratch/register handoff; audit all platform sources for game-state decisions. |
 
 ## Current Technical Baseline
 
@@ -29,13 +29,10 @@ One shared native C90 game implementation serves DOS16 and Win32 x86/x64.
 DOS16 stays active through the existing OpenNT toolchain. Platform adapters do
 not own game logic.
 
-## Current Td S9 Preflight
+## Td S9 Closure Baseline
 
-T51 S5 found that its historical 1,992 / 1,992 status did not itself express
-fresh full-graph behavior coverage. Its current T31 preflight replay confirms
-the previously recorded PPU and audio residuals are no longer reproducible,
-including the old pipe/vine diagnostic samples; this is retained as route
-evidence only, not a claim that every label is newly audited. Td S9 now turns
-that observation into an explicit whole-graph audit program. DOS resource
-binding remains an M3 presentation requirement and does not change the shared
-logic audit.
+The current-equivalence governance audit closed with every registry record
+dispositioned and source-anchored. It found bounded shared-core discrepancies;
+it did not establish fresh whole-graph equivalence. The next code change,
+if admitted, must remain inside the existing T51 continuation and must repair
+the ROM-defined owner chain rather than a platform adapter.

@@ -110,3 +110,26 @@ evidence format distinguishes historical accounting from current equivalence;
 and the queue has a reviewable, source-order candidate format. Then cohorts
 execute without changing this governance contract unless the audit itself
 proves it insufficient.
+
+## Td S9 closure: current-equivalence governance
+
+Td S9 closes with zero implementation-node credit.  The historical ledger
+remains **1,992 / 1,992**; that numerator is retained only as prior
+per-node completion accounting and is not a fresh equivalence assertion.
+
+The current registry is complete as a governance deliverable: all 1,992 ROM
+labels, 4,342 extracted control relations and 487 currently proven feasible
+material relations have one source-order cohort allocation, a semantic or
+integration disposition, and a current shared-C source-path anchor.  Its
+closing dispositions are 38 exact, 1,944 needs-evidence and 10 mismatch
+nodes; 76 exact, 4,241 needs-evidence and 25 mismatch control edges; and
+3 exact, 483 needs-evidence and 1 mismatch material relations.  The
+needs-evidence entries remain deliberately unpromoted until their required
+branch/table/read-write route is observed or source-proved.
+
+The ordered queue records every confirmed discrepancy without assigning a new
+numeric T.  The first executable repair remains the A2 NMI-prefix chain:
+`RotPRandomBit -> SkipSprite0 -> OperModeExecutionTree`, with the enclosing
+`NonMaskableInterrupt` handoff.  It belongs to the still-open T51 continuation
+rather than a new task number.  Td S9 changed no production or platform source,
+created no artifact, and did not assert M2 closure.
