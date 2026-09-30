@@ -4901,6 +4901,90 @@
         "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00350",
+      "producer": "HandlePowerUpCollision",
+      "consumer": "Shroom_Flower_PUp",
+      "storage": "PowerUpType after erase/score/sound common prefix",
+      "feasiblePath": "Types below two enter mushroom/fire-flower status dispatch after common erase, score six and PowerUpGrab writes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/powerup_collision.c type dispatch",
+      "semanticContract": "Status conversion consumes PowerUpType only after the source common pickup effects.",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00351",
+      "producer": "HandlePowerUpCollision",
+      "consumer": "SetFor1Up",
+      "storage": "PowerUpType equal three and active FloateyNum_Control",
+      "feasiblePath": "Type three changes only the active floatey modifier from six to eleven.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/powerup_collision.c type==3 branch",
+      "semanticContract": "1UP preserves the common pickup effects and overwrites only the source floatey control.",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00352",
+      "producer": "HandlePowerUpCollision",
+      "consumer": "NoPUp",
+      "storage": "StarInvincibleTimer and AreaMusicQueue",
+      "feasiblePath": "Non-0/1/3 types write timer $23 and StarPower music before return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/powerup_collision.c star branch",
+      "semanticContract": "Star pickup writes timer and music after common pickup effects without a player-routine transition.",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00353",
+      "producer": "Shroom_Flower_PUp",
+      "consumer": "UpToFiery",
+      "storage": "PlayerStatus, palette queue and routine value $0c",
+      "feasiblePath": "Only status one becomes fiery, queues palette update and selects routine $0c.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/powerup_collision.c status==1 branch",
+      "semanticContract": "Fiery transition completes palette handling before SetPRout receives routine twelve/state zero.",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00354",
+      "producer": "UpToSuper",
+      "consumer": "UpToFiery",
+      "storage": "PlayerStatus one and routine value $09",
+      "feasiblePath": "Small Mario writes status one then falls through with routine nine.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/powerup_collision.c status==0 branch",
+      "semanticContract": "Super transition reaches common routine setup with status one and routine nine.",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00355",
+      "producer": "UpToFiery",
+      "consumer": "NoPUp",
+      "storage": "GameEngineSubroutine, Player_State, TimerControl and ScrollAmount",
+      "feasiblePath": "SetPRout consumes selected routine/state and publishes player transformation routing before return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c:mysmb_objects_set_player_routine",
+      "semanticContract": "The routine child owns timer halt and scroll initialization for both super and fiery pickup tails.",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -4977,15 +5061,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1267,
+    "needs-evidence": 1273,
     "mismatch": 9,
-    "unclassified": 678
+    "unclassified": 672
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 2735,
+    "needs-evidence": 2750,
     "mismatch": 25,
-    "unclassified": 1506
+    "unclassified": 1491
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -22274,61 +22358,79 @@
       "label": "HandlePowerUpCollision",
       "asmLine": 11262,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/powerup_collision.c",
+      "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Erases the power-up, initializes modifier six and PowerUpGrab sound before type dispatch; types 0/1 go to status logic, type 3 overwrites the floatey modifier with eleven, and other types set star timer $23 and StarPower music."
     },
     {
       "label": "Shroom_Flower_PUp",
       "asmLine": 11279,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/powerup_collision.c",
+      "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Routes small Mario to super, only super Mario to fiery, and leaves any other status unchanged; fiery conversion changes palette before the routine/state tail."
     },
     {
       "label": "SetFor1Up",
       "asmLine": 11292,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/powerup_collision.c",
+      "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Overwrites the already-initialized floatey-number control for the active ObjectOffset with eleven and returns without changing player status."
     },
     {
       "label": "UpToSuper",
       "asmLine": 11297,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/powerup_collision.c",
+      "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes player status one and falls through with routine value nine into the common player-routine setter."
     },
     {
       "label": "UpToFiery",
       "asmLine": 11302,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/powerup_collision.c",
+      "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies player state zero and the caller-selected routine value to SetPRout, which halts the source timers and initializes scroll state."
     },
     {
       "label": "NoPUp",
       "asmLine": 11305,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/powerup_collision.c",
+      "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from every terminal power-up type/status path after preserving the resulting score, sound, status and routine changes."
     },
     {
       "label": "ResidualXSpdData",
@@ -64951,12 +65053,12 @@
       "id": "control-02244",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation HandlePowerUpCollision -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original call relation HandlePowerUpCollision -> EraseEnemyObject with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "HandlePowerUpCollision",
@@ -64966,10 +65068,13 @@
       "instruction": "jsr",
       "id": "control-02245",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation HandlePowerUpCollision -> SetupFloateyNumber with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "HandlePowerUpCollision",
@@ -64979,10 +65084,13 @@
       "instruction": "bcc",
       "id": "control-02246",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePowerUpCollision -> Shroom_Flower_PUp with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "HandlePowerUpCollision",
@@ -64992,10 +65100,13 @@
       "instruction": "beq",
       "id": "control-02247",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation HandlePowerUpCollision -> SetFor1Up with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "Shroom_Flower_PUp",
@@ -65005,10 +65116,13 @@
       "instruction": "beq",
       "id": "control-02248",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Shroom_Flower_PUp -> UpToSuper with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "Shroom_Flower_PUp",
@@ -65018,10 +65132,13 @@
       "instruction": "bne",
       "id": "control-02249",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Shroom_Flower_PUp -> NoPUp with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "Shroom_Flower_PUp",
@@ -65031,10 +65148,13 @@
       "instruction": "jsr",
       "id": "control-02250",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation Shroom_Flower_PUp -> GetPlayerColors with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "Shroom_Flower_PUp",
@@ -65044,10 +65164,13 @@
       "instruction": "jmp",
       "id": "control-02251",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation Shroom_Flower_PUp -> UpToFiery with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "UpToSuper",
@@ -65057,10 +65180,13 @@
       "instruction": "lda",
       "id": "control-02252",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation UpToSuper -> UpToFiery with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "UpToFiery",
@@ -65070,10 +65196,13 @@
       "instruction": "jsr",
       "id": "control-02253",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation UpToFiery -> SetPRout with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "UpToFiery",
@@ -65083,10 +65212,13 @@
       "instruction": "jsr",
       "id": "control-02254",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation UpToFiery -> NoPUp with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65096,10 +65228,13 @@
       "instruction": "bcs",
       "id": "control-02255",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPUp with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -65239,10 +65374,13 @@
       "instruction": "jmp",
       "id": "control-02266",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation CheckForPUpCollision -> HandlePowerUpCollision with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "EColl",
@@ -87726,12 +87864,12 @@
       "id": "control-03908",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EraseEnemyObject -> HandlePowerUpCollision with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> HandlePowerUpCollision with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -87741,10 +87879,13 @@
       "instruction": "rts/rti",
       "id": "control-03909",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetupFloateyNumber -> HandlePowerUpCollision with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "GetPlayerColors",
@@ -87754,10 +87895,13 @@
       "instruction": "rts/rti",
       "id": "control-03910",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetPlayerColors -> Shroom_Flower_PUp with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "SetPRout",
@@ -87767,10 +87911,13 @@
       "instruction": "rts/rti",
       "id": "control-03911",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "semanticEvidence": [
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetPRout -> UpToFiery with source type/status predicate and score/status/routine handoff ordering."
     },
     {
       "from": "CheckPlayerVertical",

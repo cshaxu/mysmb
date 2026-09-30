@@ -1146,3 +1146,8 @@ branches.
 ### Cohort J — B16j hammer-player collision integration
 
 `PlayerHammerCollision` through `ExPHC` now has three node contracts, every incident frame/timer/offscreen gate, geometry call, collision/latch branch, injury tail and return relation, plus four feasible collision-state handoffs. Static review matches odd-frame execution, combined timer/offscreen zero gate, misc box `slot*4+$24`, post-geometry ObjectOffset reload, one-hit latch/reversal, star-only injury suppression and miss latch clear. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 gated, miss, new-hit, repeated-hit and star-invincible routes.
+
+
+### Cohort J — B16k power-up collection integration
+
+`HandlePowerUpCollision` through `NoPUp` now has six node contracts, every incident erase/score/palette/routine call, type/status branch, caller edge and return relation, plus six feasible pickup handoffs. Static review matches common erase/modifier-six/PowerUpGrab order, `<2`, `==3` and star type dispatch, 1UP-only score overwrite, small-to-super and super-to-fiery restrictions, fiery palette order and the `$09/$0c` SetPRout tails. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 mushroom, flower, 1UP, star and nonconvertible-status routes.
