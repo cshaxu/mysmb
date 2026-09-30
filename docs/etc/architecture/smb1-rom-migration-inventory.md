@@ -1857,11 +1857,11 @@ The labels and branches behind every line remain open until individually bound b
 | 14535 | `PlayerOffscreenChk` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-playeroffscreenchk); [T46 S1 recheck](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
 | 14547 | `PROfsLoop` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-profsloop); [T46 S1 recheck](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
 | 14551 | `NPROffscr` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-nproffscr); [T46 S1 recheck](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
-| 14561 | `IntermediatePlayerData` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-intermediateplayerdata) |
-| 14564 | `DrawPlayer_Intermediate` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D7](m2-t24-s1-node-verification.md#node-drawplayer_intermediate) |
-| 14566 | `PIntLoop` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D7](m2-t24-s1-node-verification.md#node-pintloop) |
-| 14587 | `RenderPlayerSub` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D6](m2-t24-s1-node-verification.md#node-renderplayersub) |
-| 14601 | `DrawPlayerLoop` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D6](m2-t24-s1-node-verification.md#node-drawplayerloop) |
+| 14561 | `IntermediatePlayerData` | M2 T46 S2 shared src/game/oam/player_gfx.c; owner PRG data | ROM-match complete | [T46 S2 closure](../../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) |
+| 14564 | `DrawPlayer_Intermediate` | M2 T46 S2 shared src/game/oam/player_gfx.c; owner PRG data | ROM-match complete | [T46 S2 closure](../../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) |
+| 14566 | `PIntLoop` | M2 T46 S2 shared src/game/oam/player_gfx.c; owner PRG data | ROM-match complete | [T46 S2 closure](../../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) |
+| 14587 | `RenderPlayerSub` | M2 T46 S2 shared src/game/oam/player_gfx.c; owner PRG data | ROM-match complete | [T46 S2 closure](../../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) |
+| 14601 | `DrawPlayerLoop` | M2 T46 S2 shared src/game/oam/player_gfx.c; owner PRG data | ROM-match complete | [T46 S2 closure](../../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) |
 | 14610 | `ProcessPlayerAction` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D8](m2-t24-s1-node-verification.md#node-processplayeraction) |
 | 14626 | `ProcOnGroundActs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-procongroundacts) |
 | 14642 | `NonAnimatedActs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-nonanimatedacts) |

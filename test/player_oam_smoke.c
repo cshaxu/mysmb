@@ -54,12 +54,26 @@ int main(void)
         game.ram[0x0209U] != 0x20U || game.ram[0x020aU] != 0x42U) return 1;
     for (index = 0U; index < 8U; ++index)
         prg[(mysmb_u16)(0x6e17U + 0xb8U + index)] = (mysmb_u8)(0x40U + index);
+    /* Synthetic table values prove that the intermediate path reads its
+     * six source bytes and copies the following sprite's attribute. */
+    prg[0x6f9eU] = 0x54U;
+    prg[0x6f9fU] = 1U;
+    prg[0x6fa0U] = 0U;
+    prg[0x6fa1U] = 0x64U;
+    prg[0x6fa2U] = 0xfeU;
+    prg[0x6fa3U] = 4U;
+    game.ram[0x0226U] = 3U;
+    game.ram[0x0222U] = 0x20U;
     mysmb_oam_draw_intermediate_player(&game);
-    if (game.ram[0x0204U] != 0x58U || game.ram[0x0205U] != 0x40U ||
-        game.ram[0x0207U] != 0x60U || game.ram[0x0208U] != 0x58U ||
-        game.ram[0x0209U] != 0x41U || game.ram[0x020bU] != 0x68U ||
-        game.ram[0x021cU] != 0x70U || game.ram[0x021dU] != 0x46U ||
-        game.ram[0x021fU] != 0x60U || game.ram[0x0222U] != 0x40U) return 1;
+    if (game.ram[0x0204U] != 0x54U || game.ram[0x0205U] != 0x40U ||
+        game.ram[0x0207U] != 0x64U || game.ram[0x0208U] != 0x54U ||
+        game.ram[0x0209U] != 0x41U || game.ram[0x020bU] != 0x6cU ||
+        game.ram[0x021cU] != 0x6cU || game.ram[0x021dU] != 0x46U ||
+        game.ram[0x021fU] != 0x64U || game.ram[0x0222U] != 0x43U ||
+        game.ram[0U] != 0x46U || game.ram[1U] != 0x47U ||
+        game.ram[2U] != 0x74U || game.ram[3U] != 1U ||
+        game.ram[4U] != 0U || game.ram[5U] != 0x64U ||
+        game.ram[6U] != 0xfeU || game.ram[7U] != 0U) return 1;
     /* ROM ChkForPlayerAttrib treats graphics offset $c8 like PlayerKilled:
      * it flips the right sprites of both the third and fourth rows. */
     for (index = 0U; index < 8U; ++index)

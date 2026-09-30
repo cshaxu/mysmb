@@ -1051,6 +1051,8 @@ int main(int argument_count, char **arguments)
     char *player_table_variant_end;
     unsigned int player_control_variant;
     char *player_control_variant_end;
+    unsigned int intermediate_player_variant;
+    char *intermediate_player_variant_end;
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
@@ -1099,6 +1101,7 @@ int main(int argument_count, char **arguments)
     bubble_draw_variant = 0xffffffffu;
     player_table_variant = 0xffffffffu;
     player_control_variant = 0xffffffffu;
+    intermediate_player_variant = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
@@ -1106,6 +1109,16 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--intermediate-player-variant=", 30u) == 0) {
+            unsigned long value;
+            if (intermediate_player_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 30u,
+                            &intermediate_player_variant_end, 10);
+            if (intermediate_player_variant_end == arguments[recorded] + 30u ||
+                *intermediate_player_variant_end != '\0' || value >= 4u) return 64;
+            intermediate_player_variant = (unsigned int)value;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--player-control-variant=", 25u) == 0) {
             unsigned long value;
             if (player_control_variant != 0xffffffffu) return 64;
@@ -3772,6 +3785,18 @@ int main(int argument_count, char **arguments)
             if (choice == 10u) ram[0x03d0u] = 0xf0u;
             if (choice == 11u) ram[0x03d0u] = 0x50u;
         }
+        /* T46 S2: seed only OAM input bytes when the world/lives caller
+         * naturally enters DrawPlayer_Intermediate. */
+        if (elapsed >= warmup_frames && t26_fixture == 23u &&
+            intermediate_player_variant != 0xffffffffu &&
+            before_pc == 0xefa4u) {
+            driver->machine->ram[0x0226u] =
+                (lib_u8)(intermediate_player_variant == 0u ? 0u :
+                (intermediate_player_variant == 1u ? 3u :
+                (intermediate_player_variant == 2u ? 0x80u : 0xc3u)));
+            driver->machine->ram[0x0222u] =
+                (lib_u8)(intermediate_player_variant == 0u ? 0u : 0x20u);
+        }
         if (elapsed >= warmup_frames && background_snapshot == 11u &&
             bubble_draw_variant != 0xffffffffu && before_pc == 0xede1u) {
             driver->machine->ram[0x00b5u] =
@@ -4483,6 +4508,32 @@ int main(int argument_count, char **arguments)
                 entrance_child_active = entrance_children[entrance_child_count][0];
             }
         }
+        /* T46 S2: observe the actual world/lives DrawPlayer_Intermediate
+         * JSR and its stack-derived return without altering execution. */
+        if (entrance_children_path != NULL && t26_fixture == 23u &&
+            elapsed >= warmup_frames) {
+            if (entrance_child_active != 0u) {
+                if (before_pc == entrance_child_return && driver->machine->s ==
+                    (lib_u8)(entrance_child_stack + 2u)) {
+                    memcpy(entrance_children[entrance_child_count] + 2050u,
+                           driver->machine->ram, 2048u);
+                    ++entrance_child_count;
+                    entrance_child_active = 0u;
+                }
+            }
+            else if (before_pc == 0xefa4u) {
+                if (entrance_child_count >= 16u) return 69;
+                entrance_children[entrance_child_count][0] = 1u;
+                entrance_children[entrance_child_count][1] = driver->machine->x;
+                memcpy(entrance_children[entrance_child_count] + 2u,
+                       driver->machine->ram, 2048u);
+                entrance_child_stack = driver->machine->s;
+                entrance_child_return = (lib_u16)(1u +
+                    driver->machine->ram[0x100u + (lib_u8)(entrance_child_stack + 1u)] +
+                    256u * driver->machine->ram[0x100u + (lib_u8)(entrance_child_stack + 2u)]);
+                entrance_child_active = 1u;
+            }
+        }
         /* Observe declared child entry/return states while the original
          * PlayerEntrance executes. Read the real return address and stack
          * depth; never replace the original child or alter CPU state. */
@@ -4842,8 +4893,14 @@ int main(int argument_count, char **arguments)
         unsigned char header[8] = { 'M','S','E','C',1u,0u,0u,0u };
         unsigned int child;
         int ok;
-        if ((background_snapshot < 3u || background_snapshot > 80u) || movement_snapshot_phase != 2u ||
-            entrance_child_active != 0u) return 69;
+        if (t26_fixture == 23u) {
+            if (entrance_child_count != 1u || entrance_child_active != 0u)
+                return 69;
+            header[2] = 'I';
+        }
+        else if ((background_snapshot < 3u || background_snapshot > 80u) ||
+                 movement_snapshot_phase != 2u ||
+                 entrance_child_active != 0u) return 69;
         if (background_snapshot == 4u) header[2] = 'P';
         if (background_snapshot == 5u) header[2] = 'T';
         if (background_snapshot == 6u) header[2] = 'M';

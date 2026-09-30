@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1679 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 71 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| ROM-match complete | 1684 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 66 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
 | Open / unmatched | 242 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1679 / 1,992 (84.29%)**. The 71 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1684 / 1,992 (84.54%)**. The 66 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T46 S1 closure](../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) completes ten new player-graphics control labels and rechecks three retained offscreen labels. Original branch PCs and 54 source-reached player children match full non-stack RAM/OAM on x86/x64; focused tests, DOS16 link, purity and three EXEs are separate operational evidence.
+Latest task review: [T46 S2 closure](../proposals/m2/t46-player-graphics-control.md#s2-closure-intermediate-data-and-shared-row-loop) completes five intermediate/player row-renderer labels. Original world/lives and GameEngine children match full non-stack RAM/OAM on x86/x64; focused tests, DOS16 link, purity and three EXEs provide separate operational evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1679)
+## Completed matches (1684)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1712,8 +1712,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
+| 14561 | `IntermediatePlayerData` |
+| 14564 | `DrawPlayer_Intermediate` |
+| 14566 | `PIntLoop` |
+| 14587 | `RenderPlayerSub` |
+| 14601 | `DrawPlayerLoop` |
 
-## Mapped but not yet matched (71)
+## Mapped but not yet matched (66)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1753,11 +1758,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 14561 | `IntermediatePlayerData` |
-| 14564 | `DrawPlayer_Intermediate` |
-| 14566 | `PIntLoop` |
-| 14587 | `RenderPlayerSub` |
-| 14601 | `DrawPlayerLoop` |
 | 14610 | `ProcessPlayerAction` |
 | 14626 | `ProcOnGroundActs` |
 | 14642 | `NonAnimatedActs` |

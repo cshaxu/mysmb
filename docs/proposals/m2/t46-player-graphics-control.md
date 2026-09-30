@@ -142,3 +142,100 @@ product change:
 | `assets/mysmb16.exe` | `8bdff925bb8b871ad1f66d28b5de8c821b74571f8bd523fac6fbbd05ea10c7e0` |
 | `assets/mysmb32.exe` | `cd7c19ce9a9e44ac3b752ad2bda909e1992f2053af7e0887f0747f474e88eb3` |
 | `assets/mysmb64.exe` | `3cc8de08a3460519c27940e4953a86868be31bed2c2cb2545961500bbf51c5ac` |
+
+## S2: intermediate screen and shared player row renderer
+
+Entry `IntermediatePlayerData` follows S1 `NPROffscr`; exit
+`DrawPlayerLoop` precedes S3 `ProcessPlayerAction`. Exact scope:
+`IntermediatePlayerData`, `DrawPlayer_Intermediate`, `PIntLoop`,
+`RenderPlayerSub`, `DrawPlayerLoop`. All five are incomplete and
+transfer from M2 T16 S4 on admission. Shared owner is
+`src/game/oam/player_gfx.c`. The intermediate world/lives caller
+reaches `DrawPlayer_Intermediate`; the ordinary GameEngine and
+fireball-throw callers reach `RenderPlayerSub` and share
+`DrawPlayerLoop`. S1's dispatch is the predecessor; S3's action
+selector is a caller dependency, not a scope credit.
+
+The original-ROM logic track uses the naturally reached
+`--fixture=t27-screen-player-intermediate` frame (original `$efa4`
+entry and four `$efdc` row iterations), plus the S1 GameEngine
+player child for the ordinary four-row and throw three-row uses of
+`RenderPlayerSub`. The intermediate child comparison includes all
+non-stack RAM/OAM bytes and a seeded attribute-source difference to
+resolve T24 D7. Original table bytes, scratch `$02–$07`, scroll
+position, row count, loop successors and OAM attributes must agree
+on x86/x64. CPU PC, registers, stack and ROM remain unchanged.
+
+The separate operational track runs focused intermediate/player
+graphics tests, x86/x64 full builds and product self-tests, DOS16 MZ
+link, platform purity and three owner-authorized EXEs. The S1 baseline
+is **1,679 / 1,992**; all five labels are expected new matches, so
+maximum closure is **1,684 / 1,992**.
+
+| ROM line / PC | Label | Incoming |
+| --- | --- | --- |
+| 14561 / `$ef9e` | `IntermediatePlayerData` | audited; evidence incomplete |
+| 14564 / `$efa4` | `DrawPlayer_Intermediate` | audited; mismatch D7 |
+| 14566 / `$efa6` | `PIntLoop` | audited; mismatch D7 |
+| 14587 / `$efbe` | `RenderPlayerSub` | audited; mismatch D6 |
+| 14601 / `$efdc` | `DrawPlayerLoop` | audited; mismatch D6 |
+
+### S2 admission record
+
+The continuing owner-approved M2 source-order mandate admits
+**M2 T46 S2** with the five exact labels above, all expected new
+matches. M2 T16 S4 accepts their transfer to this one shared-game
+implementation chain. The admission gate and original route metadata
+are under ignored `build/m2-t46-s2/`.
+
+### S2 closure: intermediate data and shared row loop
+
+All **5 / 5** S2 labels are ROM-match complete. M2 advances from
+**1,679** to **1,684 / 1,992**, with no S2 deferral. The original
+world/lives caller reaches `DrawPlayer_Intermediate` at `$efa4`
+without changing CPU PC, registers, stack or ROM. Four bounded
+attribute-source variants preserve that natural call and compare the
+entire non-stack 2 KB RAM/OAM image after its stack-derived return:
+**8/8** native x86/x64 child checks match. The original six data bytes
+at PRG `$6f9e–$6fa3` match the reviewed listing locally; the shared
+C owner reads them from the owner PRG instead of copying them into
+tracked code.
+
+| Label | Original control/data/write binding and witness |
+| --- | --- |
+| `IntermediatePlayerData` | Six PRG bytes are consumed in reverse order and copied to scratch `$02–$07`. Local listing/ROM data check is **6/6**, and all six resulting scratch bytes match in four original children. |
+| `DrawPlayer_Intermediate` | Original `$efa4` reached four times by the world/lives caller. After row drawing, the source reads `Sprite_Attributes+36`, ORs `$40`, and stores `Sprite_Attributes+32`; seeded source/target differences match x86/x64 and resolve T24 D7. |
+| `PIntLoop` | Original `$efa6` executes **24** copies across four cases. Branch `$efac` has **20** loop and **4** exit successors; resulting `$02–$07` and all OAM bytes match. |
+| `RenderPlayerSub` | Ordinary and fireball-throw GameEngine child routes visit `$efbe` **six** times across four frames. They exercise four-row and three-row calls; scroll-position, scratch and OAM effects match both native widths, resolving T24 D6 for this body. |
+| `DrawPlayerLoop` | Original `$efdc` runs **16** intermediate plus **23** ordinary/throw row iterations. The `$efe9` row loop takes **29** repeat and **10** exit successors; table-indexed tiles, scratch countdown and OAM match on both widths. |
+
+The initial original child comparison found nine native differences:
+scratch `$00–$07` and the final attribute byte. The repair in shared
+`oam/player_gfx.c` restores the original data copy, row-loop scratch
+effects and attribute source. A project-owned intermediate child
+checker confirms zero non-stack RAM/OAM differences for each variant.
+Four GameEngine player children provide a separate full-child check
+for ordinary and throw row counts, **8/8** x86/x64 matches. Raw frame,
+coverage and child records were deleted after use; only neutral
+summaries remain under ignored `build/m2-t46-s2/`.
+
+The similar-issue sweep searched all production player-row callers
+and uses of the affected sprite attribute: ordinary and throw
+rendering already share the corrected row helper; the intermediate
+caller alone had omitted the scratch copy and read the wrong
+attribute source. No platform code owns either behavior. The focused
+player OAM test now uses synthetic PRG data to verify the input
+binding and attribute source without storing protected table bytes.
+
+The separate operational track passes the intermediate original
+child checker on x86/x64, three focused CTests per width, complete
+x86/x64 builds, OpenNT DOS16 MZ link, both Win32 product self-tests
+and platform purity. Full suites each pass **222/233** with exactly
+the prior eleven unrelated failures and no new failures. Three
+owner-authorized refreshed executables:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `d07cfaec7e989328287cddbb976486287f180290a759890fc4e8db18dba5b8a` |
+| `assets/mysmb32.exe` | `c450dbec21e22573bb9aa61cdd3f0746d9360f6e295d819fa640531db5cdc104` |
+| `assets/mysmb64.exe` | `1a2fea06ec11eaac1c9634843aa87948c94f42217bfa41b6f94d775d2db8bec4` |

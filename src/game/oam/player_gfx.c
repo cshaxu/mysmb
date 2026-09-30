@@ -39,7 +39,9 @@ enum {
     MYSMB_PLAYER_GRAPHICS_TABLE_END = 0x6ee7U,
     MYSMB_SWIM_KICK_TILE_NUM = 0x6ee7U,
     MYSMB_SWIM_KICK_TABLE_END = 0x6ee9U,
-    MYSMB_SWIM_TILE_REP_OFFSET = 0x6eb5U
+    MYSMB_SWIM_TILE_REP_OFFSET = 0x6eb5U,
+    MYSMB_INTERMEDIATE_PLAYER_DATA = 0x6f9eU,
+    MYSMB_INTERMEDIATE_PLAYER_DATA_END = 0x6fa4U
 };
 /* ROM $ee35-$ef25 action selection.  The source table remains in the
  * owner-local PRG binding, rather than becoming tracked C data. */
@@ -393,19 +395,29 @@ void mysmb_oam_draw_intermediate_player(struct mysmb_game *game)
     mysmb_u8 y;
 
     if (game->area_prg == 0 ||
-        game->area_prg_size < MYSMB_PLAYER_GRAPHICS_TABLE_END) return;
-    oam_offset = 4U;
-    y = 0x58U;
-    for (row = 0U; row < 4U; ++row) {
-        mysmb_oam_player_draw_row(game, &oam_offset, &y, 0x60U,
-            game->area_prg[(mysmb_u16)(MYSMB_PLAYER_GRAPHICS_TABLE + 0xb8U +
-                                        row * 2U)],
-            game->area_prg[(mysmb_u16)(MYSMB_PLAYER_GRAPHICS_TABLE + 0xb8U +
-                                        row * 2U + 1U)],
-            0U, MYSMB_BUTTON_RIGHT);
+        game->area_prg_size < MYSMB_INTERMEDIATE_PLAYER_DATA_END) return;
+    /* Original PIntLoop copies six PRG data bytes into $02-$07 in
+     * reverse index order before the shared DrawPlayerLoop. */
+    for (row = 6U; row != 0U; ) {
+        row--;
+        game->ram[(mysmb_u16)(2U + row)] =
+            game->area_prg[(mysmb_u16)(MYSMB_INTERMEDIATE_PLAYER_DATA + row)];
     }
-    /* DrawPlayer_Intermediate flips its bottom-right sprite after the four
-     * rows have been emitted. */
-    game->ram[0x0222U] = (mysmb_u8)(game->ram[0x0222U] | 0x40U);
+    oam_offset = 4U;
+    y = game->ram[2U];
+    for (row = 0U; row < 4U; ++row) {
+        game->ram[0U] = game->area_prg[(mysmb_u16)(
+            MYSMB_PLAYER_GRAPHICS_TABLE + 0xb8U + row * 2U)];
+        game->ram[1U] = game->area_prg[(mysmb_u16)(
+            MYSMB_PLAYER_GRAPHICS_TABLE + 0xb8U + row * 2U + 1U)];
+        mysmb_oam_player_draw_row(game, &oam_offset, &y, game->ram[5U],
+            game->ram[0U], game->ram[1U],
+            game->ram[4U], game->ram[3U]);
+        game->ram[2U] = y;
+        game->ram[7U]--;
+    }
+    /* The source reads the next sprite's attribute at +36 and stores its
+     * horizontal-flip result in the preceding sprite at +32. */
+    game->ram[0x0222U] = (mysmb_u8)(game->ram[0x0226U] | 0x40U);
 }
 
