@@ -6063,6 +6063,76 @@
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00433",
+      "producer": "XOffscreenBitsData",
+      "consumer": "GetXOffscreenBits",
+      "storage": "ROM XOffscreenBitsData table to X boundary result",
+      "feasiblePath": "Each X boundary loop indexes XOffscreenBitsData after resolving its page/pixel partition.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c owner-local constant table binding",
+      "semanticContract": "The selected ordered X mask reaches the X offscreen result.",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00434",
+      "producer": "DefaultXOnscreenOfs",
+      "consumer": "GetXOffscreenBits",
+      "storage": "ROM DefaultXOnscreenOfs table to X partition initialization",
+      "feasiblePath": "Each X boundary loop selects the source default offset before optional pixel-difference refinement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c owner-local constant table binding",
+      "semanticContract": "The edge selector reads the same default X partition offset.",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00435",
+      "producer": "YOffscreenBitsData",
+      "consumer": "GetYOffscreenBits",
+      "storage": "ROM YOffscreenBitsData table to Y boundary result",
+      "feasiblePath": "Each Y boundary loop indexes YOffscreenBitsData after resolving its high/pixel partition.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c owner-local constant table binding",
+      "semanticContract": "The selected ordered Y mask reaches the Y offscreen result.",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00436",
+      "producer": "DefaultYOnscreenOfs",
+      "consumer": "GetYOffscreenBits",
+      "storage": "ROM DefaultYOnscreenOfs table to Y partition initialization",
+      "feasiblePath": "Each Y boundary loop selects the source default offset before optional pixel-difference refinement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c owner-local constant table binding",
+      "semanticContract": "The edge selector reads the same default Y partition offset.",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00437",
+      "producer": "HighPosUnitData",
+      "consumer": "GetYOffscreenBits",
+      "storage": "ROM HighPosUnitData table to Y edge comparison",
+      "feasiblePath": "Each Y boundary loop selects top/bottom high-position unit before subtracting object Y.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c owner-local constant table binding",
+      "semanticContract": "The selected ordered high-position unit controls the same Y-edge difference.",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -28824,161 +28894,209 @@
       "label": "XOffscreenBitsData",
       "asmLine": 14927,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds sixteen ordered X-axis offscreen bit masks indexed by the resolved X boundary/partition offset."
     },
     {
       "label": "DefaultXOnscreenOfs",
       "asmLine": 14931,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the three ordered default X partition offsets used by right/left boundary selection."
     },
     {
       "label": "GetXOffscreenBits",
       "asmLine": 14934,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Starts at the right boundary, computes page/pixel difference and selects an X offscreen mask, examining the left boundary only when the right result is zero."
     },
     {
       "label": "XOfsLoop",
       "asmLine": 14937,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For one X screen edge, derives default or divided partition index from page difference, signed comparison and pixel difference."
     },
     {
       "label": "XLdBData",
       "asmLine": 14953,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads the selected X mask, restores source offset and either exits on nonzero bits or retries the remaining left edge."
     },
     {
       "label": "ExXOfsBS",
       "asmLine": 14959,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the selected X offscreen mask."
     },
     {
       "label": "YOffscreenBitsData",
       "asmLine": 14963,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds nine ordered Y-axis offscreen bit masks indexed by the resolved Y boundary/partition offset."
     },
     {
       "label": "DefaultYOnscreenOfs",
       "asmLine": 14968,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the three ordered default Y partition offsets used by top/bottom boundary selection."
     },
     {
       "label": "HighPosUnitData",
       "asmLine": 14971,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the top and bottom high-position edge values used by Y coordinate comparison."
     },
     {
       "label": "GetYOffscreenBits",
       "asmLine": 14974,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Starts at the top boundary, computes vertical-unit/pixel difference and selects a Y offscreen mask, examining bottom only when top result is zero."
     },
     {
       "label": "YOfsLoop",
       "asmLine": 14977,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For one Y screen edge, derives default or divided partition index from high-byte comparison and pixel difference."
     },
     {
       "label": "YLdBData",
       "asmLine": 14993,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads the selected Y mask, restores source offset and either exits on nonzero bits or retries the remaining bottom edge."
     },
     {
       "label": "ExYOfsBS",
       "asmLine": 14999,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the selected Y offscreen mask."
     },
     {
       "label": "DividePDiff",
       "asmLine": 15003,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes the supplied partition adder to scratch, retains current offset when pixel difference reaches the preset, otherwise divides by eight and resolves side-specific partition index."
     },
     {
       "label": "SetOscrO",
       "asmLine": 15015,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Transfers the resolved partition index to the table-index register."
     },
     {
       "label": "ExDivPD",
       "asmLine": 15016,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/object_position.c",
+      "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the current or resolved partition index to its X/Y caller."
     },
     {
       "label": "DrawSpriteObject",
@@ -80560,10 +80678,13 @@
       "instruction": "ldy",
       "id": "control-03140",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through GetXOffscreenBits → XOfsLoop preserves prior boundary/index state before the successor."
     },
     {
       "from": "XOfsLoop",
@@ -80573,10 +80694,13 @@
       "instruction": "bmi",
       "id": "control-03141",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch XOfsLoop → XLdBData preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "XOfsLoop",
@@ -80586,10 +80710,13 @@
       "instruction": "bpl",
       "id": "control-03142",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch XOfsLoop → XLdBData preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "XOfsLoop",
@@ -80599,10 +80726,13 @@
       "instruction": "jsr",
       "id": "control-03143",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call XOfsLoop → DividePDiff receives the source difference, threshold and edge selector before return to its loop."
     },
     {
       "from": "XOfsLoop",
@@ -80612,10 +80742,13 @@
       "instruction": "jsr",
       "id": "control-03144",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through XOfsLoop → XLdBData preserves prior boundary/index state before the successor."
     },
     {
       "from": "XLdBData",
@@ -80625,10 +80758,13 @@
       "instruction": "bne",
       "id": "control-03145",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch XLdBData → ExXOfsBS preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "XLdBData",
@@ -80638,10 +80774,13 @@
       "instruction": "bpl",
       "id": "control-03146",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch XLdBData → XOfsLoop preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "XLdBData",
@@ -80651,10 +80790,13 @@
       "instruction": "bpl",
       "id": "control-03147",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through XLdBData → ExXOfsBS preserves prior boundary/index state before the successor."
     },
     {
       "from": "GetYOffscreenBits",
@@ -80664,10 +80806,13 @@
       "instruction": "ldy",
       "id": "control-03148",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through GetYOffscreenBits → YOfsLoop preserves prior boundary/index state before the successor."
     },
     {
       "from": "YOfsLoop",
@@ -80677,10 +80822,13 @@
       "instruction": "bmi",
       "id": "control-03149",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch YOfsLoop → YLdBData preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "YOfsLoop",
@@ -80690,10 +80838,13 @@
       "instruction": "bpl",
       "id": "control-03150",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch YOfsLoop → YLdBData preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "YOfsLoop",
@@ -80703,10 +80854,13 @@
       "instruction": "jsr",
       "id": "control-03151",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call YOfsLoop → DividePDiff receives the source difference, threshold and edge selector before return to its loop."
     },
     {
       "from": "YOfsLoop",
@@ -80716,10 +80870,13 @@
       "instruction": "jsr",
       "id": "control-03152",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through YOfsLoop → YLdBData preserves prior boundary/index state before the successor."
     },
     {
       "from": "YLdBData",
@@ -80729,10 +80886,13 @@
       "instruction": "bne",
       "id": "control-03153",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch YLdBData → ExYOfsBS preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "YLdBData",
@@ -80742,10 +80902,13 @@
       "instruction": "bpl",
       "id": "control-03154",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch YLdBData → YOfsLoop preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "YLdBData",
@@ -80755,10 +80918,13 @@
       "instruction": "bpl",
       "id": "control-03155",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through YLdBData → ExYOfsBS preserves prior boundary/index state before the successor."
     },
     {
       "from": "DividePDiff",
@@ -80768,10 +80934,13 @@
       "instruction": "bcs",
       "id": "control-03156",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch DividePDiff → ExDivPD preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "DividePDiff",
@@ -80781,10 +80950,13 @@
       "instruction": "bcs",
       "id": "control-03157",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch DividePDiff → SetOscrO preserves its signed/page/pixel boundary predicate before its alternate path."
     },
     {
       "from": "DividePDiff",
@@ -80794,10 +80966,13 @@
       "instruction": "adc",
       "id": "control-03158",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through DividePDiff → SetOscrO preserves prior boundary/index state before the successor."
     },
     {
       "from": "SetOscrO",
@@ -80807,10 +80982,13 @@
       "instruction": "tax",
       "id": "control-03159",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SetOscrO → ExDivPD preserves prior boundary/index state before the successor."
     },
     {
       "from": "DrawSpriteObject",
@@ -87418,10 +87596,13 @@
       "instruction": "rts/rti",
       "id": "control-03638",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetXOffscreenBits → ChkPOffscr exposes the resolved partition index or offscreen mask to its caller continuation."
     },
     {
       "from": "JumpEngine",
@@ -92950,12 +93131,12 @@
       "id": "control-03994",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetXOffscreenBits -> LargePlatformBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering."
+      "semanticContract": "The source return relation GetXOffscreenBits → LargePlatformBoundBox exposes the resolved partition index or offscreen mask to its caller continuation."
     },
     {
       "from": "BoundingBoxCore",
@@ -93142,12 +93323,12 @@
       "id": "control-04006",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation GetXOffscreenBits -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering."
+      "semanticContract": "The source return relation GetXOffscreenBits → SetPlatformTilenum exposes the resolved partition index or offscreen mask to its caller continuation."
     },
     {
       "from": "MoveSixSpritesOffscreen",
@@ -93967,10 +94148,13 @@
       "instruction": "rts/rti",
       "id": "control-04058",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetXOffscreenBits → RunOffscrBitsSubs exposes the resolved partition index or offscreen mask to its caller continuation."
     },
     {
       "from": "DividePDiff",
@@ -93980,10 +94164,13 @@
       "instruction": "rts/rti",
       "id": "control-04059",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation DividePDiff → XOfsLoop exposes the resolved partition index or offscreen mask to its caller continuation."
     },
     {
       "from": "DividePDiff",
@@ -93993,10 +94180,13 @@
       "instruction": "rts/rti",
       "id": "control-04060",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "semanticEvidence": [
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation DividePDiff → YOfsLoop exposes the resolved partition index or offscreen mask to its caller continuation."
     },
     {
       "from": "PlaySqu1Sfx",

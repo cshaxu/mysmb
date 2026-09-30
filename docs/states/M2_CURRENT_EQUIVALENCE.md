@@ -1304,3 +1304,9 @@ branches.
 - Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering all object-family wrapper offsets, common X/Y-nibble assembly and result write-back.
 - Independent integration result: 42 outgoing control relations received `needs-evidence` contracts. `ObjOffsetData` retains its previously-recorded feasible material edge; static review found no discrepancy. Controlled original-ROM/x86/x64 routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K22 — X/Y offscreen-bit algorithm audit
+
+- Source range: `XOffscreenBitsData` through `ExDivPD` (`SMBDIS.ASM` lines 14927–15016).
+- Node-semantics result: sixteen labels moved from `unclassified` to `needs-evidence`, covering X/Y tables, boundary loops and the shared pixel-difference partition helper.
+- Independent integration result: 26 outgoing control relations plus five feasible table-to-consumer material edges received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 left/right/top/bottom and partition-boundary routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
