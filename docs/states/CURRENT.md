@@ -2,31 +2,30 @@
 
 ## Current Work
 
-## M2 T54 S7 Packet
+## M2 T55 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T54 S7 — Cohort B ScreenRoutines dispatcher current-equivalence audit. |
-| Admission And Approval | S6 is closed with zero feasible differences; owner-directed source-order continuation. |
-| Objective | Audit `ScreenRoutines` against the original JumpEngine task-vector dispatch and return integration after independently verified task chains; repair every feasible difference and repeat the audit to zero. |
-| Non-goals | No historical-node credit, no re-audit of closed target internals, and no platform-owned game decision. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 165 exact, 1,827 needs-evidence, 0 mismatch nodes; 330 exact, 3,994 needs-evidence, 0 mismatch feasible controls; 10 exact material relations. Scope: 1 label, incoming needs-evidence; expected historical delta 0. |
-| Candidate Proposal | docs/proposals/m2/t54-cohort-b-current-proof.md. |
-| Files And ABI Surface | Shared `src/game/game.c` screen-task dispatcher, focused tests, registry/ledger evidence only; platform adapters remain outside gameplay. |
+| Identifier Mode | M2 T55 S1 — Cohort C renderer and attribute-output current-equivalence audit. |
+| Admission And Approval | T54 S7 is closed with zero scoped feasible differences; owner-directed source-order continuation. |
+| Objective | Audit `RenderAreaGraphics` through `SetVRAMCtrl`, repair every feasible shared-C difference, and repeat the scoped ROM/native and graph audit to zero. |
+| Non-goals | No historical-node credit, no palette-rotation implementation, and no platform-owned game decision. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 166 exact, 1,826 needs-evidence nodes; 347 exact, 3,977 needs-evidence feasible controls. Scope: 11 labels, all incoming `needs-evidence`; expected historical delta 0. |
+| Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
+| Files And ABI Surface | Shared `src/game/area.c`, focused recorder/tests and current-equivalence registry only; platforms remain presentation/input adapters. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | ROM-logic: task-vector/control-return audit and controlled original-ROM/x86/x64 screen-task matrix. Operational: focused checks, x86/x64 and DOS16 builds if source changes, platform-purity audit, and three artifacts if product code changes. |
-| Expected Markers | Every scoped node and source-owned feasible relation has a current C counterpart with source-order, branch/state and output evidence; no scoped difference remains. |
-| Asset Needs | Owner-local ROM only for ignored traces under build/m2-t54-s7; artifacts refresh only if product code changes. |
-| Reporting Requirements | Report exact scoped labels, incoming/current dispositions, control/material relations, current-registry before/after and separate operational outcome. |
-| Stop Conditions | A feasible ROM/C difference remains after repair, an original branch/callee handoff lacks a shared-C counterpart, a trace exceeds its budget, or platform code makes a gameplay decision. |
-| Exit Criteria | The S may close only when every scoped feasible node and relation is exact under static and controlled ROM/native evidence. |
+| Verification | ROM-logic: controlled original-ROM/x86/x64 renderer route plus node/edge and material-handoff audit. Operational: focused checks, x86/x64 and DOS16 builds if source changes, platform-purity audit, and three artifacts if product code changes. |
+| Expected Markers | All 11 labels and their incident feasible relations have a current shared-C counterpart with source-order, predicate, state/output and return evidence; no scoped difference remains. |
+| Asset Needs | Owner-local ROM only for ignored traces below build/m2-t55-s1; artifacts refresh only if product code changes. |
+| Reporting Requirements | Report exact scoped labels, incoming/current dispositions, edge/material relations, current-registry before/after and separate operational outcome. |
+| Stop Conditions | A feasible ROM/C difference remains after repair, a source relation lacks a shared-C counterpart, a trace exceeds its budget, or platform code makes a gameplay decision. |
+| Exit Criteria | The S closes only when every scoped feasible node, control relation and material handoff is exact under static and controlled ROM/native evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | All task selectors, default handling, task-local successor writes and target return handoff. |
+| Similar-Issue Sweep | Renderer row direction, attribute boundaries, control-six ownership, caller/return handoff and all four AreaParserTasks renderer selectors. |
 
 ## Current Technical Baseline
 
-M2 T54 S7 is closed with the final Cohort-B screen dispatcher current-exact.
-No successor S has been admitted.
+M2 T55 S1 is active after the closed T54 S7 dispatcher audit. It begins Cohort C with renderer and attribute output.
 
 ## S5 Closure
 
