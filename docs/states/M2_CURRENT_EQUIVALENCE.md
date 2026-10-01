@@ -105,6 +105,19 @@ words nor returns to `TitleScreenMode`.  The raw graph remains 4,342 records;
 relations.  This is graph correction only; title-mode node and executable
 route evidence remain in T53 S2.
 
+### T53 S2 title/menu/demo result
+
+All 26 title/menu/world-select/icon/demo labels are now current-exact. Six
+fresh 600-frame original-ROM routes cover idle/demo, Select, enabled
+world-select B, Start, A+Start and expired Select. Current x86 and x64 agree
+with the ROM in work RAM `$0200-$07ff` except `$0778/$0779`, both CIRAM pages,
+palette, OAM, audio and PPU scalars; the two native records are byte-identical.
+The focused title-data and title-demo checks pass. The six-byte
+`WSelectBufferTemplate` material relation is also exact. The live registry is
+now **75 exact nodes**, **142 exact control relations**, **18 infeasible raw
+relations**, **4,324 feasible control relations**, and one remaining
+`ScreenOff` mismatch. Historical conformance remains **1,992 / 1,992**.
+
 ## Source-anchor resolvability finding
 
 Td S9's independent counterpart-resolvability pass found that the existing

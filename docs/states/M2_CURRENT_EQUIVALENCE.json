@@ -9192,13 +9192,16 @@
       "consumer": "UpdateShroom",
       "storage": "ROM WSelectBufferTemplate VRAM bytes",
       "feasiblePath": "World-select update copies the six source template bytes before writing the world digit.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c world_select_template copy loop",
       "semanticContract": "Template byte order and destination offsets match the source VRAM update.",
       "semanticEvidence": [
-        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
+        "M2 T53 S2 source audit: WSelectBufferTemplate at line 993 is the exact six-byte sequence 04 20 73 01 00 00; title_modes.c copies it from index zero through five before overwriting the displayed world digit."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 world-select B route: original ROM, x86 and x64 match for 600 frames after WorldSelectEnableFlag=1 and B at frame 100, including the six VRAM-buffer bytes and final world digit."
+      ],
       "cohort": "A",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10295,13 +10298,16 @@
       "label": "TitleScreenMode",
       "asmLine": 982,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Reads OperMode_Task and dispatches exactly one title vector: initialization, screen routine, primary setup or game menu.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10311,13 +10317,16 @@
       "label": "WSelectBufferTemplate",
       "asmLine": 993,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c and src/game/title_modes.c",
       "currentCounterpart": "mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
       "semanticEvidence": [
-        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Supplies six-byte world-select VRAM template copied by title menu update loop.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -10328,13 +10337,16 @@
       "label": "GameMenuRoutine",
       "asmLine": 996,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Combines both saved controller latches and applies the source Start, A+Start, Select, demo and world-select decision tree.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -10348,10 +10360,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_start_from_title",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Transfers exact Start/A+Start input to ChkContinue without a separate title-side mutation.",
       "currentSourcePaths": [
@@ -10367,11 +10381,13 @@
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
-        "T52 S2 A6 repair: title_modes.c now preserves the source ChkSelect order, checking DemoTimer before ChkWorldSel."
+        "T52 S2 A6 repair: title_modes.c now preserves the source ChkSelect order, checking DemoTimer before ChkWorldSel.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
         "Td S9 A6 controlled title-menu mismatch route: with DemoTimer=0, WorldSelectEnableFlag=1 and B pressed, original ROM takes ChkSelect -> DemoEngine before ChkWorldSel; current x86/x64 takes the world-select branch and ResetTitle. The first divergent title-owned field is OperMode_Task (ROM 3, C 0) at the common post-menu boundary.",
-        "T52 S2 controlled owner-ROM fixture: expired B route hits $8245-$8269 then DemoEngine $836b; x86/x64 title-demo smoke passes."
+        "T52 S2 controlled owner-ROM fixture: expired B route hits $8245-$8269 then DemoEngine $836b; x86/x64 title-demo smoke passes.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "When Start did not match, selects Select processing, active-demo/world-select processing, or DemoEngine at demo timeout.",
       "repairCandidate": null,
@@ -10388,10 +10404,12 @@
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
-        "T52 S2 A6 source/C comparison: the nonzero DemoTimer B route alone reaches the WorldSelectEnableFlag/B predicate and SelectBLogic tail."
+        "T52 S2 A6 source/C comparison: the nonzero DemoTimer B route alone reaches the WorldSelectEnableFlag/B predicate and SelectBLogic tail.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "T52 S2 controlled owner-ROM fixture: active B route hits $826c-$8273 and does not hit DemoEngine; x86/x64 title-demo smoke passes."
+        "T52 S2 controlled owner-ROM fixture: active B route hits $826c-$8273 and does not hit DemoEngine; x86/x64 title-demo smoke passes.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Requires WorldSelectEnableFlag and B before entering the same SelectBLogic path with the B origin.",
       "currentSourcePaths": [
@@ -10402,13 +10420,16 @@
       "label": "SelectBLogic",
       "asmLine": 1018,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Resets DemoTimer, gates SelectTimer, then toggles player count/icon or selects world according to the Select/B origin.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -10422,10 +10443,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64."
+        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Increments WorldSelectNumber modulo eight, calls GoContinue and prepares the six-byte world-select VRAM template.",
       "currentSourcePaths": [
@@ -10440,10 +10463,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step template loop",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64."
+        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Copies all six template bytes in source order and stores WorldNumber plus one in the template blank position.",
       "currentSourcePaths": [
@@ -10458,10 +10483,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64."
+        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Clears SavedJoypad1Bits before the common demo/game-core result.",
       "currentSourcePaths": [
@@ -10472,13 +10499,16 @@
       "label": "RunDemo",
       "asmLine": 1049,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c and src/game/title_modes.c",
       "currentCounterpart": "mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
       "semanticEvidence": [
-        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Calls GameCoreRoutine in the same title-menu frame, then resets title only when game-engine subroutine equals six.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -10493,10 +10523,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_reset_title",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Clears OperMode, OperMode_Task and Sprite0HitDetectFlag, increments DisableScreenFlag, then returns.",
       "currentSourcePaths": [
@@ -10511,10 +10543,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_chk_continue",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Rejects Start when DemoTimer is zero; otherwise uses the A-bit carry condition to choose continuation world or StartWorld1.",
       "currentSourcePaths": [
@@ -10529,10 +10563,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_start_world1",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Loads the area pointer, increments the two hidden-1UP flags and new-timer flag, advances mode, applies hard mode and clears task/demo timer before score initialization.",
       "currentSourcePaths": [
@@ -10547,10 +10583,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_init_scores",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Clears the exact 24-byte ScoreAndCoinDisplay range in descending source order.",
       "currentSourcePaths": [
@@ -10565,10 +10603,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_exit_menu",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Returns without additional state mutation.",
       "currentSourcePaths": [
@@ -10583,10 +10623,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_go_continue",
       "semanticEvidence": [
-        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
+        "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64."
+        "Td S9 A6 controlled title-menu route: original ROM entered through the ordinary NMI mode dispatcher, then GameMenuRoutine received the same title-owned RAM fixture as current x86/x64. The world-select B route reached GoContinue, IncWorldSel, UpdateShroom and NullJoypad before RunDemo; all owned RAM and six-byte VRAM buffer output matched on x86 and x64.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Stores source world to both current/offscreen worlds and clears both current/offscreen area numbers.",
       "currentSourcePaths": [
@@ -10601,10 +10643,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_draw_mushroom_icon",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Binds the exact eight-byte source icon packet, including VRAM buffer offset and terminator.",
       "currentSourcePaths": [
@@ -10619,10 +10663,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_draw_mushroom_icon",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Initializes Y to seven and enters the descending icon data copy loop.",
       "currentSourcePaths": [
@@ -10637,10 +10683,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_draw_mushroom_icon",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Copies all eight icon bytes in descending order, then branches on NumberOfPlayers before optional two-player tile overwrites.",
       "currentSourcePaths": [
@@ -10655,10 +10703,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_draw_mushroom_icon",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Returns without further mutation after the selected icon layout is complete.",
       "currentSourcePaths": [
@@ -10673,10 +10723,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_step_title_demo",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Binds the 21 source demo controller-action bytes in exact source order to DemoEngine action indexes 1 through 21.",
       "currentSourcePaths": [
@@ -10691,10 +10743,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_step_title_demo",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Binds the 22 source demo timing bytes in exact source order, including the terminal zero entry at index 22.",
       "currentSourcePaths": [
@@ -10709,10 +10763,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_step_title_demo",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Reads action and action timer; branches to held action when nonzero, otherwise increments action, loads timing data, sets terminal carry on zero and falls through to action execution.",
       "currentSourcePaths": [
@@ -10727,10 +10783,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_step_title_demo",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Loads the selected action byte into SavedJoypad1Bits, decrements the selected action timer and clears carry before return.",
       "currentSourcePaths": [
@@ -10745,10 +10803,12 @@
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_step_title_demo",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Returns the DemoEngine carry result without additional state mutation.",
       "currentSourcePaths": [
@@ -43611,12 +43671,15 @@
       "instruction": "jsr",
       "id": "control-00080",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch -> C switch dispatch owners",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Preserves the original call TitleScreenMode \u2192 JumpEngine: inputs are handed to the child before the caller continuation resumes.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -43655,10 +43718,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation GameMenuRoutine -> StartGame at source line 1001 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -43673,12 +43738,15 @@
       "instruction": "bne",
       "id": "control-00083",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original branch relation GameMenuRoutine -> ChkSelect at source line 1003 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43695,10 +43763,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation GameMenuRoutine -> StartGame at source line 1003 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -43716,10 +43786,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original jump relation StartGame -> ChkContinue at source line 1004 (jmp) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -43734,12 +43806,15 @@
       "instruction": "beq",
       "id": "control-00086",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original branch relation ChkSelect -> SelectBLogic at source line 1006 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43757,11 +43832,13 @@
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
-        "T52 S2: C performs the DemoTimer nonzero gate before its ChkWorldSel counterpart."
+        "T52 S2: C performs the DemoTimer nonzero gate before its ChkWorldSel counterpart.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
         "Td S9 A6 independent integration mismatch: source ChkSelect branches to ChkWorldSel only when DemoTimer is nonzero. Current title_modes.c evaluates enabled B world selection before the source DemoTimer gate, so it takes this edge on an impossible source path.",
-        "T52 S2 owner-ROM coverage: $8245 bne reaches $826c only in active-timer B route; expired route reaches DemoEngine $836b instead."
+        "T52 S2 owner-ROM coverage: $8245 bne reaches $826c only in active-timer B route; expired route reaches DemoEngine $836b instead.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation ChkSelect -> ChkWorldSel at source line 1008 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "repairCandidate": null,
@@ -43780,10 +43857,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original call relation ChkSelect -> DemoEngine at source line 1010 must invoke the demo action/timing owner only after the zero-demo-timer gate, preserving the returned terminal condition.",
       "currentSourcePaths": [
@@ -43801,10 +43880,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation ChkSelect -> ResetTitle at source line 1011 must transfer only the terminal carry result returned by DemoEngine into the reset path.",
       "currentSourcePaths": [
@@ -43822,10 +43903,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original jump relation ChkSelect -> RunDemo at source line 1012 must preserve the nonterminal demo return and transfer to the GameCore caller.",
       "currentSourcePaths": [
@@ -43841,12 +43924,15 @@
       "instruction": "beq",
       "id": "control-00091",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original branch relation ChkWorldSel -> NullJoypad at source line 1014 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43860,12 +43946,15 @@
       "instruction": "bne",
       "id": "control-00092",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original branch relation ChkWorldSel -> NullJoypad at source line 1016 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43879,12 +43968,15 @@
       "instruction": "iny",
       "id": "control-00093",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original fallthrough relation ChkWorldSel -> SelectBLogic at source line 1017 (iny) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43898,12 +43990,15 @@
       "instruction": "beq",
       "id": "control-00094",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original branch relation SelectBLogic -> ResetTitle at source line 1019 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43917,12 +44012,15 @@
       "instruction": "bne",
       "id": "control-00095",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original branch relation SelectBLogic -> NullJoypad at source line 1023 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43936,12 +44034,15 @@
       "instruction": "beq",
       "id": "control-00096",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original branch relation SelectBLogic -> IncWorldSel at source line 1027 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43958,10 +44059,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner.",
       "currentSourcePaths": [
@@ -43976,12 +44079,15 @@
       "instruction": "jmp",
       "id": "control-00098",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original jump relation SelectBLogic -> NullJoypad at source line 1032 (jmp) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
@@ -43998,10 +44104,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original call relation IncWorldSel -> GoContinue at source line 1038 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44019,10 +44127,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation IncWorldSel -> UpdateShroom at source line 1038 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44040,10 +44150,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation UpdateShroom -> UpdateShroom at source line 1043 (bmi) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44061,10 +44173,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation UpdateShroom -> NullJoypad at source line 1046 (sty) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44082,10 +44196,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step success return -> src/game/frame_root.c:mysmb_frame_root_step GameCoreRoutine call",
       "semanticEvidence": [
-        "Td S9 A6 integration static pass: original NullJoypad fallthrough reaches RunDemo; the current title-step success return transfers exactly to frame_root.c, which performs the source-owned GameCoreRoutine call."
+        "Td S9 A6 integration static pass: original NullJoypad fallthrough reaches RunDemo; the current title-step success return transfers exactly to frame_root.c, which performs the source-owned GameCoreRoutine call.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation NullJoypad -> RunDemo at source line 1048 must clear player-one latch, preserve the ordered transfer, and invoke the shared GameCore route only after the title menu returns success.",
       "currentSourcePaths": [
@@ -44101,12 +44217,15 @@
       "instruction": "jsr",
       "id": "control-00104",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
       "semanticEvidence": [
-        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Preserves RunDemo call relation RunDemo \u2192 GameCoreRoutine and same-frame game-core/reset ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44121,12 +44240,15 @@
       "instruction": "bne",
       "id": "control-00105",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
       "semanticEvidence": [
-        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Preserves RunDemo branch relation RunDemo \u2192 ExitMenu and same-frame game-core/reset ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44141,12 +44263,15 @@
       "instruction": "bne",
       "id": "control-00106",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
       "semanticEvidence": [
-        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Preserves RunDemo fallthrough relation RunDemo \u2192 ResetTitle and same-frame game-core/reset ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44164,10 +44289,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation ChkContinue -> ResetTitle at source line 1060 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44185,10 +44312,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation ChkContinue -> StartWorld1 at source line 1062 (bcc) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44206,10 +44335,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original call relation ChkContinue -> GoContinue at source line 1064 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44227,10 +44358,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation ChkContinue -> StartWorld1 at source line 1064 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44248,10 +44381,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original call relation StartWorld1 -> LoadAreaPointer at source line 1065 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44270,10 +44405,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation StartWorld1 -> InitScores at source line 1076 (lda) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44291,10 +44428,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation InitScores -> InitScores at source line 1079 (bpl) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44312,10 +44451,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation InitScores -> ExitMenu at source line 1079 (bpl) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -44333,10 +44474,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner.",
       "currentSourcePaths": [
@@ -44354,10 +44497,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner.",
       "currentSourcePaths": [
@@ -44375,10 +44520,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner.",
       "currentSourcePaths": [
@@ -44396,10 +44543,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner.",
       "currentSourcePaths": [
@@ -44417,10 +44566,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation DemoEngine -> DoAction at source line 1122 must preserve a nonzero action-timer held-action route.",
       "currentSourcePaths": [
@@ -44438,10 +44589,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original branch relation DemoEngine -> DemoOver at source line 1128 must preserve terminal zero-timing return behavior.",
       "currentSourcePaths": [
@@ -44459,10 +44612,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation DemoEngine -> DoAction at source line 1128 must preserve action increment, timing-table load and nonzero timer action execution order.",
       "currentSourcePaths": [
@@ -44480,10 +44635,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original fallthrough relation DoAction -> DemoOver at source line 1132 must preserve input write, timer decrement, carry clear and return ordering.",
       "currentSourcePaths": [
@@ -109781,10 +109938,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_step_title_demo and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond."
+        "Td S9 A6 demo static pass: SMB1 lines 1109-1133 was compared with the adjacent action/timing arrays and mysmb_game_step_title_demo in shared src/game/title_modes.c; all table entries, table indexes, carry/terminal conditions and write order correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched."
+        "Td S9 A6 controlled demo pass: original ROM and current x86/x64 used action-switch (action 0/timer 0), held-action (action 1/timer 1), and terminal (action 21/timer 0) fixtures on the ordinary NMI title path. The action, timer, latched input and terminal reset outputs matched.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original return relation DemoEngine -> ChkSelect at source line 1010 must preserve the terminal/nonterminal condition used by the caller.",
       "currentSourcePaths": [
@@ -109802,10 +109961,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_draw_mushroom_icon and mysmb_game_title_step",
       "semanticEvidence": [
-        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond."
+        "Td S9 A6 icon static pass: SMB1 lines 1090-1105 was compared with mysmb_game_draw_mushroom_icon in shared src/game/title_modes.c; the eight source bytes, descending copy order and NumberOfPlayers branch writes correspond.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input."
+        "Td S9 A6 controlled icon pass: ordinary NMI title-menu Select routes started with each NumberOfPlayers state. Original ROM and x86/x64 matched the complete eight-byte VRAM buffer command, player-count toggle, conditional byte overwrites and cleared latched input.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Td S9 A6 icon relation: preserve this source call, return, loop, branch or fall-through relation and its VRAM/title-state handoff in the shared title owner.",
       "currentSourcePaths": [
@@ -109823,10 +109984,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo."
+        "Td S9 A6 independent integration pass: the controlled original-ROM world-select B route and current x86/x64 counterpart proved this individual call/return, fallthrough or loop relation, including its ordering and title-owned state handoff before RunDemo.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original return relation GoContinue -> IncWorldSel at source line 1038 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -109841,12 +110004,15 @@
       "instruction": "rts/rti",
       "id": "control-03501",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
       "semanticEvidence": [
-        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Preserves RunDemo return relation GameCoreRoutine \u2192 RunDemo and same-frame game-core/reset ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -109864,10 +110030,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original return relation GoContinue -> ChkContinue at source line 1064 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -109885,10 +110053,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
-        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original return relation LoadAreaPointer -> StartWorld1 at source line 1065 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
       "currentSourcePaths": [
@@ -121696,12 +121866,15 @@
       "selector": 0,
       "id": "control-04100",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch -> mysmb_game_begin_title_bootstrap",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Preserves the original JumpEngine selector 0 dispatch TitleScreenMode \u2192 InitializeGame, including the selected target and continuation convention.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -121717,12 +121890,15 @@
       "selector": 1,
       "id": "control-04101",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step title screen-task routing",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Original TitleScreenMode -> ScreenRoutines selector dispatch reaches the screen task handler only at the title screen task vector.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -121738,12 +121914,15 @@
       "selector": 2,
       "id": "control-04102",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch -> mysmb_game_primary_setup",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+      ],
       "semanticContract": "Preserves the original JumpEngine selector 2 dispatch TitleScreenMode \u2192 PrimaryGameSetup, including the selected target and continuation convention.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -121762,10 +121941,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode/task dispatch",
       "semanticEvidence": [
-        "Td S9 A5/A6 integration review: current frame-root mode/task dispatch was compared with the original nested JumpEngine selector relation."
+        "Td S9 A5/A6 integration review: current frame-root mode/task dispatch was compared with the original nested JumpEngine selector relation.",
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
       ],
       "operationalEvidence": [
-        "Td S9 A6 controlled ordinary, Select, world-select B, Start and demo title routes each execute this individual original dispatch relation and the current x86/x64 counterpart."
+        "Td S9 A6 controlled ordinary, Select, world-select B, Start and demo title routes each execute this individual original dispatch relation and the current x86/x64 counterpart.",
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
       ],
       "semanticContract": "Original JumpEngine dispatch relation must select this exact successor for the source mode/task selector, preserve dispatcher ordering and retain the caller return path.",
       "currentSourcePaths": [
