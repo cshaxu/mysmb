@@ -1996,3 +1996,7 @@ width, 23,046 common initializer footprints per width, platform purity and
 DOS16-link evidence agree. The registry is **874 / 1,992** nodes and
 **1,699 / 4,324** feasible controls, from **4,342 raw** controls with **18
 infeasible**; historical migration remains **1,992 / 1,992**.
+
+### T62 S4 special initializer result
+
+All 22 labels from `InitBulletBill` through `InitShortFirebar` are current-equivalence exact. Static `$C233-$C2D3` comparison, 160 controlled original-ROM/current Lakitu/Spiny caller-boundary replays and 20 direct Firebar original/current replays match on x86/x64. Focused footprint checks cover 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate, and 23,046 common initializer cases per width. The registry advances from 874 to 896 exact nodes and from 1,699 to 1,726 exact feasible controls; historical conformance remains 1,992 / 1,992.

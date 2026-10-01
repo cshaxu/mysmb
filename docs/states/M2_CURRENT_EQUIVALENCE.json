@@ -2687,13 +2687,16 @@
       "consumer": "DifLoop",
       "storage": "PRDiffAdjustData[Y] to scratch $03/$02/$01",
       "feasiblePath": "DifLoop starts with random low bits and copies exactly one value from each four-byte band before PlayerLakituDiff.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "difference_adjustment[seed], [seed + 4] and [seed + 8] in mysmb_enemy_init_lakitu_spiny_frenzy",
       "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2708,13 +2711,16 @@
       "consumer": "SetupLakitu",
       "storage": "Enemy_State/Enemy_ID selected inactive slot",
       "feasiblePath": "An inactive slot is cleared and assigned Lakitu ID before SetupLakitu initializes its movement and box fields.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "selected slot writes before mysmb_enemy_setup_lakitu",
       "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2729,13 +2735,16 @@
       "consumer": "CreateL",
       "storage": "LakituReappearTimer and initialized Lakitu actor state",
       "feasiblePath": "After setup returns, CreateL passes the same slot to PutAtRightExtent for final positioning and activation.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_setup_lakitu followed by mysmb_enemy_put_at_right_extent",
       "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2750,13 +2759,16 @@
       "consumer": "SetSpSpd",
       "storage": "copied Lakitu coordinates and computed difference scratch",
       "feasiblePath": "The source copies Lakitu page/X/Y and selects its random adjustment before entering the common Spiny box/state tail.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Lakitu coordinate copies and shared Spiny-tail call in mysmb_enemy_init_lakitu_spiny_frenzy",
       "semanticContract": "Preserves source table/RAM value, consuming predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2771,13 +2783,16 @@
       "consumer": "InitShortFirebar",
       "storage": "FirebarSpinSpdData[Enemy_ID-$1b]",
       "feasiblePath": "InitShortFirebar derives one shared ID index and stores the selected angular speed before position adjustment.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "spin_speed[index] in mysmb_enemy_init_firebar_entry",
       "semanticContract": "Preserves source table selection, consuming predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2791,13 +2806,16 @@
       "consumer": "InitShortFirebar",
       "storage": "FirebarSpinDirData[Enemy_ID-$1b]",
       "feasiblePath": "The same firebar ID index selects and stores spin direction before the X/Y updates.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "spin_direction[index] in mysmb_enemy_init_firebar_entry",
       "semanticContract": "Preserves source table selection, consuming predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -27402,13 +27420,16 @@
       "label": "InitBulletBill",
       "asmLine": 8259,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy initializer target core",
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Sets left moving direction and small box control, preserving all other fields.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -27419,13 +27440,16 @@
       "label": "InitCheepCheep",
       "asmLine": 8268,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy initializer target core",
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Calls small-box setup, copies random bit d4 into CheepCheepMoveMFlag and preserves original Y in CheepCheepOrigYPos.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -27436,13 +27460,16 @@
       "label": "InitLakitu",
       "asmLine": 8279,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Branches to erase the Lakitu only when EnemyFrenzyBuffer is occupied; otherwise falls through to setup.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27454,13 +27481,16 @@
       "label": "SetupLakitu",
       "asmLine": 8283,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Clears LakituReappearTimer, calls zero-speed horizontal/flying setup, then tail-selects the box-only tall setup.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27472,13 +27502,16 @@
       "label": "KillLakitu",
       "asmLine": 8289,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Tail-jumps to EraseEnemyObject without additional writes.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27490,13 +27523,16 @@
       "label": "PRDiffAdjustData",
       "asmLine": 8295,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Binds the twelve exact random difference-adjustment bytes consumed in three strides of four.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27508,13 +27544,16 @@
       "label": "LakituAndSpinyHandler",
       "asmLine": 8300,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Gates on frenzy timer and controller slot, arms timer $80, then reverse-searches Lakitu or begins reappearance handling.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27526,13 +27565,16 @@
       "label": "ChkLak",
       "asmLine": 8308,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Searches slots four down to zero for Lakitu; without one it increments the reappearance counter and begins inactive-slot search only from seven.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27544,13 +27586,16 @@
       "label": "ChkNoEn",
       "asmLine": 8318,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Searches slots four down to zero for an inactive flag and reaches the no-slot return only after the loop exhausts.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27562,13 +27607,16 @@
       "label": "CreateL",
       "asmLine": 8323,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Initializes the selected Lakitu slot, calls setup and right-extent positioning, then restores the caller object offset.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27580,13 +27628,16 @@
       "label": "RetEOfs",
       "asmLine": 8330,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Restores ObjectOffset after Lakitu creation before the common return.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27598,13 +27649,16 @@
       "label": "ExLSHand",
       "asmLine": 8331,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Returns from every timer, controller-slot, availability and player/state gate.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27616,13 +27670,16 @@
       "label": "CreateSpiny",
       "asmLine": 8335,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Gates player Y and Lakitu normal state, copies Lakitu coordinates, seeds the three adjustment bytes and begins velocity selection.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27634,13 +27691,16 @@
       "label": "DifLoop",
       "asmLine": 8355,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Copies one value from each four-byte PRDiffAdjustData band into scratch $03/$02/$01, calls PlayerLakituDiff and selects speed sign path.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27652,13 +27712,16 @@
       "label": "UsePosv",
       "asmLine": 8376,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Restores the selected signed difference to A before the common Spiny setup entry.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27670,13 +27733,16 @@
       "label": "SetSpSpd",
       "asmLine": 8377,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Calls SmallBBox, intentionally loses the computed A value to the common tail, writes zero X speed and selects right-moving direction.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27688,13 +27754,16 @@
       "label": "SpinyRte",
       "asmLine": 8383,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Writes Spiny direction, upward Y speed, active flag and egg state five in source order.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27706,13 +27775,16 @@
       "label": "ChpChpEx",
       "asmLine": 8390,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Returns after a completed Spiny egg setup or upstream early exit.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27724,13 +27796,16 @@
       "label": "FirebarSpinSpdData",
       "asmLine": 8394,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared firebar and flying-Cheep initializer core",
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Binds the five exact firebar angular-speed bytes selected by enemy ID minus $1b.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27741,13 +27816,16 @@
       "label": "FirebarSpinDirData",
       "asmLine": 8397,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared firebar and flying-Cheep initializer core",
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Binds the five exact firebar direction bytes selected by the same ID-derived index.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27758,13 +27836,16 @@
       "label": "InitLongFirebar",
       "asmLine": 8400,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared firebar and flying-Cheep initializer core",
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Calls DuplicateEnemyObj, then falls through into the short-firebar initialization body.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -27775,13 +27856,16 @@
       "label": "InitShortFirebar",
       "asmLine": 8403,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared firebar and flying-Cheep initializer core",
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Clears low spin state, selects speed/direction tables, adds four to Y and X with page carry, then tail-selects box-only TallBBox2.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77209,12 +77293,15 @@
       "instruction": "bne",
       "id": "control-01522",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation InitLakitu -> KillLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77230,12 +77317,15 @@
       "instruction": "bne",
       "id": "control-01523",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitLakitu -> SetupLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77315,12 +77405,15 @@
       "instruction": "bne",
       "id": "control-01527",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation LakituAndSpinyHandler -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77336,12 +77429,15 @@
       "instruction": "bcs",
       "id": "control-01528",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation LakituAndSpinyHandler -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77357,12 +77453,15 @@
       "instruction": "ldy",
       "id": "control-01529",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation LakituAndSpinyHandler -> ChkLak with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77378,12 +77477,15 @@
       "instruction": "beq",
       "id": "control-01530",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation ChkLak -> CreateSpiny with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77399,12 +77501,15 @@
       "instruction": "bpl",
       "id": "control-01531",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation ChkLak -> ChkLak with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77420,12 +77525,15 @@
       "instruction": "bcc",
       "id": "control-01532",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation ChkLak -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77441,12 +77549,15 @@
       "instruction": "ldx",
       "id": "control-01533",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkLak -> ChkNoEn with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77462,12 +77573,15 @@
       "instruction": "beq",
       "id": "control-01534",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation ChkNoEn -> CreateL with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77483,12 +77597,15 @@
       "instruction": "bpl",
       "id": "control-01535",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation ChkNoEn -> ChkNoEn with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77504,12 +77621,15 @@
       "instruction": "bmi",
       "id": "control-01536",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation ChkNoEn -> RetEOfs with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77549,12 +77669,15 @@
       "instruction": "jsr",
       "id": "control-01538",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original call relation CreateL -> SetupLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77591,12 +77714,15 @@
       "instruction": "jsr",
       "id": "control-01540",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation CreateL -> RetEOfs with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77612,12 +77738,15 @@
       "instruction": "ldx",
       "id": "control-01541",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation RetEOfs -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77633,12 +77762,15 @@
       "instruction": "bcc",
       "id": "control-01542",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation CreateSpiny -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77654,12 +77786,15 @@
       "instruction": "bne",
       "id": "control-01543",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation CreateSpiny -> ExLSHand with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77675,12 +77810,15 @@
       "instruction": "ldx",
       "id": "control-01544",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation CreateSpiny -> DifLoop with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77696,12 +77834,15 @@
       "instruction": "bpl",
       "id": "control-01545",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation DifLoop -> DifLoop with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77738,12 +77879,15 @@
       "instruction": "bcs",
       "id": "control-01547",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation DifLoop -> SetSpSpd with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77759,12 +77903,15 @@
       "instruction": "beq",
       "id": "control-01548",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original branch relation DifLoop -> UsePosv with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77780,12 +77927,15 @@
       "instruction": "iny",
       "id": "control-01549",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation DifLoop -> UsePosv with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77801,12 +77951,15 @@
       "instruction": "tya",
       "id": "control-01550",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation UsePosv -> SetSpSpd with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77868,12 +78021,15 @@
       "instruction": "dey",
       "id": "control-01553",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetSpSpd -> SpinyRte with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77889,12 +78045,15 @@
       "instruction": "sta",
       "id": "control-01554",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation SpinyRte -> ChpChpEx with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -77930,12 +78089,15 @@
       "instruction": "jsr",
       "id": "control-01556",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitLongFirebar -> InitShortFirebar with exact table index, timer/slot predicate, carry/borrow and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -121602,12 +121764,15 @@
       "instruction": "rts/rti",
       "id": "control-03774",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+      ],
       "semanticContract": "Preserves original return relation SetupLakitu -> CreateL with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",

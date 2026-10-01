@@ -122,3 +122,31 @@ source changed, so local executable artifacts were not refreshed. Historical
 migration remains **1,992 / 1,992**; current exact progress is **874 / 1,992
 nodes** and **1,699 / 4,324 feasible controls** from **4,342 raw controls**
 with **18 infeasible**.
+
+## S4 admission — special initializers, Lakitu/Spiny and firebars
+
+S4 admits `$C233-$C2D3`, `InitBulletBill -> InitShortFirebar`: `InitBulletBill`,
+`InitCheepCheep`, `InitLakitu`, `SetupLakitu`, `KillLakitu`,
+`PRDiffAdjustData`, `LakituAndSpinyHandler`, `ChkLak`, `ChkNoEn`, `CreateL`,
+`RetEOfs`, `ExLSHand`, `CreateSpiny`, `DifLoop`, `UsePosv`, `SetSpSpd`,
+`SpinyRte`, `ChpChpEx`, `FirebarSpinSpdData`, `FirebarSpinDirData`,
+`InitLongFirebar`, and `InitShortFirebar`. All 22 labels are
+`needs-evidence`; this current audit earns no historical-node credit. It owns
+27 internal feasible controls, two explicitly infeasible raw fallthroughs
+(`ChkNoEn -> CreateL` and `SetSpSpd -> SpinyRte`), and six internal material
+handoffs.
+
+The ROM-logic route covers Bullet Bill and Cheep direct initialization; Lakitu
+frenzy rejection and setup; timer/slot scans and empty-slot allocation; the
+Spiny Y/PRDiff/direction/egg-state path; and long/short Firebar table lookup,
+anchor adjustment and page carry. It stops before flying Cheep setup in S5 and
+keeps terrain/distance, actor and graphics children as later boundaries. The
+operational track uses controlled original-ROM/current x86/x64 snapshots,
+Lakitu/Spiny and Firebar C90 smoke, platform purity and the shared DOS16 link.
+Any feasible difference remains in S4 until repaired and re-audited.
+
+## S4 closure — special initializers, Lakitu/Spiny and firebars
+
+All 22 scoped labels are current-exact. Static `$C233-$C2D3` comparison found no feasible difference in Bullet Bill/Cheep direct writes; Lakitu erase/setup; timer and reverse slot scans; reappearance allocation; the twelve PRDiff adjustment bytes and Spiny egg tail; or five-entry Firebar table selection, long-entry duplicate ordering, coordinate adjustment and page carry. All 27 internal feasible controls and six material handoffs are exact. The two raw relations `ChkNoEn -> CreateL` and `SetSpSpd -> SpinyRte` remain source-infeasible.
+
+Current full-game x86/x64 builds produced 160 controlled original-ROM Lakitu/Spiny caller-boundary matches (80 per width), with original child return snapshots deliberately substituted only after their input and call order were compared; those child interiors remain later source-order boundaries. Twenty direct Firebar original/current routes (10 per width) match without substitution. Focused current C90 checks pass 71,163 Lakitu/Spiny caller footprints, 9,216 Firebar/duplicate footprints, and 23,046 common-initializer footprints per width. Platform purity passes and the shared DOS16 link completes with the known OLDNAMES warning. No product source changed, so no executable artifact refresh is required. Historical migration remains **1,992 / 1,992**; current exact progress is **896 / 1,992 nodes** and **1,726 / 4,324 feasible controls** from **4,342 raw controls** with **18 infeasible**.

@@ -2071,3 +2071,7 @@ Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1
 
 - Current-equivalence audit M2 T62 S2 closed `ProcessEnemyData -> Inc2B`: historical migration remains **1,992 / 1,992**; current exact registry was **853 / 1,992** nodes and **1,653 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
 - Current-equivalence audit M2 T62 S3 closed `CheckpointEnemyID -> InitVStf`: historical migration remains **1,992 / 1,992**; current exact registry is **874 / 1,992** nodes and **1,699 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+
+### T62 S4 special initializer result
+
+`InitBulletBill -> InitShortFirebar` adds 22 current-exact labels, 27 feasible control relations and six material handoffs. Static `$C233-$C2D3`, 160 original-ROM/current Lakitu/Spiny caller-boundary snapshot matches, 20 direct Firebar original/current snapshot matches, focused C90 footprints, platform purity and DOS16 link evidence agree. Current registry: **896 / 1,992 exact nodes** and **1,726 / 4,324 exact feasible controls**, from **4,342 raw controls** with **18 infeasible**. Historical migration remains **1,992 / 1,992**.
