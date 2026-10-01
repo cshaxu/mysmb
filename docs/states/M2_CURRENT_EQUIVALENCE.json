@@ -52031,12 +52031,14 @@
       "instruction": "jsr",
       "id": "control-00456",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "terminal_modes.c task switch is the shared-C counterpart of GameOverMode JumpEngine selection.",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "M2 T55 S6 P8: source map pairs GameOverMode's ROM JumpEngine call and child return with mysmb_game_step_game_over in the shared game layer."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P8: current original-ROM/current x86/x64 controlled GameOver routes observe the $9218 -> $8E04 dispatch and return; all persistent work RAM agrees. Direct-NMI fixtures intentionally exclude pre-existing physical PPU state from this control-edge claim."
+      ],
       "semanticContract": "terminal_modes.c task switch is the shared-C counterpart of GameOverMode JumpEngine selection.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -112095,12 +112097,14 @@
       "instruction": "rts/rti",
       "id": "control-03551",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "GameOverMode selector dispatch has no separate C stack return; task selection preserves the same successor.",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "M2 T55 S6 P8: source map pairs GameOverMode's ROM JumpEngine call and child return with mysmb_game_step_game_over in the shared game layer."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P8: current original-ROM/current x86/x64 controlled GameOver routes observe the $9218 -> $8E04 dispatch and return; all persistent work RAM agrees. Direct-NMI fixtures intentionally exclude pre-existing physical PPU state from this control-edge claim."
+      ],
       "semanticContract": "GameOverMode selector dispatch has no separate C stack return; task selection preserves the same successor.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",

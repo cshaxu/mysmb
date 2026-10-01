@@ -315,3 +315,17 @@ This still does not cover the Victory, GameOver, AreaStyle, BlockCode, frenzy,
 large-platform or star-flag vector families, nor the name-table inner edges.
 They remain `needs-evidence` and keep S6 open. No product source changed and
 artifacts are not refreshed.
+
+## S6 P8 ? current GameOver control-edge replay
+
+Three freshly executed controlled GameOver ROM routes (`normal`, Luigi and
+Mario) each reach `$9218` (`GameOverMode`) and `$8E04` (`JumpEngine`). The
+current x86/x64 routes agree with the original on every persistent work-RAM
+byte and are byte-identical to each other. The registry promotes only the
+observed `GameOverMode -> JumpEngine` call and its return continuation.
+
+These direct-NMI fixtures deliberately begin after bootstrap and therefore
+have unrelated physical CIRAM/palette initialization differences. They are
+excluded from this control-edge assertion and remain visible in the local
+report; they are not treated as a game-logic match or hidden by the registry.
+No product source changed and artifacts are not refreshed.
