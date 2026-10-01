@@ -1891,3 +1891,7 @@ All three labels from PlayerMovementSubs through ProcMove are current-equivalenc
 ### T59 S2 movement state result
 
 All 12 labels from MoveSubs through ExitMov1 are current-equivalence exact. Registry advances from 581 to 593 exact labels and records the current state-vector, ground, air and water movement evidence.
+
+### T59 S3 climb movement result
+
+All 12 labels from ClimbAdderLow through InitMForceData are current-equivalence exact. Fresh x86/x64 replay confirms all original climb branches, both signed page-carry directions and all four side offsets. Registry advances from 593 to 605 exact labels and from 1,159 to 1,168 exact feasible control relations; historical conformance remains 1,992 / 1,992.

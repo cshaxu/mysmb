@@ -21958,14 +21958,16 @@
       "label": "ClimbAdderLow",
       "asmLine": 5986,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -21974,14 +21976,16 @@
       "label": "ClimbAdderHigh",
       "asmLine": 5988,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -21990,14 +21994,16 @@
       "label": "ClimbingSub",
       "asmLine": 5991,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22006,14 +22012,16 @@
       "label": "MoveOnVine",
       "asmLine": 6000,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22022,14 +22030,16 @@
       "label": "ClimbFD",
       "asmLine": 6019,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22038,14 +22048,16 @@
       "label": "CSetFDir",
       "asmLine": 6022,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22054,14 +22066,16 @@
       "label": "ExitCSub",
       "asmLine": 6032,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22070,14 +22084,16 @@
       "label": "InitCSTimer",
       "asmLine": 6033,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22086,14 +22102,16 @@
       "label": "JumpMForceData",
       "asmLine": 6039,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22102,14 +22120,16 @@
       "label": "FallMForceData",
       "asmLine": 6042,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22118,14 +22138,16 @@
       "label": "PlayerYSpdData",
       "asmLine": 6045,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22134,14 +22156,16 @@
       "label": "InitMForceData",
       "asmLine": 6048,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64537,13 +64561,15 @@
       "instruction": "bpl",
       "id": "control-00980",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ClimbingSub -> MoveOnVine.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64556,13 +64582,15 @@
       "instruction": "dey",
       "id": "control-00981",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ClimbingSub -> MoveOnVine.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64575,13 +64603,15 @@
       "instruction": "beq",
       "id": "control-00982",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation MoveOnVine -> InitCSTimer.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64594,13 +64624,15 @@
       "instruction": "bne",
       "id": "control-00983",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation MoveOnVine -> ExitCSub.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64613,13 +64645,15 @@
       "instruction": "bcs",
       "id": "control-00984",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation MoveOnVine -> ClimbFD.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64632,13 +64666,15 @@
       "instruction": "inx",
       "id": "control-00985",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation MoveOnVine -> ClimbFD.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64651,13 +64687,15 @@
       "instruction": "beq",
       "id": "control-00986",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ClimbFD -> CSetFDir.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64670,13 +64708,15 @@
       "instruction": "inx",
       "id": "control-00987",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ClimbFD -> CSetFDir.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64689,13 +64729,15 @@
       "instruction": "sta",
       "id": "control-00988",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation CSetFDir -> ExitCSub.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S3 shared C90 branch, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S3 confirms this source climb relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]

@@ -109,3 +109,8 @@ All 12 labels from MoveSubs through ExitMov1 are current-equivalence exact. Stat
 ## S3 admission - climb movement and vertical-force binding
 
 S3 admits `ClimbAdderLow -> InitMForceData`: ClimbAdderLow, ClimbAdderHigh, ClimbingSub, MoveOnVine, ClimbFD, CSetFDir, ExitCSub, InitCSTimer, JumpMForceData, FallMForceData, PlayerYSpdData and InitMForceData. Shared owner: `src/game/player.c` with the movement dispatcher in `src/game/player_movement.c` as predecessor. It covers climb fractional and page-coordinate movement, left/right vine side movement, facing inversion, climb-side timer and the four vertical-force tables. It does not admit the subsequent physics consumer chain. Registry baseline is 593 exact labels and 1,159 exact feasible controls; all 12 scoped labels need fresh current evidence. ROM logic route: controlled climbing snapshots recording movement and table-selected state. Operational route: x86/x64 C90 replays, focused smoke, DOS16 link and platform purity.
+
+
+## S3 closure - climb movement and vertical-force binding
+
+All 12 labels from ClimbAdderLow through InitMForceData are current-equivalence exact. Static ROM comparison found no shared-owner difference. The two side tables and all four vertical-force tables bind exact ROM bytes. Fresh C90 x86/x64 replays pass 72 original climbing entries each, for 144 entry-return comparisons; all five control branches exercised both outcomes and all four side indices appeared. Focused smoke, DOS16 link and platform purity pass. No product source changed, so no artifact refresh is due. All nine previously unproved feasible internal controls receive fresh S3 evidence; the incoming dispatcher control retains compatible S2 proof.
