@@ -136,3 +136,17 @@ All ten labels are current-equivalence exact: `ScrollHandler`, `ChkNearMid`, `Sc
 The controlled original-ROM matrix has 24 natural `ScrollHandler` entries and both outcomes of all nine source branches. Fresh direct C90 x86/x64 builds run the existing exhaustive scroll contract and replay every original snapshot: 48 persistent-RAM comparisons pass with only CPU scratch `$00-$07` and stack `$0100-$01ff` excluded; native widths are byte-identical. Platform-purity passes. No product source changed, so no artifact refresh is due. All 27 incident feasible relations are exact: 25 receive S2 evidence, while `DontWalk -> ScrollScreen` and `ScrollScreen -> DontWalk` retain their compatible prior exact evidence.
 
 S3 may now be admitted for `GameRoutines -> CloudExit`.
+
+## S3 admission — game routine, entrance and player-control chain
+
+S3 admits the contiguous 23-label chain `GameRoutines -> CloudExit`: `GameRoutines`, `PlayerEntrance`, `ChkBehPipe`, `IntroEntr`, `EntrMode2`, `VineEntr`, `OffVine`, `PlayerRdy`, `ExitEntr`, `AutoControlPlayer`, `PlayerCtrlRoutine`, `DisJoyp`, `SaveJoyp`, `SizeChk`, `ChkMoveDir`, `SetMoveDir`, `PlayerSubs`, `PlayerHole`, `HoleDie`, `HoleBottom`, `ChkHoleX`, `ExitCtrl` and `CloudExit`. All 23 are currently `needs-evidence`. Shared C owners are `src/game/entry.c` and `src/game/player_control.c`; entry/transition, movement, OAM, collision and mode children remain their respective source-order owners. Predecessors are the completed dispatcher and scroll chains; successors are the admitted-later pipe, mode, collision, OAM and end-level families.
+
+Historical accounting remains 1,992 / 1,992; historical expected-match set is empty. The current registry begins at 520 exact labels and 971 exact feasible controls. This S expects to promote the 23 scoped labels and 92 unresolved feasible incident controls, reaching at most 543 labels and 1,063 feasible controls. Eight other incident controls retain prior exact evidence and must pass regression review.
+
+**ROM-logic track.** Compare the `GameRoutines` JumpEngine vector, ordinary/pipe/vine entrance branches, controller suppression and three input partitions, crouch filter, bounding-box selector, moving-direction signed branch, ordered player children, hole/death/music gates and cloud-area transition. Use the original controlled `t31-entrance` route plus `t32` player-control natural-entry snapshots and current x86/x64 owner replays; each route declares its RAM/output exclusions and does not certify child algorithms outside this S.
+
+**Operational track.** Run `mysmb.player-entry-chain`, `mysmb.player-control-chain`, caller/snapshot checks and platform purity on x86/x64, then link the unchanged shared DOS16 core. A shared-game source repair refreshes all three target artifacts; an audit-only conclusion does not.
+
+## S3 closure criteria
+
+Every scoped label and feasible incident control relation is current-exact with static and controlled-route evidence. Any discrepancy remains in the named shared owner until repaired and re-audited before S4 admission.
