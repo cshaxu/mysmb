@@ -2189,3 +2189,16 @@ and DOS16 link pass. The live registry is **1,117 exact nodes** and **2,210
 exact feasible control relations**. Historical mapping remains **1,992 /
 1,992**; raw controls are **4,342**, with **18** infeasible and **4,324**
 feasible.
+
+
+### T63 S15 common enemy-clear loop result
+
+KillAllEnemies through KillLoop is current-exact: two labels, three local
+feasible control relations and four material handoffs. Static `$D071-$D07B`
+review confirms all eleven instructions and shared C slot/clear semantics. The
+current x86 and x64 manifest runners each replay eight terminal original-ROM
+snapshots in one process with zero differences. Focused C90 loop contract,
+platform purity and DOS16 link pass. The live registry is **1,119 exact
+nodes** and **2,213 exact feasible control relations**. Historical mapping
+remains **1,992 / 1,992**; raw controls are **4,342**, with **18** infeasible
+and **4,324** feasible.

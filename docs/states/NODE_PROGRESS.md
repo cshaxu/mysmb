@@ -2173,3 +2173,12 @@ controls and four material handoffs. Static source/table audit and 1,024 batch
 original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
 1,992**; exact nodes **1,117 / 1,992**; exact feasible controls **2,210 /
 4,324**; raw **4,342**, infeasible **18**.
+
+
+## M2 T63 S15 current-equivalence closure
+
+The common enemy-clear loop closes two nodes, three local feasible controls and
+four material handoffs. Static source/instruction audit and eight terminal
+original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
+1,992**; exact nodes **1,119 / 1,992**; exact feasible controls **2,213 /
+4,324**; raw **4,342**, infeasible **18**.

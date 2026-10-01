@@ -5482,13 +5482,16 @@
       "consumer": "KillLoop",
       "storage": "initial slot constant $04 to loop index",
       "feasiblePath": "The loop starts at source slot four before any erase operation.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/loop.c slot = 4U",
       "semanticContract": "Preserves source producer-to-consumer state handoff, slot ordering and termination predicate.",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5501,13 +5504,16 @@
       "consumer": "EraseEnemyObject",
       "storage": "current enemy slot to eight-field lifecycle clear",
       "feasiblePath": "Each iteration passes the same descending slot to the erase primitive before decrement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/loop.c mysmb_objects_erase_enemy(game, slot)",
       "semanticContract": "Preserves source producer-to-consumer state handoff, slot ordering and termination predicate.",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5524,13 +5530,16 @@
       "consumer": "KillAllEnemies",
       "storage": "post-decrement sign result to loop termination",
       "feasiblePath": "Only decrement from zero produces the high-bit termination state.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/loop.c --slot / slot < $80 loop predicate",
       "semanticContract": "Preserves source producer-to-consumer state handoff, slot ordering and termination predicate.",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5543,13 +5552,16 @@
       "consumer": "RunBowser",
       "storage": "cleared enemy slots and EnemyFrenzyBuffer to caller return",
       "feasiblePath": "Terminal Bowser path returns after all five clears with frenzy zeroed.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/loop.c mysmb_enemy_kill_all caller return",
       "semanticContract": "Preserves source producer-to-consumer state handoff, slot ordering and termination predicate.",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -32438,13 +32450,16 @@
       "label": "KillAllEnemies",
       "asmLine": 10167,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/loop.c",
       "currentCounterpart": "src/game/enemy/loop.c:mysmb_enemy_kill_all",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Initializes slot four exactly once, enters the erase loop, clears EnemyFrenzyBuffer after the final slot, and preserves the C equivalent of the source ObjectOffset restore for each caller.",
       "currentSourcePaths": [
         "src/game/enemy/loop.c"
@@ -32454,13 +32469,16 @@
       "label": "KillLoop",
       "asmLine": 10169,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/loop.c",
       "currentCounterpart": "src/game/enemy/loop.c:mysmb_enemy_kill_all do/while body",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Calls the erase primitive once per slot in descending order 4,3,2,1,0; byte wrap after zero ends rather than restarts the loop.",
       "currentSourcePaths": [
         "src/game/enemy/loop.c"
@@ -87977,12 +87995,15 @@
       "instruction": "ldx",
       "id": "control-01953",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation KillAllEnemies -> KillLoop with descending slot order, source state handoff and call/return behavior.",
       "currentSourcePaths": [
         "src/game/enemy/loop.c"
@@ -87996,12 +88017,15 @@
       "instruction": "jsr",
       "id": "control-01954",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation KillLoop -> EraseEnemyObject with descending slot order, source state handoff and call/return behavior.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -88019,12 +88043,15 @@
       "instruction": "bpl",
       "id": "control-01955",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation KillLoop -> KillLoop with descending slot order, source state handoff and call/return behavior.",
       "currentSourcePaths": [
         "src/game/enemy/loop.c"
