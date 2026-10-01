@@ -15,14 +15,18 @@
 | Files And ABI Surface | `src/game/cannon.c` and existing named shared game children; platform adapters remain consumers only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
 | Verification | Controlled original-ROM/current x86/x64 cannon and Bullet Bill routes; focused native route, cross-width comparison, shared DOS16 link and platform purity. |
-| Expected Markers | Fourteen labels and owned internal feasible relations become current-exact only after both tracks agree. |
+| Expected Markers | Met: fourteen labels, 26 internal feasible relations and two material bindings are current-exact; x86/x64 records agree. |
 | Asset Needs | Audit initially; any shared-game repair refreshes all three local executable artifacts. |
 | Reporting Requirements | State S2's 14 label dispositions, both verification tracks, every boundary disposition, historical 1,992 / 1,992, exact nodes / 1,992 and exact feasible control relations / 4,324. |
-| Stop Conditions | Any feasible node or owned relation difference remains in S2 until repaired and re-audited. |
-| Exit Criteria | All 14 labels and owned feasible relations are current-exact; no platform adapter contains game logic. |
+| Stop Conditions | None remain in S2. |
+| Exit Criteria | Met: all 14 labels and owned feasible relations are current-exact; no platform adapter contains game logic. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
 | Similar-Issue Sweep | Cannon scheduler, random mask, timer decrement/spawn carry, Bullet Bill direction/proximity, timer-control movement gate, descent, child call and erase boundaries. |
 
 ## Current Technical Baseline
 
 One shared C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic. T61 S2 is the sole active packet.
+
+## T61 S2 Closure
+
+All 14 cannon and Bullet Bill labels, 26 internal feasible control relations and two material bindings are current-exact. The fresh original-ROM/current route proof records 25 ROM routes and 50 current x86/x64 runs, with 1,782 persistent RAM bytes and complete output matching per route. Focused smoke, dispatcher static contract, platform purity and DOS16 link pass. No product source changed, so executable artifacts were not refreshed.

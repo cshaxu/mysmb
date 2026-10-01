@@ -2012,13 +2012,16 @@
       "consumer": "ProcessCannons",
       "storage": "SecondaryHardMode-indexed random mask table",
       "feasiblePath": "ProcessCannons reads CannonBitmasks[SecondaryHardMode] before comparing the pseudo-random cannon index.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mask selection in mysmb_game_process_cannons",
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2031,13 +2034,16 @@
       "consumer": "SetupBB",
       "storage": "direction-indexed cannon Bullet Bill speed table",
       "feasiblePath": "SetupBB decrements selected direction to index BulletBillXSpdData before writing Enemy_X_Speed.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "direction conditional speed assignment in mysmb_game_handle_cannon_bullet",
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -23878,13 +23884,16 @@
       "label": "CannonBitmasks",
       "asmLine": 6785,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Binds normal/secondary-hard random masks $0f/$07.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -23894,13 +23903,16 @@
       "label": "ProcessCannons",
       "asmLine": 6788,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Runs water gate and descending slots two through zero with source ObjectOffset ownership.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -23910,13 +23922,16 @@
       "label": "ThreeSChk",
       "asmLine": 6792,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Selects an inactive cannon candidate, decrements its timer with source carry semantics, or reaches existing-bullet handling.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -23926,13 +23941,16 @@
       "label": "FireCannon",
       "asmLine": 6809,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Creates a cannon Bullet Bill with exact timer, coordinates, state, box and identity writes.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -23942,13 +23960,16 @@
       "label": "Chk_BB",
       "asmLine": 6832,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Bounds-checks only cannon bullets before offscreen bits and BulletBillHandler.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -23958,13 +23979,16 @@
       "label": "Next3Slt",
       "asmLine": 6840,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Decrements through the three cannon slots.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -23974,13 +23998,16 @@
       "label": "ExCannon",
       "asmLine": 6842,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Returns after water or slot exhaustion.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -23990,13 +24017,16 @@
       "label": "BulletBillXSpdData",
       "asmLine": 6846,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Binds direction to right/left speeds $18/$e8.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -24006,13 +24036,16 @@
       "label": "BulletBillHandler",
       "asmLine": 6849,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves timer gate, initial direction/distance choice, defeated movement, common offscreen/relative/box/collision/draw order.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -24022,13 +24055,16 @@
       "label": "SetupBB",
       "asmLine": 6862,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Writes selected direction/speed and kills only within the source $50 proximity test.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -24038,13 +24074,16 @@
       "label": "ChkDSte",
       "asmLine": 6876,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Selects defeated vertical movement only when bit five is set.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -24054,13 +24093,16 @@
       "label": "BBFly",
       "asmLine": 6880,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Runs horizontal movement.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -24070,13 +24112,16 @@
       "label": "RunBBSubs",
       "asmLine": 6881,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Runs offscreen, relative position, bounding box, player collision then graphics in order.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -24086,13 +24131,16 @@
       "label": "KillBB",
       "asmLine": 6886,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared cannon, world, enemy and OAM core",
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Erases selected cannon Bullet Bill and returns.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69309,12 +69357,15 @@
       "instruction": "beq",
       "id": "control-01188",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation ProcessCannons -> ExCannon with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69328,12 +69379,15 @@
       "instruction": "ldx",
       "id": "control-01189",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcessCannons -> ThreeSChk with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69347,12 +69401,15 @@
       "instruction": "bne",
       "id": "control-01190",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation ThreeSChk -> Chk_BB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69366,12 +69423,15 @@
       "instruction": "bcs",
       "id": "control-01191",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation ThreeSChk -> Chk_BB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69385,12 +69445,15 @@
       "instruction": "beq",
       "id": "control-01192",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation ThreeSChk -> Chk_BB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69404,12 +69467,15 @@
       "instruction": "beq",
       "id": "control-01193",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation ThreeSChk -> FireCannon with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69423,12 +69489,15 @@
       "instruction": "jmp",
       "id": "control-01194",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original jump relation ThreeSChk -> Chk_BB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69442,12 +69511,15 @@
       "instruction": "bne",
       "id": "control-01195",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation FireCannon -> Chk_BB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69461,12 +69533,15 @@
       "instruction": "jmp",
       "id": "control-01196",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original jump relation FireCannon -> Next3Slt with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69480,12 +69555,15 @@
       "instruction": "bne",
       "id": "control-01197",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation Chk_BB -> Next3Slt with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69518,12 +69596,15 @@
       "instruction": "beq",
       "id": "control-01199",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation Chk_BB -> Next3Slt with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69556,12 +69637,15 @@
       "instruction": "jsr",
       "id": "control-01201",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original call relation Chk_BB -> BulletBillHandler with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69575,12 +69659,15 @@
       "instruction": "jsr",
       "id": "control-01202",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original fallthrough relation Chk_BB -> Next3Slt with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69594,12 +69681,15 @@
       "instruction": "bpl",
       "id": "control-01203",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation Next3Slt -> ThreeSChk with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69613,12 +69703,15 @@
       "instruction": "bpl",
       "id": "control-01204",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original fallthrough relation Next3Slt -> ExCannon with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69632,12 +69725,15 @@
       "instruction": "bne",
       "id": "control-01205",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation BulletBillHandler -> RunBBSubs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69651,12 +69747,15 @@
       "instruction": "bne",
       "id": "control-01206",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation BulletBillHandler -> ChkDSte with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69670,12 +69769,15 @@
       "instruction": "beq",
       "id": "control-01207",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation BulletBillHandler -> KillBB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69708,12 +69810,15 @@
       "instruction": "bmi",
       "id": "control-01209",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation BulletBillHandler -> SetupBB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69727,12 +69832,15 @@
       "instruction": "iny",
       "id": "control-01210",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original fallthrough relation BulletBillHandler -> SetupBB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69746,12 +69854,15 @@
       "instruction": "bcc",
       "id": "control-01211",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation SetupBB -> KillBB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69765,12 +69876,15 @@
       "instruction": "sta",
       "id": "control-01212",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetupBB -> ChkDSte with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69784,12 +69898,15 @@
       "instruction": "beq",
       "id": "control-01213",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original branch relation ChkDSte -> BBFly with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69823,12 +69940,15 @@
       "instruction": "jsr",
       "id": "control-01215",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkDSte -> BBFly with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -69862,12 +69982,15 @@
       "instruction": "jsr",
       "id": "control-01217",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original fallthrough relation BBFly -> RunBBSubs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -118671,12 +118794,15 @@
       "instruction": "rts/rti",
       "id": "control-03698",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+      ],
       "semanticContract": "Preserves original return relation BulletBillHandler -> Chk_BB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"

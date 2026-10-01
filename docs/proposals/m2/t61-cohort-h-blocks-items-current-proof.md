@@ -95,3 +95,9 @@ DOS16 link. Any source repair refreshes all three local EXEs; an audit-only
 result does not. This S starts at **696 / 1,992 current-exact nodes** and
 **1,391 / 4,324 current-exact feasible control edges**; historical accounting
 remains **1,992 / 1,992**.
+
+## S2 closure - cannon and Bullet Bill lifecycle
+
+All 14 scoped labels are current-exact. Static comparison of `$B9BA-$BA56` with `src/game/cannon.c` found no feasible difference in the water gate, slot-two-to-zero scheduler, hard-mode mask, expired-timer spawn, carry-preserving proximity check, movement gate, defeated descent, common child order, or erase return. The two table consumer bindings and all 26 internal feasible control relations agree with the source route.
+
+Twenty-five controlled original-ROM routes replayed as 50 current x86/x64 runs. Each compares 1,782 persistent RAM bytes and complete frame output; all match, and both native widths are byte-identical. The focused cannon smoke, dispatcher static contract, platform-purity audit, and OpenNT DOS16 link pass. No product source changed, so executable artifacts were not refreshed. Current re-audit advances to **710 / 1,992 exact nodes** and **1,417 / 4,324 exact feasible control relations**; historical accounting remains **1,992 / 1,992**.

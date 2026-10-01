@@ -1946,3 +1946,7 @@ All 49 T60 labels from `ProcFireball_Bubble` through `VineHeightData` are curren
 ### T61 S1 vine actor lifecycle result
 
 `VineObjectHandler -> ExitVH` is current-exact for all six scoped labels. The original `$B94B-$B9B9` route and the current shared implementation agree on slot selection, growth, visibility, drawing, reverse erasure, background probing, and return behavior. Forty-two original actor snapshots produced 84 matching caller checks and 84 matching complete current-source calls across x86 and x64; the 2,560-case focused smoke, platform-purity audit, and DOS16 link also pass. The registry records **696 / 1,992 current-exact nodes** and **1,391 / 4,324 current-exact feasible control edges**; the historical migration ledger remains **1,992 / 1,992**.
+
+### T61 S2 cannon and Bullet Bill lifecycle result
+
+`CannonBitmasks -> KillBB` is current-exact for all 14 scoped labels, 26 internal feasible control relations and two material bindings. A fresh 25-route original-ROM/current x86/x64 replay matched 1,782 persistent RAM bytes and full output for every route. Current registry totals are **710 / 1,992 exact nodes** and **1,417 / 4,324 exact feasible control edges**; historical migration remains **1,992 / 1,992**.

@@ -2040,3 +2040,7 @@ No mapped inventory node remains incomplete.
 At **S admission**, the proposal and active packet must state the baseline as ROM-match complete / 1,992, name every inventory label the S may change, state each node's incoming status, identify the exact subset expected to become matches, and declare the maximum expected closing fraction with its focused CTest and original-ROM route baseline. At **S closure**, the closure report must repeat the fraction, name every label whose status changed, link the evidence that allows each changed label to count as a match, and name every deferred label and its owner. No aggregate increase is allowed without matching inventory-row updates. The [node-backfill validation matrix](../etc/architecture/m2-node-backfill-validation-matrix.md) holds the shared retrospective batches and test lanes.
 
 Every M2 P report also retains the existing delivery record: refreshed `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`, their build/validation result, and the ordinary source/evidence/deferred-issue summary. The three executables demonstrate target delivery; they do not replace per-node ROM conformance evidence.
+
+## Current re-audit progress
+
+T61 S2 closes `CannonBitmasks -> KillBB`: **710 / 1,992 current-exact nodes** and **1,417 / 4,324 current-exact feasible control relations**. Historical ROM-match accounting remains **1,992 / 1,992**.
