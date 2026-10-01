@@ -2064,3 +2064,5 @@ Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1
 - Current-equivalence audit M2 T61 S8 closed `BlockObjectsCore -> NextBUpd`: historical migration remains **1,992 / 1,992**; current exact registry is **786 / 1,992** nodes and **1,545 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
 
 - Current-equivalence audit M2 T61 S9 closed `MoveEnemyHorizontally -> ExXMove`: historical migration remains **1,992 / 1,992**; current exact registry is **792 / 1,992** nodes and **1,554 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+
+- Current-equivalence audit M2 T61 S10 closed `MovePlayerVertically -> ExVMove`: historical migration remains **1,992 / 1,992**; current exact registry is **818 / 1,992** nodes and **1,588 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
