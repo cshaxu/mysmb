@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T61 S9 Packet
+## M2 T61 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T61 S9 audit - Cohort H horizontal-movement primitive chain. |
-| Admission And Approval | Owner-approved source-order proof program; S8 is closed and this packet admits S9 only. |
-| Objective | Audit and repair `MoveEnemyHorizontally -> ExXMove` against original-ROM semantics. |
-| Non-goals | No vertical movement/gravity or platform-adapter behavior claim. |
+| Identifier Mode | M2 T61 S10 audit - Cohort H vertical movement and gravity chain. |
+| Admission And Approval | Owner-approved source-order proof program; S9 is closed and this packet admits S10 only. |
+| Objective | Audit and repair `MovePlayerVertically -> ExVMove` against original-ROM semantics. |
+| Non-goals | `EnemiesAndLoopsCore` and platform-adapter behavior are outside this chain. |
 | Reference Baseline | Historical 1,992 / 1,992; current 792 / 1,992 nodes and 1,554 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t61-cohort-h-blocks-items-current-proof.md. |
-| Files And ABI Surface | Shared `src/game/world/movement.c` plus shared player boundary; platform adapters are consumers. |
+| Files And ABI Surface | Shared `src/game/world/gravity.c`, player and actor call boundaries; platform adapters are consumers. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | Original-ROM/current x86/x64 movement routes, focused arithmetic smoke, purity and DOS16 link. |
-| Expected Markers | Closed: six nodes and nine internal feasible controls. |
+| Verification | Original-ROM/current x86/x64 vertical/gravity routes, focused C90 harnesses, purity and DOS16 link. |
+| Expected Markers | 26 nodes and 37 internal feasible controls. |
 | Asset Needs | Shared-game repair refreshes three local EXEs. |
 | Reporting Requirements | Report historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | Any feasible difference remains in S9 until repaired and re-audited. |
-| Exit Criteria | Six nodes and scoped feasible controls exact; no platform code carries horizontal-motion rules. |
+| Stop Conditions | Any feasible difference remains in S10 until repaired and re-audited. |
+| Exit Criteria | 26 nodes and 37 internal controls exact; platform code has no movement rule. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Signed-nibble extraction, carry propagation, equal-low-byte ADC, page carry, wrapper slot restore and jumpspring gate. |
+| Similar-Issue Sweep | Jumpspring gates, vertical wrapper offsets, platform and red-troopa selectors, signed gravity arithmetic and return paths. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64; T61 S9 is closed pending admission of its source-order successor.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64; T61 S10 is active.
 
 ## T61 S7 Closure
 
