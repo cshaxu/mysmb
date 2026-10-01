@@ -1683,3 +1683,22 @@ differences. The same current binaries also passed paired 600-frame idle and
 start/action routes with exact work RAM and output. This establishes the
 selector node only; its incident control relations, pause-tail route and the
 separate `ScreenOff` transaction mismatch retain their individual statuses.
+
+### T53 S1 pause/sprite-root result
+
+Fourteen further S1 labels are current-equivalence **exact**: `PauseSkip`,
+`Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipMainOper`, the six
+`SpriteShuffler` labels, and the three offscreen-OAM labels. A controlled
+owner-ROM start/move/pause/resume route reached each label, including the
+shuffle store path, and compared zero work-RAM, selected NMI-state and visible
+output differences for both x86 and x64 across 600 frames. Static review
+separately establishes the shared-C timer/LFSR gate, sprite-zero OAM phase,
+abstracted scanline split, NMI tail, shuffle arithmetic and OAM-loop order.
+Only `InitBuffer` remains pending in this S1 chain; `ScreenOff` remains the
+separate order mismatch. Individual control-edge dispositions remain open.
+
+`InitBuffer` is also current-equivalence **exact**. It was reached on every
+sample of that route and its selector-six buffer choice, header/offset clear,
+and address-selector reset match the shared C transaction. Its successor
+relationship to display restoration remains distinct from the preceding
+`ScreenOff` order mismatch.

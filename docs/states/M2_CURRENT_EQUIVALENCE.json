@@ -9770,13 +9770,16 @@
       "label": "InitBuffer",
       "asmLine": 796,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_commit_vram_buffer and mysmb_frame_root_begin",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: after UpdateScreen, InitBuffer selects buffer-offset entry zero except selector six, clears both selected offset/header bytes, resets the address selector, and then permits display restore and the NMI service tail. The C VRAM commit has the same selector-six distinction and clear/reset writes; display restoration is the following shared call."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch."
+      ],
       "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -9858,13 +9861,16 @@
       "label": "PauseSkip",
       "asmLine": 826,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_begin",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: after PauseRoutine, both the paused and unpaused source paths reach PauseSkip and execute the seven-byte LFSR phase; the C root has the same timer/frame-counter gate followed by unconditional pseudorandom update."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Begins pseudorandom rotation regardless of paused timer branch; a paused game bypasses frame-counter and timer work but not the LFSR update.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -9893,13 +9899,16 @@
       "label": "Sprite0Clr",
       "asmLine": 843,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "When Sprite0HitDetectFlag is set, performs the source pre-split sprite-zero path: while unpaused, moves nonzero OAM sprites offscreen and shuffles offsets before hit synchronization.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -9909,13 +9918,16 @@
       "label": "Sprite0Hit",
       "asmLine": 851,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_begin / shared frame output state",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Uses the source sprite-zero synchronization condition before the scrolling/main-operation split; current shared state exposes the resulting split rather than host-owned game decisions.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -9925,13 +9937,16 @@
       "label": "HBlankDelay",
       "asmLine": 855,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_begin / renderer frame boundary",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Represents the fixed source post-sprite-zero delay before scroll writes; its observable contract is that scrolling and mode dispatch start only after the sprite-zero synchronization phase.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -9960,13 +9975,16 @@
       "label": "SkipMainOper",
       "asmLine": 868,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c and src/game/title_modes.c",
       "currentCounterpart": "mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
       "semanticEvidence": [
-        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required."
+        "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
+        "M2 T53 S1 source audit: both paused and ordinary paths restore the saved pre-dispatch PPU-control mirror with NMI enabled at the NMI tail; C restores the same saved control after either path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Restores saved PPU control with NMI enable and ends the frame after either paused or normal operating-mode path.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -10085,13 +10103,16 @@
       "label": "SpriteShuffler",
       "asmLine": 912,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Uses preset $28 and the source descending OAM-data-offset loop, then advances SprShuffleAmtOffset modulo three and populates misc sprite offsets.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10101,13 +10122,16 @@
       "label": "ShuffleLoop",
       "asmLine": 917,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets first loop",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Traverses SprDataOffset indices $0e through $00, adding the selected shuffle amount only when the offset is at least $28 and adding the preset on overflow.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10117,13 +10141,16 @@
       "label": "StrSprOffset",
       "asmLine": 926,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets first loop store",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Stores either the unmodified low offset or the computed wrapped shuffle value before advancing to the next index.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10133,13 +10160,16 @@
       "label": "NextSprOffset",
       "asmLine": 927,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets loop/index transition",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Decrements the offset index through zero, then advances SprShuffleAmtOffset and selects either its incremented value or reset zero.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10149,13 +10179,16 @@
       "label": "SetAmtOffset",
       "asmLine": 934,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Stores the modulo-three shuffle amount selector before the misc-offset copy phase.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10165,13 +10198,16 @@
       "label": "SetMiscOffset",
       "asmLine": 937,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets misc-offset loop",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Copies SprDataOffset+5 through +7 into three groups of Misc_SprDataOffset, adding eight between each group member in source write order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10200,13 +10236,16 @@
       "label": "MoveAllSpritesOffscreen",
       "asmLine": 965,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c and src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_reset OAM clear and mysmb_frame_root_begin sprite-zero path",
       "semanticEvidence": [
-        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending."
+        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
+        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Selects OAM offset $00, uses the shared loop, and writes $f8 to every OAM Y byte including sprite zero.",
       "currentSourcePaths": [
         "src/game/boot.c",
@@ -10217,13 +10256,16 @@
       "label": "MoveSpritesOffscreen",
       "asmLine": 969,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending."
+        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
+        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Selects OAM offset $04 and uses the shared loop to write $f8 to every nonzero sprite Y byte while preserving sprite zero.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10233,13 +10275,16 @@
       "label": "SprInitLoop",
       "asmLine": 972,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c and src/game/frame_root.c",
       "currentCounterpart": "shared OAM Y-byte loop",
       "semanticEvidence": [
-        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending."
+        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
+        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+      ],
       "semanticContract": "Writes $f8, advances OAM offset by four, and repeats until the byte offset wraps to zero.",
       "currentSourcePaths": [
         "src/game/boot.c",
