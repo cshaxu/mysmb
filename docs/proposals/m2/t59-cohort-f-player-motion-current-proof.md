@@ -96,3 +96,7 @@ Every S1 label and feasible incident relation is current-exact with static and c
 ## S1 closure - player movement dispatcher and crouch gate
 
 All three labels from PlayerMovementSubs through ProcMove are current-equivalence exact. Static comparison of original lines 5899-5915 found no shared-owner difference. All 37 movement snapshots replay recorded child boundaries through fresh C90 x86/x64 owners; 74 caller comparisons over 1,784 persistent bytes pass. Platform purity and unchanged shared DOS16 link pass. No product source changed, so no artifact refresh is due. Of 11 feasible incident controls, nine receive fresh S1 evidence and two retain compatible prior proof.
+
+## S2 admission - ground, air and water movement chain
+
+S2 admits `MoveSubs -> ExitMov1`: MoveSubs, NoMoveSub, OnGroundStateSub, GndMove, FallingSub, JumpSwimSub, DumpFall, ProcSwim, LRWater, LRAir, JSMove and ExitMov1. Shared owner: `src/game/player_movement.c`. It owns state-vector selection, growth freeze, climb-side timer, ground/air/swim branch predicates, input-facing writes and movement call order. Physics, animation, friction and climb children retain their separate chains. Registry baseline is 581 exact labels and 1,124 exact feasible controls; all 12 labels need fresh evidence. ROM route: controlled original movement snapshots with caller boundaries. Operational route: x86/x64 C90 replays, focused smoke, DOS16 link and platform purity.
