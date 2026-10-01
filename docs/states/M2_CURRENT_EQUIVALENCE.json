@@ -3037,13 +3037,15 @@
       "consumer": "InitFireworks",
       "storage": "FireworksXPosData[FireworksCounter+star state]",
       "feasiblePath": "StarFChk retains the source index after counter decrement and uses it for X with page carry.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "x_data[index]",
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3056,13 +3058,15 @@
       "consumer": "InitFireworks",
       "storage": "FireworksYPosData[FireworksCounter+star state]",
       "feasiblePath": "The same source index selects final Y.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "y_data[index]",
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3075,13 +3079,15 @@
       "consumer": "InitFireworks",
       "storage": "star X/page minus $30 and carry",
       "feasiblePath": "The initial subtract borrow feeds star page and final X-add carry feeds fireworks page.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "x_before and page local in mysmb_enemy_init_fireworks_frenzy",
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3094,13 +3100,15 @@
       "consumer": "Get17ID",
       "storage": "SwimCC_IDData[world/random selector]",
       "feasiblePath": "Water path constructs one-bit selector before exact ID table read.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "swim_ids[index & 1]",
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3113,13 +3121,15 @@
       "consumer": "ChkRBit",
       "storage": "Bitmasks[random/retry index]",
       "feasiblePath": "Retry loop reads mask and tests BitMFilter until it proves height unused.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "masks[index]",
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3132,13 +3142,15 @@
       "consumer": "AddFBit",
       "storage": "Enemy17YPosData[unique height index]",
       "feasiblePath": "Selected unused bit index drives exact Y passed to PutAtRightExtent.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "heights[index]",
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -28243,13 +28255,15 @@
       "label": "PutAtRightExtent",
       "asmLine": 8604,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bowser flame frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Stores supplied Y, adds $20 to screen-right X with page carry and tail-jumps FinishFlame.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28259,13 +28273,15 @@
       "label": "SpawnFromMouth",
       "asmLine": 8615,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bowser flame frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Copies Bowser-relative X/page/Y, selects random force direction against target Y and clears the frenzy buffer.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28275,13 +28291,15 @@
       "label": "SetMF",
       "asmLine": 8635,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bowser flame frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Stores the selected FlameYMFAdderData value before falling through to FinishFlame.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28291,13 +28309,15 @@
       "label": "FinishFlame",
       "asmLine": 8640,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bowser flame frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Writes box $08, activates Y-high/flag, and clears X force/state through the source LSR result.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28307,13 +28327,15 @@
       "label": "FireworksXPosData",
       "asmLine": 8653,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared fireworks frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Binds six exact X offsets indexed by decremented FireworksCounter plus star-flag state.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28323,13 +28345,15 @@
       "label": "FireworksYPosData",
       "asmLine": 8656,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared fireworks frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Binds the matching six exact Y positions.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28339,13 +28363,15 @@
       "label": "InitFireworks",
       "asmLine": 8659,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared fireworks frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Gates frenzy timer, resets it to $20, decrements FireworksCounter and begins star-flag lookup.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28355,13 +28381,15 @@
       "label": "StarFChk",
       "asmLine": 8666,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared fireworks frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Reverse-searches slots five through zero for StarFlagObject, then preserves subtract-$30 borrow into page and uses the counter/state index for both tables.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28371,13 +28399,15 @@
       "label": "ExitFWk",
       "asmLine": 8697,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared fireworks frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Returns after timer gating or complete explosion initialization.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28387,13 +28417,15 @@
       "label": "Bitmasks",
       "asmLine": 8701,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Binds eight one-hot height-filter masks.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28403,13 +28435,15 @@
       "label": "Enemy17YPosData",
       "asmLine": 8704,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Binds eight exact frenzy height values.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28419,13 +28453,15 @@
       "label": "SwimCC_IDData",
       "asmLine": 8707,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Binds Cheep Cheep IDs $0a/$0b selected by random threshold and world.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28435,13 +28471,15 @@
       "label": "BulletBillCheepCheep",
       "asmLine": 8710,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Gates frenzy timer then selects water Cheep or land Bullet Bill path.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28451,13 +28489,15 @@
       "label": "ChkW2",
       "asmLine": 8722,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Applies world-two exception to the water ID selector.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28467,13 +28507,15 @@
       "label": "Get17ID",
       "asmLine": 8726,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Masks selector to one bit and reads SwimCC_IDData.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28483,13 +28525,15 @@
       "label": "Set17ID",
       "asmLine": 8730,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Stores actor ID and resets full BitMFilter before unique-height selection.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28499,13 +28543,15 @@
       "label": "GetRBit",
       "asmLine": 8736,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Masks first random register to height index 0..7.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28515,13 +28561,15 @@
       "label": "ChkRBit",
       "asmLine": 8738,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Finds an unset one-hot height bit by wrapped retry.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28531,13 +28579,15 @@
       "label": "AddFBit",
       "asmLine": 8746,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Sets selected filter bit, positions/activates actor, clears dummy, arms timer and tail-initializes actor.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28547,13 +28597,15 @@
       "label": "DoBulletBills",
       "asmLine": 8755,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Begins land route scan for an existing frenzy Bullet Bill.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28563,13 +28615,15 @@
       "label": "BB_SLoop",
       "asmLine": 8757,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Scans slots zero through four, exits if found, otherwise reaches FireBulletBill after all slots.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28579,13 +28633,15 @@
       "label": "ExF17",
       "asmLine": 8765,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Returns on timer, capacity or existing-bill gate.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -28595,13 +28651,15 @@
       "label": "FireBulletBill",
       "asmLine": 8767,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/frenzy.c",
       "currentCounterpart": "mysmb_enemy_step_bullet_bill_cheep_frenzy land branch",
       "semanticEvidence": [
-        "Td S9 K42 FireBulletBill node audit: SMB1 lines 8767-8772 compared with shared src/game/enemy/frenzy.c bullet-bill frenzy path; controlled original-ROM/x86/x64 fire route remains required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "ORs blast SFX bit and assigns Bullet Bill frenzy ID before common actor setup.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78775,12 +78833,14 @@
       "instruction": "jmp",
       "id": "control-01584",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original jump relation PutAtRightExtent -> FinishFlame with timer, front-slot, random/table, carry and activation handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78794,12 +78854,14 @@
       "instruction": "bcc",
       "id": "control-01585",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation SpawnFromMouth -> SetMF with timer, front-slot, random/table, carry and activation handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78813,12 +78875,14 @@
       "instruction": "iny",
       "id": "control-01586",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SpawnFromMouth -> SetMF with timer, front-slot, random/table, carry and activation handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78832,12 +78896,14 @@
       "instruction": "sta",
       "id": "control-01587",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetMF -> FinishFlame with timer, front-slot, random/table, carry and activation handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78851,12 +78917,14 @@
       "instruction": "bne",
       "id": "control-01588",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation InitFireworks -> ExitFWk with timer, star-slot, counter/state index and page-carry handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78870,12 +78938,14 @@
       "instruction": "ldy",
       "id": "control-01589",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitFireworks -> StarFChk with timer, star-slot, counter/state index and page-carry handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78889,12 +78959,14 @@
       "instruction": "bne",
       "id": "control-01590",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation StarFChk -> StarFChk with timer, star-slot, counter/state index and page-carry handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78908,12 +78980,14 @@
       "instruction": "sta",
       "id": "control-01591",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireworks branch, loop, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation StarFChk -> ExitFWk with timer, star-slot, counter/state index and page-carry handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78927,12 +79001,14 @@
       "instruction": "bne",
       "id": "control-01592",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation BulletBillCheepCheep -> ExF17 with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78946,12 +79022,14 @@
       "instruction": "bne",
       "id": "control-01593",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation BulletBillCheepCheep -> DoBulletBills with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78965,12 +79043,14 @@
       "instruction": "bcs",
       "id": "control-01594",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation BulletBillCheepCheep -> ExF17 with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -78984,12 +79064,14 @@
       "instruction": "bcc",
       "id": "control-01595",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation BulletBillCheepCheep -> ChkW2 with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79003,12 +79085,14 @@
       "instruction": "iny",
       "id": "control-01596",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation BulletBillCheepCheep -> ChkW2 with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79022,12 +79106,14 @@
       "instruction": "beq",
       "id": "control-01597",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkW2 -> Get17ID with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79041,12 +79127,14 @@
       "instruction": "iny",
       "id": "control-01598",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkW2 -> Get17ID with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79060,12 +79148,14 @@
       "instruction": "lda",
       "id": "control-01599",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation Get17ID -> Set17ID with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79079,12 +79169,14 @@
       "instruction": "bne",
       "id": "control-01600",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation Set17ID -> GetRBit with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79098,12 +79190,14 @@
       "instruction": "sta",
       "id": "control-01601",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation Set17ID -> GetRBit with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79117,12 +79211,14 @@
       "instruction": "and",
       "id": "control-01602",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetRBit -> ChkRBit with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79136,12 +79232,14 @@
       "instruction": "beq",
       "id": "control-01603",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkRBit -> AddFBit with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79155,12 +79253,14 @@
       "instruction": "jmp",
       "id": "control-01604",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original jump relation ChkRBit -> ChkRBit with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79174,12 +79274,14 @@
       "instruction": "jsr",
       "id": "control-01605",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original call relation AddFBit -> PutAtRightExtent with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79214,12 +79316,14 @@
       "instruction": "ldy",
       "id": "control-01607",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation DoBulletBills -> BB_SLoop with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79233,12 +79337,14 @@
       "instruction": "bcs",
       "id": "control-01608",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation BB_SLoop -> FireBulletBill with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79252,12 +79358,14 @@
       "instruction": "beq",
       "id": "control-01609",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation BB_SLoop -> BB_SLoop with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79271,12 +79379,14 @@
       "instruction": "bne",
       "id": "control-01610",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation BB_SLoop -> BB_SLoop with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79290,12 +79400,14 @@
       "instruction": "bne",
       "id": "control-01611",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation BB_SLoop -> ExF17 with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -79309,12 +79421,14 @@
       "instruction": "bne",
       "id": "control-01612",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original branch relation FireBulletBill -> Set17ID with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -122063,12 +122177,14 @@
       "instruction": "rts/rti",
       "id": "control-03782",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+      ],
       "semanticContract": "Preserves original return relation PutAtRightExtent -> AddFBit with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"

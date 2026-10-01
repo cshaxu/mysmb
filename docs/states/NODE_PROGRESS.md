@@ -23,7 +23,7 @@ all 1,992 labels. The separate current-equivalence baseline and its
 source-order cohort results are authoritative in
 [M2 current-equivalence re-audit](M2_CURRENT_EQUIVALENCE.md).
 
-Latest task review: [T61 S1](../proposals/m2/t61-cohort-h-blocks-items-current-proof.md#s1-closure---vine-actor-lifecycle) closes six vine actor labels; the current registry records 696 exact labels and 1,391 exact feasible control relations. Historical conformance remains 1,992 / 1,992.
+Latest task review: [T62 S6](../proposals/m2/t62-cohort-i-enemy-stream-current-proof.md#s6-closure) closes the 23-label positioning, fireworks and Bullet Bill/Cheep chain with 29 feasible controls and six material handoffs; the current registry records 937 exact labels and 1,776 exact feasible control relations. Historical conformance remains 1,992 / 1,992.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
