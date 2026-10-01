@@ -1429,13 +1429,15 @@
       "consumer": "FindAreaPointer",
       "storage": "WorldNumber-indexed world-to-area-offset byte",
       "feasiblePath": "FindAreaPointer reads WorldAddrOffsets,WorldNumber before byte-truncated addition of AreaNumber.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area_data.c:WORLD_OFFSETS -> mysmb_area_find_area_pointer",
       "semanticContract": "The same world offset reaches 8-bit area-table indexing.",
       "semanticEvidence": [
-        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1448,13 +1450,15 @@
       "consumer": "FindAreaPointer",
       "storage": "area-indexed AreaPointer byte",
       "feasiblePath": "FindAreaPointer consumes the WorldAddrOffsets-derived plus AreaNumber index at AreaAddrOffsets.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area_data.c:AREA_OFFSETS -> mysmb_area_find_area_pointer",
       "semanticContract": "The same selected byte becomes AreaPointer.",
       "semanticEvidence": [
-        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
       "cohort": "C",
       "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
       "currentSourcePaths": [
@@ -1467,13 +1471,15 @@
       "consumer": "GetAreaDataAddrs",
       "storage": "AreaType-indexed enemy-stream base byte",
       "feasiblePath": "GetAreaDataAddrs adds EnemyAddrHOffsets,AreaType to the low-five-bit area offset.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area_data.c:ENEMY_BASES -> mysmb_area_get_data_addresses",
       "semanticContract": "The same 8-bit sum indexes enemy pointer tables.",
       "semanticEvidence": [
-        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1486,13 +1492,15 @@
       "consumer": "GetAreaDataAddrs",
       "storage": "enemy-stream pointer low/high table pair",
       "feasiblePath": "The enemy index selects both low and high bytes before EnemyData pointer consumption.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area_data.c:ENEMY_LOW/ENEMY_HIGH -> mysmb_area_get_data_addresses",
       "semanticContract": "The same selected pair is stored as EnemyDataLow/High.",
       "semanticEvidence": [
-        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
       "cohort": "C",
       "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
       "currentSourcePaths": [
@@ -1505,13 +1513,15 @@
       "consumer": "GetAreaDataAddrs",
       "storage": "AreaType-indexed area-stream base byte",
       "feasiblePath": "GetAreaDataAddrs adds AreaDataHOffsets,AreaType to the low-five-bit area offset.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area_data.c:AREA_BASES -> mysmb_area_get_data_addresses",
       "semanticContract": "The same 8-bit sum indexes area pointer tables.",
       "semanticEvidence": [
-        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1524,13 +1534,15 @@
       "consumer": "GetAreaDataAddrs",
       "storage": "area-stream pointer low/high table pair",
       "feasiblePath": "The area index selects both low and high bytes before header consumption.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area_data.c:AREA_LOW/AREA_HIGH -> mysmb_area_get_data_addresses",
       "semanticContract": "The same selected pair is stored as AreaDataLow/High then advanced after header.",
       "semanticEvidence": [
-        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
       "cohort": "C",
       "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
       "currentSourcePaths": [
@@ -9677,8 +9689,8 @@
     }
   ],
   "nodeCounts": {
-    "exact": 415,
-    "needs-evidence": 1577
+    "exact": 431,
+    "needs-evidence": 1561
   },
   "controlEdgeCounts": {
     "exact": 888,
@@ -18659,14 +18671,16 @@
       "label": "WorldAddrOffsets",
       "asmLine": 4485,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18675,14 +18689,16 @@
       "label": "AreaAddrOffsets",
       "asmLine": 4491,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18691,14 +18707,16 @@
       "label": "World1Areas",
       "asmLine": 4492,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18707,14 +18725,16 @@
       "label": "World2Areas",
       "asmLine": 4493,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18723,14 +18743,16 @@
       "label": "World3Areas",
       "asmLine": 4494,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18739,14 +18761,16 @@
       "label": "World4Areas",
       "asmLine": 4495,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18755,14 +18779,16 @@
       "label": "World5Areas",
       "asmLine": 4496,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18771,14 +18797,16 @@
       "label": "World6Areas",
       "asmLine": 4497,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18787,14 +18815,16 @@
       "label": "World7Areas",
       "asmLine": 4498,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18803,14 +18833,16 @@
       "label": "World8Areas",
       "asmLine": 4499,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18819,14 +18851,16 @@
       "label": "EnemyAddrHOffsets",
       "asmLine": 4509,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18835,14 +18869,16 @@
       "label": "EnemyDataAddrLow",
       "asmLine": 4512,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18851,14 +18887,16 @@
       "label": "EnemyDataAddrHigh",
       "asmLine": 4520,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18867,14 +18905,16 @@
       "label": "AreaDataHOffsets",
       "asmLine": 4528,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18883,14 +18923,16 @@
       "label": "AreaDataAddrLow",
       "asmLine": 4531,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18899,14 +18941,16 @@
       "label": "AreaDataAddrHigh",
       "asmLine": 4539,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "source-bound generated local PRG table consumed by mysmb_area_find_area_pointer / mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the ROM table bytes and byte-width index/base/pointer-pair handoff to the area-data owner.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]

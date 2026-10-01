@@ -330,3 +330,45 @@ test-only recorder fixture adds an existing controlled loop input to the
 native recorder, so no three-artifact refresh is required. The current registry
 is 415 exact nodes and 888 exact feasible control relations; historical
 conformance remains 1,992 / 1,992.
+
+## S5 admission — world/area and stream-pointer table chain
+
+S5 admits the contiguous 16-label data chain `WorldAddrOffsets ->
+AreaDataAddrHigh`: `WorldAddrOffsets`, `AreaAddrOffsets`, `World1Areas`,
+`World2Areas`, `World3Areas`, `World4Areas`, `World5Areas`, `World6Areas`,
+`World7Areas`, `World8Areas`, `EnemyAddrHOffsets`, `EnemyDataAddrLow`,
+`EnemyDataAddrHigh`, `AreaDataHOffsets`, `AreaDataAddrLow` and
+`AreaDataAddrHigh`. S4 is its predecessor and S6 receives the selected enemy
+streams. The shared owner is `src/game/area/area_data.c`; platform code stays
+a consumer. All labels are historically complete and need current evidence,
+so expected historical credit remains zero.
+
+The ROM-logic track compares all source bytes, WorldNAreas aliases, 8-bit
+world/area and type-base additions, enemy and area low/high pointer pairing,
+and the resulting consumer handoff. The operational track uses the controlled
+original-ROM/current x86/x64 table matrix, focused pointer/header smoke, DOS16
+link and platform-purity. A feasible difference remains in S5 until shared-C
+repair and the same audit leave no scoped difference.
+
+## S5 closure — world/area and stream-pointer table chain
+
+S5 closes all 16 scoped labels current-exact: `WorldAddrOffsets`,
+`AreaAddrOffsets`, `World1Areas`, `World2Areas`, `World3Areas`,
+`World4Areas`, `World5Areas`, `World6Areas`, `World7Areas`, `World8Areas`,
+`EnemyAddrHOffsets`, `EnemyDataAddrLow`, `EnemyDataAddrHigh`,
+`AreaDataHOffsets`, `AreaDataAddrLow` and `AreaDataAddrHigh`. The generated
+owner-local C source matches all 188 original-ROM bytes across these table
+regions. Static comparison also confirms the byte-truncated world/area and
+type-base sums, aliases and paired low/high loads in `area_data.c`.
+
+The controlled original-ROM/current x86/x64 pointer matrix repeats 70
+lookup/header routes plus the no-swap termination route and consumes every
+one of the 188 table bytes. All compared persistent work RAM matches, and
+x86/x64 records are byte-identical. The pointer/header smoke and
+platform-purity pass on both widths; the shared OpenNT DOS16 link passes with
+the established `OLDNAMES.LIB` warning. No shared-C difference or product
+source change was found, so no three-artifact refresh is required.
+
+All 16 nodes and six table-to-consumer material relations are exact. The
+current registry is 431 exact nodes and 888 exact feasible controls; historical
+conformance remains 1,992 / 1,992.

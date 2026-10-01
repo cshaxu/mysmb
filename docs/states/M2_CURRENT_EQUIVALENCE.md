@@ -1815,3 +1815,15 @@ matrices and the native records are byte-identical. Focused x86/x64 smokes,
 platform-purity and the shared OpenNT DOS16 link pass. The live registry is
 415 exact nodes, 888 exact feasible controls, 18 infeasible raw controls and
 zero mismatches; historical conformance remains 1,992 / 1,992.
+
+### T57 S5 pointer-table result
+
+The 16 source table labels from `WorldAddrOffsets` through
+`AreaDataAddrHigh` and their six table-to-consumer relations are
+current-equivalence exact. Generated owner-local source matches all 188
+original table bytes, and the 71-route ROM/current matrix consumes every byte
+through the translated pointer owner with zero persistent work-RAM differences
+and byte-identical x86/x64 results. Pointer/header smokes, platform-purity and
+the shared OpenNT DOS16 link pass. The live registry is 431 exact nodes, 888
+exact feasible controls, 18 infeasible raw controls and zero mismatches;
+historical conformance remains 1,992 / 1,992.
