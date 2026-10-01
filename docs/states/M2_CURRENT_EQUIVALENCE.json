@@ -58011,12 +58011,14 @@
       "instruction": "jsr",
       "id": "control-00770",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source call relation GameMode -> JumpEngine.",
+      "status": "exact",
+      "currentCounterpart": "mysmb_game_mode direct C switch models GameMode's four JumpEngine vector selections.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T55 S6 P6: current source audit confirms ROM $AEDC GameMode's four inline JumpEngine words map in selector order to the shared dispatcher switch."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: freshly built current x86/x64 recorders and the original ROM agree for all four controlled GameMode selector fixtures; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
@@ -113323,12 +113325,14 @@
       "instruction": "rts/rti",
       "id": "control-03616",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "C switch dispatch owners -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentCounterpart": "mysmb_game_mode direct switch and mysmb_game_core_routine preserve the selected child return continuation.",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T55 S6 P6: source audit pairs the ROM JumpEngine stack-return continuation with the direct shared-C call/return sequence after each GameMode switch arm."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: all four original-ROM/current x86/x64 GameMode records agree at the post-child NMI boundary, covering both GameCoreRoutine post-child outcomes."
+      ],
       "semanticContract": "Preserves the original return continuation JumpEngine → GameMode: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"

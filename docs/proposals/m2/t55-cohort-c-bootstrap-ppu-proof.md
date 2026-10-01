@@ -277,3 +277,24 @@ route and current native comparison before any node or feasible edge can be
 promoted. The result is a clean post-repair static/operational checkpoint,
 not a replacement for the required ROM route evidence. No product source
 changed in this P, so artifacts are not refreshed.
+
+## S6 P6 ? current GameMode original-ROM replay and verifier repair
+
+The freshly built current x86/x64 recorders now replay the original ROM's four
+`GameMode` vector fixtures and the 600-frame Start and idle routes. The
+verifier reports exact persistent work RAM and recorded output for all four
+controlled entries, including both `GameCoreRoutine` post-child outcomes; the
+x86 and x64 recordings are byte-identical. The Start route reaches all four
+ROM vector targets, while the ordinary routes cover both controller selections
+and the task-three continuation.
+
+This rerun exposed a verifier defect, not a game defect. For the two
+`PlayerDeath` fixtures, the old assertion expected the fixture's pre-child
+controller selection to survive. The ROM record and current native record
+both clear `$06FC` before the NMI boundary. The verifier now compares that
+post-child byte to the original record, preserving the exact source contract.
+This changes test evidence only; no product source changed and artifacts are
+not refreshed. The registry promotes the observed `GameMode -> JumpEngine`
+call and `JumpEngine -> GameMode` continuation only; the other `JumpEngine`
+caller families remain unpromoted until their own current controlled ROM/native
+routes run.

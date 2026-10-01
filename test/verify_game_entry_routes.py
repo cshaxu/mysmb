@@ -59,8 +59,12 @@ def main():
             for address in [0x6fc, 0x6fd, 0x753, 0x770, 0x772]:
                 assert original[address+4] == native[address+4]
             assert native[0x772+4] == (0 if case < 2 else 3)
+            # PlayerDeath is the selected GameRoutines child for cases 2/3.
+            # It clears CurrentPlayer's selected controller byte before this
+            # NMI boundary in the ROM, so retain the ROM record as the
+            # contract instead of the former pre-child fixture expectation.
             if case >= 2:
-                assert native[0x6fc+4] == (1 if case == 2 else 0)
+                assert native[0x6fc+4] == original[0x6fc+4]
             entry_rows.append(dict(case=case, bits=bits, persistentResidual=sorted(delta)))
         assert (directory/('entry-native32-%d.msfn' % case)).read_bytes() == (directory/('entry-native64-%d.msfn' % case)).read_bytes()
     # The current shared NMI path also removes the old cold-screen PPU-control
