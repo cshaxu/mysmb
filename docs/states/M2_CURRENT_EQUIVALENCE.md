@@ -1907,3 +1907,15 @@ All six labels from `PlayerAnimTmrData` through `SetAnimSpd` are current-equival
 ### T59 S6 friction result
 
 All six labels from `ImposeFriction` through `SetAbsSpd` are current-equivalence exact. ROM friction branches and signed-speed output match shared C; 64 ROM child-call streams replay through x86/x64 for 128 matching comparisons, and friction smoke, DOS16 link and platform purity pass. Registry advances from 635 to 641 exact labels and from 1,225 to 1,238 exact feasible control relations; historical conformance remains 1,992 / 1,992.
+
+### T59 Cohort-F cross-chain closure
+
+The zero-credit S7 integration matrix combines all closed player movement,
+movement-state, climb, physics, animation and friction chains. Twenty-four
+original-ROM/current four-frame routes have zero persistent-RAM and
+visible-output differences on both current x86 and x64; their native records
+are byte-identical, and every declared composition join is reached. The
+focused chain checks remain recorded at each S closure. A fresh OpenNT DOS16
+MZ link and platform-purity audit pass. The live registry remains **641 exact
+labels**, **1,238 exact feasible controls** and **18 source-infeasible raw
+controls**; historical conformance remains **1,992 / 1,992**.

@@ -149,3 +149,25 @@ All six labels from `ImposeFriction` through `SetAbsSpd` are current-equivalence
 ## S7 admission - Cohort F cross-chain closure
 
 S7 has explicit zero node credit. It is the required T59 integration proof joining the closed S1-S6 routes from `PlayerMovementSubs` through `SetAbsSpd`: movement dispatcher, movement state, climb, physics, animation and friction. It will run an original-ROM/current x86/x64 route matrix, focused chain smokes, DOS16 link and platform purity. Registry baseline is 641 exact labels and 1,238 exact feasible controls. Any composition difference remains within T59 until repaired and re-audited.
+
+## S7 closure - Cohort F cross-chain integration
+
+S7 receives no node credit. The original-ROM/current matrix ran 24 four-frame
+routes covering controller, transition, mode, end-level and movement entries.
+For both current x86 and x64 C90 owners, every recorded frame has zero
+persistent-RAM and visible-output differences; the two native records are
+byte-identical. All 17 declared original join addresses were reached, with
+aggregate hit counts of 84, 31, 1, 4, 3, 2, 44, 1, 4, 5, 9, 3, 31, 1, 31, 2
+and 1 in source order. The focused S1-S6 checks remain their respective
+closure evidence; this S supplies the composed route proof. A fresh shared
+OpenNT DOS16 MZ link and platform-purity audit pass. No product source changed,
+so no three-EXE refresh is due.
+
+## T59 closure
+
+T59 closes Cohort F with 63 current-exact labels and 123 current-exact feasible
+control relations added across S1-S6. S7 confirms their composition without a
+route discrepancy. The current-equivalence registry remains 641 exact labels,
+1,238 exact feasible control relations and 18 source-infeasible raw controls;
+historical M2 conformance remains 1,992 / 1,992. No scoped label or feasible
+relation is deferred or transferred.
