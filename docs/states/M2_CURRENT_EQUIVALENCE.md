@@ -1883,3 +1883,7 @@ All 14 labels from PlayerChangeSize through ExitDeath are current-equivalence ex
 ### T58 S6 end-level result
 
 All 10 labels from FlagpoleSlide through ExitNA are current-equivalence exact. The static audit covers flagpole control, task countdown, hidden one-up threshold and next-area reset. Twenty-nine original snapshots replay their recorded caller boundaries through x86/x64 with 58 passing comparisons and byte-identical widths. Registry advances from 568 to 578 exact labels and from 1,100 to 1,115 exact feasible control relations; historical conformance remains 1,992 / 1,992.
+
+### T59 S1 movement dispatcher result
+
+All three labels from PlayerMovementSubs through ProcMove are current-equivalence exact. Thirty-seven original snapshots replay caller boundaries through x86/x64 with 74 passing comparisons. Registry advances from 578 to 581 exact labels and from 1,115 to 1,124 exact feasible control relations; historical conformance remains 1,992 / 1,992.

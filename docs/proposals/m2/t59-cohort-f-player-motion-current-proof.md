@@ -92,3 +92,7 @@ S1 admits `PlayerMovementSubs -> ProcMove`: PlayerMovementSubs, SetCrouch and Pr
 ## S1 closure criteria
 
 Every S1 label and feasible incident relation is current-exact with static and controlled-route evidence. Any discrepancy remains in its shared owner until repaired and re-audited before S2.
+
+## S1 closure - player movement dispatcher and crouch gate
+
+All three labels from PlayerMovementSubs through ProcMove are current-equivalence exact. Static comparison of original lines 5899-5915 found no shared-owner difference. All 37 movement snapshots replay recorded child boundaries through fresh C90 x86/x64 owners; 74 caller comparisons over 1,784 persistent bytes pass. Platform purity and unchanged shared DOS16 link pass. No product source changed, so no artifact refresh is due. Of 11 feasible incident controls, nine receive fresh S1 evidence and two retain compatible prior proof.

@@ -21688,15 +21688,16 @@
       "label": "PlayerMovementSubs",
       "asmLine": 5899,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 preserves this original movement dispatch branch, crouch write and child-order contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21705,14 +21706,16 @@
       "label": "SetCrouch",
       "asmLine": 5907,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 preserves this original movement dispatch branch, crouch write and child-order contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21721,14 +21724,16 @@
       "label": "ProcMove",
       "asmLine": 5908,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 preserves this original movement dispatch branch, crouch write and child-order contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -63793,14 +63798,15 @@
       "instruction": "bne",
       "id": "control-00946",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerMovementSubs -> SetCrouch.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -63813,14 +63819,15 @@
       "instruction": "bne",
       "id": "control-00947",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerMovementSubs -> ProcMove.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -63833,14 +63840,15 @@
       "instruction": "and",
       "id": "control-00948",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation PlayerMovementSubs -> SetCrouch.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -63853,14 +63861,15 @@
       "instruction": "sta",
       "id": "control-00949",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation SetCrouch -> ProcMove.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -63873,16 +63882,16 @@
       "instruction": "jsr",
       "id": "control-00950",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation ProcMove -> PlayerPhysicsSub.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -63894,14 +63903,15 @@
       "instruction": "bne",
       "id": "control-00951",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcMove -> NoMoveSub.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -63914,14 +63924,15 @@
       "instruction": "beq",
       "id": "control-00952",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcMove -> MoveSubs.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -63934,14 +63945,15 @@
       "instruction": "sty",
       "id": "control-00953",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ProcMove -> MoveSubs.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -116950,15 +116962,16 @@
       "instruction": "rts/rti",
       "id": "control-03659",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S1 shared C90 direct call, branch or return counterpart.",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation PlayerPhysicsSub \u00e2\u2020\u2019 ProcMove: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+      ],
+      "semanticContract": "M2 T59 S1 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
