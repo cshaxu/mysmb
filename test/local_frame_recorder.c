@@ -558,6 +558,12 @@ static void mysmb_recorder_apply_t29_parser_dispatch_fixture(
     game->ram[0x06a0U] = 0U;
     game->ram[0x0728U] = 0U;
     game->ram[0x073fU] = 0U;
+    /* Match the reference recorder's source-reachable GroundArea16 stream
+     * for the core slots that call ProcessAreaData. */
+    game->ram[0x00e7U] = 0xd0U;
+    game->ram[0x00e8U] = 0xa9U;
+    game->ram[0x074eU] = 1U;
+    game->ram[0x075fU] = 0U;
 }
 
 /* Mirror the source-recorder T29/S8 fixture: the original L_GroundArea16

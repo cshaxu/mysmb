@@ -798,6 +798,14 @@ static void mysmb_reference_apply_t29_parser_dispatch_fixture(lib_u8 *ram)
     ram[0x06a0u] = 0u;
     ram[0x0728u] = 0u;
     ram[0x073fu] = 0u;
+    /* ParserCore reaches ProcessAreaData on its core slots.  Keep the
+     * controlled dispatch source-reachable by selecting the real post-header
+     * GroundArea16 stream, rather than leaving the title-mode area pointer.
+     * This changes RAM only at the normal NMI boundary. */
+    ram[0x00e7u] = 0xd0u;
+    ram[0x00e8u] = 0xa9u;
+    ram[0x074eu] = 1u;
+    ram[0x075fu] = 0u;
 }
 
 /* T29/S8 selects the final object in the original L_GroundArea16 stream
