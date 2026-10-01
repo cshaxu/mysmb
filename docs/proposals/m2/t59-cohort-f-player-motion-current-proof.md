@@ -104,3 +104,8 @@ S2 admits `MoveSubs -> ExitMov1`: MoveSubs, NoMoveSub, OnGroundStateSub, GndMove
 ## S2 closure - ground, air and water movement chain
 
 All 12 labels from MoveSubs through ExitMov1 are current-equivalence exact. Static ROM comparison found no shared-owner difference. All 37 movement snapshots replay recorded child boundaries through fresh C90 x86/x64 owners; 74 caller comparisons pass. Platform purity passes. No product source changed, so no artifact refresh is due. Of 40 feasible incident controls, 35 receive fresh S2 evidence and 5 retain compatible prior proof.
+
+
+## S3 admission - climb movement and vertical-force binding
+
+S3 admits `ClimbAdderLow -> InitMForceData`: ClimbAdderLow, ClimbAdderHigh, ClimbingSub, MoveOnVine, ClimbFD, CSetFDir, ExitCSub, InitCSTimer, JumpMForceData, FallMForceData, PlayerYSpdData and InitMForceData. Shared owner: `src/game/player.c` with the movement dispatcher in `src/game/player_movement.c` as predecessor. It covers climb fractional and page-coordinate movement, left/right vine side movement, facing inversion, climb-side timer and the four vertical-force tables. It does not admit the subsequent physics consumer chain. Registry baseline is 593 exact labels and 1,159 exact feasible controls; all 12 scoped labels need fresh current evidence. ROM logic route: controlled climbing snapshots recording movement and table-selected state. Operational route: x86/x64 C90 replays, focused smoke, DOS16 link and platform purity.
