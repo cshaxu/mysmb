@@ -481,3 +481,8 @@ outcomes; its x86/x64 records agree with the ROM on the four joypad RAM bytes
 and all PPU scalars. Historical conformance remains 1,992 / 1,992; the current
 registry advances from 221 to **225 exact nodes** and from 450 to **458 exact
 feasible control relations**. S8 is not admitted by this closure.
+
+
+## S8 admission — VRAM packet and PPU handoff chain
+
+S8 receives the contiguous eight-label `WriteBufferToScreen → WritePPUReg1` chain at SMB1 lines 2482–2536. Its predecessor is the closed S7 NMI joypad return; its successor is T55 closure. The chain spans the packet-header d7/d6 split, `$2000` increment selection, repeat/sequential payload loops, indirect pointer carry, zero terminator, scroll writes and control-register/mirror write. The shared owners are `frame_root.c` for packet consumption and `boot.c` for the common control/scroll primitive. It has 8 scoped labels, 0 expected historical matches and a maximum historical numerator of 1,992/1,992. The controlled original-ROM/current x86/x64 route will cover empty, sequential horizontal, vertical, repeat and chained packets through the actual NMI continuation; it must compare PPU-visible outputs and RAM/control handoff. Any feasible difference remains in S8 for repair and repeat audit.

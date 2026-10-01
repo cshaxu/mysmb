@@ -2,26 +2,27 @@
 
 ## Current Work
 
-## M2 T55 S7 Packet
+## M2 T55 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T55 S7 — joypad serial-read current-equivalence audit. |
-| Admission And Approval | T55 S6 closed with zero scoped feasible differences; S7 is now closed after repair and re-audit. |
-| Objective | Closed: audited `ReadJoypads` through `Save8Bits`, repaired the feasible shared-C packet-control difference, and repeated the scoped node/edge and ROM/native audit to zero. |
-| Non-goals | No VRAM packet audit, no platform-owned input decision, and no historical-node credit. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry before S7: 221 exact, 1,771 needs-evidence nodes; 450 exact feasible controls. Scope: four labels plus incident feasible controls; expected historical delta 0. |
+| Identifier Mode | M2 T55 S8 — VRAM packet and PPU handoff current-equivalence audit. |
+| Admission And Approval | T55 S7 closed with zero scoped feasible differences; owner authorization permits source-order S8 admission. |
+| Objective | Audit `WriteBufferToScreen` through `WritePPUReg1`, repair every feasible shared-C mismatch, and repeat scoped ROM/native evidence until each node and incident feasible control is exact. |
+| Non-goals | No platform rendering/input decisions, no historical-node credit, and no successor admission before this chain closes with zero feasible differences. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 225 exact and 1,767 needs-evidence nodes; 458 exact feasible controls. Scope: eight labels and 13 pending incident feasible controls; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
-| Files And ABI Surface | Shared `src/game/frame_root.c`, focused input tests and recorder-only fixtures. |
+| Files And ABI Surface | Shared `src/game/frame_root.c` and `src/game/boot.c`; focused packet/recorder tests only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | ROM-logic: original serial port/debounce branches and caller returns. Operational: focused x86/x64 checks, DOS16 build if source changes and platform-purity audit. |
-| Expected Markers | Four labels and every incident feasible control preserve two-port bit order, mask writes and caller continuation in shared C. |
+| Verification | ROM-logic: source packet header branches, payload/read pointer, terminator and scroll/control call-return relations. Operational: controlled original-ROM/x86/x64 packet matrix, focused x86/x64 tests, DOS16 build if product source changes, and platform-purity audit. |
+| Expected Markers | Empty, sequential, vertical and repeat packets preserve physical `$2000`, `$2005`, VRAM outputs, mirror state, zero-page pointer progression and terminal transfer in shared C. |
 | Asset Needs | Refresh all three artifacts only if product source changes. |
-| Reporting Requirements | Report each scoped label and each incident control disposition with separate logic and operational results. |
+| Reporting Requirements | Report all eight labels and each scoped feasible control with separate static ROM-logic and operational results; report repair/re-audit loop before closure. |
 | Stop Conditions | A feasible ROM/C difference remains after repair, an incident control lacks a shared-C counterpart, or platform code makes a gameplay decision. |
-| Exit Criteria | Achieved: every scoped node and incident feasible control is exact under static and controlled evidence; S8 remains unadmitted. |
+| Exit Criteria | Every scoped node and incident feasible control is exact under static and controlled evidence; any discovered mismatch is repaired and re-audited in S8. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | Input bit order, serial loop count, Select/Start latch suppression, port independence and NMI caller return. |
+| Similar-Issue Sweep | Header d7/d6 decoding, increment/repeat modes, source-pointer carry, terminator routing, physical/mirror `$2000`, and scroll-register write order. |
+
 ## Current Technical Baseline
 
 M2 T55 S7 is active after the closed S6 dispatcher audit. It continues Cohort C with the contiguous two-port joypad serial-read chain.
