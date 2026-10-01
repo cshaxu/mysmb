@@ -2012,3 +2012,7 @@ The source-order chain `PutAtRightExtent -> FireBulletBill` is current-exact: 23
 ### T62 S7 group allocation and frenzy result
 
 `HandleGroupEnemies -> EndFrenzy` adds twelve current-exact labels, sixteen feasible controls and three material handoffs. Static `$C44C-$C4AD`, 115 group and 196 small-initializer/frenzy original-ROM/current x86/x64 replays, focused full-RAM C90 checks, platform purity and DOS16-link evidence agree. The registry is **949 / 1,992** nodes and **1,792 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.
+
+### T62 S8 Piranha and platform initializer result
+
+`InitPiranhaPlant -> EndOfEnemyInitCode` adds 25 current-exact labels, 37 feasible controls and 11 material handoffs. Static `$C4AF-$C541`, 96 Piranha/jump-green, 64 frenzy-loop and 240 platform-initializer original-ROM/current x86/x64 routes, focused C90 full-RAM contracts, platform purity and DOS16-link evidence agree. The registry is **974 / 1,992** nodes and **1,829 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical mapping remains **1,992 / 1,992**.

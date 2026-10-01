@@ -3271,13 +3271,16 @@
       "consumer": "MovePiranhaPlant",
       "storage": "Piranha down/up Y aliases and move flag",
       "feasiblePath": "Initializer preserves exact source bounds consumed by later plant motion.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Piranha aliases in mysmb_enemy_init_piranha_plant",
       "semanticContract": "Preserves source RAM/vector selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3332,13 +3335,16 @@
       "consumer": "SetBBox2",
       "storage": "Enemy_MovingDir, Enemy_X_Speed and box-control A=$03",
       "feasiblePath": "Jump entry writes direction/speed then falls through TallBBox2 into the one-write box tail.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_init_jump_green_ptroopa and mysmb_enemy_init_tall_box_only",
       "semanticContract": "Preserves ordered limited writes without generic vertical-state reset.",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3351,13 +3357,16 @@
       "consumer": "PosPlatform",
       "storage": "PlatPosDataLow[Y]",
       "feasiblePath": "Position helper adds low offset before page carry.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform_position_low[index]",
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3370,13 +3379,16 @@
       "consumer": "PosPlatform",
       "storage": "PlatPosDataHigh[Y] plus low carry",
       "feasiblePath": "Position helper adds high compensation and low carry.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform_position_high[index]",
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3389,13 +3401,16 @@
       "consumer": "InitDropPlatform",
       "storage": "alignment/state/direction and position writes",
       "feasiblePath": "Balance path enters shared drop initialization after both position adjustments.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_init_balance_platform then drop",
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3408,13 +3423,16 @@
       "consumer": "SPBBox",
       "storage": "cleared vertical state and area/hard flags",
       "feasiblePath": "Common platform state reset precedes box selection.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_common_platform",
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3427,13 +3445,16 @@
       "consumer": "SetYO",
       "storage": "Enemy Y, signedness and selected center offset",
       "feasiblePath": "Signed Y decides the original/direct top coordinate and $40/$c0 center-offset handoff.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_init_vertical_platform",
       "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3446,13 +3467,16 @@
       "consumer": "CommonSmallLift",
       "storage": "Enemy Y force and speed",
       "feasiblePath": "Upward force/speed writes precede common offset/box setup.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_init_small_lift_up",
       "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3465,13 +3489,16 @@
       "consumer": "CommonSmallLift",
       "storage": "Enemy Y force and speed",
       "feasiblePath": "Downward force/speed writes precede common offset/box setup.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_init_small_lift_down",
       "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3484,13 +3511,16 @@
       "consumer": "PosPlatform",
       "storage": "position selector index one, X/page position and box control",
       "feasiblePath": "Position adjustment occurs before box control four.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_common_small_lift",
       "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3503,13 +3533,16 @@
       "consumer": "SPBBox",
       "storage": "lift state and area/hard-mode box predicate",
       "feasiblePath": "Large-lift path reaches the shared box selector after small-lift state initialization.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_init_large_lift_up/down",
       "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -28830,13 +28863,16 @@
       "label": "InitPiranhaPlant",
       "asmLine": 8839,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Piranha and frenzy-dispatch core",
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Writes plant speed one, aliases state/move flag zero, records original/down and up-minus-$18 Y, then tail-selects box-only $09.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -28927,13 +28963,16 @@
       "label": "NextFSlot",
       "asmLine": 8884,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared Piranha and frenzy-dispatch core",
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Decrements slot and loops while nonnegative before final clear/disable.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -28944,13 +28983,16 @@
       "label": "InitJumpGPTroopa",
       "asmLine": 8893,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared box-only initializer tail",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Writes only left direction $02 and X speed $f8, then falls through box-only tall setup.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -28960,13 +29002,16 @@
       "label": "TallBBox2",
       "asmLine": 8898,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared box-only initializer tail",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Loads box control $03 and falls through SetBBox2.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -28976,13 +29021,16 @@
       "label": "SetBBox2",
       "asmLine": 8899,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared box-only initializer tail",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Stores only Enemy_BoundBoxCtrl and returns, preserving all other fields.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -28992,13 +29040,16 @@
       "label": "InitBalPlatform",
       "asmLine": 8904,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Raises Y two pixels, conditionally applies platform position index two, alternates global alignment, resets direction, applies index zero then falls into drop initialization.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29008,13 +29059,16 @@
       "label": "AlignP",
       "asmLine": 8911,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Copies global alignment to state and selects next global alignment from $ff or object slot.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29024,13 +29078,16 @@
       "label": "SetBPA",
       "asmLine": 8917,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Stores alignment, clears direction, calls position index zero and falls through drop setup.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29040,13 +29097,16 @@
       "label": "InitDropPlatform",
       "asmLine": 8925,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Sets collision flag $ff then tail-selects common platform code.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29056,13 +29116,16 @@
       "label": "InitHoriPlatform",
       "asmLine": 8932,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Clears secondary X counter then tail-selects common platform code.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29072,13 +29135,16 @@
       "label": "InitVertPlatform",
       "asmLine": 8939,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/init_targets.c",
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Sets default center offset $40; for negative Y stores its two's-complement as top and selects $c0, then stores center Y+selected offset before falling through common platform setup.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29088,13 +29154,16 @@
       "label": "SetYO",
       "asmLine": 8947,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/init_targets.c",
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Stores top Y and stores center Y using the branch-selected $40/$c0 offset before falling through common platform setup.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29104,13 +29173,16 @@
       "label": "CommonPlatCode",
       "asmLine": 8955,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Calls InitVStf then falls through platform box selection.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29120,13 +29192,16 @@
       "label": "SPBBox",
       "asmLine": 8957,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Selects box $05 for castle/secondary hard and $06 otherwise.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29136,13 +29211,16 @@
       "label": "CasPBB",
       "asmLine": 8964,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Stores selected platform box and returns.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29152,13 +29230,16 @@
       "label": "LargeLiftUp",
       "asmLine": 8969,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/init_targets.c",
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Calls upward small-lift initializer, then tail-jumps to the large-platform box selector.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29168,13 +29249,16 @@
       "label": "LargeLiftDown",
       "asmLine": 8973,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/init_targets.c",
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Calls downward small-lift initializer and falls through the large-platform box selector.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29184,13 +29268,16 @@
       "label": "LargeLiftBBox",
       "asmLine": 8976,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/init_targets.c",
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Tail-jumps to shared platform box selection.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29200,13 +29287,16 @@
       "label": "PlatLiftUp",
       "asmLine": 8981,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/init_targets.c",
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Writes Y force $10 and speed $ff, then tail-jumps to common small-lift setup.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29216,13 +29306,16 @@
       "label": "PlatLiftDown",
       "asmLine": 8990,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/init_targets.c",
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Writes Y force $f0 and speed $00, then falls through common small-lift setup.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29232,13 +29325,16 @@
       "label": "CommonSmallLift",
       "asmLine": 8998,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/init_targets.c",
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Uses position offset index one before writing bounding-box control four and returning.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29248,13 +29344,16 @@
       "label": "PlatPosDataLow",
       "asmLine": 9007,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Binds position low addends $08,$0c,$f8.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29264,13 +29363,16 @@
       "label": "PlatPosDataHigh",
       "asmLine": 9010,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Binds position high addends $00,$00,$ff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29280,13 +29382,16 @@
       "label": "PosPlatform",
       "asmLine": 9013,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared platform initializer core",
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Adds indexed low and high platform offsets with low-byte carry into page.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -29296,13 +29401,16 @@
       "label": "EndOfEnemyInitCode",
       "asmLine": 9025,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Returns immediately when the initializer jump-engine vector selects its terminal entry.",
       "currentSourcePaths": [
         "src/game/enemy/init.c"
@@ -79857,12 +79965,15 @@
       "instruction": "jmp",
       "id": "control-01630",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump relation InitPiranhaPlant -> SetBBox2 with exact limited write footprint.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -79946,12 +80057,15 @@
       "instruction": "bne",
       "id": "control-01634",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation LakituChk -> NextFSlot with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -79966,12 +80080,15 @@
       "instruction": "sta",
       "id": "control-01635",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation LakituChk -> NextFSlot with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -79986,12 +80103,15 @@
       "instruction": "bpl",
       "id": "control-01636",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation NextFSlot -> LakituChk with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -80006,12 +80126,15 @@
       "instruction": "sta",
       "id": "control-01637",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitJumpGPTroopa -> TallBBox2 with exact limited write footprint.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80025,12 +80148,15 @@
       "instruction": "lda",
       "id": "control-01638",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation TallBBox2 -> SetBBox2 with exact limited write footprint.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80044,12 +80170,15 @@
       "instruction": "bne",
       "id": "control-01639",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation InitBalPlatform -> AlignP with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80063,12 +80192,15 @@
       "instruction": "jsr",
       "id": "control-01640",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation InitBalPlatform -> PosPlatform with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80082,12 +80214,15 @@
       "instruction": "jsr",
       "id": "control-01641",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitBalPlatform -> AlignP with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80101,12 +80236,15 @@
       "instruction": "bpl",
       "id": "control-01642",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation AlignP -> SetBPA with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80120,12 +80258,15 @@
       "instruction": "tay",
       "id": "control-01643",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation AlignP -> SetBPA with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80139,12 +80280,15 @@
       "instruction": "jsr",
       "id": "control-01644",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation SetBPA -> PosPlatform with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80158,12 +80302,15 @@
       "instruction": "jsr",
       "id": "control-01645",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetBPA -> InitDropPlatform with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80177,12 +80324,15 @@
       "instruction": "jmp",
       "id": "control-01646",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump relation InitDropPlatform -> CommonPlatCode with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80196,12 +80346,15 @@
       "instruction": "jmp",
       "id": "control-01647",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump relation InitHoriPlatform -> CommonPlatCode with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80215,12 +80368,15 @@
       "instruction": "bpl",
       "id": "control-01648",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation InitVertPlatform -> SetYO with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80234,12 +80390,15 @@
       "instruction": "ldy",
       "id": "control-01649",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitVertPlatform -> SetYO with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80253,12 +80412,15 @@
       "instruction": "sta",
       "id": "control-01650",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetYO -> CommonPlatCode with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80272,12 +80434,15 @@
       "instruction": "jsr",
       "id": "control-01651",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation CommonPlatCode -> InitVStf with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -80292,12 +80457,15 @@
       "instruction": "jsr",
       "id": "control-01652",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation CommonPlatCode -> SPBBox with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80311,12 +80479,15 @@
       "instruction": "beq",
       "id": "control-01653",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation SPBBox -> CasPBB with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80330,12 +80501,15 @@
       "instruction": "bne",
       "id": "control-01654",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation SPBBox -> CasPBB with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80349,12 +80523,15 @@
       "instruction": "lda",
       "id": "control-01655",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation SPBBox -> CasPBB with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80368,12 +80545,15 @@
       "instruction": "jsr",
       "id": "control-01656",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation LargeLiftUp -> PlatLiftUp with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80387,12 +80567,15 @@
       "instruction": "jmp",
       "id": "control-01657",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump relation LargeLiftUp -> LargeLiftBBox with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80406,12 +80589,15 @@
       "instruction": "jsr",
       "id": "control-01658",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation LargeLiftDown -> PlatLiftDown with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80425,12 +80611,15 @@
       "instruction": "jsr",
       "id": "control-01659",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation LargeLiftDown -> LargeLiftBBox with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80444,12 +80633,15 @@
       "instruction": "jmp",
       "id": "control-01660",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump relation LargeLiftBBox -> SPBBox with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80463,12 +80655,15 @@
       "instruction": "jmp",
       "id": "control-01661",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump relation PlatLiftUp -> CommonSmallLift with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80482,12 +80677,15 @@
       "instruction": "sta",
       "id": "control-01662",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation PlatLiftDown -> CommonSmallLift with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -80501,12 +80699,15 @@
       "instruction": "jsr",
       "id": "control-01663",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation CommonSmallLift -> PosPlatform with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -122333,12 +122534,15 @@
       "instruction": "rts/rti",
       "id": "control-03785",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation PosPlatform -> InitBalPlatform with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -122352,12 +122556,15 @@
       "instruction": "rts/rti",
       "id": "control-03786",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation PosPlatform -> SetBPA with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -122371,12 +122578,15 @@
       "instruction": "rts/rti",
       "id": "control-03787",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform branch, call, fall-through, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation InitVStf -> CommonPlatCode with platform state, position carry and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -122391,12 +122601,15 @@
       "instruction": "rts/rti",
       "id": "control-03788",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation PlatLiftUp -> LargeLiftUp with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -122410,12 +122623,15 @@
       "instruction": "rts/rti",
       "id": "control-03789",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation PlatLiftDown -> LargeLiftDown with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
@@ -122429,12 +122645,15 @@
       "instruction": "rts/rti",
       "id": "control-03790",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/init_targets.c shared calls, fall-throughs, tail jumps and returns",
       "semanticEvidence": [
-        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation PosPlatform -> CommonSmallLift with vertical/lift state, call/return order and box-selection handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c"
