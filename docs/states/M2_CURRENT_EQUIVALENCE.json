@@ -74748,12 +74748,14 @@
       "instruction": "jsr",
       "id": "control-01631",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P11: source map pairs InitEnemyFrenzy's ROM JumpEngine call with mysmb_enemy_init_frenzy and its six declared selector targets."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P11: current original-ROM/current x86/x64 t39-small-init cases 172-195 observe $C7A0 -> $8E04 for selectors $14-$17; all persistent work RAM agrees and x86/x64 records are byte-identical. The $13 NoFrenzyCode residual is an explicit direct-entry route, not an outer initializer path."
+      ],
       "semanticContract": "Preserves original call relation InitEnemyFrenzy -> JumpEngine with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",

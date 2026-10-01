@@ -350,3 +350,18 @@ another. The registry promotes the observed BlockCode call only. Its return
 relation remains source-infeasible because every relevant selected target
 tail-jumps into the block lifetime/setup chain rather than returning through
 the inline table caller.
+
+## S6 P11 ? current InitEnemyFrenzy control-edge replay
+
+The local recorder now accepts the existing 196-case small-initializer fixture.
+For all 24 outer-reachable frenzy cases (selectors `$14` through `$17`), the
+original ROM executes `$C7A0` (`InitEnemyFrenzy`) and `$8E04` (`JumpEngine`),
+while current x86/x64 records match every persistent work-RAM byte and each
+other. The registry promotes this observed call.
+
+Cases 166–171 intentionally place `$13` at the already-reached inner
+`InitEnemyFrenzy` boundary to exercise `NoFrenzyCode`; `$13` is not a natural
+outer `InitEnemyRoutines` dispatch. Their current root correctly takes the
+outer no-init path, so their apparent `$0016/$06CB` difference is a fixture
+entry mismatch, not a product difference. The `InitEnemyFrenzy` return edge
+remains source-infeasible.
