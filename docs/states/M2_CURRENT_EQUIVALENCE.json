@@ -21256,14 +21256,16 @@
       "label": "PlayerChangeSize",
       "asmLine": 5757,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21272,14 +21274,16 @@
       "label": "EndChgSize",
       "asmLine": 5762,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21288,14 +21292,16 @@
       "label": "ExitChgSize",
       "asmLine": 5765,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21304,14 +21310,16 @@
       "label": "PlayerInjuryBlink",
       "asmLine": 5769,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21320,14 +21328,16 @@
       "label": "ExitBlink",
       "asmLine": 5776,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21336,14 +21346,16 @@
       "label": "InitChangeSize",
       "asmLine": 5778,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21352,14 +21364,16 @@
       "label": "ExitBoth",
       "asmLine": 5786,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21368,14 +21382,16 @@
       "label": "PlayerDeath",
       "asmLine": 5791,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21384,14 +21400,16 @@
       "label": "DonePlayerTask",
       "asmLine": 5797,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21400,14 +21418,16 @@
       "label": "PlayerFireFlower",
       "asmLine": 5804,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21416,14 +21436,16 @@
       "label": "CyclePlayerPalette",
       "asmLine": 5812,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21432,14 +21454,16 @@
       "label": "ResetPalFireFlower",
       "asmLine": 5821,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21448,14 +21472,16 @@
       "label": "ResetPalStar",
       "asmLine": 5824,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -21464,14 +21490,16 @@
       "label": "ExitDeath",
       "asmLine": 5830,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
+      "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -62968,13 +62996,15 @@
       "instruction": "bne",
       "id": "control-00909",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerChangeSize -> EndChgSize.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -62987,13 +63017,15 @@
       "instruction": "jmp",
       "id": "control-00910",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source jump relation PlayerChangeSize -> InitChangeSize.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63006,13 +63038,15 @@
       "instruction": "bne",
       "id": "control-00911",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation EndChgSize -> ExitChgSize.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63025,13 +63059,15 @@
       "instruction": "jsr",
       "id": "control-00912",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation EndChgSize -> DonePlayerTask.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63044,13 +63080,15 @@
       "instruction": "jsr",
       "id": "control-00913",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation EndChgSize -> ExitChgSize.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63063,13 +63101,15 @@
       "instruction": "bcs",
       "id": "control-00914",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerInjuryBlink -> ExitBlink.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63082,13 +63122,15 @@
       "instruction": "beq",
       "id": "control-00915",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerInjuryBlink -> DonePlayerTask.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63122,13 +63164,15 @@
       "instruction": "bne",
       "id": "control-00917",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ExitBlink -> ExitBoth.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63141,13 +63185,15 @@
       "instruction": "bne",
       "id": "control-00918",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ExitBlink -> InitChangeSize.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63160,13 +63206,15 @@
       "instruction": "bne",
       "id": "control-00919",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation InitChangeSize -> ExitBoth.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63179,13 +63227,15 @@
       "instruction": "sta",
       "id": "control-00920",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation InitChangeSize -> ExitBoth.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63198,13 +63248,15 @@
       "instruction": "bcs",
       "id": "control-00921",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerDeath -> ExitDeath.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63238,13 +63290,15 @@
       "instruction": "beq",
       "id": "control-00923",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerFireFlower -> ResetPalFireFlower.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63257,13 +63311,15 @@
       "instruction": "lsr",
       "id": "control-00924",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation PlayerFireFlower -> CyclePlayerPalette.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63276,13 +63332,15 @@
       "instruction": "jsr",
       "id": "control-00925",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation ResetPalFireFlower -> DonePlayerTask.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -63295,13 +63353,15 @@
       "instruction": "jsr",
       "id": "control-00926",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ResetPalFireFlower -> ResetPalStar.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -116735,13 +116795,15 @@
       "instruction": "rts/rti",
       "id": "control-03654",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation DonePlayerTask \u00e2\u2020\u2019 EndChgSize: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]
@@ -116754,13 +116816,15 @@
       "instruction": "rts/rti",
       "id": "control-03655",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S5 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation DonePlayerTask \u00e2\u2020\u2019 ResetPalFireFlower: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+      ],
+      "semanticContract": "M2 T58 S5 confirms this source relation and state handoff in the shared mode owner.",
       "currentSourcePaths": [
         "src/game/player_modes.c"
       ]

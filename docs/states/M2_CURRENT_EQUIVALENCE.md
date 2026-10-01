@@ -1875,3 +1875,7 @@ All 23 scoped labels are current-equivalence exact. Static source comparison of 
 ### T58 S4 vine and pipe transition result
 
 All 11 labels from Vine_AutoClimb through RightPipe are current-equivalence exact. Static shared-C audit covers vine gate, climb controls, coordinate move, vertical and side-pipe modes, timer wrap, area-mode writes and right-pipe control. Twenty-eight original transition snapshots replay recorded child calls and returns through fresh x86/x64 owners with 56 passing persistent-state comparisons and byte-identical widths. Child bodies remain separately assigned. Platform purity and shared OpenNT DOS16 link pass. Registry advances from 543 to 554 exact labels and from 1,063 to 1,082 exact feasible control relations; historical conformance remains 1,992 / 1,992.
+
+### T58 S5 player mode result
+
+All 14 labels from PlayerChangeSize through ExitDeath are current-equivalence exact. The static audit covers the size, blink, death and fire-flower timer gates, task writes and palette state. Twenty-two original snapshots replay their recorded caller boundaries through x86/x64 with 44 passing comparisons and byte-identical widths. Registry advances from 554 to 568 exact labels and from 1,082 to 1,100 exact feasible control relations; historical conformance remains 1,992 / 1,992.

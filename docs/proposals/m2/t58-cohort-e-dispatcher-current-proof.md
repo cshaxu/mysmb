@@ -167,3 +167,11 @@ All 11 labels from Vine_AutoClimb through RightPipe are current-equivalence exac
 ## S5 admission - player size, injury, death and palette chain
 
 S5 audits 14 labels from PlayerChangeSize through ExitDeath. It retains historical custody. Current baseline is 554 exact labels and 1,082 exact feasible controls; historical expected matches remain empty. The ROM track compares timers, size state, injury blink, death branches and palette cycling. The operational track uses x86/x64 caller snapshots, DOS16 link and platform purity.
+
+## S5 closure - player size, injury, death and palette chain
+
+All 14 labels from PlayerChangeSize through ExitDeath are current-equivalence exact. Static comparison of original lines 5757-5830 found no shared-owner difference. All 22 mode snapshots replay recorded child boundaries through fresh C90 x86/x64 owners; 44 caller comparisons over 1,784 persistent bytes pass. Platform purity passes and the unchanged shared DOS16 core link remains valid. No product source changed, so no artifact refresh is due. Of 28 feasible incident controls, 18 receive fresh S5 evidence and 10 retain compatible prior proof.
+
+## S6 admission - flagpole and next-area chain
+
+S6 audits 10 labels from FlagpoleSlide through ExitNA. It retains historical custody. Current baseline is 568 exact labels and 1,100 exact feasible controls; historical expected matches remain empty. ROM track compares flagpole, castle, hidden one-up and next-area branches. Operational track uses x86/x64 caller snapshots, DOS16 link and platform purity.
