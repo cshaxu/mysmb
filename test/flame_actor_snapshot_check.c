@@ -34,18 +34,32 @@ const mysmb_u8 mysmb_enemy_flame_y_positions[4]={0x90U,0x80U,0x70U,0x90U};
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 s) { (void)child(g,1U,s); }
 mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *input,mysmb_u8 s)
 { struct mysmb_game *g;g=(struct mysmb_game *)input;(void)child(g,2U,s);return g->ram[0x3d1U]; }
-int main(int argc,char **argv)
+static int run_case(const char *snapshot_path,const char *calls_path)
 {
     static struct mysmb_game g;static unsigned char expected[2048];
     unsigned char h[8];FILE *f;
-    if(argc!=3)return 64;
-    f=fopen(argv[2],"rb");if(!f)return 65;
-    if(fread(h,1,8,f)!=8 || memcmp(h,"MSnC\1",5) || h[5]>16U)return 66;
-    count=h[5];if(fread(records,4098,count,f)!=count || fgetc(f)!=EOF)return 66;
-    fclose(f);f=fopen(argv[1],"rb");if(!f)return 65;
+    count=calls=failures=0U;
+    f=fopen(calls_path,"rb");if(!f)return 65;
+    if(fread(h,1,8,f)!=8 || memcmp(h,"MSnC\1",5) || h[5]>16U)return fclose(f),66;
+    count=h[5];if(fread(records,4098,count,f)!=count || fgetc(f)!=EOF)return fclose(f),66;
+    fclose(f);f=fopen(snapshot_path,"rb");if(!f)return 65;
     if(fread(h,1,8,f)!=8 || memcmp(h,"MSnP\1",5) ||
-        fread(g.ram,1,2048,f)!=2048 || fread(expected,1,2048,f)!=2048 || fgetc(f)!=EOF)return 66;
+        fread(g.ram,1,2048,f)!=2048 || fread(expected,1,2048,f)!=2048 || fgetc(f)!=EOF)return fclose(f),66;
     fclose(f);mysmb_enemy_proc_bowser_flame(&g,h[6]);compare(g.ram,expected);
     if(calls!=count)++failures;
     return failures?1:0;
+}
+int main(int argc,char **argv)
+{
+    FILE *f;char snapshot[512],calls_path[512],line[1100];unsigned int cases,bad;
+    if(argc==3 && strcmp(argv[1],"--manifest")!=0)return run_case(argv[1],argv[2]);
+    if(argc!=3 || strcmp(argv[1],"--manifest")!=0)return 64;
+    f=fopen(argv[2],"rb");if(!f)return 65;
+    cases=bad=0U;
+    while(fgets(line,sizeof(line),f)!=0) {
+        if(sscanf(line,"%511[^	]\t%511[^\r\n]",snapshot,calls_path)!=2) { fclose(f);return 66; }
+        ++cases;if(run_case(snapshot,calls_path)!=0)++bad;
+    }
+    fclose(f);printf("flame actor manifest: %u cases, %u failures\n",cases,bad);
+    return bad?1:0;
 }

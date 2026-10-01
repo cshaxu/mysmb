@@ -2209,3 +2209,17 @@ All three scoped labels are current-exact: `FlameTimerData`, `SetFlameTimer` and
 One current-source route runner per x86 and x64 width extracts and replays all 256 recorded original-ROM `SetFlameTimer` child calls with zero differences in returned A and full RAM. Platform-purity and the OpenNT DOS16 shared-source link pass. Only an audit harness changed, so no three-EXE artifact refresh is due. No labels are deferred; S19 begins at `ProcBowserFlame`.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 1,992 nodes** and **2,270 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## M2 T63 S19 closure — Bowser-flame horizontal movement chain
+
+- Scope: `ProcBowserFlame`, `SFlmX`; both current-exact.
+- Exact controls: `control-02008` through `control-02012`; exact materials:
+  `material-00273` through `material-00275`.
+- ROM logic: static `$D1E9-$D203`; batch replay of 1,024 original-ROM flame
+  actor records per x86/x64 process, full RAM and recorded child calls, zero
+  differences.
+- Operational: focused C90 movement contract, platform purity and OpenNT DOS16
+  shared-source link passed. Test harness only; product code unchanged, so the
+  three executable artifacts were not refreshed.
+- Totals: historical **1,992 / 1,992**; current exact **1,143 / 1,992** nodes,
+  **2,275 / 4,324** feasible controls; raw **4,342**, infeasible **18**.

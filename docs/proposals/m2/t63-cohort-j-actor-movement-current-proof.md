@@ -820,3 +820,35 @@ All three scoped labels are current-exact: `FlameTimerData`, `SetFlameTimer` and
 One current-source route runner per x86 and x64 width extracts and replays all 256 recorded original-ROM `SetFlameTimer` child calls with zero differences in returned A and full RAM. Platform-purity and the OpenNT DOS16 shared-source link pass. Only an audit harness changed, so no three-EXE artifact refresh is due. No labels are deferred; S19 begins at `ProcBowserFlame`.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 1,992 nodes** and **2,270 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+
+## S19 admission — Bowser-flame horizontal movement chain
+
+S19 admits `ProcBowserFlame -> SFlmX` (lines 10349–10373, `$D1E9-$D203`): `ProcBowserFlame` and `SFlmX`. The shared owner is `src/game/enemy/bowser_flame.c`. `SetGfxF` is the explicit S20 OAM boundary; `RunBowserFlame` is a previously exact caller boundary. S18 is closed.
+
+The ROM-logic track compares TimerControl tail, normal/hard force, subtraction carry through X/page, target-Y equality and vertical update. The operational track replays the 1,024 controlled original-ROM flame-actor fixtures once per x86/x64 process, then runs focused C90 movement coverage, purity and DOS16 link. Any difference remains S19 repair work.
+
+### S19 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,141 / 1,992**.
+- Current exact feasible controls: **2,270 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **2** labels; expected current promotions: **2**; maximum exact nodes: **1,143 / 1,992**.
+
+## S19 closure — Bowser-flame horizontal movement chain
+
+`ProcBowserFlame` and `SFlmX` are current-exact. Static `$D1E9-$D203`
+comparison binds the timer graphics tail, normal/hard `$40/$60` force
+selection, force subtraction carry through X/page, target-Y equality and the
+conditional vertical update. The five owned feasible control relations and
+three material handoffs are exact. One current-source manifest process per
+x86/x64 width replays 1,024 controlled original-ROM flame-actor fixtures with
+full compared RAM and recorded graphics-child calls, all with zero differences.
+The focused C90 movement contract, platform-purity check and OpenNT DOS16
+shared-source link pass. Only an audit harness changed, so no three-EXE
+artifact refresh is due. No labels are deferred; S20 begins at `SetGfxF`.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,143 / 1,992 nodes** and **2,275 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).

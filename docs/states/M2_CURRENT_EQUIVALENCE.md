@@ -2214,3 +2214,15 @@ with zero differences. Focused C90 Bowser contract, platform purity and DOS16
 link pass. The live registry is **1,134 exact nodes** and **2,255 exact
 feasible control relations**. Historical mapping remains **1,992 / 1,992**;
 raw controls are **4,342**, with **18** infeasible and **4,324** feasible.
+
+### T63 S19 Bowser-flame horizontal movement result
+
+ProcBowserFlame through SFlmX is current-exact: two labels, five feasible
+control relations and three material handoffs. Static `$D1E9-$D203` review
+confirms the timer tail, normal/hard force selection, carry-dependent X/page
+movement and target-Y gate. The x86 and x64 batch manifest runners each replay
+1,024 original-ROM flame-actor fixtures with full RAM and recorded child calls,
+zero differences. Focused C90 movement, platform purity and DOS16 link pass.
+The live registry is **1,143 exact nodes** and **2,275 exact feasible control
+relations**. Historical mapping remains **1,992 / 1,992**; raw controls are
+**4,342**, with **18** infeasible and **4,324** feasible.
