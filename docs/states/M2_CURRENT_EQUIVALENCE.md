@@ -2202,3 +2202,15 @@ platform purity and DOS16 link pass. The live registry is **1,119 exact
 nodes** and **2,213 exact feasible control relations**. Historical mapping
 remains **1,992 / 1,992**; raw controls are **4,342**, with **18** infeasible
 and **4,324** feasible.
+
+
+### T63 S16 Bowser control, movement and flame scheduling result
+
+BowserControl through SetFBTmr is current-exact: 15 labels, 42 feasible
+control relations and eight material handoffs. Static `$D07F-$D17A` review
+binds 252 instructions and the shared C branch/data semantics. Current x86 and
+x64 manifest runners each compare 1,024 original-ROM snapshots in one process
+with zero differences. Focused C90 Bowser contract, platform purity and DOS16
+link pass. The live registry is **1,134 exact nodes** and **2,255 exact
+feasible control relations**. Historical mapping remains **1,992 / 1,992**;
+raw controls are **4,342**, with **18** infeasible and **4,324** feasible.

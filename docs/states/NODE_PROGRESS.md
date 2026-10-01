@@ -2182,3 +2182,12 @@ four material handoffs. Static source/instruction audit and eight terminal
 original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
 1,992**; exact nodes **1,119 / 1,992**; exact feasible controls **2,213 /
 4,324**; raw **4,342**, infeasible **18**.
+
+
+## M2 T63 S16 current-equivalence closure
+
+The Bowser control/movement/flame scheduler closes 15 nodes, 42 feasible
+controls and eight material handoffs. Static source/instruction audit and 1,024
+original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
+1,992**; exact nodes **1,134 / 1,992**; exact feasible controls **2,255 /
+4,324**; raw **4,342**, infeasible **18**.

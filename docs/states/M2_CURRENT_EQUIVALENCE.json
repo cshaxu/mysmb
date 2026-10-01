@@ -5575,13 +5575,16 @@
       "consumer": "ChkMouth",
       "storage": "TimerControl and cleared EnemyFrenzyBuffer",
       "feasiblePath": "TimerControl selects direct fire tail only after frenzy clear.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c initial timer gate",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5594,13 +5597,16 @@
       "consumer": "ResetMDr",
       "storage": "BowserFeetCounter and body-controls low bit",
       "feasiblePath": "Only timer expiry reloads $20 and toggles the feet bit before direction reset.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c feet timer block",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5613,13 +5619,16 @@
       "consumer": "GetPRCmp",
       "storage": "player difference, chase speed and two timers",
       "feasiblePath": "Negative player difference writes direction/speed/timers before the $c8 early tail or movement-range phase.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c player difference chase block",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5654,13 +5663,16 @@
       "consumer": "CompDToO",
       "storage": "updated X and absolute displacement to range comparison",
       "feasiblePath": "Direction-one bypass and signed absolute conversion retain source comparison input.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c displacement block",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5673,13 +5685,16 @@
       "consumer": "SetHmrTmr",
       "storage": "enemy-frame timer, world and frame gate to optional hammer/timer reset",
       "feasiblePath": "Only zero frame timer moves vertically; world and frame gates determine hammer spawn then Y range reset.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c hammer_check block",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5692,13 +5707,16 @@
       "consumer": "ChkFireB",
       "storage": "expiry-one Y decrement, vertical state and $fe speed",
       "feasiblePath": "Jump initialization happens only for timer one before the shared flame gate.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c hammer_check block",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5711,13 +5729,16 @@
       "consumer": "SpawnFBr",
       "storage": "world gate to flame timer/mouth gate",
       "feasiblePath": "World eight and worlds one-five reach flame spawning; worlds six-seven tail to graphics.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c check_fire",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5730,13 +5751,16 @@
       "consumer": "SetFBTmr",
       "storage": "mouth toggle and flame timer result to breath/frenzy writes",
       "feasiblePath": "Only closing the mouth stores the selected normal/hard delay and BowserFlame request.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c check_fire",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -32488,13 +32512,16 @@
       "label": "BowserControl",
       "asmLine": 10176,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Clears EnemyFrenzyBuffer first; TimerControl bypasses control directly to fire handling, otherwise mouth state selects feet/movement work or hammer handling.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32504,13 +32531,16 @@
       "label": "ChkMouth",
       "asmLine": 10182,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Uses BowserBodyControls bit seven as the source mouth gate: clear enters feet timing, set skips directly to hammer handling.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32520,13 +32550,16 @@
       "label": "FeetTmr",
       "asmLine": 10185,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Decrements the feet timer and only at zero restores $20 and toggles body bit zero before the shared movement-direction phase.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32536,13 +32569,16 @@
       "label": "ResetMDr",
       "asmLine": 10192,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Resets moving direction to two only when FrameCounter low nibble is zero, then enters facing/chase logic.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32552,13 +32588,16 @@
       "label": "B_FaceP",
       "asmLine": 10197,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "When EnemyFrameTimer is nonzero, compares player/Bowser signed X before setting right direction, speed two and both timers; $c8 is an early hammer tail.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32568,13 +32607,16 @@
       "label": "GetPRCmp",
       "asmLine": 10211,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Runs only on every fourth frame; origin equality selects PRandomRange using the low two random bits before horizontal position update.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32584,13 +32626,16 @@
       "label": "GetDToO",
       "asmLine": 10222,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Adds current movement speed, retains source direction-one early tail, otherwise forms source absolute displacement from BowserOrigXPos.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32600,13 +32645,16 @@
       "label": "CompDToO",
       "asmLine": 10237,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Changes movement speed only when absolute displacement reaches MaxRangeFromOrigin; otherwise preserves the previous speed.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32616,13 +32664,16 @@
       "label": "HammerChk",
       "asmLine": 10240,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Nonzero enemy frame timer takes the jump-expiry branch; zero performs slow vertical movement, optional world-6+ every-fourth-frame hammer spawn, then applies the Y>= $80 frame timer range.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32632,13 +32683,16 @@
       "label": "SetHmrTmr",
       "asmLine": 10250,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "For Y>= $80 selects PRandomRange by low random bits into EnemyFrameTimer, then tails to fire handling.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32648,13 +32702,16 @@
       "label": "SkipToFB",
       "asmLine": 10258,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Represents the TimerControl and timer-reset unconditional tail to the common fire handler without duplicating any game decision.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32664,13 +32721,16 @@
       "label": "MakeBJump",
       "asmLine": 10259,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Only timer value one decrements Y, initializes vertical state and writes Y speed $fe before fire handling.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32680,13 +32740,16 @@
       "label": "ChkFireB",
       "asmLine": 10265,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "World eight always evaluates flame spawn; worlds six/seven go directly to graphics; worlds one through five evaluate flame spawn.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32696,13 +32759,16 @@
       "label": "SpawnFBr",
       "asmLine": 10270,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "On expired breath timer writes $20, toggles mouth bit seven and loops while opening; closing selects a fresh flame interval and frenzy ID.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32712,13 +32778,16 @@
       "label": "SetFBTmr",
       "asmLine": 10283,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores the selected normal or hard-mode-adjusted flame delay before writing BowserFlame into EnemyFrenzyBuffer.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88065,12 +88134,15 @@
       "instruction": "beq",
       "id": "control-01956",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation BowserControl -> ChkMouth with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88084,12 +88156,15 @@
       "instruction": "jmp",
       "id": "control-01957",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation BowserControl -> SkipToFB with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88103,12 +88178,15 @@
       "instruction": "bpl",
       "id": "control-01958",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkMouth -> FeetTmr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88122,12 +88200,15 @@
       "instruction": "jmp",
       "id": "control-01959",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ChkMouth -> HammerChk with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88141,12 +88222,15 @@
       "instruction": "bne",
       "id": "control-01960",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FeetTmr -> ResetMDr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88160,12 +88244,15 @@
       "instruction": "sta",
       "id": "control-01961",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FeetTmr -> ResetMDr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88179,12 +88266,15 @@
       "instruction": "bne",
       "id": "control-01962",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ResetMDr -> B_FaceP with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88198,12 +88288,15 @@
       "instruction": "sta",
       "id": "control-01963",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ResetMDr -> B_FaceP with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88217,12 +88310,15 @@
       "instruction": "beq",
       "id": "control-01964",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation B_FaceP -> GetPRCmp with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88236,12 +88332,15 @@
       "instruction": "jsr",
       "id": "control-01965",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation B_FaceP -> PlayerEnemyDiff with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -88260,12 +88359,15 @@
       "instruction": "bpl",
       "id": "control-01966",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation B_FaceP -> GetPRCmp with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88279,12 +88381,15 @@
       "instruction": "bcs",
       "id": "control-01967",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation B_FaceP -> HammerChk with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88298,12 +88403,15 @@
       "instruction": "bcs",
       "id": "control-01968",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation B_FaceP -> GetPRCmp with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88317,12 +88425,15 @@
       "instruction": "bne",
       "id": "control-01969",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GetPRCmp -> HammerChk with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88336,12 +88447,15 @@
       "instruction": "bne",
       "id": "control-01970",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GetPRCmp -> GetDToO with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88355,12 +88469,15 @@
       "instruction": "sta",
       "id": "control-01971",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetPRCmp -> GetDToO with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88374,12 +88491,15 @@
       "instruction": "beq",
       "id": "control-01972",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GetDToO -> HammerChk with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88393,12 +88513,15 @@
       "instruction": "bpl",
       "id": "control-01973",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GetDToO -> CompDToO with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88412,12 +88535,15 @@
       "instruction": "ldy",
       "id": "control-01974",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetDToO -> CompDToO with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88431,12 +88557,15 @@
       "instruction": "bcc",
       "id": "control-01975",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CompDToO -> HammerChk with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88450,12 +88579,15 @@
       "instruction": "sty",
       "id": "control-01976",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation CompDToO -> HammerChk with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88469,12 +88601,15 @@
       "instruction": "bne",
       "id": "control-01977",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HammerChk -> MakeBJump with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88488,12 +88623,15 @@
       "instruction": "jsr",
       "id": "control-01978",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation HammerChk -> MoveEnemySlowVert with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
@@ -88508,12 +88646,15 @@
       "instruction": "bcc",
       "id": "control-01979",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HammerChk -> SetHmrTmr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88527,12 +88668,15 @@
       "instruction": "bne",
       "id": "control-01980",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HammerChk -> SetHmrTmr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88546,12 +88690,15 @@
       "instruction": "jsr",
       "id": "control-01981",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation HammerChk -> SpawnHammerObj with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
@@ -88566,12 +88713,15 @@
       "instruction": "jsr",
       "id": "control-01982",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation HammerChk -> SetHmrTmr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88585,12 +88735,15 @@
       "instruction": "bcc",
       "id": "control-01983",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SetHmrTmr -> ChkFireB with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88604,12 +88757,15 @@
       "instruction": "sta",
       "id": "control-01984",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetHmrTmr -> SkipToFB with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88623,12 +88779,15 @@
       "instruction": "jmp",
       "id": "control-01985",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation SkipToFB -> ChkFireB with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88642,12 +88801,15 @@
       "instruction": "bne",
       "id": "control-01986",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MakeBJump -> ChkFireB with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88661,12 +88823,15 @@
       "instruction": "jsr",
       "id": "control-01987",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation MakeBJump -> InitVStf with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
@@ -88682,12 +88847,15 @@
       "instruction": "sta",
       "id": "control-01988",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MakeBJump -> ChkFireB with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88701,12 +88869,15 @@
       "instruction": "beq",
       "id": "control-01989",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkFireB -> SpawnFBr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88720,12 +88891,15 @@
       "instruction": "bcs",
       "id": "control-01990",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkFireB -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
@@ -88740,12 +88914,15 @@
       "instruction": "bcs",
       "id": "control-01991",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkFireB -> SpawnFBr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88759,12 +88936,15 @@
       "instruction": "bne",
       "id": "control-01992",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SpawnFBr -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
@@ -88779,12 +88959,15 @@
       "instruction": "bmi",
       "id": "control-01993",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SpawnFBr -> ChkFireB with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88798,12 +88981,15 @@
       "instruction": "jsr",
       "id": "control-01994",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/frenzy.c:mysmb_enemy_set_flame_timer and named callers",
       "semanticEvidence": [
-        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SpawnFBr -> SetFlameTimer with old-index table read, masked counter update and source return/fall-through ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
@@ -88818,12 +89004,15 @@
       "instruction": "beq",
       "id": "control-01995",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SpawnFBr -> SetFBTmr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88837,12 +89026,15 @@
       "instruction": "sbc",
       "id": "control-01996",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SpawnFBr -> SetFBTmr with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -88856,12 +89048,15 @@
       "instruction": "sta",
       "id": "control-01997",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetFBTmr -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",

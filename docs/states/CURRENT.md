@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T63 S15 Packet
+## M2 T63 S16 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S15 audit — common enemy-clear loop. |
-| Admission And Approval | S15 admitted after S14 closure under the owner-approved source-order program. |
-| Objective | Prove KillAllEnemies through KillLoop and all owned relations current-exact. |
-| Non-goals | No EraseEnemyObject child-body credit, caller-body credit, platform adapter or product behavior change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,117 / 1,992 nodes and 2,210 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S16 audit — Bowser control, movement and flame scheduling chain. |
+| Admission And Approval | S16 admitted after S15 closure under the owner-approved source-order program. |
+| Objective | Prove BowserControl through SetFBTmr and every owned relation current-exact. |
+| Non-goals | No child-body credit for distance, vertical movement, hammer, flame timer or graphics; no platform adapter or product behavior change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,119 / 1,992 nodes and 2,213 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | Shared game enemy/loop.c; existing audit harness only; C90. |
+| Files And ABI Surface | Shared game enemy/bowser.c; existing audit harness only; C90. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | $D071-$D07A audit; eight terminal original-ROM/current x86/x64 batch routes; focused loop check, purity and DOS16 link. |
-| Expected Markers | 2 nodes, 3 feasible local controls and 4 local material handoffs. |
+| Verification | $D07F-$D17A audit; 1,024 original-ROM/current x86/x64 batch routes; focused Bowser contract, purity and DOS16 link. |
+| Expected Markers | 15 nodes, 42 feasible controls and 8 material handoffs. |
 | Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh artifacts only if product source changes. |
 | Reporting Requirements | Historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | Any source, route or boundary difference remains S15 repair work. |
-| Exit Criteria | Both labels, all three local controls and four local material handoffs exact with both tracks. |
+| Stop Conditions | Any source, route or boundary difference remains S16 repair work. |
+| Exit Criteria | All 15 labels, 42 feasible controls and 8 material handoffs exact with both tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Initial slot, descending order, five versus six iterations, wrap termination, frenzy clear, caller ObjectOffset restoration. |
+| Similar-Issue Sweep | Timer/mouth sign gates, byte underflow, range absolute value, child ObjectOffset restore, world thresholds, flame backward loop and hard-mode subtraction. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S14 are closed. S15 audits the common enemy-clear loop.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S15 are closed. S16 audits the Bowser control, movement and flame scheduling chain.
 
 ## T63 S1 Closure
 
@@ -261,4 +261,24 @@ deferred; S16 begins at BowserControl.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,119 / 1,992 nodes** and **2,213 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).
+
+
+## S16 closure — Bowser control, movement and flame scheduling chain
+
+All fifteen scoped labels are current-exact: BowserControl through SetFBTmr.
+Static `$D07F-$D17A` comparison binds 252 instruction bytes, every source
+label and the timer/mouth/frame gates, player-distance turn, range selection
+and signed reversal, vertical/hammer order, jump, world/flame gates, backward
+mouth loop, hard-mode adjustment and frenzy queue. All 42 feasible controls
+and eight material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 1,024
+controlled original-ROM snapshots with zero differences. The focused C90 Bowser
+control contract, platform-purity check and OpenNT DOS16 shared-source link
+pass. No product source changed, so no three-EXE artifact refresh is due. No
+labels are deferred; S17 begins at BowserGfxHandler.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,134 / 1,992 nodes** and **2,255 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
