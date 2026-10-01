@@ -365,3 +365,23 @@ outer `InitEnemyRoutines` dispatch. Their current root correctly takes the
 outer no-init path, so their apparent `$0016/$06CB` difference is a fixture
 entry mismatch, not a product difference. The `InitEnemyFrenzy` return edge
 remains source-infeasible.
+
+## S6 P12 ? name-table initialization ROM/native proof
+
+The controlled `t28-init-screen` route reaches all original source labels in
+the contiguous chain: `InitializeNameTables` `$8e19`, `WriteNTAddr` `$8e2d`,
+`InitNTLoop` `$8e3b`, `InitATLoop` `$8e4d`, `InitScroll` `$8ee6` and
+`WritePPUReg1` `$8eed`. The source comparison confirms the control derivation,
+the `$2400` then `$2000` write order, two 768-byte tile clears, two 64-byte
+attribute clears, Buffer1 reset and scroll handoff in shared `boot.c`.
+
+The new project-owned route checker compares only this chain's owned fields:
+both CIRAM pages are byte-identical between original ROM and current x86/x64,
+with 768 `$24` bytes then 64 zero bytes per table; Buffer1 is reset and the
+name-table/scroll result is zero. It intentionally does not compare the later
+native NMI control/mask update or screen-task increment, because the original
+recorder stops at `InitScreen`'s source successor while native capture
+completes the containing frame. Direct x86/x64 name-table and frame-snapshot
+smokes also pass. The registry promotes the four name-table nodes and their
+twelve observed/source-audited feasible control relations. No product source
+changed, so artifacts are not refreshed.

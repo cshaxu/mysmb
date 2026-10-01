@@ -13679,13 +13679,15 @@
       "label": "InitializeNameTables",
       "asmLine": 2412,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_name_tables",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "ROM $8e19: clears two nametables/attributes, resets Buffer1 and scroll, and establishes pattern-table control state.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -13695,13 +13697,15 @@
       "label": "WriteNTAddr",
       "asmLine": 2421,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_name_tables nametable sequence",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "ROM $8e2a: writes one nametable PPU address then falls into tile clear loop.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -13711,13 +13715,15 @@
       "label": "InitNTLoop",
       "asmLine": 2427,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_name_tables 0x3c0 tile loops",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "ROM $8e30: writes 768 blank tiles per nametable.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -13727,13 +13733,15 @@
       "label": "InitATLoop",
       "asmLine": 2436,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_name_tables 64-byte attribute clear",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "ROM $8e39: clears 64 attributes and scroll bytes before InitScroll.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49585,12 +49593,14 @@
       "instruction": "jsr",
       "id": "control-00328",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitializeNameTables -> WritePPUReg1 call relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49604,12 +49614,14 @@
       "instruction": "jsr",
       "id": "control-00329",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitializeNameTables -> WriteNTAddr call relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49623,12 +49635,14 @@
       "instruction": "lda",
       "id": "control-00330",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitializeNameTables -> WriteNTAddr fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49642,12 +49656,14 @@
       "instruction": "lda",
       "id": "control-00331",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original WriteNTAddr -> InitNTLoop fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49661,12 +49677,14 @@
       "instruction": "bne",
       "id": "control-00332",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitNTLoop -> InitNTLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49680,12 +49698,14 @@
       "instruction": "bne",
       "id": "control-00333",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitNTLoop -> InitNTLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49699,12 +49719,14 @@
       "instruction": "sta",
       "id": "control-00334",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitNTLoop -> InitATLoop fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49718,12 +49740,14 @@
       "instruction": "bne",
       "id": "control-00335",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitATLoop -> InitATLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -49737,12 +49761,14 @@
       "instruction": "jmp",
       "id": "control-00336",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitATLoop -> InitScroll jump relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -111408,12 +111434,14 @@
       "instruction": "rts/rti",
       "id": "control-03517",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0 name-table helper completion",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original InitializeNameTables -> InitScreen returns before the OperMode branch.",
       "currentSourcePaths": [
         "src/game/boot.c",
@@ -111732,12 +111760,14 @@
       "instruction": "rts/rti",
       "id": "control-03532",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original WritePPUReg1 -> InitializeNameTables return relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
@@ -111751,12 +111781,14 @@
       "instruction": "rts/rti",
       "id": "control-03533",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+      ],
       "semanticContract": "Original WriteNTAddr -> InitializeNameTables return relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c"
