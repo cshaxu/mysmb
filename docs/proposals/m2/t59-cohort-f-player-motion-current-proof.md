@@ -139,3 +139,8 @@ All six labels from `PlayerAnimTmrData` through `SetAnimSpd` are current-equival
 ## S6 admission - friction and signed-speed chain
 
 S6 admits `ImposeFriction -> SetAbsSpd`: ImposeFriction, JoypFrict, LeftFrict, RghtFrict, XSpdSign and SetAbsSpd. Shared owner: `src/game/player.c`; S2 supplies the callers and S4 supplies friction/limit parameters. It covers collision-filtered direction selection, released-input sign dispatch, right-bit precedence, fractional add/subtract carry propagation, ROM-wrapped clamp comparisons, signed absolute conversion and final absolute-speed store. Registry baseline is 635 exact labels and 1,225 exact feasible controls; all six scoped labels require fresh current evidence. ROM logic route: controlled original friction child-call snapshots. Operational route: x86/x64 C90 replays, focused smoke, DOS16 link and platform purity.
+
+
+## S6 closure - friction and signed-speed chain
+
+All six labels from `ImposeFriction` through `SetAbsSpd` are current-equivalence exact. Static comparison of original ROM lines 6252-6291 found no shared-owner difference: collision filtering, released-input sign split, right-bit priority, carry/borrow propagation, wrapped clamp branch semantics and two-complement absolute conversion are preserved. Fresh C90 x86/x64 replay passes all 64 original friction child-call streams, for 128 entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform purity pass. No product source changed, so no three-EXE refresh is due. All 13 feasible internal controls receive fresh S6 evidence; compatible caller and return controls retain S2 proof.

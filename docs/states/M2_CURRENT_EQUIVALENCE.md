@@ -1903,3 +1903,7 @@ All 24 labels from MaxLeftXSpdData through ExitPhy are current-equivalence exact
 ### T59 S5 animation-speed result
 
 All six labels from `PlayerAnimTmrData` through `SetAnimSpd` are current-equivalence exact. ROM table, thresholds, masks, skid writes and timer-store exit match current shared C; 64 ROM child-call streams replay through x86/x64 for 128 matching comparisons, and animation smoke, DOS16 link and platform purity pass. Registry advances from 629 to 635 exact labels and from 1,216 to 1,225 exact feasible control relations; historical conformance remains 1,992 / 1,992.
+
+### T59 S6 friction result
+
+All six labels from `ImposeFriction` through `SetAbsSpd` are current-equivalence exact. ROM friction branches and signed-speed output match shared C; 64 ROM child-call streams replay through x86/x64 for 128 matching comparisons, and friction smoke, DOS16 link and platform purity pass. Registry advances from 635 to 641 exact labels and from 1,225 to 1,238 exact feasible control relations; historical conformance remains 1,992 / 1,992.

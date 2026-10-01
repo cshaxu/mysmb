@@ -390808,7 +390808,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "state": "admitted",
+      "state": "closed-current-audit",
       "evidence": "docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md"
     }
   ]

@@ -9691,12 +9691,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 635,
-    "needs-evidence": 1357
+    "exact": 641,
+    "needs-evidence": 1351
   },
   "controlEdgeCounts": {
-    "exact": 1225,
-    "needs-evidence": 3099,
+    "exact": 1238,
+    "needs-evidence": 3086,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -22714,14 +22714,16 @@
       "label": "ImposeFriction",
       "asmLine": 6252,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_impose_friction input/sign selector",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "With no collision-filtered direction, chooses the source friction branch by Player_X_Speed sign; a held direction uses the LSR right-bit precedence.",
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22730,14 +22732,16 @@
       "label": "JoypFrict",
       "asmLine": 6260,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_impose_friction direction selector",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves right-bit carry selection: left routes to subtraction and right routes to addition.",
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22746,14 +22750,16 @@
       "label": "LeftFrict",
       "asmLine": 6262,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_impose_friction additive branch",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Adds force and carry to speed, clamps at MaximumRightSpeed with the source CMP/BMI condition, then preserves the direct absolute-speed store.",
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22762,14 +22768,16 @@
       "label": "RghtFrict",
       "asmLine": 6274,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_impose_friction subtractive branch",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Subtracts force and borrow from speed, clamps at MaximumLeftSpeed with the source CMP/BPL condition.",
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22778,14 +22786,16 @@
       "label": "XSpdSign",
       "asmLine": 6285,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_impose_friction absolute-speed conversion",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Keeps nonnegative speed and forms the two-complement absolute value for negative speed.",
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22794,14 +22804,16 @@
       "label": "SetAbsSpd",
       "asmLine": 6290,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_impose_friction terminal store",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores Player_XSpeedAbsolute and returns to the invoking movement state without additional state changes.",
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -66007,12 +66019,14 @@
       "instruction": "bne",
       "id": "control-01046",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Collision-filtered direction input enters JoypFrict.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66026,12 +66040,14 @@
       "instruction": "beq",
       "id": "control-01047",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Zero horizontal speed stores zero absolute speed directly.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66045,12 +66061,14 @@
       "instruction": "bpl",
       "id": "control-01048",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Released nonnegative speed enters the subtractive branch toward zero.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66064,12 +66082,14 @@
       "instruction": "bmi",
       "id": "control-01049",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Released negative speed enters the additive branch toward zero.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66083,12 +66103,14 @@
       "instruction": "bmi",
       "id": "control-01050",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "The source fallthrough identity is retained although BMI covers both signed outcomes.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66102,12 +66124,14 @@
       "instruction": "bcc",
       "id": "control-01051",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "A cleared right bit selects the subtractive left-input branch.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66121,12 +66145,14 @@
       "instruction": "bcc",
       "id": "control-01052",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "A set right bit falls through to the additive right-input branch.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66140,12 +66166,14 @@
       "instruction": "bmi",
       "id": "control-01053",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "The additive branch avoids maximum-right clamping only when CMP remains negative.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66159,12 +66187,14 @@
       "instruction": "jmp",
       "id": "control-01054",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Additive maximum-right clamp stores the limit then directly stores absolute speed.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66178,12 +66208,14 @@
       "instruction": "bpl",
       "id": "control-01055",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "The subtractive branch avoids maximum-left clamping only when CMP remains nonnegative.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66197,12 +66229,14 @@
       "instruction": "sta",
       "id": "control-01056",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "The subtractive clamp/store continuation reaches sign conversion.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66216,12 +66250,14 @@
       "instruction": "bpl",
       "id": "control-01057",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Nonnegative speed bypasses two-complement conversion.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -66235,12 +66271,14 @@
       "instruction": "adc",
       "id": "control-01058",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S6 shared C90 branch/call ordering counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Negative speed falls through the exact EOR/ADC absolute conversion.",
       "currentSourcePaths": [
         "src/game/player.c"

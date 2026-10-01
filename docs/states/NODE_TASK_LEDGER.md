@@ -3305,4 +3305,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T59 S3 | 12 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
 | M2 T59 S4 | 24 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
 | M2 T59 S5 | 6 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
-| M2 T59 S6 | 6 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
+| M2 T59 S6 | 6 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
