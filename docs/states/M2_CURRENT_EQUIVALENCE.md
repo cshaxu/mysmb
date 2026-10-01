@@ -1775,3 +1775,15 @@ The 22 labels from `VictoryMode` through `EndExitTwo` and their 65 incident exec
 ### T53 S5 floatey-number-chain result
 
 The ten labels from `FloateyNumTileData` through `SetupNumSpr`, 25 incident executable control relations, and `material-00005` are current-exact. A source-order review found and repaired the `ChkTallEnemy -> GetAltOffset` OAM-group branch in the shared game owner; the re-audit found no remaining scoped difference. Three controlled original-ROM fixtures—one-up, timer-zero and numeric-alt—used a 60-frame warmup and eight captured frames each. Current x86 and x64 match the ROM in work RAM `$0200-$07ff` excluding `$0778/$0779`, CIRAM, palette, OAM, PPU scalars and audio, and their native records are byte-identical. The focused OAM regression passes; DOS16 links the same C90 owner; platform-purity passes. The live registry is **105 exact nodes**, **231 exact feasible control relations**, **6 exact material relations**, and **zero mismatches**; historical conformance remains **1,992 / 1,992**.
+### T54 S2 status and intermediate result
+
+`WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`,
+`DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter` and
+`NoInter` are current-equivalence exact. The audit repaired the `GameOverInter`
+mode-task continuation: original `IncModeTask_B` increments the live task byte,
+where the prior C code set it to two. Seven controlled task-2/3/4/6 routes now
+match original ROM and current x86/x64 output under the established CPU ABI
+exclusions. Its 25 source-owned control relations are exact. The live registry
+is **128 exact nodes**, **277 exact feasible control relations**, **10 exact
+material relations**, and **zero mismatches**; historical conformance remains
+**1,992 / 1,992**.

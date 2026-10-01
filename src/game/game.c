@@ -192,7 +192,7 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
             /* GameOverInter calls WriteGameText then jumps to IncModeTask_B;
              * neither source routine branches on a buffer-capacity result. */
             (void)mysmb_area_queue_game_text(game, 3U);
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+            game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
         }
         else if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
                  game->ram[0x0752U] != 0U) {

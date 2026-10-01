@@ -157,6 +157,15 @@ int main(void)
     mysmb_game_step_screen_routine(&game);
     if (game.ram[0x073cU] != 8U) return 1;
 
+    /* GameOverInter tail-jumps to IncModeTask_B.  It increments the current
+     * mode-task byte; it is not a hard-coded transition to task two. */
+    game.ram[0x073cU] = 6U;
+    game.ram[0x0770U] = 3U;
+    game.ram[0x0772U] = 0x37U;
+    game.ram[0x07a0U] = 0U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x0772U] != 0x38U || game.ram[0x07a0U] != 0x12U) return 1;
+
     game.ram[0x073cU] = 11U;
     game.ram[0x0733U] = 1U;
     mysmb_game_step_screen_routine(&game);

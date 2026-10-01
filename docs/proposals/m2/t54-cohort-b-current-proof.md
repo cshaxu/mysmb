@@ -128,3 +128,43 @@ or mode-task exit, with controlled title/game/expired/normal/intermediate
 branch routes. It does not claim the dispatcher vector, text-stream internals
 or later parser/title tasks. Historical accounting remains 1,992/1,992, so the
 expected historical delta is zero.
+## S2 closure — status and intermediate chain
+
+S2 closes with no remaining feasible difference in its nine labels. The audit
+found one shared-C mismatch in `GameOverInter`: ROM `IncModeTask_B` increments
+the current `OperMode_Task`; the former C path wrote the literal value two.
+`src/game/game.c` now increments that byte, and the focused regression starts
+from `$37` and requires `$38` with the ROM timer value `$12`.
+
+Static review covered ROM lines 1517–1591, including status-text/number
+handoffs, the Time Up latch, title/game-over/alternate/castle/disable branches,
+player OAM draw before text output, timer and disable-screen ordering, and
+mode-task continuation. All nine labels are current-exact. The 25 source-owned
+control relations `control-00220` through `control-00238` and
+`control-03519` through `control-03524` are exact; no S2 material relation was
+introduced. Dispatcher vector edges remain S7 scope and text/status callee
+internals remain with their separately admitted chains.
+
+Controlled original-ROM/current x86/x64 routes cover top/bottom status,
+expired and non-expired Time Up, castle and ordinary player intermediate,
+Game Over and alternate-entry NoInter. Each route has zero persistent-RAM
+difference after the established CPU incidental exclusions (zero-page, stack,
+and PPU shadows `$0778/$0779`), zero CIRAM/palette/OAM/physical-PPU/audio
+output difference, and byte-identical x86/x64 native output. Focused
+screen-status and local-area tests pass on both widths; the common DOS16 link
+and platform-purity audit pass. Because the shared game C changed, all three
+local target artifacts were refreshed. The registry advances from 122 to 128
+exact labels and from 253 to 277 exact feasible control relations; historical
+conformance remains 1,992 / 1,992.
+## S3 admission — title-screen task chain
+
+S3 is admitted only after S2's zero-difference closure. It owns the contiguous
+ROM task-12 through task-14 chain: `DrawTitleScreen`, `OutputTScr`,
+`ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`,
+`WriteTopScore` and `IncModeTask_B`. All eight enter as `needs-evidence`; it
+claims no historical credit and therefore has an expected historical delta of
+zero. The route matrix covers title and non-title task-12/13 exits, the title
+copy-bound path, title buffer clear/icon handoff and task-14 top-score/mode-task
+continuation. Its source-owned control edges include the external icon and
+status helpers only as call/return integration edges; their internal logic
+remains in the owning S.
