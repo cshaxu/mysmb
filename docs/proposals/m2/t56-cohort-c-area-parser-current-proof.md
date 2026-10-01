@@ -293,3 +293,43 @@ owner-local original-ROM/current x86/x64 object-family matrix, focused parser
 smokes, DOS16 link for product changes and the platform-purity audit. Any
 feasible difference remains in S4 for shared-C repair and repeat audit before
 S5 admission.
+
+## S4 closure - warp, scroll, frenzy, style, pulley and castle chain
+
+S4 closes all 27 scoped labels current-exact. The source audit maps SMB1 lines
+3591-3777 to shared `src/game/area.c`: warp selector/text/scroll ordering,
+piranha scan, frenzy table and queue, style jump dispatch, tree and mushroom
+ledge continuation, pulley triplet, castle table/column loop, floor brick and
+star-flag gate. No feasible shared-C difference was found.
+
+Operational evidence combines the warmed 16-route special-object matrix with
+the controlled castle-geometry route. Original ROM, current x86 and current
+x64 agree on scoped parser, staging, enemy and attribute state; x86/x64 are
+byte-identical. Focused special-object, rope, castle-column and parser-data
+smokes pass, as does platform purity. No product source changed, so the P1
+three-artifact set remains the current deliverable. The registry records 27
+nodes, 63 scoped feasible control relations (59 newly exact; four were already
+exact) and two material relations as exact. Historical conformance remains
+1,992 / 1,992; current registry total is 326 exact nodes and 708 exact feasible
+controls.
+
+## S5 admission - castle finish, pipe, allocation and high question-row chain
+
+S5 admits the contiguous `PlayerStop -> QuestionBlockRow_High` chain:
+`PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`,
+`NoBlankP`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`,
+`ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`,
+`VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`,
+`FindEmptyEnemySlot`, `EmptyChkLoop`, `ExitEmptyChk`, `Hole_Water` and
+`QuestionBlockRow_High`. Its predecessor is S4's castle continuation; S6
+receives the low question row and bridge tail. Its shared owner is
+`src/game/area.c`.
+
+All 22 labels are historically complete and currently need evidence; expected
+historical credit is zero. ROM-logic verification covers castle exits, pipe
+selector/height/side-shaft flows, enemy-slot allocation semantics, water-hole
+state and high question-row dispatch. Operational verification uses controlled
+owner-local original-ROM/current x86/x64 routes, focused pipe/castle/parser
+smokes, DOS16 link if product source changes and platform purity. Any feasible
+difference remains in S5 for shared-C repair and repeat audit before S6
+admission.

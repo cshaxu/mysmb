@@ -1246,13 +1246,16 @@
       "consumer": "AreaFrenzy",
       "storage": "row-13 selector minus eight to frenzy ID queue",
       "feasiblePath": "AreaFrenzy reads one of three ID bytes, compares it against slots 4..0, then stores ID or zero to EnemyFrenzyQueue.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_frenzy",
       "semanticContract": "The source table index, regular-slot scan order and queued value agree.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1265,13 +1268,16 @@
       "consumer": "CastleObject",
       "storage": "castle length/row indexed grid to staged metatile column",
       "feasiblePath": "CastleObject fixes source column by object length and walks rows in five-byte strides until the floor boundary.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:castle_metatiles in mysmb_area_apply_parser_object",
       "semanticContract": "Grid indexing, row stride, stop row and post-column flag logic agree.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -16450,13 +16456,16 @@
       "label": "ScrollLockObject_Warp",
       "asmLine": 3591,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Selects warp-zone text control, writes text, kills piranhas, then toggles scroll lock.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16466,13 +16475,16 @@
       "label": "WarpNum",
       "asmLine": 3600,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Queues selected game text and invokes enemy removal before the common scroll-lock tail.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16482,13 +16494,16 @@
       "label": "ScrollLockObject",
       "asmLine": 3606,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Inverts the one-bit scroll lock state.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16498,13 +16513,16 @@
       "label": "KillEnemies",
       "asmLine": 3615,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Scans regular enemy slots four down through zero and clears flags matching selected ID.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16514,13 +16532,16 @@
       "label": "KillELoop",
       "asmLine": 3619,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Compares one enemy ID and delegates match/nonmatch to common descending tail.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16530,13 +16551,16 @@
       "label": "NoKillE",
       "asmLine": 3623,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Decrements enemy slot and repeats until all five regular slots are checked.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16546,13 +16570,16 @@
       "label": "FrenzyIDData",
       "asmLine": 3629,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Binds flying cheep, bullet/cheep and stop-frenzy IDs in source order.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16562,13 +16589,16 @@
       "label": "AreaFrenzy",
       "asmLine": 3632,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Selects FrenzyIDData by row-13 selector and queues it only when absent from regular enemy slots.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16578,13 +16608,16 @@
       "label": "FreCompLoop",
       "asmLine": 3635,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Scans regular enemy IDs from slot four down through zero.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16594,13 +16627,16 @@
       "label": "ExitAFrenzy",
       "asmLine": 3640,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Stores selected ID or zero in EnemyFrenzyQueue.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16610,13 +16646,16 @@
       "label": "AreaStyleObject",
       "asmLine": 3646,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Dispatches AreaStyle zero/one/two to tree ledge, mushroom ledge or bullet-bill cannon.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16626,13 +16665,16 @@
       "label": "TreeLedge",
       "asmLine": 3653,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Initializes, continues or terminates a tree ledge and chooses under-part render behavior.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16642,13 +16684,16 @@
       "label": "MidTreeL",
       "asmLine": 3665,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Writes tree middle and under-part metatiles.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16658,13 +16703,16 @@
       "label": "EndTreeL",
       "asmLine": 3670,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Selects tree end metatile before no-under render.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16674,13 +16722,16 @@
       "label": "MushroomLedge",
       "asmLine": 3673,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Initializes mushroom length/half length and selects its start geometry.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16690,13 +16741,16 @@
       "label": "EndMushL",
       "asmLine": 3682,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Builds mushroom middle/stem at center or terminal end geometry.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16706,13 +16760,16 @@
       "label": "AllUnder",
       "asmLine": 3696,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Uses all-way-down under-part rendering for stems.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16722,13 +16779,16 @@
       "label": "NoUnder",
       "asmLine": 3699,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Uses no-bottom under-part rendering for ledge ends.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16738,13 +16798,16 @@
       "label": "PulleyRopeMetatiles",
       "asmLine": 3706,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Binds left pulley, rope and right pulley metatiles.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16754,13 +16817,16 @@
       "label": "PulleyRopeObject",
       "asmLine": 3709,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Selects left/middle/right pulley geometry from large-object length state.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16770,13 +16836,16 @@
       "label": "RenderPul",
       "asmLine": 3717,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Writes selected pulley/rope metatile at staged top row.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16786,13 +16855,16 @@
       "label": "MushLExit",
       "asmLine": 3719,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Common return after pulley or mushroom object work.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16802,13 +16874,16 @@
       "label": "CastleMetatiles",
       "asmLine": 3724,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Binds the 11x5 castle metatile source grid.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16818,13 +16893,16 @@
       "label": "CastleObject",
       "asmLine": 3737,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Renders castle columns and performs post-page floor/star-flag conditions.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16834,13 +16912,16 @@
       "label": "CRendLoop",
       "asmLine": 3748,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Writes a castle column in five-byte vertical source strides through row ten.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16850,13 +16931,16 @@
       "label": "ChkCFloor",
       "asmLine": 3759,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Selects exit, floor brick or flag creation after castle column rendering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16866,13 +16950,16 @@
       "label": "NotTall",
       "asmLine": 3772,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Applies tall/non-tall castle length gate before star-flag creation.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55301,12 +55388,15 @@
       "instruction": "beq",
       "id": "control-00592",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source branch relation ScrollLockObject_Warp -> WarpNum.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source branch relation ScrollLockObject_Warp -> WarpNum.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55320,12 +55410,15 @@
       "instruction": "bne",
       "id": "control-00593",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source branch relation ScrollLockObject_Warp -> WarpNum.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source branch relation ScrollLockObject_Warp -> WarpNum.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55339,12 +55432,15 @@
       "instruction": "inx",
       "id": "control-00594",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source fallthrough relation ScrollLockObject_Warp -> WarpNum.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source fallthrough relation ScrollLockObject_Warp -> WarpNum.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55362,10 +55458,12 @@
       "currentCounterpart": "src/game/area.c: mysmb_area_queue_game_text / mysmb_area_scroll_lock_warp ordered C control flow",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source call relation WarpNum -> WriteGameText.",
       "currentSourcePaths": [
@@ -55380,12 +55478,15 @@
       "instruction": "jsr",
       "id": "control-00596",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source call relation WarpNum -> KillEnemies.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source call relation WarpNum -> KillEnemies.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55399,12 +55500,15 @@
       "instruction": "jsr",
       "id": "control-00597",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source fallthrough relation WarpNum -> ScrollLockObject.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source fallthrough relation WarpNum -> ScrollLockObject.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55418,12 +55522,15 @@
       "instruction": "ldx",
       "id": "control-00598",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source fallthrough relation KillEnemies -> KillELoop.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source fallthrough relation KillEnemies -> KillELoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55437,12 +55544,15 @@
       "instruction": "bne",
       "id": "control-00599",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source branch relation KillELoop -> NoKillE.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source branch relation KillELoop -> NoKillE.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55456,12 +55566,15 @@
       "instruction": "sta",
       "id": "control-00600",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source fallthrough relation KillELoop -> NoKillE.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source fallthrough relation KillELoop -> NoKillE.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55475,12 +55588,15 @@
       "instruction": "bpl",
       "id": "control-00601",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source branch relation NoKillE -> KillELoop.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source branch relation NoKillE -> KillELoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55494,12 +55610,15 @@
       "instruction": "ldy",
       "id": "control-00602",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation AreaFrenzy -> FreCompLoop.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation AreaFrenzy -> FreCompLoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55513,12 +55632,15 @@
       "instruction": "bmi",
       "id": "control-00603",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation FreCompLoop -> ExitAFrenzy.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation FreCompLoop -> ExitAFrenzy.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55532,12 +55654,15 @@
       "instruction": "bne",
       "id": "control-00604",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation FreCompLoop -> FreCompLoop.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation FreCompLoop -> FreCompLoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55551,12 +55676,15 @@
       "instruction": "lda",
       "id": "control-00605",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation FreCompLoop -> ExitAFrenzy.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation FreCompLoop -> ExitAFrenzy.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55573,10 +55701,12 @@
       "status": "exact",
       "currentCounterpart": "area.c preserves source call relation AreaStyleObject -> JumpEngine.",
       "semanticEvidence": [
-        "M2 T55 S6 P9: source map pairs AreaStyleObject's ROM JumpEngine call and child return with mysmb_area_process_object_state in the shared game layer."
+        "M2 T55 S6 P9: source map pairs AreaStyleObject's ROM JumpEngine call and child return with mysmb_area_process_object_state in the shared game layer.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P9: four current original-ROM/current x86/x64 controlled AreaStyle routes observe $9740 -> $8E04 and the return continuation; all persistent work RAM agrees. Direct-NMI fixtures exclude pre-existing physical PPU state from this control-edge claim."
+        "M2 T55 S6 P9: four current original-ROM/current x86/x64 controlled AreaStyle routes observe $9740 -> $8E04 and the return continuation; all persistent work RAM agrees. Direct-NMI fixtures exclude pre-existing physical PPU state from this control-edge claim.",
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
       ],
       "semanticContract": "area.c preserves source call relation AreaStyleObject -> JumpEngine.",
       "currentSourcePaths": [
@@ -55592,12 +55722,15 @@
       "instruction": "jsr",
       "id": "control-00607",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation AreaStyleObject -> TreeLedge.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation AreaStyleObject -> TreeLedge.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55611,12 +55744,15 @@
       "instruction": "jsr",
       "id": "control-00608",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation TreeLedge -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation TreeLedge -> GetLrgObjAttrib.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55630,12 +55766,15 @@
       "instruction": "beq",
       "id": "control-00609",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation TreeLedge -> EndTreeL.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation TreeLedge -> EndTreeL.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55649,12 +55788,15 @@
       "instruction": "bpl",
       "id": "control-00610",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation TreeLedge -> MidTreeL.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation TreeLedge -> MidTreeL.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55668,12 +55810,15 @@
       "instruction": "beq",
       "id": "control-00611",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation TreeLedge -> MidTreeL.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation TreeLedge -> MidTreeL.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55687,12 +55832,15 @@
       "instruction": "jmp",
       "id": "control-00612",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump relation TreeLedge -> NoUnder.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump relation TreeLedge -> NoUnder.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55706,12 +55854,15 @@
       "instruction": "jmp",
       "id": "control-00613",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump relation MidTreeL -> AllUnder.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump relation MidTreeL -> AllUnder.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55725,12 +55876,15 @@
       "instruction": "jmp",
       "id": "control-00614",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump relation EndTreeL -> NoUnder.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump relation EndTreeL -> NoUnder.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55744,12 +55898,15 @@
       "instruction": "jsr",
       "id": "control-00615",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation MushroomLedge -> ChkLrgObjLength.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation MushroomLedge -> ChkLrgObjLength.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55763,12 +55920,15 @@
       "instruction": "bcc",
       "id": "control-00616",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation MushroomLedge -> EndMushL.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation MushroomLedge -> EndMushL.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55782,12 +55942,15 @@
       "instruction": "jmp",
       "id": "control-00617",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump relation MushroomLedge -> NoUnder.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump relation MushroomLedge -> NoUnder.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55801,12 +55964,15 @@
       "instruction": "beq",
       "id": "control-00618",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation EndMushL -> NoUnder.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation EndMushL -> NoUnder.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55820,12 +55986,15 @@
       "instruction": "bne",
       "id": "control-00619",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation EndMushL -> MushLExit.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation EndMushL -> MushLExit.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55839,12 +56008,15 @@
       "instruction": "lda",
       "id": "control-00620",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation EndMushL -> AllUnder.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation EndMushL -> AllUnder.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55858,12 +56030,15 @@
       "instruction": "jmp",
       "id": "control-00621",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump relation AllUnder -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump relation AllUnder -> RenderUnderPart.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55877,12 +56052,15 @@
       "instruction": "jmp",
       "id": "control-00622",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump relation NoUnder -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump relation NoUnder -> RenderUnderPart.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55896,12 +56074,15 @@
       "instruction": "jsr",
       "id": "control-00623",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation PulleyRopeObject -> ChkLrgObjLength.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation PulleyRopeObject -> ChkLrgObjLength.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55915,12 +56096,15 @@
       "instruction": "bcs",
       "id": "control-00624",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation PulleyRopeObject -> RenderPul.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation PulleyRopeObject -> RenderPul.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55934,12 +56118,15 @@
       "instruction": "bne",
       "id": "control-00625",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation PulleyRopeObject -> RenderPul.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation PulleyRopeObject -> RenderPul.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55953,12 +56140,15 @@
       "instruction": "iny",
       "id": "control-00626",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation PulleyRopeObject -> RenderPul.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation PulleyRopeObject -> RenderPul.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55972,12 +56162,15 @@
       "instruction": "sta",
       "id": "control-00627",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation RenderPul -> MushLExit.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation RenderPul -> MushLExit.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -55991,12 +56184,15 @@
       "instruction": "jsr",
       "id": "control-00628",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation CastleObject -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation CastleObject -> GetLrgObjAttrib.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56010,12 +56206,15 @@
       "instruction": "jsr",
       "id": "control-00629",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation CastleObject -> ChkLrgObjFixedLength.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation CastleObject -> ChkLrgObjFixedLength.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56029,12 +56228,15 @@
       "instruction": "sta",
       "id": "control-00630",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation CastleObject -> CRendLoop.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation CastleObject -> CRendLoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56048,12 +56250,15 @@
       "instruction": "beq",
       "id": "control-00631",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation CRendLoop -> ChkCFloor.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation CRendLoop -> ChkCFloor.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56067,12 +56272,15 @@
       "instruction": "dec",
       "id": "control-00632",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation CRendLoop -> ChkCFloor.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation CRendLoop -> ChkCFloor.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56086,12 +56294,15 @@
       "instruction": "bne",
       "id": "control-00633",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> CRendLoop.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation ChkCFloor -> CRendLoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56105,12 +56316,15 @@
       "instruction": "beq",
       "id": "control-00634",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> ExitCastle.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation ChkCFloor -> ExitCastle.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56124,12 +56338,15 @@
       "instruction": "beq",
       "id": "control-00635",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> PlayerStop.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation ChkCFloor -> PlayerStop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56143,12 +56360,15 @@
       "instruction": "bne",
       "id": "control-00636",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> NotTall.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation ChkCFloor -> NotTall.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56162,12 +56382,15 @@
       "instruction": "beq",
       "id": "control-00637",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation ChkCFloor -> PlayerStop.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation ChkCFloor -> PlayerStop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56181,12 +56404,15 @@
       "instruction": "beq",
       "id": "control-00638",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation ChkCFloor -> NotTall.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation ChkCFloor -> NotTall.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56200,12 +56426,15 @@
       "instruction": "bne",
       "id": "control-00639",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation NotTall -> ExitCastle.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation NotTall -> ExitCastle.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56219,12 +56448,15 @@
       "instruction": "jsr",
       "id": "control-00640",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation NotTall -> GetAreaObjXPosition.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation NotTall -> GetAreaObjXPosition.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56238,12 +56470,15 @@
       "instruction": "jsr",
       "id": "control-00641",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation NotTall -> FindEmptyEnemySlot.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation NotTall -> FindEmptyEnemySlot.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113082,10 +113317,12 @@
       "currentCounterpart": "src/game/area.c: mysmb_area_queue_game_text / mysmb_area_scroll_lock_warp ordered C control flow",
       "semanticEvidence": [
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
       ],
       "semanticContract": "Preserves the original return continuation WriteGameText → WarpNum: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
@@ -113100,12 +113337,15 @@
       "instruction": "rts/rti",
       "id": "control-03565",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser object path preserves return handoff KillEnemies -> WarpNum.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c parser object path preserves return handoff KillEnemies -> WarpNum.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113122,10 +113362,12 @@
       "status": "exact",
       "currentCounterpart": "C switch dispatch owners -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "M2 T55 S6 P9: source map pairs AreaStyleObject's ROM JumpEngine call and child return with mysmb_area_process_object_state in the shared game layer."
+        "M2 T55 S6 P9: source map pairs AreaStyleObject's ROM JumpEngine call and child return with mysmb_area_process_object_state in the shared game layer.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P9: four current original-ROM/current x86/x64 controlled AreaStyle routes observe $9740 -> $8E04 and the return continuation; all persistent work RAM agrees. Direct-NMI fixtures exclude pre-existing physical PPU state from this control-edge claim."
+        "M2 T55 S6 P9: four current original-ROM/current x86/x64 controlled AreaStyle routes observe $9740 -> $8E04 and the return continuation; all persistent work RAM agrees. Direct-NMI fixtures exclude pre-existing physical PPU state from this control-edge claim.",
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
       ],
       "semanticContract": "Preserves the original return continuation JumpEngine → AreaStyleObject: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
@@ -113141,12 +113383,15 @@
       "instruction": "rts/rti",
       "id": "control-03567",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → TreeLedge: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113160,12 +113405,15 @@
       "instruction": "rts/rti",
       "id": "control-03568",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation ChkLrgObjLength → MushroomLedge: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113179,12 +113427,15 @@
       "instruction": "rts/rti",
       "id": "control-03569",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation ChkLrgObjLength → PulleyRopeObject: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113198,12 +113449,15 @@
       "instruction": "rts/rti",
       "id": "control-03570",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → CastleObject: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113217,12 +113471,15 @@
       "instruction": "rts/rti",
       "id": "control-03571",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation ChkLrgObjFixedLength → CastleObject: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113236,12 +113493,15 @@
       "instruction": "rts/rti",
       "id": "control-03572",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation GetAreaObjXPosition → NotTall: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113255,12 +113515,15 @@
       "instruction": "rts/rti",
       "id": "control-03573",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source return handoff FindEmptyEnemySlot -> NotTall, including caller-specific empty-slot result handling.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source return handoff FindEmptyEnemySlot -> NotTall, including caller-specific empty-slot result handling.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -125602,12 +125865,15 @@
       "selector": 0,
       "id": "control-04182",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> TreeLedge selector 0.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> TreeLedge selector 0.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -125622,12 +125888,15 @@
       "selector": 1,
       "id": "control-04183",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> MushroomLedge selector 1.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> MushroomLedge selector 1.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -125642,12 +125911,15 @@
       "selector": 2,
       "id": "control-04184",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> BulletBillCannon selector 2.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> BulletBillCannon selector 2.",
       "currentSourcePaths": [
         "src/game/area.c"
