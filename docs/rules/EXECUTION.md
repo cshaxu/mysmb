@@ -39,9 +39,11 @@ Every M2 P that changes product code refreshes and reports all three target arti
 ### Current-equivalence re-audit
 
 Historical `ROM-match complete` accounting and a current-build equivalence
-result are distinct facts. When a milestone-wide re-audit is active, reports
-must state both values and must not call the historical completion numerator a
-current end-to-end verification result. The current-equivalence registry owns
+result are distinct facts. When a milestone-wide re-audit is active, every
+progress or commit report must state: historical complete / total, current
+exact nodes / 1,992, and current exact feasible control relations / 4,324
+(the raw and infeasible counts when relevant). Reports must not call the
+historical completion numerator a current end-to-end verification result. The current-equivalence registry owns
 one of four states for every inventory label: `unclassified`, `exact`,
 `needs-evidence`, or `mismatch`. A node enters `exact` only after its current
 source audit and a current original-ROM route prove the required branch,

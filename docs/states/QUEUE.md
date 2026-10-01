@@ -10,7 +10,7 @@ and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 ## M2: current-equivalence work
 
 The [T53–T70 current-equivalence proof program](../proposals/m2/current-equivalence-proof-program.md)
-continues at unadmitted T59 after the active T58 Cohort-E audit closes. Each later task stays unadmitted until its exact S
+continues at unadmitted T61 after T60 Cohort-G closes. Each later task stays unadmitted until its exact S
 packet, node/edge scope and original-ROM route are recorded.
 
 ## M3: presentation adapters
