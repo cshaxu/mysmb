@@ -297,3 +297,11 @@ product source changed, so artifacts were not refreshed.
 The current-equivalence registry advances from 162 to 165 exact labels and
 from 324 to 330 exact feasible controls. Historical conformance remains
 1,992 / 1,992. No successor S has been admitted.
+
+## S7 admission — ScreenRoutines dispatcher integration
+
+S7 receives the source-order root `ScreenRoutines` at SMB1 line 1386 after
+its task-target chains have independent current proof. It audits the JumpEngine
+selector table, every feasible selector-to-target relation, default handling
+and target return integration through the normal screen-task route. Historical
+credit remains unchanged; `ScreenRoutines` enters as current `needs-evidence`.

@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T54 S6 Packet
+## M2 T54 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T54 S6 — Cohort B parser-task handoff current-equivalence audit. |
-| Admission And Approval | S5 is closed with zero feasible differences; owner-directed source-order continuation. |
-| Objective | Audit `AreaParserTaskControl` through `OutputCol` against original ROM parser-task loop, conditional task advance and VRAM selector output; repair every feasible difference and repeat the same audit to zero. |
-| Non-goals | No historical-node credit, no ScreenRoutines dispatcher proof, no parser-handler internal proof, and no platform-owned game decision. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 162 exact, 1,830 needs-evidence, 0 mismatch nodes; 324 exact, 4,000 needs-evidence, 0 mismatch feasible controls; 10 exact material relations. Scope: 3 labels, all incoming needs-evidence; expected historical delta 0. |
+| Identifier Mode | M2 T54 S7 — Cohort B ScreenRoutines dispatcher current-equivalence audit. |
+| Admission And Approval | S6 is closed with zero feasible differences; owner-directed source-order continuation. |
+| Objective | Audit `ScreenRoutines` against the original JumpEngine task-vector dispatch and return integration after independently verified task chains; repair every feasible difference and repeat the audit to zero. |
+| Non-goals | No historical-node credit, no re-audit of closed target internals, and no platform-owned game decision. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 165 exact, 1,827 needs-evidence, 0 mismatch nodes; 330 exact, 3,994 needs-evidence, 0 mismatch feasible controls; 10 exact material relations. Scope: 1 label, incoming needs-evidence; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t54-cohort-b-current-proof.md. |
-| Files And ABI Surface | Shared `src/game/area.c` parser-task handoff, focused tests, registry/ledger evidence only; platform adapters remain outside gameplay. |
+| Files And ABI Surface | Shared `src/game/game.c` screen-task dispatcher, focused tests, registry/ledger evidence only; platform adapters remain outside gameplay. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | ROM-logic: source/branch/state/call-order audit and controlled original-ROM/x86/x64 parser task-count variants. Operational: focused checks, x86/x64 and DOS16 builds if source changes, platform-purity audit, and three artifacts if product code changes. |
+| Verification | ROM-logic: task-vector/control-return audit and controlled original-ROM/x86/x64 screen-task matrix. Operational: focused checks, x86/x64 and DOS16 builds if source changes, platform-purity audit, and three artifacts if product code changes. |
 | Expected Markers | Every scoped node and source-owned feasible relation has a current C counterpart with source-order, branch/state and output evidence; no scoped difference remains. |
-| Asset Needs | Owner-local ROM only for ignored traces under build/m2-t54-s6; artifacts refresh only if product code changes. |
+| Asset Needs | Owner-local ROM only for ignored traces under build/m2-t54-s7; artifacts refresh only if product code changes. |
 | Reporting Requirements | Report exact scoped labels, incoming/current dispositions, control/material relations, current-registry before/after and separate operational outcome. |
 | Stop Conditions | A feasible ROM/C difference remains after repair, an original branch/callee handoff lacks a shared-C counterpart, a trace exceeds its budget, or platform code makes a gameplay decision. |
 | Exit Criteria | The S may close only when every scoped feasible node and relation is exact under static and controlled ROM/native evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | Parser task-count zero/nonzero, handler loop count, screen-disable ordering, task advance and VRAM selector output. |
+| Similar-Issue Sweep | All task selectors, default handling, task-local successor writes and target return handoff. |
 
 ## Current Technical Baseline
 
-M2 T54 S6 is closed. No successor S is admitted until the coordinator opens it.
+M2 T54 S6 is closed. S7 is active and audits the final Cohort-B screen dispatcher.
 
 ## S5 Closure
 
