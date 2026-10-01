@@ -24346,13 +24346,16 @@
       "label": "CoinBlock",
       "asmLine": 6988,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Allocates a misc slot and derives normal block coin coordinates with incoming allocation carry.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -24362,13 +24365,16 @@
       "label": "SetupJumpCoin",
       "asmLine": 7000,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Allocates a misc slot and derives jump-coin coordinates using four-ASL carry.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -24378,13 +24384,16 @@
       "label": "JCoinC",
       "asmLine": 7014,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Initializes coin state/audio, preserves ObjectOffset for GiveOneCoin, then increments one-up tally.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -24394,13 +24403,16 @@
       "label": "FindEmptyMiscSlot",
       "asmLine": 7025,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Starts at slot eight and searches descending through six before source fallback.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -24410,13 +24422,16 @@
       "label": "FMiscLoop",
       "asmLine": 7027,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Checks each misc state and preserves the CPY-after-DEY carry behavior.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -24426,13 +24441,16 @@
       "label": "UseMiscS",
       "asmLine": 7033,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Stores JumpCoinMiscOffset and returns selected slot.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -24442,13 +24460,16 @@
       "label": "MiscObjectsCore",
       "asmLine": 7038,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Processes slots eight through zero, writing ObjectOffset before every state read.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -24458,13 +24479,16 @@
       "label": "MiscLoop",
       "asmLine": 7040,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Dispatches inactive, jump-coin/floatey and hammer states by d7.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -24474,13 +24498,16 @@
       "label": "ProcJumpCoin",
       "asmLine": 7053,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Distinguishes jump state one from floatey ageing, including scroll page carry and state $30 retirement.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -24490,13 +24517,16 @@
       "label": "JCoinRun",
       "asmLine": 7071,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Uses misc offset plus thirteen for gravity and changes state only at Y speed five.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -24506,13 +24536,16 @@
       "label": "RunJCSubs",
       "asmLine": 7088,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Runs relative/offscreen/box/graphics tail in source order.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -24522,13 +24555,16 @@
       "label": "MiscLoopBack",
       "asmLine": 7093,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared coin, misc, score, world and OAM core",
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+      ],
       "semanticContract": "Decrements through all misc slots before returning.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70553,12 +70589,15 @@
       "instruction": "jsr",
       "id": "control-01243",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original call relation CoinBlock -> FindEmptyMiscSlot with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -70572,12 +70611,15 @@
       "instruction": "jmp",
       "id": "control-01244",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original jump relation CoinBlock -> JCoinC with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -70591,12 +70633,15 @@
       "instruction": "jsr",
       "id": "control-01245",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original call relation SetupJumpCoin -> FindEmptyMiscSlot with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -70610,12 +70655,15 @@
       "instruction": "sta",
       "id": "control-01246",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetupJumpCoin -> JCoinC with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -70649,12 +70697,15 @@
       "instruction": "ldy",
       "id": "control-01248",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation FindEmptyMiscSlot -> FMiscLoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -70668,12 +70719,15 @@
       "instruction": "beq",
       "id": "control-01249",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original branch relation FMiscLoop -> UseMiscS with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -70687,12 +70741,15 @@
       "instruction": "bne",
       "id": "control-01250",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original branch relation FMiscLoop -> FMiscLoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -70706,12 +70763,15 @@
       "instruction": "ldy",
       "id": "control-01251",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation FMiscLoop -> UseMiscS with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/coin.c"
@@ -70725,12 +70785,15 @@
       "instruction": "ldx",
       "id": "control-01252",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation MiscObjectsCore -> MiscLoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70744,12 +70807,15 @@
       "instruction": "beq",
       "id": "control-01253",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original branch relation MiscLoop -> MiscLoopBack with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70763,12 +70829,15 @@
       "instruction": "bcc",
       "id": "control-01254",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original branch relation MiscLoop -> ProcJumpCoin with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70802,12 +70871,15 @@
       "instruction": "jmp",
       "id": "control-01256",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original jump relation MiscLoop -> MiscLoopBack with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70821,12 +70893,15 @@
       "instruction": "beq",
       "id": "control-01257",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original branch relation ProcJumpCoin -> JCoinRun with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70840,12 +70915,15 @@
       "instruction": "bne",
       "id": "control-01258",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original branch relation ProcJumpCoin -> RunJCSubs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70859,12 +70937,15 @@
       "instruction": "jmp",
       "id": "control-01259",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original jump relation ProcJumpCoin -> MiscLoopBack with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70898,12 +70979,15 @@
       "instruction": "bne",
       "id": "control-01261",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original branch relation JCoinRun -> RunJCSubs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -70917,12 +71001,15 @@
       "instruction": "inc",
       "id": "control-01262",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation JCoinRun -> RunJCSubs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -71012,12 +71099,15 @@
       "instruction": "jsr",
       "id": "control-01267",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation RunJCSubs -> MiscLoopBack with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"
@@ -71031,12 +71121,15 @@
       "instruction": "bpl",
       "id": "control-01268",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S4: static original $BB38-$BBF7/current coin.c and misc.c mapping proves the source branch, call/jump, loop or fall-through counterpart and order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S4: 180 current x86/x64 original-route caller/full-product checks and focused exhaustive smoke cover the relation."
+      ],
       "semanticContract": "Preserves original branch relation MiscLoopBack -> MiscLoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/misc.c"

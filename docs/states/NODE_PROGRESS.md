@@ -2048,3 +2048,7 @@ T61 S2 closes `CannonBitmasks -> KillBB`: **710 / 1,992 current-exact nodes** an
 ## Current re-audit progress — T61 S3
 
 T61 S3 closes the hammer caller chain at **720 / 1,992 current-exact nodes** and **1,429 / 4,324 current-exact feasible control relations**. The `GetMiscBoundBox` child boundary remains `needs-evidence` with M2 T43 S13; historical accounting remains **1,992 / 1,992**.
+
+## Current re-audit: T61 S4 coin and misc lifecycle
+
+T61 S4 audited 12 historical-complete labels against `$BB38-$BBF7`; all are current-exact. Historical conformance remains 1,992 / 1,992. Current equivalence: 732 / 1,992 exact nodes and 1,448 / 4,324 exact feasible control relations.

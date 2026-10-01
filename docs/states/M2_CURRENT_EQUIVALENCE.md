@@ -1954,3 +1954,7 @@ All 49 T60 labels from `ProcFireball_Bubble` through `VineHeightData` are curren
 ### T61 S3 hammer actor lifecycle result
 
 `HammerEnemyOfsData -> RunHSubs` is current-exact for ten labels, 12 internal feasible control relations and two material bindings. The 63-ROM-snapshot caller route matches on x86/x64; the current full-chain diagnostic exposes only the still-unverified `GetMiscBoundBox` child boundary, retained for M2 T43 S13. Registry totals: **720 / 1,992 exact nodes**, **1,429 / 4,324 exact feasible control edges**; historical migration is **1,992 / 1,992**.
+
+## T61 S4 current-equivalence result
+
+`CoinBlock -> MiscLoopBack`: 12 nodes exact; 19 internal feasible control relations exact. Original/current caller replay and current full-product replay each pass 180 x86/x64 routes. External shared child semantics retain their registered receivers.
