@@ -148,3 +148,10 @@ The shared owner is `src/game/score.c`. S4 is its predecessor and S6 power-up is
 ## S5 closure — score, coin tally and status-number chain
 
 All nine scoped labels are current-exact; eight newly promoted and `AddToScore` revalidated. Static `$BBF8-$BC48` comparison found no feasible difference in table selection, current-player reads, threshold/life/sound branch, digit modifiers, child order, VRAM indexing, zero suppression or ObjectOffset return. Seven internal controls are exact. Original caller and full current routes each passed 112 x86/x64 checks; focused smoke passed 2,560 cases per architecture. Digit math and status-print child internals remain external. No source changed. Current: **740 / 1,992** nodes and **1,455 / 4,324** feasible controls; historical **1,992 / 1,992**.
+
+
+## S6 admission — power-up initialization and lifecycle chain
+
+S6 admits the contiguous original chain `$BC49-$BCEA`, `SetupPowerUp -> ExitPUp`: `SetupPowerUp`, `PwrUpJmp`, `StrType`, `PutBehind`, `PowerUpObjHandler`, `ShroomM`, `GrowThePowerUp`, `ChkPUSte`, `RunPUSubs`, and `ExitPUp`. All ten labels are `needs-evidence`; this is ten unique scoped labels and ten current-exact candidates. The current-equivalence forecast is **740 / 1,992** to **750 / 1,992** nodes, while historical accounting remains **1,992 / 1,992**.
+
+The shared owners are `src/game/power_up_init.c` and `src/game/power_up.c`. S5 is the predecessor; S7 block/head processing is the source-order successor. ROM logic compares fixed-slot state, flag, page/X/Y initialization, type derivation, attributes and sound writes; inactive/emergence/active dispatch; mushroom and star movement branches; flower emergence; the state-six collision/draw threshold; and the exact `RunPUSubs` child order. Existing movement, collision, relative-position, offscreen, bounding-box and OAM children remain named external boundaries. Operational proof uses controlled original-ROM/current x86/x64 callers and full-product routes, a focused power-up chain harness, platform-purity and DOS16 shared-core link. A product-source repair refreshes all three local executables.
