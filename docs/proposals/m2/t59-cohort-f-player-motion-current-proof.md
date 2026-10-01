@@ -124,3 +124,8 @@ S4 admits `MaxLeftXSpdData -> ExitPhy`: MaxLeftXSpdData, MaxRightXSpdData, Frict
 ## S4 closure - player physics, jump and horizontal-speed chain
 
 All 24 labels from MaxLeftXSpdData through ExitPhy are current-equivalence exact. Static ROM comparison found no shared-owner difference. The five S4 tables bind exact ROM bytes. Fresh C90 x86/x64 replays pass 73 original player-physics entries each, for 146 entry-return comparisons; every reachable branch outcome passes, while the B52B fallthrough is instruction-infeasible after B529 consumes carry. Focused smoke, DOS16 link and platform purity pass. No product source changed, so no artifact refresh is due. Of 50 feasible incident controls, 48 receive fresh S4 evidence and two retain compatible caller proof.
+
+
+## S5 admission - animation speed and skid chain
+
+S5 admits `PlayerAnimTmrData -> SetAnimSpd`: PlayerAnimTmrData, GetPlayerAnimSpeed, ChkSkid, SetRunSpd, ProcSkid and SetAnimSpd. Shared owner: `src/game/player.c`; S4 supplies speed and direction parameters, and S6 separately owns friction execution. It covers animation-timer table selection, running-speed write, input/moving-direction comparison and low-speed skid reset. Registry baseline is 629 exact labels and 1,216 exact feasible controls; all six scoped labels need fresh current evidence. ROM logic route: controlled original animation-speed snapshots. Operational route: x86/x64 C90 replays, focused smoke, DOS16 link and platform purity.
