@@ -232,3 +232,14 @@ name-table smoke executables both pass against this source.  This is evidence
 only: the remaining incident vector/return relations and controlled ROM route
 must still pass before S6 can close.  No product source changed, so this P
 does not refresh artifacts.
+
+## S6 P3 ? ROM-bound cold-start route
+
+The ROM-bound `local-title-bootstrap-smoke` now passes on both current x86 and
+x64 builds.  That route begins with the shared power-on/reset sequence,
+executes `InitializeNameTables`, then reaches the title-mode dispatcher with
+the owner-local PRG and title data bound.  It complements the isolated
+name-table check by proving the boot caller and title continuation on the
+actual local-ROM build path.  It does not observe every S6 vector family, so
+the remaining incident-edge audit stays open.  No product source changed and
+no artifacts are refreshed.
