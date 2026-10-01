@@ -10181,13 +10181,16 @@
       "label": "OperModeExecutionTree",
       "asmLine": 954,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_step mode_before selector",
       "semanticEvidence": [
-        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending."
+        "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
+        "M2 T53 S1 source audit: NonMaskableInterrupt prefix callees commit display/buffer, audio, input, pause, score, timers, LFSR, OAM and scroll but do not write OperMode or OperMode_Task; frame_root.c therefore captures the same selector values that ROM loads at OperModeExecutionTree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 controlled four-case owner-ROM dispatch route: original JumpEngine reached each of the four inline vector targets and both post-child continuations; current x86/x64 records had zero non-scratch RAM and output differences for all cases. Two paired 600-frame idle/start routes also passed exact work-RAM and output checks."
+      ],
       "semanticContract": "Loads the source operating mode and dispatches exactly one inline JumpEngine vector: title, game, victory or game-over, returning to the NMI tail.",
       "currentSourcePaths": [
         "src/game/frame_root.c"

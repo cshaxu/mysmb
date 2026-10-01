@@ -1670,3 +1670,16 @@ branches.
 - Integration result: every edge is now independently mapped to its two named shared-C endpoint counterparts with a type-specific branch, fall-through, call, return, vector or JumpEngine-dispatch ordering contract.
 - Static review found no newly confirmed discrepancy. These relations are `needs-evidence`, not `exact`, until their controlled original-ROM/x86/x64 route records cover the stated predicates and continuations.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+
+### T53 S1 dispatch-route result
+
+`OperModeExecutionTree` is now current-equivalence **exact**. Static review
+established that the portable NMI-prefix callees do not write `OperMode` or
+`OperMode_Task`, so the C selector snapshot is the same value loaded by the
+ROM at the original dispatch point. A bounded owner-ROM route then exercised
+all four inline `JumpEngine` vector targets and both post-child continuations.
+For x86 and x64, every fixture had zero non-scratch RAM and visible-output
+differences. The same current binaries also passed paired 600-frame idle and
+start/action routes with exact work RAM and output. This establishes the
+selector node only; its incident control relations, pause-tail route and the
+separate `ScreenOff` transaction mismatch retain their individual statuses.

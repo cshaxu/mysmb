@@ -51,7 +51,10 @@ def main():
         for bits in [32, 64]:
             native = frames(directory/('entry-native%d-%d.msfn' % (bits, case)), b'MSFN', 1)[0]
             delta = {j for j in range(2048) if original[j+4] != native[j+4]} - SCRATCH
-            assert delta == (set() if case < 2 else set(range(0x300, 0x308))), (case, bits, delta)
+            # The former engine-entry residual at $0300-$0307 was removed by
+            # the current shared VRAM/palette path.  Keep this route strict:
+            # a later change must not silently restore the old eight-byte gap.
+            assert delta == set(), (case, bits, delta)
             assert original[2052:] == native[2052:], (case, bits, 'output')
             for address in [0x6fc, 0x6fd, 0x753, 0x770, 0x772]:
                 assert original[address+4] == native[address+4]
@@ -60,7 +63,9 @@ def main():
                 assert native[0x6fc+4] == (1 if case == 2 else 0)
             entry_rows.append(dict(case=case, bits=bits, persistentResidual=sorted(delta)))
         assert (directory/('entry-native32-%d.msfn' % case)).read_bytes() == (directory/('entry-native64-%d.msfn' % case)).read_bytes()
-    for route, expected in [('start', [(1, 4402), (202, 4402)]), ('idle', [(1, 4402)])]:
+    # The current shared NMI path also removes the old cold-screen PPU-control
+    # residuals on both ordinary routes.  Retain an exact-output assertion.
+    for route, expected in [('start', []), ('idle', [])]:
         original = frames(directory/(route+'-rom.msfr'), b'MSFR', 600)
         pc = coverage(directory/(route+'-pc.csv'))
         if route == 'start':
@@ -78,7 +83,7 @@ def main():
         assert (directory/(route+'-native32.msfn')).read_bytes() == (directory/(route+'-native64.msfn')).read_bytes()
     summary = dict(vectorTargets=[hex(x) for x in vector], entryCases=entry_rows,
                    ordinaryRoutes=2, samplesPerOrdinaryRoute=600,
-                   limits='Entry-only credit. Eight VRAM bytes in engine cases await S2 palette-call audit. Cold-screen PPU control bit differs at three samples across the two routes; unchanged from prior native baseline.')
+                   limits='Entry-only credit. All four dispatch fixtures and both ordinary routes are exact outside excluded scratch state; this remains a bounded entry/dispatch proof.')
     (directory/'entry-verified.json').write_text(json.dumps(summary, indent=2)+'\n')
     print('Game entry: four vectors, both post-child branches, both controllers and two 600-frame routes verified within reported boundaries')
 

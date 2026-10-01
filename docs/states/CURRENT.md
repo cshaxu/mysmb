@@ -10,7 +10,7 @@
 | Admission And Approval | Owner-directed continuation under the approved source-order T53–T70 proof program. |
 | Objective | Audit the 39-label reset/NMI/pause/timer/LFSR/sprite/OAM/dispatch chain and its internal relations against the original ROM. |
 | Non-goals | No historical-node credit, no cross-cohort final proof, and no platform-owned game decision. Any mismatch becomes a later candidate rather than an unscoped repair. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 54 exact, 1 mismatch, 1,937 needs-evidence; 4,326 feasible control relations. S1 scope: 39 labels, 22 exact and 17 needs-evidence; expected historical delta 0. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 55 exact, 1 mismatch, 1,936 needs-evidence; 4,326 feasible control relations. S1 scope at admission: 39 labels, 22 exact and 17 needs-evidence; `OperModeExecutionTree` is now exact, `ScreenOff` is mismatch, and 15 scoped labels remain needs-evidence. Expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t53-cohort-a-current-proof.md. |
 | Files And ABI Surface | Shared `src/game/boot.c`, `src/game/frame_root.c`, declared shared callees and tests/registry/ledger evidence only; platform adapters remain outside gameplay. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
