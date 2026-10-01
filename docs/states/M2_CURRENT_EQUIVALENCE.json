@@ -9615,12 +9615,16 @@
     }
   ],
   "nodeCounts": {
-    "exact": 216,
-    "needs-evidence": 1776
+    "exact": 233,
+    "needs-evidence": 1759,
+    "mismatch": 0,
+    "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 411,
-    "needs-evidence": 3913,
+    "exact": 471,
+    "needs-evidence": 3853,
+    "mismatch": 0,
+    "unclassified": 0,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -13829,129 +13833,153 @@
       "label": "WriteBufferToScreen",
       "asmLine": 2482,
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_game_apply_vram_commands",
+      "status": "exact",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+      ],
       "semanticContract": "ROM $8e92: decodes one VRAM packet header, increment/repeat mode and payload length.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "label": "SetupWrites",
       "asmLine": 2495,
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_game_apply_vram_commands packet mode decode",
+      "status": "exact",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+      ],
       "semanticContract": "ROM $8ea7: commits $2000 increment mode then selects repeat/nonrepeat length behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "label": "GetLength",
       "asmLine": 2501,
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_game_apply_vram_commands packet mode decode",
+      "status": "exact",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+      ],
       "semanticContract": "ROM $8eb2: recovers packet length and repeat flag.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "label": "OutputToVRAM",
       "asmLine": 2504,
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_game_apply_vram_commands payload loop",
+      "status": "exact",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+      ],
       "semanticContract": "ROM $8eb5: emits packet payload until count expires.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "label": "RepeatByte",
       "asmLine": 2506,
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_game_apply_vram_commands repeat/nonrepeat source selection",
+      "status": "exact",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+      ],
       "semanticContract": "ROM $8eb7: loads repeated or advancing source byte then continues packet output.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "label": "UpdateScreen",
       "asmLine": 2523,
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_game_commit_vram_buffer",
+      "status": "exact",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+      ],
       "semanticContract": "ROM $8ece: selects next packet until zero terminator, otherwise reaches InitScroll.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "label": "InitScroll",
       "asmLine": 2527,
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_name_tables and frame display commit",
+      "status": "exact",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+      ],
       "semanticContract": "ROM $8ed6: writes zero/current accumulator to both scroll registers.",
       "currentSourcePaths": [
-        "src/game/boot.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "label": "WritePPUReg1",
       "asmLine": 2533,
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_name_tables PPU control mirror write",
+      "status": "exact",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+      ],
       "semanticContract": "ROM $8edb: writes PPU control register and its mirror.",
       "currentSourcePaths": [
-        "src/game/boot.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "label": "StatusBarData",
@@ -49909,16 +49937,19 @@
       "instruction": "bcs",
       "id": "control-00342",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original WriteBufferToScreen -> SetupWrites branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "WriteBufferToScreen",
@@ -49928,16 +49959,19 @@
       "instruction": "and",
       "id": "control-00343",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original WriteBufferToScreen -> SetupWrites fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "SetupWrites",
@@ -49947,17 +49981,19 @@
       "instruction": "jsr",
       "id": "control-00344",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original SetupWrites -> WritePPUReg1 call relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/boot.c",
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "SetupWrites",
@@ -49967,16 +50003,19 @@
       "instruction": "bcc",
       "id": "control-00345",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original SetupWrites -> GetLength branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "SetupWrites",
@@ -49986,16 +50025,19 @@
       "instruction": "iny",
       "id": "control-00346",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original SetupWrites -> GetLength fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "GetLength",
@@ -50005,16 +50047,19 @@
       "instruction": "tax",
       "id": "control-00347",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original GetLength -> OutputToVRAM fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "OutputToVRAM",
@@ -50024,16 +50069,19 @@
       "instruction": "bcs",
       "id": "control-00348",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original OutputToVRAM -> RepeatByte branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "OutputToVRAM",
@@ -50043,16 +50091,19 @@
       "instruction": "iny",
       "id": "control-00349",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original OutputToVRAM -> RepeatByte fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "RepeatByte",
@@ -50062,16 +50113,19 @@
       "instruction": "bne",
       "id": "control-00350",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original RepeatByte -> OutputToVRAM branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "RepeatByte",
@@ -50081,16 +50135,19 @@
       "instruction": "sta",
       "id": "control-00351",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original RepeatByte -> UpdateScreen fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "UpdateScreen",
@@ -50100,16 +50157,19 @@
       "instruction": "bne",
       "id": "control-00352",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original UpdateScreen -> WriteBufferToScreen branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "UpdateScreen",
@@ -50119,17 +50179,19 @@
       "instruction": "bne",
       "id": "control-00353",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original UpdateScreen -> InitScroll fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/boot.c",
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "PrintStatusBarNumbers",
@@ -111865,17 +111927,19 @@
       "instruction": "rts/rti",
       "id": "control-03535",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+      ],
       "semanticContract": "Original WritePPUReg1 -> SetupWrites return relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
-        "src/game/boot.c",
-        "src/game/frame_root.c"
-      ]
+        "src/game/game.c"
+      ],
+      "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
     {
       "from": "OutputNumbers",

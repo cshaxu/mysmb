@@ -486,3 +486,8 @@ feasible control relations**. S8 is not admitted by this closure.
 ## S8 admission — VRAM packet and PPU handoff chain
 
 S8 receives the contiguous eight-label `WriteBufferToScreen → WritePPUReg1` chain at SMB1 lines 2482–2536. Its predecessor is the closed S7 NMI joypad return; its successor is T55 closure. The chain spans the packet-header d7/d6 split, `$2000` increment selection, repeat/sequential payload loops, indirect pointer carry, zero terminator, scroll writes and control-register/mirror write. The shared owners are `frame_root.c` for packet consumption and `boot.c` for the common control/scroll primitive. It has 8 scoped labels, 0 expected historical matches and a maximum historical numerator of 1,992/1,992. The controlled original-ROM/current x86/x64 route will cover empty, sequential horizontal, vertical, repeat and chained packets through the actual NMI continuation; it must compare PPU-visible outputs and RAM/control handoff. Any feasible difference remains in S8 for repair and repeat audit.
+
+
+## S8 closure
+
+S8 closes after the shared `UpdateScreen` packet interpreter restores the ROM indirect pointer advance through each packet and publishes the packet-selected physical PPU control state at each header. The repeat and vertical fixtures now share identical input addresses. Original-ROM/x86/x64 route evidence, direct carry coverage, platform-purity audit, and the DOS16 build pass. All eight scoped nodes and 13 scoped feasible controls are exact.

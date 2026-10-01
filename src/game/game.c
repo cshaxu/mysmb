@@ -385,6 +385,7 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
                                         mysmb_u16 command_size)
 {
     mysmb_u16 cursor;
+    mysmb_u16 pointer;
     mysmb_u16 address;
     mysmb_u16 offset;
     mysmb_u8 control;
@@ -393,6 +394,12 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
     mysmb_u8 table;
     mysmb_u8 value;
 
+    /* UpdateScreen consumes a 6502 indirect pointer in $00/$01.  Each
+     * completed packet advances that pointer to its next header; the final
+     * zero byte is therefore observed through the same pointer, not through
+     * a separate host-side cursor alone. */
+    pointer = (mysmb_u16)((mysmb_u16)game->ram[0x0000U] |
+                          ((mysmb_u16)game->ram[0x0001U] << 8U));
     cursor = 0U;
     while (cursor < command_size && commands[cursor] != 0U) {
         if ((mysmb_u16)(command_size - cursor) < 3U) {
@@ -418,8 +425,12 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
         else
             game->ppu_control_0 &= (mysmb_u8)~0x04U;
         /* WritePPUReg1 writes both physical $2000 and $0778 before every
-         * packet.  The visible physical state is committed by the NMI tail. */
+         * packet.  Publish that physical state at this header; the NMI tail
+         * later restores its saved d7-enabled control value. */
         game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] = game->ppu_control_0;
+        game->visible_ppu_control_0 = game->ppu_control_0;
+        game->visible_ppu_name_table =
+            (mysmb_u8)(game->ppu_control_0 & 3U);
         for (index = 0U; index < count; ++index) {
             if (address >= 0x3f00U) {
                 offset = (mysmb_u16)(address & 0x001fU);
@@ -438,6 +449,10 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
         }
         cursor = (mysmb_u16)(cursor + 3U +
                               ((control & 0x40U) != 0U ? 1U : count));
+        pointer = (mysmb_u16)(pointer + 3U +
+                              ((control & 0x40U) != 0U ? 1U : count));
+        game->ram[0x0000U] = (mysmb_u8)pointer;
+        game->ram[0x0001U] = (mysmb_u8)(pointer >> 8U);
     }
     if (cursor >= command_size) return 0U;
     /* UpdateScreen reaches InitScroll with A=0 after the terminator. */

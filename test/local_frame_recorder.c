@@ -424,7 +424,7 @@ static void mysmb_recorder_apply_t28_vram_fixture(struct mysmb_game *game,
     game->ram[0x0773U] = 0U;
     game->ram[0x0300U] = kind == 0U ? 5U : 7U;
     game->ram[0x0301U] = 0x20U;
-    game->ram[0x0302U] = 0x00U;
+    game->ram[0x0302U] = kind == 0U ? 0x00U : 0x10U;
     if (kind == 0U) {
         game->ram[0x0303U] = 0x43U;
         game->ram[0x0304U] = 0x29U;

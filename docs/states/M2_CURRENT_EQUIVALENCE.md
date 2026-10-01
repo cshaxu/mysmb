@@ -1792,3 +1792,8 @@ material relations**, and **zero mismatches**; historical conformance remains
 ### T55 S7 joypad serial-read result
 
 `ReadJoypads`, `ReadPortBits`, `PortLoop` and `Save8Bits` are now current-equivalence **exact**. The audit repaired the pre-dispatch physical `$2000` packet write in shared `frame_root.c`; the ROM writes it before the joypad caller continuation, while the NMI tail later restores the saved d7-enabled control value. The bounded 120-frame original-ROM/x86/x64 route reaches both port passes, every serial-loop turn and both Select/Start debounce outcomes, with zero differences in the four joypad RAM bytes and all seven PPU scalars. The live registry is **225 exact nodes**, **458 exact feasible control relations**, **18 infeasible raw relations**, **4,324 feasible control relations**, and zero mismatches; historical conformance remains **1,992 / 1,992**.
+
+
+## T55 S8 closure
+
+The current VRAM/PPU chain is exact for `WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen`, `InitScroll`, and `WritePPUReg1`. The repaired C owner advances the `$00/$01` packet pointer after each ROM-format packet and commits the packet header control state at the original write point. The repeat and vertical fixture addresses are identical between the original-ROM recorder and native recorder.

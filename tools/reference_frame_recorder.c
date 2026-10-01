@@ -621,7 +621,7 @@ static void mysmb_reference_apply_t28_vram_fixture(lib_u8 *ram, lib_u8 kind)
     ram[0x0773u] = 0u;
     ram[0x0300u] = kind == 0u ? 5u : 7u;
     ram[0x0301u] = 0x20u;
-    ram[0x0302u] = 0x00u;
+    ram[0x0302u] = kind == 0u ? 0x00u : 0x10u;
     if (kind == 0u) {
         /* $43: linear increment, repeated byte, length three. */
         ram[0x0303u] = 0x43u;
@@ -3451,9 +3451,6 @@ int main(int argument_count, char **arguments)
                 }
                 else if (t26_fixture == 51u || t26_fixture == 52u) {
                     t28_vram_pending = LIB_TRUE;
-                    if (core_machine_breakpoint_set(driver->machine,
-                        MYSMB_REFERENCE_NMI_ENTRY, LIB_TRUE) !=
-                        LIB_STATUS_OK) break;
                 }
                 else if (t26_fixture == 53u)
                     mysmb_reference_apply_t28_status_timer_fixture(

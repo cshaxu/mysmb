@@ -8,7 +8,7 @@
 | --- | --- |
 | Identifier Mode | M2 T55 S8 — VRAM packet and PPU handoff current-equivalence audit. |
 | Admission And Approval | T55 S7 closed with zero scoped feasible differences; owner authorization permits source-order S8 admission. |
-| Objective | Audit `WriteBufferToScreen` through `WritePPUReg1`, repair every feasible shared-C mismatch, and repeat scoped ROM/native evidence until each node and incident feasible control is exact. |
+| Objective | Closed: audited `WriteBufferToScreen` through `WritePPUReg1`, repair every feasible shared-C mismatch, and repeat scoped ROM/native evidence until each node and incident feasible control is exact. |
 | Non-goals | No platform rendering/input decisions, no historical-node credit, and no successor admission before this chain closes with zero feasible differences. |
 | Reference Baseline | Historical 1,992 / 1,992. Current registry: 225 exact and 1,767 needs-evidence nodes; 458 exact feasible controls. Scope: eight labels and 13 pending incident feasible controls; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
@@ -22,6 +22,10 @@
 | Exit Criteria | Every scoped node and incident feasible control is exact under static and controlled evidence; any discovered mismatch is repaired and re-audited in S8. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
 | Similar-Issue Sweep | Header d7/d6 decoding, increment/repeat modes, source-pointer carry, terminator routing, physical/mirror `$2000`, and scroll-register write order. |
+
+## S8 Closure
+
+S8 closes with eight current-exact nodes and 13 current-exact feasible control relations. The shared packet interpreter now retains the ROM `$00/$01` indirect-pointer advance through every packet and publishes each packet header's physical `$2000` state. Input-identical original-ROM/native repeat and vertical routes cover both header branch families; direct chained carry, NMI-parent, x86/x64, platform-purity and DOS16 checks pass. Historical status remains 1,992 / 1,992, while the fresh registry is **233 exact nodes** and **471 exact feasible controls**.
 
 ## Current Technical Baseline
 
