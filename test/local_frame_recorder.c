@@ -37,6 +37,7 @@
 #include "engine_cannon_fixture.h"
 #include "timer_fixture.h"
 #include "vine_setup_fixture.h"
+#include "block_bump_fixture.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 
@@ -1246,6 +1247,10 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = (unsigned int)(1292 + block_scenario);
         }
+        else if ((block_scenario = mysmb_block_bump_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (unsigned int)(1717 + block_scenario);
+        }
         else if ((block_scenario = mysmb_timer_argument(arguments[index])) != 0) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = (unsigned int)(1244 + block_scenario);
@@ -1608,6 +1613,10 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_final_question_fixture(&game);
             else if (t26_fixture >= 1293U && t26_fixture <= 1308U) {
                 mysmb_vine_setup_fixture(game.ram,(mysmb_u8)(t26_fixture-1293U));
+            }
+            else if (t26_fixture >= 1718U && t26_fixture <= 1777U) {
+                mysmb_block_bump_fixture(game.ram,
+                    (mysmb_u8)(t26_fixture - 1718U));
             }
             else if (t26_fixture >= 1245U && t26_fixture <= 1260U) {
                 mysmb_timer_fixture(game.ram,(mysmb_u8)(t26_fixture-1245U));

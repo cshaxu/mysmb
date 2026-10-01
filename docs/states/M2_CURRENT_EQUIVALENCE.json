@@ -68924,12 +68924,14 @@
       "instruction": "jsr",
       "id": "control-01338",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P10: source map pairs BlockCode's ROM JumpEngine call with mysmb_blocks_bump in the shared game layer."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P10: current original-ROM/current x86/x64 t37-bump cases 0, 1 and 5 observe $BDBD -> $8E04; all persistent work RAM agrees. Direct-NMI fixtures exclude pre-existing physical PPU state from this control-edge claim."
+      ],
       "semanticContract": "Preserves original call relation BlockCode -> JumpEngine with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/blocks/bump.c",

@@ -339,3 +339,14 @@ each other. This promotes only the `AreaStyleObject -> JumpEngine` call and
 the observed return continuation. As with the direct-NMI GameOver fixtures,
 physical CIRAM/palette initialization is outside the narrow edge contract and
 remains reported rather than being used as a node-equivalence claim.
+
+## S6 P10 ? current BlockCode control-edge replay
+
+The local recorder now accepts the existing project-owned `t37-bump` fixture,
+matching the original-ROM recorder's controlled input. Cases 0, 1 and 5 each
+execute `$BDBD` (`BlockCode`) and `$8E04` (`JumpEngine`); current x86/x64
+records agree with the original on all persistent work RAM and with one
+another. The registry promotes the observed BlockCode call only. Its return
+relation remains source-infeasible because every relevant selected target
+tail-jumps into the block lifetime/setup chain rather than returning through
+the inline table caller.
