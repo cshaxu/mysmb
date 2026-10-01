@@ -1939,3 +1939,7 @@ All six labels from `FireballXSpdData` through `FireballExplosion` are current-e
 ### T60 S5 whirlpool result
 
 `ProcessWhirlpools`, `WhLoop`, `NextWh`, `ExitWh`, `WhirlpoolActivate`, `LeftWh`, `SetPWh` and `WhPull` are current-equivalence exact, together with 16 feasible relations. Twelve controlled original-NMI routes take both outcomes of all nine branches; all 24 x86/x64 native frames match the original ROM and each other. The live registry is **673 exact nodes** and **1,333 exact feasible control relations**. Historical conformance remains **1,992 / 1,992**.
+
+### T60 Cohort-G cross-chain closure
+
+All 49 T60 labels from `ProcFireball_Bubble` through `VineHeightData` are current-equivalence exact. The S9 matrix reconciles the eight closed route records, their 138 exact feasible relations and their declared owner boundaries; `control-04306` and `material-00095` remain deliberately uncredited for the later dispatcher and vine-actor audits. The final platform-purity check and shared DOS16 link pass. The live registry is **690 exact nodes** and **1,376 exact feasible control relations**; historical conformance remains **1,992 / 1,992**.

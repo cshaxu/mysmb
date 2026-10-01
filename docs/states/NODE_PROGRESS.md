@@ -23,7 +23,7 @@ all 1,992 labels. The separate current-equivalence baseline and its
 source-order cohort results are authoritative in
 [M2 current-equivalence re-audit](M2_CURRENT_EQUIVALENCE.md).
 
-Latest task review: [T60 S8](../proposals/m2/t60-cohort-g-fireball-timer-current-proof.md#s8-closure---vine-setup-chain) closes its three-label vine-setup current-equivalence audit. Historical conformance remains 1,992 / 1,992; the current registry records 690 labels and 1,376 feasible control relations with fresh exact evidence.
+Latest task review: [T60 S9](../proposals/m2/t60-cohort-g-fireball-timer-current-proof.md#s9-closure---cohort-g-cross-chain-closure) closes the 49-label Cohort G cross-chain current-equivalence audit. Historical conformance remains 1,992 / 1,992; the current registry records 690 labels and 1,376 feasible control relations with fresh exact evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

@@ -173,3 +173,9 @@ The closure promotes `Setup_Vine`, `NextVO` and `VineHeightData`, plus four owne
 ## S9 admission - Cohort G cross-chain closure
 
 S9 has zero node credit. It owns T60 integration only: verify the nine closed chains together, reconcile their immediate boundaries and deferred dispatcher/material ownership, run the Cohort G route matrix on x86/x64, perform the final shared DOS16 link and platform-purity audit, and produce the T60 closure record. The 49 exact labels remain attributed to S1-S8. Any cross-chain discrepancy reopens its owning chain rather than receiving new S9 node credit.
+
+## S9 closure - Cohort G cross-chain closure
+
+The 49 retained labels from S1-S8 reconcile cleanly as one Cohort G proof: all eight closure records and original-ROM/current x86/x64 route summaries are present; every retained label is current-exact; and the 138 credited feasible relations reconcile from the T60 opening baseline of 1,238 to 1,376. The matrix retains two explicit noncredits: dispatcher-owned `control-04306` (`JmpEO -> JumpspringHandler`) and vine-actor-owned `material-00095` (`VineHeightData -> VineObjectHandler`), both still `needs-evidence` and assigned to their later owners.
+
+Final platform-purity passes and the shared OpenNT DOS16 link succeeds. T60 contains no product source change, so the existing three executable artifacts were not refreshed. Historical accounting remains 1,992 / 1,992; current re-audit closes this cohort at 690 / 1,992 exact nodes and 1,376 / 4,324 exact feasible control relations, with no T60 feasible mismatch.
