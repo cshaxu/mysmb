@@ -66,3 +66,9 @@ expected-match credit remains zero because the historic ledger is already
 1,992 / 1,992. Its current maximum is **696 / 1,992 exact nodes**. Any feasible
 node or edge difference remains in S1 until the same ROM and native route
 passes; only then can S2 start.
+
+## S1 closure - vine actor lifecycle
+
+All six scoped labels are current-exact. Static comparison of `$B94B-$B9B9` with `src/game/vine.c` found no feasible difference in the slot-five gate, height-table selection, frame-bit growth, height-eight gate, child call order, zero-based draw loop, reverse erase loop, height reset, block probe or terminal return. The shared ROM route records all ten branch sites with both outcomes. The same 42 original snapshots give 84 caller checks and 84 complete current-source calls at zero difference across x86/x64; focused 2,560-case smoke, platform purity and the OpenNT DOS16 link pass.
+
+The closure promotes the six labels, 15 internal feasible control relations and the deferred `VineHeightData -> VineObjectHandler` material consumer boundary. No product source changed, so executable artifacts were not refreshed. Current re-audit advances from **690 / 1,992** to **696 / 1,992 exact nodes** and from **1,376 / 4,324** to **1,391 / 4,324 exact feasible control relations**; historical accounting remains **1,992 / 1,992**.

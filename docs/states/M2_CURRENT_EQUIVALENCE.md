@@ -1943,3 +1943,6 @@ All six labels from `FireballXSpdData` through `FireballExplosion` are current-e
 ### T60 Cohort-G cross-chain closure
 
 All 49 T60 labels from `ProcFireball_Bubble` through `VineHeightData` are current-equivalence exact. The S9 matrix reconciles the eight closed route records, their 138 exact feasible relations and their declared owner boundaries; `control-04306` and `material-00095` remain deliberately uncredited for the later dispatcher and vine-actor audits. The final platform-purity check and shared DOS16 link pass. The live registry is **690 exact nodes** and **1,376 exact feasible control relations**; historical conformance remains **1,992 / 1,992**.
+### T61 S1 vine actor lifecycle result
+
+`VineObjectHandler -> ExitVH` is current-exact for all six scoped labels. The original `$B94B-$B9B9` route and the current shared implementation agree on slot selection, growth, visibility, drawing, reverse erasure, background probing, and return behavior. Forty-two original actor snapshots produced 84 matching caller checks and 84 matching complete current-source calls across x86 and x64; the 2,560-case focused smoke, platform-purity audit, and DOS16 link also pass. The registry records **696 / 1,992 current-exact nodes** and **1,391 / 4,324 current-exact feasible control edges**; the historical migration ledger remains **1,992 / 1,992**.
