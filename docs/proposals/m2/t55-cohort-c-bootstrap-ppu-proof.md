@@ -127,3 +127,24 @@ area-type palette selection, rotating colour insertion, offset wrap and every
 return path. The controlled owner-local ROM/native route will exercise each
 gate, all four area types and rotation offsets 0–6. A feasible difference
 stays in S2 for shared `area.c` repair and re-audit before S3 is admitted.
+
+## S2 closure — palette-rotation chain
+
+S2 is current-exact with **zero feasible differences**. SMB1 lines 1970–2024
+match the shared `area.c` implementation and its `engine.c` caller: both
+early-return gates, the complete blank command, all four area palette rows,
+the cycle-byte overwrite, Buffer1 offset increment, six-step wrap and return
+to `ProcELoop`. The four controlled ROM/x86/x64 fixtures cover normal output,
+offset five wrap, a non-eighth frame and a full buffer; their scoped output
+bytes and state are exact, and x86/x64 agree. No product source changed.
+
+## S3 admission — block-metatile chain
+
+S3 receives `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`,
+`ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`,
+`UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder` and `RemBridge`
+at SMB1 lines 2034–2118. It will compare the metatile selector ladder,
+water-specific blank, VRAM packet address arithmetic, residual counter/flag
+writes, vertical carry and bridge completion through controlled original-ROM
+and native routes. A feasible difference remains in S3 for shared game-layer
+repair and re-audit before S4 is admitted.

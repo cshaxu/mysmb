@@ -2,30 +2,42 @@
 
 ## Current Work
 
-## M2 T55 S2 Packet
+## M2 T55 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T55 S2 — Cohort C palette-rotation current-equivalence audit. |
-| Admission And Approval | T55 S1 closed with zero scoped feasible differences; owner-directed source-order continuation. |
-| Objective | Audit `ColorRotatePalette` through `ExitColorRot`, repair every feasible shared-C difference, and repeat the scoped ROM/native and graph audit to zero. |
-| Non-goals | No historical-node credit, no block-metatile implementation, and no platform-owned game decision. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 177 exact, 1,815 needs-evidence nodes; 370 exact, 3,954 needs-evidence feasible controls. Scope: 7 labels, all incoming `needs-evidence`; expected historical delta 0. |
+| Identifier Mode | M2 T55 S3 — Cohort C block-metatile current-equivalence audit. |
+| Admission And Approval | T55 S2 closed with zero scoped feasible differences; owner-directed source-order continuation. |
+| Objective | Audit `BlockGfxData` through `RemBridge`, repair every feasible shared-C difference, and repeat the scoped ROM/native and graph audit to zero. |
+| Non-goals | No historical-node credit, no metatile graphics-table audit, and no platform-owned game decision. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 184 exact, 1,808 needs-evidence nodes; 380 exact, 3,944 needs-evidence feasible controls. Scope: 11 labels, all incoming `needs-evidence`; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
 | Files And ABI Surface | Shared `src/game/area.c`, focused recorder/tests and current-equivalence registry only; platforms remain presentation/input adapters. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | ROM-logic: controlled original-ROM/x86/x64 palette route plus node/edge and palette-buffer handoff audit. Operational: focused checks, x86/x64 and DOS16 builds if source changes, platform-purity audit, and three artifacts if product code changes. |
-| Expected Markers | All 7 labels and their incident feasible relations have a current shared-C counterpart with source-order, frame/buffer predicates, state/output and return evidence; no scoped difference remains. |
-| Asset Needs | Owner-local ROM only for ignored traces below build/m2-t55-s2; artifacts refresh only if product code changes. |
+| Verification | ROM-logic: controlled original-ROM/x86/x64 block replacement, destroy, water blank and bridge route plus node/edge/material audit. Operational: focused checks, x86/x64 and DOS16 builds if source changes, platform-purity audit, and three artifacts if product code changes. |
+| Expected Markers | All 11 labels and their incident feasible relations have a current shared-C counterpart with source-order, selector, address, state/output and return evidence; no scoped difference remains. |
+| Asset Needs | Owner-local ROM only for ignored traces below build/m2-t55-s3; artifacts refresh only if product code changes. |
 | Reporting Requirements | Report exact scoped labels, incoming/current dispositions, edge/material relations, current-registry before/after and separate operational outcome. |
 | Stop Conditions | A feasible ROM/C difference remains after repair, a source relation lacks a shared-C counterpart, a trace exceeds its budget, or platform code makes a gameplay decision. |
-| Exit Criteria | Met: every scoped feasible node, control relation and material handoff is exact under static and controlled ROM/native evidence. |
+| Exit Criteria | The S closes only when every scoped feasible node, control relation and material handoff is exact under static and controlled ROM/native evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | Frame-eight gate, buffer-full gate, blank-palette copy, area-type selector, rotation wrap and caller/return handoff. |
+| Similar-Issue Sweep | Water/ground blank selector, block graphics index, residual writes, vertical address carry, bridge completion and caller/return handoff. |
 
 ## Current Technical Baseline
 
-M2 T55 S2 is active after the closed S1 renderer/attribute audit. It continues Cohort C with the contiguous palette-rotation chain.
+M2 T55 S3 is active after the closed S2 palette-rotation audit. It continues Cohort C with the contiguous block-metatile chain.
+
+## S2 Closure
+
+`ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`,
+`GetBlankPal`, `GetAreaPal` and `ExitColorRot` are current-exact. The
+controlled original-ROM/x86/x64 normal, wrap, frame-gate and buffer-full
+matrix has zero scoped byte differences. The shared caller remains
+`engine.c`, while the entire decision and write sequence remains in `area.c`.
+Focused x86/x64 palette tests and platform-purity checks pass. No product code
+changed, so artifacts remain the S7 release. The registry advances to 184
+exact nodes and 380 exact feasible controls; historical conformance remains
+1,992 / 1,992.
 
 ## S1 Closure
 

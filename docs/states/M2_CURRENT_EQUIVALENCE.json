@@ -371,13 +371,15 @@
       "consumer": "ColorRotation",
       "storage": "eight-byte ROM palette command to Buffer1",
       "feasiblePath": "GetBlankPal copies BlankPalette before Palette3Data overwrites its payload.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_step_palette_rotation",
       "semanticContract": "All eight base command bytes agree.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -390,13 +392,15 @@
       "consumer": "ColorRotation",
       "storage": "AreaType-indexed four-byte palette row to Buffer1",
       "feasiblePath": "GetAreaPal selects and copies one four-byte area row.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_step_palette_rotation",
       "semanticContract": "Each valid AreaType selects the same four bytes.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -409,13 +413,15 @@
       "consumer": "ColorRotation",
       "storage": "ColorRotateOffset-indexed rotating palette byte to Buffer1",
       "feasiblePath": "ColorRotation overwrites palette slot plus four with the selected cycle byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_step_palette_rotation",
       "semanticContract": "All six offsets select the same byte and wrap after six.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9573,12 +9579,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 177,
-    "needs-evidence": 1815
+    "exact": 184,
+    "needs-evidence": 1808
   },
   "controlEdgeCounts": {
-    "exact": 370,
-    "needs-evidence": 3954,
+    "exact": 380,
+    "needs-evidence": 3944,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -12918,13 +12924,15 @@
       "label": "ColorRotatePalette",
       "asmLine": 1970,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation rotation lookup",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "ROM $89af: six-step palette-cycle data table.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12934,13 +12942,15 @@
       "label": "BlankPalette",
       "asmLine": 1973,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation eight-byte command copy",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "ROM $89b5: base palette-three command copied before area-specific overwrite.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12950,13 +12960,15 @@
       "label": "Palette3Data",
       "asmLine": 1977,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation AreaType table lookup",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "ROM $89bd: four AreaType palette-three data rows.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12966,29 +12978,34 @@
       "label": "ColorRotation",
       "asmLine": 1983,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "ROM $89cd: every-eighth-frame, bounded Buffer1 palette command producer.",
       "currentSourcePaths": [
-        "src/game/area.c"
+        "src/game/area.c",
+        "src/game/engine.c"
       ]
     },
     {
       "label": "GetBlankPal",
       "asmLine": 1991,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation base command loop",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "ROM $89dc: copies eight BlankPalette bytes.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12998,13 +13015,15 @@
       "label": "GetAreaPal",
       "asmLine": 2004,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation area palette overwrite loop",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "ROM $89e8: overwrites four bytes with Palette3Data then applies rotating color.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13014,13 +13033,15 @@
       "label": "ExitColorRot",
       "asmLine": 2024,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation completion/early return",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "ROM $8a15: returns after no-op guards or completed cycle offset wrap.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48936,12 +48957,14 @@
       "instruction": "bne",
       "id": "control-00303",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original ColorRotation -> ExitColorRot branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48955,12 +48978,14 @@
       "instruction": "bcs",
       "id": "control-00304",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original ColorRotation -> ExitColorRot branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48974,12 +48999,14 @@
       "instruction": "tay",
       "id": "control-00305",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original ColorRotation -> GetBlankPal fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48993,12 +49020,14 @@
       "instruction": "bcc",
       "id": "control-00306",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original GetBlankPal -> GetBlankPal branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -49012,12 +49041,14 @@
       "instruction": "tay",
       "id": "control-00307",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original GetBlankPal -> GetAreaPal fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -49031,12 +49062,14 @@
       "instruction": "bpl",
       "id": "control-00308",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original GetAreaPal -> GetAreaPal branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -49050,12 +49083,14 @@
       "instruction": "bcc",
       "id": "control-00309",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original GetAreaPal -> ExitColorRot branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -49069,12 +49104,14 @@
       "instruction": "sta",
       "id": "control-00310",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original GetAreaPal -> ExitColorRot fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58233,17 +58270,18 @@
       "instruction": "jsr",
       "id": "control-00790",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> ColorRotation.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required.",
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
-        "src/game/engine_slots.c"
+        "src/game/engine.c"
       ]
     },
     {
@@ -113444,16 +113482,18 @@
       "instruction": "rts/rti",
       "id": "control-03632",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+      ],
       "semanticContract": "Original ColorRotation -> ProcELoop return relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c",
-        "src/game/engine_slots.c"
+        "src/game/engine.c"
       ]
     },
     {
