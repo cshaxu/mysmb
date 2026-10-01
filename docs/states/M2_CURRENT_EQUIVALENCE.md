@@ -1935,3 +1935,7 @@ All six labels from `FireballXSpdData` through `FireballExplosion` are current-e
 ### T60 S4 game timer and warp result
 
 `RunGameTimer`, `ResGTCtrl`, `TimeUpOn`, `ExGTimer` and `WarpZoneObject` are current-equivalence exact, together with 19 feasible relations. The timer chain has 16 original-NMI routes with both outcomes of eight branches and 32 matching x86/x64 shared-C executions. Warp Zone has ten original-NMI routes, both source branches, all active slots and 20 matching native frames. The live registry is **665 exact nodes** and **1,317 exact feasible control relations**. Historical conformance remains **1,992 / 1,992**.
+
+### T60 S5 whirlpool result
+
+`ProcessWhirlpools`, `WhLoop`, `NextWh`, `ExitWh`, `WhirlpoolActivate`, `LeftWh`, `SetPWh` and `WhPull` are current-equivalence exact, together with 16 feasible relations. Twelve controlled original-NMI routes take both outcomes of all nine branches; all 24 x86/x64 native frames match the original ROM and each other. The live registry is **673 exact nodes** and **1,333 exact feasible control relations**. Historical conformance remains **1,992 / 1,992**.

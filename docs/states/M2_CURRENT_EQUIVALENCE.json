@@ -23278,13 +23278,16 @@
       "label": "ProcessWhirlpools",
       "asmLine": 6519,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game whirlpool/world gravity",
+      "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Scans five data slots descending and compares page/position using source SBC sign semantics.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -23294,13 +23297,16 @@
       "label": "WhLoop",
       "asmLine": 6526,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game whirlpool/world gravity",
+      "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Builds right extent/page with low-byte carry and selects only an in-range whirlpool.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -23310,13 +23316,16 @@
       "label": "NextWh",
       "asmLine": 6546,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game whirlpool/world gravity",
+      "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Decrements to the next slot or exits after slot zero.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -23326,13 +23335,16 @@
       "label": "ExitWh",
       "asmLine": 6548,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game whirlpool/world gravity",
+      "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Returns after non-water, timer or exhausted-slot gates.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -23342,13 +23354,16 @@
       "label": "WhirlpoolActivate",
       "asmLine": 6550,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game whirlpool/world gravity",
+      "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Builds carry-correct center and applies horizontal pull only on alternate frames.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -23358,13 +23373,16 @@
       "label": "LeftWh",
       "asmLine": 6577,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game whirlpool/world gravity",
+      "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Applies rightward pull only with source collision-bit permission.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -23374,13 +23392,16 @@
       "label": "SetPWh",
       "asmLine": 6586,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game whirlpool/world gravity",
+      "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Stores carry-correct player page after horizontal pull.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -23390,13 +23411,16 @@
       "label": "WhPull",
       "asmLine": 6587,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game whirlpool/world gravity",
+      "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Sets Whirlpool_Flag and tail-enters player gravity with force $10 and maximum $01.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67702,12 +67726,15 @@
       "instruction": "bne",
       "id": "control-01119",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation ProcessWhirlpools -> ExitWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67721,12 +67748,15 @@
       "instruction": "bne",
       "id": "control-01120",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation ProcessWhirlpools -> ExitWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67740,12 +67770,15 @@
       "instruction": "ldy",
       "id": "control-01121",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcessWhirlpools -> WhLoop with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67759,12 +67792,15 @@
       "instruction": "beq",
       "id": "control-01122",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation WhLoop -> NextWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67778,12 +67814,15 @@
       "instruction": "bmi",
       "id": "control-01123",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation WhLoop -> NextWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67797,12 +67836,15 @@
       "instruction": "bpl",
       "id": "control-01124",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation WhLoop -> WhirlpoolActivate with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67816,12 +67858,15 @@
       "instruction": "bpl",
       "id": "control-01125",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation WhLoop -> NextWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67835,12 +67880,15 @@
       "instruction": "bpl",
       "id": "control-01126",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation NextWh -> WhLoop with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67854,12 +67902,15 @@
       "instruction": "bpl",
       "id": "control-01127",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation NextWh -> ExitWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67873,12 +67924,15 @@
       "instruction": "bcc",
       "id": "control-01128",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation WhirlpoolActivate -> WhPull with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67892,12 +67946,15 @@
       "instruction": "bpl",
       "id": "control-01129",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation WhirlpoolActivate -> LeftWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67911,12 +67968,15 @@
       "instruction": "jmp",
       "id": "control-01130",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original jump relation WhirlpoolActivate -> SetPWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67930,12 +67990,15 @@
       "instruction": "bcc",
       "id": "control-01131",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation LeftWh -> WhPull with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67949,12 +68012,15 @@
       "instruction": "adc",
       "id": "control-01132",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation LeftWh -> SetPWh with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67968,12 +68034,15 @@
       "instruction": "sta",
       "id": "control-01133",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetPWh -> WhPull with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
@@ -67987,12 +68056,15 @@
       "instruction": "jmp",
       "id": "control-01134",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original jump relation WhPull -> ImposeGravity with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
