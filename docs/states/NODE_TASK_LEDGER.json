@@ -4856,9 +4856,9 @@
             "owner-approved-source-order",
             "current-equivalence-area-parser"
           ],
-          "canReceive": true,
+          "canReceive": false,
           "admissionRole": "audit",
-          "receipt": "Coordinator accepts the bounded low question-row, bridge selector and residual flag-ball data chain under the owner-approved M2 source-order mandate."
+          "receipt": "Closed after current-equivalence evidence registered for the complete low question-row, bridge and residual flag-ball chain; T56 has no remaining open subtask."
         }
       ]
     }
@@ -352124,7 +352124,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md",
-      "state": "admitted-low-question-bridge-flag-balls-current-equivalence-audit",
+      "state": "closed-low-question-bridge-flag-balls-current-equivalence-audit",
       "romRoute": "Controlled owner-local original-ROM/current x86/x64 special-row matrix for low question row, bridge rails and residual flag balls."
     }
   ]

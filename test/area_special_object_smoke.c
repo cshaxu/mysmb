@@ -113,5 +113,30 @@ int main(void)
         game.ram[0x06a1U] != 0x41U || game.ram[0x0732U] != 0U) return 13;
     if (mysmb_area_process_object_state(&game) == 0U || game.ram[0x06a1U] != 0x43U)
         return 14;
+
+    /* QuestionBlockRow_Low shares the saved row/length path with the high
+     * entry, but begins at row seven. */
+    set_object(&game, prg, 0x0cU, 0x70U);
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a8U] != 0xc0U) return 18;
+
+    /* The three bridge selectors choose rows six, seven and nine, then
+     * render one body metatile immediately beneath the rail. */
+    set_object(&game, prg, 0x0cU, 0x20U);
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a7U] != 0x0bU || game.ram[0x06a8U] != 0x63U) return 19;
+    set_object(&game, prg, 0x0cU, 0x30U);
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a8U] != 0x0bU || game.ram[0x06a9U] != 0x63U) return 20;
+    set_object(&game, prg, 0x0cU, 0x40U);
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06aaU] != 0x0bU || game.ram[0x06abU] != 0x63U) return 21;
+
+    /* FlagBalls_Residual begins at row two and uses the second-byte low
+     * nibble as its inclusive downward extent. */
+    set_object(&game, prg, 0x0fU, 0x53U);
+    if (mysmb_area_process_object_state(&game) == 0U) return 22;
+    for (row = 2U; row <= 5U; ++row)
+        if (game.ram[0x06a1U + row] != 0x6dU) return 23;
     return 0;
 }

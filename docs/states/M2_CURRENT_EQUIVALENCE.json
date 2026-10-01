@@ -17395,13 +17395,16 @@
       "label": "QuestionBlockRow_Low",
       "asmLine": 3948,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "Selects row 7, preserves it across large-length decode, and writes metatile $c0 at the selected buffer row.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17411,13 +17414,16 @@
       "label": "Bridge_High",
       "asmLine": 3960,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "Uses the two source fall-through selectors to choose bridge row 6, then shares the low bridge renderer.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17427,13 +17433,16 @@
       "label": "Bridge_Middle",
       "asmLine": 3964,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "Uses the source fall-through selector to choose bridge row 7, then shares the low bridge renderer.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17443,13 +17452,16 @@
       "label": "Bridge_Low",
       "asmLine": 3968,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "Selects row 9, preserves it across large-length decode, writes rail $0b, then renders bridge metatile $63 below it.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17459,13 +17471,16 @@
       "label": "FlagBalls_Residual",
       "asmLine": 3983,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "Decodes the low-nibble vertical extent, then renders flag balls metatile $6d from fixed row 2.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57337,12 +57352,15 @@
       "instruction": "jsr",
       "id": "control-00677",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source call relation QuestionBlockRow_Low -> ChkLrgObjLength through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this call handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57356,12 +57374,15 @@
       "instruction": "lda",
       "id": "control-00678",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source fallthrough relation Bridge_High -> Bridge_Middle through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this fallthrough handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57375,12 +57396,15 @@
       "instruction": "lda",
       "id": "control-00679",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source fallthrough relation Bridge_Middle -> Bridge_Low through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this fallthrough handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57394,12 +57418,15 @@
       "instruction": "jsr",
       "id": "control-00680",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source call relation Bridge_Low -> ChkLrgObjLength through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this call handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57413,12 +57440,15 @@
       "instruction": "jmp",
       "id": "control-00681",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source jump relation Bridge_Low -> RenderUnderPart through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this jump handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57432,12 +57462,15 @@
       "instruction": "jsr",
       "id": "control-00682",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source call relation FlagBalls_Residual -> GetLrgObjAttrib through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this call handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57451,12 +57484,15 @@
       "instruction": "jmp",
       "id": "control-00683",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source jump relation FlagBalls_Residual -> RenderUnderPart through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this jump handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114022,12 +114058,15 @@
       "instruction": "rts/rti",
       "id": "control-03588",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source return relation ChkLrgObjLength -> QuestionBlockRow_Low through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this return handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114041,12 +114080,15 @@
       "instruction": "rts/rti",
       "id": "control-03589",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source return relation ChkLrgObjLength -> Bridge_Low through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this return handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114060,12 +114102,15 @@
       "instruction": "rts/rti",
       "id": "control-03590",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source return relation GetLrgObjAttrib -> FlagBalls_Residual through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+      ],
       "semanticContract": "The parser preserves this return handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"

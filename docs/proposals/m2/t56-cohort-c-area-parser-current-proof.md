@@ -368,3 +368,34 @@ flag-ball extent. Operational verification uses a controlled owner-local
 original-ROM/current x86/x64 special-row matrix, focused parser tests, DOS16
 link if product source changes and platform purity. Any feasible difference
 remains in S6 for shared-C repair and repeat audit before T56 closure.
+
+## S6 closure - low question row, bridge and residual flag-ball chain
+
+S6 closes all five scoped labels current-exact. SMB1 lines 3944-3982 map to the
+shared special-row branches in `src/game/area.c`: QuestionBlockRow_Low shares
+the saved-row/length helper protocol, Bridge_High/Middle/Low select rows 6/7/9
+before the common rail/body path, and FlagBalls_Residual begins at row 2 with
+the decoded inclusive extent. No feasible shared-C difference was found.
+
+Current x86/x64 regressions cover the low question row, all three bridge
+selectors and flag-ball extent. The T56 cross-chain matrix then reran the 16
+warmed object-stream fixtures, castle geometry, vertical pipe, high question
+row and special-object route against the original ROM. All scoped output is
+identical and x86/x64 records agree. No product source changed. The registry
+records five nodes and ten feasible control relations as exact.
+
+## T56 closure - Cohort C area parser
+
+T56 closes its six source-order chains and all 120 planned labels. It adds 101
+current-exact nodes, 232 newly exact feasible control relations and 14 material
+relations across parser task cadence, scenery/terrain, AreaData decoding,
+special objects, pipes and residual special rows. Its source map remains wholly
+in shared `src/game/area.c`; platform adapters contain no parser decision.
+
+The T-level cross-chain matrix passes on original ROM/current x86/x64 routes,
+with x86/x64 byte-identical. Focused parser and object tests pass, as does the
+platform-purity audit. Historical accounting remains 1,992 / 1,992. The current
+registry now records 353 exact nodes and 767 exact feasible control relations;
+1,639 nodes and 3,557 feasible control relations remain for later source-order
+cohorts. No product source changed after S3 P1, so its three refreshed target
+artifacts remain the current package.
