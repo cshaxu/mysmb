@@ -1866,3 +1866,8 @@ All eleven labels from `GameMode` through `ExitEng` are current-equivalence exac
 ### T58 S2 scroll threshold and player-edge result
 
 All ten labels from `ScrollHandler` through `GetScreenPosition` are current-equivalence exact. The static source audit found no C/ROM difference across scroll force, signed and threshold gates, page/PPU carry, raw offscreen-bit selection, both tables, edge borrow and return handoffs. Twenty-four natural original-ROM entries take both outcomes of all nine branches; every snapshot matches a fresh current x86 and x64 C90 owner replay over 1,784 persistent bytes under only CPU scratch/stack ABI exclusions, and the two native widths are byte-identical. The registry advances from **510 to 520 exact labels** and **946 to 971 exact feasible control relations**. Historical conformance remains **1,992 / 1,992**.
+
+
+## S3 closure — game routine, entrance and player-control chain
+
+All 23 scoped labels are current-equivalence exact. Static source comparison of original lines 5499–5687 found no shared-owner difference across the task vector, entrance branches, input partitions, child ordering, hole/death and cloud branches. The controlled ROM/caller matrix replays 23 entrance snapshots and 50 player-control snapshots through fresh C90 x86/x64 owners; every recorded child boundary and 1,784-byte persistent-state comparison passes with only CPU scratch/stack exclusions. Child algorithms retain their separately admitted owners. Platform-purity and a fresh shared OpenNT DOS16 MZ link pass. No product source changed, so no three-EXE refresh is due. All 100 incident feasible relations are exact: 92 have fresh S3 evidence and eight retain compatible prior proof.

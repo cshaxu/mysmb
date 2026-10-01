@@ -150,3 +150,12 @@ Historical accounting remains 1,992 / 1,992; historical expected-match set is em
 ## S3 closure criteria
 
 Every scoped label and feasible incident control relation is current-exact with static and controlled-route evidence. Any discrepancy remains in the named shared owner until repaired and re-audited before S4 admission.
+
+
+## S3 closure — game routine, entrance and player-control chain
+
+All 23 scoped labels are current-equivalence exact. Static source comparison of original lines 5499–5687 found no shared-owner difference across the task vector, entrance branches, input partitions, child ordering, hole/death and cloud branches. The controlled ROM/caller matrix replays 23 entrance snapshots and 50 player-control snapshots through fresh C90 x86/x64 owners; every recorded child boundary and 1,784-byte persistent-state comparison passes with only CPU scratch/stack exclusions. Child algorithms retain their separately admitted owners. Platform-purity and a fresh shared OpenNT DOS16 MZ link pass. No product source changed, so no three-EXE refresh is due. All 100 incident feasible relations are exact: 92 have fresh S3 evidence and eight retain compatible prior proof.
+
+## S4 admission — vine and pipe transition chain
+
+S4 audits the 11-label `Vine_AutoClimb -> RightPipe` chain: Vine_AutoClimb, AutoClimb, SetEntr, VerticalPipeEntry, MovePlayerYAxis, SideExitPipeEntry, ChgAreaPipe, ChgAreaMode, ExitCAPipe, EnterSidePipe, RightPipe. These labels remain in their historical T32 S2 custody; this is an audit-only overlap. Current registry baseline is 543 exact labels and 1,063 exact feasible controls. All 11 labels and 51 unresolved feasible incident relations need current evidence; historical expected matches are empty and the maximum historical total remains 1,992. The ROM track compares vine autoclimb, vertical/side pipe transitions, area-change state, coordinate movement and AutoControlPlayer handoffs. The operational track uses focused x86/x64 transition checks, a shared DOS16 link and platform purity. Any feasible difference stays in this S until repaired and replayed.
