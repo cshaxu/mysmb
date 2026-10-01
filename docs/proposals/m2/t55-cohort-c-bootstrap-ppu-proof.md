@@ -148,3 +148,19 @@ water-specific blank, VRAM packet address arithmetic, residual counter/flag
 writes, vertical carry and bridge completion through controlled original-ROM
 and native routes. A feasible difference remains in S3 for shared game-layer
 repair and re-audit before S4 is admitted.
+
+## S3 closure ? block-metatile chain
+
+S3 is current-exact after one shared-C repair. `mysmb_area_write_block_metatile`
+had an invented high-Buffer1 rejection that does not exist in SMB1 lines
+2061?2117. Removing it restores the source `INY` `$ff`-to-`$00` wrap; after
+`RemBridge`, `MoveVOffset` stores `$09`. The direct focused test covers this
+wrap and the controlled original-ROM/x86/x64 remove-water, write-block, bridge
+and destroy matrix agrees on every scoped VRAM command byte, source-visible
+zero-page field and address-control result. All eleven nodes, 31 incident
+feasible controls and three material handoffs are current-exact. Focused x86
+and x64 tests pass, the OpenNT DOS16 link succeeds and platform-purity passes.
+The refreshed artifacts are SHA-256 `45DBEA08EBAC6103DAD2D60B83F31B9A2B27E0D0FB3FFF23C1786BAACB7DC765`
+(DOS16), `682E088D8421F3339CAA7E06DDD3A8FBF4064ED060DDF1C30588660FA30DE30F`
+(Win32) and `EC30CA5F81616BB4BC996FD70A059F4435D44FECBE6FAD536FAD90214E8A527F`
+(Win64).

@@ -27,6 +27,21 @@
 
 M2 T55 S3 is active after the closed S2 palette-rotation audit. It continues Cohort C with the contiguous block-metatile chain.
 
+## S3 Closure
+
+`BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`,
+`DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`,
+`PutBlockMetatile`, `SaveHAdder` and `RemBridge` are current-exact. The audit
+found one feasible shared-C difference: `WriteBlockMetatile` rejected Buffer1
+offsets above `$f5`, while the ROM accepts `$ff`, lets `INY` wrap to zero and
+later stores final offset `$09`. The invented rejection was removed. Controlled
+original-ROM/x86/x64 remove-water, write-block, bridge and destroy routes agree
+on each scoped command/state field; x86/x64 snapshots are byte-identical. The
+focused x86/x64 wrap test passes, the OpenNT DOS16 link succeeds, platform
+purity passes, and the three artifacts were refreshed. The registry advances
+from 184 to **195 exact nodes** and from 380 to **411 exact feasible controls**;
+historical conformance remains 1,992 / 1,992.
+
 ## S2 Closure
 
 `ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`,

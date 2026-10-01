@@ -72,7 +72,6 @@ static void mysmb_area_write_block_metatile(struct mysmb_game *game,
     mysmb_u8 graphics_set;
     mysmb_u8 buffer_offset;
 
-    if (game->ram[MYSMB_VRAM_BUFFER1] > 0xf5U) return;
     graphics_set = 2U;
     if (metatile == 0U) graphics_set = 3U;
     else if (metatile == 0x58U || metatile == 0x51U) graphics_set = 0U;

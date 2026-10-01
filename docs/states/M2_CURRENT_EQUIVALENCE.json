@@ -434,13 +434,15 @@
       "consumer": "PutBlockMetatile",
       "storage": "selected four-tile replacement graphics to two Buffer1 commands",
       "feasiblePath": "PutBlockMetatile multiplies graphics set by four and reads consecutive BlockGfxData bytes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area/block_metatile.c:mysmb_area_block_gfx",
       "semanticContract": "Each reachable graphic set emits the same ordered four tiles.",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4792,13 +4794,15 @@
       "consumer": "RemBridge",
       "storage": "zero-page $04/$05 address and VRAM_Buffer1_Offset+1 to blank-metatile command",
       "feasiblePath": "Only expired feet timer stages $22:low and calls RemBridge with graphics offset $0c and preserved incremented buffer offset.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c collapse body -> area/block_metatile.c:mysmb_area_rem_bridge",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4812,13 +4816,15 @@
       "consumer": "MoveVOffset",
       "storage": "preserved incremented VRAM buffer offset after two-row command emission",
       "feasiblePath": "MoveVOffset consumes the original Y-equivalent offset, advances it by ten and does not reread a changed RAM offset.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c preserved offset -> area/block_metatile.c:mysmb_area_move_v_offset",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9579,12 +9585,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 184,
-    "needs-evidence": 1808
+    "exact": 195,
+    "needs-evidence": 1797
   },
   "controlEdgeCounts": {
-    "exact": 380,
-    "needs-evidence": 3944,
+    "exact": 411,
+    "needs-evidence": 3913,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -13051,13 +13057,15 @@
       "label": "BlockGfxData",
       "asmLine": 2034,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_block_gfx",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8a39: five four-tile block replacement graphic sets.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13067,13 +13075,15 @@
       "label": "RemoveCoin_Axe",
       "asmLine": 2041,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_remove_coin_axe",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8a4d: selects water/non-water blank graphic set, writes at Buffer2 offset $41 and selects VRAM control six.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13083,13 +13093,15 @@
       "label": "WriteBlankMT",
       "asmLine": 2047,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_remove_coin_axe put-block call",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8a58: enters common PutBlockMetatile with selected blank graphics.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13099,13 +13111,15 @@
       "label": "ReplaceBlockMetatile",
       "asmLine": 2052,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_replace_block_metatile",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8a61: writes replacement graphic then increments residual counter and decrements replace flag.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13115,13 +13129,15 @@
       "label": "DestroyBlockMetatile",
       "asmLine": 2058,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_destroy_block_metatile",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8a69: forces zero metatile before common block graphic selection.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13131,13 +13147,15 @@
       "label": "WriteBlockMetatile",
       "asmLine": 2061,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_write_block_metatile",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8a6d: selects blank, line-brick, plain-brick or empty-block graphic set by metatile value.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13147,13 +13165,15 @@
       "label": "UseBOffset",
       "asmLine": 2076,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_write_block_metatile selected set handoff",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8a80: preserves selected graphics set, derives Buffer1 offset and invokes PutBlockMetatile.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13163,13 +13183,15 @@
       "label": "MoveVOffset",
       "asmLine": 2080,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_move_v_offset",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8a8f: changes preserved Buffer1 offset by ten then reaches SetVRAMOffset.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13179,13 +13201,15 @@
       "label": "PutBlockMetatile",
       "asmLine": 2086,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_put_block_metatile",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8ab1: derives two nametable tile commands from block-buffer location and vertical high nibble.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13195,13 +13219,15 @@
       "label": "SaveHAdder",
       "asmLine": 2097,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_put_block_metatile address calculation",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8ac2: saves nametable high adder before vertical address calculation.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -13211,13 +13237,15 @@
       "label": "RemBridge",
       "asmLine": 2118,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_rem_bridge",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "ROM $8ad0: writes two length-two nametable commands, four graphic bytes and terminator.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49125,12 +49153,14 @@
       "instruction": "bne",
       "id": "control-00311",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original RemoveCoin_Axe -> WriteBlankMT branch relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49144,12 +49174,14 @@
       "instruction": "lda",
       "id": "control-00312",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original RemoveCoin_Axe -> WriteBlankMT fallthrough relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49163,12 +49195,14 @@
       "instruction": "jsr",
       "id": "control-00313",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original WriteBlankMT -> PutBlockMetatile call relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49182,12 +49216,14 @@
       "instruction": "jsr",
       "id": "control-00314",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original ReplaceBlockMetatile -> WriteBlockMetatile call relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49201,12 +49237,14 @@
       "instruction": "lda",
       "id": "control-00315",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original DestroyBlockMetatile -> WriteBlockMetatile fallthrough relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49220,12 +49258,14 @@
       "instruction": "beq",
       "id": "control-00316",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49239,12 +49279,14 @@
       "instruction": "beq",
       "id": "control-00317",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49258,12 +49300,14 @@
       "instruction": "beq",
       "id": "control-00318",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49277,12 +49321,14 @@
       "instruction": "beq",
       "id": "control-00319",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49296,12 +49342,14 @@
       "instruction": "beq",
       "id": "control-00320",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original WriteBlockMetatile -> UseBOffset branch relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49315,12 +49363,14 @@
       "instruction": "iny",
       "id": "control-00321",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original WriteBlockMetatile -> UseBOffset fallthrough relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49334,12 +49384,14 @@
       "instruction": "jsr",
       "id": "control-00322",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original UseBOffset -> PutBlockMetatile call relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49353,12 +49405,14 @@
       "instruction": "jsr",
       "id": "control-00323",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original UseBOffset -> MoveVOffset fallthrough relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49372,12 +49426,14 @@
       "instruction": "jmp",
       "id": "control-00324",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original MoveVOffset -> SetVRAMOffset jump relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -49392,12 +49448,14 @@
       "instruction": "bcc",
       "id": "control-00325",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original PutBlockMetatile -> SaveHAdder branch relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49411,12 +49469,14 @@
       "instruction": "ldy",
       "id": "control-00326",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original PutBlockMetatile -> SaveHAdder fallthrough relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -49430,12 +49490,14 @@
       "instruction": "ldy",
       "id": "control-00327",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original SaveHAdder -> RemBridge fallthrough relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -68236,12 +68298,14 @@
       "instruction": "jsr",
       "id": "control-01310",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves original call relation DBlockSte -> DestroyBlockMetatile with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -69084,12 +69148,14 @@
       "instruction": "jsr",
       "id": "control-01354",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves original call relation CheckTopOfBlock -> RemoveCoin_Axe with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -69628,12 +69694,14 @@
       "instruction": "jsr",
       "id": "control-01382",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves original call relation UpdateLoop -> ReplaceBlockMetatile with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -80718,12 +80786,14 @@
       "instruction": "jsr",
       "id": "control-01944",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c collapse body -> mysmb_area_rem_bridge",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves the original call relation RemoveBridge -> RemBridge with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -80738,12 +80808,14 @@
       "instruction": "jsr",
       "id": "control-01945",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c collapse body -> mysmb_area_move_v_offset",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves the original call relation RemoveBridge -> MoveVOffset with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -92027,12 +92099,14 @@
       "instruction": "jmp",
       "id": "control-02530",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves coin/axe/climb jump relation ErACM → RemoveCoin_Axe including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -111496,12 +111570,14 @@
       "instruction": "rts/rti",
       "id": "control-03529",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original PutBlockMetatile -> WriteBlankMT return relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -111515,12 +111591,14 @@
       "instruction": "rts/rti",
       "id": "control-03530",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original WriteBlockMetatile -> ReplaceBlockMetatile return relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -111534,12 +111612,14 @@
       "instruction": "rts/rti",
       "id": "control-03531",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C block-metatile owner named by Td S9 B7",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Original PutBlockMetatile -> UseBOffset return relation must preserve selector/value, temporary state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
@@ -115499,12 +115579,14 @@
       "instruction": "rts/rti",
       "id": "control-03736",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves original return relation DestroyBlockMetatile -> DBlockSte with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -115738,12 +115820,14 @@
       "instruction": "rts/rti",
       "id": "control-03748",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves original return relation RemoveCoin_Axe -> CheckTopOfBlock with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -115992,12 +116076,14 @@
       "instruction": "rts/rti",
       "id": "control-03761",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves original return relation ReplaceBlockMetatile -> UpdateLoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -117824,12 +117910,14 @@
       "instruction": "rts/rti",
       "id": "control-03851",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_area_rem_bridge return to bridge collapse body",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves the original return relation RemBridge -> RemoveBridge with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
@@ -117844,12 +117932,14 @@
       "instruction": "rts/rti",
       "id": "control-03852",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_area_move_v_offset return to bridge collapse body",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+      ],
       "semanticContract": "Preserves the original return relation MoveVOffset -> RemoveBridge with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c",
