@@ -134,3 +134,8 @@ S5 admits `PlayerAnimTmrData -> SetAnimSpd`: PlayerAnimTmrData, GetPlayerAnimSpe
 ## S5 closure - animation speed and skid chain
 
 All six labels from `PlayerAnimTmrData` through `SetAnimSpd` are current-equivalence exact. Static comparison of original ROM lines 6220-6248 found no shared-owner difference: the 2/4/7 timer bytes, $1c and $0e thresholds, A-button mask, moving-direction comparison, fast-path running-speed write, low-speed skid reset and common timer store are preserved. Fresh C90 x86/x64 replay passes all 64 original movement child-call streams, for 128 entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform purity pass. No product source changed, so no three-EXE refresh is due. All nine feasible internal controls receive fresh S5 evidence; compatible incoming and return controls retain S2 proof.
+
+
+## S6 admission - friction and signed-speed chain
+
+S6 admits `ImposeFriction -> SetAbsSpd`: ImposeFriction, JoypFrict, LeftFrict, RghtFrict, XSpdSign and SetAbsSpd. Shared owner: `src/game/player.c`; S2 supplies the callers and S4 supplies friction/limit parameters. It covers collision-filtered direction selection, released-input sign dispatch, right-bit precedence, fractional add/subtract carry propagation, ROM-wrapped clamp comparisons, signed absolute conversion and final absolute-speed store. Registry baseline is 635 exact labels and 1,225 exact feasible controls; all six scoped labels require fresh current evidence. ROM logic route: controlled original friction child-call snapshots. Operational route: x86/x64 C90 replays, focused smoke, DOS16 link and platform purity.
