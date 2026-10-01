@@ -67615,12 +67615,14 @@
       "instruction": "jsr",
       "id": "control-01339",
       "cohort": "H",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false control relation in the current extracted graph, while shared C directly selects the content target",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "The byte sequence after JSR JumpEngine is a pointer table, not a reachable fall-through to MushFlowerBlock. JumpEngine removes the return address and indirect-jumps to the selected vector target.",
       "repairCandidate": "H1",
       "currentSourcePaths": [
@@ -68891,12 +68893,14 @@
       "instruction": "bne",
       "id": "control-01405",
       "cohort": "H",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: infeasible or instruction-skipping relation in current extracted graph; shared C uses an explicit selected direction/force",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "MoveDropPlatform loads Y=$7f then BNE is always taken to SetMdMax; there is no feasible fall-through to MoveEnemySlowVert.",
       "repairCandidate": "H2",
       "currentSourcePaths": [
@@ -68949,12 +68953,14 @@
       "instruction": "bne",
       "id": "control-01408",
       "cohort": "H",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: infeasible or instruction-skipping relation in current extracted graph; shared C uses an explicit selected direction/force",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "SetMdMax loads A=$02 then BNE is always taken to SetXMoveAmt; there is no feasible fall-through to MoveJ_EnemyVertically.",
       "repairCandidate": "H2",
       "currentSourcePaths": [
@@ -69084,12 +69090,14 @@
       "instruction": "lda",
       "id": "control-01415",
       "cohort": "H",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: infeasible or instruction-skipping relation in current extracted graph; shared C uses an explicit selected direction/force",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "MovePlatformDown enters via BIT opcode and skips the LDA #$01 at MovePlatformUp; it joins the shared body after that instruction, not the full target-label entry.",
       "repairCandidate": "H2",
       "currentSourcePaths": [
@@ -70820,12 +70828,14 @@
       "instruction": "jsr",
       "id": "control-01502",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false control relation in current extracted graph; shared C selects the initializer target directly",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "The bytes after JSR JumpEngine are initializer vector words, not a reachable fall-through to NoInitCode. JumpEngine removes the return address and indirect-jumps to the selected entry.",
       "repairCandidate": "H3",
       "currentSourcePaths": [
@@ -71082,12 +71092,14 @@
       "instruction": "bne",
       "id": "control-01515",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false fall-through relation in current extracted graph; shared C calls common box setup directly",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "SmallBBox loads A=$09 immediately before BNE, so its not-taken fall-through into InitRedPTroopa is infeasible. The only ROM control edge is the taken branch to SetBBox.",
       "repairCandidate": "H4",
       "currentSourcePaths": [
@@ -71539,12 +71551,14 @@
       "instruction": "bmi",
       "id": "control-01537",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false branch relation in current extracted graph; shared C takes the only feasible source path",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "After ChkNoEn decrements an active slot, BPL has already taken every nonnegative case back to ChkNoEn; reaching BMI requires X=$ff, so the sequential fall-through to CreateL is infeasible.",
       "repairCandidate": "H5",
       "currentSourcePaths": [
@@ -71856,12 +71870,14 @@
       "instruction": "bmi",
       "id": "control-01552",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false branch relation in current extracted graph; shared C takes the only feasible source path",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "SmallBBox returns through InitVStf with A=$00. SetSpSpd then executes CMP #$00, so BMI SpinyRte is infeasible; the real path decrements Y and falls through to SpinyRte.",
       "repairCandidate": "H5",
       "currentSourcePaths": [
@@ -73416,12 +73432,14 @@
       "instruction": "jsr",
       "id": "control-01632",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false control relation in current extracted graph; shared C selects frenzy target directly",
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "The bytes after JSR JumpEngine are the six frenzy pointer words, not reachable fall-through to NoFrenzyCode.",
       "repairCandidate": "H6",
       "currentSourcePaths": [
@@ -74992,12 +75010,14 @@
       "instruction": "jsr",
       "id": "control-01711",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: extracted pointer-table fall-through is infeasible",
       "semanticEvidence": [
         "Td S9 B15c source graph audit: SMB1 lines 9182-9197 and JumpEngine lines 2395-2408 prove the pointer table is dispatch data, not a sequential control path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "No executable fall-through exists from LargePlatformSubroutines into EraseEnemyObject; JumpEngine consumes the return and indirect-jumps through the following pointer words.",
       "repairCandidate": "H7",
       "currentSourcePaths": [
@@ -81302,12 +81322,14 @@
       "instruction": "jsr",
       "id": "control-02036",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "no feasible shared-C relation; JumpEngine consumes return and indirect-jumps through vector data",
       "semanticEvidence": [
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer.",
       "repairCandidate": "H8",
       "currentSourcePaths": [
@@ -114336,12 +114358,14 @@
       "instruction": "rts/rti",
       "id": "control-03743",
       "cohort": "H",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false control relation in the current extracted graph, while shared C directly selects the content target",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "JumpEngine does not return to BlockCode: it removes the JSR return address and indirect-jumps to a content handler, whose RTS returns to BumpBlock caller context.",
       "repairCandidate": "H1",
       "currentSourcePaths": [
@@ -114847,12 +114871,14 @@
       "instruction": "rts/rti",
       "id": "control-03769",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false control relation in current extracted graph; shared C selects the initializer target directly",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "JumpEngine does not return to InitEnemyRoutines: it removes the JSR return address and indirect-jumps through the initializer vector, whose target RTS resumes InitEnemyObject caller context.",
       "repairCandidate": "H3",
       "currentSourcePaths": [
@@ -115155,12 +115181,14 @@
       "instruction": "rts/rti",
       "id": "control-03784",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "none: false control relation in current extracted graph; shared C selects frenzy target directly",
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "JumpEngine removes the JSR return address and indirect-jumps to the selected frenzy target; it does not return to InitEnemyFrenzy.",
       "repairCandidate": "H6",
       "currentSourcePaths": [
@@ -116861,12 +116889,14 @@
       "instruction": "rts/rti",
       "id": "control-03868",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "infeasible",
       "currentCounterpart": "no feasible shared-C relation; JumpEngine consumes return and indirect-jumps through vector data",
       "semanticEvidence": [
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T52 S7 graph-closure audit: real call, selector/vector, taken-branch and target-return relations remain; no executable ROM route can traverse this impossible relation."
+      ],
       "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer.",
       "repairCandidate": "H8",
       "currentSourcePaths": [
@@ -126525,5 +126555,25 @@
         "src/game/enemy/star_flag.c"
       ]
     }
-  ]
+  ],
+  "rawControlEdgeTotal": 4342,
+  "infeasibleControlEdgeIds": [
+    "control-01339",
+    "control-01405",
+    "control-01408",
+    "control-01415",
+    "control-01502",
+    "control-01515",
+    "control-01537",
+    "control-01552",
+    "control-01632",
+    "control-01711",
+    "control-02036",
+    "control-03743",
+    "control-03769",
+    "control-03784",
+    "control-03868"
+  ],
+  "infeasibleControlEdgeTotal": 15,
+  "feasibleControlEdgeTotal": 4327
 }

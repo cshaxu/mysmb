@@ -262,3 +262,55 @@ variants 0 through 9) against fresh x64 and x86 shared-C builds, with zero
 non-stack RAM differences.  Focused differential smoke tests and platform
 purity pass on both widths.  The owner-ROM records, recorder experiment and
 build products remain ignored below `build/m2-t52-s6/`; they are not committed.
+
+## T52 S7 admission: H1–H8 infeasible control-edge disposition
+
+S7 has zero inventory-node scope and zero historical-credit forecast. It owns
+only `control-01339`, `control-01405`, `control-01408`, `control-01415`,
+`control-01502`, `control-01515`, `control-01537`, `control-01552`,
+`control-01632`, `control-01711`, `control-02036`, `control-03743`,
+`control-03769`, `control-03784` and `control-03868`. Its baseline and maximum
+remain **1,992 / 1,992**.
+
+The ROM-logic track proves every candidate directly from `JumpEngine`'s two
+`PLA` operations and indirect `JMP`, the constant branch operands, or the
+`BIT` opcode-overlap entry. It also verifies that each corresponding real call,
+selector/vector, taken-branch and target-return relation remains registered.
+The operational track runs the registry validator, node ledger and
+Documentation Governance gate, platform-purity audit and the already rebuilt
+same-source x86/x64 self-tests plus the OpenNT DOS16 link/artifact check. No
+adapter or shared game owner participates in this graph-only disposition.
+
+## T52 S7 closure: H1–H8 infeasible control-edge disposition
+
+S7 closes with zero node-credit change: historical conformance remains
+**1,992 / 1,992**, while the current node result remains 54 `exact`, zero
+`mismatch` and 1,938 `needs-evidence`. All fifteen scoped relations are now
+explicitly `infeasible`: `control-01339`, `control-01405`, `control-01408`,
+`control-01415`, `control-01502`, `control-01515`, `control-01537`,
+`control-01552`, `control-01632`, `control-01711`, `control-02036`,
+`control-03743`, `control-03769`, `control-03784` and `control-03868`.
+
+The source proof is the `JumpEngine` `PLA`/`PLA`/indirect-`JMP` dispatch at
+lines 2395–2408, unconditional operand values at the H2/H4/H5 sites, and the
+H2 `BIT` overlap. The graph audit asserts that all fifteen relations have that
+disposition and that their real alternatives remain: the parent calls and
+branches plus 9 block, 55 initializer, 6 frenzy, 7 large-platform and 5
+star-flag dispatches, 82 selectors total. The raw ledger remains 4,342
+relations; the feasible-control denominator is 4,327. No production or
+platform source changed.
+
+Operational proof passed the graph assertion, registry verifier, node ledger,
+documentation governance and platform-purity gates. The same shared-source
+Win32 x86/x64 artifacts pass their self-tests; the OpenNT DOS16 MZ artifact
+was rebuilt in S6 and its signature/hash was rechecked for this graph-only S.
+
+## T52 closure
+
+T52 has closed every confirmed current mismatch from its intake. A2, A6, A7,
+B2, B3 and H9 are current-equivalence exact; H1–H8 are explicitly infeasible
+extractor records rather than bogus gameplay edges. Historical conformance
+remains **1,992 / 1,992** and is not a fresh whole-ROM claim. The next work is
+T53's source-order proof program, beginning with Cohort A and admitting its
+first bounded chain only after its node/edge scope and original-ROM route are
+recorded.

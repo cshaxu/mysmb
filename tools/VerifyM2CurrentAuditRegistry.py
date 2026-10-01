@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 
-STATUSES = {"unclassified", "exact", "needs-evidence", "mismatch"}
+STATUSES = {"unclassified", "exact", "needs-evidence", "mismatch", "infeasible"}
 
 
 def require(condition, message):
@@ -56,7 +56,17 @@ def main():
     require(registry["nodeTotal"] == 1992 == len(nodes),
             "node total must be the canonical 1,992")
     require(registry["controlEdgeTotal"] == 4342 == len(edges),
-            "control-edge total must be the canonical 4,342")
+            "raw control-edge total must be the canonical 4,342")
+    infeasible = [edge for edge in edges if edge["status"] == "infeasible"]
+    require(registry.get("rawControlEdgeTotal") == 4342,
+            "raw control-edge total must retain the source extractor count")
+    require(registry.get("infeasibleControlEdgeTotal") == len(infeasible),
+            "infeasible control-edge count is stale")
+    require(registry.get("feasibleControlEdgeTotal") == len(edges) - len(infeasible),
+            "feasible control-edge denominator is stale")
+    require(set(registry.get("infeasibleControlEdgeIds", [])) ==
+            {edge["id"] for edge in infeasible},
+            "infeasible control-edge identities are stale")
     require(len({node["label"] for node in nodes}) == len(nodes),
             "node labels must be unique")
     require(len({edge["id"] for edge in edges}) == len(edges),
@@ -81,6 +91,8 @@ def main():
     edge_counts = {status: sum(edge["status"] == status for edge in edges)
                    for status in sorted(STATUSES)}
     print(json.dumps({"nodes": counts, "controlEdges": edge_counts,
+                      "rawControlEdges": len(edges),
+                      "feasibleControlEdges": len(edges) - len(infeasible),
                       "materialEdges": len(material),
                       "materialEnumeration": registry["dataEdges"]["status"]},
                      indent=2))

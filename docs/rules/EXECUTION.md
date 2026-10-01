@@ -52,9 +52,13 @@ The re-audit proceeds in source-order cohorts. Each cohort first records the
 current shared-C owner and source dependency graph, then runs the original ROM
 and current x86/x64 records under the same fixture. It records every compared
 field and every explicit ABI exclusion. The graph audit is an equal acceptance
-track: every original control edge (call, tail jump, branch, fall-through,
+track: every extracted control relation (call, tail jump, branch, fall-through,
 return and vector dispatch) and every material game-state producer-to-consumer
-edge must have a current C counterpart and a disposition. A route replay marks
+edge must have a current C counterpart and a disposition. A relation proven
+impossible by the ROM's instruction semantics receives the explicit
+`infeasible` disposition, remains in the raw extractor ledger with its proof,
+and is excluded from the feasible-control denominator. Every feasible original
+edge must have a current C counterpart. A route replay marks
 only the nodes and edges it actually observes; it never infers coverage of an
 unobserved graph connection. `mismatch` results become unnumbered queue
 candidates grouped by their smallest contiguous shared-owner chain; only an

@@ -12,6 +12,11 @@ known unit. These are **not** a current end-to-end completion claim: `exact`
 requires its recorded ROM/native route, while `needs-evidence` still needs that
 route.
 
+For raw extractor relations only, `infeasible` is a distinct disposition: it
+records a relation which the ROM's own instruction semantics make impossible.
+It remains for provenance but is excluded from the feasible control-graph
+denominator. It never means an unexecuted C path is correct.
+
 | Ledger | Exact | Needs evidence | Mismatch | Unclassified | Total |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | ROM labels | 38 | 1,944 | 10 | 0 | 1,992 |
@@ -57,6 +62,19 @@ zero non-stack RAM differences on both widths.  The live registry is now
 **54 exact nodes**, **0 node mismatches**, **1,938 nodes needing evidence**;
 historical conformance remains **1,992 / 1,992**.
 
+### T52 S7 H1–H8 infeasible-edge result
+
+The raw extractor still retains all **4,342** candidate relations for review,
+but fifteen are now explicitly `infeasible`, rather than being misreported as
+missing C integration. They are the H1–H8 IDs `control-01339`,
+`control-01405`, `control-01408`, `control-01415`, `control-01502`,
+`control-01515`, `control-01537`, `control-01552`, `control-01632`,
+`control-01711`, `control-02036`, `control-03743`, `control-03769`,
+`control-03784` and `control-03868`. The feasible graph denominator is
+therefore **4,327**. The real parent calls, taken branches and 9/55/6/7/5
+`JumpEngine` selector relations remain recorded as `needs-evidence`; no
+unexecuted path receives `exact` credit and no shared C source changes.
+
 ## Source-anchor resolvability finding
 
 Td S9's independent counterpart-resolvability pass found that the existing
@@ -93,9 +111,11 @@ The retired baseline tables below the static checkpoint have been removed:
 they described an earlier partial pass and are not current evidence. The
 machine-readable registry is the authority for live counts.
 
-The control graph is fixed at **4,342** edges: 611 calls, 247 direct jumps,
-1,566 branches, 1,058 fall-through relations, 611 returns, two vectors and
-247 `JumpEngine` selector edges. Material edges are different: the registry
+The raw extractor graph is fixed at **4,342** candidate relations: 611 calls,
+247 direct jumps, 1,566 branches, 1,058 fall-through relations, 611 returns,
+two vectors and 247 `JumpEngine` selector edges. Fifteen have the explicit
+`infeasible` disposition, so the current feasible-control denominator is
+**4,327**. Material edges are different: the registry
 currently contains **487 proven feasible** RAM/table producer-to-consumer
 relations. Each is assigned once to a cohort; a later source-path audit may
 add a relation only when it proves feasibility. Writer-reader Cartesian
@@ -134,10 +154,11 @@ result, not ROM-node credit.
 
 ### Cohort allocation
 
-The registry allocates **all 4,342 control edges** once, by the source label
+The registry retains **all 4,342 raw control relations** once, by the source label
 that emits the edge (vectors are owned by their target label's cohort; return
-records use the caller cohort because the original `JSR` is the source). This
-is the integration-audit denominator for the first edge pass.
+records use the caller cohort because the original `JSR` is the source).
+Explicitly infeasible records remain visible for audit provenance and are
+excluded from the feasible integration-audit denominator.
 
 | Cohort | Nodes | Control edges | Proven material edges |
 | --- | ---: | ---: | ---: |
