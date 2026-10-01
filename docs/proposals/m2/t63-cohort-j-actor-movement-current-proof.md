@@ -796,3 +796,27 @@ All four scoped labels are current-exact: `BowserGfxHandler`, `CopyFToR`, `ExBGf
 One current-source manifest runner per x86 and x64 width replays all 512 original-ROM graphics snapshots with zero differences. The focused C90 front/rear contract, platform-purity check and OpenNT DOS16 shared-source link pass. Only an audit harness changed, so no three-EXE artifact refresh is due. No labels are deferred; S18 begins at `FlameTimerData`.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,138 / 1,992 nodes** and **2,266 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+
+## S18 admission — Bowser flame timer table and selector chain
+
+S18 admits `FlameTimerData -> ExFl` (lines 10337–10347, `$D1DD-$D1E7`): `FlameTimerData`, `SetFlameTimer` and `ExFl`. The shared owner is `src/game/enemy/frenzy.c`. `InitBowserFlame` and `SpawnFBr` remain explicit caller boundaries; `ProcBowserFlame` begins S19. S17 is closed.
+
+The ROM-logic track compares all eight timing bytes, old-counter indexing before mutation, increment then low-three-bit mask, stored successor and return without an extra state write. The operational track replays eight controlled original-ROM timer fixtures in a single manifest process per x86/x64 width, then runs the focused C90 timer contract, purity and DOS16 link. Any difference remains S18 repair work.
+
+### S18 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,138 / 1,992**.
+- Current exact feasible controls: **2,266 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **3** labels; expected current promotions: **3**; maximum exact nodes: **1,141 / 1,992**.
+
+
+## S18 closure — Bowser flame timer table and selector chain
+
+All three scoped labels are current-exact: `FlameTimerData`, `SetFlameTimer` and `ExFl`. Static `$D1DD-$D1E7` comparison binds all eight table bytes and eleven instruction bytes, including old-index read before mutation, increment then `$07` mask, stored successor and return. The two caller boundaries and all four previously pending feasible controls are exact; both material handoffs are exact.
+
+One current-source route runner per x86 and x64 width extracts and replays all 256 recorded original-ROM `SetFlameTimer` child calls with zero differences in returned A and full RAM. Platform-purity and the OpenNT DOS16 shared-source link pass. Only an audit harness changed, so no three-EXE artifact refresh is due. No labels are deferred; S19 begins at `ProcBowserFlame`.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 1,992 nodes** and **2,270 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).

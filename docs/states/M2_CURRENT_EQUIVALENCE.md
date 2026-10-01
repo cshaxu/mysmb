@@ -1251,7 +1251,7 @@ branches.
 
 ### Cohort J — B15s Bowser flame-timer integration
 
-`FlameTimerData`, `SetFlameTimer` and `ExFl` now have node contracts, all incident call, return, fall-through and common-exit relations, plus two feasible table/state handoffs. Static review matches the eight bytes and the essential old-index-read before increment-and-mask ordering. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 counter-wrap and both caller routes.
+`FlameTimerData`, `SetFlameTimer` and `ExFl` now have node contracts, all incident call, return, fall-through and common-exit relations, plus two feasible table/state handoffs. Static review matches the eight bytes and the essential old-index-read before increment-and-mask ordering. No static shared-C discrepancy was found. M2 T63 S18 marks the three nodes, the four previously pending feasible controls and both material handoffs `exact`: one x86 and one x64 process replay all 256 captured original-ROM timer calls with zero return-A or complete-RAM differences, with static caller audit, purity and DOS16 link also passing.
 
 
 ### Cohort J — B15t Bowser-flame motion integration
