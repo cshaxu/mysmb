@@ -5414,13 +5414,16 @@
       "consumer": "RunBowser",
       "storage": "two-low-bit random selector to Bowser movement range",
       "feasiblePath": "Only the source every-fourth-frame origin-position path indexes the four-byte range table.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c:random_range[index]",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5433,13 +5436,16 @@
       "consumer": "MoveD_Bowser",
       "storage": "Enemy_State d5 and Enemy_Y to defeated falling path",
       "feasiblePath": "d5-set with Y<$e0 moves and draws; this path returns without normal Bowser control.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c -> bridge.c:mysmb_enemy_move_d_bowser",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5453,13 +5459,16 @@
       "consumer": "KillAllEnemies",
       "storage": "Enemy_State d5 and Enemy_Y to terminal clear loop",
       "feasiblePath": "d5-set with Y>=$e0 falls through to the common enemy clear loop.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c -> enemy/loop.c:mysmb_enemy_kill_all",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5611,13 +5620,16 @@
       "consumer": "GetPRCmp",
       "storage": "low-two-bit random index to movement range",
       "feasiblePath": "Origin equality indexes the four-byte table before horizontal move.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/bowser.c random_range",
       "semanticContract": "Preserves source producer-to-consumer state handoff, predicate and ordering.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -32388,13 +32400,16 @@
       "label": "PRandomRange",
       "asmLine": 10156,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:random_range",
       "semanticEvidence": [
-        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "ROM $D061 four-byte range table remains ordered $21,$41,$11,$31 and is indexed only from the two low random bits in the Bowser control continuation.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -32404,13 +32419,16 @@
       "label": "RunBowser",
       "asmLine": 10159,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/bowser.c",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser defeated-state front gate",
       "semanticEvidence": [
-        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Tests d5 first; the defeated Y<$e0 path moves/draws Bowser while Y>=$e0 clears enemies, and only d5-clear enters BowserControl without an accidental bridge-collapse or normal-control path.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -87891,12 +87909,15 @@
       "instruction": "beq",
       "id": "control-01950",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RunBowser -> BowserControl with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c"
@@ -87910,12 +87931,15 @@
       "instruction": "bcc",
       "id": "control-01951",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bowser dispatch front in enemy/bowser.c with named bridge/loop child",
       "semanticEvidence": [
-        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RunBowser -> MoveD_Bowser with defeated-state predicate, slot handoff and source dispatch/tail or return ordering.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -87930,12 +87954,15 @@
       "instruction": "bcc",
       "id": "control-01952",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation RunBowser -> KillAllEnemies with descending slot order, source state handoff and call/return behavior.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",

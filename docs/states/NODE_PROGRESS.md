@@ -2164,3 +2164,12 @@ six material handoffs. Static source/table audit and 180 batch original-ROM /
 current comparisons per x86/x64 width pass. Historical **1,992 / 1,992**;
 exact nodes **1,115 / 1,992**; exact feasible controls **2,207 / 4,324**;
 raw **4,342**, infeasible **18**.
+
+
+## M2 T63 S14 current-equivalence closure
+
+The Bowser dispatcher and random-range chain closes two nodes, three feasible
+controls and four material handoffs. Static source/table audit and 1,024 batch
+original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
+1,992**; exact nodes **1,117 / 1,992**; exact feasible controls **2,210 /
+4,324**; raw **4,342**, infeasible **18**.

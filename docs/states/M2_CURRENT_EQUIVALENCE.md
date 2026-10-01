@@ -2176,3 +2176,16 @@ process with zero differences. Focused C90 contract, platform purity and DOS16
 link pass. The live registry is **1,115 exact nodes** and **2,207 exact
 feasible control relations**. Historical mapping remains **1,992 / 1,992**;
 raw controls are **4,342**, with **18** infeasible and **4,324** feasible.
+
+
+### T63 S14 Bowser dispatcher and random-range result
+
+PRandomRange through RunBowser is current-exact: two labels, three feasible
+control relations and four material handoffs. Static `$D061-$D070` review
+confirms all range-table bytes and shared C branch/data semantics. The current
+x86 and x64 manifest runners each compare 1,024 original-ROM snapshots in one
+process with zero differences. Focused C90 dispatcher contract, platform purity
+and DOS16 link pass. The live registry is **1,117 exact nodes** and **2,210
+exact feasible control relations**. Historical mapping remains **1,992 /
+1,992**; raw controls are **4,342**, with **18** infeasible and **4,324**
+feasible.

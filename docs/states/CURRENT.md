@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T63 S13 Packet
+## M2 T63 S14 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S13 audit — bridge-collapse victory chain. |
-| Admission And Approval | S13 admitted after S12 closure under the owner-approved source-order program. |
-| Objective | Prove BridgeCollapseData through NoBFall and every owned relation current-exact; batch existing 180 ROM records per width. |
-| Non-goals | No PRandomRange successor, child-body credit, platform adapter or product behavior change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,109 / 1,992 nodes and 2,194 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S14 audit — Bowser dispatcher and random-range chain. |
+| Admission And Approval | S14 admitted after S13 closure under the owner-approved source-order program. |
+| Objective | Prove PRandomRange through RunBowser and every owned relation current-exact; batch 1,024 ROM records per width. |
+| Non-goals | No KillAllEnemies successor, BowserControl child-body credit, platform adapter or product behavior change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,115 / 1,992 nodes and 2,207 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | Shared game bridge.c; audit harness only; C90. |
+| Files And ABI Surface | Shared game enemy/bowser.c; audit harness only; C90. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | $CFDD-$D060 audit; original-ROM/current x86/x64 batch routes; focused checks, purity and DOS16 link. |
-| Expected Markers | 6 nodes, 15 feasible controls and 6 material handoffs. |
+| Verification | $D061-$D070 audit; original-ROM/current x86/x64 batch routes; focused checks, purity and DOS16 link. |
+| Expected Markers | 2 nodes, 3 feasible controls and 4 material handoffs. |
 | Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh artifacts only if product source changes. |
 | Reporting Requirements | Historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | Any source, route or boundary difference remains S13 repair work. |
-| Exit Criteria | All 6 labels, 15 feasible controls and 6 material handoffs exact with both tracks. |
+| Stop Conditions | Any source, route or boundary difference remains S14 repair work. |
+| Exit Criteria | All 2 labels, 3 feasible controls and 4 material handoffs exact with both tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Front-slot state gates, timer underflow, bridge table/index, child argument preservation, mode task, sound queue and tail ordering. |
+| Similar-Issue Sweep | Four-byte range binding, d5 defeated state, Y=$e0 threshold, child selection and tail order. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S12 are closed. S13 audits the bridge-collapse victory chain.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S13 are closed. S14 audits the Bowser dispatcher and random-range chain.
 
 ## T63 S1 Closure
 
@@ -221,4 +221,24 @@ artifact refresh is due. No labels are deferred; S14 begins at PRandomRange.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,115 / 1,992 nodes** and **2,207 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).
+
+
+## S14 closure — Bowser dispatcher and random-range chain
+
+Both scoped labels are current-exact: PRandomRange and RunBowser. Static
+`$D061-$D070` comparison confirms all four range bytes, the defeated-state and
+height gates, normal-control branch and terminal-clear fall-through. All three
+feasible controls and four material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 1,024
+controlled original-ROM snapshots with zero differences. The focused C90
+dispatcher contract exercises the d5/Y child selection, while static evidence
+binds its original branch semantics. Platform-purity and OpenNT DOS16
+shared-source link pass. Only an audit harness changed, so product source did
+not change and no three-EXE artifact refresh is due. No labels are deferred;
+S15 begins at KillAllEnemies.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,117 / 1,992 nodes** and **2,210 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).

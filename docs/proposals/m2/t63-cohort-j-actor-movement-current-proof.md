@@ -630,3 +630,46 @@ artifact refresh is due. No labels are deferred; S14 begins at PRandomRange.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,115 / 1,992 nodes** and **2,207 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+
+## S14 admission — Bowser dispatcher and random-range chain
+
+S14 admits PRandomRange through RunBowser (lines 10156–10166, `$D061-$D070`):
+PRandomRange and RunBowser. Its shared owner is `src/game/enemy/bowser.c`.
+BowserControl, MoveD_Bowser and KillAllEnemies remain explicit child boundaries.
+S13 is the predecessor; S15 begins at KillAllEnemies.
+
+The ROM-logic track compares all four range bytes, defeated-state gate, height
+branch, normal-control tail and terminal-clear fall-through. The operational
+track batches 1,024 controlled original-ROM Bowser records once per x86/x64
+width, then runs the focused C90 dispatcher contract, purity and DOS16 link.
+Any feasible difference remains S14 repair work.
+
+### S14 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,115 / 1,992**.
+- Current exact feasible control edges: **2,207 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **2** labels; current-evidence candidates: **2**; historical
+  expected promotions: **0**; maximum historical completion: **1,992 / 1,992**.
+
+
+## S14 closure — Bowser dispatcher and random-range chain
+
+Both scoped labels are current-exact: PRandomRange and RunBowser. Static
+`$D061-$D070` comparison confirms all four range bytes, the defeated-state and
+height gates, normal-control branch and terminal-clear fall-through. All three
+feasible controls and four material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 1,024
+controlled original-ROM snapshots with zero differences. The focused C90
+dispatcher contract exercises the d5/Y child selection, while static evidence
+binds its original branch semantics. Platform-purity and OpenNT DOS16
+shared-source link pass. Only an audit harness changed, so product source did
+not change and no three-EXE artifact refresh is due. No labels are deferred;
+S15 begins at KillAllEnemies.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,117 / 1,992 nodes** and **2,210 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).
