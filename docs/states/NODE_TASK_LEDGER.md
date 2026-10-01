@@ -2703,7 +2703,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-021-s3-s4 | M2 T21 S3 | M2 T21 S4 | 7 | Owner-approved T21 S-plan: S4 operational verification follows S3 ROM logic-equivalence audit.; [record](../../docs/proposals/m2/t21-boot-cold-init.md) |
 | transfer-021-s4-s5 | M2 T21 S4 | M2 T21 S5 | 7 | Owner-approved T21 S-plan: S5 closure follows S4 operational verification.; [record](../../docs/proposals/m2/t21-boot-cold-init.md) |
 | transfer-021-s5-t22-deferred | M2 T21 S5 | M2 Td S6 | 7 | T21 S5 closure under the owner-approved source-order plan: the boot root requires the queued T22 NMI/PPU boundary.; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| transfer-022-source-order-intake | M2 Td S6 | M2 T22 S6 | 12 | Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| transfer-022-source-order-intake | M2 Td S6 | M2 T22 S6 | 12 | Owner-approved T21T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1S5 records remain immutable.; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | transfer-023-t22-s6-to-s7 | M2 T22 S6 | M2 T22 S7 | 12 | T22/S6 completed the source contract with no node credit; T22/S7 accepts its bounded shared-C first-NMI call-placement migration.; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | transfer-024-t22-s7-to-s8 | M2 T22 S7 | M2 T22 S8 | 12 | T22/S7 completed the bounded shared-C call-placement migration with no node credit; T22/S8 accepts the source-branch audit and only source-owned repair.; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | transfer-025-t22-s8-to-s9 | M2 T22 S8 | M2 T22 S9 | 1 | T22/S8 isolated the source-owned ScreenOff repair and T22/S9 accepts its explicit one-label proof forecast.; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3291,3 +3291,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T58 S2 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t58-cohort-e-dispatcher-current-proof.md) |
 | M2 T58 S3 | 23 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t58-cohort-e-dispatcher-current-proof.md) |
 | M2 T58 S4 | 11 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t58-cohort-e-dispatcher-current-proof.md) |
+| M2 T58 S5 | 14 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t58-cohort-e-dispatcher-current-proof.md) |

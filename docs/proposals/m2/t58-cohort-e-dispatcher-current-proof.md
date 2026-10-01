@@ -159,3 +159,11 @@ All 23 scoped labels are current-equivalence exact. Static source comparison of 
 ## S4 admission — vine and pipe transition chain
 
 S4 audits the 11-label `Vine_AutoClimb -> RightPipe` chain: Vine_AutoClimb, AutoClimb, SetEntr, VerticalPipeEntry, MovePlayerYAxis, SideExitPipeEntry, ChgAreaPipe, ChgAreaMode, ExitCAPipe, EnterSidePipe, RightPipe. These labels remain in their historical T32 S2 custody; this is an audit-only overlap. Current registry baseline is 543 exact labels and 1,063 exact feasible controls. All 11 labels and 51 unresolved feasible incident relations need current evidence; historical expected matches are empty and the maximum historical total remains 1,992. The ROM track compares vine autoclimb, vertical/side pipe transitions, area-change state, coordinate movement and AutoControlPlayer handoffs. The operational track uses focused x86/x64 transition checks, a shared DOS16 link and platform purity. Any feasible difference stays in this S until repaired and replayed.
+
+## S4 closure - vine and pipe transition chain
+
+All 11 labels from Vine_AutoClimb through RightPipe are current-equivalence exact. Static comparison of original lines 5691-5753 found no shared-owner difference. All 28 transition snapshots replay their recorded child boundaries through fresh C90 x86/x64 owners; 56 caller comparisons over 1,784 persistent bytes pass. Child algorithms remain separately owned. Platform purity and the shared OpenNT DOS16 link pass. No product source changed, so no artifact refresh is due. Of 33 feasible incident control relations, 19 receive fresh S4 evidence and 14 retain compatible prior evidence.
+
+## S5 admission - player size, injury, death and palette chain
+
+S5 audits 14 labels from PlayerChangeSize through ExitDeath. It retains historical custody. Current baseline is 554 exact labels and 1,082 exact feasible controls; historical expected matches remain empty. The ROM track compares timers, size state, injury blink, death branches and palette cycling. The operational track uses x86/x64 caller snapshots, DOS16 link and platform purity.
