@@ -9691,12 +9691,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 646,
-    "needs-evidence": 1346
+    "exact": 652,
+    "needs-evidence": 1340
   },
   "controlEdgeCounts": {
-    "exact": 1263,
-    "needs-evidence": 3061,
+    "exact": 1287,
+    "needs-evidence": 3037,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -22917,13 +22917,16 @@
       "label": "FireballXSpdData",
       "asmLine": 6349,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball core owner",
+      "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Binds facing indices right/left to $40/$c0 fireball speed bytes.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -22933,13 +22936,16 @@
       "label": "FireballObjCore",
       "asmLine": 6352,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball core owner",
+      "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves explosion/inactive/new/active state partition and ObjectOffset handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -22949,13 +22955,16 @@
       "label": "RunFB",
       "asmLine": 6380,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball core owner",
+      "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves gravity, horizontal movement, relative-position, offscreen, bounding-box, terrain, erase, enemy and draw order.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -22965,13 +22974,16 @@
       "label": "EraseFB",
       "asmLine": 6401,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball core owner",
+      "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Clears only the selected Fireball_State after offscreen mask $cc is nonzero.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -22981,13 +22993,16 @@
       "label": "NoFBall",
       "asmLine": 6403,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball core owner",
+      "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Returns without modifying inactive fireball state.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -22997,13 +23012,16 @@
       "label": "FireballExplosion",
       "asmLine": 6405,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball core owner",
+      "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Computes relative position before explosion drawing.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66736,12 +66754,15 @@
       "instruction": "bcs",
       "id": "control-01078",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation FireballObjCore -> FireballExplosion with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66755,12 +66776,15 @@
       "instruction": "beq",
       "id": "control-01079",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation FireballObjCore -> NoFBall with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66774,12 +66798,15 @@
       "instruction": "beq",
       "id": "control-01080",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation FireballObjCore -> RunFB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66793,12 +66820,15 @@
       "instruction": "dec",
       "id": "control-01081",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original fallthrough relation FireballObjCore -> RunFB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66812,12 +66842,15 @@
       "instruction": "jsr",
       "id": "control-01082",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation RunFB -> ImposeGravity with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66831,12 +66864,15 @@
       "instruction": "jsr",
       "id": "control-01083",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation RunFB -> MoveObjectHorizontally with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66850,12 +66886,15 @@
       "instruction": "jsr",
       "id": "control-01084",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation RunFB -> RelativeFireballPosition with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66869,12 +66908,15 @@
       "instruction": "jsr",
       "id": "control-01085",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation RunFB -> GetFireballOffscreenBits with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66888,12 +66930,15 @@
       "instruction": "jsr",
       "id": "control-01086",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation RunFB -> GetFireballBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66907,12 +66952,15 @@
       "instruction": "jsr",
       "id": "control-01087",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation RunFB -> FireballBGCollision with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66926,12 +66974,15 @@
       "instruction": "bne",
       "id": "control-01088",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation RunFB -> EraseFB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66945,12 +66996,15 @@
       "instruction": "jsr",
       "id": "control-01089",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation RunFB -> FireballEnemyCollision with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66964,12 +67018,15 @@
       "instruction": "jmp",
       "id": "control-01090",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves ROM jump relation RunFB -> DrawFireball with source frame/state predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -66983,12 +67040,15 @@
       "instruction": "sta",
       "id": "control-01091",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original fallthrough relation EraseFB -> NoFBall with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -67002,12 +67062,15 @@
       "instruction": "jsr",
       "id": "control-01092",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation FireballExplosion -> RelativeFireballPosition with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -67021,12 +67084,15 @@
       "instruction": "jmp",
       "id": "control-01093",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves ROM jump relation FireballExplosion -> DrawExplosion_Fireball with source frame/state predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -117656,12 +117722,15 @@
       "instruction": "rts/rti",
       "id": "control-03673",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original return relation ImposeGravity -> RunFB with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -117675,12 +117744,15 @@
       "instruction": "rts/rti",
       "id": "control-03674",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original return relation MoveObjectHorizontally -> RunFB with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -117694,12 +117766,15 @@
       "instruction": "rts/rti",
       "id": "control-03675",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "The source return relation RelativeFireballPosition \u00e2\u2020\u2019 RunFB restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -117713,12 +117788,15 @@
       "instruction": "rts/rti",
       "id": "control-03676",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "The source return relation GetFireballOffscreenBits \u00e2\u2020\u2019 RunFB exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -117732,12 +117810,15 @@
       "instruction": "rts/rti",
       "id": "control-03677",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original return relation GetFireballBoundBox -> RunFB with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -117751,12 +117832,15 @@
       "instruction": "rts/rti",
       "id": "control-03678",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original return relation FireballBGCollision -> RunFB with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -117770,12 +117854,15 @@
       "instruction": "rts/rti",
       "id": "control-03679",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original return relation FireballEnemyCollision -> RunFB with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
@@ -117789,12 +117876,15 @@
       "instruction": "rts/rti",
       "id": "control-03680",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "The source return relation RelativeFireballPosition \u00e2\u2020\u2019 FireballExplosion restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c"
