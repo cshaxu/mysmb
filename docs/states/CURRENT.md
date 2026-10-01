@@ -10,7 +10,7 @@
 | Admission And Approval | S4 closed with zero scoped mismatches; owner-directed continuation under the approved T53 source-order program. |
 | Objective | Audit `FloateyNumTileData` through `SetupNumSpr` against the original ROM control/state/table/OAM contract; repair any feasible difference and repeat the audit until zero remains. |
 | Non-goals | No historical-node credit, no successor admission, no platform-owned game decision. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 98 exact, 1,894 needs-evidence, 0 mismatch nodes; 211 exact, 4,113 needs-evidence, 0 mismatch feasible controls. Scope: 10 labels, expected historical delta 0. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry after the S5 repair/re-audit: 105 exact, 1,887 needs-evidence, 0 mismatch nodes; 231 exact, 4,093 needs-evidence, 0 mismatch feasible controls; 6 exact material relations. Scope: 10 labels, expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t53-cohort-a-current-proof.md. |
 | Files And ABI Surface | Shared `src/game/objects.c`, score/OAM collaborators, focused tests, and registry/ledger evidence only; platform adapters remain outside gameplay. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
@@ -25,4 +25,4 @@
 
 ## Current Technical Baseline
 
-M2 T53 S4 closed with zero scoped differences. M2 T53 S5 is the sole active source-order audit. Its current repair is the `ChkTallEnemy -> GetAltOffset` ID/state branch: the prior C condition selected the wrong OAM group for Spiny, Hammer Bro and IDs at or above `TallEnemy`. The shared `objects.c` branch and focused regression are corrected, but S5 remains open until the full node/edge re-audit and the three-target operational pass complete. One shared native C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic.
+M2 T53 S5 has repaired and re-audited its sole feasible mismatch: `ChkTallEnemy -> GetAltOffset` now selects the ROM OAM group for Spiny, Hammer Bro and IDs at or above `TallEnemy`. All ten scoped labels, 25 scoped controls and the floatey tile material relation are exact under static and controlled ROM/native evidence. This closure record remains the active packet until its ledger/documentation gates pass; no successor is admitted yet. One shared native C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic.

@@ -3219,4 +3219,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T53 S2 | 26 | 1992 | none / 0 | none / 0 | closed-s2-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S3 | 1 | 1992 | none / 0 | none / 0 | closed-screenoff-current-exact; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S4 | 22 | 1992 | none / 0 | none / 0 | closed-victory-current-exact; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
-| M2 T53 S5 | 10 | 1992 | none / 0 | none / 0 | active-floatey-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
+| M2 T53 S5 | 10 | 1992 | none / 0 | none / 0 | closed-floatey-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |

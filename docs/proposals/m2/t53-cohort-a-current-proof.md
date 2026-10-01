@@ -9,9 +9,9 @@ Scope: **97 labels** (46 currently `exact`, 51 `needs-evidence`), **185 internal
 | S2 | 982–1136 | `TitleScreenMode` -> `DemoOver`, including title menu, world select, icon and demo; `src/game/title_modes.c` plus `frame_root.c` title dispatch | 26 (21 exact, 5 pending) | 45 (33 exact, 12 pending) / 1 (0 exact, 1 pending) | Owner-ROM title route matrix: start, select/B world choice, demo timer zero/nonzero, continue/world-one and demo end. Operational: mysmb.title-demo-smoke; mysmb.core-smoke. |
 | S3 | 776–814 | `ScreenOff` corrective display-mask -> scroll/OAM/VRAM transaction order; `src/game/frame_root.c` | 1 (0 exact, 1 mismatch) | 4 (0 exact, 4 mismatch) / 0 | Controlled display-disabled/enabled original-ROM NMI records; focused NMI-parent check; x86/x64/DOS16 build and platform purity. |
 | S4 | 1137–1286 | `VictoryMode` -> `EndExitTwo`, including automatic player, messages and world exit; `src/game/terminal_modes.c` plus `frame_root.c` victory tail | 22 (0 exact, 22 pending) | 44 (0 exact, 44 pending) / 0 (0 exact, 0 pending) | Owner-ROM victory task matrix for tasks 0-4, message counters and end-world B-button branches. Operational: mysmb.endgame-objects-smoke; mysmb.bowser-smoke; mysmb.core-smoke. |
-| S5 | 1287–1385 | `FloateyNumTileData` -> `SetupNumSpr`; `src/game/objects.c` | 10 (3 exact, 7 pending) | 18 (3 exact, 15 pending) / 2 (1 exact, 1 pending) | Owner-ROM floatey-number timer, score-table, tall-enemy and two-sprite output matrix. Operational: mysmb.floatey-oam-smoke; mysmb.core-smoke. |
+| S5 | 1287–1385 | `FloateyNumTileData` -> `SetupNumSpr`; `src/game/objects.c` | 10 (10 exact) | 25 incident controls (25 exact) / 1 material (1 exact) | Owner-ROM floatey-number timer, score-table, tall-enemy and two-sprite output matrix. Operational: mysmb.floatey-oam-smoke; mysmb.core-smoke. |
 
-S1's mismatch was resolved by S3 at zero scoped differences. S4 is now the active victory-chain audit; S5 remains planned only. Each S preserves individual label/edge disposition despite using one chain route and one artifact pass.
+S1's mismatch was resolved by S3 at zero scoped differences. S5 is the active floatey-number audit. Each S preserves individual label/edge disposition despite using one chain route and one artifact pass.
 ## T53 S1 admission: reset/NMI through operating-mode dispatch
 S1 enters at `Start` and exits after the `OperModeExecutionTree` selection boundary / `SkipMainOper` RTI tail, retaining the OAM loop label at the source-order end. It includes reset, pause, timer, LFSR, sprite-zero, OAM-offscreen, sprite-shuffle and dispatcher labels because they form the source reset/NMI root. Its direct callees `InitScroll`, `UpdateScreen`, `SoundEngine`, `ReadJoypads`, `UpdateTopScore`, `JumpEngine`, and the four mode leaves remain external dependency boundaries and are not promoted by this S.
 The ROM-logic track performs a static label and edge review, then uses controlled owner-local ROM reset/NMI captures for cold/warm boot, both display-mask branches, both buffer offsets, timer paths, pause gate, sprite-zero off/on and every mode selector. It compares call order, branch predicates, RAM writes, OAM effects, scroll/control phase and selector outcome against fresh x86/x64 records. The operational track runs the named focused checks, both Win32 builds/self-tests, the common-source OpenNT DOS16 link, platform-purity audit and refreshes the three ignored local artifacts once for the completed P. Raw ROM traces stay under `build/m2-t53-s1/`.
@@ -107,16 +107,16 @@ Historical completion is already 1,992, so `expectedMatches` is intentionally em
 | 1271 | `EndExitOne` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
 | 1272 | `EndChkBButton` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
 | 1281 | `EndExitTwo` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
-| 1287 | `FloateyNumTileData` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1303 | `ScoreUpdateData` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1287 | `FloateyNumTileData` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1303 | `ScoreUpdateData` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
 | 1308 | `FloateyNumbersRoutine` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1315 | `ChkNumTimer` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1315 | `ChkNumTimer` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
 | 1320 | `DecNumTimer` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number timer/score section |
 | 1328 | `LoadNumTiles` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1338 | `ChkTallEnemy` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1355 | `GetAltOffset` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1358 | `FloateyPart` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1363 | `SetupNumSpr` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1338 | `ChkTallEnemy` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1355 | `GetAltOffset` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1358 | `FloateyPart` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1363 | `SetupNumSpr` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
 
 ## Relation allocation
 T53 owns the 185 internal Cohort-A relations. S1 owns 75 reset/NMI/dispatcher interior relations; S2 owns 45 title/demo relations; S4 owns 44 victory relations; S5 owns 18 floatey relations. S3 owns the separately recorded four-relation `ScreenOff` corrective transaction. The three inter-S relations are checked at their receiving-chain entry and recorded once in the T53 cross-chain matrix. Cross-cohort relations stay for T69.
@@ -208,8 +208,8 @@ the product change: `mysmb16.exe` SHA-256
 `8172842C63151D6D3021D19FCE831ECB4A36DE66877DE0971309EBD1997AF75D`, and
 `mysmb64.exe` SHA-256
 `15087A3913DC1F8323577EA923659F1AF8C31068EFC6383584A33EC6EB8EF6B4`.
-The old original-ROM Floatey recorder fixture did not yield a valid current
-comparison record under this build environment, so it is a route-harness
-gap, not evidence for promotion or a newly inferred gameplay mismatch. Raw
-diagnostic records were discarded; S5 remains active until a bounded,
-comparable original-ROM route is re-established.
+The recorder was then rebuilt from its current source and the controlled original-ROM route was repeated. The three fixtures—one-up, timer-zero and numeric-alt—each used a 60-frame warmup plus eight captured frames. Original ROM, current x86 and current x64 match exactly in work RAM `$0200-$07ff` excluding `$0778/$0779`, CIRAM, palette, OAM, PPU scalars and audio; x86 and x64 records are byte-identical. Raw diagnostic records are deleted after the neutral route summary.
+
+## S5 closure — floatey-number chain
+
+S5 closes with no historical-credit change: historical progress remains 1,992 / 1,992. All ten scoped labels—`FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, and `SetupNumSpr`—are current-exact. All 25 scoped incident executable control relations (`control-00172` through `control-00192`, `control-00777`, `control-03513`, `control-03514`, and `control-03620`) and material relation `material-00005` are current-exact. The only found ROM/C mismatch, the tall-enemy OAM-group selector, was repaired in the shared game owner and re-audited to zero. The focused OAM regression passes on x86/x64; the shared C90 source links for DOS16; platform-purity passes; and the three local artifacts were refreshed. No scoped difference remains, so only now may the next source-order chain be admitted.
