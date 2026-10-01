@@ -24,6 +24,8 @@ static int mysmb_pause_case(mysmb_u8 mode, mysmb_u8 task, mysmb_u8 status,
         game.ram[0x0776U] != expected_status ||
         game.ram[0x0777U] != expected_timer ||
         game.ram[0x00faU] != expected_audio) return 1;
+    if (mysmb_game_is_paused(&game) !=
+        ((expected_status & 1U) != 0U ? 1U : 0U)) return 1;
     return 0;
 }
 

@@ -481,6 +481,11 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_frame_root_step(game, input, frame);
 }
 
+mysmb_u8 mysmb_game_is_paused(const struct mysmb_game *game)
+{
+    return (game->ram[0x0776U] & 1U) != 0U ? 1U : 0U;
+}
+
 void mysmb_game_checkpoint(const struct mysmb_game *game,
                            struct mysmb_checkpoint *checkpoint)
 {

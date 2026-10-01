@@ -40,7 +40,7 @@ static void mysmb_win32_update_title(HWND window)
     mysmb_u8 paused;
     const char *title;
 
-    paused = (mysmb_u8)(g_game.ram[0x0776U] & 1U);
+    paused = mysmb_game_is_paused(&g_game);
     if (paused == g_title_paused) return;
     if (paused != 0U)
         title = g_audio_available != 0U ? "MySMB (Paused)" :

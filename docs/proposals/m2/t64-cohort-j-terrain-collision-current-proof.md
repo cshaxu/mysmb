@@ -57,3 +57,26 @@ The ROM-logic track compares Flying Cheep's direct return, the two CPY-derived c
 - Current exact nodes: **1,227 / 1,992**.
 - Current exact feasible controls: **2,461 / 4,324**.
 - Scope: **5** labels; expected fresh matches: **5**; maximum current exact nodes: **1,232 / 1,992**.
+
+## S1 closure
+
+All five scoped nodes are current-exact: `OffscreenBoundsCheck`, `LimitB`,
+`ExtendLB`, `TooFar`, and `ExScrnBd`. The static comparison confirms the
+Flying Cheep early return, both special-ID carry paths, each scratch-bound
+write, signed page decision, all five right-side exemptions, and the erase
+call/return. The registry records its 15 source-owned Cohort-J control
+relations and four source-owned material handoffs as exact.
+
+The controlled original-ROM route ran 1,024 records through one x86 and one
+x64 native process; both reports were zero differences. The exhaustive bound
+oracle, x86/x64 audio/pause/offscreen tests and product self-tests passed.
+OpenNT linked the shared DOS16 source after supplying its existing local
+`OLDNAMES.LIB` runtime dependency in the ignored build tree. Platform purity
+initially found a Win32 title helper reading `game.ram`; the repair moved that
+read behind the shared `mysmb_game_is_paused` query and the gate now passes.
+The C change refreshed all three owner-local package artifacts.
+
+Current totals after S1: historical mapping **1,992 / 1,992**; current exact
+nodes **1,232 / 1,992**; current exact feasible controls **2,476 / 4,324**
+(4,342 raw, 18 infeasible). The two returns to unadmitted Cohort-H callers
+remain `needs-evidence`; S1 does not claim cross-cohort caller proof.

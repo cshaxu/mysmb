@@ -152,5 +152,8 @@ void mysmb_game_checkpoint(const struct mysmb_game *game,
 void mysmb_game_frame_initialize(struct mysmb_frame *frame);
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame);
+/* Read-only translated pause-state query for host presentation.  Adapters
+ * consume this neutral state and never inspect CPU-RAM storage directly. */
+mysmb_u8 mysmb_game_is_paused(const struct mysmb_game *game);
 
 #endif

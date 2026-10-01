@@ -7238,13 +7238,16 @@
       "consumer": "LimitB",
       "storage": "enemy ID CPY carry to Hammer/Piranha left-bound adjustment",
       "feasiblePath": "Equality carry is deliberately consumed by ADC $38.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "actor_slots.c special-left arithmetic",
       "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7257,13 +7260,16 @@
       "consumer": "ExtendLB",
       "storage": "special left X and carry to common SBC $48",
       "feasiblePath": "Special path adds with carry before common subtract.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "actor_slots.c special-left arithmetic",
       "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7276,13 +7282,16 @@
       "consumer": "TooFar",
       "storage": "constructed left/right X/page boundaries and signed page difference",
       "feasiblePath": "Left-outside erases; right-outside considers exception IDs.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "actor_slots.c bound comparisons",
       "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7295,13 +7304,16 @@
       "consumer": "ExScrnBd",
       "storage": "Flying Cheep and right-exception IDs to retained return",
       "feasiblePath": "Flying Cheep, Piranha, flag objects and jumpspring bypass erase on right.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "actor_slots.c exception returns",
       "semanticContract": "Preserves source producer-to-consumer ID/carry/boundary state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10354,13 +10366,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1227,
-    "needs-evidence": 765
+    "exact": 1232,
+    "needs-evidence": 760
   },
   "controlEdgeCounts": {
-    "exact": 2461,
+    "exact": 2476,
     "infeasible": 18,
-    "needs-evidence": 1863
+    "needs-evidence": 1848
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -34772,13 +34784,16 @@
       "label": "OffscreenBoundsCheck",
       "asmLine": 11031,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/actor_slots.c",
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Immediately retains Flying Cheep; otherwise preserves CPY carry through special left-edge arithmetic, constructs extended bounds, performs source X/page subtract comparisons and applies right-side exception IDs before erase.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -34788,13 +34803,16 @@
       "label": "LimitB",
       "asmLine": 11041,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/actor_slots.c",
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "For Hammer Bro/Piranha preserves CPY equality carry into ADC $38 before common SBC $48, yielding source-special left bound.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -34804,13 +34822,16 @@
       "label": "ExtendLB",
       "asmLine": 11042,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/actor_slots.c",
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Consumes CPY carry through SBC $48 and stores left X/page before right bound ADC consumes final carry.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -34820,13 +34841,16 @@
       "label": "TooFar",
       "asmLine": 11074,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/actor_slots.c",
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Calls lifecycle erase after left-outside or non-exempt right-outside determination.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -34836,13 +34860,16 @@
       "label": "ExScrnBd",
       "asmLine": 11075,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/actor_slots.c",
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Common retained-object/erase return endpoint.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93522,12 +93549,15 @@
       "instruction": "beq",
       "id": "control-02176",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation OffscreenBoundsCheck -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93541,12 +93571,15 @@
       "instruction": "beq",
       "id": "control-02177",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation OffscreenBoundsCheck -> LimitB with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93560,12 +93593,15 @@
       "instruction": "bne",
       "id": "control-02178",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation OffscreenBoundsCheck -> ExtendLB with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93579,12 +93615,15 @@
       "instruction": "bne",
       "id": "control-02179",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation OffscreenBoundsCheck -> LimitB with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93598,12 +93637,15 @@
       "instruction": "adc",
       "id": "control-02180",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation LimitB -> ExtendLB with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93617,12 +93659,15 @@
       "instruction": "bmi",
       "id": "control-02181",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation ExtendLB -> TooFar with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93636,12 +93681,15 @@
       "instruction": "bmi",
       "id": "control-02182",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93655,12 +93703,15 @@
       "instruction": "beq",
       "id": "control-02183",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93674,12 +93725,15 @@
       "instruction": "beq",
       "id": "control-02184",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93693,12 +93747,15 @@
       "instruction": "beq",
       "id": "control-02185",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93712,12 +93769,15 @@
       "instruction": "beq",
       "id": "control-02186",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93731,12 +93791,15 @@
       "instruction": "beq",
       "id": "control-02187",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation ExtendLB -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93750,12 +93813,15 @@
       "instruction": "beq",
       "id": "control-02188",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ExtendLB -> TooFar with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
@@ -93769,12 +93835,15 @@
       "instruction": "jsr",
       "id": "control-02189",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original call relation TooFar -> EraseEnemyObject with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c",
@@ -93793,12 +93862,15 @@
       "instruction": "jsr",
       "id": "control-02190",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation TooFar -> ExScrnBd with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c"
