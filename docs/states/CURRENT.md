@@ -2,30 +2,45 @@
 
 ## Current Work
 
-## M2 T55 S3 Packet
+## M2 T55 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T55 S3 — Cohort C block-metatile current-equivalence audit. |
-| Admission And Approval | T55 S2 closed with zero scoped feasible differences; owner-directed source-order continuation. |
-| Objective | Audit `BlockGfxData` through `RemBridge`, repair every feasible shared-C difference, and repeat the scoped ROM/native and graph audit to zero. |
-| Non-goals | No historical-node credit, no metatile graphics-table audit, and no platform-owned game decision. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 184 exact, 1,808 needs-evidence nodes; 380 exact, 3,944 needs-evidence feasible controls. Scope: 11 labels, all incoming `needs-evidence`; expected historical delta 0. |
+| Identifier Mode | M2 T55 S4 ? Cohort C metatile graphics and palette-table current-equivalence audit. |
+| Admission And Approval | T55 S3 closed with zero scoped feasible differences after its repair; owner-directed source-order continuation. |
+| Objective | Audit `MetatileGraphics_Low` through `BowserPaletteData`, repair every feasible shared-C difference, and repeat the scoped ROM/native and graph audit to zero. |
+| Non-goals | No historical-node credit, no message-stream audit, and no platform-owned game decision. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 195 exact, 1,797 needs-evidence nodes; 411 exact, 3,913 needs-evidence feasible controls. Scope: 14 labels; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
 | Files And ABI Surface | Shared `src/game/area.c`, focused recorder/tests and current-equivalence registry only; platforms remain presentation/input adapters. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | ROM-logic: controlled original-ROM/x86/x64 block replacement, destroy, water blank and bridge route plus node/edge/material audit. Operational: focused checks, x86/x64 and DOS16 builds if source changes, platform-purity audit, and three artifacts if product code changes. |
-| Expected Markers | All 11 labels and their incident feasible relations have a current shared-C counterpart with source-order, selector, address, state/output and return evidence; no scoped difference remains. |
-| Asset Needs | Owner-local ROM only for ignored traces below build/m2-t55-s3; artifacts refresh only if product code changes. |
-| Reporting Requirements | Report exact scoped labels, incoming/current dispositions, edge/material relations, current-registry before/after and separate operational outcome. |
-| Stop Conditions | A feasible ROM/C difference remains after repair, a source relation lacks a shared-C counterpart, a trace exceeds its budget, or platform code makes a gameplay decision. |
-| Exit Criteria | The S closes only when every scoped feasible node, control relation and material handoff is exact under static and controlled ROM/native evidence. |
+| Verification | ROM-logic: PRG byte identity, static table/consumer audit and controlled original-ROM/x86/x64 table selector routes. Operational: focused x86/x64 checks, DOS16 link if source changes and platform-purity audit. |
+| Expected Markers | All 14 labels and incident feasible material handoffs have a shared-C table-binding/selector/output counterpart with no scoped difference. |
+| Asset Needs | Owner-local ROM only for ignored evidence below build/m2-t55-s4; refresh artifacts only if product code changes. |
+| Reporting Requirements | Report each exact scoped label, every material disposition, current-registry before/after and separate operational outcome. |
+| Stop Conditions | A feasible ROM/C difference remains after repair, a table handoff lacks a shared-C counterpart, a trace exceeds its budget, or platform code makes a gameplay decision. |
+| Exit Criteria | The S closes only when every scoped node and incident feasible material handoff is exact under static and controlled ROM/native evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | Water/ground blank selector, block graphics index, residual writes, vertical address carry, bridge completion and caller/return handoff. |
+| Similar-Issue Sweep | All PRG table offset consumers, ordinary/special palette selectors, PPU command packet application and NMI pointer handoffs. |
 
 ## Current Technical Baseline
 
-M2 T55 S3 is active after the closed S2 palette-rotation audit. It continues Cohort C with the contiguous block-metatile chain.
+M2 T55 S4 is active after the closed S3 block-metatile audit. It continues Cohort C with the contiguous metatile-graphics and palette-table chain.
+
+## S4 Closure
+
+`MetatileGraphics_Low`, `MetatileGraphics_High`, `Palette0_MTiles`,
+`Palette1_MTiles`, `Palette2_MTiles`, `Palette3_MTiles`, `WaterPaletteData`,
+`GroundPaletteData`, `UndergroundPaletteData`, `CastlePaletteData`,
+`DaySnowPaletteData`, `NightSnowPaletteData`, `MushroomPaletteData` and
+`BowserPaletteData` are current-exact. The generated local PRG matches the
+original ROM's complete 32 KiB PRG region byte-for-byte, while the x86/x64 area
+data smoke test covers every four-tile metatile row and all eight palette
+selectors. The static audit confirms that `area.c` and `frame_root.c` consume
+those tables through the source pointer and NMI selector routes. No shared
+product source changed. The registry advances from 195 to **209 exact nodes**;
+control-edge count remains **411 exact feasible controls**. Historical
+conformance remains 1,992 / 1,992.
 
 ## S3 Closure
 

@@ -164,3 +164,19 @@ The refreshed artifacts are SHA-256 `45DBEA08EBAC6103DAD2D60B83F31B9A2B27E0D0FB3
 (DOS16), `682E088D8421F3339CAA7E06DDD3A8FBF4064ED060DDF1C30588660FA30DE30F`
 (Win32) and `EC30CA5F81616BB4BC996FD70A059F4435D44FECBE6FAD536FAD90214E8A527F`
 (Win64).
+
+## S4 admission ? metatile graphics and palette-table chain
+
+S4 receives `MetatileGraphics_Low`, `MetatileGraphics_High`, `Palette0_MTiles`,
+`Palette1_MTiles`, `Palette2_MTiles`, `Palette3_MTiles`, `WaterPaletteData`,
+`GroundPaletteData`, `UndergroundPaletteData`, `CastlePaletteData`,
+`DaySnowPaletteData`, `NightSnowPaletteData`, `MushroomPaletteData` and
+`BowserPaletteData` at SMB1 lines 2145?2326. The entry is the low pointer table
+and the exit is the Bowser palette stream. All tables share the portable
+`area.c` table-consumer owner; the ROM route proves bound PRG byte identity and
+selector-driven command output before any credit is recorded.
+
+## S4 closure ? metatile graphics and palette-table chain
+
+S4 is current-exact with no shared-C repair. The local generated PRG exactly
+matches the original ROM's 32 KiB PRG region (`5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594`). Static audit maps the pointer tables, metatile rows and NMI table selectors to shared `area.c` and `frame_root.c`; x86/x64 `area_data_smoke` verifies all four metatile rows and all eight palette streams. The 14 nodes and eight previously unproven material handoffs are exact. No product code changed, so artifacts are not refreshed.

@@ -455,13 +455,15 @@
       "consumer": "SetVRAMAddr_A",
       "storage": "ROM water palette stream to selector-1 NMI consumer",
       "feasiblePath": "VRAM control one selects WaterPaletteData before palette transfer.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_palette selector 0",
       "semanticContract": "The complete water palette command matches.",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -475,13 +477,15 @@
       "consumer": "SetVRAMAddr_A",
       "storage": "ROM ground palette stream to selector-2 NMI consumer",
       "feasiblePath": "VRAM control two selects GroundPaletteData before palette transfer.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_palette selector 1",
       "semanticContract": "The complete ground palette command matches.",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -495,13 +499,15 @@
       "consumer": "SetVRAMAddr_A",
       "storage": "ROM underground palette stream to selector-3 NMI consumer",
       "feasiblePath": "VRAM control three selects UndergroundPaletteData before palette transfer.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_palette selector 2",
       "semanticContract": "The complete underground palette command matches.",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -515,13 +521,15 @@
       "consumer": "SetVRAMAddr_A",
       "storage": "ROM castle palette stream to selector-4 NMI consumer",
       "feasiblePath": "VRAM control four selects CastlePaletteData before palette transfer.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_palette selector 3",
       "semanticContract": "The complete castle palette command matches.",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -535,13 +543,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 8 ROM stream to NMI palette consumer",
       "feasiblePath": "VRAM address control 8 selects BowserPaletteData.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_special_palette control 8",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -555,13 +565,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 9 ROM stream to NMI palette consumer",
       "feasiblePath": "VRAM address control 9 selects DaySnowPaletteData.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_special_palette control 9",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -575,13 +587,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 10 ROM stream to NMI palette consumer",
       "feasiblePath": "VRAM address control 10 selects NightSnowPaletteData.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_special_palette control 10",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -595,13 +609,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 11 ROM stream to NMI palette consumer",
       "feasiblePath": "VRAM address control 11 selects MushroomPaletteData.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_special_palette control 11",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9585,8 +9601,8 @@
     }
   ],
   "nodeCounts": {
-    "exact": 195,
-    "needs-evidence": 1797
+    "exact": 209,
+    "needs-evidence": 1783
   },
   "controlEdgeCounts": {
     "exact": 411,
@@ -13255,13 +13271,15 @@
       "label": "MetatileGraphics_Low",
       "asmLine": 2145,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics palette graphics lookup",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8ae4: palette-indexed low-byte graphics pointers.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13271,13 +13289,15 @@
       "label": "MetatileGraphics_High",
       "asmLine": 2148,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics palette graphics lookup",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8ae8: palette-indexed high-byte graphics pointers.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13287,13 +13307,15 @@
       "label": "Palette0_MTiles",
       "asmLine": 2151,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "bound area_prg metatile graphics source",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8aec: palette-zero four-tile metatile records.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13303,13 +13325,15 @@
       "label": "Palette1_MTiles",
       "asmLine": 2192,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "bound area_prg metatile graphics source",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8b90: palette-one four-tile metatile records.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13319,13 +13343,15 @@
       "label": "Palette2_MTiles",
       "asmLine": 2240,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "bound area_prg metatile graphics source",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8c50: palette-two four-tile metatile records.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13335,13 +13361,15 @@
       "label": "Palette3_MTiles",
       "asmLine": 2252,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "bound area_prg metatile graphics source",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8c80: palette-three four-tile metatile records.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13351,13 +13379,15 @@
       "label": "WaterPaletteData",
       "asmLine": 2263,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_palette selector 0",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8c98: water palette VRAM command stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13367,13 +13397,15 @@
       "label": "GroundPaletteData",
       "asmLine": 2275,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_palette selector 1",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8ca4: ground palette VRAM command stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13383,13 +13415,15 @@
       "label": "UndergroundPaletteData",
       "asmLine": 2287,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_palette selector 2",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8cb0: underground palette VRAM command stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13399,13 +13433,15 @@
       "label": "CastlePaletteData",
       "asmLine": 2299,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_palette selector 3",
       "semanticEvidence": [
-        "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8cbc: castle palette VRAM command stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13415,13 +13451,15 @@
       "label": "DaySnowPaletteData",
       "asmLine": 2311,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_special_palette control 9",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8cce: day snow special palette stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13431,13 +13469,15 @@
       "label": "NightSnowPaletteData",
       "asmLine": 2316,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_special_palette control 10",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8cd4: night snow special palette stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13447,13 +13487,15 @@
       "label": "MushroomPaletteData",
       "asmLine": 2321,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_special_palette control 11",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8cda: mushroom special palette stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13463,13 +13505,15 @@
       "label": "BowserPaletteData",
       "asmLine": 2326,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_special_palette control 8",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S4 static audit: SMB1 lines 1845-1867, 2145-2329 and NMI lines 793-800 map the four pointer entries, all four metatile rows and eight palette command streams to the shared area.c/frame_root.c selector consumers without copied game data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S4 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all four metatile rows and all eight ordinary/special palette selectors."
+      ],
       "semanticContract": "ROM $8ce0: Bowser special palette stream.",
       "currentSourcePaths": [
         "src/game/area.c"
