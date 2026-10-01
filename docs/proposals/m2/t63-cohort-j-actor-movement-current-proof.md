@@ -852,3 +852,46 @@ artifact refresh is due. No labels are deferred; S20 begins at `SetGfxF`.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,143 / 1,992 nodes** and **2,275 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+## S20 admission — Bowser-flame OAM draw and offscreen chain
+
+S20 admits `SetGfxF -> ExFlmeD` (lines 10374–10434, `$D204-$D244`):
+`SetGfxF`, `FlmeAt`, `DrawFlameLoop`, `M3FOfs`, `M2FOfs`, `M1FOfs` and
+`ExFlmeD`. Its shared portable owner is `src/game/oam/bowser_flame_gfx.c`.
+`RelativeEnemyPosition` and `GetEnemyOffscreenBits` are explicit child
+boundaries. S19 is closed and S21 begins at `RunFireworks`.
+
+The ROM-logic track compares the ordered relative-position child call,
+normal-state exit, two-frame attribute branch, three-entry OAM loop, X
+increment, ObjectOffset reload, offscreen child call and all four ordered bit
+tests/hidden OAM writes. The operational track reuses the 1,024 original-ROM
+flame-actor records as one manifest process per x86/x64 width, runs the focused
+C90 OAM contract, platform purity and DOS16 shared-source link. Any feasible
+difference remains S20 repair work.
+
+### S20 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,143 / 1,992**.
+- Current exact feasible controls: **2,275 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **7** labels; expected current promotions: **7**; maximum exact nodes:
+  **1,150 / 1,992**.
+
+## S20 closure — Bowser-flame OAM draw and offscreen chain
+
+All seven labels are current-exact: `SetGfxF`, `FlmeAt`, `DrawFlameLoop`,
+`M3FOfs`, `M2FOfs`, `M1FOfs` and `ExFlmeD`. Static `$D204-$D244` comparison
+binds relative-coordinate child ordering, normal-state exit, two-frame
+attribute choice, the three-sprite OAM loop, relative-X mutation, object-offset
+reload, offscreen child call and all four ordered offscreen-bit hides. All 15
+owned feasible controls and four material handoffs are exact. One current-source
+manifest process per x86/x64 width replays 1,024 original-ROM flame-actor
+fixtures with full RAM and recorded child calls, all with zero differences.
+Platform purity and OpenNT DOS16 shared-source link pass. No product source
+changed, so no three-EXE artifact refresh is due. No labels are deferred; S21
+begins at `RunFireworks`.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,150 / 1,992 nodes** and **2,290 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).

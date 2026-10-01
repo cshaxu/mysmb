@@ -2226,3 +2226,15 @@ zero differences. Focused C90 movement, platform purity and DOS16 link pass.
 The live registry is **1,143 exact nodes** and **2,275 exact feasible control
 relations**. Historical mapping remains **1,992 / 1,992**; raw controls are
 **4,342**, with **18** infeasible and **4,324** feasible.
+
+### T63 S20 Bowser-flame OAM draw and offscreen result
+
+SetGfxF through ExFlmeD is current-exact: seven labels, 15 feasible control
+relations and four material handoffs. Static `$D204-$D244` review confirms
+child order, state exit, animation selection, OAM loop, X mutation and each
+ordered offscreen-bit hide. Current x86 and x64 manifest runners each replay
+1,024 original-ROM flame-actor fixtures with full RAM and recorded child calls,
+zero differences. Platform purity and DOS16 link pass. The live registry is
+**1,150 exact nodes** and **2,290 exact feasible control relations**.
+Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with
+**18** infeasible and **4,324** feasible.

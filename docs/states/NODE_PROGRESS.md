@@ -2223,3 +2223,17 @@ Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 
   three executable artifacts were not refreshed.
 - Totals: historical **1,992 / 1,992**; current exact **1,143 / 1,992** nodes,
   **2,275 / 4,324** feasible controls; raw **4,342**, infeasible **18**.
+
+## M2 T63 S20 closure — Bowser-flame OAM draw and offscreen chain
+
+- Scope: `SetGfxF`, `FlmeAt`, `DrawFlameLoop`, `M3FOfs`, `M2FOfs`, `M1FOfs`,
+  `ExFlmeD`; all current-exact.
+- Exact controls: `control-02013` through `control-02027`; exact materials:
+  `material-00276` through `material-00279`.
+- ROM logic: static `$D204-$D244`; x86/x64 batch replay of 1,024 original-ROM
+  flame actor records with full RAM and recorded child calls, zero differences.
+- Operational: platform purity and OpenNT DOS16 shared-source link passed.
+  Audit evidence only; product code unchanged, so three executable artifacts
+  were not refreshed.
+- Totals: historical **1,992 / 1,992**; current exact **1,150 / 1,992** nodes,
+  **2,290 / 4,324** feasible controls; raw **4,342**, infeasible **18**.
