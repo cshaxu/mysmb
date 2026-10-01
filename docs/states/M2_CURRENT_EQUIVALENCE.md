@@ -2274,3 +2274,17 @@ BalancePlatform through ExPF is current-exact: 26 labels, 67 newly proven feasib
 ### T63 S27 moving and lift-platform result
 
 YMovingPlatform through ExLiftP is current-exact: 20 labels, 42 source-owned feasible control relations and 13 material handoffs. Static `$D5D3-$D679`, three original-ROM batch route families totaling 1,792 records per x86/x64 width, focused C90 contracts, platform purity and DOS16 link pass with zero route differences. The live registry is **1,227 exact nodes** and **2,460 exact feasible control relations**. Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with **18** infeasible and **4,324** feasible.
+
+### T63 S28 cross-chain edge closure result
+
+One feasible return and two material handoffs are exact; T63 source-owned graph edges now have no pending feasible relation. The live registry remains **1,227 exact nodes** and advances to **2,461 exact feasible control relations**.
+
+### T63 closure result
+
+All **244** scoped labels are exact. The T63 source-owned graph has **534**
+exact feasible controls, two instruction-semantic infeasible controls and
+**154** exact material handoffs, with no pending feasible relation. Final
+x86/x64 regression passes **219 / 219** CTests on each width and the OpenNT
+DOS16 shared-source link passes. Global status is historical **1,992 / 1,992**;
+current **1,227 / 1,992** exact nodes and **2,461 / 4,324** exact feasible
+controls (raw **4,342**, infeasible **18**).

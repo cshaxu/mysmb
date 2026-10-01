@@ -2278,3 +2278,31 @@ Historical mapping remains **1,992 / 1,992**; current exact status is **1,207 / 
 All 20 scoped labels are current-exact: `YMovingPlatform` through `ExLiftP`. Static `$D5D3-$D679` comparison binds the stationary dummy reset, every-eighth-frame increment, unsigned top/center gates, vertical rider tail, X-counter and movement child order, signed player page carry/borrow, drop and right-platform exits, and timer-gated large/small lift fixed-point movement with their distinct collision arguments. The three original-ROM route families replay 1,792 records once per x86 and x64 process with full RAM and recorded child calls, zero differences. Focused C90 vertical, horizontal and lift contracts, platform purity and OpenNT DOS16 shared-source link pass. All 42 source-owned pending feasible controls and 13 material handoffs are exact. Test harness/evidence only; product C is unchanged, so no three-EXE refresh is due.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,227 / 1,992 nodes** and **2,460 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## S28 closure — T63 cross-chain edge closure
+
+This zero-node-credit audit closes all three residual T63 graph gaps. `control-03766` proves `KillAllEnemies -> DoLpBack` returns in source order after the descending erase loop and before the caller restores its slot. `material-00301` proves FirebarSpin direction and scratch speed feed the clockwise/counter-clockwise phase arithmetic; `material-00302` proves its updated low phase and returned high phase feed the separate caller-owned ProcFirebar mask/store. Static `$D071-$D07B` and `$D410-$D431`, terminal-Bowser and FirebarSpin x86/x64 record batches, and focused C90 loop/spin contracts all pass with zero differences. No product source changed, so no EXE refresh is due.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,227 / 1,992 nodes** and **2,461 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## M2 T63 S29 closure — integrated regression fixture correction
+
+No ROM node or graph credit changed. `core-smoke` now supplies the
+source-predecessor pending flag and normal block-buffer column before it calls
+`BlockObjMT_Updater`; the former failure was a fixture with incompatible entry
+state, not a C/ROM difference. All 219 x86/x64 CTests and the retained OpenNT
+DOS16 shared-source link pass. Historical **1,992 / 1,992**; current exact
+**1,227 / 1,992** nodes and **2,461 / 4,324** feasible controls; raw **4,342**,
+infeasible **18**.
+
+## M2 T63 closure — Cohort J actor-movement audit
+
+Completed target labels: **244 / 244**; no scoped label is deferred or
+transferred. The scoped graph has **534** exact feasible controls, **2**
+instruction-semantic infeasible controls, and **154 / 154** exact material
+handoffs. The ROM-logic track is the zero-difference per-chain static and
+original-ROM route evidence recorded in S1–S28. The final operational matrix
+passes **219 / 219** CTests on both x86 and x64, plus the OpenNT DOS16
+shared-source link. Historical **1,992 / 1,992**; global current exact
+**1,227 / 1,992** nodes and **2,461 / 4,324** feasible controls; raw **4,342**,
+infeasible **18**.

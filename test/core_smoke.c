@@ -1099,6 +1099,13 @@ int main(void)
         game.ram[0x0306U] != 0x20U || game.ram[0x0307U] != 0x68U) return 1;
     game.ram[0x0300U] = 0U;
     game.ram[0x0301U] = 0U;
+    /* ReplaceBlockMetatile only emits the tile commands.  The preceding
+     * block event leaves Block_RepFlag set; BlockObjMT_Updater consumes that
+     * flag on the following engine pass.  Restore the normal block-buffer
+     * column used by this assertion: the high-row wrap fixture above used
+     * column $f0 solely to exercise PutBlockMetatile's PPU address math. */
+    game.ram[0x03e4U] = 0x20U;
+    game.ram[0x03ecU] = 1U;
     mysmb_area_apply_block_replacements(&game);
     if (game.ram[0x0524U] != 0x61U || game.ram[0x03ecU] != 0U ||
         game.ram[0x0300U] != 10U) return 1;

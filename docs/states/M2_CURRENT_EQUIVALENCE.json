@@ -6555,13 +6555,16 @@
       "consumer": "SpinCounterClockwise",
       "storage": "FirebarSpinDirection to clockwise/counterclockwise arithmetic",
       "feasiblePath": "Direction zero is add/carry; nonzero is subtract/borrow.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/firebar_children.c direction branch",
       "semanticContract": "Preserves source producer-to-consumer phase handoff and carry/borrow ordering.",
       "semanticEvidence": [
-        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S28 edge closure: static $D071-$D07B/$D410-$D431 audit; terminal-Bowser and FirebarSpin original-ROM batches rerun x86/x64 with zero differences; focused C90 loop/spin contracts pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S28 edge closure: static $D071-$D07B/$D410-$D431 audit; terminal-Bowser and FirebarSpin original-ROM batches rerun x86/x64 with zero differences; focused C90 loop/spin contracts pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6574,13 +6577,16 @@
       "consumer": "ProcFirebar",
       "storage": "updated low phase and returned high phase to caller mask/store",
       "feasiblePath": "Caller consumes return high byte after low state update.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/firebar_children.c return -> enemy/firebar.c",
       "semanticContract": "Preserves source producer-to-consumer phase handoff and carry/borrow ordering.",
       "semanticEvidence": [
-        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S28 edge closure: static $D071-$D07B/$D410-$D431 audit; terminal-Bowser and FirebarSpin original-ROM batches rerun x86/x64 with zero differences; focused C90 loop/spin contracts pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S28 edge closure: static $D071-$D07B/$D410-$D431 audit; terminal-Bowser and FirebarSpin original-ROM batches rerun x86/x64 with zero differences; focused C90 loop/spin contracts pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10352,9 +10358,9 @@
     "needs-evidence": 765
   },
   "controlEdgeCounts": {
-    "exact": 2460,
+    "exact": 2461,
     "infeasible": 18,
-    "needs-evidence": 1864
+    "needs-evidence": 1863
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -124950,12 +124956,15 @@
       "instruction": "rts/rti",
       "id": "control-03766",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S28 edge closure: static $D071-$D07B/$D410-$D431 audit; terminal-Bowser and FirebarSpin original-ROM batches rerun x86/x64 with zero differences; focused C90 loop/spin contracts pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S28 edge closure: static $D071-$D07B/$D410-$D431 audit; terminal-Bowser and FirebarSpin original-ROM batches rerun x86/x64 with zero differences; focused C90 loop/spin contracts pass."
+      ],
       "semanticContract": "Preserves original return relation KillAllEnemies -> DoLpBack with descending slot order, source state handoff and call/return behavior.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",

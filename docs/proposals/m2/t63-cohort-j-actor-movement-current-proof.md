@@ -1050,3 +1050,54 @@ The static track binds the stationary/frame/center vertical gate; x-counter orde
 All 20 scoped labels are current-exact: `YMovingPlatform` through `ExLiftP`. Static `$D5D3-$D679` comparison binds the stationary dummy reset, every-eighth-frame increment, unsigned top/center gates, vertical rider tail, X-counter and movement child order, signed player page carry/borrow, drop and right-platform exits, and timer-gated large/small lift fixed-point movement with their distinct collision arguments. The three original-ROM route families replay 1,792 records once per x86 and x64 process with full RAM and recorded child calls, zero differences. Focused C90 vertical, horizontal and lift contracts, platform purity and OpenNT DOS16 shared-source link pass. All 42 source-owned pending feasible controls and 13 material handoffs are exact. Test harness/evidence only; product C is unchanged, so no three-EXE refresh is due.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,227 / 1,992 nodes** and **2,460 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## S28 admission — T63 cross-chain edge closure
+
+S28 is a zero-node-credit audit that closes three concrete T63 ledger gaps: feasible `KillAllEnemies -> DoLpBack` return `control-03766`, and `FirebarSpin -> SpinCounterClockwise` / `FirebarSpin -> ProcFirebar` material handoffs `material-00301` / `material-00302`. Its scope contains the already-exact source labels `KillAllEnemies`, `FirebarSpin` and `SpinCounterClockwise`; no implementation custody changes.
+
+The static track compares `$D071-$D07B` call/return sequencing and `$D410-$D431` returned high phase and caller-owned low-phase storage. The ROM track replays the existing eight terminal-Bowser and eight FirebarSpin original-ROM record batches once per x86/x64 width. Focused loop and spin contracts are rerun. Any discrepancy remains S28 repair work; otherwise T63 may perform its integrated closure.
+
+## S28 closure — T63 cross-chain edge closure
+
+This zero-node-credit audit closes all three residual T63 graph gaps. `control-03766` proves `KillAllEnemies -> DoLpBack` returns in source order after the descending erase loop and before the caller restores its slot. `material-00301` proves FirebarSpin direction and scratch speed feed the clockwise/counter-clockwise phase arithmetic; `material-00302` proves its updated low phase and returned high phase feed the separate caller-owned ProcFirebar mask/store. Static `$D071-$D07B` and `$D410-$D431`, terminal-Bowser and FirebarSpin x86/x64 record batches, and focused C90 loop/spin contracts all pass with zero differences. No product source changed, so no EXE refresh is due.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,227 / 1,992 nodes** and **2,461 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## S29 admission — integrated regression fixture correction
+
+S29 is a zero-node-credit operational audit. The T63 integrated x86/x64
+regression exposed a false failure in `mysmb.core-smoke`: its isolated
+high-row `ReplaceBlockMetatile` assertion entered `BlockObjMT_Updater` without
+the predecessor's pending replacement flag and retained the high-row fixture's
+block-buffer column while expecting the normal-column block address. The shared
+game implementation is outside scope. This S restores those ROM-owned caller
+preconditions in the fixture, then repeats the integrated x86/x64 regression
+and the existing DOS16 shared-source link.
+
+## S29 closure — integrated regression fixture correction
+
+The fixture now restores the normal `$20` block-buffer column and sets pending
+`Block_RepFlag` before it invokes `BlockObjMT_Updater`; this is the state the
+source predecessor supplies. No shared-game or platform product C changed.
+All 219 CTests pass on x86 and x64; the existing OpenNT DOS16 link remains
+successful. T63's node and graph dispositions are unchanged: all 244 scoped
+nodes, 534 feasible controls and 154 material handoffs are exact; two raw
+controls are instruction-semantic infeasible. Historical mapping remains
+**1,992 / 1,992**; current exact status is **1,227 / 1,992** nodes and
+**2,461 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+
+## T63 closure — Cohort J actor-movement current-equivalence audit
+
+T63 closes with all **244 / 244** scoped ROM labels current-exact. Its
+source-owned graph audit has **534** exact feasible controls, **2** controls
+proved instruction-semantic infeasible, and **154 / 154** exact material
+handoffs; no feasible relation is unresolved. S29 corrected an operational
+fixture's absent source-predecessor state and did not change a node, edge or
+production implementation.
+
+ROM-logic evidence remains the per-chain static/route proof recorded by
+S1–S28. The final operational matrix passes all **219 / 219** CTests on each
+Win32 width; OpenNT DOS16 links the shared source successfully. Historical
+mapping is **1,992 / 1,992**. The global current registry is **1,227 / 1,992**
+exact nodes and **2,461 / 4,324** exact feasible controls (raw **4,342**,
+infeasible **18**). T64 remains unadmitted.
