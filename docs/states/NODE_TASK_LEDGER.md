@@ -2651,6 +2651,16 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T59 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-f; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
 | M2 T59 S7 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-f, cross-chain-closure; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
+| M2 T60 | 0 | - | [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md); [record](../../docs/proposals/m2/current-equivalence-proof-program.md) |
+| M2 T60 S1 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S2 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S3 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S4 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S5 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S7 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S8 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S9 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-g, cross-chain-closure; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
@@ -3308,3 +3318,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T59 S5 | 6 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
 | M2 T59 S6 | 6 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
 | M2 T59 S7 | 0 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
+| M2 T60 S1 | 5 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |

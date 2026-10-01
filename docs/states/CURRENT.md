@@ -2,28 +2,27 @@
 
 ## Current Work
 
-## M2 T59 S7 Packet
+## M2 T60 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T59 S7 audit - Cohort F cross-chain closure. |
-| Admission And Approval | Owner-approved source-order program; S1-S6 are closed and S7 is admitted for the required T-level integration proof. |
-| Objective | Record and review the completed `PlayerMovementSubs` through `SetAbsSpd` cross-chain proof before T59 closure. |
-| Non-goals | No new node scope, no unrelated gameplay change, and no platform logic. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 641 exact labels and 1,238 exact feasible relations. Scope is explicit zero-credit integration. |
-| Candidate Proposal | docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md. |
-| Files And ABI Surface | Shared player and movement owners plus project-owned integration tests; platform adapters remain consumers. |
+| Identifier Mode | M2 T60 S1 audit - Cohort G fireball and bubble dispatch chain. |
+| Admission And Approval | Owner-approved source-order proof program after closed T59. |
+| Objective | Prove `ProcFireball_Bubble -> BublExit` against original ROM behavior. |
+| Non-goals | No fireball-core or bubble-body claim, platform logic or unrelated repair. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 641 exact labels and 1,238 exact feasible relations; five scoped labels need evidence. |
+| Candidate Proposal | docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md. |
+| Files And ABI Surface | Shared fireball and bubble game owners; platform adapters remain consumers. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | Original ROM route matrix, fresh x86/x64 C90 integration, DOS16 link and purity. |
-| Expected Markers | S1-S6 call order, child entry/return state, byte-identical native widths and no platform-owned game logic. |
-| Asset Needs | Audit only; no product source changed. |
-| Reporting Requirements | Report integration routes, relation status and both verification tracks before T closure. |
-| Stop Conditions | Any unresolved cross-chain route difference or platform game logic. |
-| Exit Criteria | All T59 chains compose with no unclassified feasible relation in their declared route matrix. |
+| Verification | ROM/current x86/x64 dispatch route, focused smoke, shared DOS16 link and platform purity. |
+| Expected Markers | PlayerStatus partition, ordered fireball slots, water branch, descending loop and return state. |
+| Asset Needs | Audit initially; a shared-game repair refreshes all three assets. |
+| Reporting Requirements | Report all five labels, owned relations and both tracks at closure. |
+| Stop Conditions | Any unresolved feasible ROM/C difference or platform-owned game logic. |
+| Exit Criteria | All S1 labels and owned feasible relations exact, or repaired then re-audited. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | All movement callers, animation/friction ordering and movement-state child joins. |
+| Similar-Issue Sweep | Fireball caller, water bubble caller and every S1 return handoff. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64. T59 S7
-closure evidence is complete; T60 is not admitted.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64. T60 S1 is active; all game behavior remains in shared C owners.
