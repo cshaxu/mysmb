@@ -4983,13 +4983,18 @@
       "consumer": "FlyCC",
       "storage": "Y-force high-nibble index and PRG table byte",
       "feasiblePath": "Flying movement subtracts the source indexed random byte from Y before fold/threshold.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "immutable PRG data view in flying_cheep.c",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5002,13 +5007,18 @@
       "consumer": "AddCCF",
       "storage": "absolute Y/table difference",
       "feasiblePath": "Only absolute difference below eight enters Y-force adjustment.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_flying_cheep_cheeps_slot",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5021,13 +5031,18 @@
       "consumer": "BPGet",
       "storage": "updated Y-force high-nibble index",
       "feasiblePath": "Priority index is recomputed after the optional force+$10 write.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_flying_cheep_cheeps_slot",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5040,13 +5055,18 @@
       "consumer": "BPGet",
       "storage": "high-nibble priority index and table byte",
       "feasiblePath": "Final sprite attribute comes from original indexed priority data.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "immutable PRG data view in flying_cheep.c",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5059,13 +5079,18 @@
       "consumer": "FlyCC",
       "storage": "defeated-state predicate and sprite attribute",
       "feasiblePath": "Only nondefeated flying Cheep enters horizontal/gravity state update.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_flying_cheep_cheeps_slot",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -31780,13 +31805,18 @@
       "label": "PRandomSubtracter",
       "asmLine": 9941,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/flying_cheep.c",
       "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Binds flying-Cheep high-nibble indexed subtraction table {$f8,$a0,$70,$bd,$00} plus resource-adjacent indexed bytes under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -31796,13 +31826,18 @@
       "label": "FlyCCBPriority",
       "asmLine": 9944,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/flying_cheep.c",
       "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Binds flying-Cheep high-nibble indexed sprite-priority table {$20,$20,$20,$00,$00} plus resource-adjacent indexed bytes under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -31812,13 +31847,18 @@
       "label": "MoveFlyingCheepCheep",
       "asmLine": 9947,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/flying_cheep.c",
       "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "For defeated state clears sprite attributes then tail-jumps to jumping gravity; otherwise falls through flying movement.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -31828,13 +31868,18 @@
       "label": "FlyCC",
       "asmLine": 9954,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/flying_cheep.c",
       "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Moves horizontally, applies gravity amount $0d/max five, derives high-nibble random index, compares vertical position against subtraction table and optionally increases Y force.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -31844,13 +31889,18 @@
       "label": "AddCCF",
       "asmLine": 9971,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/flying_cheep.c",
       "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "If absolute subtraction difference is below eight, adds $10 to Y force then derives updated high-nibble priority index; otherwise leaves force unchanged.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -31860,13 +31910,18 @@
       "label": "BPGet",
       "asmLine": 9982,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/flying_cheep.c",
       "currentCounterpart": "shared Flying Cheep slot path with immutable PRG binding",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Loads indexed sprite priority into enemy attributes and returns.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -86417,12 +86472,17 @@
       "instruction": "beq",
       "id": "control-01892",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveFlyingCheepCheep -> FlyCC with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -86436,12 +86496,17 @@
       "instruction": "jmp",
       "id": "control-01893",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation MoveFlyingCheepCheep -> MoveJ_EnemyVertically with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c",
@@ -86456,12 +86521,17 @@
       "instruction": "jsr",
       "id": "control-01894",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation FlyCC -> MoveEnemyHorizontally with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c",
@@ -86476,12 +86546,17 @@
       "instruction": "jsr",
       "id": "control-01895",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation FlyCC -> SetXMoveAmt with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c",
@@ -86496,12 +86571,17 @@
       "instruction": "bpl",
       "id": "control-01896",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FlyCC -> AddCCF with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -86515,12 +86595,17 @@
       "instruction": "adc",
       "id": "control-01897",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FlyCC -> AddCCF with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -86534,12 +86619,17 @@
       "instruction": "bcs",
       "id": "control-01898",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation AddCCF -> BPGet with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"
@@ -86553,12 +86643,17 @@
       "instruction": "tay",
       "id": "control-01899",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation AddCCF -> BPGet with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c"

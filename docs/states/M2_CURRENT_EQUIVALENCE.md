@@ -2139,3 +2139,16 @@ contracts, platform purity and DOS16 link pass. The live registry is **1,087
 exact nodes** and **2,149 exact feasible control relations**. Historical
 mapping remains **1,992 / 1,992**; raw controls are **4,342**, with **18**
 infeasible and **4,324** feasible.
+
+
+### T63 S11 Flying Cheep-Cheep movement result
+
+PRandomSubtracter through BPGet is current-exact: six labels, eight feasible
+control relations and five material handoffs. Static $CED5-$CF24 review
+confirms 21/21 ROM-bound bytes and the shared C branch/data semantics. The
+current x86 and x64 manifest runners each compare 512 original-ROM snapshots
+in one process with zero differences. Focused C90 contracts, platform purity
+and DOS16 link pass. The live registry is **1,093 exact nodes** and **2,157
+exact feasible control relations**. Historical mapping remains **1,992 /
+1,992**; raw controls are **4,342**, with **18** infeasible and **4,324**
+feasible.

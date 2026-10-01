@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T63 S10 Packet
+## M2 T63 S11 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S10 audit — Firebar position, drawing and collision chain. |
-| Admission And Approval | S10 admitted after S9 closure under the owner-approved source-order program. |
-| Objective | Prove `FirebarPosLookupTbl -> GetVAdder` and every owned relation current-exact; replace per-snapshot process launches with one manifest process per native width. |
-| Non-goals | No flying Cheep-Cheep successor, Firebar child-body credit, actor-dispatch caller, OAM helper interior or platform adapter change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,055 / 1,992 nodes and 2,083 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S11 audit — flying Cheep-Cheep movement chain. |
+| Admission And Approval | S11 admitted after S10 closure under the owner-approved source-order program. |
+| Objective | Prove `PRandomSubtracter -> BPGet` and every owned relation current-exact; batch the 512 existing ROM records into one native process per width. |
+| Non-goals | No Lakitu successor, child-body credit, actor-dispatch caller, platform adapter or product behavior change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,087 / 1,992 nodes and 2,149 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | Shared game `enemy/firebar.c`; audit harnesses only; C90. |
+| Files And ABI Surface | Shared game `enemy/flying_cheep.c`; audit harness only; C90. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | `$CCC7-$CED4` audit; original-ROM/current x86/x64 batch Firebar routes; focused checks, purity and DOS16 link. |
-| Expected Markers | 32 nodes, 66 feasible controls and 14 material handoffs. |
+| Verification | `$CED5-$CF24` audit; original-ROM/current x86/x64 batch routes; focused checks, purity and DOS16 link. |
+| Expected Markers | 6 nodes, 8 feasible controls and 5 material handoffs. |
 | Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh artifacts only if product source changes. |
 | Reporting Requirements | Historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | Any source, route or boundary difference remains S10 repair work. |
-| Exit Criteria | All 32 labels, 66 feasible controls and 14 material handoffs exact with both tracks. |
+| Stop Conditions | Any source, route or boundary difference remains S11 repair work. |
+| Exit Criteria | All 6 labels, 8 feasible controls and 5 material handoffs exact with both tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Phase reflection, table residual reads, short/long loop bounds, OAM handoff, offscreen sentinel, collision absolute differences, player-size probe and injury-state preservation. |
+| Similar-Issue Sweep | Defeated precedence, child order, high-nibble table reads, signed subtraction/absolute result, strict threshold, priority index and tail return. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S10 are closed. S11 begins with the flying Cheep-Cheep movement chain.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S10 are closed. S11 audits the flying Cheep-Cheep movement chain.
 
 ## T63 S1 Closure
 
@@ -161,3 +161,24 @@ link pass. Only the audit runner changed, so no product artifact refresh
 applies. Historical mapping is **1,992 / 1,992**; current exact status is
 **1,087 / 1,992 nodes** and **2,149 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+
+## S11 closure — Flying Cheep-Cheep movement chain
+
+All six scoped labels are current-exact: PRandomSubtracter, FlyCCBPriority,
+MoveFlyingCheepCheep, FlyCC, AddCCF and BPGet. Static $CED5-$CF24 comparison
+confirms the 21-byte ROM binding, defeated tail, child ordering, high-nibble
+indexed reads, signed absolute subtraction, strict eight threshold, optional
+force increment and final priority store. All eight feasible controls and five
+material handoffs are exact.
+
+The updated runner preserves its legacy single-snapshot interface and replays
+all 512 controlled original-ROM snapshots in one current x86 process and one
+current x64 process; both have zero differences. Focused C90 contracts,
+platform purity and the OpenNT DOS16 shared-source link pass. Only an audit
+harness changed, so product source did not change and no three-EXE artifact
+refresh is due. No labels are deferred.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,093 / 1,992 nodes** and **2,157 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**). S12 begins with LakituDiffAdj.

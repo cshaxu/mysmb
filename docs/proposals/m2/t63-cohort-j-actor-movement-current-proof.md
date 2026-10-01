@@ -491,3 +491,50 @@ change and no three-EXE artifact refresh is due.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,087 / 1,992 nodes** and **2,149 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**). S11 begins with `PRandomSubtracter`.
+
+
+## S11 admission — Flying Cheep-Cheep movement chain
+
+S11 admits `PRandomSubtracter -> BPGet` (lines 9941–9984, `$CED5-$CF24`):
+`PRandomSubtracter`, `FlyCCBPriority`, `MoveFlyingCheepCheep`, `FlyCC`,
+`AddCCF` and `BPGet`. The shared owner is `src/game/enemy/flying_cheep.c`.
+S10 is the predecessor and S12 begins at `LakituDiffAdj`. The defeated vertical
+tail, horizontal movement and gravity helpers are explicit child boundaries;
+their bodies receive no credit in this chain.
+
+The logic track compares the defeated-state tail, child-call order, four-bit
+force index, table-adjacent ROM reads, signed absolute difference, strict
+eight threshold, force increment and priority-store index. The operational
+track converts the existing 512 controlled original-ROM records to a one-run
+manifest per native width, then runs the focused C90 contract, platform-purity
+check and shared DOS16 link. A feasible difference remains S11 repair work.
+
+### S11 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,087 / 1,992**.
+- Current exact feasible control edges: **2,149 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **6** labels; current-evidence candidates: **6**; historical
+  expected promotions: **0**; maximum historical completion: **1,992 / 1,992**.
+
+
+## S11 closure — Flying Cheep-Cheep movement chain
+
+All six scoped labels are current-exact: PRandomSubtracter, FlyCCBPriority,
+MoveFlyingCheepCheep, FlyCC, AddCCF and BPGet. Static $CED5-$CF24 comparison
+confirms the 21-byte ROM binding, defeated tail, child ordering, high-nibble
+indexed reads, signed absolute subtraction, strict eight threshold, optional
+force increment and final priority store. All eight feasible controls and five
+material handoffs are exact.
+
+The updated runner preserves its legacy single-snapshot interface and replays
+all 512 controlled original-ROM snapshots in one current x86 process and one
+current x64 process; both have zero differences. Focused C90 contracts,
+platform purity and the OpenNT DOS16 shared-source link pass. Only an audit
+harness changed, so product source did not change and no three-EXE artifact
+refresh is due. No labels are deferred.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,093 / 1,992 nodes** and **2,157 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**). S12 begins with LakituDiffAdj.
