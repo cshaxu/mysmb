@@ -113,3 +113,18 @@ All 11 labels are current-equivalence exact: `GameMode`, `GameCoreRoutine`, `Gam
 The original-ROM/current matrix has four selector fixtures, both GameCoreRoutine post-child outcomes, two 600-frame normal routes and fifteen engine-tail routes. It compares declared persistent RAM and full recorded output without output exclusions; x86 and x64 records are byte-identical. The focused x86/x64 dispatcher, caller, slot and environment tests and platform-purity test pass. No product source mismatch was found, so no executable refresh is due. The 70 feasible incident relations are exact; 58 received fresh S1 evidence and 12 retain compatible prior exact evidence.
 
 S2 may now be admitted for `ScrollHandler -> GetScreenPosition`.
+
+
+## S2 admission — scroll threshold and player-edge chain
+
+S2 admits the contiguous ten-label chain `ScrollHandler -> GetScreenPosition`: `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData` and `GetScreenPosition`. All ten are currently `needs-evidence`; none is already current-exact. The common shared owner is `src/game/scroll.c`. Its predecessors are the established player/pipe callers (`DontWalk`, `PlayerSubs`, `VerticalPipeEntry`) and its successors are the established edge-clamp consumer `GetXOffscreenBits`, caller returns, and `StartPage`'s screen-position reuse. The chain does not claim the physics, pipe-entry or offscreen-bit producer families owned by adjacent S chains.
+
+Historical accounting remains 1,992 / 1,992, so the historical expected-match set is empty. The current registry begins at 510 exact labels and 946 exact feasible control relations. Subject to both tracks, this S can promote the ten labels and its 26 unresolved feasible incident control relations, reaching at most 520 labels and 972 feasible control relations. The 12 other incident relations already exact remain subject to regression review.
+
+**ROM-logic track.** Compare source lines 5403–5497 with the C90 owner: add platform scroll force; all `$50`/`$70` and signed/decrement gates; `ScrollScreen` byte arithmetic, page carry, PPU nametable-bit merge and tail handoff; raw offscreen-bit selection; both edge tables; left/right page borrow; speed nullification predicate; and `GetScreenPosition`’s `$ff` carry. Use the controlled original-ROM natural-entry snapshot matrix for all 24 `t31-scroll` cases, including all nine branch outcomes, then run the snapshot through the current x86/x64 C owner. The route compares persistent RAM with only original CPU scratch `$00-$07` and stack `$0100-$01ff` excluded; it does not infer upstream physics or `GetXOffscreenBits` correctness.
+
+**Operational track.** Run `mysmb.player-scroll-chain`, the x86/x64 snapshot checker, the original-ROM/current scroll matrix, the shared DOS16 core link and platform-purity check. A shared-game source repair refreshes `assets/mysmb16.exe`, `assets/mysmb32.exe` and `assets/mysmb64.exe`; an audit-only conclusion does not.
+
+## S2 closure criteria
+
+Every scoped label and feasible incident relation is current-exact with static and controlled-route proof. A discrepancy remains in S2's shared owner until repaired and re-audited on the same route; only then may S3 be admitted.
