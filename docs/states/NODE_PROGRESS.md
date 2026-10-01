@@ -23,7 +23,7 @@ all 1,992 labels. The separate current-equivalence baseline and its
 source-order cohort results are authoritative in
 [M2 current-equivalence re-audit](M2_CURRENT_EQUIVALENCE.md).
 
-Latest task review: [T62 S10](../proposals/m2/t62-cohort-i-enemy-stream-current-proof.md#s10-closure) closes Cohort I: all 165 scoped labels, 339 feasible controls and 46 material handoffs reconcile current-exact. The current registry records 983 exact labels and 1,922 exact feasible control relations. Historical conformance remains 1,992 / 1,992.
+Latest task review: [T63 S1](../proposals/m2/t63-cohort-j-actor-movement-current-proof.md#s1-closure--firebar-actor-callerbounds-bridge) closes `RunFirebarObj`: one label, two feasible controls and one material handoff are current-exact. The current registry records 984 exact labels and 1,924 exact feasible control relations. Historical conformance remains 1,992 / 1,992.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

@@ -2683,6 +2683,34 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T62 S8 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-i; [record](../../docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md) |
 | M2 T62 S9 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-i; [record](../../docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md) |
 | M2 T62 S10 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-i, cross-chain-closure; [record](../../docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md) |
+| M2 T63 | 0 | - | [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md); [record](../../docs/states/CURRENT.md) |
+| M2 T63 S1 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S2 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S3 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S4 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S5 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S7 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S8 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S9 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S10 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S11 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S12 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S13 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S14 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S15 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S16 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S17 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S18 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S19 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S20 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S21 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S22 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S23 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S24 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S25 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S26 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S27 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
@@ -3369,3 +3397,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T62 S8 | 25 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md) |
 | M2 T62 S9 | 9 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md) |
 | M2 T62 S10 | 0 | 1992 | none / 0 | none / 0 | closed-cross-chain-closure; [record](../../docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md) |
+| M2 T63 S1 | 1 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |

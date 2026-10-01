@@ -2033,3 +2033,15 @@ the OpenNT DOS16 link produced its local executable with the known linker
 warning. The live registry remains **983 / 1,992** exact nodes and **1,922 /
 4,324** feasible control relations; historical mapping remains **1,992 /
 1,992**.
+
+
+### T63 S1 Firebar actor caller/bounds bridge result
+
+`RunFirebarObj` is current-exact with its `ProcFirebar` call,
+`OffscreenBoundsCheck` tail jump and processing-state handoff. Static source
+`$C5B5-$C5B9`, fresh controlled original-ROM/current x86/x64 caller replay
+(32 Firebar cases per width), caller-order footprints, platform purity and
+DOS16 link agree. Child interiors remain separate source-order obligations.
+The registry is **984 / 1,992** exact nodes and **1,924 / 4,324** exact
+feasible control relations, from **4,342** raw controls with **18**
+infeasible; historical mapping remains **1,992 / 1,992**.
