@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T63 S11 Packet
+## M2 T63 S12 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S11 audit — flying Cheep-Cheep movement chain. |
-| Admission And Approval | S11 admitted after S10 closure under the owner-approved source-order program. |
-| Objective | Prove `PRandomSubtracter -> BPGet` and every owned relation current-exact; batch the 512 existing ROM records into one native process per width. |
-| Non-goals | No Lakitu successor, child-body credit, actor-dispatch caller, platform adapter or product behavior change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,087 / 1,992 nodes and 2,149 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S12 audit — Lakitu movement and player-distance chain. |
+| Admission And Approval | S12 admitted after S11 closure under the owner-approved source-order program. |
+| Objective | Prove LakituDiffAdj through ExMoveLak and every owned relation current-exact; batch existing 1,024 ROM records into one native process per width. |
+| Non-goals | No BridgeCollapse successor, child-body credit, actor-dispatch caller, platform adapter or product behavior change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,093 / 1,992 nodes and 2,157 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | Shared game `enemy/flying_cheep.c`; audit harness only; C90. |
+| Files And ABI Surface | Shared game enemy/lakitu.c; audit harness only; C90. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | `$CED5-$CF24` audit; original-ROM/current x86/x64 batch routes; focused checks, purity and DOS16 link. |
-| Expected Markers | 6 nodes, 8 feasible controls and 5 material handoffs. |
+| Verification | $CF25-$CF84 audit; original-ROM/current x86/x64 batch routes; focused checks, purity and DOS16 link. |
+| Expected Markers | 16 nodes, 37 feasible controls and 7 material handoffs. |
 | Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh artifacts only if product source changes. |
 | Reporting Requirements | Historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | Any source, route or boundary difference remains S11 repair work. |
-| Exit Criteria | All 6 labels, 8 feasible controls and 5 material handoffs exact with both tracks. |
+| Stop Conditions | Any source, route or boundary difference remains S12 repair work. |
+| Exit Criteria | All 16 labels, 37 feasible controls and 7 material handoffs exact with both tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Defeated precedence, child order, high-nibble table reads, signed subtraction/absolute result, strict threshold, priority index and tail return. |
+| Similar-Issue Sweep | Defeated precedence, state initialization, adjustment bytes, direction negation, capped distance, reversal delay, selector index and subtract loop. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S10 are closed. S11 audits the flying Cheep-Cheep movement chain.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S11 are closed. S12 audits the Lakitu movement chain.
 
 ## T63 S1 Closure
 
@@ -182,3 +182,23 @@ refresh is due. No labels are deferred.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,093 / 1,992 nodes** and **2,157 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**). S12 begins with LakituDiffAdj.
+
+
+## S12 closure — Lakitu movement and player-distance chain
+
+All sixteen scoped labels are current-exact: LakituDiffAdj through ExMoveLak.
+Static `$CF25-$CF84` comparison confirms the three-byte adjustment table,
+defeated/nonzero state paths, ordered child boundaries, signed player distance,
+cap, reversal/deceleration, speed selector, Spiny exception and subtract loop.
+All 37 feasible controls and seven material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 1,024
+controlled original-ROM snapshots with zero differences. The focused C90
+Lakitu movement contract, platform-purity check and OpenNT DOS16 shared-source
+link pass. Only an audit harness changed, so no product source changed and no
+three-EXE artifact refresh is due. No labels are deferred; S13 begins at
+BridgeCollapseData.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,109 / 1,992 nodes** and **2,194 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).

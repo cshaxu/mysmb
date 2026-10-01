@@ -35,18 +35,18 @@ mysmb_u8 mysmb_world_move_enemy_horizontally(struct mysmb_game *g, mysmb_u8 s)
 { (void)child(g, 2U, s); return 0U; }
 mysmb_u8 mysmb_enemy_player_difference(struct mysmb_game *g, mysmb_u8 s)
 { return child(g, 3U, s); }
-int main(int argc, char **argv)
+static int run_case(const char *snapshot_path, const char *calls_path)
 {
     static struct mysmb_game g;
     static unsigned char expected[2048];
     unsigned char h[8];
     FILE *f;
-    if (argc != 3) return 64;
-    f = fopen(argv[2], "rb"); if (!f) return 65;
+    count = calls = failures = 0U;
+    f = fopen(calls_path, "rb"); if (!f) return 65;
     if (fread(h, 1, 8, f) != 8 || memcmp(h, "MSjC\1", 5) || h[5] > 4U) return 66;
     count = h[5];
     if (fread(records, 4098, count, f) != count || fgetc(f) != EOF) return 66;
-    fclose(f); f = fopen(argv[1], "rb"); if (!f) return 65;
+    fclose(f); f = fopen(snapshot_path, "rb"); if (!f) return 65;
     if (fread(h, 1, 8, f) != 8 || memcmp(h, "MSjP\1", 5) ||
         fread(g.ram, 1, 2048, f) != 2048 || fread(expected, 1, 2048, f) != 2048 ||
         fgetc(f) != EOF) return 66;
@@ -56,4 +56,35 @@ int main(int argc, char **argv)
     compare(g.ram, expected);
     if (calls != count) ++failures;
     return failures ? 1 : 0;
+}
+
+int main(int argc, char **argv)
+{
+    FILE *manifest;
+    char line[1024], *separator;
+    unsigned int cases, failed;
+    int result;
+    if (argc == 3 && strcmp(argv[1], "--manifest") != 0)
+        return run_case(argv[1], argv[2]);
+    if (argc != 3 || strcmp(argv[1], "--manifest") != 0) return 64;
+    manifest = fopen(argv[2], "r"); if (!manifest) return 65;
+    cases = failed = 0U;
+    while (fgets(line, sizeof(line), manifest) != 0) {
+        separator = strchr(line, '\t');
+        if (separator == 0) { fclose(manifest); return 66; }
+        *separator++ = '\0';
+        separator[strcspn(separator, "\r\n")] = '\0';
+        if (line[0] == '\0' || separator[0] == '\0') {
+            fclose(manifest); return 66;
+        }
+        result = run_case(line, separator);
+        ++cases;
+        if (result != 0) {
+            ++failed;
+            printf("case %u failed (%d)\n", cases - 1U, result);
+        }
+    }
+    fclose(manifest);
+    printf("lakitu manifest: %u cases, %u failures\n", cases, failed);
+    return failed == 0U ? 0 : 1;
 }

@@ -538,3 +538,49 @@ refresh is due. No labels are deferred.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,093 / 1,992 nodes** and **2,157 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**). S12 begins with LakituDiffAdj.
+
+
+## S12 admission — Lakitu movement and player-distance chain
+
+S12 admits LakituDiffAdj through ExMoveLak (lines 9990–10087,
+$CF25-$CF84): the sixteen labels in the source-ordered S12 table. Its one
+shared portable owner is src/game/enemy/lakitu.c. S11 is the predecessor; S13
+begins at BridgeCollapseData. Vertical, horizontal and PlayerEnemyDiff helpers
+are explicit child boundaries; their bodies receive no S12 credit.
+
+The logic track compares the defeated tail, nonzero-state initialization,
+three-byte adjustment copy, direction/negation, PlayerEnemyDiff result,
+distance cap, conditional deceleration/reversal, player/scroll speed selector,
+Spiny exception and subtract-per-pixel loop. The operational track batches the
+existing 1,024 controlled original-ROM Lakitu records once per x86/x64 width,
+then runs focused C90, purity and DOS16 link checks. Any feasible difference
+remains S12 repair work.
+
+### S12 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,093 / 1,992**.
+- Current exact feasible control edges: **2,157 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **16** labels; current-evidence candidates: **16**; historical
+  expected promotions: **0**; maximum historical completion: **1,992 / 1,992**.
+
+
+## S12 closure — Lakitu movement and player-distance chain
+
+All sixteen scoped labels are current-exact: LakituDiffAdj through ExMoveLak.
+Static `$CF25-$CF84` comparison confirms the three-byte adjustment table,
+defeated/nonzero state paths, ordered child boundaries, signed player distance,
+cap, reversal/deceleration, speed selector, Spiny exception and subtract loop.
+All 37 feasible controls and seven material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 1,024
+controlled original-ROM snapshots with zero differences. The focused C90
+Lakitu movement contract, platform-purity check and OpenNT DOS16 shared-source
+link pass. Only an audit harness changed, so no product source changed and no
+three-EXE artifact refresh is due. No labels are deferred; S13 begins at
+BridgeCollapseData.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,109 / 1,992 nodes** and **2,194 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).

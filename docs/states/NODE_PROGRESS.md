@@ -2146,3 +2146,12 @@ and five material handoffs. Static source/table audit and 512 batch
 original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
 1,992**; exact nodes **1,093 / 1,992**; exact feasible controls **2,157 /
 4,324**; raw **4,342**, infeasible **18**.
+
+
+## M2 T63 S12 current-equivalence closure
+
+The Lakitu movement and player-distance chain closes 16 nodes, 37 feasible
+controls and seven material handoffs. Static source/table audit and 1,024
+batch original-ROM/current comparisons per x86/x64 width pass. Historical
+**1,992 / 1,992**; exact nodes **1,109 / 1,992**; exact feasible controls
+**2,194 / 4,324**; raw **4,342**, infeasible **18**.

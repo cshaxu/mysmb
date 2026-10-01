@@ -5103,13 +5103,16 @@
       "consumer": "LdLDa",
       "storage": "descending table index and scratch $01-$03",
       "feasiblePath": "Lakitu empty-state path copies all three source adjustment bytes before distance calculation.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "adjustment[] copy in mysmb_enemy_step_lakitus_slot",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5122,13 +5125,16 @@
       "consumer": "PlayerLakituDiff",
       "storage": "Spiny frenzy buffer and scratch adjustments",
       "feasiblePath": "Player-distance helper consumes Lakitu-specific adjustment scratch after Spiny request.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_step_lakitus_slot",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5141,13 +5147,16 @@
       "consumer": "ChkLakDif",
       "storage": "PlayerEnemyDiff sign/magnitude and Lakitu direction/speed",
       "feasiblePath": "Saturated-distance handling depends on signed difference and current Lakitu direction.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_player_lakitu_difference",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5160,13 +5169,16 @@
       "consumer": "SetLMovD",
       "storage": "saturated $3c distance and away-direction state",
       "feasiblePath": "Only eligible Lakitu at max distance updates direction after slowdown.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_player_lakitu_difference",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5179,13 +5191,16 @@
       "consumer": "SubDifAdj",
       "storage": "compressed distance, player speed and scroll-derived adjustment index",
       "feasiblePath": "Source conditions select scratch adjustment index before pixel loop.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_player_lakitu_difference",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5198,13 +5213,16 @@
       "consumer": "SPixelLak",
       "storage": "selected adjustment byte and compressed pixel count",
       "feasiblePath": "Pixel loop subtracts once for each remaining distance count.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_player_lakitu_difference",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5217,13 +5235,16 @@
       "consumer": "SetLMov",
       "storage": "speed sign and direction bit",
       "feasiblePath": "Final direction write matches speed sign before horizontal movement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_step_lakitus_slot",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -31931,13 +31952,16 @@
       "label": "LakituDiffAdj",
       "asmLine": 9990,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Binds Lakitu distance adjustment bytes {$15,$30,$40}.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -31947,13 +31971,16 @@
       "label": "MoveLakitu",
       "asmLine": 9993,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Routes defeated state to downward gravity; otherwise selects nonzero-state reset/fixed-speed path or empty-state Spiny/distance path, then chooses signed movement direction and tail-jumps horizontally.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -31963,13 +31990,16 @@
       "label": "ChkLS",
       "asmLine": 9998,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "For zero state enters Spiny/distance setup; otherwise clears Lakitu direction/frenzy buffer and uses fixed speed $10.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -31979,13 +32009,16 @@
       "label": "Fr12S",
       "asmLine": 10005,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Writes Spiny to frenzy buffer, copies three Lakitu distance adjustments to scratch and enters player-distance helper.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -31995,13 +32028,16 @@
       "label": "LdLDa",
       "asmLine": 10008,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Copies adjustment table in descending index order, loops through all three bytes, calls PlayerLakituDiff then falls through speed setup.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32011,13 +32047,16 @@
       "label": "SetLSpd",
       "asmLine": 10013,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores returned/fixed speed, defaults direction right, negates speed and switches direction left when Lakitu direction bit zero.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32027,13 +32066,16 @@
       "label": "SetLMov",
       "asmLine": 10024,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores direction and tail-jumps to horizontal movement.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32043,13 +32085,16 @@
       "label": "PlayerLakituDiff",
       "asmLine": 10027,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Derives signed player difference, saturates magnitude at $3c, applies Lakitu turn/slowdown rules, selects adjustment index from player movement/scroll/enemy state, and subtracts once per distance pixel.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32059,13 +32104,16 @@
       "label": "ChkLakDif",
       "asmLine": 10037,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Handles saturated distance; for Lakitu moving away, decrements speed until zero then updates movement direction, otherwise continues speed selection.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32075,13 +32123,16 @@
       "label": "SetLMovD",
       "asmLine": 10053,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Writes Lakitu movement direction from the player-difference side then falls through speed selection.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32091,13 +32142,16 @@
       "label": "ChkPSpeed",
       "asmLine": 10055,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Compresses distance to four middle bits and selects one of three adjustment indices from player X speed and scroll amount.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32107,13 +32161,16 @@
       "label": "ChkSpinyO",
       "asmLine": 10073,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Applies Spiny-specific fallback: zero player speed preserves current selected index; otherwise reaches enemy-speed check.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32123,13 +32180,16 @@
       "label": "ChkEmySpd",
       "asmLine": 10078,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "For non-Spiny or player-moving paths uses enemy Y speed to decide whether index resets to zero.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32139,13 +32199,16 @@
       "label": "SubDifAdj",
       "asmLine": 10081,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Loads selected scratch adjustment and passes compressed distance to pixel subtraction loop.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32155,13 +32218,16 @@
       "label": "SPixelLak",
       "asmLine": 10083,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Subtracts one adjustment unit per compressed distance count, then returns the resulting speed.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -32171,13 +32237,16 @@
       "label": "ExMoveLak",
       "asmLine": 10087,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/lakitu.c",
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Returns computed speed to caller.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86667,12 +86736,15 @@
       "instruction": "beq",
       "id": "control-01900",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveLakitu -> ChkLS with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86686,12 +86758,15 @@
       "instruction": "jmp",
       "id": "control-01901",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation MoveLakitu -> MoveD_EnemyVertically with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c",
@@ -86706,12 +86781,15 @@
       "instruction": "beq",
       "id": "control-01902",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkLS -> Fr12S with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86725,12 +86803,15 @@
       "instruction": "bne",
       "id": "control-01903",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkLS -> SetLSpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86744,12 +86825,15 @@
       "instruction": "bne",
       "id": "control-01904",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkLS -> Fr12S with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86763,12 +86847,15 @@
       "instruction": "ldy",
       "id": "control-01905",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation Fr12S -> LdLDa with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86782,12 +86869,15 @@
       "instruction": "bpl",
       "id": "control-01906",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation LdLDa -> LdLDa with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86801,12 +86891,15 @@
       "instruction": "jsr",
       "id": "control-01907",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation LdLDa -> PlayerLakituDiff with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86820,12 +86913,15 @@
       "instruction": "jsr",
       "id": "control-01908",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation LdLDa -> SetLSpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86839,12 +86935,15 @@
       "instruction": "bne",
       "id": "control-01909",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SetLSpd -> SetLMov with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86858,12 +86957,15 @@
       "instruction": "iny",
       "id": "control-01910",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetLSpd -> SetLMov with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86877,12 +86979,15 @@
       "instruction": "jmp",
       "id": "control-01911",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation SetLMov -> MoveEnemyHorizontally with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c",
@@ -86897,12 +87002,15 @@
       "instruction": "jsr",
       "id": "control-01912",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation PlayerLakituDiff -> PlayerEnemyDiff with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -86921,12 +87029,15 @@
       "instruction": "bpl",
       "id": "control-01913",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlayerLakituDiff -> ChkLakDif with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86940,12 +87051,15 @@
       "instruction": "sta",
       "id": "control-01914",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation PlayerLakituDiff -> ChkLakDif with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86959,12 +87073,15 @@
       "instruction": "bcc",
       "id": "control-01915",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkLakDif -> ChkPSpeed with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86978,12 +87095,15 @@
       "instruction": "bne",
       "id": "control-01916",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkLakDif -> ChkPSpeed with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -86997,12 +87117,15 @@
       "instruction": "beq",
       "id": "control-01917",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkLakDif -> ChkPSpeed with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87016,12 +87139,15 @@
       "instruction": "beq",
       "id": "control-01918",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkLakDif -> SetLMovD with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87035,12 +87161,15 @@
       "instruction": "bne",
       "id": "control-01919",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkLakDif -> ExMoveLak with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87054,12 +87183,15 @@
       "instruction": "bne",
       "id": "control-01920",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkLakDif -> SetLMovD with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87073,12 +87205,15 @@
       "instruction": "sta",
       "id": "control-01921",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetLMovD -> ChkPSpeed with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87092,12 +87227,15 @@
       "instruction": "beq",
       "id": "control-01922",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkPSpeed -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87111,12 +87249,15 @@
       "instruction": "beq",
       "id": "control-01923",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkPSpeed -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87130,12 +87271,15 @@
       "instruction": "bcc",
       "id": "control-01924",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkPSpeed -> ChkSpinyO with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87149,12 +87293,15 @@
       "instruction": "bcc",
       "id": "control-01925",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkPSpeed -> ChkSpinyO with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87168,12 +87315,15 @@
       "instruction": "iny",
       "id": "control-01926",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkPSpeed -> ChkSpinyO with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87187,12 +87337,15 @@
       "instruction": "bne",
       "id": "control-01927",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkSpinyO -> ChkEmySpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87206,12 +87359,15 @@
       "instruction": "bne",
       "id": "control-01928",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkSpinyO -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87225,12 +87381,15 @@
       "instruction": "bne",
       "id": "control-01929",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkSpinyO -> ChkEmySpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87244,12 +87403,15 @@
       "instruction": "bne",
       "id": "control-01930",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkEmySpd -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87263,12 +87425,15 @@
       "instruction": "ldy",
       "id": "control-01931",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkEmySpd -> SubDifAdj with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87282,12 +87447,15 @@
       "instruction": "ldy",
       "id": "control-01932",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SubDifAdj -> SPixelLak with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87301,12 +87469,15 @@
       "instruction": "bpl",
       "id": "control-01933",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SPixelLak -> SPixelLak with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -87320,12 +87491,15 @@
       "instruction": "bpl",
       "id": "control-01934",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SPixelLak -> ExMoveLak with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
@@ -123653,12 +123827,15 @@
       "instruction": "rts/rti",
       "id": "control-03776",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation PlayerLakituDiff -> DifLoop with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -125224,12 +125401,15 @@
       "instruction": "rts/rti",
       "id": "control-03848",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation PlayerLakituDiff -> LdLDa with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
