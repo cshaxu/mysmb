@@ -151,3 +151,30 @@ S3 marks 11 nodes, 26 source-owned controls (`control-02210` through
 `material-00345`) exact. Current totals: historical **1,992 / 1,992**;
 current exact nodes **1,249 / 1,992**; current exact feasible controls
 **2,521 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S4 admission — hammer-player contact
+
+S4 admits `PlayerHammerCollision -> ExPHC` at `$D7C4-$D7FF`:
+`PlayerHammerCollision`, `ClHCol` and `ExPHC`. Its shared owner is
+`src/game/world/hammer_collision.c`; S3 is the predecessor and S5 begins
+power-up contact. The geometry and guarded-injury callees retain their separate
+owners, while this chain proves their caller inputs, result handling and call
+order.
+
+The ROM-logic track checks odd-frame polarity, the TimerControl/offscreen OR
+gate, byte-wrapped `slot*4+$24` box selection, the live ObjectOffset reload
+after `PlayerCollisionCore`, the clear-carry miss latch clear, the set-carry
+already-latched exit, the two-complement speed reversal, star guard, and the
+ordered injury tail. The operational track replays retained controlled
+original-ROM contact records in one x86 and one x64 process, runs the focused
+hammer-contact contract, platform-purity gate and OpenNT DOS16 shared-source
+link.
+
+### S4 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,249 / 1,992**.
+- Current exact feasible controls: **2,521 / 4,324**.
+- Scope: **3** labels; expected fresh historical matches: **0**; maximum
+  historical complete: **1,992 / 1,992**.
+- Current-exact promotions are determined only after both audit tracks finish.
