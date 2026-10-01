@@ -305,3 +305,37 @@ its task-target chains have independent current proof. It audits the JumpEngine
 selector table, every feasible selector-to-target relation, default handling
 and target return integration through the normal screen-task route. Historical
 credit remains unchanged; `ScreenRoutines` enters as current `needs-evidence`.
+
+## S7 closure — ScreenRoutines dispatcher integration
+
+S7 closes with no feasible ROM/C difference in `ScreenRoutines` or its 17
+source-owned control relations: `control-00193`, `control-00194`, and
+`control-04109` through `control-04123`. Static re-audit corrects the registry
+entry address to ROM `$8567`: the original reads `ScreenRoutineTask`, calls
+`JumpEngine` at `$856a`, and supplies exactly fifteen inline targets in selector
+order 0–14. `mysmb_game_step_screen_routine` has the corresponding shared-C
+cases in that order. The audit found one real mismatch outside that feasible
+source domain: the former default branch invented `OperMode_Task = 2` for an
+out-of-range selector. Original `JumpEngine` has no recovery selector; every
+original producer constrains the selector to 0–14. The synthetic write is now
+removed and the focused regression guards that it cannot return.
+
+The controlled dispatcher matrix enters the original `$8567` routine with a
+real 6502 return frame and enters the shared C owner with the same source-owned
+post-reset state. All selectors 0–14 match between original ROM, x86 and x64
+on `ColumnSets`, `AreaParserTaskNum`, screen/mode/VRAM state, area type/style
+and the Buffer1 prefix. This includes selector eight's first parser work-set,
+which leaves `ColumnSets=10`, parser task zero, screen task eight, disable
+screen two and VRAM control six in all three runs. The x86/x64 screen-status
+smoke and platform-purity audit pass. The shared OpenNT DOS16 build links the
+same game source. Because `src/game/game.c` changed, all three artifacts were
+refreshed: `mysmb16.exe` SHA-256
+`56E45167D1CAABBD0711073AA5C8EA7FD1E4433E93E32E1F680A69B82DA4E30C`,
+`mysmb32.exe` SHA-256
+`C66044C8C2D314B71310D12A38E81AE072449064612C0101F642825A83A84968`, and
+`mysmb64.exe` SHA-256
+`73770EFE38ECFA1C703276D79AE1F59904B68BFBACF9D06E4C5680D5F1D177C7`.
+
+The current-equivalence registry advances from 165 to 166 exact nodes and
+from 330 to 347 exact feasible control relations. Historical conformance
+remains 1,992 / 1,992. No successor S is admitted by this closure.

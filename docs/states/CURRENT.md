@@ -25,7 +25,8 @@
 
 ## Current Technical Baseline
 
-M2 T54 S6 is closed. S7 is active and audits the final Cohort-B screen dispatcher.
+M2 T54 S7 is closed with the final Cohort-B screen dispatcher current-exact.
+No successor S has been admitted.
 
 ## S5 Closure
 
@@ -49,5 +50,18 @@ final decrement underflows to 255 before advancing to task 9. The five
 tracked state bytes agree for samples 6–18. The registry advances from 162 to
 165 exact nodes and from 324 to 330 exact feasible controls; historical
 conformance remains 1,992 / 1,992. No product code changed.
+
+## S7 Closure
+
+`ScreenRoutines` and its 17 source-owned task-vector relations are
+current-exact. The repeat static audit corrects its ROM entry to `$8567` and
+removes the former synthetic out-of-domain `OperMode_Task=2` recovery write.
+The controlled selector 0–14 original-ROM/x86/x64 matrix is exact, including
+`ColumnSets` and `AreaParserTaskNum` for task eight. Focused x86/x64 smoke and
+platform-purity checks pass; the shared OpenNT DOS16 build links. Three product
+artifacts were refreshed. The registry advances to 166 exact nodes and 347
+exact feasible controls; historical conformance remains 1,992 / 1,992.
+No successor S is admitted.
+
 One shared native C90 game implementation serves DOS16 and Win32 x86/x64;
 platform adapters do not own game logic.

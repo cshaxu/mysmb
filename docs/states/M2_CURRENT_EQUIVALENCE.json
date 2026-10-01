@@ -9565,12 +9565,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 165,
-    "needs-evidence": 1827
+    "exact": 166,
+    "needs-evidence": 1826
   },
   "controlEdgeCounts": {
-    "exact": 330,
-    "needs-evidence": 3994,
+    "exact": 347,
+    "needs-evidence": 3977,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -11446,14 +11446,16 @@
       "label": "ScreenRoutines",
       "asmLine": 1386,
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ScreenRoutineTask switch",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ScreenRoutineTask switch cases 0..14",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines static node-semantics pass: SMB1 lines 1386-1432 was compared with the named shared-C owner; controlled original-ROM/x86/x64 task routes remain required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $853f: reads ScreenRoutineTask and JumpEngine-dispatches selectors 0..14 to the inline screen task table; each selected leaf has its own successor/return semantics.",
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
+      "semanticContract": "ROM $8567: reads ScreenRoutineTask and JumpEngine-dispatches selectors 0..14 to the inline screen task table; each selected leaf has its own successor/return semantics.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -46507,15 +46509,16 @@
       "instruction": "jsr",
       "id": "control-00193",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine selector switch",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines -> JumpEngine reads ScreenRoutineTask once and dispatches exactly one inline task entry.",
       "currentSourcePaths": [
-        "src/game/dispatcher.c",
         "src/game/game.c"
       ]
     },
@@ -46527,12 +46530,14 @@
       "instruction": "jsr",
       "id": "control-00194",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines -> InitScreen fall-through identifies selector zero as InitScreen.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -122908,12 +122913,14 @@
       "selector": 0,
       "id": "control-04109",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 0 dispatches to InitScreen only for ScreenRoutineTask=0.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -122928,12 +122935,14 @@
       "selector": 1,
       "id": "control-04110",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 1 dispatches to SetupIntermediate only for ScreenRoutineTask=1.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -122948,12 +122957,14 @@
       "selector": 2,
       "id": "control-04111",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 2",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 2 dispatches to WriteTopStatusLine only for ScreenRoutineTask=2.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -122968,12 +122979,14 @@
       "selector": 3,
       "id": "control-04112",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 3",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 3 dispatches to WriteBottomStatusLine only for ScreenRoutineTask=3.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -122988,12 +123001,14 @@
       "selector": 4,
       "id": "control-04113",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 4",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 4 dispatches to DisplayTimeUp only for ScreenRoutineTask=4.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123008,12 +123023,14 @@
       "selector": 5,
       "id": "control-04114",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 5",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 5 dispatches to ResetSpritesAndScreenTimer only for ScreenRoutineTask=5.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123028,12 +123045,14 @@
       "selector": 6,
       "id": "control-04115",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 6",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 6 dispatches to DisplayIntermediate only for ScreenRoutineTask=6.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123048,12 +123067,14 @@
       "selector": 7,
       "id": "control-04116",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 7",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 7 dispatches to ResetSpritesAndScreenTimer only for ScreenRoutineTask=7.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123068,15 +123089,16 @@
       "selector": 8,
       "id": "control-04117",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 8",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 8 dispatches to AreaParserTaskControl only for ScreenRoutineTask=8.",
       "currentSourcePaths": [
-        "src/game/area.c",
         "src/game/game.c"
       ]
     },
@@ -123089,12 +123111,14 @@
       "selector": 9,
       "id": "control-04118",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 9",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 9 dispatches to GetAreaPalette only for ScreenRoutineTask=9.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123109,12 +123133,14 @@
       "selector": 10,
       "id": "control-04119",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 10 dispatches to GetBackgroundColor only for ScreenRoutineTask=10.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123129,12 +123155,14 @@
       "selector": 11,
       "id": "control-04120",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 11",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 11 dispatches to GetAlternatePalette1 only for ScreenRoutineTask=11.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123149,12 +123177,14 @@
       "selector": 12,
       "id": "control-04121",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 12",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 12 dispatches to DrawTitleScreen only for ScreenRoutineTask=12.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123169,12 +123199,14 @@
       "selector": 13,
       "id": "control-04122",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 13",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 13 dispatches to ClearBuffersDrawIcon only for ScreenRoutineTask=13.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -123189,12 +123221,14 @@
       "selector": 14,
       "id": "control-04123",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 14",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ScreenRoutines selector 14 dispatches to WriteTopScore only for ScreenRoutineTask=14.",
       "currentSourcePaths": [
         "src/game/game.c"

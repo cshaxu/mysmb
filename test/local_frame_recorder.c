@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "game/area.h"
 #include "game/frame_root.h"
@@ -846,6 +847,7 @@ int main(int argument_count, char **arguments)
     const char *script;
     mysmb_u8 bootstrap_title;
     unsigned int t26_fixture;
+    unsigned long screen_dispatch_task;
     mysmb_u8 t22_flagpole_score_pending;
     struct mysmb_recorder_ram_write ram_write = {0};
 
@@ -859,8 +861,15 @@ int main(int argument_count, char **arguments)
     warmup_frames = 0UL;
     ram_write.present = 0U;
     t26_fixture = 0U;
+    screen_dispatch_task = 0xffffffffUL;
     t22_flagpole_score_pending = 0U;
     for (index = 5UL; index < (unsigned long)argument_count; ++index) {
+        if (strncmp(arguments[index], "--screen-task=", 14U) == 0) {
+            if (screen_dispatch_task != 0xffffffffUL) return 64;
+            screen_dispatch_task = strtoul(arguments[index] + 14, 0, 10);
+            if (screen_dispatch_task > 14UL) return 64;
+        }
+        else
         if (mysmb_recorder_equals(arguments[index], "--bootstrap-title") != 0U) {
             bootstrap_title = 1U;
         }
@@ -1418,6 +1427,29 @@ int main(int argument_count, char **arguments)
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
     mysmb_game_reset(&game);
+    if (screen_dispatch_task != 0xffffffffUL) {
+        game.ram[0x073cU] = (mysmb_u8)screen_dispatch_task;
+        game.ram[0x0770U] = 0U;
+        game.ram[0x0772U] = 1U;
+        /* The controlled ROM entry is taken after reset's first NMI, where
+         * AreaType has its source startup value one.  That NMI also leaves
+         * the initial eleven parser work-sets intact: AreaParserTaskControl
+         * task eight consumes the first set here.  The native
+         * reset helper is intentionally smaller and does not run that NMI,
+         * so establish the same source-owned dispatcher precondition for
+         * this controlled vector probe. */
+        game.ram[0x074eU] = 1U;
+        game.ram[0x071eU] = 11U;
+        game.ram[0x071fU] = 0U;
+        mysmb_game_step_screen_routine(&game);
+        mysmb_frame_snapshot_capture(&game, &snapshot);
+        if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {
+            fclose(output);
+            return 65;
+        }
+        fclose(output);
+        return 0;
+    }
     if (bootstrap_title == 0U &&
         (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
                                              MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U ||

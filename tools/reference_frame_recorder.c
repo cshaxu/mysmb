@@ -1168,6 +1168,7 @@ int main(int argument_count, char **arguments)
     lib_u8 entrance_child_stack;
     struct mysmb_reference_ram_write ram_write;
     unsigned int t26_fixture;
+    unsigned int screen_dispatch_task;
     unsigned int enemy_graphics_variant;
     char *enemy_graphics_variant_end;
     unsigned int block_graphics_variant;
@@ -1193,6 +1194,8 @@ int main(int argument_count, char **arguments)
     unsigned int intermediate_player_variant;
     char *intermediate_player_variant_end;
     lib_bool direct_warp_text;
+    lib_bool direct_screen_dispatch;
+    lib_bool screen_dispatch_pending;
     lib_bool capture_nmi_dispatch;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
@@ -1267,6 +1270,7 @@ int main(int argument_count, char **arguments)
     coin_entry_carry = 0u;
     ram_write.present = LIB_FALSE;
     t26_fixture = 0u;
+    screen_dispatch_task = 0xffffffffu;
     enemy_graphics_variant = 0xffffffffu;
     block_graphics_variant = 0xffffffffu;
     projectile_frame = 0xffffffffu;
@@ -1280,6 +1284,8 @@ int main(int argument_count, char **arguments)
     player_control_variant = 0xffffffffu;
     intermediate_player_variant = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
+    direct_screen_dispatch = LIB_FALSE;
+    screen_dispatch_pending = LIB_FALSE;
     capture_nmi_dispatch = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
@@ -1288,6 +1294,13 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--screen-task=", 14u) == 0) {
+            if (screen_dispatch_task != 0xffffffffu) return 64;
+            screen_dispatch_task = (unsigned int)strtoul(arguments[recorded] + 14,
+                                                          LIB_NULL, 10);
+            if (screen_dispatch_task > 14u) return 64;
+            continue;
+        }
         if (strcmp(arguments[recorded], "--capture=nmi-dispatch") == 0) {
             if (capture_nmi_dispatch || requested_frames != 1u) return 64;
             capture_nmi_dispatch = LIB_TRUE;
@@ -3224,6 +3237,11 @@ int main(int argument_count, char **arguments)
         (void)core_driver_destroy(driver);
         return 68;
     }
+    if (screen_dispatch_task != 0xffffffffu) {
+        /* Wait until reset has completed and an ordinary NMI has returned.
+         * Before that boundary the driver can still own CPU reset state. */
+        screen_dispatch_pending = LIB_TRUE;
+    }
     mysmb_reference_apply_ram_write(&ram_write, elapsed, driver->machine->ram);
     core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
     while (recorded < requested_frames &&
@@ -3233,6 +3251,11 @@ int main(int argument_count, char **arguments)
         lib_u16 area_read_address = 0u;
 
         if (direct_warp_text && driver->machine->pc == 0x8001u) {
+            if (!mysmb_reference_write_frame(output, driver->machine)) break;
+            ++recorded;
+            break;
+        }
+        if (direct_screen_dispatch && driver->machine->pc == 0x8001u) {
             if (!mysmb_reference_write_frame(output, driver->machine)) break;
             ++recorded;
             break;
@@ -3325,6 +3348,25 @@ int main(int argument_count, char **arguments)
             break;
         }
 
+        if (screen_dispatch_pending &&
+            driver->machine->pc == MYSMB_REFERENCE_NMI_RETURN) {
+            /* Enter the original ScreenRoutines entry with a real 6502
+             * return frame. JumpEngine consumes it and the selected leaf
+             * RTSes to the recorder sentinel. */
+            driver->machine->ram[0x073cu] = (lib_u8)screen_dispatch_task;
+            driver->machine->ram[0x0770u] = 0u;
+            driver->machine->ram[0x0772u] = 1u;
+            /* The JSR at $856a pushes its own inline-table return.  The
+             * preexisting caller frame is therefore only the sentinel used
+             * when the selected leaf finally RTSes from ScreenRoutines. */
+            driver->machine->ram[0x01feu] = 0u;
+            driver->machine->ram[0x01ffu] = 0x80u;
+            driver->machine->s = 0xfdu;
+            driver->machine->pc = 0x8567u;
+            direct_screen_dispatch = LIB_TRUE;
+            screen_dispatch_pending = LIB_FALSE;
+            continue;
+        }
         if (driver->machine->pc == MYSMB_REFERENCE_NMI_RETURN) {
             /* Sample before RTI.  Stepping the RTI below clears this program
              * counter, so every subsequent return is independently visible.

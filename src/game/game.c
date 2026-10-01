@@ -294,7 +294,10 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
         break;
     default:
-        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+        /* JumpEngine has no recovery selector: outside its 0..14 inline
+         * vector domain it dereferences following PRG bytes.  All original
+         * ScreenRoutineTask producers remain in that domain, so portable C
+         * must not invent a mode-task transition for corrupted state. */
         break;
     }
 }

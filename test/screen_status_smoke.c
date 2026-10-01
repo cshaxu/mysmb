@@ -252,6 +252,14 @@ int main(void)
         game.ram[0x0300U] != 9U || game.ram[0x0301U] != 0x22U ||
         game.ram[0x0302U] != 0xf0U || game.ram[0x030aU] != 0U) return 1;
 
+    /* JumpEngine has no synthetic recovery path.  The ROM task producers
+     * constrain the vector to 0..14; if host-corrupted RAM violates that
+     * precondition, this portable boundary must not manufacture task two. */
+    game.ram[0x073cU] = 0xffU;
+    game.ram[0x0772U] = 0x52U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x073cU] != 0xffU || game.ram[0x0772U] != 0x52U) return 1;
+
     /* GameMode task three is GameCoreRoutine ($94a5): it never re-enters
      * ScreenRoutines task three or synthesizes WriteBottomStatusLine. */
     mysmb_game_initialize(&game);
