@@ -1906,13 +1906,16 @@
       "consumer": "GiveFPScr",
       "storage": "FlagpoleScore-indexed score-modifier table",
       "feasiblePath": "GiveFPScr indexes FlagpoleScoreMods before AddToScore.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "score_modifiers[score_index]",
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1925,13 +1928,16 @@
       "consumer": "GiveFPScr",
       "storage": "FlagpoleScore-indexed digit-offset table",
       "feasiblePath": "GiveFPScr indexes FlagpoleScoreDigits before writing DigitModifier.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "score_digits[score_index]",
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -23430,13 +23436,16 @@
       "label": "FlagpoleScoreMods",
       "asmLine": 6598,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared flagpole/OAM core",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Binds flag score indices to score modifier bytes.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -23446,13 +23455,16 @@
       "label": "FlagpoleScoreDigits",
       "asmLine": 6601,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared flagpole/OAM core",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Binds flag score indices to score digit offsets.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -23462,13 +23474,16 @@
       "label": "FlagpoleRoutine",
       "asmLine": 6604,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared flagpole/OAM core",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves slot-five setup, slide/climb gates, carry-sensitive flag/floatey motion, score handoff and graphics order.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -23478,13 +23493,16 @@
       "label": "SkipScore",
       "asmLine": 6635,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared flagpole/OAM core",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Skips score mutation and enters graphics.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -23494,13 +23512,16 @@
       "label": "GiveFPScr",
       "asmLine": 6636,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared flagpole/OAM core",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Writes indexed score modifier, adds score, sets end-level subroutine then enters graphics.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -23510,13 +23531,16 @@
       "label": "FPGfx",
       "asmLine": 6643,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared flagpole/OAM core",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Computes flag offscreen bits, relative position and flag graphics in source order.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -23526,13 +23550,16 @@
       "label": "ExitFlagP",
       "asmLine": 6646,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared flagpole/OAM core",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Returns after no-flag or graphics path.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68078,12 +68105,15 @@
       "instruction": "bne",
       "id": "control-01135",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation FlagpoleRoutine -> ExitFlagP with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68097,12 +68127,15 @@
       "instruction": "bne",
       "id": "control-01136",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68116,12 +68149,15 @@
       "instruction": "bne",
       "id": "control-01137",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68135,12 +68171,15 @@
       "instruction": "bcs",
       "id": "control-01138",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation FlagpoleRoutine -> GiveFPScr with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68154,12 +68193,15 @@
       "instruction": "bcs",
       "id": "control-01139",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation FlagpoleRoutine -> GiveFPScr with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68173,12 +68215,15 @@
       "instruction": "sta",
       "id": "control-01140",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original fallthrough relation FlagpoleRoutine -> SkipScore with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68192,12 +68237,15 @@
       "instruction": "jmp",
       "id": "control-01141",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original jump relation SkipScore -> FPGfx with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68211,12 +68259,15 @@
       "instruction": "jsr",
       "id": "control-01142",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original call relation GiveFPScr -> AddToScore with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68230,12 +68281,15 @@
       "instruction": "sta",
       "id": "control-01143",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original fallthrough relation GiveFPScr -> FPGfx with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68249,12 +68303,15 @@
       "instruction": "jsr",
       "id": "control-01144",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original call relation FPGfx -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68268,12 +68325,15 @@
       "instruction": "jsr",
       "id": "control-01145",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original call relation FPGfx -> RelativeEnemyPosition with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68287,12 +68347,15 @@
       "instruction": "jsr",
       "id": "control-01146",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves ROM call relation FPGfx -> FlagpoleGfxHandler with the source condition, scratch/OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -68306,12 +68369,15 @@
       "instruction": "jsr",
       "id": "control-01147",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original fallthrough relation FPGfx -> ExitFlagP with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -118135,12 +118201,15 @@
       "instruction": "rts/rti",
       "id": "control-03683",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves original return relation AddToScore -> GiveFPScr with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -118154,12 +118223,15 @@
       "instruction": "rts/rti",
       "id": "control-03684",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00e2\u2020\u2019 FPGfx exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -118173,12 +118245,15 @@
       "instruction": "rts/rti",
       "id": "control-03685",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00e2\u2020\u2019 FPGfx restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
@@ -118192,12 +118267,15 @@
       "instruction": "rts/rti",
       "id": "control-03686",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+      ],
       "semanticContract": "Preserves ROM return relation FlagpoleGfxHandler -> FPGfx with the source condition, scratch/OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
