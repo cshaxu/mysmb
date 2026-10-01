@@ -16,9 +16,9 @@ T57 closes only when every scoped label, feasible control relation and material 
 | S2 | `StaircaseHeightData -> ExitDecBlock` | 13 | `src/game/area.c`; staircase, jumpspring and question/brick object matrix. |
 | S3 | `HoleMetatiles -> GetBlockBufferAddr` | 16 | `src/game/area.c`; hole, whirlpool, under-part and block-buffer address matrix. |
 | S4 | `AreaDataOfsLoopback -> StoreStyle` | 7 | `src/game/enemy/loop.c` plus `src/game/area/area_data.c`; loopback, area-pointer, type and fore/style attribute matrix. |
-| S5 | `WorldAddrOffsets -> AreaDataAddrHigh` | 16 | `src/game/game_data.c plus src/game/area.c consumer`; world/area pointer-table selection matrix. |
-| S6 | `E_CastleArea1 -> E_WaterArea3` | 34 | `src/game/game_data.c plus src/game/area.c consumer`; enemy-area stream decoding matrix. |
-| S7 | `L_CastleArea1 -> L_WaterArea3` | 34 | `src/game/game_data.c plus src/game/area.c consumer`; level-area stream decoding matrix. |
+| S5 | `WorldAddrOffsets -> AreaDataAddrHigh` | 16 | `src/game/area/area_data.c`; world/area pointer-table selection matrix. |
+| S6 | `E_CastleArea1 -> E_WaterArea3` | 34 | `src/game/area/area_data.c` owner-local PRG data plus `src/game/enemy/stream.c`; enemy-area stream decoding matrix. |
+| S7 | `L_CastleArea1 -> L_WaterArea3` | 34 | `src/game/area/area_data.c` owner-local PRG data plus area decoder; level-area stream decoding matrix. |
 
 ## Exact node scope
 
@@ -372,3 +372,49 @@ source change was found, so no three-artifact refresh is required.
 All 16 nodes and six table-to-consumer material relations are exact. The
 current registry is 431 exact nodes and 888 exact feasible controls; historical
 conformance remains 1,992 / 1,992.
+
+
+## S6 admission — enemy-area stream data and consumer chain
+
+**Entry / exit.** `E_CastleArea1` through `E_WaterArea3`, as bound by the S5
+enemy-pointer tables, then consumed by `mysmb_enemy_stream_process_current` in
+`src/game/enemy/stream.c` through record termination, page command, row command,
+spawn/group dispatch and fallback.  This S ends at the stream owner boundary; its
+callees retain their independently admitted obligations.
+
+**Scope and incoming state.** The exact 34 labels below are all
+`needs-evidence` in the current-equivalence registry.  Historical M2 completion is
+already 1,992 / 1,992, so the node-progress expected-match subset is empty; the
+current-equivalence target is to make all 34 labels exact.  S5 is the predecessor;
+S7 begins the distinct area-object-data consumer chain.
+
+`E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`,
+`E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`,
+`E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`,
+`E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`,
+`E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`,
+`E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`,
+`E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`,
+`E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`,
+`E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3`.
+
+**Shared ownership.** The generated owner-local PRG array is materialized through
+`src/game/area/area_data.c`; `src/game/enemy/stream.c` alone owns the portable C90
+read, page, decode and stream state transition.  No platform adapter participates.
+
+**ROM-logic track.** Compare every bounded stream byte and `$ff` terminator with
+the admitted owner ROM, including the `E_GroundArea9` / `E_GroundArea10` shared
+terminator.  Run controlled original-ROM/current x86/x64 stream fixtures that
+cover record read, page advance, row command, hard-mode suppression, group ID,
+end-of-buffer fallback and offset wrap.  Compare only source-relevant persistent
+RAM/OAM/PPU fields and record established ABI exclusions explicitly.
+
+**Operational track.** Run `mysmb.enemy-stream-smoke`,
+`mysmb.enemy-stream`, `mysmb.enemy-stream-local-consumer`,
+`mysmb.platform-purity` for x86/x64, plus the shared-core DOS16 link.  A product
+repair would refresh all three local target artifacts; an audit-only closure will
+not.
+
+**Exit.** Static byte/ownership/edge audit and controlled ROM/native route must
+have no unresolved scoped difference.  Any feasible mismatch is repaired in this
+S and re-audited before S7 admission.
