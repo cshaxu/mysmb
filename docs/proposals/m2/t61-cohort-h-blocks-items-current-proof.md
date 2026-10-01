@@ -72,3 +72,26 @@ passes; only then can S2 start.
 All six scoped labels are current-exact. Static comparison of `$B94B-$B9B9` with `src/game/vine.c` found no feasible difference in the slot-five gate, height-table selection, frame-bit growth, height-eight gate, child call order, zero-based draw loop, reverse erase loop, height reset, block probe or terminal return. The shared ROM route records all ten branch sites with both outcomes. The same 42 original snapshots give 84 caller checks and 84 complete current-source calls at zero difference across x86/x64; focused 2,560-case smoke, platform purity and the OpenNT DOS16 link pass.
 
 The closure promotes the six labels, 15 internal feasible control relations and the deferred `VineHeightData -> VineObjectHandler` material consumer boundary. No product source changed, so executable artifacts were not refreshed. Current re-audit advances from **690 / 1,992** to **696 / 1,992 exact nodes** and from **1,376 / 4,324** to **1,391 / 4,324 exact feasible control relations**; historical accounting remains **1,992 / 1,992**.
+
+## S2 admission - cannon and Bullet Bill lifecycle
+
+S2 admits the 14-label, source-contiguous `CannonBitmasks -> KillBB` chain:
+`CannonBitmasks`, `ProcessCannons`, `ThreeSChk`, `FireCannon`, `Chk_BB`,
+`Next3Slt`, `ExCannon`, `BulletBillXSpdData`, `BulletBillHandler`, `SetupBB`,
+`ChkDSte`, `BBFly`, `RunBBSubs`, and `KillBB`. The shared owner is
+`src/game/cannon.c`; the source window is `$B9BA-$BA56`. Its external
+boundaries are only the established offscreen, movement, relative-position,
+bounding-box, collision, graphics, and erase primitives.
+
+**ROM-logic track.** Compare the water-area exit, slot-two-to-zero scheduler,
+random mask selection, timer decrement/spawn carry behavior, Bullet Bill
+orientation and proximity kill, timer-control movement gate, defeated descent,
+and final child-call order. Check each table binding and every internal feasible
+control relation; do not claim unadmitted child semantics.
+
+**Operational track.** Build focused original-ROM/current x86/x64 route cases
+for every branch and state handoff, then run platform-purity and the standard
+DOS16 link. Any source repair refreshes all three local EXEs; an audit-only
+result does not. This S starts at **696 / 1,992 current-exact nodes** and
+**1,391 / 4,324 current-exact feasible control edges**; historical accounting
+remains **1,992 / 1,992**.
