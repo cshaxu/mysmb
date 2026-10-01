@@ -1,6 +1,6 @@
 # M2 T59: Cohort F player motion and physics current-equivalence proof
 
-T59 follows closed T58 in original ROM source order. It audits the 64 labels from PlayerMovementSubs through SetAbsSpd. Historical accounting remains 1,992 / 1,992; this task records current shared-C equivalence only.
+T59 follows closed T58 in original ROM source order. It audits the 63 labels from PlayerMovementSubs through SetAbsSpd. Historical accounting remains 1,992 / 1,992; this task records current shared-C equivalence only.
 
 ## Planned source-order S chains
 
@@ -100,3 +100,7 @@ All three labels from PlayerMovementSubs through ProcMove are current-equivalenc
 ## S2 admission - ground, air and water movement chain
 
 S2 admits `MoveSubs -> ExitMov1`: MoveSubs, NoMoveSub, OnGroundStateSub, GndMove, FallingSub, JumpSwimSub, DumpFall, ProcSwim, LRWater, LRAir, JSMove and ExitMov1. Shared owner: `src/game/player_movement.c`. It owns state-vector selection, growth freeze, climb-side timer, ground/air/swim branch predicates, input-facing writes and movement call order. Physics, animation, friction and climb children retain their separate chains. Registry baseline is 581 exact labels and 1,124 exact feasible controls; all 12 labels need fresh evidence. ROM route: controlled original movement snapshots with caller boundaries. Operational route: x86/x64 C90 replays, focused smoke, DOS16 link and platform purity.
+
+## S2 closure - ground, air and water movement chain
+
+All 12 labels from MoveSubs through ExitMov1 are current-equivalence exact. Static ROM comparison found no shared-owner difference. All 37 movement snapshots replay recorded child boundaries through fresh C90 x86/x64 owners; 74 caller comparisons pass. Platform purity passes. No product source changed, so no artifact refresh is due. Of 40 feasible incident controls, 35 receive fresh S2 evidence and 5 retain compatible prior proof.

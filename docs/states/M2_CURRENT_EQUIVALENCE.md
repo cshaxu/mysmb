@@ -1887,3 +1887,7 @@ All 10 labels from FlagpoleSlide through ExitNA are current-equivalence exact. T
 ### T59 S1 movement dispatcher result
 
 All three labels from PlayerMovementSubs through ProcMove are current-equivalence exact. Thirty-seven original snapshots replay caller boundaries through x86/x64 with 74 passing comparisons. Registry advances from 578 to 581 exact labels and from 1,115 to 1,124 exact feasible control relations; historical conformance remains 1,992 / 1,992.
+
+### T59 S2 movement state result
+
+All 12 labels from MoveSubs through ExitMov1 are current-equivalence exact. Registry advances from 581 to 593 exact labels and records the current state-vector, ground, air and water movement evidence.

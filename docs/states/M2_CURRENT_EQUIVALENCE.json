@@ -21742,14 +21742,16 @@
       "label": "MoveSubs",
       "asmLine": 5916,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21758,14 +21760,16 @@
       "label": "NoMoveSub",
       "asmLine": 5923,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21774,14 +21778,16 @@
       "label": "OnGroundStateSub",
       "asmLine": 5928,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21790,14 +21796,16 @@
       "label": "GndMove",
       "asmLine": 5933,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21806,14 +21814,16 @@
       "label": "FallingSub",
       "asmLine": 5940,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21822,14 +21832,16 @@
       "label": "JumpSwimSub",
       "asmLine": 5947,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21838,14 +21850,16 @@
       "label": "DumpFall",
       "asmLine": 5959,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21854,14 +21868,16 @@
       "label": "ProcSwim",
       "asmLine": 5961,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21870,14 +21886,16 @@
       "label": "LRWater",
       "asmLine": 5969,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21886,14 +21904,16 @@
       "label": "LRAir",
       "asmLine": 5972,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21902,14 +21922,16 @@
       "label": "JSMove",
       "asmLine": 5975,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -21918,14 +21940,16 @@
       "label": "ExitMov1",
       "asmLine": 5982,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_movement.c shared C90 movement owner",
+      "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -63988,14 +64012,15 @@
       "instruction": "jsr",
       "id": "control-00955",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation MoveSubs -> NoMoveSub.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64008,16 +64033,16 @@
       "instruction": "jsr",
       "id": "control-00956",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation OnGroundStateSub -> GetPlayerAnimSpeed.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -64029,14 +64054,15 @@
       "instruction": "beq",
       "id": "control-00957",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation OnGroundStateSub -> GndMove.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64049,14 +64075,15 @@
       "instruction": "sta",
       "id": "control-00958",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation OnGroundStateSub -> GndMove.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64069,16 +64096,16 @@
       "instruction": "jsr",
       "id": "control-00959",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation GndMove -> ImposeFriction.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -64090,14 +64117,15 @@
       "instruction": "jsr",
       "id": "control-00960",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation GndMove -> MovePlayerHorizontally.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64110,13 +64138,15 @@
       "instruction": "jmp",
       "id": "control-00961",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source jump relation FallingSub -> LRAir.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64129,13 +64159,15 @@
       "instruction": "bpl",
       "id": "control-00962",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation JumpSwimSub -> DumpFall.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64148,13 +64180,15 @@
       "instruction": "bne",
       "id": "control-00963",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation JumpSwimSub -> ProcSwim.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64167,13 +64201,15 @@
       "instruction": "bcc",
       "id": "control-00964",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation JumpSwimSub -> ProcSwim.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64186,13 +64222,15 @@
       "instruction": "bcc",
       "id": "control-00965",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation JumpSwimSub -> DumpFall.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64205,13 +64243,15 @@
       "instruction": "sta",
       "id": "control-00966",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation DumpFall -> ProcSwim.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64224,13 +64264,15 @@
       "instruction": "beq",
       "id": "control-00967",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcSwim -> LRAir.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64243,15 +64285,16 @@
       "instruction": "jsr",
       "id": "control-00968",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation ProcSwim -> GetPlayerAnimSpeed.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -64263,13 +64306,15 @@
       "instruction": "bcs",
       "id": "control-00969",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcSwim -> LRWater.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64282,13 +64327,15 @@
       "instruction": "sta",
       "id": "control-00970",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ProcSwim -> LRWater.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64301,13 +64348,15 @@
       "instruction": "beq",
       "id": "control-00971",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation LRWater -> LRAir.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64320,13 +64369,15 @@
       "instruction": "sta",
       "id": "control-00972",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation LRWater -> LRAir.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64339,13 +64390,15 @@
       "instruction": "beq",
       "id": "control-00973",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation LRAir -> JSMove.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64358,15 +64411,16 @@
       "instruction": "jsr",
       "id": "control-00974",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation LRAir -> ImposeFriction.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -64378,13 +64432,15 @@
       "instruction": "jsr",
       "id": "control-00975",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation LRAir -> JSMove.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64397,13 +64453,15 @@
       "instruction": "jsr",
       "id": "control-00976",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation JSMove -> MovePlayerHorizontally.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64416,13 +64474,15 @@
       "instruction": "bne",
       "id": "control-00977",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation JSMove -> ExitMov1.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64435,13 +64495,15 @@
       "instruction": "sta",
       "id": "control-00978",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation JSMove -> ExitMov1.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -64454,13 +64516,15 @@
       "instruction": "jmp",
       "id": "control-00979",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source jump relation ExitMov1 -> MovePlayerVertically.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -117005,15 +117069,16 @@
       "instruction": "rts/rti",
       "id": "control-03661",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Animation timing returns to OnGroundStateSub before its direction/facing and friction work.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -117025,15 +117090,16 @@
       "instruction": "rts/rti",
       "id": "control-03662",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Friction returns to GndMove before horizontal object movement.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -117045,13 +117111,15 @@
       "instruction": "rts/rti",
       "id": "control-03663",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlayerHorizontally -> GndMove with source predicate, carry/order handoff and return semantics.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -117064,15 +117132,16 @@
       "instruction": "rts/rti",
       "id": "control-03664",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Animation timing returns to ProcSwim before its direction/facing and air friction work.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -117084,15 +117153,16 @@
       "instruction": "rts/rti",
       "id": "control-03665",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Friction returns to LRAir before horizontal object movement.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
@@ -117104,13 +117174,15 @@
       "instruction": "rts/rti",
       "id": "control-03666",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlayerHorizontally -> JSMove with source predicate, carry/order handoff and return semantics.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -128146,13 +128218,15 @@
       "selector": 0,
       "id": "control-04202",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original JumpEngine selector 0 dispatch MoveSubs \u00e2\u2020\u2019 OnGroundStateSub, including the selected target and continuation convention.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -128166,13 +128240,15 @@
       "selector": 1,
       "id": "control-04203",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original JumpEngine selector 1 dispatch MoveSubs \u00e2\u2020\u2019 JumpSwimSub, including the selected target and continuation convention.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -128186,13 +128262,15 @@
       "selector": 2,
       "id": "control-04204",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original JumpEngine selector 2 dispatch MoveSubs \u00e2\u2020\u2019 FallingSub, including the selected target and continuation convention.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -128206,15 +128284,16 @@
       "selector": 3,
       "id": "control-04205",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S2 shared C90 branch, call or return counterpart.",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original JumpEngine selector 3 dispatch MoveSubs \u00e2\u2020\u2019 ClimbingSub, including the selected target and continuation convention.",
+      "operationalEvidence": [
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+      ],
+      "semanticContract": "M2 T59 S2 confirms this source relation and state handoff.",
       "currentSourcePaths": [
-        "src/game/player.c",
         "src/game/player_movement.c"
       ]
     },
