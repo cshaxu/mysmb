@@ -23,7 +23,7 @@ all 1,992 labels. The separate current-equivalence baseline and its
 source-order cohort results are authoritative in
 [M2 current-equivalence re-audit](M2_CURRENT_EQUIVALENCE.md).
 
-Latest task review: [T58 S1](../proposals/m2/t58-cohort-e-dispatcher-current-proof.md#s1-closure--game-dispatcher-and-engine-tail) closes its 11-label current-equivalence audit. Historical conformance remains 1,992 / 1,992; the current registry records 510 labels and 946 feasible control relations with fresh exact evidence.
+Latest task review: [T60 S7](../proposals/m2/t60-cohort-g-fireball-timer-current-proof.md#s7-closure---jumpspring-chain) closes its seven-label jumpspring current-equivalence audit. Historical conformance remains 1,992 / 1,992; the current registry records 687 labels and 1,372 feasible control relations with fresh exact evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

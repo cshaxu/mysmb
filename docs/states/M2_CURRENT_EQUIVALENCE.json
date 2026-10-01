@@ -1950,13 +1950,16 @@
       "consumer": "JumpspringHandler",
       "storage": "animation-frame-indexed spring Y-delta table",
       "feasiblePath": "JumpspringHandler derives Y from JumpspringAnimCtrl-1 before adding the table byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "y_position[frame]",
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9697,12 +9700,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 652,
-    "needs-evidence": 1340
+    "exact": 687,
+    "needs-evidence": 1305
   },
   "controlEdgeCounts": {
-    "exact": 1287,
-    "needs-evidence": 3037,
+    "exact": 1372,
+    "needs-evidence": 2952,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -23569,13 +23572,16 @@
       "label": "Jumpspring_Y_PosData",
       "asmLine": 6650,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Binds animation frame index to fixed spring Y deltas.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -23585,13 +23591,16 @@
       "label": "JumpspringHandler",
       "asmLine": 6653,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves timer/animation gates, frame direction, A-edge force override, bounce handoff and animation cadence.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -23601,13 +23610,16 @@
       "label": "DownJSpr",
       "asmLine": 6667,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Moves player Y up two then shares spring-position work.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -23617,13 +23629,16 @@
       "label": "PosJSpr",
       "asmLine": 6669,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/jumpspring.c",
       "currentCounterpart": "mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Positions jumpspring from fixed Y plus frame table, and only arms force on new A press at applicable frame.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -23633,13 +23648,16 @@
       "label": "BounceJS",
       "asmLine": 6682,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/jumpspring.c",
       "currentCounterpart": "mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "At final frame transfers stored force to player Y speed and clears animation control.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -23649,13 +23667,16 @@
       "label": "DrawJSpr",
       "asmLine": 6688,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Draws/checks spring before timer-gated animation advance.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -23665,13 +23686,16 @@
       "label": "ExJSpring",
       "asmLine": 6698,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/jumpspring.c",
       "currentCounterpart": "mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Returns after rendering/offscreen handling and conditional animation timer advance.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68391,12 +68415,15 @@
       "instruction": "jsr",
       "id": "control-01148",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original call relation JumpspringHandler -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68410,12 +68437,15 @@
       "instruction": "bne",
       "id": "control-01149",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation JumpspringHandler -> DrawJSpr with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68429,12 +68459,15 @@
       "instruction": "beq",
       "id": "control-01150",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation JumpspringHandler -> DrawJSpr with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68448,12 +68481,15 @@
       "instruction": "bne",
       "id": "control-01151",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation JumpspringHandler -> DownJSpr with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68467,12 +68503,15 @@
       "instruction": "jmp",
       "id": "control-01152",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original jump relation JumpspringHandler -> PosJSpr with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68486,12 +68525,15 @@
       "instruction": "dec",
       "id": "control-01153",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original fallthrough relation DownJSpr -> PosJSpr with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68505,12 +68547,15 @@
       "instruction": "bcc",
       "id": "control-01154",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves jumpspring branch relation PosJSpr \u00e2\u2020\u2019 BounceJS with source frame/input/timer ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68524,12 +68569,15 @@
       "instruction": "beq",
       "id": "control-01155",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves jumpspring branch relation PosJSpr \u00e2\u2020\u2019 BounceJS with source frame/input/timer ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68543,12 +68591,15 @@
       "instruction": "bne",
       "id": "control-01156",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves jumpspring branch relation PosJSpr \u00e2\u2020\u2019 BounceJS with source frame/input/timer ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68562,12 +68613,15 @@
       "instruction": "sta",
       "id": "control-01157",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves jumpspring fallthrough relation PosJSpr \u00e2\u2020\u2019 BounceJS with source frame/input/timer ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68581,12 +68635,15 @@
       "instruction": "bne",
       "id": "control-01158",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves jumpspring branch relation BounceJS \u00e2\u2020\u2019 DrawJSpr with source frame/input/timer ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68600,12 +68657,15 @@
       "instruction": "sta",
       "id": "control-01159",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/jumpspring.c mysmb_objects_step_jumpspring",
       "semanticEvidence": [
-        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required."
+        "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves jumpspring fallthrough relation BounceJS \u00e2\u2020\u2019 DrawJSpr with source frame/input/timer ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68619,12 +68679,15 @@
       "instruction": "jsr",
       "id": "control-01160",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original call relation DrawJSpr -> RelativeEnemyPosition with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68638,12 +68701,15 @@
       "instruction": "jsr",
       "id": "control-01161",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves ROM call relation DrawJSpr -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68657,12 +68723,15 @@
       "instruction": "jsr",
       "id": "control-01162",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original call relation DrawJSpr -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68676,12 +68745,15 @@
       "instruction": "beq",
       "id": "control-01163",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68695,12 +68767,15 @@
       "instruction": "bne",
       "id": "control-01164",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original branch relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -68714,12 +68789,15 @@
       "instruction": "inc",
       "id": "control-01165",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original fallthrough relation DrawJSpr -> ExJSpring with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -118289,12 +118367,15 @@
       "instruction": "rts/rti",
       "id": "control-03687",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00e2\u2020\u2019 JumpspringHandler exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -118308,12 +118389,15 @@
       "instruction": "rts/rti",
       "id": "control-03688",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00e2\u2020\u2019 DrawJSpr restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -118327,12 +118411,15 @@
       "instruction": "rts/rti",
       "id": "control-03689",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves ROM return relation EnemyGfxHandler -> DrawJSpr with the source actor predicate, scratch-state handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
@@ -118346,12 +118433,15 @@
       "instruction": "rts/rti",
       "id": "control-03690",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+      ],
       "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> DrawJSpr with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/jumpspring.c"
