@@ -2250,3 +2250,7 @@ Focused C90, platform purity and DOS16 link pass. The live registry is
 **1,153 exact nodes** and **2,296 exact feasible control relations**.
 Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with
 **18** infeasible and **4,324** feasible.
+
+### T63 S22 star-flag, timer-score and end-area result
+
+All 19 labels are current-exact. Static `$D2CD-$D3AE`, 1,024 x86/x64 batch replays with zero differences, focused C90, platform purity and DOS16 link cover tables, all task paths and score/draw tails. The live registry is **1,172 exact nodes** and **2,333 exact feasible control relations**.

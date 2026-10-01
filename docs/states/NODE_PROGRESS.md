@@ -2250,3 +2250,7 @@ Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 
   three executable artifacts were not refreshed.
 - Totals: historical **1,992 / 1,992**; current exact **1,153 / 1,992** nodes,
   **2,296 / 4,324** feasible controls; raw **4,342**, infeasible **18**.
+
+## M2 T63 S22 closure — star-flag, timer-score and end-area chain
+
+All 19 scoped labels, 37 pending feasible controls and 13 material handoffs are current-exact. Static `$D2CD-$D3AE`, one 1,024-record manifest per x86/x64 width, focused C90, platform purity and DOS16 link passed. Totals: historical **1,992 / 1,992**; current exact **1,172 / 1,992** nodes and **2,333 / 4,324** feasible controls; raw **4,342**, infeasible **18**. No product source changed.

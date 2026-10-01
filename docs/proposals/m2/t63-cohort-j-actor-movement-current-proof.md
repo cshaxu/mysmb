@@ -937,3 +937,33 @@ due. No labels are deferred; S22 begins at `StarFlagYPosAdder`.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,153 / 1,992 nodes** and **2,296 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+## S22 admission — star-flag, timer-score and end-area chain
+
+S22 admits `StarFlagYPosAdder -> DelayToAreaEnd` (lines 10468–10589,
+`$D2CD-$D3AE`): the 19 source-ordered labels in the S22 plan. Its shared
+portable owner is `src/game/enemy/star_flag.c`; `JumpEngine`, score math,
+number output and relative position remain explicit child boundaries. S21 is
+closed; S23 begins at `StarFlagExit2`.
+
+The ROM-logic track compares all three four-byte tables, every JumpEngine task
+target, timer/score/player branches, frenzy and sound writes, four-sprite draw
+loop, interval-timer and event-music exits. The operational track batches 2,048
+controlled original-ROM star-flag records once per x86/x64 process, then runs
+the focused C90 chain, purity and DOS16 link. Any feasible difference remains
+S22 repair work.
+
+### S22 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,153 / 1,992**.
+- Current exact feasible controls: **2,296 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **19** labels; expected current promotions: **19**; maximum exact
+  nodes: **1,172 / 1,992**.
+
+## S22 closure — star-flag, timer-score and end-area chain
+
+All 19 scoped labels are current-exact. Static `$D2CD-$D3AE` comparison binds the twelve table bytes, five task targets, timer/score/player branches, score and sound writes, four-sprite loop, interval and music exits. All 37 pending feasible controls and 13 material handoffs are exact. One x86 and one x64 manifest process replay 1,024 original-ROM star-flag fixtures with full RAM and recorded child calls, zero differences. Focused C90, purity and DOS16 link pass. Test evidence only; no product EXE refresh is due. S23 begins at `StarFlagExit2`.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,172 / 1,992 nodes** and **2,333 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).

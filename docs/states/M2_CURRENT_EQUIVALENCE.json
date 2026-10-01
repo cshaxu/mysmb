@@ -6181,13 +6181,16 @@
       "consumer": "RunStarFlagObj",
       "storage": "four-entry Y-adder ROM table to later star-flag OAM draw",
       "feasiblePath": "Each star-flag sprite index selects the corresponding Y offset after task dispatch.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c y_adder",
       "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6200,13 +6203,16 @@
       "consumer": "RunStarFlagObj",
       "storage": "four-entry X-adder ROM table to later star-flag OAM draw",
       "feasiblePath": "Each star-flag sprite index selects the corresponding X offset after task dispatch.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c x_adder",
       "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6219,13 +6225,16 @@
       "consumer": "RunStarFlagObj",
       "storage": "four-entry tile ROM table to later star-flag OAM draw",
       "feasiblePath": "Each star-flag sprite index selects the corresponding tile after task dispatch.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c tiles",
       "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6238,13 +6247,16 @@
       "consumer": "GameTimerFireworks",
       "storage": "StarFlagTaskControl selector one to timer/fireworks task",
       "feasiblePath": "Task one dispatches only through the vector pointer, never sequential table bytes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c switch task 1",
       "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6257,13 +6269,16 @@
       "consumer": "SetFWC",
       "storage": "last timer digit to fireworks counter and star-flag state",
       "feasiblePath": "Digits 1/3/6 retain state 5/3/0; all others write $ff counter with state zero.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c case 1 digit selection",
       "semanticContract": "Preserves source producer-to-consumer table/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6276,13 +6291,16 @@
       "consumer": "NoTTick",
       "storage": "three timer digits and FrameCounter bit two to decrement/tick path",
       "feasiblePath": "Only all-zero digits advance task; otherwise bit two selects tick before shared decrement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c task 2",
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6295,13 +6313,16 @@
       "consumer": "EndAreaPoints",
       "storage": "DigitModifier+5 $ff then $05 and digit math result",
       "feasiblePath": "Source subtracts one before setting the 50-point modifier consumed by score tail.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c/status digit modifier sequence",
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6314,13 +6335,16 @@
       "consumer": "ELPGive",
       "storage": "CurrentPlayer to Mario/Luigi score offset",
       "feasiblePath": "Current player selects $0b or $11 before the shared digit math call.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c mysmb_objects_end_area_points",
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6333,13 +6357,16 @@
       "consumer": "SetoffF",
       "storage": "star-flag Y threshold to fireworks counter gate",
       "feasiblePath": "Only after Y is above $72 reaches fireworks eligibility.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c task 3",
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6352,13 +6379,16 @@
       "consumer": "DrawStarFlag",
       "storage": "eligible FireworksCounter to EnemyFrenzyBuffer and shared draw",
       "feasiblePath": "Positive counter writes frenzy ID before every draw.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c task 3",
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6371,13 +6401,16 @@
       "consumer": "DSFLoop",
       "storage": "relative position, OAM offset and three indexed star tables",
       "feasiblePath": "The four descending entries use matching table index with OAM stride four.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c draw_star_flag",
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6390,13 +6423,16 @@
       "consumer": "IncrementSFTask2",
       "storage": "draw completion to interval timer $06/task advance",
       "feasiblePath": "The draw child returns before source writes timer and increments task.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c task 3",
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6409,13 +6445,16 @@
       "consumer": "IncrementSFTask2",
       "storage": "EnemyIntervalTimer and EventMusicBuffer to final task advance",
       "feasiblePath": "Task advances only once interval is zero and event music buffer is empty.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/star_flag.c task 4",
       "semanticContract": "Preserves source producer-to-consumer state/table handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -33222,13 +33261,16 @@
       "label": "StarFlagYPosAdder",
       "asmLine": 10468,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves four source bytes $00,$00,$08,$08 used as indexed star-flag sprite Y adders.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33238,13 +33280,16 @@
       "label": "StarFlagXPosAdder",
       "asmLine": 10471,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves four source bytes $00,$08,$00,$08 used as indexed star-flag sprite X adders.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33254,13 +33299,16 @@
       "label": "StarFlagTileData",
       "asmLine": 10474,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves four source bytes $54,$55,$56,$57 used as indexed star-flag sprite tiles.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33270,13 +33318,16 @@
       "label": "RunStarFlagObj",
       "asmLine": 10477,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Clears EnemyFrenzyBuffer, exits task >=5, otherwise dispatches exactly five task selectors through the source JumpEngine vector without sequential table fall-through.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33286,13 +33337,16 @@
       "label": "GameTimerFireworks",
       "asmLine": 10491,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Selects state five/three/zero for timer last digit 1/3/6 respectively; every other digit writes FireworksCounter $ff, then advances the star-flag task.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33302,13 +33356,16 @@
       "label": "SetFWC",
       "asmLine": 10503,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Writes FireworksCounter before Enemy_State, preserving the selected state Y value and fall-through task increment.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33318,13 +33375,16 @@
       "label": "IncrementSFTask1",
       "asmLine": 10506,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Increments StarFlagTaskControl exactly once before common return.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33334,13 +33394,16 @@
       "label": "StarFlagExit",
       "asmLine": 10509,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Is the non-mutating common task exit.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33350,13 +33413,16 @@
       "label": "AwardGameTimerPoints",
       "asmLine": 10512,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "ORs all three timer digits for zero exit; otherwise queues TimerTick only on FrameCounter bit two, subtracts one from the last digit through DigitModifier+5, then sets the same slot to five before score award.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33366,13 +33432,16 @@
       "label": "NoTTick",
       "asmLine": 10522,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Sets digit offset $23 and modifier $ff before the decrement math call, then changes only modifier+5 to five for subsequent score addition.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33382,13 +33451,16 @@
       "label": "EndAreaPoints",
       "asmLine": 10529,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Selects Mario score offset $0b or Luigi $11, applies digit math, composes current-player high nibble plus four and tails to UpdateNumber.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33398,13 +33470,16 @@
       "label": "ELPGive",
       "asmLine": 10534,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Is the selected-player digit-math call site shared by timer conversion and fireworks score tails.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33414,13 +33489,16 @@
       "label": "RaiseFlagSetoffFWorks",
       "asmLine": 10543,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Raises star flag one pixel while Y >=$72; once above, only nonzero nonnegative FireworksCounter queues the Fireworks frenzy object before draw.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33430,13 +33508,16 @@
       "label": "SetoffF",
       "asmLine": 10549,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Rejects zero and negative fireworks counters, otherwise writes Fireworks to EnemyFrenzyBuffer then joins draw.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33446,13 +33527,16 @@
       "label": "DrawStarFlag",
       "asmLine": 10555,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Computes relative position, writes exactly four sprites from descending index three through zero using three source tables, fixed attribute $22 and OAM stride four, then restores ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33462,13 +33546,16 @@
       "label": "DSFLoop",
       "asmLine": 10559,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "One iteration reads matching Y/tile/X table entries at current descending index and writes ordered OAM fields before decremented loop continuation.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33478,13 +33565,16 @@
       "label": "DrawFlagSetTimer",
       "asmLine": 10580,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Draws the flag, writes EnemyIntervalTimer $06, then advances task two.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33494,13 +33584,16 @@
       "label": "IncrementSFTask2",
       "asmLine": 10585,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Increments StarFlagTaskControl once and returns.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -33510,13 +33603,16 @@
       "label": "DelayToAreaEnd",
       "asmLine": 10589,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/star_flag.c",
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Draws the flag; nonzero interval returns, zero EventMusicBuffer advances task two, otherwise returns.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90000,12 +90096,15 @@
       "instruction": "bcs",
       "id": "control-02034",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RunStarFlagObj -> StarFlagExit with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90063,12 +90162,15 @@
       "instruction": "beq",
       "id": "control-02037",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GameTimerFireworks -> SetFWC with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90082,12 +90184,15 @@
       "instruction": "beq",
       "id": "control-02038",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GameTimerFireworks -> SetFWC with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90101,12 +90206,15 @@
       "instruction": "beq",
       "id": "control-02039",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GameTimerFireworks -> SetFWC with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90120,12 +90228,15 @@
       "instruction": "lda",
       "id": "control-02040",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GameTimerFireworks -> SetFWC with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90139,12 +90250,15 @@
       "instruction": "sty",
       "id": "control-02041",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetFWC -> IncrementSFTask1 with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90158,12 +90272,15 @@
       "instruction": "inc",
       "id": "control-02042",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation IncrementSFTask1 -> StarFlagExit with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90177,12 +90294,15 @@
       "instruction": "beq",
       "id": "control-02043",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation AwardGameTimerPoints -> IncrementSFTask1 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90196,12 +90316,15 @@
       "instruction": "beq",
       "id": "control-02044",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation AwardGameTimerPoints -> NoTTick with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90215,12 +90338,15 @@
       "instruction": "sta",
       "id": "control-02045",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation AwardGameTimerPoints -> NoTTick with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90234,12 +90360,15 @@
       "instruction": "jsr",
       "id": "control-02046",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation NoTTick -> DigitsMathRoutine with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c",
@@ -90254,12 +90383,15 @@
       "instruction": "sta",
       "id": "control-02047",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation NoTTick -> EndAreaPoints with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90273,12 +90405,15 @@
       "instruction": "beq",
       "id": "control-02048",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EndAreaPoints -> ELPGive with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90292,12 +90427,15 @@
       "instruction": "ldy",
       "id": "control-02049",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation EndAreaPoints -> ELPGive with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90311,12 +90449,15 @@
       "instruction": "jsr",
       "id": "control-02050",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ELPGive -> DigitsMathRoutine with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c",
@@ -90331,12 +90472,15 @@
       "instruction": "jmp",
       "id": "control-02051",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ELPGive -> UpdateNumber with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c",
@@ -90351,12 +90495,15 @@
       "instruction": "bcc",
       "id": "control-02052",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RaiseFlagSetoffFWorks -> SetoffF with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90370,12 +90517,15 @@
       "instruction": "jmp",
       "id": "control-02053",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation RaiseFlagSetoffFWorks -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90389,12 +90539,15 @@
       "instruction": "beq",
       "id": "control-02054",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SetoffF -> DrawFlagSetTimer with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90408,12 +90561,15 @@
       "instruction": "bmi",
       "id": "control-02055",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SetoffF -> DrawFlagSetTimer with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90427,12 +90583,15 @@
       "instruction": "sta",
       "id": "control-02056",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetoffF -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90446,12 +90605,15 @@
       "instruction": "jsr",
       "id": "control-02057",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation DrawStarFlag -> RelativeEnemyPosition with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90465,12 +90627,15 @@
       "instruction": "ldx",
       "id": "control-02058",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation DrawStarFlag -> DSFLoop with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90484,12 +90649,15 @@
       "instruction": "bpl",
       "id": "control-02059",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation DSFLoop -> DSFLoop with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90503,12 +90671,15 @@
       "instruction": "jsr",
       "id": "control-02060",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation DrawFlagSetTimer -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90522,12 +90693,15 @@
       "instruction": "sta",
       "id": "control-02061",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation DrawFlagSetTimer -> IncrementSFTask2 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90541,12 +90715,15 @@
       "instruction": "jsr",
       "id": "control-02062",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation DelayToAreaEnd -> DrawStarFlag with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90560,12 +90737,15 @@
       "instruction": "bne",
       "id": "control-02063",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation DelayToAreaEnd -> StarFlagExit2 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90579,12 +90759,15 @@
       "instruction": "beq",
       "id": "control-02064",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation DelayToAreaEnd -> IncrementSFTask2 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -90598,12 +90781,15 @@
       "instruction": "beq",
       "id": "control-02065",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation DelayToAreaEnd -> StarFlagExit2 with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -126479,12 +126665,15 @@
       "instruction": "rts/rti",
       "id": "control-03872",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation DrawStarFlag -> DrawFlagSetTimer with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -126498,12 +126687,15 @@
       "instruction": "rts/rti",
       "id": "control-03873",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation DrawStarFlag -> DelayToAreaEnd with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -136589,12 +136781,15 @@
       "selector": 0,
       "id": "control-04338",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> StarFlagExit with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -136609,12 +136804,15 @@
       "selector": 1,
       "id": "control-04339",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> GameTimerFireworks with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -136629,12 +136827,15 @@
       "selector": 2,
       "id": "control-04340",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> AwardGameTimerPoints with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -136649,12 +136850,15 @@
       "selector": 3,
       "id": "control-04341",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> RaiseFlagSetoffFWorks with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
@@ -136669,12 +136873,15 @@
       "selector": 4,
       "id": "control-04342",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation RunStarFlagObj -> DelayToAreaEnd with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
