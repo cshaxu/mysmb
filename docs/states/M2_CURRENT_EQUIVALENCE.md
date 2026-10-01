@@ -1919,3 +1919,7 @@ focused chain checks remain recorded at each S closure. A fresh OpenNT DOS16
 MZ link and platform-purity audit pass. The live registry remains **641 exact
 labels**, **1,238 exact feasible controls** and **18 source-infeasible raw
 controls**; historical conformance remains **1,992 / 1,992**.
+
+### T60 S1 fireball and bubble dispatch result
+
+All five labels from `ProcFireball_Bubble` through `BublExit` are current-equivalence exact. The fresh ordinary-NMI ROM route reaches the source dispatcher through `GameMode`, `GameCoreRoutine` and `GameEngine`, covers both outcomes of all nine dispatch branches, and records the two fireball slots plus the water-only descending bubble caller loop. Across x86 and x64, 64 observed child-boundary replays and 64 actual shared-C executions match the original persistent game RAM; the two widths agree byte-for-byte. This promotes 25 feasible caller, branch, fall-through and return relations. The live registry is **646 exact labels**, **1,263 exact feasible control relations**, and **18 source-infeasible raw controls**; historical conformance remains **1,992 / 1,992**. Child interiors remain unclaimed until their assigned chains.

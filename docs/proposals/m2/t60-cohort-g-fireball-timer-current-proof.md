@@ -79,3 +79,15 @@ Current registry baseline is 641 exact labels and 1,238 exact feasible controls.
 
 ## S1 closure criteria
 All five labels and owned feasible relations are current-exact. Any difference is repaired in the shared game owner and re-audited before S2.
+
+## S1 closure - fireball and bubble dispatch chain
+
+All five scoped labels are current-exact. Static review of original source lines 6298-6348 found no feasible difference in the shared dispatch owner. Thirty-two controlled original-ROM routes begin at an ordinary NMI boundary, alter only source-read RAM, and reach `GameMode -> GameCoreRoutine -> GameEngine -> ProcFireball_Bubble` through the original stack. They cover both outcomes of all nine dispatch branches. Fresh x86/x64 checks replayed 64 observed immediate-child boundaries and 64 actual shared-C executions; every comparison of the 1,784 persistent game-RAM bytes matched, and x86/x64 results were identical. The child bodies remain S2/S3 responsibility; S1 proves their call, return, slot and ordering boundary only.
+
+The closure promotes `ProcFireball_Bubble`, `ProcFireballs`, `ProcAirBubbles`, `BublLoop` and `BublExit`, plus 25 feasible caller, branch, fall-through and return relations. Registry count: 641 -> 646 exact labels and 1,238 -> 1,263 exact feasible relations. Historical accounting remains 1,992 / 1,992. The focused strict-C90 dispatch smoke, OpenNT DOS16 link and platform-purity audit pass. No product source changed, so no three-executable refresh is due.
+
+## S2 admission - fireball core state chain
+
+S2 admits `FireballXSpdData`, `FireballObjCore`, `RunFB`, `EraseFB`, `NoFBall` and `FireballExplosion`: the contiguous `$B687-$B6F8` core chain. It owns the two speed bytes; high-bit, zero and one state partition; X-plus-four page carry; initialization decrement; gravity/movement child order; background `$cc` erase gate; and explosion tail. It depends on S1's two ordered caller slots and hands bubble logic to S3. Current registry baseline is 646 exact labels and 1,263 exact feasible controls; these six labels and their core-only relations are `needs-evidence`, with a maximum of 652 labels after successful current audit. Historical expected matches remain empty because historical conformance is already 1,992 / 1,992.
+
+ROM-logic proof will use controlled ordinary-NMI routes through the same GameEngine caller for inactive, initialization, active, carry, offscreen and explosion cases, recording immediate-child boundaries. Operational proof will use strict-C90 x86/x64 core checks, DOS16 link and platform purity. Any feasible core difference is repaired in the shared owner and re-audited before S3.

@@ -9691,12 +9691,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 641,
-    "needs-evidence": 1351
+    "exact": 646,
+    "needs-evidence": 1346
   },
   "controlEdgeCounts": {
-    "exact": 1238,
-    "needs-evidence": 3086,
+    "exact": 1263,
+    "needs-evidence": 3061,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -22822,29 +22822,35 @@
       "label": "ProcFireball_Bubble",
       "asmLine": 6298,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball dispatch owner",
+      "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Partitions PlayerStatus before one-shot B eligibility, alternating-slot selection, Y-high/crouch/climb gates and creation writes.",
       "currentSourcePaths": [
-        "src/game/engine_slots.c"
+        "src/game/fireball/fireball_spawn.c"
       ]
     },
     {
       "label": "ProcFireballs",
       "asmLine": 6330,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball dispatch owner",
+      "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Runs fireball slots zero then one before entering the bubble gate.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -22854,13 +22860,16 @@
       "label": "ProcAirBubbles",
       "asmLine": 6336,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball dispatch owner",
+      "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Runs bubbles only in water areas.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -22870,13 +22879,16 @@
       "label": "BublLoop",
       "asmLine": 6340,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball dispatch owner",
+      "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Processes slots two, one and zero in descending order: update, relative position, offscreen bits, draw.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -22886,13 +22898,16 @@
       "label": "BublExit",
       "asmLine": 6347,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared fireball dispatch owner",
+      "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Returns after the area gate or final bubble slot.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -66292,12 +66307,15 @@
       "instruction": "bcc",
       "id": "control-01059",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcAirBubbles with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -66312,12 +66330,15 @@
       "instruction": "beq",
       "id": "control-01060",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -66332,12 +66353,15 @@
       "instruction": "bne",
       "id": "control-01061",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -66352,12 +66376,15 @@
       "instruction": "bne",
       "id": "control-01062",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -66372,12 +66399,15 @@
       "instruction": "bne",
       "id": "control-01063",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -66392,12 +66422,15 @@
       "instruction": "bne",
       "id": "control-01064",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -66412,12 +66445,15 @@
       "instruction": "beq",
       "id": "control-01065",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -66432,12 +66468,15 @@
       "instruction": "inc",
       "id": "control-01066",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcFireball_Bubble -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -66452,12 +66491,15 @@
       "instruction": "jsr",
       "id": "control-01067",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation ProcFireballs -> FireballObjCore with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -66472,12 +66514,15 @@
       "instruction": "jsr",
       "id": "control-01068",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation ProcFireballs -> FireballObjCore with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -66492,12 +66537,15 @@
       "instruction": "jsr",
       "id": "control-01069",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcFireballs -> ProcAirBubbles with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -66511,12 +66559,15 @@
       "instruction": "bne",
       "id": "control-01070",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original branch relation ProcAirBubbles -> BublExit with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -66530,12 +66581,15 @@
       "instruction": "ldx",
       "id": "control-01071",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcAirBubbles -> BublLoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -66549,12 +66603,15 @@
       "instruction": "jsr",
       "id": "control-01072",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation BublLoop -> BubbleCheck with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c",
@@ -66569,12 +66626,15 @@
       "instruction": "jsr",
       "id": "control-01073",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation BublLoop -> RelativeBubblePosition with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -66588,12 +66648,15 @@
       "instruction": "jsr",
       "id": "control-01074",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original call relation BublLoop -> GetBubbleOffscreenBits with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -66607,12 +66670,15 @@
       "instruction": "jsr",
       "id": "control-01075",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves ROM call relation BublLoop -> DrawBubble with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -66626,12 +66692,15 @@
       "instruction": "bpl",
       "id": "control-01076",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves ROM branch relation BublLoop -> BublLoop with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -66645,12 +66714,15 @@
       "instruction": "bpl",
       "id": "control-01077",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original fallthrough relation BublLoop -> BublExit with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -117449,12 +117521,15 @@
       "instruction": "rts/rti",
       "id": "control-03667",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original return relation FireballObjCore -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -117469,12 +117544,15 @@
       "instruction": "rts/rti",
       "id": "control-03668",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original return relation FireballObjCore -> ProcFireballs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -117489,12 +117567,15 @@
       "instruction": "rts/rti",
       "id": "control-03669",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves original return relation BubbleCheck -> BublLoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c",
@@ -117509,12 +117590,15 @@
       "instruction": "rts/rti",
       "id": "control-03670",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "The source return relation RelativeBubblePosition \u00e2\u2020\u2019 BublLoop restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -117528,12 +117612,15 @@
       "instruction": "rts/rti",
       "id": "control-03671",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "The source return relation GetBubbleOffscreenBits \u00e2\u2020\u2019 BublLoop exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
@@ -117547,12 +117634,15 @@
       "instruction": "rts/rti",
       "id": "control-03672",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+      ],
       "semanticContract": "Preserves ROM return relation DrawBubble -> BublLoop with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_spawn.c"
