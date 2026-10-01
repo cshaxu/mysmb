@@ -126,6 +126,7 @@
 #define MYSMB_REFERENCE_T28_VRAM_COMMAND_ENTRY 0x8e92u
 #define MYSMB_REFERENCE_T28_VRAM_EXIT 0x8ee6u
 #define MYSMB_REFERENCE_T29_AREA_ENTRY_RETURN 0x919eu
+#define MYSMB_REFERENCE_T52_OUTPUT_INTER_RETURN 0x86d2u
 #define MYSMB_REFERENCE_PPU_CONTROL_MIRROR 0x0778u
 #define MYSMB_REFERENCE_HORIZONTAL_SCROLL 0x073fu
 #define MYSMB_REFERENCE_VERTICAL_SCROLL 0x0740u
@@ -1152,6 +1153,7 @@ int main(int argument_count, char **arguments)
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
     lib_bool t22_flagpole_score_pending;
+    lib_bool t52_timeup_output_inter_probe;
     lib_u8 t28_vram_phase;
     lib_u8 t29_area_entry_phase;
     lib_u32 last_frame_revision;
@@ -1238,6 +1240,7 @@ int main(int argument_count, char **arguments)
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
     t22_flagpole_score_pending = LIB_FALSE;
+    t52_timeup_output_inter_probe = LIB_FALSE;
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
@@ -3094,6 +3097,7 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t52-background-palette-5") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 105u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t52-background-palette-6") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 106u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t52-background-palette-7") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 107u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t52-timeup-output-inter-return") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 108u; continue; }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -3212,6 +3216,15 @@ int main(int argument_count, char **arguments)
         }
         if (t28_vram_phase == 2u &&
             driver->machine->pc == MYSMB_REFERENCE_T28_VRAM_EXIT) {
+            if (!mysmb_reference_write_frame(output, driver->machine)) break;
+            ++recorded;
+            break;
+        }
+        /* OutputInter has completed its text/timer/enable writes but has not
+         * returned to its natural caller.  This records the ROM instruction
+         * boundary separately from a later NMI-return observation. */
+        if (t52_timeup_output_inter_probe &&
+            driver->machine->pc == MYSMB_REFERENCE_T52_OUTPUT_INTER_RETURN) {
             if (!mysmb_reference_write_frame(output, driver->machine)) break;
             ++recorded;
             break;
@@ -3359,6 +3372,14 @@ int main(int argument_count, char **arguments)
                     mysmb_reference_apply_t52_background_palette_fixture(
                         driver->machine->ram, t26_fixture == 103u ? 0u :
                         (lib_u8)(t26_fixture - 100u));
+                else if (t26_fixture == 108u) {
+                    mysmb_reference_apply_t27_screen_fixture(
+                        driver->machine->ram, 0u);
+                    if (core_machine_breakpoint_set(driver->machine,
+                        MYSMB_REFERENCE_T52_OUTPUT_INTER_RETURN,
+                        LIB_TRUE) != LIB_STATUS_OK) break;
+                    t52_timeup_output_inter_probe = LIB_TRUE;
+                }
                 else if (t26_fixture == 58u)
                     mysmb_reference_apply_t28_area_entry_fixture(
                         driver->machine->ram);

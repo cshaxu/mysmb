@@ -169,6 +169,44 @@ chain-owned state, deliberately excluding unrelated uninitialized frame
 output. x86/x64 focused tests, Win32 self-tests, platform-purity and the
 OpenNT DOS16 link pass. All three ignored target artifacts were refreshed.
 
+## T52 S5 admission: B3 time-up task handoff
+
+S5 owns `DisplayTimeUp -> OutputInter -> return -> NoTimeUp -> IncSubtask` in
+`game.c`. It receives `DisplayTimeUp`, `OutputInter` and `NoTimeUp` from M2
+T27 S2. The predecessor is ScreenRoutines task 4; its successor is task 6,
+while tasks 5 and 7 remain reset controls outside the repair. Historical credit
+remains **1,992 / 1,992** and the expected delta is zero.
+
+The ROM-logic track records an expired task-4 visit followed by its cleared-flag
+next visit, and separately records the non-expired and task-5/task-7 timer-reset
+controls. It compares the task byte, expiration latch, screen timer,
+disable-screen flag, text-buffer command and owned OAM fields. The operational
+track extends the focused screen-status test, runs native x86/x64 routes,
+platform purity and the shared OpenNT DOS16 link, then refreshes all three local
+artifacts. No host adapter may make or delay the screen-task transition.
+
+## T52 S5 closure: B3 time-up false-positive disposition
+
+S5 closes without a shared-game repair. The original B3 report omitted the
+`OutputInter -> ResetScreenTimer` call: the ROM at `$86d2`, immediately before
+`OutputInter` returns, has already written task 5 because ResetScreenTimer
+increments `ScreenRoutineTask`. The existing `game.c` case 4 has the same
+ordered writes. `DisplayTimeUp`, `OutputInter`, `NoTimeUp`, and
+`control-00225` are current-equivalence exact; the historical numerator stays
+**1,992 / 1,992**.
+
+The ROM-logic track used a direct RTS probe plus bounded four-frame expired
+and non-expired routes. The x86 and x64 C recorders matched the chain-owned
+task, expiration latch, screen timer, disable-screen byte and Buffer1 state in
+every sample. The focused smoke test, platform-purity check and x86/x64 host
+self-tests passed as the separate operational track. The OpenNT DOS16 compiler
+rebuilt the shared core through its established source list with its existing
+warning set; the retained local three-target artifacts have the recorded S4
+hashes because S5 changes no shared gameplay source. The similar-issue sweep
+identified this defect class as a missing callee in a static audit: all later
+screen-task candidate reviews must include nested shared game calls before
+they propose a source change.
+
 ## T52 S1 closure: A2 NMI-prefix state handoff
 
 S1 closes its three current-equivalence labels without changing the historical

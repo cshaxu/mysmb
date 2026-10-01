@@ -46,7 +46,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T26 S5 | 27 | `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk`, `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs`, `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo`, `FloateyNumTileData`, `ScoreUpdateData`, `ChkNumTimer`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
 | M2 T26 S7 | 2 | `VictoryMode`, `AutoPlayer` |
 | M2 T27 S1 | 17 | `InitScreen`, `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
-| M2 T27 S2 | 43 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
+| M2 T27 S2 | 40 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayIntermediate`, `PlayerInter`, `GameOverInter`, `NoInter`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T28 S1 | 13 | `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `MetatileGraphics_Low`, `MetatileGraphics_High` |
 | M2 T28 S2 | 7 | `ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot` |
 | M2 T28 S3 | 11 | `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder`, `RemBridge` |
@@ -226,6 +226,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T52 S2 | 2 | `ChkSelect`, `ChkWorldSel` |
 | M2 T52 S3 | 4 | `FloateyNumbersRoutine`, `DecNumTimer`, `LoadNumTiles`, `AddToScore` |
 | M2 T52 S4 | 3 | `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors` |
+| M2 T52 S5 | 3 | `DisplayTimeUp`, `NoTimeUp`, `OutputInter` |
 
 ## Future admission packages and queued plans
 
@@ -366,11 +367,11 @@ transfer existing ownership or allocate a numeric T.
 | 1513 | `NoAltPal` | M2 T27 S1 | existing closure backlog; M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1517 | `WriteTopStatusLine` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1524 | `WriteBottomStatusLine` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T19 S5; M2 T24 S1 |
-| 1553 | `DisplayTimeUp` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1560 | `NoTimeUp` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
+| 1553 | `DisplayTimeUp` | M2 T52 S5 | existing closure backlog; Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate. | M2 T24 S1 |
+| 1560 | `NoTimeUp` | M2 T52 S5 | existing closure backlog; Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate. | M2 T24 S1 |
 | 1565 | `DisplayIntermediate` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T15 S3; M2 T24 S1 |
 | 1577 | `PlayerInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1579 | `OutputInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
+| 1579 | `OutputInter` | M2 T52 S5 | existing closure backlog; Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate. | M2 T24 S1 |
 | 1584 | `GameOverInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1589 | `NoInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1595 | `AreaParserTaskControl` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
@@ -2379,7 +2380,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T26 S7 | 2 | 2 | planned-outer-victory-route-equivalence; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T27 | 0 | - | [record](../../docs/proposals/m2/screen-status.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T27 S1 | 0 | 17 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
-| M2 T27 S2 | 0 | 43 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
+| M2 T27 S2 | 0 | 40 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
 | M2 T27 S3 | 0 | 0 | planned-dispatch-integration; [record](../../docs/proposals/m2/screen-status.md) |
 | M2 T28 | 0 | - | [record](../../docs/proposals/m2/t28-area-output-bootstrap.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T28 S1 | 0 | 13 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
@@ -2592,6 +2593,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T52 S2 | 0 | 2 | owner-approved-current-equivalence-remediation, a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S3 | 0 | 4 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 0 | 3 | owner-approved-current-equivalence-remediation, b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S5 | 0 | 3 | owner-approved-current-equivalence-remediation, b3-timeup-task-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2927,6 +2929,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | t52-s3-floatey | M2 T26 S5 | M2 T52 S3 | 3 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | t52-s3-score | M2 T36 S5 | M2 T52 S3 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | t52-s4-background-palette | M2 T27 S1 | M2 T52 S4 | 3 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| transfer-m2-t27-s2-to-t52-s5-b3-timeup | M2 T27 S2 | M2 T52 S5 | 3 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3198,3 +3201,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T52 S2 | 2 | 1992 | none / 0 | none / 0 | closed-a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S3 | 4 | 1992 | none / 0 | none / 0 | closed-a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 3 | 1992 | none / 0 | none / 0 | closed-b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S5 | 3 | 1992 | none / 0 | none / 0 | closed-b3-timeup-candidate-rejected; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |

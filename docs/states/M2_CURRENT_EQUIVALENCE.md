@@ -32,6 +32,19 @@ edge records its C integration counterpart and both evidence tracks.
 rejects an `exact` disposition lacking either track and rejects duplicate or
 incomplete node/control-edge identities.
 
+### T52 S5 B3 full-callee-chain result
+
+The former B3 mismatch is rejected. `DisplayTimeUp`, `OutputInter` and
+`NoTimeUp` are now current-equivalence exact, as is `control-00225`.
+The original static interpretation stopped at `OutputInter`; direct-ROM source
+inspection and a source-reachable probe at its RTS (`$86d2`) show its
+`ResetScreenTimer` callee increments `ScreenRoutineTask` to task 5 before the
+return. Four-frame expired and non-expired original-ROM routes match the shared
+C implementation on x86 and x64 for the owned task, latch, timer,
+disable-screen and screen-buffer state. This raises the live registry to **53
+exact nodes** and **87 exact control edges**; historical conformance remains
+**1,992 / 1,992**.
+
 ## Source-anchor resolvability finding
 
 Td S9's independent counterpart-resolvability pass found that the existing
