@@ -42235,12 +42235,15 @@
       "instruction": "bne",
       "id": "control-00016",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation NonMaskableInterrupt -> ScreenOff at source line 773 (bne) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42254,12 +42257,15 @@
       "instruction": "ora",
       "id": "control-00017",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation NonMaskableInterrupt -> ScreenOff at source line 775 (ora) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42314,12 +42320,15 @@
       "instruction": "bne",
       "id": "control-00020",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation ScreenOff -> InitBuffer at source line 794 (bne) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42333,12 +42342,15 @@
       "instruction": "iny",
       "id": "control-00021",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation ScreenOff -> InitBuffer at source line 795 (iny) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42391,12 +42403,15 @@
       "instruction": "jsr",
       "id": "control-00024",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original call relation InitBuffer -> PauseRoutine at source line 805 (jsr) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42429,12 +42444,15 @@
       "instruction": "bcs",
       "id": "control-00026",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation InitBuffer -> PauseSkip at source line 809 (bcs) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42658,12 +42676,15 @@
       "instruction": "beq",
       "id": "control-00037",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation PauseSkip -> RotPRandomBit at source line 835 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42677,12 +42698,15 @@
       "instruction": "sec",
       "id": "control-00038",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation PauseSkip -> RotPRandomBit at source line 836 (sec) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42696,12 +42720,15 @@
       "instruction": "bne",
       "id": "control-00039",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation RotPRandomBit -> RotPRandomBit at source line 840 (bne) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42736,12 +42763,15 @@
       "instruction": "beq",
       "id": "control-00041",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation RotPRandomBit -> Sprite0Clr at source line 842 (beq) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42755,12 +42785,15 @@
       "instruction": "bne",
       "id": "control-00042",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation Sprite0Clr -> Sprite0Clr at source line 845 (bne) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42774,12 +42807,15 @@
       "instruction": "bcs",
       "id": "control-00043",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation Sprite0Clr -> Sprite0Hit at source line 848 (bcs) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42793,12 +42829,15 @@
       "instruction": "jsr",
       "id": "control-00044",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original call relation Sprite0Clr -> MoveSpritesOffscreen at source line 849 (jsr) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42812,12 +42851,15 @@
       "instruction": "jsr",
       "id": "control-00045",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original call relation Sprite0Clr -> SpriteShuffler at source line 850 (jsr) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42831,12 +42873,15 @@
       "instruction": "jsr",
       "id": "control-00046",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation Sprite0Clr -> Sprite0Hit at source line 850 (jsr) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42850,12 +42895,15 @@
       "instruction": "beq",
       "id": "control-00047",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation Sprite0Hit -> Sprite0Hit at source line 853 (beq) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42869,12 +42917,15 @@
       "instruction": "ldy",
       "id": "control-00048",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation Sprite0Hit -> HBlankDelay at source line 854 (ldy) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42888,12 +42939,15 @@
       "instruction": "bne",
       "id": "control-00049",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation HBlankDelay -> HBlankDelay at source line 856 (bne) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42907,12 +42961,15 @@
       "instruction": "bne",
       "id": "control-00050",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation HBlankDelay -> SkipSprite0 at source line 856 (bne) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -42926,12 +42983,15 @@
       "instruction": "bcs",
       "id": "control-00051",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation SkipSprite0 -> SkipMainOper at source line 866 (bcs) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -42967,12 +43027,15 @@
       "instruction": "jsr",
       "id": "control-00053",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation SkipSprite0 -> SkipMainOper at source line 867 (jsr) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -43218,12 +43281,15 @@
       "instruction": "ldx",
       "id": "control-00065",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation SpriteShuffler -> ShuffleLoop at source line 916 (ldx) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43237,12 +43303,15 @@
       "instruction": "bcc",
       "id": "control-00066",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation ShuffleLoop -> NextSprOffset at source line 919 (bcc) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43256,12 +43325,15 @@
       "instruction": "bcc",
       "id": "control-00067",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation ShuffleLoop -> StrSprOffset at source line 923 (bcc) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43275,12 +43347,15 @@
       "instruction": "adc",
       "id": "control-00068",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation ShuffleLoop -> StrSprOffset at source line 925 (adc) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43294,12 +43369,15 @@
       "instruction": "sta",
       "id": "control-00069",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation StrSprOffset -> NextSprOffset at source line 926 (sta) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43313,12 +43391,15 @@
       "instruction": "bpl",
       "id": "control-00070",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation NextSprOffset -> ShuffleLoop at source line 928 (bpl) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43332,12 +43413,15 @@
       "instruction": "bne",
       "id": "control-00071",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation NextSprOffset -> SetAmtOffset at source line 932 (bne) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43351,12 +43435,15 @@
       "instruction": "ldx",
       "id": "control-00072",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation NextSprOffset -> SetAmtOffset at source line 933 (ldx) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43370,12 +43457,15 @@
       "instruction": "ldy",
       "id": "control-00073",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation SetAmtOffset -> SetMiscOffset at source line 936 (ldy) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43389,12 +43479,15 @@
       "instruction": "bpl",
       "id": "control-00074",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation SetMiscOffset -> SetMiscOffset at source line 949 (bpl) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -43449,12 +43542,15 @@
       "instruction": "ldy",
       "id": "control-00077",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation MoveAllSpritesOffscreen -> MoveSpritesOffscreen at source line 966 (ldy) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c",
@@ -43469,12 +43565,15 @@
       "instruction": "lda",
       "id": "control-00078",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original fallthrough relation MoveSpritesOffscreen -> SprInitLoop at source line 971 (lda) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c",
@@ -43489,12 +43588,15 @@
       "instruction": "bne",
       "id": "control-00079",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original branch relation SprInitLoop -> SprInitLoop at source line 977 (bne) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
         "src/game/boot.c",
@@ -109527,12 +109629,15 @@
       "instruction": "rts/rti",
       "id": "control-03491",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original return relation PauseRoutine -> InitBuffer at source line 805 (rts/rti) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -109565,12 +109670,15 @@
       "instruction": "rts/rti",
       "id": "control-03493",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original return relation MoveSpritesOffscreen -> Sprite0Clr at source line 849 (rts/rti) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -109584,12 +109692,15 @@
       "instruction": "rts/rti",
       "id": "control-03494",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original return relation SpriteShuffler -> Sprite0Clr at source line 850 (rts/rti) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -109603,12 +109714,15 @@
       "instruction": "rts/rti",
       "id": "control-03495",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+      ],
       "semanticContract": "Original return relation OperModeExecutionTree -> SkipSprite0 at source line 867 (rts/rti) must preserve sprite-zero synchronization, scroll commit and mode-dispatch predecessor/successor ordering.",
       "currentSourcePaths": [
         "src/game/frame_root.c"

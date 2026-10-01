@@ -1702,3 +1702,15 @@ sample of that route and its selector-six buffer choice, header/offset clear,
 and address-selector reset match the shared C transaction. Its successor
 relationship to display restoration remains distinct from the preceding
 `ScreenOff` order mismatch.
+
+### T53 S1 internal-edge result
+
+All 75 S1 internal control relations now have a current disposition: 74 are
+**exact** and `control-00076` is **infeasible**. The 38 newly exact relations
+are the NMI display predicates, pause/timer-to-LFSR handoff, sprite-zero
+synchronization and tail, shuffle loop, OAM loop and their source call/return
+pairs. Their edge identities remain separate in the registry, while sharing
+one source-order audit and the bounded dispatch plus pause/sprite route
+matrix. The four `ScreenOff` transaction-order mismatches are cross-boundary
+relations to `InitScroll`/`UpdateScreen`, so they remain open repair evidence
+and are not part of the S1 internal-edge result.
