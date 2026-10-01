@@ -1966,3 +1966,7 @@ Eight newly exact nodes and seven internal controls in the score/tally chain; ca
 - M2 T61 S6: `SetupPowerUp -> ExitPUp` closed: 10 nodes, 19 internal controls and 2 material handoffs exact; 72 init, 100 caller and 100 full-current x86/x64 routes passed. Current exact 750 / 1,992 nodes and 1,474 / 4,324 feasible controls.
 
 - M2 T61 S7 closed: 28 nodes, 55 feasible controls and 4 material handoffs exact; current exact 778 / 1,992 nodes and 1,529 / 4,324 feasible controls.
+
+### T61 S8 block lifetime and replacement result
+
+`BlockObjectsCore -> NextBUpd` adds eight current-exact labels and sixteen feasible controls. Static `$BE70-$BF01`, controlled original-ROM/current x86/x64 routes, focused C90 checks, platform-purity and DOS16-link evidence agree. The registry is **786 exact nodes / 1,992**, **1,545 exact feasible control relations / 4,324**, with **4,342 raw controls** and **18 infeasible**. Historical migration accounting remains **1,992 / 1,992**.

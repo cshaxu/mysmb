@@ -2060,3 +2060,5 @@ Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1
 - Current-equivalence audit M2 T61 S6 closed `SetupPowerUp -> ExitPUp`: historical migration remains 1,992 / 1,992; current exact registry is 750 / 1,992 nodes and 1,474 / 4,324 feasible controls.
 
 - Current-equivalence audit M2 T61 S7 closed: historical 1,992 / 1,992; current exact registry 778 / 1,992 nodes and 1,529 / 4,324 feasible controls.
+
+- Current-equivalence audit M2 T61 S8 closed `BlockObjectsCore -> NextBUpd`: historical migration remains **1,992 / 1,992**; current exact registry is **786 / 1,992** nodes and **1,545 / 4,324** feasible controls (raw **4,342**, infeasible **18**).

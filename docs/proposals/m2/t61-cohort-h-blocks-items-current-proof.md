@@ -179,3 +179,10 @@ All 28 scoped labels are current-exact. Static `$BCEB-$BE6F` comparison found no
 ## S8 admission - block lifetime and metatile-update chain
 
 S8 admits `$BE70-$BEDD`, `BlockObjectsCore -> NextBUpd`: `BlockObjectsCore`, `ChkTop`, `BouncingBlockHandler`, `KillBlock`, `UpdSte`, `BlockObjMT_Updater`, `UpdateLoop`, and `NextBUpd`. All eight are `needs-evidence`, yielding eight candidates from **778 / 1,992** to **786 / 1,992**. It owns 16 feasible internal controls. Shared owners are `src/game/blocks/lifetime.c` and `replacement.c`; S7 precedes it and S9 motion follows. ROM logic compares state masking, bounce phase, gravity/motion handoffs, two-slot update loop, metatile replacement and retirement. Platform adapters remain out of scope.
+
+
+## S8 closure - block lifetime and metatile-update chain
+
+All eight scoped labels are current-exact: `BlockObjectsCore`, `ChkTop`, `BouncingBlockHandler`, `KillBlock`, `UpdSte`, `BlockObjMT_Updater`, `UpdateLoop`, and `NextBUpd`. Static `$BE70-$BF01` comparison found no feasible difference in saved low-nibble state, child offsets, paired chunk movement, carry-preserved retirement, bounce replacement, scratch block-buffer pointer write, busy-buffer gating, or signed two-slot loop order. Sixteen internal feasible controls are exact.
+
+Fresh x86 and x64 controlled original-ROM routes pass 64 caller comparisons and 64 complete-current comparisons per width with zero differences. Focused lifetime and replacement C90 tests pass 131,090 and 131,072 cases per width. Platform purity passes; the OpenNT DOS16 link succeeds with its known OLDNAMES warning. The registry reconciliation also added the already-recorded T61 S7 operational evidence to 55 H controls and four H material handoffs, allowing its exact records to pass the registry integrity gate. No product source changed, so local executable artifacts were not refreshed. Historical migration is **1,992 / 1,992**; current exact progress is **786 / 1,992 nodes** and **1,545 / 4,324 feasible controls** from **4,342 raw controls** with **18 infeasible**.
