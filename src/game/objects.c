@@ -440,6 +440,7 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 score;
     mysmb_u8 oam_offset;
     mysmb_u8 enemy_id;
+    mysmb_u8 timer;
     mysmb_u8 y;
 
     control = game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot];
@@ -448,11 +449,16 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
         control = 0x0bU;
         game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = control;
     }
-    if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0U) {
+    timer = game->ram[MYSMB_FLOATEY_NUM_TIMER + slot];
+    if (timer == 0U) {
         game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = 0U;
         return;
     }
-    if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0x2bU) {
+
+    /* ROM DecNumTimer writes the decremented byte first.  Its following
+     * CMP still observes the timer value loaded into A before DEC. */
+    game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] = (mysmb_u8)(timer - 1U);
+    if (timer == 0x2bU) {
         if (control == 0x0bU) {
             game->ram[MYSMB_NUMBER_OF_LIVES]++;
             game->ram[MYSMB_SQUARE2_SOUND] = 0x40U;
@@ -462,7 +468,6 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
             (mysmb_u8)(score & 0x0fU);
         (void)mysmb_score_add(game);
     }
-    game->ram[MYSMB_FLOATEY_NUM_TIMER + slot]--;
     if (game->ram[MYSMB_FLOATEY_NUM_Y + slot] >= 0x18U) {
         game->ram[MYSMB_FLOATEY_NUM_Y + slot]--;
     }

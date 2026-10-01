@@ -28,9 +28,25 @@ int main(void)
     game.ram[0x06ecU] = 0x40U;
     game.ram[0x075aU] = 2U;
     mysmb_objects_step_floatey_number(&game, 0U);
-    if (game.ram[0x075aU] != 3U || game.ram[0x00feU] != 0x40U ||
+    if (game.ram[0x012cU] != 0x2aU || game.ram[0x075aU] != 3U ||
+        game.ram[0x00feU] != 0x40U ||
         game.ram[0x0220U] != 0x37U || game.ram[0x0221U] != 0xfdU ||
         game.ram[0x0223U] != 0x80U || game.ram[0x0240U] != 0U) return 2;
+
+    /* A non-award timer is still decremented before the ChkTallEnemy tail;
+     * only the pre-decrement $2b source accumulator enters LoadNumTiles. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x0110U] = 0x0bU;
+    game.ram[0x012cU] = 0x2aU;
+    game.ram[0x011eU] = 0x40U;
+    game.ram[0x0117U] = 0x80U;
+    game.ram[0x0016U] = 18U;
+    game.ram[0x06e5U] = 0x20U;
+    game.ram[0x06ecU] = 0x40U;
+    game.ram[0x075aU] = 2U;
+    mysmb_objects_step_floatey_number(&game, 0U);
+    if (game.ram[0x012cU] != 0x29U || game.ram[0x075aU] != 2U ||
+        game.ram[0x00feU] != 0U) return 5;
 
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x0110U] = 6U;

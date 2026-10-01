@@ -91,6 +91,23 @@ self-tests. The existing OpenNT DOS16 pipeline recompiled the shared title
 unit and linked the DOS executable; the linker has its longstanding optional
 `OLDNAMES.LIB` warning but produced the refreshed executable with exit code 0.
 
+## T52 S3 admission: A7 floatey-number score timer order
+
+S3 owns the contiguous `FloateyNumbersRoutine -> DecNumTimer -> LoadNumTiles
+-> AddToScore` chain in `objects.c`/the shared score owner. It receives
+`FloateyNumbersRoutine`, `DecNumTimer`, `LoadNumTiles` and `AddToScore` in
+source order. The predecessor is the GameEngine enemy-slot loop; successors
+are `ChkTallEnemy` and status-number output. Historical credit remains
+**1,992 / 1,992**: all four labels are corrective, zero-credit receipts.
+
+The ROM-logic route uses the original floatey-number slot with timer `$2b` and
+control `$0b`. It proves that `DEC` writes timer `$2a` before score-table read
+and `AddToScore`, while the branch comparison retains the pre-decrement A
+value `$2b`; it also exercises a non-award timer. The operational track adds a
+focused ordering regression, runs x86/x64 routes, platform purity and OpenNT
+DOS16 linkage, and refreshes three local artifacts. No platform adapter may
+participate in this chain.
+
 ## T52 closure
 
 T52 closes only when all six runtime chains have ROM logic-equivalence and
@@ -99,6 +116,25 @@ the A7 material handoff is exact, H1–H8 have been removed as infeasible graph
 relations, and all three targets run the same shared game source.  It then
 hands the remaining current-equivalence `needs-evidence` records to the T53+
 source-order proof program.
+
+## T52 S3 closure: A7 floatey-number score timer order
+
+S3 closes all four received labels without changing the historical numerator:
+`FloateyNumbersRoutine`, `DecNumTimer`, `LoadNumTiles`, and `AddToScore` are
+current-equivalence `exact`; `control-00176` through `control-00179` and
+`material-00004` are exact. Historical conformance remains **1,992 / 1,992**.
+
+The controlled normal-NMI owner-ROM route with floatey control `$0b` and timer
+`$2b` executes `$84c3-$84e4`, then the score call at `$bc27-$bc48`. Source
+review confirms the relevant 6502 distinction: `DEC` writes RAM `$2a`, while
+the following `CMP` still compares the earlier accumulator value `$2b`.
+The shared C now preserves that order before its score-table and `AddToScore`
+path. `mysmb.floatey-oam-smoke` checks the award and non-award timer values;
+both ROM-configured Win32 widths pass it, platform purity and their window
+self-tests. The OpenNT DOS16 build links the same shared `objects.c` unit and
+refreshes the local executable; its existing optional `OLDNAMES.LIB` warning
+does not change the successful exit status. All three local artifacts were
+refreshed under the ignored build directory.
 
 ## T52 S1 closure: A2 NMI-prefix state handoff
 
