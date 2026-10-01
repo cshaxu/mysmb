@@ -115,3 +115,16 @@ transfer belongs to S3, so it is not inferred as S1 evidence. Focused
 screen-status and local-area checks pass on x86/x64; the shared DOS16 link and
 platform-purity check pass. This is a test-evidence-only P: no shared product
 or platform source changed, so no product artifact refresh is required.
+
+## S2 admission — status and intermediate chain
+
+S2 starts after the closed S1 palette chain and owns nine labels in ROM source
+order: `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`,
+`NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`,
+`GameOverInter` and `NoInter`. Three are already current-exact
+(`DisplayTimeUp`, `NoTimeUp`, `OutputInter`); the remaining six require fresh
+current evidence. The chain is bounded at the task-two entry and the task-eight
+or mode-task exit, with controlled title/game/expired/normal/intermediate
+branch routes. It does not claim the dispatcher vector, text-stream internals
+or later parser/title tasks. Historical accounting remains 1,992/1,992, so the
+expected historical delta is zero.
