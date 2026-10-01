@@ -2068,3 +2068,5 @@ Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1
 - Current-equivalence audit M2 T61 S10 closed `MovePlayerVertically -> ExVMove`: historical migration remains **1,992 / 1,992**; current exact registry is **818 / 1,992** nodes and **1,588 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
 
 - Current-equivalence audit M2 T62 S1 closed `EnemiesAndLoopsCore -> ChkEnemyFrenzy`: historical migration remains **1,992 / 1,992**; current exact registry is **834 / 1,992** nodes and **1,615 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+
+- Current-equivalence audit M2 T62 S2 closed `ProcessEnemyData -> Inc2B`: historical migration remains **1,992 / 1,992**; current exact registry is **853 / 1,992** nodes and **1,653 / 4,324** feasible controls (raw **4,342**, infeasible **18**).

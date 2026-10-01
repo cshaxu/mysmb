@@ -1982,3 +1982,7 @@ Eight newly exact nodes and seven internal controls in the score/tally chain; ca
 ### T62 S1 enemy loop result
 
 `EnemiesAndLoopsCore -> ChkEnemyFrenzy` adds sixteen current-exact labels, twenty-seven feasible controls and three loop-table material handoffs. Static `$C047-$C0C3`, 96 original-ROM/current caller routes per width, 44 table-byte checks, focused C90 loop checks, platform-purity and DOS16-link evidence agree. The registry is **834 / 1,992** nodes and **1,615 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.
+
+### T62 S2 enemy stream result
+
+`ProcessEnemyData -> Inc2B` adds nineteen current-exact labels, thirty-eight feasible controls and three material handoffs. Static `$C0D7-$C175`, 80 original-ROM/current caller routes per width, 66,562 boundary cases per width, full stream smoke, platform-purity and DOS16-link evidence agree. The registry is **853 / 1,992** nodes and **1,653 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.

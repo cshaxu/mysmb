@@ -2509,13 +2509,16 @@
       "consumer": "CheckRightBounds",
       "storage": "EnemyData current record bytes and EnemyDataOffset",
       "feasiblePath": "Current record first/second bytes feed row, sixth-slot and boundary decisions before object positioning.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "eight-bit source record reads in mysmb_enemy_stream_process_current",
       "semanticContract": "Preserves source data selection, consuming predicate/dispatch and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2529,13 +2532,16 @@
       "consumer": "CheckRightExtBounds",
       "storage": "extended right boundary scratch $06/$07",
       "feasiblePath": "CheckRightBounds writes carry-correct extended page/high-nibble boundary before CheckRightExtBounds compares object world position.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "extended boundary locals in stream processing",
       "semanticContract": "Preserves source data selection, consuming predicate/dispatch and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2549,13 +2555,16 @@
       "consumer": "StrFre",
       "storage": "EnemyFrenzyBuffer/VineFlagOffset selected fallback ID",
       "feasiblePath": "Fallback selection writes the identifier subsequently stored by StrFre and initialized through CheckpointEnemyID.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_stream_activate_fallback ID selection",
       "semanticContract": "Preserves source data selection, consuming predicate/dispatch and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9750,12 +9759,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 834,
-    "needs-evidence": 1158
+    "exact": 853,
+    "needs-evidence": 1139
   },
   "controlEdgeCounts": {
-    "exact": 1615,
-    "needs-evidence": 2709,
+    "exact": 1653,
+    "needs-evidence": 2671,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -26584,13 +26593,16 @@
       "label": "ProcessEnemyData",
       "asmLine": 7911,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Reads current enemy record, routes end marker to fallback, protects sixth slot except power-up and otherwise enters right-bound processing.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26601,13 +26613,16 @@
       "label": "CheckEndofBuffer",
       "asmLine": 7918,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Distinguishes row-$0e, ordinary available slots and the source sixth-slot power-up exception before range setup.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26618,13 +26633,16 @@
       "label": "CheckRightBounds",
       "asmLine": 7931,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Builds extended right boundary with original carry, applies one-time page control, then handles row-$0f control records.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26635,13 +26653,16 @@
       "label": "CheckPageCtrlRow",
       "asmLine": 7950,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Processes row-$0f page-control records only before page selection is set; advances two bytes and tail-reenters loop processing.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26652,13 +26673,16 @@
       "label": "PositionEnemyObj",
       "asmLine": 7967,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Copies object page/X, tests normal right boundary, and routes behind-screen records to row-$0e or record advancement.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26669,13 +26693,16 @@
       "label": "CheckRightExtBounds",
       "asmLine": 7983,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Tests extended right boundary, initializes visible object Y, applies row-$0e and hard-mode gates, then selects group or individual ID.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26686,13 +26713,16 @@
       "label": "CheckForEnemyGroup",
       "asmLine": 8006,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Classifies IDs below $37, group range $37-$3e and residual IDs at/above $3f.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26703,13 +26733,16 @@
       "label": "BuzzyBeetleMutate",
       "asmLine": 8014,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Mutates Goomba to Buzzy Beetle only when PrimaryHardMode is set, retaining all other IDs.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26720,13 +26753,16 @@
       "label": "StrID",
       "asmLine": 8020,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores individual ID/flag, initializes it, then advances the source record only if initialization leaves its flag active.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26737,13 +26773,16 @@
       "label": "CheckFrenzyBuffer",
       "asmLine": 8028,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Uses frenzy buffer first, otherwise produces a vine only for VineFlagOffset one, else exits.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26754,13 +26793,16 @@
       "label": "StrFre",
       "asmLine": 8035,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores fallback identifier into current enemy ID then enters common initialization.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26771,13 +26813,16 @@
       "label": "InitEnemyObject",
       "asmLine": 8037,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Clears current enemy state, calls CheckpointEnemyID and falls into return exit.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26788,13 +26833,16 @@
       "label": "ExEPar",
       "asmLine": 8041,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns from parser/fallback initialization.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26805,13 +26853,16 @@
       "label": "DoGroup",
       "asmLine": 8043,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Tail-jumps group identifiers into HandleGroupEnemies.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26822,13 +26873,16 @@
       "label": "ParseRow0e",
       "asmLine": 8046,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Reads the third record byte; only matching world writes AreaPointer and EntrancePage before three-byte advancement.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26839,13 +26893,16 @@
       "label": "NotUse",
       "asmLine": 8064,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Tail-jumps to three-byte record advancement regardless of row-$0e world match.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26856,13 +26913,16 @@
       "label": "CheckThreeBytes",
       "asmLine": 8066,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Selects two- versus three-byte advance based solely on current record row.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26873,13 +26933,16 @@
       "label": "Inc3B",
       "asmLine": 8072,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Adds the extra first increment for row-$0e records.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -26890,13 +26953,16 @@
       "label": "Inc2B",
       "asmLine": 8073,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Advances two bytes, clears enemy page select, restores ObjectOffset and returns.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75630,12 +75696,15 @@
       "instruction": "bne",
       "id": "control-01459",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcessEnemyData -> CheckEndofBuffer with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75650,12 +75719,15 @@
       "instruction": "jmp",
       "id": "control-01460",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ProcessEnemyData -> CheckFrenzyBuffer with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75670,12 +75742,15 @@
       "instruction": "beq",
       "id": "control-01461",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckEndofBuffer -> CheckRightBounds with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75690,12 +75765,15 @@
       "instruction": "bcc",
       "id": "control-01462",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckEndofBuffer -> CheckRightBounds with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75710,12 +75788,15 @@
       "instruction": "beq",
       "id": "control-01463",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckEndofBuffer -> CheckRightBounds with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75730,12 +75811,15 @@
       "instruction": "bcc",
       "id": "control-01464",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckRightBounds -> CheckPageCtrlRow with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75750,12 +75834,15 @@
       "instruction": "bne",
       "id": "control-01465",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckRightBounds -> CheckPageCtrlRow with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75770,12 +75857,15 @@
       "instruction": "inc",
       "id": "control-01466",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation CheckRightBounds -> CheckPageCtrlRow with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75790,12 +75880,15 @@
       "instruction": "bne",
       "id": "control-01467",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckPageCtrlRow -> PositionEnemyObj with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75810,12 +75903,15 @@
       "instruction": "bne",
       "id": "control-01468",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckPageCtrlRow -> PositionEnemyObj with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75852,12 +75948,15 @@
       "instruction": "bcs",
       "id": "control-01470",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PositionEnemyObj -> CheckRightExtBounds with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75872,12 +75971,15 @@
       "instruction": "beq",
       "id": "control-01471",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PositionEnemyObj -> ParseRow0e with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75892,12 +75994,15 @@
       "instruction": "jmp",
       "id": "control-01472",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation PositionEnemyObj -> CheckThreeBytes with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75912,12 +76017,15 @@
       "instruction": "bcc",
       "id": "control-01473",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckRightExtBounds -> CheckFrenzyBuffer with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75932,12 +76040,15 @@
       "instruction": "beq",
       "id": "control-01474",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckRightExtBounds -> ParseRow0e with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75952,12 +76063,15 @@
       "instruction": "beq",
       "id": "control-01475",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckRightExtBounds -> CheckForEnemyGroup with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75972,12 +76086,15 @@
       "instruction": "beq",
       "id": "control-01476",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckRightExtBounds -> Inc2B with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -75992,12 +76109,15 @@
       "instruction": "beq",
       "id": "control-01477",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation CheckRightExtBounds -> CheckForEnemyGroup with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76012,12 +76132,15 @@
       "instruction": "bcc",
       "id": "control-01478",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckForEnemyGroup -> BuzzyBeetleMutate with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76032,12 +76155,15 @@
       "instruction": "bcc",
       "id": "control-01479",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckForEnemyGroup -> DoGroup with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76052,12 +76178,15 @@
       "instruction": "bcc",
       "id": "control-01480",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation CheckForEnemyGroup -> BuzzyBeetleMutate with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76072,12 +76201,15 @@
       "instruction": "bne",
       "id": "control-01481",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation BuzzyBeetleMutate -> StrID with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76092,12 +76224,15 @@
       "instruction": "beq",
       "id": "control-01482",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation BuzzyBeetleMutate -> StrID with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76112,12 +76247,15 @@
       "instruction": "lda",
       "id": "control-01483",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation BuzzyBeetleMutate -> StrID with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76132,12 +76270,15 @@
       "instruction": "jsr",
       "id": "control-01484",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation StrID -> InitEnemyObject with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76152,12 +76293,15 @@
       "instruction": "bne",
       "id": "control-01485",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation StrID -> Inc2B with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76172,12 +76316,15 @@
       "instruction": "bne",
       "id": "control-01486",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckFrenzyBuffer -> StrFre with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76192,12 +76339,15 @@
       "instruction": "bne",
       "id": "control-01487",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckFrenzyBuffer -> ExEPar with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76212,12 +76362,15 @@
       "instruction": "lda",
       "id": "control-01488",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation CheckFrenzyBuffer -> StrFre with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76232,12 +76385,15 @@
       "instruction": "sta",
       "id": "control-01489",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation StrFre -> InitEnemyObject with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76272,12 +76428,15 @@
       "instruction": "jsr",
       "id": "control-01491",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitEnemyObject -> ExEPar with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76313,12 +76472,15 @@
       "instruction": "bne",
       "id": "control-01493",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ParseRow0e -> NotUse with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76333,12 +76495,15 @@
       "instruction": "sta",
       "id": "control-01494",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ParseRow0e -> NotUse with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76353,12 +76518,15 @@
       "instruction": "jmp",
       "id": "control-01495",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation NotUse -> Inc3B with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76373,12 +76541,15 @@
       "instruction": "bne",
       "id": "control-01496",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckThreeBytes -> Inc2B with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76393,12 +76564,15 @@
       "instruction": "bne",
       "id": "control-01497",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation CheckThreeBytes -> Inc3B with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -76413,12 +76587,15 @@
       "instruction": "inc",
       "id": "control-01498",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation Inc3B -> Inc2B with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -121141,12 +121318,15 @@
       "instruction": "rts/rti",
       "id": "control-03767",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation InitEnemyObject -> StrID with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",

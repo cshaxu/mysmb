@@ -435558,7 +435558,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "state": "admitted-current-audit",
+      "state": "closed-current-audit",
       "evidence": "docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md"
     }
   ]
