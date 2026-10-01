@@ -2191,3 +2191,12 @@ controls and eight material handoffs. Static source/instruction audit and 1,024
 original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
 1,992**; exact nodes **1,134 / 1,992**; exact feasible controls **2,255 /
 4,324**; raw **4,342**, infeasible **18**.
+
+
+## S17 closure — Bowser front/rear graphics and collision chain
+
+All four scoped labels are current-exact: `BowserGfxHandler`, `CopyFToR`, `ExBGfxH` and `ProcessBowserHalf`. Static `$D17B-$D1D0` comparison binds 86 instruction bytes and confirms front-before-rear processing, `$10/$f0` direction wrapping, rear-slot state transfer, `ObjectOffset` save/restore, normal-state-only bounding box, collision tail and graphics-flag reset. All 11 feasible controls and five material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 512 original-ROM graphics snapshots with zero differences. The focused C90 front/rear contract, platform-purity check and OpenNT DOS16 shared-source link pass. Only an audit harness changed, so no three-EXE artifact refresh is due. No labels are deferred; S18 begins at `FlameTimerData`.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,138 / 1,992 nodes** and **2,266 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).

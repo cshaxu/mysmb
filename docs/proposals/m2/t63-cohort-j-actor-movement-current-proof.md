@@ -764,3 +764,35 @@ labels are deferred; S17 begins at BowserGfxHandler.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,134 / 1,992 nodes** and **2,255 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+
+## S17 admission — Bowser front/rear graphics and collision chain
+
+S17 admits `BowserGfxHandler -> ProcessBowserHalf` (lines 10289–10323,
+`$D17B-$D1D0`): BowserGfxHandler, CopyFToR, ExBGfxH and ProcessBowserHalf.
+The shared owner is `src/game/oam/bowser_gfx.c`. Retainer drawing, bounding-box
+and player-collision bodies are explicit child boundaries. S16 is closed; S18
+begins at FlameTimerData.
+
+The ROM-logic track compares both half calls, direction delta, byte wrapping,
+rear-slot transfer, ObjectOffset save/restore, rear ID, graphics flag, normal
+state gate, bound-box write and collision tail. The operational track batches
+512 original-ROM graphics fixtures once per x86/x64 width and runs the focused
+front/rear contract, purity and DOS16 link. Any difference remains S17 repair work.
+
+### S17 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,134 / 1,992**.
+- Current exact feasible controls: **2,255 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **4** labels; expected current promotions: **4**; maximum exact nodes: **1,138 / 1,992**.
+
+
+## S17 closure — Bowser front/rear graphics and collision chain
+
+All four scoped labels are current-exact: `BowserGfxHandler`, `CopyFToR`, `ExBGfxH` and `ProcessBowserHalf`. Static `$D17B-$D1D0` comparison binds 86 instruction bytes and confirms front-before-rear processing, `$10/$f0` direction wrapping, rear-slot state transfer, `ObjectOffset` save/restore, normal-state-only bounding box, collision tail and graphics-flag reset. All 11 feasible controls and five material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 512 original-ROM graphics snapshots with zero differences. The focused C90 front/rear contract, platform-purity check and OpenNT DOS16 shared-source link pass. Only an audit harness changed, so no three-EXE artifact refresh is due. No labels are deferred; S18 begins at `FlameTimerData`.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,138 / 1,992 nodes** and **2,266 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
