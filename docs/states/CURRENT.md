@@ -10,7 +10,7 @@
 | Admission And Approval | T57 S1 closed after its shared-C repair and repeated dual-track proof; the owner-approved source-order program admits S2. |
 | Objective | Audit and, if necessary, repair `StaircaseHeightData -> ExitDecBlock` against original-ROM control/data/state semantics. |
 | Non-goals | No S3 hole/block-buffer work, no platform-specific game logic and no advance while a feasible S2 difference remains. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 379 exact and 1,613 needs-evidence nodes; 817 exact feasible controls. Scope: 13 labels; expected historical delta: zero. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 379 exact and 1,613 needs-evidence nodes; 815 exact feasible controls. Scope: 13 labels; expected historical delta: zero. |
 | Candidate Proposal | docs/proposals/m2/t57-cohort-d-renderer-current-proof.md. |
 | Files And ABI Surface | Shared `src/game/area.c`; platform adapters remain consumers only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |

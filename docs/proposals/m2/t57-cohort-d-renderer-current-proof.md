@@ -190,7 +190,7 @@ S1 closes all 26 scoped labels current-exact: `FlagpoleObject`, `EndlessRope`,
 `RowOfBricks`, `DrawBricks`, `RowOfSolidBlocks`, `GetRow`, `DrawRow`,
 `ColumnOfBricks`, `ColumnOfSolidBlocks`, `GetRow2`, `BulletBillCannon`,
 `SetupCannon` and `StrCOffset`. The source audit covers all 61 incident
-control relations; 50 newly become exact and the 11 already-exact dispatch
+control relations; 48 newly become exact and the 13 already-exact dispatch
 relations remain confirmed. This chain has no material-relation entry.
 
 P1 repaired the one feasible difference. Original `FlagpoleObject` calls
