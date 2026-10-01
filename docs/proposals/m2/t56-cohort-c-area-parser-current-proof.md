@@ -227,3 +227,24 @@ decoding, object dispatch, parser-state mutation and area attribute updates.
 All 32 labels are currently `needs-evidence`, historically complete, and have
 a zero historical credit forecast. A feasible difference stays in S3 for
 shared-C repair and repeated ROM/native audit before S4 is admitted.
+
+## S3 P1 - InitRear ChkLength repair
+
+The S3 source audit found one shared-C difference in the `InitRear` path. ROM
+`InitRear` clears `BackloadingFlag`, `BehindAreaParserFlag`, and
+`ObjectOffset`, then returns through `RdyDecode` to `ChkLength`. Since
+`ObjectOffset` is now zero, `ChkLength` decrements resident slot zero before
+`ProcessAreaData` returns. The C owner returned immediately and omitted that
+slot-zero decrement. `src/game/area.c` now performs the exact `ChkLength`
+state mutation before the native return.
+
+`area_parser_boundary_smoke` now establishes the ROM state with a resident
+slot zero and a current-page object ending backloading; it proves the slot-zero
+length decrement and the cleared backloading/parser state. Current x86 and
+x64 builds pass that regression plus parser-column and parser-schedule smokes.
+The same source links as the OpenNT DOS16 MZ; its linker reports only the
+existing `OLDNAMES.LIB` warning.
+
+The refreshed P1 artifacts are `mysmb16.exe` SHA-256
+`05A8ADBB0A1F35FECE95290BCD24251EA72B2E1166DBEA01D29382A9485B9A9E`, `mysmb32.exe` SHA-256 `C7B2C88E9E5CA15BED1F3C80A7C271B44F85C852F0C2CDFDF0D46C7C5AE9E09E`, and `mysmb64.exe`
+SHA-256 `69A271EEC057AA3B13C5C7B7A9E5C8F73ACE11C5ECF7A26598670AB5A7DA562D`.

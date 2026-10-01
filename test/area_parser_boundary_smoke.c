@@ -55,5 +55,27 @@ int main(void)
     /* A nonterminal requiring an absent second byte remains rejected. */
     prg[0x40U] = 0x25U;
     if (mysmb_area_process_object_state(&game)) return 7;
+    /* InitRear stores ObjectOffset zero, returns through RdyDecode, then
+     * ChkLength decrements resident slot zero before ProcessAreaData exits. */
+    memset(prg, 0xfd, sizeof(prg));
+    prg[0x40U] = 0x20U;
+    prg[0x41U] = 0x03U;
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, prg, sizeof(prg));
+    game.ram[0xe7U] = 0x40U;
+    game.ram[0xe8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 2U;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x0728U] = 1U;
+    if (!mysmb_area_process_object_state(&game)) return 8;
+    if (game.ram[0x0730U] != 1U) return 9;
+    if (game.ram[0x0728U] != 0U) return 10;
+    if (game.ram[0x072bU] != 0U) return 11;
+    if (game.ram[0x072aU] != 0U) return 12;
     return 0;
 }

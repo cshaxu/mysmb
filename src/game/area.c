@@ -1890,6 +1890,12 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                             game->ram[MYSMB_AREA_BACKLOADING] = 0U;
                             game->ram[MYSMB_AREA_PARSER_BEHIND] = 0U;
                             game->ram[MYSMB_AREA_OBJECT_OFFSET] = 0U;
+                            /* InitRear returns through RdyDecode to
+                             * ChkLength.  Because it has just stored zero in
+                             * ObjectOffset, that tail observes slot zero,
+                             * not the new object's slot. */
+                            if (game->ram[MYSMB_AREA_OBJECT_LENGTH] < 0x80U)
+                                game->ram[MYSMB_AREA_OBJECT_LENGTH]--;
                             return 1U;
                         }
                         column = (mysmb_u8)(first >> 4U);
