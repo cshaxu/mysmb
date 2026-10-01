@@ -298,3 +298,20 @@ not refreshed. The registry promotes the observed `GameMode -> JumpEngine`
 call and `JumpEngine -> GameMode` continuation only; the other `JumpEngine`
 caller families remain unpromoted until their own current controlled ROM/native
 routes run.
+
+## S6 P7 ? current ordinary-route edge evidence
+
+The same freshly generated 600-frame Start replay has now been used only for
+relations it actually observes. Original PC coverage reaches
+`OperModeExecutionTree`, `AreaParserTasks`, `RunAObj`, `GameRoutines`,
+`MoveSubs`, `InitEnemyRoutines`, `JmpEO` and `EnemyMovementSubs`, as well as
+the shared `JumpEngine`; the current x86/x64 records remain exact to the ROM
+outside the declared recorder scratch and are byte-identical to each other.
+The registry therefore promotes the 15 observed feasible call/return edges
+for those families. `InitEnemyRoutines` has no corresponding feasible return
+edge, so it is not fabricated as one.
+
+This still does not cover the Victory, GameOver, AreaStyle, BlockCode, frenzy,
+large-platform or star-flag vector families, nor the name-table inner edges.
+They remain `needs-evidence` and keep S6 open. No product source changed and
+artifacts are not refreshed.

@@ -44008,12 +44008,14 @@
       "instruction": "jsr",
       "id": "control-00075",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Original call relation OperModeExecutionTree -> JumpEngine at source line 956 (jsr) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -52432,12 +52434,14 @@
       "instruction": "jsr",
       "id": "control-00477",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c task switch is the source-equivalent JumpEngine selector owner.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "area.c task switch is the source-equivalent JumpEngine selector owner.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -54523,12 +54527,14 @@
       "instruction": "jsr",
       "id": "control-00587",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser-object dispatch preserves source call relation RunAObj -> JumpEngine.",
       "semanticEvidence": [
-        "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "area.c parser-object dispatch preserves source call relation RunAObj -> JumpEngine.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -59124,12 +59130,14 @@
       "instruction": "jsr",
       "id": "control-00827",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation GameRoutines -> JumpEngine.",
       "semanticEvidence": [
-        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves source branch predicate, input partition and successor ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -61571,13 +61579,14 @@
       "instruction": "jsr",
       "id": "control-00954",
       "cohort": "F",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared player core preserves source call relation MoveSubs -> JumpEngine.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required.",
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves source input, state and physics-table branch ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -72127,12 +72136,14 @@
       "instruction": "jsr",
       "id": "control-01501",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves original call relation InitEnemyRoutines -> JumpEngine with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -75409,12 +75420,14 @@
       "instruction": "jsr",
       "id": "control-01666",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves original call relation JmpEO -> JumpEngine with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -75767,12 +75780,14 @@
       "instruction": "jsr",
       "id": "control-01682",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves original call relation EnemyMovementSubs -> JumpEngine with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -110914,12 +110929,14 @@
       "instruction": "rts/rti",
       "id": "control-03496",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Original return relation JumpEngine -> OperModeExecutionTree at source line 956 (rts/rti) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -112177,12 +112194,14 @@
       "instruction": "rts/rti",
       "id": "control-03556",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "the C task switch returns to the handler tail without a separate stack-visible side effect.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "the C task switch returns to the handler tail without a separate stack-visible side effect.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -112311,12 +112330,14 @@
       "instruction": "rts/rti",
       "id": "control-03563",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "C switch dispatch owners -> mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves the original return continuation JumpEngine → RunAObj: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -113778,12 +113799,14 @@
       "instruction": "rts/rti",
       "id": "control-03639",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "C switch dispatch owners -> mysmb_game_routines and player entry/control helpers",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves the original return continuation JumpEngine → GameRoutines: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -114192,12 +114215,14 @@
       "instruction": "rts/rti",
       "id": "control-03660",
       "cohort": "F",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "C switch dispatch owners -> player movement, physics and climbing helpers",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves the original return continuation JumpEngine → MoveSubs: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -116761,12 +116786,14 @@
       "instruction": "rts/rti",
       "id": "control-03791",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation JumpEngine -> JmpEO with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -117013,12 +117040,14 @@
       "instruction": "rts/rti",
       "id": "control-03802",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation JumpEngine -> EnemyMovementSubs with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
