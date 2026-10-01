@@ -2056,13 +2056,16 @@
       "consumer": "SpawnHammerObj",
       "storage": "pseudo-random selected parent-slot table",
       "feasiblePath": "SpawnHammerObj reads HammerEnemyOfsData[Y] before testing Enemy_Flag.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_hammer_enemy_offsets[slot]",
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2075,13 +2078,16 @@
       "consumer": "SetHSpd",
       "storage": "parent-moving-direction indexed hammer speed table",
       "feasiblePath": "SetHSpd decrements Enemy_MovingDir before reading HammerXSpdData.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_hammer_x_speeds[direction]",
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -24150,13 +24156,16 @@
       "label": "HammerEnemyOfsData",
       "asmLine": 6891,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Binds each random hammer slot to its required parent enemy slot.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24166,13 +24175,16 @@
       "label": "HammerXSpdData",
       "asmLine": 6895,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Binds parent direction to hammer horizontal speed $10/$f0.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24182,13 +24194,16 @@
       "label": "SpawnHammerObj",
       "asmLine": 6898,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Uses the source random selector, rejects occupied misc/parent slots, then preserves carry-result allocation semantics.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24198,13 +24213,16 @@
       "label": "SetMOfs",
       "asmLine": 6904,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Uses the selected misc slot before parent-flag eligibility.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24214,13 +24232,16 @@
       "label": "NoHammer",
       "asmLine": 6919,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Restores ObjectOffset and returns the source carry-clear failure result.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24230,13 +24251,16 @@
       "label": "ProcHammerObj",
       "asmLine": 6928,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Partitions timer and masked hammer state before gravity, setup or common tail.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24246,13 +24270,16 @@
       "label": "SetHSpd",
       "asmLine": 6952,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Sets vertical speed, clears parent d3 and selects horizontal speed from parent direction.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24262,13 +24289,16 @@
       "label": "SetHPos",
       "asmLine": 6962,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Decrements state and initializes carry-correct hammer position from parent coordinates.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24278,13 +24308,16 @@
       "label": "RunAllH",
       "asmLine": 6977,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Runs hammer-player collision after movement.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -24294,13 +24327,16 @@
       "label": "RunHSubs",
       "asmLine": 6978,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared hammer, world and OAM core",
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Runs offscreen, relative, bounding box and draw children in source order.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70118,12 +70154,15 @@
       "instruction": "bne",
       "id": "control-01224",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original branch relation SpawnHammerObj -> SetMOfs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70137,12 +70176,15 @@
       "instruction": "and",
       "id": "control-01225",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation SpawnHammerObj -> SetMOfs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70156,12 +70198,15 @@
       "instruction": "bne",
       "id": "control-01226",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original branch relation SetMOfs -> NoHammer with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70175,12 +70220,15 @@
       "instruction": "bne",
       "id": "control-01227",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original branch relation SetMOfs -> NoHammer with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70194,12 +70242,15 @@
       "instruction": "bne",
       "id": "control-01228",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original branch relation ProcHammerObj -> RunHSubs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70213,12 +70264,15 @@
       "instruction": "beq",
       "id": "control-01229",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original branch relation ProcHammerObj -> SetHSpd with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70232,12 +70286,15 @@
       "instruction": "bcs",
       "id": "control-01230",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original branch relation ProcHammerObj -> SetHPos with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70291,12 +70348,15 @@
       "instruction": "jmp",
       "id": "control-01233",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original jump relation ProcHammerObj -> RunAllH with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70310,12 +70370,15 @@
       "instruction": "sta",
       "id": "control-01234",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetHSpd -> SetHPos with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70329,12 +70392,15 @@
       "instruction": "bne",
       "id": "control-01235",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original branch relation SetHPos -> RunHSubs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70348,12 +70414,15 @@
       "instruction": "bne",
       "id": "control-01236",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetHPos -> RunAllH with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
@@ -70386,12 +70455,15 @@
       "instruction": "jsr",
       "id": "control-01238",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation RunAllH -> RunHSubs with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/hammer.c"

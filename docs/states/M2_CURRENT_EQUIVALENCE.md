@@ -1950,3 +1950,7 @@ All 49 T60 labels from `ProcFireball_Bubble` through `VineHeightData` are curren
 ### T61 S2 cannon and Bullet Bill lifecycle result
 
 `CannonBitmasks -> KillBB` is current-exact for all 14 scoped labels, 26 internal feasible control relations and two material bindings. A fresh 25-route original-ROM/current x86/x64 replay matched 1,782 persistent RAM bytes and full output for every route. Current registry totals are **710 / 1,992 exact nodes** and **1,417 / 4,324 exact feasible control edges**; historical migration remains **1,992 / 1,992**.
+
+### T61 S3 hammer actor lifecycle result
+
+`HammerEnemyOfsData -> RunHSubs` is current-exact for ten labels, 12 internal feasible control relations and two material bindings. The 63-ROM-snapshot caller route matches on x86/x64; the current full-chain diagnostic exposes only the still-unverified `GetMiscBoundBox` child boundary, retained for M2 T43 S13. Registry totals: **720 / 1,992 exact nodes**, **1,429 / 4,324 exact feasible control edges**; historical migration is **1,992 / 1,992**.

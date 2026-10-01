@@ -120,3 +120,9 @@ routes, run focused smoke and platform-purity checks, and link DOS16. A source
 repair refreshes all three local EXEs. Baseline: historical **1,992 / 1,992**;
 current **710 / 1,992 exact nodes** and **1,417 / 4,324 exact feasible control
 relations**.
+
+## S3 closure - hammer actor lifecycle
+
+All ten scoped hammer labels are current-exact. Static comparison of `$BA88-$BB09` with `src/game/hammer.c` found no feasible difference in random slot selection, enemy-slot exclusion, carry return, state transition, gravity/movement order, direction-indexed speed, coordinate/page carry, or common tail order. The two material bindings and 12 internal feasible control relations agree.
+
+Sixty-three original hammer snapshots replay as 126 x86/x64 caller routes with zero differences; focused hammer smoke executes 9,984 cases per width with zero errors. The complete-current replay identifies an external dependency gap only: cases 27–44 differ after `RunHSubs -> GetMiscBoundBox` in `$04d0-$04f2`; `GetMiscBoundBox` and control-01241 remain `needs-evidence` with receiver **M2 T43 S13**. This is not credited by S3 and blocks no statement about that child. No product source changed, so executable artifacts were not refreshed. Current re-audit advances to **720 / 1,992 exact nodes** and **1,429 / 4,324 exact feasible control relations**; historical accounting remains **1,992 / 1,992**.

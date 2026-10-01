@@ -2044,3 +2044,7 @@ Every M2 P report also retains the existing delivery record: refreshed `assets/m
 ## Current re-audit progress
 
 T61 S2 closes `CannonBitmasks -> KillBB`: **710 / 1,992 current-exact nodes** and **1,417 / 4,324 current-exact feasible control relations**. Historical ROM-match accounting remains **1,992 / 1,992**.
+
+## Current re-audit progress — T61 S3
+
+T61 S3 closes the hammer caller chain at **720 / 1,992 current-exact nodes** and **1,429 / 4,324 current-exact feasible control relations**. The `GetMiscBoundBox` child boundary remains `needs-evidence` with M2 T43 S13; historical accounting remains **1,992 / 1,992**.
