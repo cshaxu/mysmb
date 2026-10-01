@@ -1751,3 +1751,7 @@ one source-order audit and the bounded dispatch plus pause/sprite route
 matrix. The four `ScreenOff` transaction-order mismatches are cross-boundary
 relations to `InitScroll`/`UpdateScreen`, so they remain open repair evidence
 and are not part of the S1 internal-edge result.
+
+### T53 S4 victory-chain result
+
+The 22 labels from `VictoryMode` through `EndExitTwo` and their 65 incident executable control relations are current-exact. Static source-order comparison found no ROM/C difference. Fifteen controlled original-ROM/x86/x64 fixtures are exact over eight recorded frames after a 60-frame warmup, with byte-identical x86/x64 records. The current x64 bowser, endgame-object, mode and victory-message checks pass. The live registry is now **98 exact nodes**, **211 exact control relations**, **18 infeasible raw relations**, **4,324 feasible control relations**, and **zero mismatches**; historical conformance remains **1,992 / 1,992**.

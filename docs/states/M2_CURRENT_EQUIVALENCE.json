@@ -10822,13 +10822,16 @@
       "label": "VictoryMode",
       "asmLine": 1137,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c and src/game/terminal_modes.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory branch plus src/game/terminal_modes.c:mysmb_game_step_victory",
       "semanticEvidence": [
-        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required."
+        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8471: calls the selected VictoryModeSubroutines leaf, then reads OperMode_Task; task zero bypasses enemy work, every nonzero task writes ObjectOffset=0 and executes one EnemiesAndLoopsCore turn, then all paths compute relative player coordinates and tail-enter player graphics.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -10839,13 +10842,16 @@
       "label": "AutoPlayer",
       "asmLine": 1144,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory tail",
       "semanticEvidence": [
-        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required."
+        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $847c: after the selected victory leaf and any required enemy turn, calls RelativePlayerPosition and tail-jumps PlayerGfxHandler. The task-zero bridge-collapse path uses the same tail.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -10855,13 +10861,16 @@
       "label": "VictoryModeSubroutines",
       "asmLine": 1147,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory OperMode_Task selector",
       "semanticEvidence": [
-        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required."
+        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8482: reads OperMode_Task and dispatches selectors 0..4 in order to BridgeCollapse, SetupVictoryMode, PlayerVictoryWalk, PrintVictoryMessages and PlayerEndWorld; control returns to VictoryMode before its post-leaf branch.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10871,13 +10880,16 @@
       "label": "SetupVictoryMode",
       "asmLine": 1159,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 1 branch",
       "semanticEvidence": [
-        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required."
+        "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8493: writes DestinationPageLoc as ScreenRight_PageLoc+1, queues EndOfCastleMusic ($08), then tail-enters IncModeTask_B to advance OperMode_Task exactly once.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10887,13 +10899,16 @@
       "label": "PlayerVictoryWalk",
       "asmLine": 1169,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 branch",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $84a1: clears VictoryWalkControl; selects walking when Player_PageLoc differs from DestinationPageLoc or same-page Player_X_Position is below $60; always invokes AutoControlPlayer with 0/1; if ScreenLeft_PageLoc differs from destination, adds $80 to ScrollFractional, scrolls by 1+carry, runs UpdScrollVar, and retains the victory task. A zero control at exit advances OperMode_Task.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10903,13 +10918,16 @@
       "label": "PerformWalk",
       "asmLine": 1178,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 walk predicate",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $84af: increments VictoryWalkControl and selects the rightward auto-control value before the shared DontWalk continuation.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10919,13 +10937,16 @@
       "label": "DontWalk",
       "asmLine": 1180,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 AutoControlPlayer/scroll continuation",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $84b1: invokes AutoControlPlayer with the selected 0/1 value, conditionally applies fixed-point $80 scroll and parser update, and hands the resulting VictoryWalkControl to ExitVWalk.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10935,13 +10956,16 @@
       "label": "ExitVWalk",
       "asmLine": 1195,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 terminal condition",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $84d0: advances OperMode_Task only when VictoryWalkControl remains zero; otherwise returns to VictoryMode without another task change.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10951,13 +10975,16 @@
       "label": "PrintVictoryMessages",
       "asmLine": 1201,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $83c9: branches on SecondaryMsgCounter, then PrimaryMsgCounter, WorldNumber and source thresholds to choose a message/control write or counters; it must not select a message on a nonzero secondary counter.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10967,13 +10994,16 @@
       "label": "MRetainerMsg",
       "asmLine": 1215,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $83da: on worlds 1â€“7, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10983,13 +11013,16 @@
       "label": "ThankPlayer",
       "asmLine": 1217,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $83df: turns the primary value into message index Y; at zero it selects Mario or Luigi first-message index, otherwise enters the second-message transform.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -10999,13 +11032,16 @@
       "label": "SecondPartMsg",
       "asmLine": 1223,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1â€“7, choosing ordinary message, counter-only, or end-timer paths.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11015,13 +11051,16 @@
       "label": "EvalForMusic",
       "asmLine": 1232,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $83fd: queues VictoryMusic only for World 8 message index three, then reaches PrintMsg; other indexes print without changing EventMusicQueue.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11031,13 +11070,16 @@
       "label": "PrintMsg",
       "asmLine": 1236,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8404: writes VRAM_Buffer_AddrCtrl as the selected message index plus $0c, then continues to counter update.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11047,13 +11089,16 @@
       "label": "IncMsgCounter",
       "asmLine": 1240,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $840d: adds four to SecondaryMsgCounter, carries into PrimaryMsgCounter, and passes its post-add primary result to SetEndTimer.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11063,13 +11108,16 @@
       "label": "SetEndTimer",
       "asmLine": 1248,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $841a: returns without terminal writes while post-add primary is below seven; otherwise writes WorldEndTimer=$06 then enters the common task increment.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11079,13 +11127,16 @@
       "label": "IncModeTask_A",
       "asmLine": 1251,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8422: increments OperMode_Task exactly once before the common return.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11095,13 +11146,16 @@
       "label": "ExitMsgs",
       "asmLine": 1252,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8423: returns from the victory message leaf without further game-state writes.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11111,13 +11165,16 @@
       "label": "PlayerEndWorld",
       "asmLine": 1256,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1â€“7 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11127,13 +11184,16 @@
       "label": "EndExitOne",
       "asmLine": 1271,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8443: returns from PlayerEndWorld after either the active-timer branch or the completed next-world transition without additional writes.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11143,13 +11203,16 @@
       "label": "EndChkBButton",
       "asmLine": 1272,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8444: ORs both saved controller latches, tests B, returns on no B, otherwise sets WorldSelectEnableFlag and lives=$ff before TerminateGame.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -11159,13 +11222,16 @@
       "label": "EndExitTwo",
       "asmLine": 1281,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
+        "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8454: returns after the World 8 no-B result or after TerminateGame returns, preserving that helper result.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44664,12 +44730,15 @@
       "instruction": "jsr",
       "id": "control-00123",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step calls mysmb_game_step_victory before the post-leaf victory tail",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original call VictoryMode -> VictoryModeSubroutines must select one leaf before VictoryMode reads OperMode_Task for its post-leaf branch.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44684,12 +44753,15 @@
       "instruction": "beq",
       "id": "control-00124",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory post-leaf task == 0 branch",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original branch VictoryMode -> AutoPlayer is taken only when the selected leaf leaves OperMode_Task at zero; it bypasses the enemy turn but not relative position or player graphics.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44704,12 +44776,15 @@
       "instruction": "jsr",
       "id": "control-00125",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory post-leaf mysmb_enemy_core_step_slot(..., 0)",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original call VictoryMode -> EnemiesAndLoopsCore runs only for nonzero task, first writes ObjectOffset=0, and executes one enemy core turn before AutoPlayer.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44724,12 +44799,15 @@
       "instruction": "jsr",
       "id": "control-00126",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory tail after optional enemy step",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original fall-through VictoryMode -> AutoPlayer reaches the shared relative-position/player-graphics tail after the optional enemy call returns.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44744,12 +44822,15 @@
       "instruction": "jsr",
       "id": "control-00127",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_oam_relative_player_position",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original call AutoPlayer -> RelativePlayerPosition completes before graphics; its player relative-coordinate writes are the graphics input.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44764,12 +44845,15 @@
       "instruction": "jmp",
       "id": "control-00128",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_oam_render_player after mysmb_oam_relative_player_position",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original tail jump AutoPlayer -> PlayerGfxHandler ends VictoryMode after relative-position output is available; C preserves observable tail order without a host call-stack tail-jump requirement.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -44784,12 +44868,15 @@
       "instruction": "jsr",
       "id": "control-00129",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory ordered OperMode_Task selector",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original call VictoryModeSubroutines -> JumpEngine dispatches exactly the five inline selector entries from the current OperMode_Task and returns control to VictoryMode after the selected leaf.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -44804,12 +44891,15 @@
       "instruction": "jsr",
       "id": "control-00130",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 1 selector",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original selector relation VictoryModeSubroutines -> SetupVictoryMode selects the second inline entry only for OperMode_Task=1.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44823,12 +44913,15 @@
       "instruction": "jmp",
       "id": "control-00131",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 1 writes OperMode_Task=2",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original tail jump SetupVictoryMode -> IncModeTask_B advances the major-mode task after destination page and event music writes, without an intervening game operation.",
       "currentSourcePaths": [
         "src/game/game.c",
@@ -44843,12 +44936,15 @@
       "instruction": "bne",
       "id": "control-00132",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:task == 2 Player_Page != DestinationPage condition",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original branch PlayerVictoryWalk -> PerformWalk selects walking when Player_PageLoc differs from DestinationPageLoc.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44862,12 +44958,15 @@
       "instruction": "bcs",
       "id": "control-00133",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:task == 2 Player_X >= 0x60 condition",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original branch PlayerVictoryWalk -> DontWalk selects no-walk only after page equality and Player_X_Position >= $60.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44881,12 +44980,15 @@
       "instruction": "bcs",
       "id": "control-00134",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:task == 2 shared walk predicate false path",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original fall-through PlayerVictoryWalk -> PerformWalk selects walking when page is equal and Player_X_Position < $60.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44900,12 +45002,15 @@
       "instruction": "iny",
       "id": "control-00135",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:task == 2 shared continuation after setting auto_buttons",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original fall-through PerformWalk -> DontWalk preserves the incremented VictoryWalkControl and rightward auto-control value.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44919,12 +45024,15 @@
       "instruction": "jsr",
       "id": "control-00136",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_player_step(game, auto_buttons)",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original call DontWalk -> AutoControlPlayer must run once with the locally selected zero/right value before the screen-left comparison.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44938,12 +45046,15 @@
       "instruction": "beq",
       "id": "control-00137",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:task == 2 ScreenLeft_Page == DestinationPage condition",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original branch DontWalk -> ExitVWalk bypasses fractional scroll, ScrollScreen and UpdScrollVar when ScreenLeft_PageLoc equals DestinationPageLoc.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44957,12 +45068,15 @@
       "instruction": "jsr",
       "id": "control-00138",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_player_scroll_screen(game, scroll_amount)",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original call DontWalk -> ScrollScreen occurs only after ScrollFractional += $80 and supplies exactly 1+carry pixels.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44976,12 +45090,15 @@
       "instruction": "jsr",
       "id": "control-00139",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_area_parser(game)",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original call DontWalk -> UpdScrollVar follows ScrollScreen and updates parser/scroll state before VictoryWalkControl is incremented.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -44995,12 +45112,15 @@
       "instruction": "inc",
       "id": "control-00140",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:task == 2 continuation to terminal condition",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original fall-through DontWalk -> ExitVWalk hands the post-scroll or no-scroll VictoryWalkControl to the single task-advance test.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45014,12 +45134,15 @@
       "instruction": "beq",
       "id": "control-00141",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:task == 2 VictoryWalkControl == 0 condition increments OperMode_Task",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original branch ExitVWalk -> IncModeTask_A advances the task exactly when the control remains zero; nonzero returns to VictoryMode.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45033,12 +45156,15 @@
       "instruction": "bne",
       "id": "control-00142",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary != 0 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PrintVictoryMessages -> IncMsgCounter branches immediately for nonzero SecondaryMsgCounter without a message selection.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45052,12 +45178,15 @@
       "instruction": "beq",
       "id": "control-00143",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary == 0 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PrintVictoryMessages -> ThankPlayer reaches first-message selection only when the secondary divider and primary counter are zero.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45071,12 +45200,15 @@
       "instruction": "bcs",
       "id": "control-00144",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary >= 9 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PrintVictoryMessages -> IncMsgCounter preserves the residual primary-at-least-nine branch rather than printing a message.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45090,12 +45222,15 @@
       "instruction": "bne",
       "id": "control-00145",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary in 1..8 && world != 7 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PrintVictoryMessages -> MRetainerMsg selects the worlds 1â€“7 message threshold path only after the secondary/primary gates.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45109,12 +45244,15 @@
       "instruction": "bcc",
       "id": "control-00146",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary in 1..2 && world == 7 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PrintVictoryMessages -> IncMsgCounter holds World 8 primary values below three on the counter-only path.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45128,12 +45266,15 @@
       "instruction": "jmp",
       "id": "control-00147",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages secondary == 0 && primary in 3..8 && world == 7 continuation",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original tail jump PrintVictoryMessages -> ThankPlayer subtracts one before the World 8 message-index transform.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45147,12 +45288,15 @@
       "instruction": "bcc",
       "id": "control-00148",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 primary < 2 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original MRetainerMsg -> IncMsgCounter selects counter-only behavior for worlds 1â€“7 before their second message.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45166,12 +45310,15 @@
       "instruction": "bcc",
       "id": "control-00149",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 primary >= 2 fall-through",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original MRetainerMsg -> ThankPlayer preserves the primary-derived message index for worlds 1â€“7.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45185,12 +45332,15 @@
       "instruction": "bne",
       "id": "control-00150",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages ThankPlayer primary-derived index != 0 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original ThankPlayer -> SecondPartMsg skips first-player selection whenever its message index is nonzero.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45204,12 +45354,15 @@
       "instruction": "beq",
       "id": "control-00151",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages first message CurrentPlayer == 0 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original ThankPlayer -> EvalForMusic selects Mario index zero without modifying it.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45223,12 +45376,15 @@
       "instruction": "bne",
       "id": "control-00152",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages first message CurrentPlayer != 0 continuation",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original ThankPlayer -> EvalForMusic increments the first-message index for Luigi before common music evaluation.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45242,12 +45398,15 @@
       "instruction": "bne",
       "id": "control-00153",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages nonzero message-index continuation",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original ThankPlayer -> SecondPartMsg enters the world-specific second-message transform after a nonzero index.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45261,12 +45420,15 @@
       "instruction": "beq",
       "id": "control-00154",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages World 8 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SecondPartMsg -> EvalForMusic retains the incremented World 8 message index.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45280,12 +45442,15 @@
       "instruction": "bcs",
       "id": "control-00155",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 transformed index >= 4 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SecondPartMsg -> SetEndTimer terminates worlds 1â€“7 messaging at transformed index four.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45299,12 +45464,15 @@
       "instruction": "bcs",
       "id": "control-00156",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 transformed index == 3 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SecondPartMsg -> IncMsgCounter retains the counter-only path at transformed index three.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45318,12 +45486,15 @@
       "instruction": "bcs",
       "id": "control-00157",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 transformed index < 3 continuation",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SecondPartMsg -> EvalForMusic reaches ordinary message output only below the two terminal thresholds.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45337,12 +45508,15 @@
       "instruction": "bne",
       "id": "control-00158",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages message index != 3 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original EvalForMusic -> PrintMsg emits a message without queuing VictoryMusic except at World 8 index three.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45356,12 +45530,15 @@
       "instruction": "sta",
       "id": "control-00159",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages message index == 3 continuation after EventMusicQueue write",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original EvalForMusic -> PrintMsg queues VictoryMusic before the corresponding control write.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45375,12 +45552,15 @@
       "instruction": "sta",
       "id": "control-00160",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages message-control write continuation",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PrintMsg -> IncMsgCounter updates counters after writing VRAM_Buffer_AddrCtrl.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45394,12 +45574,15 @@
       "instruction": "cmp",
       "id": "control-00161",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages post-add primary handoff",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original IncMsgCounter -> SetEndTimer compares the carry-adjusted PrimaryMsgCounter after the secondary add-four operation.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45413,12 +45596,15 @@
       "instruction": "bcc",
       "id": "control-00162",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages post-add primary < 7 branch",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SetEndTimer -> ExitMsgs returns without WorldEndTimer or task writes below terminal primary seven.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45432,12 +45618,15 @@
       "instruction": "sta",
       "id": "control-00163",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages post-add primary >= 7 continuation",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SetEndTimer -> IncModeTask_A writes WorldEndTimer=$06 before the common task increment.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45451,12 +45640,15 @@
       "instruction": "inc",
       "id": "control-00164",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages common increment continuation",
       "semanticEvidence": [
-        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original IncModeTask_A -> ExitMsgs returns only after incrementing OperMode_Task.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45470,12 +45662,15 @@
       "instruction": "bne",
       "id": "control-00165",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch WorldEndTimer != 0 return",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PlayerEndWorld -> EndExitOne returns with no terminal transition when WorldEndTimer is nonzero.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45489,12 +45684,15 @@
       "instruction": "bcs",
       "id": "control-00166",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch WorldNumber >= 7 branch",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PlayerEndWorld -> EndChkBButton enters controller processing only after expired timer at World 8.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45508,12 +45706,15 @@
       "instruction": "jsr",
       "id": "control-00167",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1â€“7 mysmb_game_load_area_pointer call",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PlayerEndWorld -> LoadAreaPointer occurs after area/level/task reset and world increment, before FetchNewGameTimerFlag and GameMode writes.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
@@ -45528,12 +45729,15 @@
       "instruction": "sta",
       "id": "control-00168",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1â€“7 next-world continuation",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original PlayerEndWorld -> EndExitOne completes the next-world writes only after LoadAreaPointer returns.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45547,12 +45751,15 @@
       "instruction": "beq",
       "id": "control-00169",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch World 8 combined saved joypad B clear branch",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original EndChkBButton -> EndExitTwo returns when neither saved controller latch has B set.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45566,12 +45773,15 @@
       "instruction": "jsr",
       "id": "control-00170",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch World 8 B-set terminal helper sequence",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original EndChkBButton -> TerminateGame writes WorldSelectEnableFlag and lives=$ff before terminal player switching/title transition.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45585,12 +45795,15 @@
       "instruction": "jsr",
       "id": "control-00171",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch World 8 B-set post-terminate continuation",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original EndChkBButton -> EndExitTwo returns after TerminateGame completes its selected player-continuation or title-return result.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -45604,12 +45817,15 @@
       "instruction": "beq",
       "id": "control-00172",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/score.c:mysmb_game_step_floatey_number zero-control return",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original FloateyNumbersRoutine -> EndExitOne uses EndExitOne only as a shared RTS leaf when the floatey control is zero; it must not enter PlayerEndWorld terminal logic.",
       "currentSourcePaths": [
         "src/game/objects.c",
@@ -110089,12 +110305,15 @@
       "instruction": "rts/rti",
       "id": "control-03504",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step resumes victory post-leaf branch after mysmb_game_step_victory",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original return VictoryModeSubroutines -> VictoryMode hands control back before VictoryMode reloads OperMode_Task for the task-zero/enemy decision.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -110109,12 +110328,15 @@
       "instruction": "rts/rti",
       "id": "control-03505",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation EnemiesAndLoopsCore -> VictoryMode with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -110129,12 +110351,15 @@
       "instruction": "rts/rti",
       "id": "control-03506",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "The source return relation RelativePlayerPosition → AutoPlayer restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -110149,12 +110374,15 @@
       "instruction": "rts/rti",
       "id": "control-03507",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory selector completion returns to frame_root victory post-leaf path",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original JumpEngine return to VictoryModeSubroutines selects one target and returns the selected leaf result to VictoryMode; no second selector runs in the same invocation.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -110169,12 +110397,15 @@
       "instruction": "rts/rti",
       "id": "control-03508",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_player_step completion before screen-left check",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original return AutoControlPlayer -> DontWalk must preserve player updates before this chain reads ScreenLeft_PageLoc.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -110188,12 +110419,15 @@
       "instruction": "rts/rti",
       "id": "control-03509",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_player_scroll_screen completion before parser call",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original return ScrollScreen -> DontWalk reaches UpdScrollVar with the scroll result available.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -110207,12 +110441,15 @@
       "instruction": "rts/rti",
       "id": "control-03510",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_area_parser completion before VictoryWalkControl increment",
       "semanticEvidence": [
-        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original return UpdScrollVar -> DontWalk increments VictoryWalkControl only after the parser/scroll update completes.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -110226,12 +110463,15 @@
       "instruction": "rts/rti",
       "id": "control-03511",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch LoadAreaPointer completion",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original LoadAreaPointer -> PlayerEndWorld returns before FetchNewGameTimerFlag and OperMode=GameMode writes.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
@@ -110246,12 +110486,15 @@
       "instruction": "rts/rti",
       "id": "control-03512",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch TerminateGame completion",
       "semanticEvidence": [
-        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original TerminateGame -> EndChkBButton returns its selected continuation/title state before EndExitTwo RTS.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -121839,12 +122082,15 @@
       "selector": 2,
       "id": "control-04098",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original jump-engine-dispatch relation OperModeExecutionTree -> VictoryMode at source line 956 (jsr JumpEngine) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -121978,12 +122224,15 @@
       "selector": 0,
       "id": "control-04104",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "terminal_modes.c victory task 0 -> mysmb_objects_step_bridge_collapse",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Preserves the original jump-engine-dispatch relation VictoryModeSubroutines -> BridgeCollapse with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -121999,12 +122248,15 @@
       "selector": 1,
       "id": "control-04105",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 1 branch",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original JumpEngine selector 1 dispatches VictoryModeSubroutines to SetupVictoryMode only when OperMode_Task=1.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -122019,12 +122271,15 @@
       "selector": 2,
       "id": "control-04106",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 branch",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original JumpEngine selector 2 dispatches VictoryModeSubroutines to PlayerVictoryWalk only when OperMode_Task=2.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -122039,12 +122294,15 @@
       "selector": 3,
       "id": "control-04107",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 3 branch",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original JumpEngine selector 3 dispatches VictoryModeSubroutines to PrintVictoryMessages only when OperMode_Task=3.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
@@ -122059,12 +122317,15 @@
       "selector": 4,
       "id": "control-04108",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
-        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 A7 independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original JumpEngine selector 4 dispatches VictoryModeSubroutines to PlayerEndWorld only when OperMode_Task=4; higher values require separate source-reachable analysis.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"

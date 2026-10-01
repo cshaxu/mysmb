@@ -160,3 +160,11 @@ S3 closed with no historical-credit change: historical progress remains 1,992 / 
 ## S4 admission — victory chain
 
 S4 enters at `VictoryMode` and exits at `EndExitTwo`. Its 22 exact inventory labels are audited in source order with a zero historical-credit forecast. It first compares each ROM branch, selector, RAM/table access, call/return edge and output ordering to `terminal_modes.c` and the frame-root tail. It then runs the controlled victory task, message-counter and end-world B-button route matrix against current x86/x64. Any feasible discrepancy remains in S4, is repaired in the shared owner, and is re-audited before S5 can be admitted.
+
+## S4 closure — victory chain
+
+S4 closed with no historical-credit change: historical progress remains 1,992 / 1,992. All 22 scoped labels and 65 incident executable control relations are current-exact; the 44 interior relations remain separately identifiable within that set. Source review covers every selector, branch predicate, counter/table operation, call/return and end-world controller branch at ROM lines 1137–1281. Fifteen controlled owner-local routes, each with a 60-frame warmup and eight captured frames, match x86 and x64 against the original ROM in work RAM `$0200-$07ff` except `$0778/$0779`, CIRAM, palette, OAM, PPU scalars and audio; the two native recordings are byte-identical. Current x64 focused bowser, endgame-object, mode and victory-message checks pass. No product source changed during S4, so no artifact refresh was required.
+
+## S5 admission — floatey-number chain
+
+S5 enters at `FloateyNumTileData` and exits at `SetupNumSpr`, covering ten labels in the same shared `objects.c` owner chain. It audits timer-zero and decrement paths, score-table selection, tall-enemy alternate sprite offset, and all two-sprite OAM output relations against controlled original-ROM/x86/x64 records. Any feasible difference is repaired in the shared game owner and re-audited to zero before a successor chain is admitted.
