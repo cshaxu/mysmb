@@ -3403,3 +3403,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T63 S4 | 13 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
 | M2 T63 S5 | 11 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
 | M2 T63 S6 | 5 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
+| M2 T63 S7 | 10 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |

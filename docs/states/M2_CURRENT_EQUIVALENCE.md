@@ -2100,3 +2100,8 @@ red-Paratroopa contracts validate the reset, anchor/frame and center/direction
 paths. The registry now records **1,020 exact nodes** and **2,023 exact feasible
 control edges**; historical mapping remains **1,992 / 1,992**, raw controls
 **4,342** and infeasible controls **18**.
+
+
+### T63 S7 green Paratroopa/X-counter result
+
+The ten-node chain is current-exact: 576 ROM/current x86/x64 route comparisons and exhaustive counter contracts agree. The registry is **1,030 / 1,992** exact nodes and **2,042 / 4,324** exact feasible controls; raw **4,342**, infeasible **18**, historical **1,992 / 1,992**.

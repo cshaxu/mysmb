@@ -2107,3 +2107,8 @@ four material handoffs current-exact. Original-ROM/current x86/x64 replay passes
 mapping is **1,992 / 1,992**; current exact totals are **1,020 / 1,992 nodes**,
 **2,023 / 4,324 feasible controls**, **4,342 raw controls**, and **18 infeasible
 controls**.
+
+
+## M2 T63 S7 current-equivalence closure
+
+The green Paratroopa/X-counter chain closes ten labels, 19 feasible controls and five material handoffs exact. ROM/current x86/x64 replay passes 576 comparisons and counter contracts pass per width. Historical **1,992 / 1,992**; exact nodes **1,030 / 1,992**; exact feasible controls **2,042 / 4,324**; raw **4,342**, infeasible **18**.

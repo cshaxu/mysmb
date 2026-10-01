@@ -325,3 +325,39 @@ three local EXE artifacts were not refreshed.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,020 / 1,992 nodes** and **2,023 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**). S7 begins with `MoveFlyGreenPTroopa`.
+
+## S7 admission — green Paratroopa and shared X-counter movement chain
+
+S7 admits `MoveFlyGreenPTroopa -> XMRight` (lines 9427–9481, `$CB25-$CB59`):
+`MoveFlyGreenPTroopa`, `YSway`, `NoMGPT`, `XMoveCntr_GreenPTroopa`,
+`XMoveCntr_Platform`, `NoIncXM`, `IncPXM`, `DecSeXM`, `MoveWithXMCntrs` and
+`XMRight`. Shared owners are `enemy/green_paratroopa.c` and `enemy/x_counter.c`;
+gravity/horizontal and platform caller interiors remain boundaries.
+
+The chain owns 19 feasible controls and five material handoffs, including its
+return boundaries to green and platform callers. Its ROM track replays 288
+controlled green/counter records on current x86/x64; its operational track runs
+the exhaustive counter contract, purity and DOS16 link.
+
+### S7 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,020 / 1,992**.
+- Current exact feasible controls: **2,023 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **10** labels; expected promotions: **10**; maximum exact nodes:
+  **1,030 / 1,992**.
+
+## S7 closure — green Paratroopa and shared X-counter movement chain
+
+All ten labels are current-exact. Static `$CB25-$CB59` comparison confirms
+counter gates/rollover, signed displacement/direction, return restoration and
+vertical sway. The 19 feasible controls and five material handoffs are exact.
+Original-ROM/current x86/x64 replay passes **576 / 576** comparisons (288 per
+width); exhaustive counter contracts pass per width. Platform purity passes and
+DOS16 links with the known `OLDNAMES.LIB` warning. No product source changed,
+so no three-EXE refresh applies.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,030 / 1,992 nodes** and **2,042 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).

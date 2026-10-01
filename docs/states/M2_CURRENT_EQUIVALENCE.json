@@ -4294,13 +4294,16 @@
       "consumer": "YSway",
       "storage": "FrameCounter bit 0-1 and bit 6",
       "feasiblePath": "Fourth-frame gate and bit-six sign select the vertical wave adder.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_flying_green_paratroopas_slot",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4313,13 +4316,16 @@
       "consumer": "XMoveCntr_Platform",
       "storage": "maximum secondary-counter literal $13",
       "feasiblePath": "Green path supplies $13 to the shared counter endpoint comparison.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_x_counter_green",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4332,13 +4338,16 @@
       "consumer": "MoveWithXMCntrs",
       "storage": "primary/secondary X counters",
       "feasiblePath": "Counter updates establish the subsequent mirrored horizontal displacement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_move_with_x_counters",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4351,13 +4360,16 @@
       "consumer": "XMRight",
       "storage": "primary bit one, mirrored secondary and direction",
       "feasiblePath": "Direction and temporary mirrored counter state precede horizontal movement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_move_with_x_counters",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4370,13 +4382,16 @@
       "consumer": "MoveEnemyHorizontally",
       "storage": "direction and temporary secondary X speed",
       "feasiblePath": "World horizontal move consumes the selected direction and temporary counter.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_world_move_enemy_horizontally",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -30398,13 +30413,16 @@
       "label": "MoveFlyGreenPTroopa",
       "asmLine": 9427,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Calls green counter update then counter-driven horizontal movement; every fourth frame applies +1 with frame bit six set or -1 otherwise to Y.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c"
@@ -30414,13 +30432,16 @@
       "label": "YSway",
       "asmLine": 9438,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores the selected +/-1 Y adder and updates green paratroopa Y before falling through return.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c"
@@ -30430,13 +30451,16 @@
       "label": "NoMGPT",
       "asmLine": 9443,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns after either frame-gated no-sway branch or completed Y sway.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c"
@@ -30446,13 +30470,16 @@
       "label": "XMoveCntr_GreenPTroopa",
       "asmLine": 9445,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Supplies maximum secondary counter $13 and falls through shared counter update.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -30462,13 +30489,16 @@
       "label": "XMoveCntr_Platform",
       "asmLine": 9448,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Every fourth frame increments/decrements secondary counter or advances primary counter at the two endpoints using the supplied maximum.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -30478,13 +30508,16 @@
       "label": "NoIncXM",
       "asmLine": 9460,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns on a non-fourth frame or after secondary increment.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -30494,13 +30527,16 @@
       "label": "IncPXM",
       "asmLine": 9461,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Increments primary counter and returns.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -30510,13 +30546,16 @@
       "label": "DecSeXM",
       "asmLine": 9463,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "At nonzero secondary decrements and returns; at zero branches to primary increment.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -30526,13 +30565,16 @@
       "label": "MoveWithXMCntrs",
       "asmLine": 9468,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Saves secondary X counter, mirrors it when primary bit one is clear, chooses direction, calls horizontal movement, saves returned A to scratch and restores secondary counter.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -30542,13 +30584,16 @@
       "label": "XMRight",
       "asmLine": 9481,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores chosen direction, calls horizontal movement, then restores the saved secondary counter.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83520,12 +83565,15 @@
       "instruction": "jsr",
       "id": "control-01776",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation MoveFlyGreenPTroopa -> XMoveCntr_GreenPTroopa with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c",
@@ -83540,12 +83588,15 @@
       "instruction": "jsr",
       "id": "control-01777",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation MoveFlyGreenPTroopa -> MoveWithXMCntrs with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c",
@@ -83560,12 +83611,15 @@
       "instruction": "bne",
       "id": "control-01778",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveFlyGreenPTroopa -> NoMGPT with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c"
@@ -83579,12 +83633,15 @@
       "instruction": "bne",
       "id": "control-01779",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveFlyGreenPTroopa -> YSway with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c"
@@ -83598,12 +83655,15 @@
       "instruction": "ldy",
       "id": "control-01780",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MoveFlyGreenPTroopa -> YSway with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c"
@@ -83617,12 +83677,15 @@
       "instruction": "sta",
       "id": "control-01781",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation YSway -> NoMGPT with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c"
@@ -83636,12 +83699,15 @@
       "instruction": "lda",
       "id": "control-01782",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation XMoveCntr_GreenPTroopa -> XMoveCntr_Platform with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83655,12 +83721,15 @@
       "instruction": "bne",
       "id": "control-01783",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation XMoveCntr_Platform -> NoIncXM with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83674,12 +83743,15 @@
       "instruction": "bcs",
       "id": "control-01784",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation XMoveCntr_Platform -> DecSeXM with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83693,12 +83765,15 @@
       "instruction": "beq",
       "id": "control-01785",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation XMoveCntr_Platform -> IncPXM with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83712,12 +83787,15 @@
       "instruction": "inc",
       "id": "control-01786",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation XMoveCntr_Platform -> NoIncXM with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83731,12 +83809,15 @@
       "instruction": "beq",
       "id": "control-01787",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation DecSeXM -> IncPXM with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83750,12 +83831,15 @@
       "instruction": "bne",
       "id": "control-01788",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveWithXMCntrs -> XMRight with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83769,12 +83853,15 @@
       "instruction": "ldy",
       "id": "control-01789",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MoveWithXMCntrs -> XMRight with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c"
@@ -83788,12 +83875,15 @@
       "instruction": "jsr",
       "id": "control-01790",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation XMRight -> MoveEnemyHorizontally with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c",
@@ -124146,12 +124236,15 @@
       "instruction": "rts/rti",
       "id": "control-03832",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation XMoveCntr_GreenPTroopa -> MoveFlyGreenPTroopa with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c",
@@ -124166,12 +124259,15 @@
       "instruction": "rts/rti",
       "id": "control-03833",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation MoveWithXMCntrs -> MoveFlyGreenPTroopa with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/green_paratroopa.c",
@@ -125318,12 +125414,15 @@
       "instruction": "rts/rti",
       "id": "control-03890",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation XMoveCntr_Platform -> XMovingPlatform with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -125338,12 +125437,15 @@
       "instruction": "rts/rti",
       "id": "control-03891",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation MoveWithXMCntrs -> XMovingPlatform with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",

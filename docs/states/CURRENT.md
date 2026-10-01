@@ -2,31 +2,31 @@
 
 ## Current Work
 
-## M2 T63 S6 Packet
+## M2 T63 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S6 audit — Cohort J jumping enemy and red Paratroopa movement. |
-| Admission And Approval | S6 admitted after S5 closure under the owner-approved source-order program. |
-| Objective | Prove `MoveJumpingEnemy -> MovPTDwn` and owned relations current-exact before green Paratroopa movement. |
-| Non-goals | No green Paratroopa interior, gravity/horizontal child implementation, terrain/collision, sprite/OAM or platform adapter change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,015 / 1,992 nodes and 2,013 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S7 audit — Cohort J green Paratroopa and X-counter movement. |
+| Admission And Approval | S7 admitted after S6 closure under the owner-approved source-order program. |
+| Objective | Prove `MoveFlyGreenPTroopa -> XMRight` and owned relations current-exact. |
+| Non-goals | No green-child gravity/horizontal interior, platform caller interior, collision, OAM or platform adapter change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,020 / 1,992 nodes and 2,023 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | `src/game/enemy/movement.c`, `src/game/enemy/paratroopa.c`; shared game C90 only. |
+| Files And ABI Surface | Shared game `enemy/green_paratroopa.c`, `enemy/x_counter.c`; C90 only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | `$CAF9-$CB24` audit; original-ROM/current x86/x64 Paratroopa route; focused checks; purity and DOS16 link. |
-| Expected Markers | Five nodes, ten feasible controls and four material handoffs promoted only if both tracks agree. |
-| Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh three artifacts only if product source changes. |
-| Reporting Requirements | Report historical 1,992 / 1,992, current exact nodes / 1,992, current exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | A source, route or boundary difference keeps S6 open for shared-owner repair and re-audit. |
-| Exit Criteria | All five labels, ten feasible controls and four material handoffs are current-exact with current source and route evidence. |
+| Verification | `$CB25-$CB59` audit; original-ROM/current x86/x64 green-counter route; focused checks, purity and DOS16 link. |
+| Expected Markers | 10 nodes, 19 feasible controls and five material handoffs. |
+| Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh artifacts only if product source changes. |
+| Reporting Requirements | Historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
+| Stop Conditions | Any source, route or boundary difference remains S7 repair work. |
+| Exit Criteria | All 10 labels, 19 feasible controls and five material handoffs exact with both tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Jump child order, zero force/speed reset, anchor/frame gate, center threshold and red-gravity direction. |
+| Similar-Issue Sweep | Four-frame counter gate, primary/secondary rollover, horizontal sign/direction, child return and vertical sway. |
 
 ## Current Technical Baseline
 
 One shared C90 game implementation serves DOS16 and Win32 x86/x64. T62 Cohort I
-is closed. T63 S1/S2/S3/S4 are closed; S5 has closed normal/defeated enemy movement; S6 has closed jumping/red-Paratroopa movement. The next source-order chain is green-Paratroopa movement.
+is closed. T63 S1/S2/S3/S4 are closed; S5 has closed normal/defeated enemy movement; S6 has closed jumping/red-Paratroopa movement; S7 has closed green-Paratroopa/X-counter movement. The next source-order chain is Bloober movement.
 
 
 ## T63 S1 Closure
@@ -118,3 +118,14 @@ purity passes and DOS16 links with its known `OLDNAMES.LIB` warning. No product
 source changed, so no artifact refresh applies. Historical mapping is **1,992 /
 1,992**; current exact status is **1,020 / 1,992 nodes** and **2,023 / 4,324
 feasible controls** (raw **4,342**, infeasible **18**).
+
+
+## T63 S7 Closure
+
+`MoveFlyGreenPTroopa -> XMRight` closes ten labels, 19 feasible controls and
+five material handoffs exact. Static `$CB25-$CB59`, 576 fresh original-ROM/current
+x86/x64 comparisons and exhaustive counter contracts per width agree. Platform
+purity passes and DOS16 links with its known `OLDNAMES.LIB` warning. No source
+changed, so no artifact refresh applies. Historical mapping is **1,992 / 1,992**;
+current exact status is **1,030 / 1,992 nodes** and **2,042 / 4,324 feasible
+controls** (raw **4,342**, infeasible **18**).
