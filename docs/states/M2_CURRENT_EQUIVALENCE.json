@@ -9753,14 +9753,15 @@
       "label": "ScreenOff",
       "asmLine": 776,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_commit_display_state",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "M2 T53 S1 static audit: SMB1 lines 776-790 write the ScreenOff mask transaction before InitScroll and UpdateScreen, while current frame_root.c invokes mysmb_game_commit_vram_buffer before mysmb_game_commit_display_state. The source-required NMI transaction order is reversed."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Reads the $2001 mirror, preserves only source-permitted bits while DisableScreenFlag is set or restores display bits otherwise, updates the mirror and physical mask for the NMI transaction.",
+      "semanticContract": "Writes the source $2001 display-mask transaction before InitScroll, OAM DMA and UpdateScreen; only after selected-buffer clearing does the NMI restore the mirror mask for sound/input/pause work.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -42224,13 +42225,14 @@
       "instruction": "jsr",
       "id": "control-00018",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original call relation ScreenOff -> InitScroll at source line 781 (jsr) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization.",
+      "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [
         "src/game/boot.c",
         "src/game/frame_root.c"
@@ -42244,13 +42246,14 @@
       "instruction": "jsr",
       "id": "control-00019",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original call relation ScreenOff -> UpdateScreen at source line 790 (jsr) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization.",
+      "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -43377,13 +43380,14 @@
       "instruction": "jsr",
       "id": "control-00076",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T53 S1 source audit: SMB1 JumpEngine at lines 2395-2408 executes PLA, PLA and JMP ($06), consuming OperModeExecutionTree return state. It cannot return or fall through its inline vector words to MoveAllSpritesOffscreen."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original fallthrough relation OperModeExecutionTree -> MoveAllSpritesOffscreen at source line 956 (jsr) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
+      "semanticContract": "Raw extractor fall-through is impossible: JumpEngine consumes the return address and indirect-jumps to a selected vector target.",
       "currentSourcePaths": [
         "src/game/boot.c",
         "src/game/frame_root.c"
@@ -109395,13 +109399,14 @@
       "instruction": "rts/rti",
       "id": "control-03487",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original return relation InitScroll -> ScreenOff at source line 781 (rts/rti) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization.",
+      "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [
         "src/game/boot.c",
         "src/game/frame_root.c"
@@ -109415,13 +109420,14 @@
       "instruction": "rts/rti",
       "id": "control-03488",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin, mysmb_game_commit_display_state and mysmb_game_commit_vram_buffer",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original return relation UpdateScreen -> ScreenOff at source line 790 (rts/rti) must preserve the NMI display/VRAM predecessor and selected branch or fall-through order before buffer-header initialization.",
+      "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -126558,6 +126564,7 @@
   ],
   "rawControlEdgeTotal": 4342,
   "infeasibleControlEdgeIds": [
+    "control-00076",
     "control-01339",
     "control-01405",
     "control-01408",
@@ -126574,6 +126581,6 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 15,
-  "feasibleControlEdgeTotal": 4327
+  "infeasibleControlEdgeTotal": 16,
+  "feasibleControlEdgeTotal": 4326
 }

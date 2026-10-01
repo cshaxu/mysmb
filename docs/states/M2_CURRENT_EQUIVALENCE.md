@@ -75,6 +75,23 @@ therefore **4,327**. The real parent calls, taken branches and 9/55/6/7/5
 `JumpEngine` selector relations remain recorded as `needs-evidence`; no
 unexecuted path receives `exact` credit and no shared C source changes.
 
+### T53 S1 initial reset/NMI dispositions
+
+`ScreenOff` is now a current-equivalence `mismatch`.  The ROM writes its
+$2001 display-mask transaction before `InitScroll`, OAM DMA and
+`UpdateScreen`; the current `frame_root.c` calls its VRAM commit before
+`mysmb_game_commit_display_state`.  The same reversed transaction is recorded
+on `control-00018`, `control-00019`, `control-03487` and `control-03488`.
+This is one later unnumbered repair candidate in the shared frame-root owner;
+it requires a controlled order trace before any source change.
+
+`control-00076` is `infeasible`, not a missing C route.  `JumpEngine` removes
+the caller return address with two `PLA` instructions and performs `JMP ($06)`;
+there is no execution path from `OperModeExecutionTree` through its inline
+vectors to `MoveAllSpritesOffscreen`.  The raw graph remains 4,342 relations,
+with **16** infeasible records and **4,326** feasible control relations.
+Historical conformance remains **1,992 / 1,992**.
+
 ## Source-anchor resolvability finding
 
 Td S9's independent counterpart-resolvability pass found that the existing

@@ -2,27 +2,27 @@
 
 ## Current Work
 
-## M2 T52 S7 Packet
+## M2 T53 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T52 S7 — H1–H8 infeasible control-edge disposition, closed. |
-| Admission And Approval | Owner-directed continuation of T52 after closed S6. |
-| Objective | Classify and exclude fifteen impossible extractor relations while retaining every real source control relation. |
-| Non-goals | No production C, platform, ROM, asset, or node-status change; no current-exact promotion. |
-| Reference Baseline | Historical 1,992 / 1,992; current nodes 54 exact and 1,938 needs-evidence; raw edge candidates 4,342 with 15 confirmed infeasible. |
-| Candidate Proposal | docs/proposals/m2/t52-current-audit-mismatch-remediation.md. |
-| Files And ABI Surface | Current-equivalence registry, registry verifier, T52 proposal and node-task governance ledger only. |
-| Applicable Rules | Task Reading Set, execution, documentation and source policy. |
-| Verification | Reviewed JumpEngine, constant-branch and BIT-overlap source sites; retained real call/vector/branch counterparts; registry, ledger, documentation, purity and three-target artifact checks passed. |
-| Expected Markers | Fifteen named edges are `infeasible`; feasible control-edge denominator is 4,327; no node or shared-C behavioral disposition changes. |
-| Asset Needs | None; S6's same-source ignored local 16/32/64 artifacts were rechecked, not altered by this graph-only S. |
-| Reporting Requirements | All fifteen exact edge IDs, raw versus feasible denominators and retained real relations recorded in the T52 closure. |
-| Stop Conditions | Any candidate edge proves executable, any real target relation is absent, or any platform/game source change becomes necessary. |
-| Exit Criteria | Met: all H1–H8 candidates have source proof, registry disposition, validation and retained-real-edge checks. |
+| Identifier Mode | M2 T53 S1 — Cohort A reset/NMI through operating-mode dispatch current-equivalence audit. |
+| Admission And Approval | Owner-directed continuation under the approved source-order T53–T70 proof program. |
+| Objective | Audit the 39-label reset/NMI/pause/timer/LFSR/sprite/OAM/dispatch chain and its internal relations against the original ROM. |
+| Non-goals | No historical-node credit, no cross-cohort final proof, and no platform-owned game decision. Any mismatch becomes a later candidate rather than an unscoped repair. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 54 exact, 1 mismatch, 1,937 needs-evidence; 4,326 feasible control relations. S1 scope: 39 labels, 22 exact and 17 needs-evidence; expected historical delta 0. |
+| Candidate Proposal | docs/proposals/m2/t53-cohort-a-current-proof.md. |
+| Files And ABI Surface | Shared `src/game/boot.c`, `src/game/frame_root.c`, declared shared callees and tests/registry/ledger evidence only; platform adapters remain outside gameplay. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
+| Verification | ROM-logic: static node/edge audit plus controlled owner-local reset/NMI records. Operational: focused root tests, x86/x64 builds and self-tests, OpenNT DOS16 link, platform-purity and three ignored local artifacts. |
+| Expected Markers | Every scoped label and internal relation has a recorded current disposition; no unsupported promotion; reset/display/timer/pause/sprite-zero/selector branch evidence is separated. |
+| Asset Needs | Owner-local ROM only for ignored traces under build/m2-t53-s1; local 16/32/64 artifacts refreshed only for a completed implementation P. |
+| Reporting Requirements | Report exact scoped labels, incoming/current dispositions, control/material relations, current-registry before/after and separate operational outcome. |
+| Stop Conditions | An original branch lacks a shared-C counterpart, a route mismatch appears, a trace exceeds its budget, or platform code makes a gameplay decision. |
+| Exit Criteria | The S may close only with an individual disposition for all 39 labels and its 75 internal relations, reproducible route evidence and both verification tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | Every current `mismatch` control edge and every existing JumpEngine/constant/overlap graph relation. |
+| Similar-Issue Sweep | All reset/NMI display, buffer, pause, timer, LFSR, sprite-zero, OAM and dispatcher call/return relations in lines 699–981. |
 
 ## Current Technical Baseline
 
-M2 T52 is closed. T53 Cohort A is the next source-order candidate and requires its own bounded-chain packet before any implementation or audit change. One shared native C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic.
+M2 T52 is closed. M2 T53 S1 is the sole active packet. One shared native C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic.

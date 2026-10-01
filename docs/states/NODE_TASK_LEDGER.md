@@ -2597,6 +2597,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T52 S5 | 0 | 3 | owner-approved-current-equivalence-remediation, b3-timeup-task-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S6 | 0 | 1 | owner-approved-current-equivalence-remediation, h9-large-platform-y-source; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S7 | 0 | 0 | owner-approved-current-equivalence-remediation, h1-h8-infeasible-control-edge-disposition; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T53 | 0 | - | [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
+| M2 T53 S1 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-a-reset-nmi-dispatch-chain; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -3208,3 +3210,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T52 S5 | 3 | 1992 | none / 0 | none / 0 | closed-b3-timeup-candidate-rejected; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S6 | 1 | 1992 | none / 0 | none / 0 | closed-h9-large-platform-y-source; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S7 | 0 | 1992 | none / 0 | none / 0 | closed-h1-h8-infeasible-control-edge-disposition; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T53 S1 | 39 | 1992 | none / 0 | none / 0 | active-cohort-a-reset-nmi-dispatch-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
