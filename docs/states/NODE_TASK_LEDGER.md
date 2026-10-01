@@ -3359,3 +3359,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T61 S9 | 6 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t61-cohort-h-blocks-items-current-proof.md) |
 | M2 T61 S10 | 26 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t61-cohort-h-blocks-items-current-proof.md) |
 | M2 T62 S1 | 16 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md) |
+| M2 T62 S2 | 19 | 1992 | none / 0 | none / 0 | admitted-current-audit; [record](../../docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md) |
