@@ -3320,4 +3320,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T59 S7 | 0 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md) |
 | M2 T60 S1 | 5 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
 | M2 T60 S2 | 6 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
-| M2 T60 S3 | 8 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S3 | 8 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |
+| M2 T60 S4 | 5 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t60-cohort-g-fireball-timer-current-proof.md) |

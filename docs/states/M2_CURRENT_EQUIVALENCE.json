@@ -23031,13 +23031,16 @@
       "label": "BubbleCheck",
       "asmLine": 6409,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared game fireball/bubble core",
+      "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Selects pseudo-random bit, moves active bubbles, blocks inactive bubbles while timer is nonzero, otherwise creates one.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -23047,13 +23050,16 @@
       "label": "SetupBubble",
       "asmLine": 6419,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared game fireball/bubble core",
+      "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves facing LSR carry into X placement, page carry, Y+8, timer selection and fallthrough movement.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -23063,13 +23069,16 @@
       "label": "PosBubl",
       "asmLine": 6425,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared game fireball/bubble core",
+      "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Uses zero or eight plus retained facing carry before player X/page placement.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -23079,13 +23088,16 @@
       "label": "MoveBubl",
       "asmLine": 6440,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared game fireball/bubble core",
+      "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Subtracts the selected fractional force and propagates its borrow to bubble Y.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -23095,13 +23107,16 @@
       "label": "Y_Bubl",
       "asmLine": 6450,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared game fireball/bubble core",
+      "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Stores moved Y or the offscreen $f8 sentinel.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -23111,13 +23126,16 @@
       "label": "ExitBubl",
       "asmLine": 6451,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared game fireball/bubble core",
+      "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Returns after bubble update.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -23127,13 +23145,16 @@
       "label": "Bubble_MForceData",
       "asmLine": 6453,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared game fireball/bubble core",
+      "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Binds pseudo-random bit to movement-force bytes $ff/$50.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -23143,13 +23164,16 @@
       "label": "BubbleTimerData",
       "asmLine": 6456,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared fireball, world and OAM core",
-      "currentCounterpart": "shared fireball/bubble owner",
+      "status": "exact",
+      "currentOwner": "shared game fireball/bubble core",
+      "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Binds pseudo-random bit to timer bytes $40/$20.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -53027,12 +53051,15 @@
       "instruction": "jsr",
       "id": "control-00444",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "fireball/bubble.c setup is called only for water area type with the selected source slot.",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "fireball/bubble.c setup is called only for water area type with the selected source slot.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -67106,12 +67133,15 @@
       "instruction": "bne",
       "id": "control-01094",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation BubbleCheck -> MoveBubl with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -67125,12 +67155,15 @@
       "instruction": "bne",
       "id": "control-01095",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation BubbleCheck -> ExitBubl with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -67144,12 +67177,15 @@
       "instruction": "bne",
       "id": "control-01096",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation BubbleCheck -> SetupBubble with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -67163,12 +67199,15 @@
       "instruction": "bcc",
       "id": "control-01097",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation SetupBubble -> PosBubl with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -67182,12 +67221,15 @@
       "instruction": "ldy",
       "id": "control-01098",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetupBubble -> PosBubl with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -67201,12 +67243,15 @@
       "instruction": "sta",
       "id": "control-01099",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation PosBubl -> MoveBubl with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -67220,12 +67265,15 @@
       "instruction": "bcs",
       "id": "control-01100",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation MoveBubl -> Y_Bubl with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -67239,12 +67287,15 @@
       "instruction": "lda",
       "id": "control-01101",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation MoveBubl -> Y_Bubl with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -67258,12 +67309,15 @@
       "instruction": "sta",
       "id": "control-01102",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation Y_Bubl -> ExitBubl with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -114936,12 +114990,15 @@
       "instruction": "rts/rti",
       "id": "control-03549",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_fireball_setup_bubble returns before task-seven handoff.",
+      "status": "exact",
+      "currentCounterpart": "src/game/fireball/bubble.c exact branch/fallthrough/return counterpart",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "mysmb_fireball_setup_bubble returns before task-seven handoff.",
       "currentSourcePaths": [
         "src/game/player.c"

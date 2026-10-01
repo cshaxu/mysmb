@@ -1927,3 +1927,7 @@ All five labels from `ProcFireball_Bubble` through `BublExit` are current-equiva
 ### T60 S2 fireball core result
 
 All six labels from `FireballXSpdData` through `FireballExplosion` are current-equivalence exact. Ordinary-NMI ROM routes cover both outcomes of all four branches, initialization carry, active movement, the `$cc` offscreen erase condition and explosion tail. On x86 and x64, 64 observed child-boundary replays and 64 actual shared-C executions match persistent game RAM. The independent core smoke exhausts the 5,120 state/facing/carry combinations, 256 masks and ObjectOffset restoration. This promotes 24 feasible core relations. The live registry is **652 exact labels**, **1,287 exact feasible control relations**, and **18 source-infeasible raw controls**; historical conformance remains **1,992 / 1,992**.
+
+### T60 S3 bubble state and movement result
+
+`BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`, `Y_Bubl`, `ExitBubl`, `Bubble_MForceData` and `BubbleTimerData` are current-equivalence exact, together with 11 feasible caller, branch, fall-through and return relations. Static ROM comparison covers `$B6F9-$B74E`; 30 original-NMI water-area routes cover both entries, three slots, both random values and both outcomes at the four executable branch sites. Their 60 x86/x64 actual shared-C replays match all compared persistent RAM, and the entry smoke covers 18,432 cases per width. The live registry is now **660 exact nodes** and **1,298 exact feasible control relations**. Historical conformance remains **1,992 / 1,992**.
