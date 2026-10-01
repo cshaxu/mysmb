@@ -119,3 +119,20 @@ S2 marks six nodes, 19 source-owned controls (`control-02191` through
 S3. Current totals: historical **1,992 / 1,992**; current exact nodes
 **1,238 / 1,992**; current exact feasible controls **2,495 / 4,324** (raw
 **4,342**, infeasible **18**).
+
+## S3 admission — fireball hit response
+
+S3 admits `BowserIdentities -> ExHCF` at `$D736-$D7C3`: `BowserIdentities`,
+`HandleEnemyFBallCol`, `ChkBuzzyBeetle`, `HurtBowser`, `SetDBSte`,
+`ChkOtherEnemies`, `ShellOrBlockDefeat`, `StnE`, `GoombaPoints`,
+`EnemySmackScore` and `ExHCF`. The shared owner is
+`src/game/world/fireball_hit.c`; S2 proves the caller scan and S4 begins
+hammer contact.
+
+The ROM-logic track compares all eight identity bytes and unmasked source
+indexing, duplicate enemy selection, Buzzy/Bowser/immune exits, decrement
+wrap and Bowser death transition, Piranha carry-derived vertical adjustment,
+stun child input, state masking, Hammer Bro/Goomba score selection and ordered
+floating-score/audio writes. The operational track batches retained 512
+original-ROM hit records once per x86/x64 width, then runs the focused hit and
+scan contracts, platform purity and OpenNT DOS16 link.
