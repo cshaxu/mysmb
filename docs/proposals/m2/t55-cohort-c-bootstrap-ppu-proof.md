@@ -255,3 +255,25 @@ has a named shared-C dispatcher owner, and x86/x64
 eliminates an unmapped-owner finding, but the audit still must compare each
 family's selector domain and return continuation before closing S6.  No
 product source changed and no artifacts are refreshed.
+
+## S6 P5 ? scoped re-audit after the name-table repair
+
+The post-repair audit found no second feasible shared-C difference in the
+five admitted labels. The ROM confirms that `JumpEngine` consumes the return
+address, selects its inline word through `ASL`/`TAY`, and lets the selected
+target return directly to the original caller continuation. The current C
+translation deliberately has no generic emulated jump helper: every admitted
+source vector has a named shared-game dispatcher/owner instead. The audit
+enumerates all 51 incident raw relations: the five name-table call,
+fall-through, loop, jump and return relations, and every `JumpEngine` caller
+and return relation. It retains the registry's five source-proven infeasible
+return relations rather than inventing C returns for tail-jump targets.
+
+The actual shared source passes the x86/x64 name-table and GameMode dispatcher
+seams, and the ROM-bound x86/x64 title-bootstrap path. The platform-purity
+audit also passes. This P is intentionally not closure: the 39 previously
+unproven incident controls still require a fresh, controlled original-ROM
+route and current native comparison before any node or feasible edge can be
+promoted. The result is a clean post-repair static/operational checkpoint,
+not a replacement for the required ROM route evidence. No product source
+changed in this P, so artifacts are not refreshed.
