@@ -118,6 +118,10 @@
 
 #define MYSMB_REFERENCE_NMI_RETURN 0x8181u
 #define MYSMB_REFERENCE_NMI_ENTRY 0x8085u
+/* Source $8175 is the ordinary SkipSprite0 JSR OperModeExecutionTree.
+ * Capturing at this instruction preserves the NMI's just-written physical
+ * $2000 state, before mode logic can alter the mirror for a later frame. */
+#define MYSMB_REFERENCE_NMI_DISPATCH 0x8175u
 #define MYSMB_REFERENCE_T28_INIT_SCREEN_SUCCESSOR 0x85c8u
 #define MYSMB_REFERENCE_T28_VRAM_COMMAND_ENTRY 0x8e92u
 #define MYSMB_REFERENCE_T28_VRAM_EXIT 0x8ee6u
@@ -1108,6 +1112,7 @@ int main(int argument_count, char **arguments)
     unsigned int intermediate_player_variant;
     char *intermediate_player_variant_end;
     lib_bool direct_warp_text;
+    lib_bool capture_nmi_dispatch;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
     lib_bool t22_flagpole_score_pending;
@@ -1193,12 +1198,18 @@ int main(int argument_count, char **arguments)
     player_control_variant = 0xffffffffu;
     intermediate_player_variant = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
+    capture_nmi_dispatch = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
     t22_flagpole_score_pending = LIB_FALSE;
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strcmp(arguments[recorded], "--capture=nmi-dispatch") == 0) {
+            if (capture_nmi_dispatch || requested_frames != 1u) return 64;
+            capture_nmi_dispatch = LIB_TRUE;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--sound-child=", 14u) == 0) {
             if (sound_child_path != NULL ||
                 arguments[recorded][14] == '\0') return 64;
@@ -3118,6 +3129,15 @@ int main(int argument_count, char **arguments)
             t28_vram_pending = LIB_FALSE;
             t28_vram_phase = 1u;
         }
+        /* The normal controlled write is applied after an NMI return.  For
+         * this pre-dispatch probe, apply its one declared value at the next
+         * NMI entry instead, so ordinary mainline work cannot overwrite the
+         * explicitly requested mirror before the source writes $2000. */
+        if (capture_nmi_dispatch && ram_write.present &&
+            ram_write.frame == elapsed + 1u &&
+            driver->machine->pc == MYSMB_REFERENCE_NMI_ENTRY)
+            mysmb_reference_apply_ram_write(&ram_write, elapsed + 1u,
+                                            driver->machine->ram);
         /* S5 reaches this source label only after GameMode and
          * ScreenRoutines have selected InitScreen, both InitScreen calls
          * have returned, and the nonzero-mode SetVRAMAddr_A write is done.
@@ -3163,6 +3183,16 @@ int main(int argument_count, char **arguments)
             mysmb_reference_apply_t29_geometry_vertical_pipe_fixture(
                 driver->machine->ram);
             t29_vertical_pipe_pending = LIB_FALSE;
+        }
+
+        if (capture_nmi_dispatch && elapsed >= warmup_frames &&
+            driver->machine->pc == MYSMB_REFERENCE_NMI_DISPATCH) {
+            /* This is a source-reachable boundary, immediately before the
+             * original JSR.  It is intentionally separate from the normal
+             * RTI snapshot contract used by full-frame comparisons. */
+            if (!mysmb_reference_write_frame(output, driver->machine)) break;
+            ++recorded;
+            break;
         }
 
         if (driver->machine->pc == MYSMB_REFERENCE_NMI_RETURN) {

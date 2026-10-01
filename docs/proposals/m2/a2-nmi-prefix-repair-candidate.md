@@ -1,41 +1,26 @@
-# A2 NMI-prefix state-handoff repair candidate
+# A2 NMI-prefix state-handoff repair record
 
 ## Status
 
-Unnumbered repair candidate produced by the active Td S9 current-equivalence
-audit. It has no admitted implementation task or numeric identifier.
+Closed by M2 T52 S1. This retained record identifies the discrepancy that was
+corrected; it is no longer an unadmitted candidate.
 
 ## Confirmed chain
 
-The smallest shared-owner chain is `RotPRandomBit -> SkipSprite0 ->
+The bounded shared-owner chain is `RotPRandomBit -> SkipSprite0 ->
 OperModeExecutionTree` inside `src/game/frame_root.c`, with
-`NonMaskableInterrupt` as its enclosing owner. Its predecessor is the NMI
+`NonMaskableInterrupt` as the enclosing owner. Its predecessor is the NMI
 timer/pause prefix; its successor is the mode-dispatch call and then the RTI
 tail.
 
-## Evidence and required outcome
+## Closure evidence
 
-A controlled cold-boot NMI-prefix route stops immediately before the ROM's
-`OperModeExecutionTree` call. It establishes two differences on both current
-x86 and x64:
+At source `$8175`, immediately before the original dispatch call, a controlled
+owner-ROM route recorded scratch `$00=$02`, the rotated LFSR state and physical
+`$2000=$10` after a recorder-only NMI-entry mirror precondition of `$0778=$10`.
+The shared C now performs the same scratch write and holds d7 clear through
+dispatch; its RTI-equivalent tail restores d7. ROM-configured x86/x64 focused
+regressions, Win32 self-tests, platform-purity and the OpenNT DOS16 link pass.
 
-- ROM `RotPRandomBit` leaves scratch `$00=$02`; C leaves `$00=$01`, the old
-  VRAM-pointer low byte, because the C LFSR owner keeps the first masked bit
-  only in a local variable.
-- ROM physical `$2000=$10` at the dispatch boundary; C exposes `$90`, because
-  it re-enables d7 before the source would reach its RTI tail.
-
-The repair must restore the source scratch write and preserve a d7-clear
-control state through mode dispatch, restoring d7 only at the RTI equivalent.
-It must not move these decisions into a Win32 or DOS adapter.
-
-## Receiving audit items
-
-Nodes: `RotPRandomBit`, `SkipSprite0`, `NonMaskableInterrupt`.
-
-Control edges: `control-00040` (`RotPRandomBit -> SkipSprite0`) and
-`control-00052` (`SkipSprite0 -> OperModeExecutionTree`).
-
-Expected current-audit delta after a successful repair and fresh route proof:
-three nodes and two control edges from `mismatch` to `exact`; no historical
-node-accounting credit is implied by this candidate.
+The current-equivalence registry records three nodes and two control edges as
+`exact`. This repair changes no historical node-accounting numerator.

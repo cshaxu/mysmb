@@ -278,7 +278,8 @@ void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
     mysmb_u8 next_carry;
     mysmb_u8 value;
 
-    carry = ((game->ram[MYSMB_ROOT_PSEUDORANDOM] & 2U) ^ (game->ram[0x07a8U] & 2U)) != 0U ?
+    game->ram[0U] = (mysmb_u8)(game->ram[MYSMB_ROOT_PSEUDORANDOM] & 2U);
+    carry = (game->ram[0U] ^ (game->ram[0x07a8U] & 2U)) != 0U ?
         1U : 0U;
     for (index = 0U; index < 7U; ++index) {
         value = game->ram[(mysmb_u16)(MYSMB_ROOT_PSEUDORANDOM + index)];
@@ -430,10 +431,9 @@ void mysmb_game_commit_display_state(struct mysmb_game *game)
         mask_mirror |= 0x1eU;
     game->ram[MYSMB_ROOT_PPU_MASK_MIRROR] = mask_mirror;
     game->ppu_mask = mask_mirror;
-    /* The original writes these values before OperModeExecutionTree.  That
-     * routine may change the mirrors and scroll variables, but the physical
-     * PPU does not show those changes until the following NMI. */
-    game->visible_ppu_control_0 = (mysmb_u8)(game->ppu_control_0 | 0x80U);
+    /* The original writes these values before OperModeExecutionTree with
+     * NMI disabled.  The RTI-equivalent tail restores d7. */
+    game->visible_ppu_control_0 = game->ppu_control_0;
     game->visible_ppu_mask = game->ppu_mask;
     game->visible_ppu_name_table = (mysmb_u8)(game->ppu_control_0 & 3U);
 }

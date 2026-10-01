@@ -287004,7 +287004,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t52-current-audit-mismatch-remediation.md",
-      "state": "admitted-a2-nmi-prefix-remediation"
+      "state": "closed-a2-current-equivalence-remediation"
     }
   ]
 }

@@ -62,3 +62,24 @@ the A7 material handoff is exact, H1–H8 have been removed as infeasible graph
 relations, and all three targets run the same shared game source.  It then
 hands the remaining current-equivalence `needs-evidence` records to the T53+
 source-order proof program.
+
+## T52 S1 closure: A2 NMI-prefix state handoff
+
+S1 closes its three current-equivalence labels without changing the historical
+ROM-match numerator: `NonMaskableInterrupt`, `RotPRandomBit`, and
+`SkipSprite0` move from `mismatch` to `exact`; `control-00040` and
+`control-00052` likewise move to `exact`. The historical fraction remains
+**1,992 / 1,992**, because each label was already historically complete.
+
+ROM-logic proof used the owner ROM on its ordinary NMI path and stopped at
+source `$8175`, immediately before `jsr OperModeExecutionTree`. With one
+recorder-only NMI-entry mirror precondition of `$0778=$10`, the capture has
+`$00=$02`, rotated LFSR bytes `$a9/$40`, and physical `$2000=$10`. This proves
+both the source scratch handoff and d7-clear dispatch phase. Static source
+review confirms that the return path alone executes `ora #$80`.
+
+Operational proof passed `mysmb.nmi-parent-integration`, Win32 self-test and
+platform-purity in ROM-configured x86 and x64 builds. The focused test now
+also proves the RTI-equivalent d7 restore. The existing OpenNT DOS16 build
+links the same `src/game/frame_root.c`; all three local executable artifacts
+were refreshed under the ignored build tree. No platform adapter changed.

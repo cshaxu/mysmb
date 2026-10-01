@@ -55,16 +55,17 @@ static int check_unpaused_nmi_order(void)
         game.name_table[0U][1U] != 0x29U ||
         game.name_table[0U][2U] != 0x29U || game.ram[0x0300U] != 0U ||
         game.ram[0x0301U] != 0U || game.ram[0x0773U] != 0U) return 2;
-    /* Display commit and post-vblank sprite/scroll work retain the NMI values. */
+    /* At the pre-dispatch boundary, the physical $2000 write retains d7 clear. */
     /* The horizontal VRAM packet clears the $2000 increment bit before
      * WritePPUReg1 restores the mirror and NMI-enable bit at RTI. */
     if (game.ram[0x0778U] != 0x11U || game.ram[0x0779U] != 0x1fU ||
-        game.ppu_mask != 0x1fU || game.visible_ppu_control_0 != 0x91U ||
+        game.ppu_mask != 0x1fU || game.visible_ppu_control_0 != 0x11U ||
         game.visible_ppu_name_table != 1U || game.visible_scroll_x != 0x34U ||
         game.visible_scroll_y != 0x56U) return 3;
     if (game.ram[0x0009U] != 0x25U || game.ram[0x0780U] != 2U ||
         game.ram[0x0794U] != 4U ||
-        game.ram[0x07a7U] != rotate_first_byte(0x03U, 0x02U)) return 4;
+        game.ram[0x07a7U] != rotate_first_byte(0x03U, 0x02U) ||
+        game.ram[0U] != 0x02U) return 4;
     return 0;
 }
 
@@ -93,7 +94,30 @@ static int check_pause_gate_order(void)
         game.ram[0x0777U] != 0x2bU || game.ram[0x00faU] != 1U ||
         game.ram[0x0009U] != 0x44U || game.ram[0x077fU] != 3U ||
         game.ram[0x0780U] != 7U ||
-        game.ram[0x07a7U] != rotate_first_byte(0x03U, 0x02U)) return 6;
+        game.ram[0x07a7U] != rotate_first_byte(0x03U, 0x02U) ||
+        game.ram[0U] != 0x02U) return 6;
+    return 0;
+}
+
+static int check_rti_control_restore(void)
+{
+    struct mysmb_game game;
+    struct mysmb_input input;
+    struct mysmb_frame frame;
+
+    mysmb_game_power_on(&game);
+    mysmb_game_reset(&game);
+    game.ppu_control_0 = 0x15U;
+    game.ram[0x0778U] = 0x15U;
+    /* A paused title boundary takes SkipMainOper but still executes the
+     * source PLA / ORA #$80 / STA $2000 tail. */
+    game.ram[0x0776U] = 1U;
+    input.buttons = 0U;
+    input.buttons2 = 0U;
+    mysmb_game_frame_initialize(&frame);
+    mysmb_frame_root_step(&game, &input, &frame);
+    if (game.visible_ppu_control_0 != 0x95U ||
+        game.visible_ppu_name_table != 1U) return 7;
     return 0;
 }
 
@@ -105,5 +129,7 @@ int main(void)
     if (result != 0) return 10 + result;
     result = check_pause_gate_order();
     if (result != 0) return 20 + result;
+    result = check_rti_control_restore();
+    if (result != 0) return 30 + result;
     return 0;
 }

@@ -9733,17 +9733,17 @@
       "label": "NonMaskableInterrupt",
       "asmLine": 764,
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin / mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 static node audit identifies the named source-state contract and shared-C counterpart."
+        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return."
       ],
       "operationalEvidence": [
-        "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree and proves the physical-control phase mismatch ($10 ROM versus $90 x86/x64) inside the shared NMI parent."
+        "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
+        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c."
       ],
       "semanticContract": "Preserves the source NMI phase boundary: d7-clear control during pre-dispatch work and main-mode execution, then d7 re-enable only at the RTI tail.",
-      "repairCandidate": "A2",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -9872,17 +9872,17 @@
       "label": "RotPRandomBit",
       "asmLine": 837,
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom",
       "semanticEvidence": [
-        "Td S9 A2 static node audit identifies the named source-state contract and shared-C counterpart."
+        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return."
       ],
       "operationalEvidence": [
-        "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree: ROM has $00=$02 after the LFSR sequence; current x86/x64 both leave $00=$01 from the earlier VRAM-pointer selection. The current local-variable implementation omits the source scratch write."
+        "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
+        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c."
       ],
       "semanticContract": "Performs the source seven-byte LFSR rotation and leaves the source scratch $00 equal to the first masked bit while passing control to sprite-zero processing.",
-      "repairCandidate": "A2",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -9939,17 +9939,17 @@
       "label": "SkipSprite0",
       "asmLine": 857,
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 A2 static node audit identifies the named source-state contract and shared-C counterpart."
+        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return."
       ],
       "operationalEvidence": [
-        "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree: ROM physical $2000 is $10, while current x86/x64 visible control is $90. The current owner restores d7 before the source dispatch boundary."
+        "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
+        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c."
       ],
       "semanticContract": "Writes horizontal/vertical scroll and the d7-cleared $2000 mirror before the unpaused OperModeExecutionTree call; only the RTI tail restores d7.",
-      "repairCandidate": "A2",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -42639,16 +42639,15 @@
       "instruction": "beq",
       "id": "control-00040",
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom to mysmb_frame_root_begin sprite-zero path",
       "semanticEvidence": [
-        "Td S9 A2 static integration audit identifies the required predecessor state and source control relation."
+        "M2 T52 S1 source-order audit confirms the same predecessor, source scratch handoff and d7-clear dispatch boundary in shared frame_root.c."
       ],
       "operationalEvidence": [
-        "Td S9 A2 controlled NMI-prefix route executes the source branch and stops before mode dispatch: ROM handoff has $00=$02 while current x86/x64 have $00=$01."
+        "M2 T52 S1 owner-ROM capture at source $8175 and ROM-configured x86/x64 focused regression agree on the repaired handoff; DOS16 links the same shared owner."
       ],
       "semanticContract": "The RotPRandomBit -> SkipSprite0 branch must hand off the source scratch $00 written by the LFSR prefix before sprite-zero selection.",
-      "repairCandidate": "A2",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -42871,16 +42870,15 @@
       "instruction": "jsr",
       "id": "control-00052",
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode dispatch after mysmb_frame_root_begin",
       "semanticEvidence": [
-        "Td S9 A2 static integration audit identifies the required predecessor state and source control relation."
+        "M2 T52 S1 source-order audit confirms the same predecessor, source scratch handoff and d7-clear dispatch boundary in shared frame_root.c."
       ],
       "operationalEvidence": [
-        "Td S9 A2 controlled NMI-prefix route stops at the source JSR boundary: ROM physical $2000=$10 while current x86/x64 visible control=$90 before the counterpart dispatch."
+        "M2 T52 S1 owner-ROM capture at source $8175 and ROM-configured x86/x64 focused regression agree on the repaired handoff; DOS16 links the same shared owner."
       ],
       "semanticContract": "The unpaused SkipSprite0 -> OperModeExecutionTree call must enter mode dispatch with physical $2000 equal to the saved mirror with d7 clear; RTI alone re-enables d7.",
-      "repairCandidate": "A2",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
