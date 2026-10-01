@@ -319622,7 +319622,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t54-cohort-b-current-proof.md",
-      "state": "admitted-reset-screen-timer-current-equivalence-audit",
+      "state": "closed-reset-screen-timer-current-equivalence-audit",
       "romRoute": "Controlled original-ROM/current x86/x64 ScreenRoutines task 5 and task 7 routes, each with ScreenTimer zero and nonzero variants."
     }
   ]

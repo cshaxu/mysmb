@@ -25,6 +25,19 @@
 
 ## Current Technical Baseline
 
-M2 T54 S4 is closed. S5 is active and audits the next source-order reset chain.
+M2 T54 S5 is closed. No successor S is admitted until the coordinator opens it.
+
+## S5 Closure
+
+`ResetSpritesAndScreenTimer`, `ResetScreenTimer` and `NoReset` are current-exact.
+The source audit against SMB1 lines 1804–1813 found no shared-C difference:
+task cases five and seven both preserve the nonzero early return and the
+zero-timer `MoveAllSpritesOffscreen`, timer-seven reload, task-increment order.
+The controlled task-five/task-seven zero/nonzero matrix agrees across original
+ROM, x86 and x64 for `ScreenRoutineTask`, `ScreenTimer` and every OAM byte.
+The focused screen-status smoke and platform-purity audit pass. The registry
+advances from 159 to 162 exact nodes and from 319 to 324 exact feasible
+controls; historical conformance remains 1,992 / 1,992. The only code change
+is a focused test assertion, so product artifacts were not refreshed.
 One shared native C90 game implementation serves DOS16 and Win32 x86/x64;
 platform adapters do not own game logic.

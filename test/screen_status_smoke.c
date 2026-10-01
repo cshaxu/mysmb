@@ -76,6 +76,38 @@ int main(void)
     if (game.ram[0x0759U] != 0U || game.ram[0x0774U] != 0U ||
         game.ram[0x07a0U] != 7U || game.ram[0x073cU] != 5U) return 1;
 
+    /* ResetSpritesAndScreenTimer: a live timer returns without changing
+     * either task or OAM; expiry clears every sprite-Y byte, reloads seven,
+     * then advances the task.  ScreenRoutines uses this same leaf at 5/7. */
+    index = 0U;
+    do {
+        game.ram[(mysmb_u16)(0x0200U + index)] = 0x55U;
+        index = (mysmb_u8)(index + 4U);
+    } while (index != 0U);
+    game.ram[0x073cU] = 5U;
+    game.ram[0x07a0U] = 1U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x073cU] != 5U || game.ram[0x07a0U] != 1U) return 1;
+    index = 0U;
+    do {
+        if (game.ram[(mysmb_u16)(0x0200U + index)] != 0x55U) return 1;
+        index = (mysmb_u8)(index + 4U);
+    } while (index != 0U);
+
+    game.ram[0x07a0U] = 0U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x073cU] != 6U || game.ram[0x07a0U] != 7U) return 1;
+    index = 0U;
+    do {
+        if (game.ram[(mysmb_u16)(0x0200U + index)] != 0xf8U) return 1;
+        index = (mysmb_u8)(index + 4U);
+    } while (index != 0U);
+
+    game.ram[0x073cU] = 7U;
+    game.ram[0x07a0U] = 0U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x073cU] != 8U || game.ram[0x07a0U] != 7U) return 1;
+
     game.ram[0x073cU] = 9U;
     game.ram[0x074eU] = 3U;
     mysmb_game_step_screen_routine(&game);

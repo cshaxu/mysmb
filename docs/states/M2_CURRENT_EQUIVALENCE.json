@@ -9565,16 +9565,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 128,
-    "needs-evidence": 1864,
-    "mismatch": 0,
-    "unclassified": 0
+    "exact": 162,
+    "needs-evidence": 1830
   },
   "controlEdgeCounts": {
-    "exact": 277,
-    "needs-evidence": 4047,
-    "mismatch": 0,
-    "unclassified": 0,
+    "exact": 324,
+    "needs-evidence": 4000,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -12648,13 +12644,16 @@
       "label": "ResetSpritesAndScreenTimer",
       "asmLine": 1804,
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine cases 5 and 7",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine task cases 5 and 7",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S5: source-order audit against SMB1 lines 1804-1813 proves the nonzero early return and the zero-timer MoveAllSpritesOffscreen -> reload $07 -> ScreenRoutineTask increment order in shared game.c task cases 5 and 7."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S5: controlled original-ROM, x86 and x64 task-five/task-seven zero/nonzero routes agree for ScreenTimer, ScreenRoutineTask and all 256 OAM bytes; focused screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "ROM $878d: only when ScreenTimer is zero, clears sprites, reloads timer seven and increments ScreenRoutineTask.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -12664,13 +12663,16 @@
       "label": "ResetScreenTimer",
       "asmLine": 1809,
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_step_screen_routine timer reset paths",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine task cases 5 and 7",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "M2 T54 S5: source-order audit against SMB1 lines 1804-1813 proves the nonzero early return and the zero-timer MoveAllSpritesOffscreen -> reload $07 -> ScreenRoutineTask increment order in shared game.c task cases 5 and 7."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S5: controlled original-ROM, x86 and x64 task-five/task-seven zero/nonzero routes agree for ScreenTimer, ScreenRoutineTask and all 256 OAM bytes; focused screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "ROM $885d: stores ScreenTimer seven and increments ScreenRoutineTask.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -12680,13 +12682,16 @@
       "label": "NoReset",
       "asmLine": 1813,
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_step_screen_routine cases 5 and 7 no-reset paths",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine task cases 5 and 7",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "M2 T54 S5: source-order audit against SMB1 lines 1804-1813 proves the nonzero early return and the zero-timer MoveAllSpritesOffscreen -> reload $07 -> ScreenRoutineTask increment order in shared game.c task cases 5 and 7."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S5: controlled original-ROM, x86 and x64 task-five/task-seven zero/nonzero routes agree for ScreenTimer, ScreenRoutineTask and all 256 OAM bytes; focused screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "ROM $8861: returns unchanged while ScreenTimer remains nonzero.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -48425,12 +48430,15 @@
       "instruction": "bne",
       "id": "control-00282",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ordered task-5/task-7 C control flow",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "M2 T54 S5: source-order audit against SMB1 lines 1804-1813 proves the nonzero early return and the zero-timer MoveAllSpritesOffscreen -> reload $07 -> ScreenRoutineTask increment order in shared game.c task cases 5 and 7."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S5: controlled original-ROM, x86 and x64 task-five/task-seven zero/nonzero routes agree for ScreenTimer, ScreenRoutineTask and all 256 OAM bytes; focused screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ResetSpritesAndScreenTimer -> NoReset branch relation must preserve selector/predicate, source byte order and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -48444,12 +48452,15 @@
       "instruction": "jsr",
       "id": "control-00283",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ordered task-5/task-7 C control flow",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "M2 T54 S5: source-order audit against SMB1 lines 1804-1813 proves the nonzero early return and the zero-timer MoveAllSpritesOffscreen -> reload $07 -> ScreenRoutineTask increment order in shared game.c task cases 5 and 7."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S5: controlled original-ROM, x86 and x64 task-five/task-seven zero/nonzero routes agree for ScreenTimer, ScreenRoutineTask and all 256 OAM bytes; focused screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ResetSpritesAndScreenTimer -> MoveAllSpritesOffscreen call relation must preserve selector/predicate, source byte order and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/boot.c",
@@ -48465,12 +48476,15 @@
       "instruction": "jsr",
       "id": "control-00284",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ordered task-5/task-7 C control flow",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "M2 T54 S5: source-order audit against SMB1 lines 1804-1813 proves the nonzero early return and the zero-timer MoveAllSpritesOffscreen -> reload $07 -> ScreenRoutineTask increment order in shared game.c task cases 5 and 7."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S5: controlled original-ROM, x86 and x64 task-five/task-seven zero/nonzero routes agree for ScreenTimer, ScreenRoutineTask and all 256 OAM bytes; focused screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ResetSpritesAndScreenTimer -> ResetScreenTimer fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -48484,12 +48498,15 @@
       "instruction": "inc",
       "id": "control-00285",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-text owner named by Td S9 B5",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ordered task-5/task-7 C control flow",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "M2 T54 S5: source-order audit against SMB1 lines 1804-1813 proves the nonzero early return and the zero-timer MoveAllSpritesOffscreen -> reload $07 -> ScreenRoutineTask increment order in shared game.c task cases 5 and 7."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S5: controlled original-ROM, x86 and x64 task-five/task-seven zero/nonzero routes agree for ScreenTimer, ScreenRoutineTask and all 256 OAM bytes; focused screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original ResetScreenTimer -> NoReset fallthrough relation must preserve selector/predicate, source byte order and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/game.c"
@@ -111319,12 +111336,15 @@
       "instruction": "rts/rti",
       "id": "control-03528",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ordered task-5/task-7 C control flow",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S5: source-order audit against SMB1 lines 1804-1813 proves the nonzero early return and the zero-timer MoveAllSpritesOffscreen -> reload $07 -> ScreenRoutineTask increment order in shared game.c task cases 5 and 7."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S5: controlled original-ROM, x86 and x64 task-five/task-seven zero/nonzero routes agree for ScreenTimer, ScreenRoutineTask and all 256 OAM bytes; focused screen-status smoke and platform-purity audit pass."
+      ],
       "semanticContract": "Original MoveAllSpritesOffscreen -> ResetSpritesAndScreenTimer return relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
         "src/game/boot.c",

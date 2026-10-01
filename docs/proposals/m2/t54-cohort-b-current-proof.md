@@ -241,3 +241,26 @@ MoveAllSpritesOffscreen, timer reload to seven, then task increment. The
 controlled route matrix uses source task 5 and task 7 with timer zero and
 nonzero alternatives on original ROM, x86 and x64. Historical credit remains
 unchanged; all three labels enter as current `needs-evidence`.
+
+## S5 closure — reset-screen timer chain
+
+S5 closes with no feasible ROM/C difference in `ResetSpritesAndScreenTimer`,
+`ResetScreenTimer` or `NoReset`. Static source comparison of SMB1 lines
+1804–1813 against `mysmb_game_step_screen_routine` verifies the `ScreenTimer`
+nonzero branch returns without OAM/task mutation. For timer zero, both source
+task cases five and seven invoke `MoveAllSpritesOffscreen`, reload seven, and
+advance exactly one task in that order. The five source-owned relations
+`control-00282` through `control-00285` and `control-03528` are exact.
+
+The controlled original-ROM/x86/x64 matrix covers task 5 and task 7, each with
+both timer states. In every four-sample route the three implementations agree
+on `ScreenRoutineTask`, `ScreenTimer`, CPU OAM bytes and submitted OAM bytes.
+The broad cold-title frame comparison still reports known scene-baseline
+differences outside this chain; it is not used as evidence for this closure.
+The focused screen-status smoke now directly guards both reset outcomes and
+passes on x64; platform purity also passes. This is test-evidence-only work,
+so the product executable artifacts were not refreshed.
+
+The current-equivalence registry advances from 159 to 162 exact labels and
+from 319 to 324 exact feasible controls. Historical conformance remains
+1,992 / 1,992. No successor S has been admitted.
