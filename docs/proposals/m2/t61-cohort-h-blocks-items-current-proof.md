@@ -101,3 +101,22 @@ remains **1,992 / 1,992**.
 All 14 scoped labels are current-exact. Static comparison of `$B9BA-$BA56` with `src/game/cannon.c` found no feasible difference in the water gate, slot-two-to-zero scheduler, hard-mode mask, expired-timer spawn, carry-preserving proximity check, movement gate, defeated descent, common child order, or erase return. The two table consumer bindings and all 26 internal feasible control relations agree with the source route.
 
 Twenty-five controlled original-ROM routes replayed as 50 current x86/x64 runs. Each compares 1,782 persistent RAM bytes and complete frame output; all match, and both native widths are byte-identical. The focused cannon smoke, dispatcher static contract, platform-purity audit, and OpenNT DOS16 link pass. No product source changed, so executable artifacts were not refreshed. Current re-audit advances to **710 / 1,992 exact nodes** and **1,417 / 4,324 exact feasible control relations**; historical accounting remains **1,992 / 1,992**.
+
+## S3 admission - hammer actor lifecycle
+
+S3 admits the ten-label `HammerEnemyOfsData -> RunHSubs` chain:
+`HammerEnemyOfsData`, `HammerXSpdData`, `SpawnHammerObj`, `SetMOfs`,
+`NoHammer`, `ProcHammerObj`, `SetHSpd`, `SetHPos`, `RunAllH`, and `RunHSubs`.
+The owner is `src/game/hammer.c`, for original source `$BA88-$BB09`.
+
+**ROM-logic track.** Verify pseudo-random hammer-slot selection, enemy-slot
+exclusion, carry return contract, state transition, gravity/horizontal-move
+order, HammerXSpdData direction selection, spawn coordinates and common
+collision/offscreen/relative/bounding-box/draw sequence. Child internals remain
+outside S3 while their inputs, outputs and ordering are recorded.
+
+**Operational track.** Compare controlled original-ROM/current x86/x64 hammer
+routes, run focused smoke and platform-purity checks, and link DOS16. A source
+repair refreshes all three local EXEs. Baseline: historical **1,992 / 1,992**;
+current **710 / 1,992 exact nodes** and **1,417 / 4,324 exact feasible control
+relations**.
