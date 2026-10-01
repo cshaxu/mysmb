@@ -190,3 +190,49 @@ exact. Child interiors `InitPodoboo` and `MoveJ_EnemyVertically` remain their
 separate source-order obligations. Historical mapping remains **1,992 /
 1,992**; current exact status is **991 / 1,992 nodes** and **1,961 / 4,324
 feasible controls** (raw **4,342**, infeasible **18**).
+
+## S4 admission — Hammer Bro throw, jump and horizontal bridge
+
+S4 admits the continuous `HammerThrowTmrData -> SetShim` chain (lines
+9229–9316): `HammerThrowTmrData`, `XSpeedAdderData`, `RevivedXSpeed`,
+`ProcHammerBro`, `ChkJH`, `DecHT`, `HammerBroJumpLData`,
+`HammerBroJumpCode`, `SetHJ`, `HJump`, `MoveHammerBroXDir`, `Shimmy`, and
+`SetShim`. The shared owner is `src/game/enemy/hammer_bro.c`; its normal and
+defeated movement children remain explicit S5 boundaries. S4 owns its 24
+feasible outgoing controls and eight material handoffs, including the two
+normal-movement table bindings whose consumers begin in S5.
+
+The ROM-logic track audits `$C9CE-$CA76`: both tables, defeated precedence,
+jump/throw timers, sprite-offscreen gate, hammer child result, jump speed and
+length selection, frame shimmy, player-difference direction, and normal-move
+entry. The operational track replays the controlled 356-case original ROM
+Hammer movement boundary on current x86/x64 and runs the focused Hammer Bro
+smokes, platform-purity and DOS16 link. Any feasible difference remains in S4
+for shared-owner repair and repeat audit.
+
+### S4 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **991 / 1,992**.
+- Current exact feasible controls: **1,961 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **13** unique labels; expected current promotions: **13**; maximum
+  current exact node count on successful closure: **1,004 / 1,992**.
+
+## S4 closure — Hammer Bro throw, jump and horizontal bridge
+
+All 13 labels are current-exact. Static `$C9CE-$CA76` comparison confirms both
+timer/length tables, defeated precedence, jump and throw timing, sprite
+offscreen gate, hammer-spawn result handling, PRNG/secondary-hard jump
+selection, shimmy speed, player-difference facing and normal-movement entry.
+Fresh current-source original-ROM route replay passes **712 / 712** comparisons
+(356 per x86 and x64). The focused caller state contract covers 12,288
+footprints per width. Platform purity passes, and the shared OpenNT DOS16 link
+produces its local MZ output with its known `OLDNAMES.LIB` warning. No product
+source changed, so no three-EXE artifact refresh is due.
+
+The chain closes 13 nodes, 24 feasible controls and eight material handoffs
+exact. `MoveNormalEnemy` and `MoveDefeatedEnemy` interiors remain the following
+source-order S5 obligation. Historical mapping remains **1,992 / 1,992**;
+current exact status is **1,004 / 1,992 nodes** and **1,985 / 4,324 feasible
+controls** (raw **4,342**, infeasible **18**).

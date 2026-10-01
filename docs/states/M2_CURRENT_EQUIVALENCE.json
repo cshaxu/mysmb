@@ -3929,13 +3929,16 @@
       "consumer": "ProcHammerBro",
       "storage": "SecondaryHardMode-indexed throw timer",
       "feasiblePath": "Expired throw timer receives $30 or $1c before hammer spawn attempt.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "throw_timers[SecondaryHardMode]",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3948,13 +3951,16 @@
       "consumer": "SetHJ",
       "storage": "random/hard-mode jump-length selector",
       "feasiblePath": "Selected jump-length table byte is stored before jump timer assignment.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "jump_lengths[index]",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3968,13 +3974,16 @@
       "consumer": "MoveHammerBroXDir",
       "storage": "HammerBro state, jump/throw timers and spawn result",
       "feasiblePath": "Every nondefeated processing path reaches horizontal movement with its source state updates.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_hammer_bros_slot move label",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3987,13 +3996,16 @@
       "consumer": "MoveNormalEnemy",
       "storage": "Hammer Bro X speed and moving direction",
       "feasiblePath": "Direction write precedes the shared normal-enemy movement tail.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_move_normal",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4007,13 +4019,16 @@
       "consumer": "AddHS",
       "storage": "direction-derived speed-addend index",
       "feasiblePath": "Normal movement consumes signed speed addend selected by source direction state.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "normal movement owner",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4027,13 +4042,16 @@
       "consumer": "SetRSpd",
       "storage": "frame/hard-mode revived-speed selector",
       "feasiblePath": "Revive branch consumes selected table byte before return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "normal movement owner",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4047,13 +4065,16 @@
       "consumer": "AddHS",
       "storage": "signed X-speed addend index",
       "feasiblePath": "Steady/slow path temporarily adds source-selected speed before horizontal movement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "speed_adder[index]",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4067,13 +4088,16 @@
       "consumer": "SetRSpd",
       "storage": "frame/primary-hard-mode revived-speed index",
       "feasiblePath": "Revive path selects the original direction/hard-mode speed table byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "revived_speed[index]",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -29799,13 +29823,16 @@
       "label": "HammerThrowTmrData",
       "asmLine": 9229,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds throw timer table {$30,$1c} indexed by SecondaryHardMode.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29815,13 +29842,16 @@
       "label": "XSpeedAdderData",
       "asmLine": 9232,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds normal-enemy speed-addend table {$00,$e8,$00,$18}.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29831,13 +29861,16 @@
       "label": "RevivedXSpeed",
       "asmLine": 9235,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds revived-enemy X speed table {$08,$f8,$0c,$f4}.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29847,13 +29880,16 @@
       "label": "ProcHammerBro",
       "asmLine": 9238,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Prioritizes defeated state; otherwise applies jump-timer, offscreen, throw-timer and hammer-spawn logic before tail-entering horizontal Hammer Bro movement.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29863,13 +29899,16 @@
       "label": "ChkJH",
       "asmLine": 9243,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Branches to jump setup only when HammerBroJumpTimer is zero; nonzero path decrements then enters throw/offscreen handling.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29879,13 +29918,16 @@
       "label": "DecHT",
       "asmLine": 9260,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Decrements HammerThrowingTimer and tail-jumps to Hammer Bro horizontal movement.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29895,13 +29937,16 @@
       "label": "HammerBroJumpLData",
       "asmLine": 9263,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds jump-length table {$20,$37}.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29911,13 +29956,16 @@
       "label": "HammerBroJumpCode",
       "asmLine": 9266,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "For non-jumping low state derives vertical speed and a random/hard-mode jump-length selector, then falls through jump-state writes.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29927,29 +29975,35 @@
       "label": "SetHJ",
       "asmLine": 9285,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Writes jump Y speed, marks jumping state, selects jump length and writes high-bit jump timer before falling through horizontal movement.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/enemy/hammer_bro.c"
       ]
     },
     {
       "label": "HJump",
       "asmLine": 9295,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Selects jump-length index from random bitmask only in secondary hard mode; normal mode forces index zero.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29959,13 +30013,16 @@
       "label": "MoveHammerBroXDir",
       "asmLine": 9301,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Sets frame-phase shimmy speed, chooses facing from player difference and expired walk timer, then falls through normal enemy movement.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29975,13 +30032,16 @@
       "label": "Shimmy",
       "asmLine": 9307,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores selected shimmy X speed before player-difference direction logic.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -29991,13 +30051,16 @@
       "label": "SetShim",
       "asmLine": 9316,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/hammer_bro.c",
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores Hammer Bro moving direction and falls through MoveNormalEnemy.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82040,12 +82103,15 @@
       "instruction": "beq",
       "id": "control-01716",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcHammerBro -> ChkJH with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82059,12 +82125,15 @@
       "instruction": "jmp",
       "id": "control-01717",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ProcHammerBro -> MoveDefeatedEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -82079,12 +82148,15 @@
       "instruction": "beq",
       "id": "control-01718",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkJH -> HammerBroJumpCode with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82098,12 +82170,15 @@
       "instruction": "bne",
       "id": "control-01719",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkJH -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82117,12 +82192,15 @@
       "instruction": "bne",
       "id": "control-01720",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkJH -> DecHT with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82136,12 +82214,15 @@
       "instruction": "jsr",
       "id": "control-01721",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkJH -> SpawnHammerObj with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -82156,12 +82237,15 @@
       "instruction": "bcc",
       "id": "control-01722",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkJH -> DecHT with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82175,12 +82259,15 @@
       "instruction": "jmp",
       "id": "control-01723",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ChkJH -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82194,12 +82281,15 @@
       "instruction": "jmp",
       "id": "control-01724",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation DecHT -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82213,12 +82303,15 @@
       "instruction": "beq",
       "id": "control-01725",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HammerBroJumpCode -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82232,12 +82325,15 @@
       "instruction": "bmi",
       "id": "control-01726",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HammerBroJumpCode -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -82252,12 +82348,15 @@
       "instruction": "bcc",
       "id": "control-01727",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HammerBroJumpCode -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -82272,12 +82371,15 @@
       "instruction": "bne",
       "id": "control-01728",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HammerBroJumpCode -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -82292,12 +82394,15 @@
       "instruction": "ldy",
       "id": "control-01729",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation HammerBroJumpCode -> SetHJ with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -82312,12 +82417,15 @@
       "instruction": "bne",
       "id": "control-01730",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SetHJ -> HJump with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -82332,12 +82440,15 @@
       "instruction": "tay",
       "id": "control-01731",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetHJ -> HJump with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -82352,12 +82463,15 @@
       "instruction": "sta",
       "id": "control-01732",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation HJump -> MoveHammerBroXDir with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82371,12 +82485,15 @@
       "instruction": "bne",
       "id": "control-01733",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveHammerBroXDir -> Shimmy with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82390,12 +82507,15 @@
       "instruction": "ldy",
       "id": "control-01734",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MoveHammerBroXDir -> Shimmy with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82409,12 +82529,15 @@
       "instruction": "jsr",
       "id": "control-01735",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation Shimmy -> PlayerEnemyDiff with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -82433,12 +82556,15 @@
       "instruction": "bmi",
       "id": "control-01736",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation Shimmy -> SetShim with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82452,12 +82578,15 @@
       "instruction": "bne",
       "id": "control-01737",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation Shimmy -> SetShim with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82471,12 +82600,15 @@
       "instruction": "sta",
       "id": "control-01738",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation Shimmy -> SetShim with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
@@ -82490,12 +82622,15 @@
       "instruction": "sty",
       "id": "control-01739",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetShim -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",

@@ -2068,3 +2068,13 @@ passes 128 x86/x64 comparisons; focused Podoboo and lifecycle contracts,
 platform purity and DOS16 link also pass. The registry is **991 / 1,992**
 exact nodes and **1,961 / 4,324** exact feasible controls, from **4,342** raw
 controls with **18** infeasible; historical mapping remains **1,992 / 1,992**.
+
+
+### T63 S4 Hammer Bro movement result
+
+`HammerThrowTmrData -> SetShim` is current-exact: 13 labels, 24 feasible
+controls and eight material handoffs. Static `$C9CE-$CA76`, 712 current
+original-ROM/x86/x64 route comparisons, focused state contracts, purity and
+DOS16 link agree. The registry is **1,004 / 1,992** exact nodes and **1,985 /
+4,324** exact feasible controls, from **4,342** raw controls with **18**
+infeasible; historical mapping remains **1,992 / 1,992**.
