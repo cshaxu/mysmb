@@ -2620,6 +2620,13 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T55 S6 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-c-s6-planned-chain; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T55 S7 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-c-s7-planned-chain; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T55 S8 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-c-s8-planned-chain; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T56 | 0 | - | [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md); [record](../../docs/proposals/m2/current-equivalence-proof-program.md) |
+| M2 T56 S1 | 0 | 0 | owner-approved-source-order, current-equivalence-area-parser; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S2 | 0 | 0 | owner-approved-source-order, current-equivalence-area-parser; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S3 | 0 | 0 | owner-approved-source-order, current-equivalence-area-parser; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S4 | 0 | 0 | owner-approved-source-order, current-equivalence-area-parser; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S5 | 0 | 0 | owner-approved-source-order, current-equivalence-area-parser; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-area-parser; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -3252,3 +3259,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T55 S6 | 5 | 1992 | none / 0 | none / 0 | closed-current-exact-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T55 S7 | 4 | 1992 | none / 0 | none / 0 | closed-joypad-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T55 S8 | 8 | 1992 | none / 0 | none / 0 | closed-vram-ppu-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T56 S1 | 14 | 1992 | none / 0 | none / 0 | admitted-parser-task-and-scenery-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |

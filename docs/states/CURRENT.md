@@ -2,38 +2,38 @@
 
 ## Current Work
 
-## M2 T55 S8 Packet
+## M2 T56 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T55 S8 — VRAM packet and PPU handoff current-equivalence audit. |
-| Admission And Approval | T55 S8 closed with zero scoped feasible differences; T55 closure review is in progress. |
-| Objective | Closed: audited `WriteBufferToScreen` through `WritePPUReg1`, repair every feasible shared-C mismatch, and repeat scoped ROM/native evidence until each node and incident feasible control is exact. |
-| Non-goals | No platform rendering/input decisions, no historical-node credit, and no successor admission before this chain closes with zero feasible differences. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 225 exact and 1,767 needs-evidence nodes; 458 exact feasible controls. Scope: eight labels and 13 pending incident feasible controls; expected historical delta 0. |
-| Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
-| Files And ABI Surface | Shared `src/game/game.c`; focused packet/recorder tests only. |
+| Identifier Mode | M2 T56 S1 — parser task and scenery-table current-equivalence audit. |
+| Admission And Approval | T55 is closed; the owner-approved source-order program admits T56 S1. |
+| Objective | Audit `AreaParserTaskHandler` through `AreaParserCore`, repair every feasible shared-C mismatch, and repeat ROM/native evidence until every scoped node and relation is exact. |
+| Non-goals | No platform rendering/input decisions, no historical-node credit, and no expansion into the later terrain-render chain. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 233 exact and 1,759 needs-evidence nodes; 471 exact feasible controls. Scope: 14 labels; expected historical delta 0. |
+| Candidate Proposal | docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md. |
+| Files And ABI Surface | Shared `src/game/area.c`; focused parser recorder/tests only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | ROM-logic: source packet header branches, payload/read pointer, terminator and scroll/control call-return relations. Operational: controlled original-ROM/x86/x64 packet matrix, focused x86/x64 tests, DOS16 build if product source changes, and platform-purity audit. |
-| Expected Markers | Empty, sequential, vertical and repeat packets preserve physical `$2000`, `$2005`, VRAM outputs, mirror state, zero-page pointer progression and terminal transfer in shared C. |
+| Verification | ROM-logic: task selector, wrap, parser-core entries and table bindings. Operational: controlled original-ROM/x86/x64 parser-column route, focused parser tests, DOS16 build if product source changes, and platform-purity audit. |
+| Expected Markers | Task-zero initialization, descending selector order, 16/32-column wrap, scenery/terrain table selection and parser-core handoff remain in shared C. |
 | Asset Needs | Refresh all three artifacts only if product source changes. |
-| Reporting Requirements | Report all eight labels and each scoped feasible control with separate static ROM-logic and operational results; report repair/re-audit loop before closure. |
-| Stop Conditions | A feasible ROM/C difference remains after repair, an incident control lacks a shared-C counterpart, or platform code makes a gameplay decision. |
-| Exit Criteria | Every scoped node and incident feasible control is exact under static and controlled evidence; any discovered mismatch is repaired and re-audited in S8. |
+| Reporting Requirements | Report all 14 labels and every scoped feasible relation with separate static and operational results; repair and re-audit before S2. |
+| Stop Conditions | A feasible ROM/C difference remains after repair, a relation lacks a shared-C counterpart, or platform code makes a parser decision. |
+| Exit Criteria | Every scoped node and feasible relation is exact under source and controlled-route evidence; no successor is admitted while a mismatch remains. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | Header d7/d6 decoding, increment/repeat modes, source-pointer carry, terminator routing, physical/mirror `$2000`, and scroll-register write order. |
+| Similar-Issue Sweep | Parser task count, selector underflow, column/page carry, backloading entry, scenery offsets and terrain-mask pointer binding. |
 
 ## S8 Closure
 
 S8 closes with eight current-exact nodes and 13 current-exact feasible control relations. The shared packet interpreter now retains the ROM `$00/$01` indirect-pointer advance through every packet and publishes each packet header's physical `$2000` state. Input-identical original-ROM/native repeat and vertical routes cover both header branch families; direct chained carry, NMI-parent, x86/x64, platform-purity and DOS16 checks pass. Historical status remains 1,992 / 1,992, while the fresh registry is **233 exact nodes** and **471 exact feasible controls**.
 
-## T55 Closure Review
+## T55 Closure
 
-All 67 T55 labels are current-exact. The T55 incident graph contains 137 exact feasible controls, five source-infeasible controls, and 25 exact material edges; it has no unresolved feasible relation. The final cross-chain review re-ran renderer x86/x64 output, the controlled 120-frame ROM/native joypad route, and the controlled repeat/vertical VRAM and scroll routes. T55 now awaits only the formal closure record and successor admission.
+T55 closes with all 67 labels current-exact. Its incident graph contains 137 exact feasible controls, five source-infeasible controls, and 25 exact material edges; it has no unresolved feasible relation. The final cross-chain review re-ran renderer x86/x64 output, the controlled 120-frame ROM/native joypad route, and the controlled repeat/vertical VRAM and scroll routes.
 
 ## Current Technical Baseline
 
-M2 T55 is in closure review after its eight Cohort C bootstrap chains. No successor S is admitted.
+M2 T56 S1 is active for the contiguous parser task and scenery-table chain. T55 is closed.
 
 ## S5 Closure
 
