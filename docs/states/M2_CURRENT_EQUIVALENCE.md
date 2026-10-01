@@ -2000,3 +2000,7 @@ infeasible**; historical migration remains **1,992 / 1,992**.
 ### T62 S4 special initializer result
 
 All 22 labels from `InitBulletBill` through `InitShortFirebar` are current-equivalence exact. Static `$C233-$C2D3` comparison, 160 controlled original-ROM/current Lakitu/Spiny caller-boundary replays and 20 direct Firebar original/current replays match on x86/x64. Focused footprint checks cover 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate, and 23,046 common initializer cases per width. The registry advances from 874 to 896 exact nodes and from 1,699 to 1,726 exact feasible controls; historical conformance remains 1,992 / 1,992.
+
+### T62 S5 flying Cheep and Bowser/flame initializer result
+
+All 18 labels from `FlyCCXPositionData` through `SetFrT` are current-equivalence exact. Static `$C2EA-$C395`, 624 actual original-ROM/current x86/x64 snapshots, and exhaustive focused footprints agree. The registry advances from 896 to 914 exact nodes and from 1,726 to 1,747 exact feasible controls; historical conformance remains 1,992 / 1,992.

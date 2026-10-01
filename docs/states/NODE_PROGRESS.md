@@ -2075,3 +2075,7 @@ Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1
 ### T62 S4 special initializer result
 
 `InitBulletBill -> InitShortFirebar` adds 22 current-exact labels, 27 feasible control relations and six material handoffs. Static `$C233-$C2D3`, 160 original-ROM/current Lakitu/Spiny caller-boundary snapshot matches, 20 direct Firebar original/current snapshot matches, focused C90 footprints, platform purity and DOS16 link evidence agree. Current registry: **896 / 1,992 exact nodes** and **1,726 / 4,324 exact feasible controls**, from **4,342 raw controls** with **18 infeasible**. Historical migration remains **1,992 / 1,992**.
+
+### T62 S5 flying Cheep and Bowser/flame initializer result
+
+`FlyCCXPositionData -> SetFrT` adds 18 current-exact labels, 21 feasible control relations and five material handoffs. Static `$C2EA-$C395`, 624 actual original-ROM/current x86/x64 snapshot comparisons, focused C90 footprints, platform purity and DOS16 link evidence agree. Current registry: **914 / 1,992 exact nodes** and **1,747 / 4,324 exact feasible controls**, from **4,342 raw controls** with **18 infeasible**. Historical migration remains **1,992 / 1,992**.
