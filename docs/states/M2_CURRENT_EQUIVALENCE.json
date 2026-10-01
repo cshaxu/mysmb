@@ -7326,13 +7326,16 @@
       "consumer": "FireballEnemyCDLoop",
       "storage": "fireball state/frame gate and box offset to descending enemy scan",
       "feasiblePath": "Only active non-d7 fireball on even frame scans.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/fireball_enemy.c entry",
       "semanticContract": "Preserves source producer-to-consumer fireball/enemy state and box handoff ordering.",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7345,13 +7348,16 @@
       "consumer": "GoombaDie",
       "storage": "enemy ID range to Goomba special-state gate",
       "feasiblePath": "IDs $24-$2a skip; Goomba alone has state>=2 exclusion.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/fireball_enemy.c eligibility",
       "semanticContract": "Preserves source producer-to-consumer fireball/enemy state and box handoff ordering.",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7364,13 +7370,16 @@
       "consumer": "HandleEnemyFBallCol",
       "storage": "enemy/fireball bounding boxes, collision result and fireball d7 mark",
       "feasiblePath": "A hit marks fireball but scan continues after hit handler returns.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/fireball_enemy.c box/hit sequence",
       "semanticContract": "Preserves source producer-to-consumer fireball/enemy state and box handoff ordering.",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7384,13 +7393,16 @@
       "consumer": "FireballEnemyCDLoop",
       "storage": "restored fireball box and decremented enemy index",
       "feasiblePath": "Slots 4..0 are all considered even after a hit.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/fireball_enemy.c loop",
       "semanticContract": "Preserves source producer-to-consumer fireball/enemy state and box handoff ordering.",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -34879,13 +34891,16 @@
       "label": "FireballEnemyCollision",
       "asmLine": 11085,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: world/fireball_enemy.c",
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns for zero/d7 fireball state or odd frame; otherwise computes fireball box slot*4+$1c and scans enemy slots four down to zero.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -34895,13 +34910,16 @@
       "label": "FireballEnemyCDLoop",
       "asmLine": 11101,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: world/fireball_enemy.c",
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Saves enemy and fireball box identity each iteration, excludes defeated/inactive/ID-range/ineligible-Goomba/offscreen enemies, tests boxes and marks fireball d7 on hit without ending scan.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -34911,13 +34929,16 @@
       "label": "GoombaDie",
       "asmLine": 11115,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: world/fireball_enemy.c",
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "For Goomba only rejects state >=2 before common masked-offscreen and box path.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -34927,13 +34948,16 @@
       "label": "NotGoomba",
       "asmLine": 11120,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: world/fireball_enemy.c",
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Rejects nonzero masked offscreen bits then computes enemy box slot*4+4 for collision child.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -34943,13 +34967,16 @@
       "label": "NoFToECol",
       "asmLine": 11135,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: world/fireball_enemy.c",
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Restores fireball box and decrements enemy slot; high-bit termination follows slot zero.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -34959,13 +34986,16 @@
       "label": "ExitFBallEnemy",
       "asmLine": 11141,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: world/fireball_enemy.c",
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Restores source ObjectOffset-equivalent fireball slot and returns.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -93884,12 +93914,15 @@
       "instruction": "beq",
       "id": "control-02191",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FireballEnemyCollision -> ExitFBallEnemy with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -93903,12 +93936,15 @@
       "instruction": "bcs",
       "id": "control-02192",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FireballEnemyCollision -> ExitFBallEnemy with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -93922,12 +93958,15 @@
       "instruction": "bcs",
       "id": "control-02193",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FireballEnemyCollision -> ExitFBallEnemy with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -93941,12 +93980,15 @@
       "instruction": "ldx",
       "id": "control-02194",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FireballEnemyCollision -> FireballEnemyCDLoop with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -93960,12 +94002,15 @@
       "instruction": "bne",
       "id": "control-02195",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FireballEnemyCDLoop -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -93979,12 +94024,15 @@
       "instruction": "beq",
       "id": "control-02196",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FireballEnemyCDLoop -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -93998,12 +94046,15 @@
       "instruction": "bcc",
       "id": "control-02197",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FireballEnemyCDLoop -> GoombaDie with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94017,12 +94068,15 @@
       "instruction": "bcc",
       "id": "control-02198",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FireballEnemyCDLoop -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94036,12 +94090,15 @@
       "instruction": "bcc",
       "id": "control-02199",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FireballEnemyCDLoop -> GoombaDie with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94055,12 +94112,15 @@
       "instruction": "bne",
       "id": "control-02200",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GoombaDie -> NotGoomba with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94074,12 +94134,15 @@
       "instruction": "bcs",
       "id": "control-02201",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GoombaDie -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94093,12 +94156,15 @@
       "instruction": "bcs",
       "id": "control-02202",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GoombaDie -> NotGoomba with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94112,12 +94178,15 @@
       "instruction": "bne",
       "id": "control-02203",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation NotGoomba -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94131,12 +94200,15 @@
       "instruction": "jsr",
       "id": "control-02204",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation NotGoomba -> SprObjectCollisionCore with source box offsets, carry and coordinate-loop handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c",
@@ -94152,12 +94224,15 @@
       "instruction": "bcc",
       "id": "control-02205",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation NotGoomba -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94171,12 +94246,15 @@
       "instruction": "jsr",
       "id": "control-02206",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation NotGoomba -> HandleEnemyFBallCol with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c",
@@ -94191,12 +94269,15 @@
       "instruction": "jsr",
       "id": "control-02207",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation NotGoomba -> NoFToECol with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94210,12 +94291,15 @@
       "instruction": "bpl",
       "id": "control-02208",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation NoFToECol -> FireballEnemyCDLoop with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"
@@ -94229,12 +94313,15 @@
       "instruction": "bpl",
       "id": "control-02209",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_enemy.c collision scan with named geometry/hit children",
       "semanticEvidence": [
-        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation NoFToECol -> ExitFBallEnemy with fireball/enemy state predicate, box/slot handoff and loop/call/return ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c"

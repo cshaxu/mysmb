@@ -96,3 +96,26 @@ write, ordered hit-child call, and saved fireball-box restoration. The
 operational track batches the controlled original-ROM family per width, then
 runs the scan and collision regression tests, platform-purity gate and DOS16
 shared-source link.
+
+## S2 closure — fireball enemy scan
+
+All six scoped nodes are current-exact: `FireballEnemyCollision`,
+`FireballEnemyCDLoop`, `GoombaDie`, `NotGoomba`, `NoFToECol`, and
+`ExitFBallEnemy`. Static `$D6D9-$D735` comparison found no shared-C
+mismatch. The strengthened scan contract now explicitly covers inactive,
+exploding and odd-frame entry exits plus the masked-offscreen path, in addition
+to its 131,072 ID/state eligibility cases and child-mutation cases.
+
+The controlled original-ROM caller replay ran the retained 1,024 bounded
+records through one x86 and one x64 process, comparing full mapped RAM and
+recorded child calls, with zero differences. The focused scan, collision
+regression, audio/pause and Win32 audio tests pass on both widths; platform
+purity passes and OpenNT links the same shared DOS16 source. Product C did not
+change, so the existing three package artifacts were not refreshed.
+
+S2 marks six nodes, 19 source-owned controls (`control-02191` through
+`control-02209`) and four material handoffs (`material-00336` through
+`material-00339`) exact. `HandleEnemyFBallCol` is deliberately retained for
+S3. Current totals: historical **1,992 / 1,992**; current exact nodes
+**1,238 / 1,992**; current exact feasible controls **2,495 / 4,324** (raw
+**4,342**, infeasible **18**).

@@ -2288,3 +2288,15 @@ x86/x64 regression passes **219 / 219** CTests on each width and the OpenNT
 DOS16 shared-source link passes. Global status is historical **1,992 / 1,992**;
 current **1,227 / 1,992** exact nodes and **2,461 / 4,324** exact feasible
 controls (raw **4,342**, infeasible **18**).
+
+### T64 S2 fireball enemy-scan result
+
+`FireballEnemyCollision -> ExitFBallEnemy` adds six current-exact nodes, 19
+source-owned feasible controls and four material handoffs. Static
+`$D6D9-$D735` comparison and a 1,024-record original-ROM caller replay agree
+with both current x86 and x64 builds, including recorded child inputs/returns.
+The strengthened scan contract, collision regression, audio/pause tests,
+platform-purity audit and DOS16 link pass. The live registry is **1,238 /
+1,992** exact nodes and **2,495 / 4,324** exact feasible controls; historical
+mapping remains **1,992 / 1,992**, with **4,342** raw and **18** infeasible
+control relations. `HandleEnemyFBallCol` remains S3 scope.

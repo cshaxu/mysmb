@@ -34,6 +34,35 @@ int main(void)
         if(collisions!=expected||hits!=expected||game.ram[1U]!=0U)++errors;
         ++cases;
     }
+    /* The three entry branches leave all RAM intact: inactive and exploded
+     * fireballs, and the alternate frame parity, cannot enter the scan. */
+    for (state = 0U; state < 3U; ++state) {
+        memset(&game, 0, sizeof(game));
+        root_slot = 0U;
+        game.ram[8U] = root_slot;
+        game.ram[1U] = 0x5aU;
+        game.ram[0x24U] = state == 0U ? 0U :
+                            state == 1U ? 0x80U : 1U;
+        game.ram[9U] = state == 2U ? 1U : 0U;
+        collisions = hits = 0U;
+        mysmb_world_fireball_enemy_collision(&game, root_slot);
+        if (collisions != 0U || hits != 0U || game.ram[1U] != 0x5aU)
+            ++errors;
+    }
+    /* EnemyOffscrBitsMasked is tested before geometry.  A completely masked
+     * active enemy set still performs the source descending loop, but calls
+     * neither child and leaves the final saved enemy offset at zero. */
+    memset(&game, 0, sizeof(game));
+    root_slot = 0U;
+    game.ram[8U] = root_slot;
+    game.ram[0x24U] = 1U;
+    collisions = hits = 0U;
+    for (i = 0U; i < 5U; ++i) {
+        game.ram[0xfU + i] = 1U;
+        game.ram[0x3d8U + i] = 1U;
+    }
+    mysmb_world_fireball_enemy_collision(&game, root_slot);
+    if (collisions != 0U || hits != 0U || game.ram[1U] != 0U) ++errors;
     for(mode=1U;mode<=4U;++mode){
         memset(&game,0,sizeof(game));root_slot=0U;game.ram[0x24U]=1U;collisions=hits=0U;
         for(i=0U;i<5U;++i)game.ram[0xfU+i]=1U;
