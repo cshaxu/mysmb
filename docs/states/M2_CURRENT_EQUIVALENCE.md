@@ -37,6 +37,22 @@ edge records its C integration counterpart and both evidence tracks.
 rejects an `exact` disposition lacking either track and rejects duplicate or
 incomplete node/control-edge identities.
 
+### T54 S1 screen-initialization and palette result
+
+The 20 labels from `InitScreen` through `NoAltPal`, 25 internal executable
+control relations, and four palette material relations are current-exact. A
+fresh static comparison found no feasible C/ROM difference. Controlled
+original-ROM/current x86/x64 routes cover task 0/1, every `AreaType`,
+`BackgroundColorCtrl` 0/4/5/6/7, Mario/Luigi/fire selection, and both
+alternate-palette paths. The compared S1 state is exact in work RAM
+`$0300-$07ff` excluding the established PPU-shadow ABI bytes `$0778/$0779`,
+plus applicable CIRAM, palette, OAM and physical PPU scalars. The task-11
+route stops at its task boundary; its subsequent title transfer remains S3
+scope. Focused x86/x64 checks, the shared DOS16 link and platform-purity pass.
+The live registry is **122 exact nodes**, **253 exact feasible control
+relations**, **10 exact material relations**, and **zero mismatches**;
+historical conformance remains **1,992 / 1,992**.
+
 ### T52 S5 B3 full-callee-chain result
 
 The former B3 mismatch is rejected. `DisplayTimeUp`, `OutputInter` and

@@ -759,6 +759,38 @@ static void mysmb_recorder_apply_t52_background_palette_fixture(
     game->ram[0x0300U] = 0U;
 }
 
+/* T54/S1 exercises GetAreaPalette through every source AreaType table entry.
+ * The ordinary title-mode ScreenRoutines dispatcher remains the caller. */
+static void mysmb_recorder_apply_t54_area_palette_fixture(struct mysmb_game *game,
+                                                           mysmb_u8 area_type)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 1U;
+    game->ram[0x073cU] = 9U;
+    game->ram[0x074eU] = area_type;
+}
+
+static void mysmb_recorder_apply_t54_player_palette_fixture(struct mysmb_game *game,
+                                                             mysmb_u8 player,
+                                                             mysmb_u8 status)
+{
+    mysmb_recorder_apply_t52_background_palette_fixture(game, 0U);
+    game->ram[0x0753U] = player;
+    game->ram[0x0756U] = status;
+}
+
+static void mysmb_recorder_apply_t54_alternate_palette_fixture(struct mysmb_game *game,
+                                                                mysmb_u8 area_style)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 1U;
+    game->ram[0x073cU] = 11U;
+    game->ram[0x0733U] = area_style;
+    game->ram[0x0773U] = 0x66U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -1319,6 +1351,16 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t52-background-palette-5") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 105U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t52-background-palette-6") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 106U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t52-background-palette-7") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 107U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-screen-init-nmi") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 109U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-area-palette-0") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 110U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-area-palette-1") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 111U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-area-palette-2") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 112U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-area-palette-3") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 113U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-player-mario") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 114U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-player-luigi") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 115U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-player-fire") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 116U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-alternate-standard") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 117U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-alternate-mushroom") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 118U; }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -1429,6 +1471,18 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t28_top_score_fixture(&game, 0U);
             else if (t26_fixture == 57U)
                 mysmb_recorder_apply_t28_title_score_fixture(&game);
+            else if (t26_fixture == 109U)
+                mysmb_recorder_apply_t28_init_screen_fixture(&game);
+            else if (t26_fixture >= 110U && t26_fixture <= 113U)
+                mysmb_recorder_apply_t54_area_palette_fixture(&game,
+                    (mysmb_u8)(t26_fixture - 110U));
+            else if (t26_fixture >= 114U && t26_fixture <= 116U)
+                mysmb_recorder_apply_t54_player_palette_fixture(&game,
+                    t26_fixture == 115U ? 1U : 0U,
+                    t26_fixture == 116U ? 2U : 0U);
+            else if (t26_fixture >= 117U && t26_fixture <= 118U)
+                mysmb_recorder_apply_t54_alternate_palette_fixture(&game,
+                    (mysmb_u8)(t26_fixture - 117U));
             else if (t26_fixture >= 103U && t26_fixture <= 107U)
                 mysmb_recorder_apply_t52_background_palette_fixture(&game,
                     t26_fixture == 103U ? 0U : (mysmb_u8)(t26_fixture - 100U));

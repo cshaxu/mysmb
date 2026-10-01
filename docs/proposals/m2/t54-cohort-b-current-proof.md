@@ -97,3 +97,21 @@ T54 closes only after all 67 labels and its allocated feasible relations have fr
 ## S1 admission — screen initialization and palette chain
 
 S1 begins at `InitScreen` because `ScreenRoutines` is a multi-target dispatcher whose complete proof belongs to S7 after its children. It compares the original task-byte writes, palette table indexing, player/background selection, queued VRAM output and call/return order at ROM lines 1408–1513. Its ROM route uses controlled task 0/1/9/10/11 snapshots with palette/player-status alternatives; its operational lane uses focused screen/palette checks, x86/x64 builds, the common-source DOS16 link and platform-purity audit. A feasible difference is repaired in `src/game` and this same S is repeated to zero.
+
+## S1 closure — zero feasible difference
+
+All 20 S1 labels are now current-exact. The static pass compared ROM lines
+1408–1513 with `mysmb_game_step_screen_routine` and
+`mysmb_area_queue_player_palette`, including table order, predicates,
+read/write order and the palette-command byte protocol. The controlled
+original-ROM routes covered task 0/1, all four `AreaType` table entries,
+`BackgroundColorCtrl` 0/4/5/6/7, Mario/Luigi/fire palette selection, and both
+alternate-palette paths. Current x86 and x64 match in S1-owned work RAM,
+CIRAM, palette, OAM and PPU scalar outputs; `$0778/$0779` remain the
+established PPU-shadow ABI exclusion, with physical PPU scalars compared.
+
+The task-11 route is checked at its task boundary. Its next-frame title data
+transfer belongs to S3, so it is not inferred as S1 evidence. Focused
+screen-status and local-area checks pass on x86/x64; the shared DOS16 link and
+platform-purity check pass. This is a test-evidence-only P: no shared product
+or platform source changed, so no product artifact refresh is required.

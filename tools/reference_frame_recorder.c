@@ -1036,6 +1036,38 @@ static void mysmb_reference_apply_t52_background_palette_fixture(lib_u8 *ram,
     ram[0x0300u] = 0u;
 }
 
+/* T54/S1 exercises GetAreaPalette through every source AreaType table entry.
+ * The ordinary title-mode ScreenRoutines dispatcher remains the caller. */
+static void mysmb_reference_apply_t54_area_palette_fixture(lib_u8 *ram,
+                                                            lib_u8 area_type)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 1u;
+    ram[0x073cu] = 9u;
+    ram[0x074eu] = area_type;
+}
+
+static void mysmb_reference_apply_t54_player_palette_fixture(lib_u8 *ram,
+                                                              lib_u8 player,
+                                                              lib_u8 status)
+{
+    mysmb_reference_apply_t52_background_palette_fixture(ram, 0u);
+    ram[0x0753u] = player;
+    ram[0x0756u] = status;
+}
+
+static void mysmb_reference_apply_t54_alternate_palette_fixture(lib_u8 *ram,
+                                                                 lib_u8 area_style)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 1u;
+    ram[0x073cu] = 11u;
+    ram[0x0733u] = area_style;
+    ram[0x0773u] = 0x66u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -3098,6 +3130,16 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t52-background-palette-6") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 106u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t52-background-palette-7") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 107u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t52-timeup-output-inter-return") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 108u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-screen-init-nmi") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 109u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-area-palette-0") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 110u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-area-palette-1") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 111u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-area-palette-2") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 112u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-area-palette-3") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 113u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-player-mario") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 114u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-player-luigi") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 115u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-player-fire") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 116u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-alternate-standard") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 117u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-alternate-mushroom") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 118u; continue; }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -3372,6 +3414,19 @@ int main(int argument_count, char **arguments)
                     mysmb_reference_apply_t52_background_palette_fixture(
                         driver->machine->ram, t26_fixture == 103u ? 0u :
                         (lib_u8)(t26_fixture - 100u));
+                else if (t26_fixture == 109u)
+                    mysmb_reference_apply_t28_init_screen_fixture(
+                        driver->machine->ram);
+                else if (t26_fixture >= 110u && t26_fixture <= 113u)
+                    mysmb_reference_apply_t54_area_palette_fixture(
+                        driver->machine->ram, (lib_u8)(t26_fixture - 110u));
+                else if (t26_fixture >= 114u && t26_fixture <= 116u)
+                    mysmb_reference_apply_t54_player_palette_fixture(
+                        driver->machine->ram, t26_fixture == 115u ? 1u : 0u,
+                        t26_fixture == 116u ? 2u : 0u);
+                else if (t26_fixture >= 117u && t26_fixture <= 118u)
+                    mysmb_reference_apply_t54_alternate_palette_fixture(
+                        driver->machine->ram, (lib_u8)(t26_fixture - 117u));
                 else if (t26_fixture == 108u) {
                     mysmb_reference_apply_t27_screen_fixture(
                         driver->machine->ram, 0u);
