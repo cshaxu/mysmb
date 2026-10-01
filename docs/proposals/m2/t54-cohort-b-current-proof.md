@@ -168,3 +168,37 @@ copy-bound path, title buffer clear/icon handoff and task-14 top-score/mode-task
 continuation. Its source-owned control edges include the external icon and
 status helpers only as call/return integration edges; their internal logic
 remains in the owning S.
+
+## S3 closure — title-screen task chain
+
+S3 closes with no feasible remaining difference in `DrawTitleScreen`,
+`OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`,
+`WriteTopScore` and `IncModeTask_B`. The audit found and repaired four shared
+C control-flow differences: non-title task 12 and task 13 had assigned the
+literal mode subtask two instead of taking `IncModeTask_B`; task 14 had both
+skipped its unconditional `UpdateNumber($fa)` call outside title mode and
+assigned rather than incremented the mode subtask.
+
+The repeat source audit compares ROM lines 1612–1657 with the shared task
+switch. It proves the task-12 `$013a` copy into `$0300..$0439`, the task-13
+zero fill of both `$0300..$03ff` and `$0400..$04ff` pages before the icon
+call, the icon and status helper call/return handoffs, and all mode/screen
+counter exits. The sixteen source-owned control relations `control-00244`
+through `control-00257`, `control-03526` and `control-03527` are exact.
+
+Controlled title task-12/13/14 owner-local recorder fixtures execute through
+the ordinary frame dispatcher in current x86/x64. Their source-owned task and
+Buffer1 outcomes agree; recorder cold-start differences in CPU temporary
+state and the pre-existing title scene are explicit comparison exclusions,
+not outputs of this chain. Focused screen-status checks pass on x86 and x64,
+Win32 self-tests pass, the shared OpenNT DOS16 link succeeds, and the platform
+purity audit passes. Product code changed, so all three local artifacts were
+refreshed: `mysmb16.exe` SHA-256
+`60379847F75E83A57046EE69C3F691EE17BF6A466AB292867613E134C37762C8`,
+`mysmb32.exe` SHA-256
+`7E19E14F15D7B5DD67E58C44F39B639972D24280072491F1D1845F0F135128DA`,
+and `mysmb64.exe` SHA-256
+`E433DEE110D8BF3661A1E6638820081ADED4DBA151E39F6A9D34957BEE2EE75C`.
+Historical conformance remains 1,992 / 1,992. The current-equivalence
+registry advances from 128 to 136 exact nodes and from 277 to 293 exact
+feasible control relations.

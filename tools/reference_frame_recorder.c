@@ -1000,6 +1000,18 @@ static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
     ram[0x073cu] = 14u;
 }
 
+/* T54/S3 mirrors the native recorder's NMI-boundary task-12/13 state.  It
+ * does not redirect PC or stack state; the ordinary title dispatcher calls
+ * the source ScreenRoutines task. */
+static void mysmb_reference_apply_t54_title_task_fixture(lib_u8 *ram,
+                                                          lib_u8 task)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 0u;
+    ram[0x0772u] = 1u;
+    ram[0x073cu] = task;
+}
+
 /* T52/S2 sets only the ordinary title-menu RAM state at an NMI return.  The
  * next ROM NMI reaches GameMenuRoutine through TitleScreenMode; no PC or
  * stack is redirected.  This distinguishes ChkSelect's expired-demo path
@@ -3140,6 +3152,8 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t54-player-fire") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 116u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t54-alternate-standard") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 117u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t54-alternate-mushroom") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 118u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-title-draw") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 119u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-title-clear") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 120u; continue; }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -3427,6 +3441,10 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 117u && t26_fixture <= 118u)
                     mysmb_reference_apply_t54_alternate_palette_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 117u));
+                else if (t26_fixture == 119u || t26_fixture == 120u)
+                    mysmb_reference_apply_t54_title_task_fixture(
+                        driver->machine->ram,
+                        t26_fixture == 119u ? 12u : 13u);
                 else if (t26_fixture == 108u) {
                     mysmb_reference_apply_t27_screen_fixture(
                         driver->machine->ram, 0u);

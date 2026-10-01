@@ -1,14 +1,20 @@
 #include "game/area.h"
 #include "game/frame_root.h"
 #include "game/game.h"
+#include "game/title_modes.h"
 
 int main(void)
 {
     struct mysmb_game game;
     static mysmb_u8 prg[0x0600U];
+    static mysmb_u8 title_data[MYSMB_TITLE_BUFFER_SIZE];
+    static const mysmb_u8 icon_data[8] = {
+        0x07U, 0x22U, 0x49U, 0x83U, 0xceU, 0x24U, 0x24U, 0x00U
+    };
     static const mysmb_u8 background_controls[4] = { 0U, 9U, 10U, 4U };
     static const mysmb_u8 background_colors[4] = { 0x44U, 0x45U, 0x46U, 0x47U };
     mysmb_u8 index;
+    unsigned int title_index;
 
     prg[0x05cfU + 1U] = 0x41U;
     prg[0x05cfU + 2U] = 0x42U;
@@ -31,6 +37,10 @@ int main(void)
 
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    for (title_index = 0U; title_index < MYSMB_TITLE_BUFFER_SIZE; ++title_index)
+        title_data[title_index] = (mysmb_u8)title_index;
+    mysmb_game_bind_title_source(&game, title_data, MYSMB_TITLE_BUFFER_SIZE,
+                                 icon_data, (mysmb_u16)sizeof(icon_data));
 
     game.ram[0x073cU] = 0U;
     game.ram[0x0770U] = 0U;
@@ -172,16 +182,43 @@ int main(void)
     if (game.ram[0x073cU] != 12U || game.ram[0x0773U] != 11U) return 1;
 
     /* DrawTitleScreen and ClearBuffersDrawIcon both branch directly to
-     * IncModeTask_B outside title mode, retaining ScreenRoutineTask. */
+     * IncModeTask_B outside title mode, retaining ScreenRoutineTask and
+     * incrementing the live mode task rather than assigning task two. */
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 1U;
+    game.ram[0x0772U] = 0x37U;
     game.ram[0x073cU] = 12U;
     mysmb_game_step_screen_routine(&game);
-    if (game.ram[0x0772U] != 2U || game.ram[0x073cU] != 12U) return 1;
-    game.ram[0x0772U] = 1U;
+    if (game.ram[0x0772U] != 0x38U || game.ram[0x073cU] != 12U) return 1;
+    game.ram[0x0772U] = 0x45U;
     game.ram[0x073cU] = 13U;
     mysmb_game_step_screen_routine(&game);
-    if (game.ram[0x0772U] != 2U || game.ram[0x073cU] != 13U) return 1;
+    if (game.ram[0x0772U] != 0x46U || game.ram[0x073cU] != 13U) return 1;
+
+    /* The title-mode path copies exactly $013a source bytes to $0300 and
+     * takes SetVRAMAddr_B; the following task clears both Buffer1 pages,
+     * calls DrawMushroomIcon, then advances only ScreenRoutineTask. */
+    game.ram[0x0770U] = 0U;
+    game.ram[0x0772U] = 0x61U;
+    game.ram[0x073cU] = 12U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x0772U] != 0x61U || game.ram[0x073cU] != 13U ||
+        game.ram[0x0773U] != 5U || game.ram[0x0300U] != 0U ||
+        game.ram[0x0439U] != 0x39U) return 1;
+    game.ram[0x073cU] = 13U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x0772U] != 0x61U || game.ram[0x073cU] != 14U ||
+        game.ram[0x0300U] != 7U || game.ram[0x0301U] != 0x22U ||
+        game.ram[0x0307U] != 0U || game.ram[0x0308U] != 0U ||
+        game.ram[0x04ffU] != 0U) return 1;
+
+    /* WriteTopScore is unconditional and falls through to IncModeTask_B. */
+    game.ram[0x0772U] = 0x52U;
+    game.ram[0x073cU] = 14U;
+    game.ram[0x0300U] = 0U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x0772U] != 0x53U || game.ram[0x073cU] != 14U ||
+        game.ram[0x0300U] != 9U || game.ram[0x0301U] != 0x22U ||
+        game.ram[0x0302U] != 0xf0U || game.ram[0x030aU] != 0U) return 1;
 
     /* GameMode task three is GameCoreRoutine ($94a5): it never re-enters
      * ScreenRoutines task three or synthesizes WriteBottomStatusLine. */

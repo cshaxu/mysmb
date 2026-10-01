@@ -741,6 +741,18 @@ static void mysmb_recorder_apply_t28_title_score_fixture(struct mysmb_game *game
     game->ram[0x073cU] = 14U;
 }
 
+/* T54/S3 reaches the ordinary title-mode ScreenRoutines task-12/13 entries
+ * only through a native-frame boundary.  The fixture supplies RAM state; it
+ * never calls a translated title leaf directly. */
+static void mysmb_recorder_apply_t54_title_task_fixture(
+    struct mysmb_game *game, mysmb_u8 task)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 0U;
+    game->ram[0x0772U] = 1U;
+    game->ram[0x073cU] = task;
+}
+
 /* T52/S4 prepares the normal game-mode ScreenRoutines task-ten boundary.
  * The frame root remains the caller; this only supplies the source RAM state
  * for either GetBackgroundColor path. */
@@ -1361,6 +1373,8 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-player-fire") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 116U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-alternate-standard") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 117U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-alternate-mushroom") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 118U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-title-draw") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 119U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-title-clear") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 120U; }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -1483,6 +1497,9 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture >= 117U && t26_fixture <= 118U)
                 mysmb_recorder_apply_t54_alternate_palette_fixture(&game,
                     (mysmb_u8)(t26_fixture - 117U));
+            else if (t26_fixture == 119U || t26_fixture == 120U)
+                mysmb_recorder_apply_t54_title_task_fixture(&game,
+                    t26_fixture == 119U ? 12U : 13U);
             else if (t26_fixture >= 103U && t26_fixture <= 107U)
                 mysmb_recorder_apply_t52_background_palette_fixture(&game,
                     t26_fixture == 103U ? 0U : (mysmb_u8)(t26_fixture - 100U));

@@ -257,7 +257,10 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         break;
     case 12U:
         if (game->ram[MYSMB_RAM_OPER_MODE] != 0U) {
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+            /* DrawTitleScreen exits through IncModeTask_B outside title
+             * mode; preserve its increment rather than a synthetic task-2
+             * assignment. */
+            game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
             break;
         }
         if (game->title_data == 0 ||
@@ -271,7 +274,8 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         break;
     case 13U:
         if (game->ram[MYSMB_RAM_OPER_MODE] != 0U) {
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+            /* ClearBuffersDrawIcon takes the same IncModeTask_B exit. */
+            game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
             break;
         }
         if (game->title_icon_data == 0 || game->title_icon_data_size == 0U ||
@@ -284,12 +288,10 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 14U;
         break;
     case 14U:
-        if (game->ram[MYSMB_RAM_OPER_MODE] == 0U) {
-            (void)mysmb_area_queue_title_score(game);
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
-        }
-        else
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+        /* WriteTopScore has no operating-mode predicate: it calls
+         * UpdateNumber, then falls through to IncModeTask_B. */
+        (void)mysmb_area_queue_title_score(game);
+        game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
         break;
     default:
         game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
