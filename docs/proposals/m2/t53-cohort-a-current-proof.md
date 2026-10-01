@@ -168,3 +168,48 @@ S4 closed with no historical-credit change: historical progress remains 1,992 / 
 ## S5 admission — floatey-number chain
 
 S5 enters at `FloateyNumTileData` and exits at `SetupNumSpr`, covering ten labels in the same shared `objects.c` owner chain. It audits timer-zero and decrement paths, score-table selection, tall-enemy alternate sprite offset, and all two-sprite OAM output relations against controlled original-ROM/x86/x64 records. Any feasible difference is repaired in the shared game owner and re-audited to zero before a successor chain is admitted.
+
+## S5 active finding — tall-enemy OAM-group branch
+
+The current-source review found a feasible shared-C mismatch in the
+`ChkTallEnemy -> GetAltOffset` family. ROM lines 1338–1357 preserve the
+ordinary `Enemy_SprDataOffset` for Spiny (`$05`), Piranha Plant (`$0d`) and
+both Cheep-Cheep IDs (`$0a/$0b`); they select `Alt_SprDataOffset` immediately
+for Hammer Bro (`$09`) and every ID at or above `TallEnemy` (`$12`), and use
+enemy state only for the remaining ordinary IDs. The prior collapsed C
+predicate selected the alternate group for Spiny and omitted the immediate
+Hammer Bro/large-enemy cases.
+
+`src/game/objects.c` now follows those source branches in that order. The
+focused `mysmb.floatey-oam-smoke` cases cover Hammer Bro, a `TallEnemy`-range
+ID, Spiny, the timer `$2b` award path, a non-award decrement, timer zero,
+control clamping, both vertical-coordinate paths and the two-sprite tile/OAM
+tail. This is a repair-in-progress record, not an exact promotion: S5 still
+must complete its source/edge matrix and controlled ROM/native route evidence
+before any registry row or successor admission changes.
+
+### P1 repair and re-audit record
+
+The shared branch repair was re-read against ROM lines 1287–1378. The static
+review found no remaining difference in the ten scoped labels, the 25
+incident control relations, or the `FloateyNumTileData -> SetupNumSpr`
+material lookup: the clamp, zero-timer return, pre-decrement `$2b` test,
+score-table nibble update, score-call continuation, six ID/state OAM-group
+outcomes, vertical carry semantics, and both OAM sprite writes all have the
+source-order counterpart in `objects.c`. This static result is deliberately
+kept separate from a current-route promotion.
+
+Operationally, `mysmb.floatey-oam-smoke` passed from the rebuilt x86 and x64
+shared source sets, the DOS16 OpenNT large-model link produced an MZ image,
+and `test_platform_purity.py` passed. Local artifacts were refreshed after
+the product change: `mysmb16.exe` SHA-256
+`78D9F77D405307E53F5F11526AB028ABAA9F481CD1A95F754CF5DDEA1419EF57`,
+`mysmb32.exe` SHA-256
+`8172842C63151D6D3021D19FCE831ECB4A36DE66877DE0971309EBD1997AF75D`, and
+`mysmb64.exe` SHA-256
+`15087A3913DC1F8323577EA923659F1AF8C31068EFC6383584A33EC6EB8EF6B4`.
+The old original-ROM Floatey recorder fixture did not yield a valid current
+comparison record under this build environment, so it is a route-harness
+gap, not evidence for promotion or a newly inferred gameplay mismatch. Raw
+diagnostic records were discarded; S5 remains active until a bounded,
+comparable original-ROM route is re-established.

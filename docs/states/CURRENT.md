@@ -25,4 +25,4 @@
 
 ## Current Technical Baseline
 
-M2 T53 S4 closed with zero scoped differences. M2 T53 S5 is the sole active source-order audit. One shared native C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic.
+M2 T53 S4 closed with zero scoped differences. M2 T53 S5 is the sole active source-order audit. Its current repair is the `ChkTallEnemy -> GetAltOffset` ID/state branch: the prior C condition selected the wrong OAM group for Spiny, Hammer Bro and IDs at or above `TallEnemy`. The shared `objects.c` branch and focused regression are corrected, but S5 remains open until the full node/edge re-audit and the three-target operational pass complete. One shared native C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic.

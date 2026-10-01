@@ -476,10 +476,13 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
      * living enemies, Hammer Bros, and the larger enemy families. */
     oam_offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
     enemy_id = game->ram[MYSMB_ENEMY_ID + slot];
-    if (enemy_id == 5U ||
-        (enemy_id != 9U && enemy_id != 10U && enemy_id != 11U &&
-         enemy_id != 13U && enemy_id != 18U &&
-         (enemy_id >= 9U || game->ram[MYSMB_ENEMY_STATE + slot] < 2U))) {
+    /* ROM ChkTallEnemy preserves the ordinary group for Spiny, Piranha and
+     * both Cheep IDs.  Hammer Bro and every ID at TallEnemy or above select
+     * the alternate group immediately; the remaining IDs select it only
+     * while their state is below two. */
+    if (enemy_id == 9U || enemy_id >= 18U ||
+        (enemy_id != 5U && enemy_id != 10U && enemy_id != 11U &&
+         enemy_id != 13U && game->ram[MYSMB_ENEMY_STATE + slot] < 2U)) {
         oam_offset = game->ram[MYSMB_ALT_SPRITE_OFFSET +
             game->ram[MYSMB_SPRITE_OFFSET_CONTROL]];
     }

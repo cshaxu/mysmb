@@ -11,12 +11,14 @@ int main(void)
     game.ram[0x0117U] = 0x80U;
     game.ram[0x0016U] = 9U;
     game.ram[0x06e5U] = 0x20U;
+    game.ram[0x06ecU] = 0x40U;
     mysmb_objects_step_floatey_numbers(&game);
-    if (game.ram[0x011eU] != 0x3fU || game.ram[0x0220U] != 0x37U ||
-        game.ram[0x0221U] != 0xf7U || game.ram[0x0222U] != 2U ||
-        game.ram[0x0223U] != 0x80U || game.ram[0x0224U] != 0x37U ||
-        game.ram[0x0225U] != 0xfbU || game.ram[0x0226U] != 2U ||
-        game.ram[0x0227U] != 0x88U) return 1;
+    if (game.ram[0x011eU] != 0x3fU || game.ram[0x0240U] != 0x37U ||
+        game.ram[0x0241U] != 0xf7U || game.ram[0x0242U] != 2U ||
+        game.ram[0x0243U] != 0x80U || game.ram[0x0244U] != 0x37U ||
+        game.ram[0x0245U] != 0xfbU || game.ram[0x0246U] != 2U ||
+        game.ram[0x0247U] != 0x88U ||
+        game.ram[0x0220U] != 0U) return 1;
 
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x0110U] = 0x0bU;
@@ -30,8 +32,8 @@ int main(void)
     mysmb_objects_step_floatey_number(&game, 0U);
     if (game.ram[0x012cU] != 0x2aU || game.ram[0x075aU] != 3U ||
         game.ram[0x00feU] != 0x40U ||
-        game.ram[0x0220U] != 0x37U || game.ram[0x0221U] != 0xfdU ||
-        game.ram[0x0223U] != 0x80U || game.ram[0x0240U] != 0U) return 2;
+        game.ram[0x0240U] != 0x37U || game.ram[0x0241U] != 0xfdU ||
+        game.ram[0x0243U] != 0x80U || game.ram[0x0220U] != 0U) return 2;
 
     /* A non-award timer is still decremented before the ChkTallEnemy tail;
      * only the pre-decrement $2b source accumulator enters LoadNumTiles. */
@@ -73,8 +75,24 @@ int main(void)
     game.ram[0x0117U] = 0x40U;
     game.ram[0x0016U] = 9U;
     game.ram[0x06e5U] = 0x20U;
+    game.ram[0x06ecU] = 0x40U;
     mysmb_objects_step_floatey_number(&game, 0U);
-    return game.ram[0x0110U] == 0x0bU && game.ram[0x012cU] == 0U &&
-        game.ram[0x011eU] == 0x17U && game.ram[0x0220U] == 0x0eU &&
-        game.ram[0x0221U] == 0xfdU && game.ram[0x0225U] == 0xfeU ? 0 : 4;
+    if (game.ram[0x0110U] != 0x0bU || game.ram[0x012cU] != 0U ||
+        game.ram[0x011eU] != 0x17U || game.ram[0x0240U] != 0x0eU ||
+        game.ram[0x0241U] != 0xfdU || game.ram[0x0245U] != 0xfeU ||
+        game.ram[0x0220U] != 0U) return 4;
+
+    /* Spiny is one of the ROM's direct FloateyPart branches and therefore
+     * preserves Enemy_SprDataOffset instead of using Alt_SprDataOffset. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x0110U] = 2U;
+    game.ram[0x012cU] = 1U;
+    game.ram[0x011eU] = 0x40U;
+    game.ram[0x0117U] = 0x80U;
+    game.ram[0x0016U] = 5U;
+    game.ram[0x06e5U] = 0x20U;
+    game.ram[0x06ecU] = 0x40U;
+    mysmb_objects_step_floatey_number(&game, 0U);
+    return game.ram[0x0220U] == 0x37U && game.ram[0x0221U] == 0xf7U &&
+        game.ram[0x0240U] == 0U ? 0 : 6;
 }
