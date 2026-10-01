@@ -220,3 +220,15 @@ were refreshed: `mysmb16.exe` SHA-256
 `5acd0cdd379846a0e9ce46a880d7ba5e79f1481833491d9b45b24e9dac5f0e7d`.
 S6 remains open for its required full incident-control and ROM/native route
 audit; this P does not grant current-exact node credit.
+
+## S6 P2 ? direct dispatcher and boot static evidence
+
+The local, ignored S6 audit report now checks the actual source rather than
+historical annotations.  It confirms the ROM `JumpEngine` shift, stack-return
+replacement and indirect target jump; the `$2400` then `$2000` name-table
+order; the native 768-tile/64-attribute loops and buffer/scroll resets; and
+the shared-C operating-mode and game-mode vector owners.  The x86 and x64
+name-table smoke executables both pass against this source.  This is evidence
+only: the remaining incident vector/return relations and controlled ROM route
+must still pass before S6 can close.  No product source changed, so this P
+does not refresh artifacts.
