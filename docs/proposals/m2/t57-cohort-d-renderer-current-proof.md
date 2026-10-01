@@ -265,3 +265,36 @@ attribute helpers, coordinate helpers, and block-buffer address selection.
 The operational track uses a controlled original-ROM/current x86/x64 matrix
 and focused hole/helper/address tests. A feasible difference remains in S3
 until shared-C repair and repeat audit close it.
+
+
+## S3 closure — hole, under-part and block-buffer-address chain
+
+S3 closes `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP`,
+`RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`,
+`ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`,
+`GetAreaObjXPosition`, `GetAreaObjYPosition`, `BlockBufferAddr` and
+`GetBlockBufferAddr`. Static source comparison found no remaining shared-C
+difference: the water-only initialization gate, five-entry whirlpool ring,
+page borrow, downward overlay predicate and loop, attribute/length helpers,
+coordinate helpers, two-buffer pointer table and collision caller all preserve
+the original branch/data ordering. The controlled original-ROM/current x86/x64
+matrix executed 98 hole/UnderPart, 20 helper and 48 block-address routes; all
+had zero persistent non-ABI work-RAM differences and byte-identical native
+records. The three focused smokes passed on both widths. All 16 labels and 29
+newly evidenced feasible incident controls are current-exact; no repair or
+artifact refresh was required. Current registry: 408 exact nodes and 871 exact
+feasible control relations; historical conformance remains 1,992 / 1,992.
+
+## S4 admission — area-pointer/type/attribute chain
+
+S4 admits the contiguous seven-label chain `AreaDataOfsLoopback -> StoreStyle`:
+`AreaDataOfsLoopback`, `LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`,
+`GetAreaDataAddrs`, `StoreFore` and `StoreStyle`. S3 is its predecessor and
+S5 owns the world/area-table continuation. The shared owner is
+`src/game/area.c`. All labels are historically complete and require current
+evidence, so expected historical credit remains zero. The ROM-logic track will
+compare parser loopback, pointer lookup, type masking, pointer-data reads and
+foreground/style gates; the operational track will run the focused pointer
+tests, controlled original-ROM/current x86/x64 route matrix, DOS16 link and
+platform-purity check. A feasible difference remains in S4 until shared-C
+repair and repeat audit close it.
