@@ -1958,3 +1958,7 @@ All 49 T60 labels from `ProcFireball_Bubble` through `VineHeightData` are curren
 ## T61 S4 current-equivalence result
 
 `CoinBlock -> MiscLoopBack`: 12 nodes exact; 19 internal feasible control relations exact. Original/current caller replay and current full-product replay each pass 180 x86/x64 routes. External shared child semantics retain their registered receivers.
+
+## T61 S5 result
+
+Eight newly exact nodes and seven internal controls in the score/tally chain; caller and full product routes pass.

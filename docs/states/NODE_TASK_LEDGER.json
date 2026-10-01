@@ -421276,7 +421276,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "state": "admitted-current-audit",
+      "state": "closed-current-audit",
       "evidence": "docs/proposals/m2/t61-cohort-h-blocks-items-current-proof.md"
     }
   ]

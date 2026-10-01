@@ -2052,3 +2052,7 @@ T61 S3 closes the hammer caller chain at **720 / 1,992 current-exact nodes** and
 ## Current re-audit: T61 S4 coin and misc lifecycle
 
 T61 S4 audited 12 historical-complete labels against `$BB38-$BBF7`; all are current-exact. Historical conformance remains 1,992 / 1,992. Current equivalence: 732 / 1,992 exact nodes and 1,448 / 4,324 exact feasible control relations.
+
+## Current re-audit: T61 S5 score/tally
+
+Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1,992 / 1,992.

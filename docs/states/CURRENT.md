@@ -25,4 +25,8 @@
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic. T61 S5 is the sole active packet.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic. T61 S5 is closed.
+
+## T61 S5 Closure
+
+Eight newly exact score/tally nodes and seven internal edges; 112 x86/x64 caller and full-product routes passed; no source changed.
