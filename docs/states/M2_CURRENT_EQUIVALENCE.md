@@ -1899,3 +1899,7 @@ All 12 labels from ClimbAdderLow through InitMForceData are current-equivalence 
 ### T59 S4 player physics result
 
 All 24 labels from MaxLeftXSpdData through ExitPhy are current-equivalence exact. Fresh x86/x64 replay confirms the physics state machine, table selection, jump/swim gates and horizontal parameter writes. Registry advances from 605 to 629 exact labels and from 1,168 to 1,216 exact feasible control relations; historical conformance remains 1,992 / 1,992.
+
+### T59 S5 animation-speed result
+
+All six labels from `PlayerAnimTmrData` through `SetAnimSpd` are current-equivalence exact. ROM table, thresholds, masks, skid writes and timer-store exit match current shared C; 64 ROM child-call streams replay through x86/x64 for 128 matching comparisons, and animation smoke, DOS16 link and platform purity pass. Registry advances from 629 to 635 exact labels and from 1,216 to 1,225 exact feasible control relations; historical conformance remains 1,992 / 1,992.
