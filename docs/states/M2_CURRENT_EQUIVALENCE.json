@@ -9700,12 +9700,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 687,
-    "needs-evidence": 1305
+    "exact": 690,
+    "needs-evidence": 1302
   },
   "controlEdgeCounts": {
-    "exact": 1372,
-    "needs-evidence": 2952,
+    "exact": 1376,
+    "needs-evidence": 2948,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -23705,13 +23705,16 @@
       "label": "Setup_Vine",
       "asmLine": 6702,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared vine core",
       "currentCounterpart": "mysmb_objects_start_vine and mysmb_vine_height_data",
       "semanticEvidence": [
-        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Copies source block page/X/Y into the selected vine enemy slot, initializes identity/flag, records first-vine start Y only at zero offset, appends the slot and queues grow-vine sound.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -23721,13 +23724,16 @@
       "label": "NextVO",
       "asmLine": 6716,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared vine core",
       "currentCounterpart": "mysmb_objects_start_vine and mysmb_vine_height_data",
       "semanticEvidence": [
-        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -23737,13 +23743,16 @@
       "label": "VineHeightData",
       "asmLine": 6727,
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared vine core",
       "currentCounterpart": "mysmb_objects_start_vine and mysmb_vine_height_data",
       "semanticEvidence": [
-        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Binds active vine index to source growth-height limits $30 and $60.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -68811,12 +68820,15 @@
       "instruction": "bne",
       "id": "control-01166",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared vine initialization branch/return ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original branch relation Setup_Vine -> NextVO with source offset, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -68830,12 +68842,15 @@
       "instruction": "sta",
       "id": "control-01167",
       "cohort": "G",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared vine initialization branch/return ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation Setup_Vine -> NextVO with source offset, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -115250,12 +115265,15 @@
       "instruction": "rts/rti",
       "id": "control-03548",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared vine initialization branch/return ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original return relation Setup_Vine -> ChkOverR with source offset, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -119483,12 +119501,15 @@
       "instruction": "rts/rti",
       "id": "control-03744",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves original return relation Setup_Vine -> VineBlock with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/blocks/bump.c",
