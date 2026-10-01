@@ -1970,3 +1970,7 @@ Eight newly exact nodes and seven internal controls in the score/tally chain; ca
 ### T61 S8 block lifetime and replacement result
 
 `BlockObjectsCore -> NextBUpd` adds eight current-exact labels and sixteen feasible controls. Static `$BE70-$BF01`, controlled original-ROM/current x86/x64 routes, focused C90 checks, platform-purity and DOS16-link evidence agree. The registry is **786 exact nodes / 1,992**, **1,545 exact feasible control relations / 4,324**, with **4,342 raw controls** and **18 infeasible**. Historical migration accounting remains **1,992 / 1,992**.
+
+### T61 S9 horizontal movement result
+
+`MoveEnemyHorizontally -> ExXMove` adds six current-exact labels and nine feasible controls. The 96 controlled ROM entries cover player, enemy and generic wrappers; x86/x64 each match every snapshot and focused arithmetic checks. The registry is **792 / 1,992** nodes and **1,554 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.

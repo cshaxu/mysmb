@@ -25638,13 +25638,16 @@
       "label": "MoveEnemyHorizontally",
       "asmLine": 7555,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared world movement/gravity and actor core",
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Selects enemy SprObject offset by incrementing from ObjectOffset, runs horizontal movement, then restores ObjectOffset.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -25654,13 +25657,16 @@
       "label": "MovePlayerHorizontally",
       "asmLine": 7561,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared world movement/gravity and actor core",
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Blocks player horizontal movement only while JumpspringAnimCtrl is nonzero; otherwise enters common SprObject movement at offset zero.",
       "currentSourcePaths": [
         "src/game/player.c"
@@ -25670,13 +25676,16 @@
       "label": "MoveObjectHorizontally",
       "asmLine": 7566,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared world movement/gravity and actor core",
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Splits signed 4.4 X speed into fractional and signed integer parts, propagates both carries into X/page and returns the source displacement byte.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -25686,13 +25695,16 @@
       "label": "SaveXSpd",
       "asmLine": 7581,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared world movement/gravity and actor core",
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores sign-extended integer X speed before page-delta selection.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -25702,13 +25714,16 @@
       "label": "UseAdder",
       "asmLine": 7586,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared world movement/gravity and actor core",
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Selects page delta from signed integer speed and performs fractional, X and page accumulation in source order.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -25718,13 +25733,16 @@
       "label": "ExXMove",
       "asmLine": 7604,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared world movement/gravity and actor core",
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns the movement displacement or the blocked jumpspring control value.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -73814,12 +73832,15 @@
       "instruction": "jsr",
       "id": "control-01385",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original call relation MoveEnemyHorizontally -> MoveObjectHorizontally with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -73833,12 +73854,15 @@
       "instruction": "bne",
       "id": "control-01386",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original branch relation MovePlayerHorizontally -> ExXMove with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/player.c",
@@ -73853,12 +73877,15 @@
       "instruction": "tax",
       "id": "control-01387",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation MovePlayerHorizontally -> MoveObjectHorizontally with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/player.c",
@@ -73873,12 +73900,15 @@
       "instruction": "bcc",
       "id": "control-01388",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original branch relation MoveObjectHorizontally -> SaveXSpd with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -73892,12 +73922,15 @@
       "instruction": "ora",
       "id": "control-01389",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation MoveObjectHorizontally -> SaveXSpd with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -73911,12 +73944,15 @@
       "instruction": "bpl",
       "id": "control-01390",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original branch relation SaveXSpd -> UseAdder with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -73930,12 +73966,15 @@
       "instruction": "dey",
       "id": "control-01391",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation SaveXSpd -> UseAdder with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -73949,12 +73988,15 @@
       "instruction": "adc",
       "id": "control-01392",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original fallthrough relation UseAdder -> ExXMove with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
@@ -120671,12 +120713,15 @@
       "instruction": "rts/rti",
       "id": "control-03762",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S9 static $BF02-$BF4C edge audit and source-reachable original-ROM PC coverage prove predicate, target and ordering."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S9 x86/x64 ROM/current routes and focused C90 harness pass for this relation."
+      ],
       "semanticContract": "Preserves original return relation MoveObjectHorizontally -> MoveEnemyHorizontally with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/world/movement.c"
