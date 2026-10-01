@@ -2079,3 +2079,5 @@ Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1
 ### T62 S5 flying Cheep and Bowser/flame initializer result
 
 `FlyCCXPositionData -> SetFrT` adds 18 current-exact labels, 21 feasible control relations and five material handoffs. Static `$C2EA-$C395`, 624 actual original-ROM/current x86/x64 snapshot comparisons, focused C90 footprints, platform purity and DOS16 link evidence agree. Current registry: **914 / 1,992 exact nodes** and **1,747 / 4,324 exact feasible controls**, from **4,342 raw controls** with **18 infeasible**. Historical migration remains **1,992 / 1,992**.
+
+- Current-equivalence audit M2 T62 S7 closed `HandleGroupEnemies -> EndFrenzy`: historical migration remains **1,992 / 1,992**; current exact registry is **949 / 1,992** nodes and **1,792 / 4,324** feasible controls (raw **4,342**, infeasible **18**).

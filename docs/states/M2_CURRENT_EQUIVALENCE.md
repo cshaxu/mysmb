@@ -2008,3 +2008,7 @@ All 18 labels from `FlyCCXPositionData` through `SetFrT` are current-equivalence
 ### T62 S6 positioning, fireworks and Bullet Bill/Cheep frenzy result
 
 The source-order chain `PutAtRightExtent -> FireBulletBill` is current-exact: 23 labels, 29 feasible controls and six material edges. Static `$C39C-$C43F` comparison and all-current-source original-ROM/current x86/x64 snapshots agree for 120 fireworks, 160 Bowser-flame and 182 Bullet Bill/Cheep routes per width. Focused full-RAM C90 checks cover 139,770 fireworks, 107,522 Bowser/flame and 1,182,858 Bullet Bill/Cheep cases per width. The current registry is **937 exact nodes** and **1,776 exact feasible control relations**; historical mapping remains **1,992 / 1,992**.
+
+### T62 S7 group allocation and frenzy result
+
+`HandleGroupEnemies -> EndFrenzy` adds twelve current-exact labels, sixteen feasible controls and three material handoffs. Static `$C44C-$C4AD`, 115 group and 196 small-initializer/frenzy original-ROM/current x86/x64 replays, focused full-RAM C90 checks, platform purity and DOS16-link evidence agree. The registry is **949 / 1,992** nodes and **1,792 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.

@@ -2,30 +2,31 @@
 
 ## Current Work
 
-## M2 T62 S6 Packet
+## M2 T62 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T62 S6 audit — Cohort I positioning, fireworks and Bullet Bill/Cheep frenzy chain. |
-| Admission And Approval | Continuing owner-approved T62 source-order program after closed S5; this packet admits S6 only. |
-| Objective | Audit and repair `PutAtRightExtent -> FireBulletBill` against original-ROM semantics. |
-| Non-goals | Group allocation, later frenzy dispatch, actor behavior, rendering and platform gameplay are outside S6. |
-| Reference Baseline | Historical 1,992 / 1,992; current 914 / 1,992 nodes and 1,747 / 4,324 feasible controls. |
+| Identifier Mode | M2 T62 S7 audit — Cohort I group allocation and frenzy vector/termination chain. |
+| Admission And Approval | S7 closed after the required static and operational evidence; S8 remains unadmitted. |
+| Objective | Audit and repair `HandleGroupEnemies -> EndFrenzy` against original-ROM semantics. |
+| Non-goals | Piranha/platform initializer families, actor interiors, rendering and platform gameplay are outside S7. |
+| Reference Baseline | Historical 1,992 / 1,992; current 949 / 1,992 nodes and 1,792 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md. |
-| Files And ABI Surface | Shared `src/game/enemy/init_targets.c` and `src/game/enemy/frenzy.c`; no platform owner. |
+| Files And ABI Surface | Shared `src/game/enemy/stream.c` and `src/game/enemy/frenzy.c`; no platform owner. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | Original-ROM/current x86/x64 positioning, fireworks and Bullet Bill/Cheep frenzy routes, focused C90 checks, purity and DOS16 link. |
-| Expected Markers | 23 nodes, 29 internal feasible controls, no internal raw infeasible controls and 6 internal material handoffs. |
+| Verification | Original-ROM/current x86/x64 group allocation and frenzy vector/termination routes, focused C90 checks, purity and DOS16 link. |
+| Expected Markers | 12 nodes, 16 internal feasible controls, one internal raw infeasible relation and 3 internal material handoffs. |
 | Asset Needs | Owner-supplied local ROM and derived recorder data stay below ignored build paths; source repair refreshes three local EXEs. |
 | Reporting Requirements | Report historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | Any feasible difference remains in S6 until repaired and re-audited. |
-| Exit Criteria | Closed: all 23 nodes, 29 feasible internal controls and 6 material handoffs exact; no platform gameplay rule. |
+| Stop Conditions | No feasible difference remains in S7; every scoped path is closed. |
+| Closure Result | All scoped feasible nodes, controls and material handoffs are exact; no repair was required. |
+| Exit Criteria | Closed: all 12 nodes, 16 feasible internal controls and 3 material handoffs exact; no platform gameplay rule. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Right-edge carry, mouth page copy, fireworks star scan, bit-filter selection, water/land frenzy and Bullet Bill slot scan. |
+| Similar-Issue Sweep | Group hard-mode/type/Y/count selection, all-slot allocation and coordinate carry, frenzy vector selector/return, and Lakitu-only termination scan. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64; T62 S6 is closed and S7 remains unadmitted.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64; T62 S7 is closed; T62 S8 is the next unadmitted source-order chain.
 
 ## T62 S1 Closure
 
