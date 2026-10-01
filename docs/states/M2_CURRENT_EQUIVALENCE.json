@@ -7415,13 +7415,16 @@
       "consumer": "HurtBowser",
       "storage": "WorldNumber-indexed replacement-ID table to Enemy_ID",
       "feasiblePath": "Terminal Bowser hit reads BowserIdentities,WorldNumber and writes the selected ID to the active enemy slot.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/fireball_hit.c:bowser_identity result to active enemy ID",
       "semanticContract": "WorldNumber selects the unmasked legal-domain replacement identity before defeated-Bowser state selection.",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7434,13 +7437,16 @@
       "consumer": "SetDBSte",
       "storage": "WorldNumber comparison and defeated-state accumulator",
       "feasiblePath": "Terminal Bowser hit selects $20 and ORs $03 only when WorldNumber is below three before state write.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/fireball_hit.c world<3 state selection",
       "semanticContract": "The world threshold selects exactly $23 below three or $20 at/above three before BowserFall queueing.",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7453,13 +7459,16 @@
       "consumer": "EnemySmackScore",
       "storage": "Square2 BowserFall queue, restored $01 slot and score modifier $09",
       "feasiblePath": "Defeated Bowser queues sound, restores the original current-enemy offset and carries modifier nine into common score handling.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/fireball_hit.c terminal Bowser tail",
       "semanticContract": "The score tail uses original current slot while preserving the completed Bowser replacement state and sound write.",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7472,13 +7481,16 @@
       "consumer": "StnE",
       "storage": "Piranha-adjusted Y or enemy ID accumulator to common stun",
       "feasiblePath": "Piranha carries CMP into ADC #$18 before common stun; all other IDs pass unchanged.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/fireball_hit.c shell/block defeat to mysmb_world_stun_enemy",
       "semanticContract": "The stun input is ID except for Piranha, whose stored Y and A-equivalent are Y+$19.",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7491,13 +7503,16 @@
       "consumer": "GoombaPoints",
       "storage": "stunned enemy state and selected score modifier",
       "feasiblePath": "After common stun, state d5 is set and Hammer Bro replaces default score two with six before Goomba check.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/fireball_hit.c defeat-state and score selection",
       "semanticContract": "The Goomba discriminator receives the source-selected modifier and enemy ID after stun/state update.",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7510,13 +7525,16 @@
       "consumer": "EnemySmackScore",
       "storage": "final score modifier and active enemy slot",
       "feasiblePath": "Goomba overwrites modifier with one; all other eligible IDs preserve prior modifier into score setup.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/fireball_hit.c enemy_smack_score call",
       "semanticContract": "Floatey score and EnemySmack queue consume the final source modifier and active slot.",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -35005,13 +35023,16 @@
       "label": "BowserIdentities",
       "asmLine": 11145,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds WorldNumber directly to the eight-byte replacement-ID table after terminal Bowser damage; no masking occurs in the legal world range.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35021,13 +35042,16 @@
       "label": "HandleEnemyFBallCol",
       "asmLine": 11148,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Computes the relative enemy sprite position, starts from live $01, and only substitutes the low-nibble paired slot when its ID is Bowser before the immunity and defeat dispatch.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35037,13 +35061,16 @@
       "label": "ChkBuzzyBeetle",
       "asmLine": 11160,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Rejects Buzzy Beetle immediately, sends Bowser to the hit-point chain, and forwards every other selected ID to the fireball eligibility filters.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35053,13 +35080,16 @@
       "label": "HurtBowser",
       "asmLine": 11167,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Decrements BowserHitPoints; only the zero transition initializes vertical state, clears horizontal/frenzy state, assigns vertical speed, selects the world replacement ID and starts the Bowser-fall score tail.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35069,13 +35099,16 @@
       "label": "SetDBSte",
       "asmLine": 11182,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Writes $23 for worlds below three and $20 otherwise, queues BowserFall, restores current enemy offset and routes score modifier nine to the common smack-score tail.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35085,13 +35118,16 @@
       "label": "ChkOtherEnemies",
       "asmLine": 11189,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Rejects BulletBill frenzy ID, Podoboo and IDs at or above $15 before shell/block defeat handling.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35101,13 +35137,16 @@
       "label": "ShellOrBlockDefeat",
       "asmLine": 11197,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "For Piranha, preserves CMP carry into ADC #$18, producing Y+$19 before stun; all eligible enemies are stunned, given defeat-state d5 and routed to source score selection.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35117,13 +35156,16 @@
       "label": "StnE",
       "asmLine": 11204,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Calls the common stun routine, masks state with $1f, sets d5, assigns default score two and uses Hammer Bro score six before the Goomba discriminator.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35133,13 +35175,16 @@
       "label": "GoombaPoints",
       "asmLine": 11215,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Replaces the default score with one only for Goomba, otherwise preserving the score selected by the preceding branch.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35149,13 +35194,16 @@
       "label": "EnemySmackScore",
       "asmLine": 11220,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Uses the current enemy slot and score modifier for floatey-number setup, then queues EnemySmack on Square1 before the common return.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -35165,13 +35213,16 @@
       "label": "ExHCF",
       "asmLine": 11224,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/fireball_hit.c",
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns to each caller without altering the selected enemy slot or the completed fireball-hit result.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94335,12 +94386,15 @@
       "instruction": "jsr",
       "id": "control-02210",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation HandleEnemyFBallCol -> RelativeEnemyPosition with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94354,12 +94408,15 @@
       "instruction": "bpl",
       "id": "control-02211",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandleEnemyFBallCol -> ChkBuzzyBeetle with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94373,12 +94430,15 @@
       "instruction": "beq",
       "id": "control-02212",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandleEnemyFBallCol -> HurtBowser with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94392,12 +94452,15 @@
       "instruction": "ldx",
       "id": "control-02213",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation HandleEnemyFBallCol -> ChkBuzzyBeetle with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94411,12 +94474,15 @@
       "instruction": "beq",
       "id": "control-02214",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkBuzzyBeetle -> ExHCF with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94430,12 +94496,15 @@
       "instruction": "bne",
       "id": "control-02215",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkBuzzyBeetle -> ChkOtherEnemies with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94449,12 +94518,15 @@
       "instruction": "bne",
       "id": "control-02216",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkBuzzyBeetle -> HurtBowser with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94468,12 +94540,15 @@
       "instruction": "bne",
       "id": "control-02217",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HurtBowser -> ExHCF with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94487,12 +94562,15 @@
       "instruction": "jsr",
       "id": "control-02218",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation HurtBowser -> InitVStf with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -94508,12 +94586,15 @@
       "instruction": "bcs",
       "id": "control-02219",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HurtBowser -> SetDBSte with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94527,12 +94608,15 @@
       "instruction": "ora",
       "id": "control-02220",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation HurtBowser -> SetDBSte with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94546,12 +94630,15 @@
       "instruction": "bne",
       "id": "control-02221",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SetDBSte -> EnemySmackScore with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94565,12 +94652,15 @@
       "instruction": "bne",
       "id": "control-02222",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetDBSte -> ChkOtherEnemies with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94584,12 +94674,15 @@
       "instruction": "beq",
       "id": "control-02223",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkOtherEnemies -> ExHCF with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94603,12 +94696,15 @@
       "instruction": "beq",
       "id": "control-02224",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkOtherEnemies -> ExHCF with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94622,12 +94718,15 @@
       "instruction": "bcs",
       "id": "control-02225",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkOtherEnemies -> ExHCF with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94641,12 +94740,15 @@
       "instruction": "bcs",
       "id": "control-02226",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkOtherEnemies -> ShellOrBlockDefeat with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94660,12 +94762,15 @@
       "instruction": "bne",
       "id": "control-02227",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ShellOrBlockDefeat -> StnE with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94679,12 +94784,15 @@
       "instruction": "sta",
       "id": "control-02228",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ShellOrBlockDefeat -> StnE with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94698,12 +94806,15 @@
       "instruction": "jsr",
       "id": "control-02229",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation StnE -> ChkToStunEnemies with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -94718,12 +94829,15 @@
       "instruction": "bne",
       "id": "control-02230",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation StnE -> GoombaPoints with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94737,12 +94851,15 @@
       "instruction": "lda",
       "id": "control-02231",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation StnE -> GoombaPoints with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94756,12 +94873,15 @@
       "instruction": "bne",
       "id": "control-02232",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GoombaPoints -> EnemySmackScore with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94775,12 +94895,15 @@
       "instruction": "lda",
       "id": "control-02233",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GoombaPoints -> EnemySmackScore with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
@@ -94794,12 +94917,15 @@
       "instruction": "jsr",
       "id": "control-02234",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation EnemySmackScore -> SetupFloateyNumber with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c",
@@ -94814,12 +94940,15 @@
       "instruction": "sta",
       "id": "control-02235",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation EnemySmackScore -> ExHCF with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"

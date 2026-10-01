@@ -136,3 +136,18 @@ stun child input, state masking, Hammer Bro/Goomba score selection and ordered
 floating-score/audio writes. The operational track batches retained 512
 original-ROM hit records once per x86/x64 width, then runs the focused hit and
 scan contracts, platform purity and OpenNT DOS16 link.
+
+## S3 closure — fireball hit response
+
+All 11 scoped nodes are current-exact. Static `$D736-$D7C3` review found no
+shared-C difference. The 512 retained controlled original-ROM caller records
+replayed with full mapped RAM and recorded child calls in one x86 and one x64
+process, each with zero differences. Focused fireball-hit and scan tests pass
+on both widths; platform purity passes and OpenNT links the shared DOS16
+source. Product C did not change, so package artifacts were not refreshed.
+
+S3 marks 11 nodes, 26 source-owned controls (`control-02210` through
+`control-02235`) and six material handoffs (`material-00340` through
+`material-00345`) exact. Current totals: historical **1,992 / 1,992**;
+current exact nodes **1,249 / 1,992**; current exact feasible controls
+**2,521 / 4,324** (raw **4,342**, infeasible **18**).

@@ -2300,3 +2300,12 @@ platform-purity audit and DOS16 link pass. The live registry is **1,238 /
 1,992** exact nodes and **2,495 / 4,324** exact feasible controls; historical
 mapping remains **1,992 / 1,992**, with **4,342** raw and **18** infeasible
 control relations. `HandleEnemyFBallCol` remains S3 scope.
+
+### T64 S3 fireball hit-response result
+
+`BowserIdentities -> ExHCF` adds 11 current-exact nodes, 26 source-owned
+feasible controls and six material handoffs. Static `$D736-$D7C3` comparison
+and 512 original-ROM/current x86/x64 caller replays agree; hit/scan contracts,
+platform purity and DOS16 link pass. The registry is **1,249 / 1,992** nodes
+and **2,521 / 4,324** feasible controls; historical mapping remains
+**1,992 / 1,992**.
