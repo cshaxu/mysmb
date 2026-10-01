@@ -25,4 +25,4 @@
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64. T60 S1 is active; all game behavior remains in shared C owners.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64. T60 S2 is active; all game behavior remains in shared C owners.
