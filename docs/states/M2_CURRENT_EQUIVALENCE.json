@@ -1544,20 +1544,19 @@
       "storage": "area-data loopback offset table",
       "feasiblePath": "The parser uses the table only on its source-defined page/control loopback path.",
       "status": "exact",
-      "currentCounterpart": "area parser shared C owner",
+      "currentCounterpart": "src/game/enemy/loop.c:loop_offset[index] -> AreaDataOffset; src/game/area.c consumes the resulting offset",
       "semanticContract": "The table remains a distinct source-selected loopback input.",
       "semanticEvidence": [
-        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop matrix: all 96 ProcLoopCommand fixtures enter $c047, 22 execute ExecGameLoopback $c08c, all 11 AreaDataOfsLoopback bytes are selected, rollback/offset state has zero persistent work-RAM differences and x86/x64 records are byte-identical."
       ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/area.c",
-        "src/game/area/area_data.c"
+        "src/game/enemy/loop.c",
+        "src/game/area.c"
       ]
     },
     {
@@ -2416,17 +2415,19 @@
       "consumer": "ExecGameLoopback",
       "storage": "matched-loop-indexed area data offset table",
       "feasiblePath": "ExecGameLoopback consumes the retained matched Y index to reset AreaDataOffset after page rollback.",
-      "status": "needs-evidence",
-      "currentCounterpart": "loop_offset[index]",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/loop.c:loop_offset[index] -> mysmb_enemy_exec_loopback",
       "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop matrix: all 96 ProcLoopCommand fixtures enter $c047, 22 execute ExecGameLoopback $c08c, all 11 AreaDataOfsLoopback bytes are selected, rollback/offset state has zero persistent work-RAM differences and x86/x64 records are byte-identical."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/area/area_data.c"
+        "src/game/enemy/loop.c"
       ]
     },
     {
@@ -9676,12 +9677,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 408,
-    "needs-evidence": 1584
+    "exact": 415,
+    "needs-evidence": 1577
   },
   "controlEdgeCounts": {
-    "exact": 871,
-    "needs-evidence": 3453,
+    "exact": 888,
+    "needs-evidence": 3436,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -18532,30 +18533,34 @@
       "label": "AreaDataOfsLoopback",
       "asmLine": 4376,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "status": "exact",
+      "currentOwner": "src/game/enemy/loop.c",
+      "currentCounterpart": "loop_offset[matched index] in mysmb_enemy_exec_loopback",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop matrix: all 96 ProcLoopCommand fixtures enter $c047, 22 execute ExecGameLoopback $c08c, all 11 AreaDataOfsLoopback bytes are selected, rollback/offset state has zero persistent work-RAM differences and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves all eleven ROM loopback offset bytes, retained matched-index selection, rollback writes and AreaDataOffset handoff before the parser resumes.",
       "currentSourcePaths": [
-        "src/game/area/area_data.c"
+        "src/game/enemy/loop.c"
       ]
     },
     {
       "label": "LoadAreaPointer",
       "asmLine": 4381,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "mysmb_area_load_area_pointer",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+      ],
+      "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18564,14 +18569,16 @@
       "label": "GetAreaType",
       "asmLine": 4384,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "mysmb_area_get_area_type",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+      ],
+      "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18580,14 +18587,16 @@
       "label": "FindAreaPointer",
       "asmLine": 4392,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "mysmb_area_find_area_pointer",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+      ],
+      "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18596,14 +18605,16 @@
       "label": "GetAreaDataAddrs",
       "asmLine": 4402,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+      ],
+      "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18612,14 +18623,16 @@
       "label": "StoreFore",
       "asmLine": 4434,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "mysmb_area_parse_header foreground/background branch",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+      ],
+      "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -18628,14 +18641,16 @@
       "label": "StoreStyle",
       "asmLine": 4472,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area/area_data.c",
-      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "currentCounterpart": "mysmb_area_parse_header area-style/cloud-override branch",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+      ],
+      "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -51370,15 +51385,16 @@
       "instruction": "jsr",
       "id": "control-00385",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClrSndLoop -> LoadAreaPointer call relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
-        "src/game/area.c",
         "src/game/area/area_data.c"
       ]
     },
@@ -51562,15 +51578,16 @@
       "instruction": "jsr",
       "id": "control-00395",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SetInitNTHigh -> GetAreaDataAddrs call relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
-        "src/game/area.c",
         "src/game/area/area_data.c"
       ]
     },
@@ -52863,16 +52880,17 @@
       "instruction": "jsr",
       "id": "control-00463",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c restart loads the area pointer before restart-state writes.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c restart loads the area pointer before restart-state writes.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
-        "src/game/area/area_data.c",
-        "src/game/terminal_modes.c"
+        "src/game/area/area_data.c"
       ]
     },
     {
@@ -59506,13 +59524,15 @@
       "instruction": "jsr",
       "id": "control-00763",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source call relation LoadAreaPointer -> FindAreaPointer.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source call order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -59525,13 +59545,15 @@
       "instruction": "sta",
       "id": "control-00764",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source fallthrough relation LoadAreaPointer -> GetAreaType.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -59544,13 +59566,15 @@
       "instruction": "jsr",
       "id": "control-00765",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source call relation GetAreaDataAddrs -> GetAreaType.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source call order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -59563,13 +59587,15 @@
       "instruction": "bcc",
       "id": "control-00766",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source branch relation GetAreaDataAddrs -> StoreFore.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -59582,13 +59608,15 @@
       "instruction": "lda",
       "id": "control-00767",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source fallthrough relation GetAreaDataAddrs -> StoreFore.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -59601,13 +59629,15 @@
       "instruction": "bne",
       "id": "control-00768",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source branch relation StoreFore -> StoreStyle.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -59620,13 +59650,15 @@
       "instruction": "lda",
       "id": "control-00769",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source fallthrough relation StoreFore -> StoreStyle.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -62983,17 +63015,17 @@
       "instruction": "jsr",
       "id": "control-00943",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation NextArea -> LoadAreaPointer.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required.",
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
-        "src/game/area/area_data.c",
-        "src/game/player_end_level.c"
+        "src/game/area/area_data.c"
       ]
     },
     {
@@ -113512,15 +113544,16 @@
       "instruction": "rts/rti",
       "id": "control-03539",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source return relation LoadAreaPointer -> ClrSndLoop.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source return order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
-        "src/game/area.c",
         "src/game/area/area_data.c"
       ]
     },
@@ -113571,15 +113604,16 @@
       "instruction": "rts/rti",
       "id": "control-03542",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source return relation GetAreaDataAddrs -> SetInitNTHigh.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source return order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
-        "src/game/area.c",
         "src/game/area/area_data.c"
       ]
     },
@@ -113788,16 +113822,17 @@
       "instruction": "rts/rti",
       "id": "control-03553",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_load_area_pointer returns to restart before reset-state writes.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "mysmb_game_load_area_pointer returns to restart before reset-state writes.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
-        "src/game/area/area_data.c",
-        "src/game/terminal_modes.c"
+        "src/game/area/area_data.c"
       ]
     },
     {
@@ -115205,13 +115240,15 @@
       "instruction": "rts/rti",
       "id": "control-03614",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source return relation FindAreaPointer -> LoadAreaPointer.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source return order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -115224,13 +115261,15 @@
       "instruction": "rts/rti",
       "id": "control-03615",
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source return relation GetAreaType -> GetAreaDataAddrs.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source return order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
         "src/game/area/area_data.c"
       ]
@@ -116055,16 +116094,17 @@
       "instruction": "rts/rti",
       "id": "control-03657",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared area-data C preserves source return relation LoadAreaPointer -> NextArea.",
+      "status": "exact",
+      "currentCounterpart": "shared current C source-order call/branch/fall-through/return counterpart",
       "semanticEvidence": [
-        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+        "M2 T57 S4 static control audit: original call, branch, fall-through and return relation has the named shared-C caller/callee counterpart in loop.c or area_data.c with no reordered state handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source return order and pointer/header handoff.",
+      "operationalEvidence": [
+        "M2 T57 S4 controlled original-ROM/current x86/x64 loop and pointer matrices execute the loopback and pointer/header continuations; every compared scoped output is exact and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves the original control relation and its state handoff at the shared-C boundary.",
       "currentSourcePaths": [
-        "src/game/area/area_data.c",
-        "src/game/player_end_level.c"
+        "src/game/area/area_data.c"
       ]
     },
     {

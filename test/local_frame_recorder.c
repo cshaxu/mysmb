@@ -39,6 +39,7 @@
 #include "vine_setup_fixture.h"
 #include "block_bump_fixture.h"
 #include "small_initializers_fixture.h"
+#include "enemy_loop_fixture.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 
@@ -1330,6 +1331,12 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = (unsigned int)(476 + block_scenario);
         }
+        else if ((block_scenario = mysmb_enemy_loop_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            /* Keep the original recorder's fixture-numbering convention so
+             * both sides receive identical source RAM at the NMI boundary. */
+            t26_fixture = (unsigned int)(2017 + block_scenario);
+        }
         else if ((block_scenario = mysmb_block_address_argument(arguments[index])) != 0) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = (unsigned int)(428 + block_scenario);
@@ -1684,6 +1691,9 @@ int main(int argument_count, char **arguments)
                 mysmb_castle_scene_fixture(game.ram, (mysmb_u8)(t26_fixture - 548U));
             else if (t26_fixture >= 477U && t26_fixture <= 547U)
                 mysmb_area_pointer_fixture(game.ram, (mysmb_u8)(t26_fixture - 477U));
+            else if (t26_fixture >= 2018U && t26_fixture <= 2113U)
+                mysmb_enemy_loop_fixture(game.ram,
+                    (mysmb_u8)(t26_fixture - 2018U));
             else if (t26_fixture >= 429U && t26_fixture <= 476U)
                 mysmb_block_address_fixture(game.ram,
                     (mysmb_u8)(t26_fixture - 429U));

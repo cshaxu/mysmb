@@ -1801,3 +1801,17 @@ The current VRAM/PPU chain is exact for `WriteBufferToScreen`, `SetupWrites`, `G
 ## T55 closure
 
 T55 closes its Cohort C bootstrap slice with 67 exact nodes, 137 exact feasible controls, five source-infeasible controls and 25 exact material edges. The final cross-chain evidence combines renderer output, both-port joypad/debounce and VRAM/scroll/PPU-control routes.
+
+### T57 S4 loopback and area-pointer result
+
+`AreaDataOfsLoopback`, `LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`,
+`GetAreaDataAddrs`, `StoreFore` and `StoreStyle` are current-equivalence
+exact. The original table belongs to the shared enemy loop owner, not the area
+pointer owner: all eleven bytes are selected by 96 controlled loop routes and
+22 routes execute `ExecGameLoopback`. The companion 71-route pointer matrix
+consumes all 188 pointer/header table bytes and both header branch families.
+Original ROM, x86 and x64 have zero persistent work-RAM differences in both
+matrices and the native records are byte-identical. Focused x86/x64 smokes,
+platform-purity and the shared OpenNT DOS16 link pass. The live registry is
+415 exact nodes, 888 exact feasible controls, 18 infeasible raw controls and
+zero mismatches; historical conformance remains 1,992 / 1,992.

@@ -4917,9 +4917,9 @@
             "owner-approved-source-order",
             "current-equivalence-cohort-d"
           ],
-          "canReceive": true,
+          "canReceive": false,
           "admissionRole": "audit",
-          "receipt": "Owner-approved T57 Cohort D source-order audit for `AreaDataOfsLoopback -> StoreStyle`; historical node custody remains with existing receivers."
+          "receipt": "Closed after loopback-table and pointer/header current-equivalence evidence registered for all seven scoped labels; it accepts no new custody."
         },
         {
           "id": "M2 T57 S5",
@@ -360314,8 +360314,8 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t57-cohort-d-renderer-current-proof.md",
-      "state": "admitted-area-pointer-type-attribute-current-equivalence-audit",
-      "romRoute": "Controlled owner-local original-ROM/current x86/x64 area-pointer, type and fore/style attribute matrix."
+      "state": "closed-loopback-area-pointer-header-current-equivalence-audit",
+      "romRoute": "Controlled owner-local original-ROM/current x86/x64 loopback (96 fixtures) plus area-pointer, type and fore/style attribute matrix (71 fixtures)."
     }
   ]
 }

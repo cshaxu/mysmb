@@ -15,7 +15,7 @@ T57 closes only when every scoped label, feasible control relation and material 
 | S1 | `FlagpoleObject -> StrCOffset` | 26 | `src/game/area.c plus src/game/oam/flagpole_gfx.c`; flagpole, rope, object-row and cannon object-family matrix. |
 | S2 | `StaircaseHeightData -> ExitDecBlock` | 13 | `src/game/area.c`; staircase, jumpspring and question/brick object matrix. |
 | S3 | `HoleMetatiles -> GetBlockBufferAddr` | 16 | `src/game/area.c`; hole, whirlpool, under-part and block-buffer address matrix. |
-| S4 | `AreaDataOfsLoopback -> StoreStyle` | 7 | `src/game/area.c`; area-pointer, type and fore/style attribute matrix. |
+| S4 | `AreaDataOfsLoopback -> StoreStyle` | 7 | `src/game/enemy/loop.c` plus `src/game/area/area_data.c`; loopback, area-pointer, type and fore/style attribute matrix. |
 | S5 | `WorldAddrOffsets -> AreaDataAddrHigh` | 16 | `src/game/game_data.c plus src/game/area.c consumer`; world/area pointer-table selection matrix. |
 | S6 | `E_CastleArea1 -> E_WaterArea3` | 34 | `src/game/game_data.c plus src/game/area.c consumer`; enemy-area stream decoding matrix. |
 | S7 | `L_CastleArea1 -> L_WaterArea3` | 34 | `src/game/game_data.c plus src/game/area.c consumer`; level-area stream decoding matrix. |
@@ -290,11 +290,43 @@ feasible control relations; historical conformance remains 1,992 / 1,992.
 S4 admits the contiguous seven-label chain `AreaDataOfsLoopback -> StoreStyle`:
 `AreaDataOfsLoopback`, `LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`,
 `GetAreaDataAddrs`, `StoreFore` and `StoreStyle`. S3 is its predecessor and
-S5 owns the world/area-table continuation. The shared owner is
-`src/game/area.c`. All labels are historically complete and require current
+S5 owns the world/area-table continuation. The shared owners are
+`src/game/enemy/loop.c` for the loopback table and
+`src/game/area/area_data.c` for pointer/header semantics; `src/game/area.c`
+is only the downstream area-offset consumer. All labels are historically complete and require current
 evidence, so expected historical credit remains zero. The ROM-logic track will
 compare parser loopback, pointer lookup, type masking, pointer-data reads and
 foreground/style gates; the operational track will run the focused pointer
 tests, controlled original-ROM/current x86/x64 route matrix, DOS16 link and
 platform-purity check. A feasible difference remains in S4 until shared-C
 repair and repeat audit close it.
+
+## S4 closure — loopback, area-pointer and header-attribute chain
+
+S4 closes all seven labels current-exact: `AreaDataOfsLoopback`,
+`LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`, `GetAreaDataAddrs`,
+`StoreFore` and `StoreStyle`. The source audit corrected the former ownership
+claim: the eleven-byte loopback table is owned by `src/game/enemy/loop.c`,
+where `mysmb_enemy_exec_loopback` consumes its retained matched index before
+the downstream parser sees `AreaDataOffset`; the pointer/type/header sequence
+is owned by `src/game/area/area_data.c`. No shared-C behavior differed from
+the original ROM.
+
+The pointer matrix has 70 lookup/header routes plus the no-swap termination
+route. It executes all 188 relevant source table bytes, all foreground,
+background-color and style/cloud-override predicates, and the ContinueGame /
+SetInitNTHigh continuations. The loop matrix has 96 `ProcLoopCommand` routes:
+all enter `$c047`, 22 take `ExecGameLoopback` at `$c08c`, and all eleven
+`AreaDataOfsLoopback` entries are selected. Both matrices have zero persistent
+work-RAM differences between original ROM and current x86/x64, and the x86 and
+x64 records are byte-identical. The pointer/header, parser-data and
+enemy-loop smokes pass on both widths; platform-purity passes; the shared
+OpenNT DOS16 link produces `mysmb-dos16.exe` with only its established
+`OLDNAMES.LIB` warning.
+
+All seven labels, 17 newly evidenced feasible incident control relations and
+the loopback material relation are now exact. No product source changed: the
+test-only recorder fixture adds an existing controlled loop input to the
+native recorder, so no three-artifact refresh is required. The current registry
+is 415 exact nodes and 888 exact feasible control relations; historical
+conformance remains 1,992 / 1,992.
