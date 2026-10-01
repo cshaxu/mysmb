@@ -243,3 +243,15 @@ name-table check by proving the boot caller and title continuation on the
 actual local-ROM build path.  It does not observe every S6 vector family, so
 the remaining incident-edge audit stays open.  No product source changed and
 no artifacts are refreshed.
+
+## S6 P4 ? incident vector-family map
+
+The S6 local static audit now covers every incident `JumpEngine` caller family:
+operating/title/victory/game-over modes; area-parser and area-object routes;
+game routines and player movement; block code; enemy initialization, frenzy,
+core, movement and platform routes; and the star-flag route.  Each ROM label
+has a named shared-C dispatcher owner, and x86/x64
+`game-entry-dispatch-smoke` confirms the four-entry `GameMode` selector.  This
+eliminates an unmapped-owner finding, but the audit still must compare each
+family's selector domain and return continuation before closing S6.  No
+product source changed and no artifacts are refreshed.
