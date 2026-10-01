@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -60541,7 +60541,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -337848,7 +337848,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md",
-      "state": "admitted-joypad-current-equivalence-audit",
+      "state": "closed-joypad-current-equivalence-audit",
       "romRoute": "Controlled original-ROM/current x86/x64 NMI joypad routes: both ports, eight-bit serialization, Select/Start debounce and caller return."
     }
   ]

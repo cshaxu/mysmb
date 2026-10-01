@@ -390,6 +390,12 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
         (void)mysmb_game_apply_vram_commands(game,
             &game->ram[MYSMB_ROOT_VRAM_BUFFER1], 0x0100U);
     }
+    /* WriteBufferToScreen selects the increment bit with a physical $2000
+     * write before each packet.  Keep that pre-dispatch physical state
+     * observable here; the NMI tail later restores the saved control value
+     * with d7 enabled. */
+    game->visible_ppu_control_0 = game->ppu_control_0;
+    game->visible_ppu_name_table = (mysmb_u8)(game->ppu_control_0 & 3U);
     /* InitBuffer selects Buffer_Offset[1] only when X is exactly six.  Entry
      * seven transfers $0341 but still clears the ordinary $0300/$0301 header. */
     if (selector == 6U) {

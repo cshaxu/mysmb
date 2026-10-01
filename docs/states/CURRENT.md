@@ -7,10 +7,10 @@
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | M2 T55 S7 — joypad serial-read current-equivalence audit. |
-| Admission And Approval | T55 S6 closed with zero scoped feasible differences; owner-directed source-order continuation. |
-| Objective | Audit `ReadJoypads` through `Save8Bits`, repair every feasible shared-C difference, and repeat the scoped node/edge and ROM/native audit to zero. |
+| Admission And Approval | T55 S6 closed with zero scoped feasible differences; S7 is now closed after repair and re-audit. |
+| Objective | Closed: audited `ReadJoypads` through `Save8Bits`, repaired the feasible shared-C packet-control difference, and repeated the scoped node/edge and ROM/native audit to zero. |
 | Non-goals | No VRAM packet audit, no platform-owned input decision, and no historical-node credit. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 221 exact, 1,771 needs-evidence nodes; 450 exact feasible controls. Scope: four labels plus incident feasible controls; expected historical delta 0. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry before S7: 221 exact, 1,771 needs-evidence nodes; 450 exact feasible controls. Scope: four labels plus incident feasible controls; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
 | Files And ABI Surface | Shared `src/game/frame_root.c`, focused input tests and recorder-only fixtures. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
@@ -19,7 +19,7 @@
 | Asset Needs | Refresh all three artifacts only if product source changes. |
 | Reporting Requirements | Report each scoped label and each incident control disposition with separate logic and operational results. |
 | Stop Conditions | A feasible ROM/C difference remains after repair, an incident control lacks a shared-C counterpart, or platform code makes a gameplay decision. |
-| Exit Criteria | Every scoped node and incident feasible control is exact under static and controlled evidence. |
+| Exit Criteria | Achieved: every scoped node and incident feasible control is exact under static and controlled evidence; S8 remains unadmitted. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
 | Similar-Issue Sweep | Input bit order, serial loop count, Select/Start latch suppression, port independence and NMI caller return. |
 ## Current Technical Baseline
@@ -129,3 +129,7 @@ No successor S is admitted.
 
 One shared native C90 game implementation serves DOS16 and Win32 x86/x64;
 platform adapters do not own game logic.
+
+## S7 Closure
+
+S7 closes with four current-exact nodes and eight current-exact feasible control relations. The repair keeps the packet-selected physical `$2000` state visible during the NMI before the existing tail restores its saved d7-enabled value. The original-ROM/x86/x64 controlled route is zero-difference for joypad RAM and PPU scalars; the full per-port debounce sweep, NMI-parent test, platform purity and DOS16 link pass. Historical status remains 1,992 / 1,992, while the fresh current registry is **225 exact nodes** and **458 exact feasible controls**.

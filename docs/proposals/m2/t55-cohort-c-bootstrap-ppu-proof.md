@@ -445,3 +445,39 @@ provide only decoded button images. The ROM route will exercise both ports,
 all eight serialized bits, first-frame latching and held Select/Start
 suppression before x86/x64 comparisons. A difference remains in S7 for repair
 and re-audit before S8 is admitted.
+
+
+## S7 P1 — NMI packet physical-control repair
+
+The S7 caller-return audit found one feasible shared-C difference.  ROM
+`WriteBufferToScreen` writes physical `$2000` for each VRAM packet before
+`ReadJoypads`; the C packet interpreter updated the `$0778` mirror but left
+the current-frame visible `$2000` value stale until the NMI tail.  The shared
+`frame_root.c` packet commit now exposes the packet-selected control and
+name-table state immediately, while the existing tail still restores the
+saved control with d7 set.  No platform adapter owns this decision.
+
+The focused x86/x64 NMI-parent check passes after the repair.  The bounded
+120-frame original-ROM/x86/x64 replay has zero differences in `$06fc`,
+`$06fd`, `$074a`, `$074b` and all seven recorded PPU scalars; x86 and x64 are
+also byte-identical for those fields.  The project-owned exhaustive native
+per-port 256 by 256 prior/current debounce sweep passes, as does platform
+purity.  The OpenNT large-model DOS16 build links an MZ executable with only
+its established `OLDNAMES.LIB` warning.  The local product artifacts were
+refreshed: DOS16 `5F96B78D0BFE9ED3A2A32258DD9A7A87B9CF446A77DF155AA05576F67CF64B2A`,
+Win32 `6975226E2471B704BE3D6019D693F82C834D9574D30E6BD29ED597CF75D555EC`, and
+Win64 `E4570C8EE7416F11D95C13BA76D270FDA17E7180B6CE34B60738263CAB9B882C`.
+
+## S7 closure — joypad serial-read chain
+
+S7 closes with zero remaining scoped feasible differences. `ReadJoypads`,
+`ReadPortBits`, `PortLoop` and `Save8Bits` are current-exact, as are their
+eight incident feasible control relations: the NMI caller and continuation,
+first-port call, second-port fall-through, loop entry/back-edge, debounce
+branch and first-port return. The source audit confirms the ROM's strobe,
+two-port order, eight `ROL`-assembled bits, Select/Start mask predicate and
+return order. The owner-local route reaches both port passes and both debounce
+outcomes; its x86/x64 records agree with the ROM on the four joypad RAM bytes
+and all PPU scalars. Historical conformance remains 1,992 / 1,992; the current
+registry advances from 221 to **225 exact nodes** and from 450 to **458 exact
+feasible control relations**. S8 is not admitted by this closure.

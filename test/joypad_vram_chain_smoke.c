@@ -1,6 +1,54 @@
 #include "game/game.h"
 #include "game/frame_root.h"
 
+static mysmb_u8 mysmb_expected_joypad_saved(mysmb_u8 previous,
+                                             mysmb_u8 current)
+{
+    if (((current & 0x30U) & previous) != 0U)
+        return (mysmb_u8)(current & 0xcfU);
+    return current;
+}
+
+static mysmb_u8 mysmb_expected_joypad_mask(mysmb_u8 previous,
+                                            mysmb_u8 current)
+{
+    if (((current & 0x30U) & previous) != 0U) return previous;
+    return current;
+}
+
+/* ROM $8e66 reads eight serial bits, then $8e75-$8e8f either retains the
+ * prior mask or commits the complete byte.  Sweep every possible prior and
+ * current image on each port so the test observes bit order, port selection
+ * and both Select/Start paths rather than only one hand-picked combination. */
+static int mysmb_verify_joypad_port(mysmb_u16 saved, mysmb_u16 mask)
+{
+    struct mysmb_game game;
+    unsigned int previous;
+    unsigned int current;
+    mysmb_u8 expected_saved;
+    mysmb_u8 expected_mask;
+
+    for (previous = 0U; previous < 256U; ++previous) {
+        for (current = 0U; current < 256U; ++current) {
+            mysmb_game_initialize(&game);
+            game.ram[mask] = (mysmb_u8)previous;
+            if (saved == 0x06fcU) {
+                mysmb_frame_root_read_joypads(&game, (mysmb_u8)current, 0U);
+            }
+            else {
+                mysmb_frame_root_read_joypads(&game, 0U, (mysmb_u8)current);
+            }
+            expected_saved = mysmb_expected_joypad_saved((mysmb_u8)previous,
+                                                         (mysmb_u8)current);
+            expected_mask = mysmb_expected_joypad_mask((mysmb_u8)previous,
+                                                       (mysmb_u8)current);
+            if (game.ram[saved] != expected_saved ||
+                game.ram[mask] != expected_mask) return 0;
+        }
+    }
+    return 1;
+}
+
 int main(void)
 {
     struct mysmb_game game;
@@ -12,6 +60,8 @@ int main(void)
     };
 
     mysmb_game_initialize(&game);
+    if (mysmb_verify_joypad_port(0x06fcU, 0x074aU) == 0 ||
+        mysmb_verify_joypad_port(0x06fdU, 0x074bU) == 0) return 5;
     game.ram[0x074aU] = 0U;
     game.ram[0x074bU] = 0U;
     mysmb_frame_root_read_joypads(&game,
