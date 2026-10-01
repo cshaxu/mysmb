@@ -43,21 +43,52 @@ void mysmb_area_move_v_offset(struct mysmb_game *g, mysmb_u8 y)
 { child(g, 5U, y); }
 void mysmb_enemy_init_vertical_state(struct mysmb_game *g, mysmb_u8 s)
 { child(g, 6U, s); }
-int main(int argc, char **argv)
+static int run_case(const char *snapshot_path, const char *calls_path)
 {
     static struct mysmb_game g;
     static unsigned char expected[2048];
     unsigned char h[8]; FILE *f;
-    if (argc != 3) return 64;
-    f = fopen(argv[2], "rb"); if (!f) return 65;
+    count = calls = failures = 0U;
+    f = fopen(calls_path, "rb"); if (!f) return 65;
     if (fread(h,1,8,f) != 8 || memcmp(h,"MSkC\1",5) || h[5] > 8U) return 66;
     count = h[5];
     if (fread(records,4098,count,f) != count || fgetc(f) != EOF) return 66;
-    fclose(f); f = fopen(argv[1],"rb"); if (!f) return 65;
+    fclose(f); f = fopen(snapshot_path,"rb"); if (!f) return 65;
     if (fread(h,1,8,f) != 8 || memcmp(h,"MSkP\1",5) ||
         fread(g.ram,1,2048,f) != 2048 || fread(expected,1,2048,f) != 2048 ||
         fgetc(f) != EOF) return 66;
     fclose(f); (void)mysmb_objects_step_bridge_collapse(&g);
     compare(g.ram, expected); if (calls != count) ++failures;
     return failures ? 1 : 0;
+}
+
+int main(int argc, char **argv)
+{
+    FILE *manifest;
+    char line[1024], *separator;
+    unsigned int cases, failed;
+    int result;
+    if (argc == 3 && strcmp(argv[1], "--manifest") != 0)
+        return run_case(argv[1], argv[2]);
+    if (argc != 3 || strcmp(argv[1], "--manifest") != 0) return 64;
+    manifest = fopen(argv[2], "r"); if (!manifest) return 65;
+    cases = failed = 0U;
+    while (fgets(line, sizeof(line), manifest) != 0) {
+        separator = strchr(line, '\t');
+        if (separator == 0) { fclose(manifest); return 66; }
+        *separator++ = '\0';
+        separator[strcspn(separator, "\r\n")] = '\0';
+        if (line[0] == '\0' || separator[0] == '\0') {
+            fclose(manifest); return 66;
+        }
+        result = run_case(line, separator);
+        ++cases;
+        if (result != 0) {
+            ++failed;
+            printf("case %u failed (%d)\n", cases - 1U, result);
+        }
+    }
+    fclose(manifest);
+    printf("bridge collapse manifest: %u cases, %u failures\n", cases, failed);
+    return failed == 0U ? 0 : 1;
 }

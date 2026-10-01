@@ -2155,3 +2155,12 @@ controls and seven material handoffs. Static source/table audit and 1,024
 batch original-ROM/current comparisons per x86/x64 width pass. Historical
 **1,992 / 1,992**; exact nodes **1,109 / 1,992**; exact feasible controls
 **2,194 / 4,324**; raw **4,342**, infeasible **18**.
+
+
+## M2 T63 S13 current-equivalence closure
+
+The bridge-collapse victory chain closes six nodes, 15 feasible controls and
+six material handoffs. Static source/table audit and 180 batch original-ROM /
+current comparisons per x86/x64 width pass. Historical **1,992 / 1,992**;
+exact nodes **1,115 / 1,992**; exact feasible controls **2,207 / 4,324**;
+raw **4,342**, infeasible **18**.

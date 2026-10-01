@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T63 S12 Packet
+## M2 T63 S13 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S12 audit — Lakitu movement and player-distance chain. |
-| Admission And Approval | S12 admitted after S11 closure under the owner-approved source-order program. |
-| Objective | Prove LakituDiffAdj through ExMoveLak and every owned relation current-exact; batch existing 1,024 ROM records into one native process per width. |
-| Non-goals | No BridgeCollapse successor, child-body credit, actor-dispatch caller, platform adapter or product behavior change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,093 / 1,992 nodes and 2,157 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S13 audit — bridge-collapse victory chain. |
+| Admission And Approval | S13 admitted after S12 closure under the owner-approved source-order program. |
+| Objective | Prove BridgeCollapseData through NoBFall and every owned relation current-exact; batch existing 180 ROM records per width. |
+| Non-goals | No PRandomRange successor, child-body credit, platform adapter or product behavior change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,109 / 1,992 nodes and 2,194 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | Shared game enemy/lakitu.c; audit harness only; C90. |
+| Files And ABI Surface | Shared game bridge.c; audit harness only; C90. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | $CF25-$CF84 audit; original-ROM/current x86/x64 batch routes; focused checks, purity and DOS16 link. |
-| Expected Markers | 16 nodes, 37 feasible controls and 7 material handoffs. |
+| Verification | $CFDD-$D060 audit; original-ROM/current x86/x64 batch routes; focused checks, purity and DOS16 link. |
+| Expected Markers | 6 nodes, 15 feasible controls and 6 material handoffs. |
 | Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh artifacts only if product source changes. |
 | Reporting Requirements | Historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | Any source, route or boundary difference remains S12 repair work. |
-| Exit Criteria | All 16 labels, 37 feasible controls and 7 material handoffs exact with both tracks. |
+| Stop Conditions | Any source, route or boundary difference remains S13 repair work. |
+| Exit Criteria | All 6 labels, 15 feasible controls and 6 material handoffs exact with both tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Defeated precedence, state initialization, adjustment bytes, direction negation, capped distance, reversal delay, selector index and subtract loop. |
+| Similar-Issue Sweep | Front-slot state gates, timer underflow, bridge table/index, child argument preservation, mode task, sound queue and tail ordering. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S11 are closed. S12 audits the Lakitu movement chain.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64. T63 S1-S12 are closed. S13 audits the bridge-collapse victory chain.
 
 ## T63 S1 Closure
 
@@ -201,4 +201,24 @@ BridgeCollapseData.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,109 / 1,992 nodes** and **2,194 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).
+
+
+## S13 closure — bridge-collapse victory chain
+
+All six scoped labels are current-exact: BridgeCollapseData, BridgeCollapse,
+SetM2, MoveD_Bowser, RemoveBridge and NoBFall. Static `$CFDD-$D060`
+comparison confirms all 15 table bytes, front-slot/state/height branches,
+mode-task transition, timer/body writes, address scratch, ordered area calls,
+audio queues, final falling state and graphics tails. All 15 feasible controls
+and six material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 180
+controlled original-ROM snapshots with zero differences. The focused C90 bridge
+contract, platform-purity check and OpenNT DOS16 shared-source link pass. Only
+an audit harness changed, so product source did not change and no three-EXE
+artifact refresh is due. No labels are deferred; S14 begins at PRandomRange.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,115 / 1,992 nodes** and **2,207 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).

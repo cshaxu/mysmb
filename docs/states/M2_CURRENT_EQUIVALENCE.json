@@ -5257,13 +5257,16 @@
       "consumer": "RemoveBridge",
       "storage": "BridgeCollapseOffset-indexed ROM address low byte to zero-page $04",
       "feasiblePath": "The source reads one of 15 collapse bytes before RemBridge consumes $04/$05.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/bridge.c:collapse_low[index] -> ram[$04]",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5276,13 +5279,16 @@
       "consumer": "SetM2",
       "storage": "Bowser ID/state/Y gate to silence/music/task tail",
       "feasiblePath": "Any non-Bowser, d6-clear or low-enough defeated state takes the terminal tail with no bridge command.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/bridge.c state gate -> set_mode",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5300,10 +5306,12 @@
       "currentCounterpart": "bridge.c collapse body -> area/block_metatile.c:mysmb_area_rem_bridge",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
       ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
@@ -5339,13 +5347,16 @@
       "consumer": "NoBFall",
       "storage": "feet/body controls, collapse offset, defeated state and sound queues to common graphics tail",
       "feasiblePath": "Both timer paths and the terminal fifteenth removal converge after exactly the source writes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/bridge.c common draw_bowser tail",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5358,13 +5369,16 @@
       "consumer": "NoBFall",
       "storage": "slow-vertical position state to Bowser graphics tail",
       "feasiblePath": "The falling path draws using the slot reloaded from ObjectOffset after movement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/bridge.c:mysmb_enemy_move_d_bowser",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -5377,13 +5391,16 @@
       "consumer": "KillAllEnemies",
       "storage": "Silence, OperMode_Task and ObjectOffset state to enemy-clear loop",
       "feasiblePath": "Terminal bridge flow advances the mode before the descending slot erase loop.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c set_mode -> enemy/loop.c:mysmb_enemy_kill_all",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -32256,13 +32273,16 @@
       "label": "BridgeCollapseData",
       "asmLine": 10092,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: bridge/area/enemy/OAM",
       "currentCounterpart": "src/game/bridge.c:collapse_low",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "ROM $CFDD table is preserved in its 15-byte order: axe, chain, then bridge low addresses $98 through $80; its byte is selected before the VRAM command producer.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -32272,13 +32292,16 @@
       "label": "BridgeCollapse",
       "asmLine": 10098,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: bridge/area/enemy/OAM",
       "currentCounterpart": "src/game/bridge.c:mysmb_objects_step_bridge_collapse entry and state gate",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Reads BowserFront_Offset and Enemy_ID before writing ObjectOffset; normal state selects bridge removal, d6-set with Y<$e0 selects slow fall/draw, and every other state enters the silence/mode-advance tail.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -32288,13 +32311,16 @@
       "label": "SetM2",
       "asmLine": 10111,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: bridge/area/enemy/OAM",
       "currentCounterpart": "src/game/bridge.c:mysmb_objects_step_bridge_collapse set_mode tail plus enemy/loop.c:mysmb_enemy_kill_all",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Writes Silence to EventMusicQueue, increments OperMode_Task exactly once, then clears enemy slots in descending 4..0 order and resets EnemyFrenzyBuffer.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -32305,13 +32331,16 @@
       "label": "MoveD_Bowser",
       "asmLine": 10116,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: bridge/area/enemy/OAM",
       "currentCounterpart": "src/game/bridge.c:mysmb_enemy_move_d_bowser",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Moves the current Bowser slot with slow vertical physics, reloads ObjectOffset after the child call and immediately uses the Bowser front/rear graphics tail.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -32321,13 +32350,16 @@
       "label": "RemoveBridge",
       "asmLine": 10120,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: bridge/area/enemy/OAM",
       "currentCounterpart": "src/game/bridge.c:mysmb_objects_step_bridge_collapse collapse body",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Decrements BowserFeetCounter; on expiry restores four, toggles body bit zero, stages $04/$05, emits the two-row blank command, advances the original VRAM offset, queues blast/shatter, advances the 15-step table and only then initializes defeated falling state.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -32337,13 +32369,16 @@
       "label": "NoBFall",
       "asmLine": 10152,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: bridge/area/enemy/OAM",
       "currentCounterpart": "src/game/bridge.c:mysmb_objects_step_bridge_collapse draw_bowser tail",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "All non-terminal bridge paths converge on one Bowser graphics call after retaining the slot and post-collapse state.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -87513,12 +87548,15 @@
       "instruction": "bne",
       "id": "control-01935",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c state gate: Enemy_ID != Bowser -> set_mode",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original branch relation BridgeCollapse -> SetM2 with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -87533,12 +87571,15 @@
       "instruction": "beq",
       "id": "control-01936",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c state gate: Enemy_State == 0 -> collapse body",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original branch relation BridgeCollapse -> RemoveBridge with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -87552,12 +87593,15 @@
       "instruction": "beq",
       "id": "control-01937",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c state gate: nonzero state with d6 clear -> set_mode",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original branch relation BridgeCollapse -> SetM2 with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -87572,12 +87616,15 @@
       "instruction": "bcc",
       "id": "control-01938",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c state gate: d6 set and Enemy_Y < $e0 -> mysmb_enemy_move_d_bowser",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original branch relation BridgeCollapse -> MoveD_Bowser with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -87591,12 +87638,15 @@
       "instruction": "bcc",
       "id": "control-01939",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c state gate: d6 set and Enemy_Y >= $e0 -> set_mode",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original fallthrough relation BridgeCollapse -> SetM2 with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -87611,12 +87661,15 @@
       "instruction": "jmp",
       "id": "control-01940",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation SetM2 -> KillAllEnemies with descending slot order, source state handoff and call/return behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -87631,12 +87684,15 @@
       "instruction": "jsr",
       "id": "control-01941",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c mysmb_enemy_move_d_bowser -> mysmb_enemy_move_slow_vertically",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original call relation MoveD_Bowser -> MoveEnemySlowVert with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -87651,12 +87707,15 @@
       "instruction": "jmp",
       "id": "control-01942",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation MoveD_Bowser -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -87671,12 +87730,15 @@
       "instruction": "bne",
       "id": "control-01943",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c BowserFeetCounter nonzero -> draw_bowser tail",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original branch relation RemoveBridge -> NoBFall with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -87693,10 +87755,12 @@
       "status": "exact",
       "currentCounterpart": "bridge.c collapse body -> mysmb_area_rem_bridge",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
       ],
       "semanticContract": "Preserves the original call relation RemoveBridge -> RemBridge with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
@@ -87715,10 +87779,12 @@
       "status": "exact",
       "currentCounterpart": "bridge.c collapse body -> mysmb_area_move_v_offset",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
       ],
       "semanticContract": "Preserves the original call relation RemoveBridge -> MoveVOffset with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
@@ -87734,12 +87800,15 @@
       "instruction": "bne",
       "id": "control-01946",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c collapse offset != 15 -> draw_bowser tail",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original branch relation RemoveBridge -> NoBFall with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -87753,12 +87822,15 @@
       "instruction": "jsr",
       "id": "control-01947",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c collapse offset == 15 -> mysmb_enemy_init_vertical_state",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original call relation RemoveBridge -> InitVStf with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c",
@@ -87774,12 +87846,15 @@
       "instruction": "sta",
       "id": "control-01948",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "bridge.c final falling-state/sound write -> draw_bowser tail",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original fallthrough relation RemoveBridge -> NoBFall with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
       "currentSourcePaths": [
         "src/game/bridge.c"
@@ -87793,12 +87868,15 @@
       "instruction": "jmp",
       "id": "control-01949",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation NoBFall -> BowserGfxHandler with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/bridge.c",

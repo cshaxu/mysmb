@@ -2164,3 +2164,15 @@ process with zero differences. Focused C90 contract, platform purity and DOS16
 link pass. The live registry is **1,109 exact nodes** and **2,194 exact
 feasible control relations**. Historical mapping remains **1,992 / 1,992**;
 raw controls are **4,342**, with **18** infeasible and **4,324** feasible.
+
+
+### T63 S13 bridge-collapse victory result
+
+BridgeCollapseData through NoBFall is current-exact: six labels, 15 feasible
+control relations and six material handoffs. Static `$CFDD-$D060` review
+confirms all bridge table bytes and shared C branch/data semantics. The current
+x86 and x64 manifest runners each compare 180 original-ROM snapshots in one
+process with zero differences. Focused C90 contract, platform purity and DOS16
+link pass. The live registry is **1,115 exact nodes** and **2,207 exact
+feasible control relations**. Historical mapping remains **1,992 / 1,992**;
+raw controls are **4,342**, with **18** infeasible and **4,324** feasible.

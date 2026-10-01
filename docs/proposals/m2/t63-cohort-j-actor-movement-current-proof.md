@@ -584,3 +584,49 @@ BridgeCollapseData.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,109 / 1,992 nodes** and **2,194 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+
+## S13 admission — bridge-collapse victory chain
+
+S13 admits BridgeCollapseData through NoBFall (lines 10092–10152,
+`$CFDD-$D060`): BridgeCollapseData, BridgeCollapse, SetM2, MoveD_Bowser,
+RemoveBridge and NoBFall. Its shared owner is `src/game/bridge.c`; area,
+enemy-loop, vertical-init and Bowser graphics routines remain explicit child
+boundaries. S12 is the predecessor and S14 begins at PRandomRange.
+
+The ROM-logic track compares the 15-byte low-address table, front-slot and
+state gates, mode transition, bridge-timer/body toggle, scratch address,
+ordered RemBridge/MoveVOffset calls, sound queues, final falling state, and
+graphics tails. The operational track batches the 180 existing controlled
+original-ROM bridge records once per x86/x64 width, then runs the focused C90
+bridge contract, purity and DOS16 link. A feasible difference remains S13
+repair work.
+
+### S13 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,109 / 1,992**.
+- Current exact feasible control edges: **2,194 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **6** labels; current-evidence candidates: **6**; historical
+  expected promotions: **0**; maximum historical completion: **1,992 / 1,992**.
+
+
+## S13 closure — bridge-collapse victory chain
+
+All six scoped labels are current-exact: BridgeCollapseData, BridgeCollapse,
+SetM2, MoveD_Bowser, RemoveBridge and NoBFall. Static `$CFDD-$D060`
+comparison confirms all 15 table bytes, front-slot/state/height branches,
+mode-task transition, timer/body writes, address scratch, ordered area calls,
+audio queues, final falling state and graphics tails. All 15 feasible controls
+and six material handoffs are exact.
+
+One current-source manifest runner per x86 and x64 width replays all 180
+controlled original-ROM snapshots with zero differences. The focused C90 bridge
+contract, platform-purity check and OpenNT DOS16 shared-source link pass. Only
+an audit harness changed, so product source did not change and no three-EXE
+artifact refresh is due. No labels are deferred; S14 begins at PRandomRange.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,115 / 1,992 nodes** and **2,207 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).
