@@ -2258,3 +2258,7 @@ All 19 scoped labels, 37 pending feasible controls and 13 material handoffs are 
 ## M2 T63 S23 closure — star-flag terminal exit
 
 StarFlagExit2 is current-exact. Both incoming paths were exact in S22; the current x86/x64 1,024-record manifest remains zero-difference. Totals: historical **1,992 / 1,992**; current exact **1,173 / 1,992** nodes and **2,333 / 4,324** feasible controls.
+
+## M2 T63 S24 closure — piranha movement chain
+
+All six scoped labels, 16 feasible controls and four materials exact. ROM batch, focused C90, purity and DOS16 link passed. Totals: historical **1,992 / 1,992**; current **1,179 / 1,992** nodes, **2,349 / 4,324** controls.

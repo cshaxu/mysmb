@@ -6467,13 +6467,16 @@
       "consumer": "ChkPlayerNearPipe",
       "storage": "signed PlayerEnemyDiff scratch to absolute distance",
       "feasiblePath": "Negative source difference is two-complemented before the $21 gate.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/piranha.c player difference block",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6486,13 +6489,16 @@
       "consumer": "SetupToMovePPlant",
       "storage": "two-complemented Y speed and move flag",
       "feasiblePath": "Reversal writes speed before flag and endpoint selection.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/piranha.c reversal block",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6505,13 +6511,16 @@
       "consumer": "RiseFallPiranhaPlant",
       "storage": "speed sign to selected up/down endpoint",
       "feasiblePath": "Endpoint selection precedes alternate-frame and timer gates.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/piranha.c endpoint selection",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6524,13 +6533,16 @@
       "consumer": "PutinPipe",
       "storage": "Y move/end-point match to move flag/timer and common attribute tail",
       "feasiblePath": "Both move and nonmove outcomes write pipe priority before return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/piranha.c put_in_pipe",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -33641,13 +33653,16 @@
       "label": "MovePiranhaPlant",
       "asmLine": 10602,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/piranha.c",
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "State and frame timer take immediate pipe tail; stopped/downward plants compute absolute player difference and suppress emergence within $21, while moving/rising plants bypass that gate.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -33657,13 +33672,16 @@
       "label": "ChkPlayerNearPipe",
       "asmLine": 10619,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/piranha.c",
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Uses the absolute difference produced by PlayerEnemyDiff, entering pipe tail only for values below $21.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -33673,13 +33691,16 @@
       "label": "ReversePlantSpeed",
       "asmLine": 10624,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/piranha.c",
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Two-complements Y speed and increments move flag before endpoint selection.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -33689,13 +33710,16 @@
       "label": "SetupToMovePPlant",
       "asmLine": 10632,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/piranha.c",
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Selects down endpoint for nonnegative speed and up endpoint for negative speed.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -33705,13 +33729,16 @@
       "label": "RiseFallPiranhaPlant",
       "asmLine": 10638,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/piranha.c",
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Moves only on source alternate frames with TimerControl clear; on exact endpoint sets move flag zero and delay timer $40.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -33721,13 +33748,16 @@
       "label": "PutinPipe",
       "asmLine": 10656,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/piranha.c",
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Always writes background-priority sprite attribute $20 before return.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90806,12 +90836,15 @@
       "instruction": "bne",
       "id": "control-02066",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MovePiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90825,12 +90858,15 @@
       "instruction": "bne",
       "id": "control-02067",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MovePiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90844,12 +90880,15 @@
       "instruction": "bne",
       "id": "control-02068",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MovePiranhaPlant -> SetupToMovePPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90863,12 +90902,15 @@
       "instruction": "bmi",
       "id": "control-02069",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MovePiranhaPlant -> ReversePlantSpeed with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90882,12 +90924,15 @@
       "instruction": "jsr",
       "id": "control-02070",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation MovePiranhaPlant -> PlayerEnemyDiff with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -90906,12 +90951,15 @@
       "instruction": "bpl",
       "id": "control-02071",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MovePiranhaPlant -> ChkPlayerNearPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90925,12 +90973,15 @@
       "instruction": "sta",
       "id": "control-02072",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MovePiranhaPlant -> ChkPlayerNearPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90944,12 +90995,15 @@
       "instruction": "bcc",
       "id": "control-02073",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkPlayerNearPipe -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90963,12 +91017,15 @@
       "instruction": "bcc",
       "id": "control-02074",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkPlayerNearPipe -> ReversePlantSpeed with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -90982,12 +91039,15 @@
       "instruction": "inc",
       "id": "control-02075",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ReversePlantSpeed -> SetupToMovePPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -91001,12 +91061,15 @@
       "instruction": "bpl",
       "id": "control-02076",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SetupToMovePPlant -> RiseFallPiranhaPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -91020,12 +91083,15 @@
       "instruction": "lda",
       "id": "control-02077",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetupToMovePPlant -> RiseFallPiranhaPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -91039,12 +91105,15 @@
       "instruction": "bcc",
       "id": "control-02078",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RiseFallPiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -91058,12 +91127,15 @@
       "instruction": "bne",
       "id": "control-02079",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RiseFallPiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -91077,12 +91149,15 @@
       "instruction": "bne",
       "id": "control-02080",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RiseFallPiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"
@@ -91096,12 +91171,15 @@
       "instruction": "sta",
       "id": "control-02081",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation RiseFallPiranhaPlant -> PutinPipe with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/piranha.c"

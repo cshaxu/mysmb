@@ -991,3 +991,17 @@ purity and DOS16 link. Any difference remains S23 repair work.
 `StarFlagExit2` is current-exact. Static `$D3A2-$D3AF` confirms both timer and event-music paths return at the shared exit. The same current x86/x64 1,024-record manifest has zero differences; S22's focused C90, purity and DOS16 link remain valid because the shared source is unchanged. The two entering controls were already exact in S22. No product source changed.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,173 / 1,992 nodes** and **2,333 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## S24 admission — piranha movement chain
+
+S24 admits `MovePiranhaPlant -> PutinPipe` (lines 10596–10656, `$D3B0-$D40F`):
+MovePiranhaPlant, ChkPlayerNearPipe, ReversePlantSpeed, SetupToMovePPlant,
+RiseFallPiranhaPlant and PutinPipe. Shared owner: `src/game/enemy/piranha.c`.
+PlayerEnemyDiff is an explicit child boundary. S23 is closed; S25 starts at
+FirebarSpin. ROM route: 512 controlled fixtures once per x86/x64 width.
+
+## S24 closure — piranha movement chain
+
+All six labels are current-exact. Static `$D3B0-$D40F`, 512 original-ROM x86/x64 manifest replays with zero differences, focused 1,282-case C90 test, platform purity and DOS16 link confirm state/timer exits, signed distance, reversal, endpoints, gates and priority write. All 16 feasible controls and four material handoffs are exact. No product source changed.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,179 / 1,992 nodes** and **2,349 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).

@@ -2258,3 +2258,7 @@ All 19 labels are current-exact. Static `$D2CD-$D3AE`, 1,024 x86/x64 batch repla
 ### T63 S23 star-flag terminal exit result
 
 StarFlagExit2 is current-exact through static `$D3A2-$D3AF` and the reused 1,024-record x86/x64 manifest, zero differences. The live registry is **1,173 exact nodes** and **2,333 exact feasible control relations**.
+
+### T63 S24 piranha movement result
+
+Six labels are current-exact; the live registry is **1,179 exact nodes** and **2,349 exact feasible control relations** after static and 512-record ROM route proof.
