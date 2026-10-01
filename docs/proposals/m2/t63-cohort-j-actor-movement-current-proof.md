@@ -1030,3 +1030,23 @@ fall and player paths.
 All 26 scoped labels are current-exact: `BalancePlatform` through `ExPF`. Static `$D432-$D5D2` comparison covers the paired-platform entry and threshold gates, coupled movement and old-minus-new Y transfer, both rope-address calculations and complementary command tiles, fall setup, dual falling moves and conditional player placement. The 1,024-record original-ROM batch replays once per x86 and x64 process with full RAM and recorded child calls, zero differences. The focused C90 contract, platform-purity check and OpenNT DOS16 shared-source link pass. All 67 newly pending feasible controls and 16 material handoffs are exact. Test harness and evidence changed only; no product code changed, so no three-EXE refresh is due.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,207 / 1,992 nodes** and **2,418 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## S27 admission — moving and lift-platform chain
+
+S27 admits `YMovingPlatform -> ExLiftP` (lines 10921–11023): `YMovingPlatform`, `SkipIY`, `ChkYCenterPos`, `YMDown`, `ChkYPCollision`, `ExYPl`, `XMovingPlatform`, `PositionPlayerOnHPlat`, `PPHSubt`, `SetPVar`, `ExXMP`, `DropPlatform`, `ExDPl`, `RightPlatform`, `ExRPl`, `MoveLargeLiftPlat`, `MoveSmallPlatform`, `MoveLiftPlatforms`, `ChkSmallPlatCollision` and `ExLiftP`. All 20 are `needs-evidence`; shared portable owner is `src/game/enemy/platform.c`. S26 is the predecessor and T64 `OffscreenBoundsCheck` is the successor.
+
+The static track binds the stationary/frame/center vertical gate; x-counter ordering, signed horizontal carry/borrow, drop and right-platform rider tails; and the timer-gated large/small lift fixed-point movement and distinct rider arguments. ROM routes use the existing three controlled original-ROM families (vertical, horizontal/drop/right, large/small lift) in batch, one process per x86/x64 width. The operational track runs the three focused C90 contracts, platform purity and the OpenNT DOS16 shared-source link. Any mismatch stays in S27 for shared-owner repair and repeated audit.
+
+### S27 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,207 / 1,992**.
+- Current exact feasible controls: **2,418 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **20** labels; expected fresh current-equivalence promotions: **20**; maximum current exact nodes: **1,227 / 1,992**.
+
+## S27 closure — moving and lift-platform chain
+
+All 20 scoped labels are current-exact: `YMovingPlatform` through `ExLiftP`. Static `$D5D3-$D679` comparison binds the stationary dummy reset, every-eighth-frame increment, unsigned top/center gates, vertical rider tail, X-counter and movement child order, signed player page carry/borrow, drop and right-platform exits, and timer-gated large/small lift fixed-point movement with their distinct collision arguments. The three original-ROM route families replay 1,792 records once per x86 and x64 process with full RAM and recorded child calls, zero differences. Focused C90 vertical, horizontal and lift contracts, platform purity and OpenNT DOS16 shared-source link pass. All 42 source-owned pending feasible controls and 13 material handoffs are exact. Test harness/evidence only; product C is unchanged, so no three-EXE refresh is due.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,227 / 1,992 nodes** and **2,460 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).

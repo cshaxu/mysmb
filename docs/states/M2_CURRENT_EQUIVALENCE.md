@@ -2270,3 +2270,7 @@ Both labels exact; registry **1,181** nodes and **2,351** controls.
 ### T63 S26 balance-platform movement, rope and fall result
 
 BalancePlatform through ExPF is current-exact: 26 labels, 67 newly proven feasible control relations and 16 material handoffs. Static `$D432-$D5D2`, one 1,024-record original-ROM batch per x86/x64 width, focused C90, platform purity and DOS16 link pass with zero route differences. The live registry is **1,207 exact nodes** and **2,418 exact feasible control relations**. Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with **18** infeasible and **4,324** feasible.
+
+### T63 S27 moving and lift-platform result
+
+YMovingPlatform through ExLiftP is current-exact: 20 labels, 42 source-owned feasible control relations and 13 material handoffs. Static `$D5D3-$D679`, three original-ROM batch route families totaling 1,792 records per x86/x64 width, focused C90 contracts, platform purity and DOS16 link pass with zero route differences. The live registry is **1,227 exact nodes** and **2,460 exact feasible control relations**. Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with **18** infeasible and **4,324** feasible.

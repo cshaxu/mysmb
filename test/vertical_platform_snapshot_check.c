@@ -43,18 +43,32 @@ static mysmb_u8 child(struct mysmb_game *g,unsigned int id,mysmb_u8 slot)
 }
 void mysmb_world_move_platform_vertically(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 up) { (void)child(g,up?2U:3U,s); }
 void mysmb_platform_position_player_vertical(struct mysmb_game *g,mysmb_u8 s) { (void)child(g,5U,s); }
-int main(int argc,char **argv)
+static int run_case(const char *snapshot_path,const char *calls_path)
 {
     static struct mysmb_game g;static unsigned char expected[2048];
     unsigned char h[8];FILE *f;
-    if(argc!=3)return 64;
-    f=fopen(argv[2],"rb");if(!f)return 65;
+    count=0U;calls=0U;failures=0U;
+    f=fopen(calls_path,"rb");if(!f)return 65;
     if(fread(h,1,8,f)!=8 || memcmp(h,"MSsC\1",5) || h[5]>16U)return 66;
     count=h[5];if(fread(records,4098,count,f)!=count || fgetc(f)!=EOF)return 66;
-    fclose(f);f=fopen(argv[1],"rb");if(!f)return 65;
+    fclose(f);f=fopen(snapshot_path,"rb");if(!f)return 65;
     if(fread(h,1,8,f)!=8 || memcmp(h,"MSsP\1",5) ||
         fread(g.ram,1,2048,f)!=2048 || fread(expected,1,2048,f)!=2048 || fgetc(f)!=EOF)return 66;
     fclose(f);mysmb_platform_move_y(&g,h[6]);compare(g.ram,expected);
     if(calls!=count)++failures;
     return failures?1:0;
+}
+int main(int argc,char **argv)
+{
+    FILE *f;char snapshot[1024],child[1024];unsigned int cases,failed;
+    if(argc!=3)return 64;
+    if(strcmp(argv[1],"--manifest")!=0)return run_case(argv[1],argv[2]);
+    f=fopen(argv[2],"rb");if(!f)return 65;
+    cases=0U;failed=0U;
+    while(fscanf(f,"%1023s %1023s",snapshot,child)==2) {
+        ++cases;if(run_case(snapshot,child)!=0)++failed;
+    }
+    if(ferror(f)) { fclose(f);return 66; }
+    fclose(f);printf("platform manifest: %u cases, %u failures\n",cases,failed);
+    return failed?1:0;
 }

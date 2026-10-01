@@ -2,27 +2,27 @@
 
 ## Current Work
 
-## M2 T63 S26 Packet
+## M2 T63 S27 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S26 closed — balance platform chain. |
-| Admission And Approval | S26 admitted after S25 closure under the owner-approved source-order program. |
-| Objective | BalancePlatform through ExPF is current-exact; await the next source-order S admission. |
+| Identifier Mode | M2 T63 S27 closed — moving and lift-platform chain. |
+| Admission And Approval | S27 admitted after S26 closure under the owner-approved source-order program. |
+| Objective | YMovingPlatform through ExLiftP is current-exact; await T63 closure or a new source-order admission. |
 | Non-goals | No child-body credit or platform behavior change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,207 / 1,992 nodes and 2,418 / 4,324 controls. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,227 / 1,992 nodes and 2,460 / 4,324 controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | shared game enemy/balance_platform.c; C90. |
+| Files And ABI Surface | shared game enemy/platform.c; C90. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding and source policy. |
-| Verification | static `$D432-$D5D2`; 1,024 ROM/current x86/x64 manifest routes, zero differences; focused chain, purity and DOS16 link. |
-| Expected Markers | 26 nodes and owned feasible controls/material handoffs. |
+| Verification | static `$D5D3-$D679`; vertical, horizontal/drop/right and lift ROM/current x86/x64 batch routes, zero differences; focused chains, purity and DOS16 link. |
+| Expected Markers | 20 nodes; source-owned feasible controls/material handoffs. |
 | Asset Needs | Local records below build; artifacts only if product source changes. |
 | Reporting Requirements | Historical and current exact totals. |
-| Stop Conditions | Any mismatch remains S26 repair work. |
-| Exit Criteria | S26 complete: all scoped nodes and owned relations are exact with both tracks. |
+| Stop Conditions | Any mismatch remains S27 repair work. |
+| Exit Criteria | S27 complete: all scoped nodes and source-owned relations are exact with both tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | paired movement, rope VRAM, fall, score and player-position paths. |
+| Similar-Issue Sweep | slot restore, carry/borrow, timer gates, rider collision and child-order paths. |
 
 ## Current Technical Baseline
 
-T63 S1-S25 are closed. S26 audits balance platforms.
+T63 S1-S27 are closed.

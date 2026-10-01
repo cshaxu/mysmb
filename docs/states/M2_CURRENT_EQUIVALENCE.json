@@ -6946,13 +6946,16 @@
       "consumer": "SkipIY",
       "storage": "zero speed/force, top endpoint and FrameCounter low three bits",
       "feasiblePath": "Only stopped/below-top platform increments Y once each eighth frame.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_y",
       "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6965,13 +6968,16 @@
       "consumer": "YMDown",
       "storage": "current Y versus center endpoint to gravity direction",
       "feasiblePath": "Below center selects down; at/above selects up.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_y",
       "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6984,13 +6990,16 @@
       "consumer": "ChkYPCollision",
       "storage": "post-gravity current slot and PlatformCollisionFlag",
       "feasiblePath": "Gravity reloads ObjectOffset before rider decision.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_y",
       "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7003,13 +7012,16 @@
       "consumer": "ExYPl",
       "storage": "nonnegative collision slot to vertical player position",
       "feasiblePath": "Only an existing rider is vertically repositioned.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c position_large_rider",
       "semanticContract": "Preserves source producer-to-consumer platform/rider state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7022,13 +7034,16 @@
       "consumer": "PositionPlayerOnHPlat",
       "storage": "X-counter movement delta and collision flag to player follow",
       "feasiblePath": "Counter update/move precedes rider gate.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_x",
       "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7041,13 +7056,16 @@
       "consumer": "PPHSubt",
       "storage": "negative delta addition carry to player page borrow",
       "feasiblePath": "SBC #0 consumes the add carry complement for negative movement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c position_player_horizontal",
       "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7060,13 +7078,16 @@
       "consumer": "ExXMP",
       "storage": "updated X/page and Platform_X_Scroll to vertical rider child",
       "feasiblePath": "Scroll write precedes vertical positioning.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c position_player_horizontal",
       "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7079,13 +7100,16 @@
       "consumer": "ExDPl",
       "storage": "collision slot to fast vertical move and rider position",
       "feasiblePath": "No collision leaves both untouched.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_drop",
       "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7098,13 +7122,16 @@
       "consumer": "PositionPlayerOnHPlat",
       "storage": "pre-acceleration horizontal delta, collision and speed $10",
       "feasiblePath": "Move happens before source speed assignment and rider position.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_right",
       "semanticContract": "Preserves source producer-to-consumer platform/player state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7117,13 +7144,16 @@
       "consumer": "MoveLargeLiftPlat",
       "storage": "fractional dummy/Y state to large rider tail",
       "feasiblePath": "Both frozen and moved states reach large collision gate.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_large_lift",
       "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7136,13 +7166,16 @@
       "consumer": "MoveSmallPlatform",
       "storage": "fractional dummy/Y state to small rider tail",
       "feasiblePath": "Both frozen and moved states reach small collision gate.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_small",
       "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7155,13 +7188,16 @@
       "consumer": "ChkSmallPlatCollision",
       "storage": "force addition carry to Y and small collision eligibility",
       "feasiblePath": "Movement completes before small collision counter is read.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c move_lift",
       "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7174,13 +7210,16 @@
       "consumer": "ExLiftP",
       "storage": "nonzero counter child return or zero direct return",
       "feasiblePath": "Zero leaves player position untouched.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "platform.c mysmb_platform_move_small",
       "semanticContract": "Preserves source producer-to-consumer lift/rider state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10309,13 +10348,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1207,
-    "needs-evidence": 785
+    "exact": 1227,
+    "needs-evidence": 765
   },
   "controlEdgeCounts": {
-    "exact": 2418,
+    "exact": 2460,
     "infeasible": 18,
-    "needs-evidence": 1906
+    "needs-evidence": 1864
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -34347,13 +34386,16 @@
       "label": "YMovingPlatform",
       "asmLine": 10921,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "When both speed/force are zero, clears Y dummy, performs one-pixel descent only below top endpoint on every eighth frame, then takes rider gate; otherwise enters center-based gravity.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34363,13 +34405,16 @@
       "label": "SkipIY",
       "asmLine": 10933,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Unconditionally joins rider gate after optional eighth-frame descent.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34379,13 +34424,16 @@
       "label": "ChkYCenterPos",
       "asmLine": 10935,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Current Y below center chooses downward gravity; current Y at/above center chooses upward gravity.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34395,13 +34443,16 @@
       "label": "YMDown",
       "asmLine": 10941,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Calls downward gravity then falls through shared rider gate.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34411,13 +34462,16 @@
       "label": "ChkYPCollision",
       "asmLine": 10943,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Only nonnegative PlatformCollisionFlag positions the large-platform rider.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34427,13 +34481,16 @@
       "label": "ExYPl",
       "asmLine": 10947,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Returns after optional rider positioning.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34443,13 +34500,16 @@
       "label": "XMovingPlatform",
       "asmLine": 10952,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Sets X-counter maximum $0e, updates counter then applies movement; only nonnegative collision flag enters player horizontal/vertical positioning.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34459,13 +34519,16 @@
       "label": "PositionPlayerOnHPlat",
       "asmLine": 10959,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Adds movement delta to player X, uses source add carry for positive page update or its borrow complement for negative page subtraction, stores Platform_X_Scroll, then positions vertically.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34475,13 +34538,16 @@
       "label": "PPHSubt",
       "asmLine": 10969,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Consumes the carry from adding a negative delta with SBC #0 to update player page exactly as source.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34491,13 +34557,16 @@
       "label": "SetPVar",
       "asmLine": 10970,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Stores page and X scroll before vertical rider positioning.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34507,13 +34576,16 @@
       "label": "ExXMP",
       "asmLine": 10973,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Common return after optional horizontal/vertical rider positioning.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34523,13 +34595,16 @@
       "label": "DropPlatform",
       "asmLine": 10977,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Only an existing collision calls fast downward movement then vertical rider position.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34539,13 +34614,16 @@
       "label": "ExDPl",
       "asmLine": 10982,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Returns after untouched no-collision or completed drop route.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34555,13 +34633,16 @@
       "label": "RightPlatform",
       "asmLine": 10987,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Moves horizontally first, retains returned delta, then only with collision sets speed $10 and invokes shared horizontal/vertical rider positioning.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34571,13 +34652,16 @@
       "label": "ExRPl",
       "asmLine": 10995,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Returns after untouched no-collision or right-platform route.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34587,13 +34671,16 @@
       "label": "MoveLargeLiftPlat",
       "asmLine": 10999,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Calls common lift movement then always tails to large-platform rider collision gate.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34603,13 +34690,16 @@
       "label": "MoveSmallPlatform",
       "asmLine": 11003,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Calls common lift movement then tails to small-platform nonzero-counter collision gate.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34619,13 +34709,16 @@
       "label": "MoveLiftPlatforms",
       "asmLine": 11007,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "TimerControl nonzero leaves fractional/Y unchanged; otherwise adds force into dummy then speed plus resulting carry into Y.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34635,13 +34728,16 @@
       "label": "ChkSmallPlatCollision",
       "asmLine": 11019,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Only nonzero small-platform collision counter invokes small-rider positioning.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -34651,13 +34747,16 @@
       "label": "ExLiftP",
       "asmLine": 11023,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/platform.c",
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Common no-op/child return endpoint.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92571,12 +92670,15 @@
       "instruction": "bne",
       "id": "control-02138",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation YMovingPlatform -> ChkYCenterPos with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92590,12 +92692,15 @@
       "instruction": "bcs",
       "id": "control-02139",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation YMovingPlatform -> ChkYCenterPos with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92609,12 +92714,15 @@
       "instruction": "bne",
       "id": "control-02140",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation YMovingPlatform -> SkipIY with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92628,12 +92736,15 @@
       "instruction": "inc",
       "id": "control-02141",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation YMovingPlatform -> SkipIY with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92647,12 +92758,15 @@
       "instruction": "jmp",
       "id": "control-02142",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original jump relation SkipIY -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92666,12 +92780,15 @@
       "instruction": "bcc",
       "id": "control-02143",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkYCenterPos -> YMDown with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92685,12 +92802,15 @@
       "instruction": "jsr",
       "id": "control-02144",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation ChkYCenterPos -> MovePlatformUp with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -92705,12 +92825,15 @@
       "instruction": "jmp",
       "id": "control-02145",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original jump relation ChkYCenterPos -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92724,12 +92847,15 @@
       "instruction": "jsr",
       "id": "control-02146",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation YMDown -> MovePlatformDown with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -92744,12 +92870,15 @@
       "instruction": "jsr",
       "id": "control-02147",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation YMDown -> ChkYPCollision with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92763,12 +92892,15 @@
       "instruction": "bmi",
       "id": "control-02148",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkYPCollision -> ExYPl with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92782,12 +92914,15 @@
       "instruction": "jsr",
       "id": "control-02149",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation ChkYPCollision -> PositionPlayerOnVPlat with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -92802,12 +92937,15 @@
       "instruction": "jsr",
       "id": "control-02150",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkYPCollision -> ExYPl with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92821,12 +92959,15 @@
       "instruction": "jsr",
       "id": "control-02151",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation XMovingPlatform -> XMoveCntr_Platform with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -92841,12 +92982,15 @@
       "instruction": "jsr",
       "id": "control-02152",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation XMovingPlatform -> MoveWithXMCntrs with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -92861,12 +93005,15 @@
       "instruction": "bmi",
       "id": "control-02153",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation XMovingPlatform -> ExXMP with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92880,12 +93027,15 @@
       "instruction": "bmi",
       "id": "control-02154",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation XMovingPlatform -> PositionPlayerOnHPlat with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92899,12 +93049,15 @@
       "instruction": "bmi",
       "id": "control-02155",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation PositionPlayerOnHPlat -> PPHSubt with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92918,12 +93071,15 @@
       "instruction": "jmp",
       "id": "control-02156",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original jump relation PositionPlayerOnHPlat -> SetPVar with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92937,12 +93093,15 @@
       "instruction": "sbc",
       "id": "control-02157",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation PPHSubt -> SetPVar with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92956,12 +93115,15 @@
       "instruction": "jsr",
       "id": "control-02158",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation SetPVar -> PositionPlayerOnVPlat with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -92976,12 +93138,15 @@
       "instruction": "jsr",
       "id": "control-02159",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetPVar -> ExXMP with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -92995,12 +93160,15 @@
       "instruction": "bmi",
       "id": "control-02160",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation DropPlatform -> ExDPl with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93014,12 +93182,15 @@
       "instruction": "jsr",
       "id": "control-02161",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation DropPlatform -> MoveDropPlatform with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c",
@@ -93034,12 +93205,15 @@
       "instruction": "jsr",
       "id": "control-02162",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation DropPlatform -> PositionPlayerOnVPlat with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -93054,12 +93228,15 @@
       "instruction": "jsr",
       "id": "control-02163",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation DropPlatform -> ExDPl with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93073,12 +93250,15 @@
       "instruction": "jsr",
       "id": "control-02164",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation RightPlatform -> MoveEnemyHorizontally with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -93093,12 +93273,15 @@
       "instruction": "bmi",
       "id": "control-02165",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation RightPlatform -> ExRPl with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93112,12 +93295,15 @@
       "instruction": "jsr",
       "id": "control-02166",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation RightPlatform -> PositionPlayerOnHPlat with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93131,12 +93317,15 @@
       "instruction": "jsr",
       "id": "control-02167",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation RightPlatform -> ExRPl with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93150,12 +93339,15 @@
       "instruction": "jsr",
       "id": "control-02168",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation MoveLargeLiftPlat -> MoveLiftPlatforms with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93169,12 +93361,15 @@
       "instruction": "jmp",
       "id": "control-02169",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original jump relation MoveLargeLiftPlat -> ChkYPCollision with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93188,12 +93383,15 @@
       "instruction": "jsr",
       "id": "control-02170",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation MoveSmallPlatform -> MoveLiftPlatforms with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93207,12 +93405,15 @@
       "instruction": "jmp",
       "id": "control-02171",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original jump relation MoveSmallPlatform -> ChkSmallPlatCollision with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93226,12 +93427,15 @@
       "instruction": "bne",
       "id": "control-02172",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation MoveLiftPlatforms -> ExLiftP with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93245,12 +93449,15 @@
       "instruction": "beq",
       "id": "control-02173",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkSmallPlatCollision -> ExLiftP with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -93264,12 +93471,15 @@
       "instruction": "jsr",
       "id": "control-02174",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original call relation ChkSmallPlatCollision -> PositionPlayerOnS_Plat with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -93284,12 +93494,15 @@
       "instruction": "jsr",
       "id": "control-02175",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkSmallPlatCollision -> ExLiftP with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -125849,12 +126062,15 @@
       "instruction": "rts/rti",
       "id": "control-03815",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original return relation MoveSmallPlatform -> RunSmallPlatform with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -127576,12 +127792,15 @@
       "instruction": "rts/rti",
       "id": "control-03896",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original return relation PositionPlayerOnHPlat -> RightPlatform with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -127595,12 +127814,15 @@
       "instruction": "rts/rti",
       "id": "control-03897",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original return relation MoveLiftPlatforms -> MoveLargeLiftPlat with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
@@ -127614,12 +127836,15 @@
       "instruction": "rts/rti",
       "id": "control-03898",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+      ],
       "semanticContract": "Preserves original return relation MoveLiftPlatforms -> MoveSmallPlatform with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c"
