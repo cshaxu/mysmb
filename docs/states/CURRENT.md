@@ -2,33 +2,29 @@
 
 ## Current Work
 
-## M2 T55 S6 Packet
+## M2 T55 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T55 S6 ? closed JumpEngine and name-table initialization current-equivalence audit. |
-| Admission And Approval | T55 S5 closed with zero scoped feasible differences; owner-directed source-order continuation. |
-| Objective | Completed: audit `JumpEngine` through `InitATLoop`, repair every feasible shared-C difference, and repeat the scoped node/edge and ROM/native audit to zero. |
-| Non-goals | No historical-node credit, no joypad routine audit, and no platform-owned game decision. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 221 exact, 1,771 needs-evidence nodes; 450 exact feasible controls. Scope: five labels plus incident feasible controls; historical delta 0. |
+| Identifier Mode | M2 T55 S7 — joypad serial-read current-equivalence audit. |
+| Admission And Approval | T55 S6 closed with zero scoped feasible differences; owner-directed source-order continuation. |
+| Objective | Audit `ReadJoypads` through `Save8Bits`, repair every feasible shared-C difference, and repeat the scoped node/edge and ROM/native audit to zero. |
+| Non-goals | No VRAM packet audit, no platform-owned input decision, and no historical-node credit. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 221 exact, 1,771 needs-evidence nodes; 450 exact feasible controls. Scope: four labels plus incident feasible controls; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
-| Files And ABI Surface | Shared `src/game/dispatcher.c`, `src/game/boot.c`, existing translated vector owners and focused tests only. |
+| Files And ABI Surface | Shared `src/game/frame_root.c`, focused input tests and recorder-only fixtures. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | ROM-logic: source-equivalent vector/return control audit and controlled original-ROM/native name-table initialization. Operational: focused x86/x64 checks, DOS16 build if source changes and platform-purity audit. |
-| Expected Markers | Five labels and all incident feasible controls preserve selector, target and caller-return semantics in shared C. |
+| Verification | ROM-logic: original serial port/debounce branches and caller returns. Operational: focused x86/x64 checks, DOS16 build if source changes and platform-purity audit. |
+| Expected Markers | Four labels and every incident feasible control preserve two-port bit order, mask writes and caller continuation in shared C. |
 | Asset Needs | Refresh all three artifacts only if product source changes. |
 | Reporting Requirements | Report each scoped label and each incident control disposition with separate logic and operational results. |
 | Stop Conditions | A feasible ROM/C difference remains after repair, an incident control lacks a shared-C counterpart, or platform code makes a gameplay decision. |
-| Exit Criteria | Met: every scoped node and incident feasible control is exact under static and controlled evidence. |
+| Exit Criteria | Every scoped node and incident feasible control is exact under static and controlled evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | Inline jump-table selectors, C switch ranges, caller/return continuation, nametable writes, PPU-control preservation and scroll reset. |
-
+| Similar-Issue Sweep | Input bit order, serial loop count, Select/Start latch suppression, port independence and NMI caller return. |
 ## Current Technical Baseline
 
-M2 T55 S6 is closed with zero scoped feasible differences. The four
-name-table labels and `JumpEngine` are current-exact; all 51 incident raw
-relations are exact or source-infeasible. No successor is admitted by this
-closure.
+M2 T55 S7 is active after the closed S6 dispatcher audit. It continues Cohort C with the contiguous two-port joypad serial-read chain.
 
 ## S5 Closure
 

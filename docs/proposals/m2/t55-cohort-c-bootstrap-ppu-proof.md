@@ -434,3 +434,14 @@ migration accounting remains **1,992 / 1,992**. Focused x86/x64 CTest passes
 for name-table, snapshot, star-flag and large-platform chains, and the
 platform-purity audit passes. No product gameplay source changed after P1;
 therefore no additional executable refresh is due for the evidence-only Ps.
+
+## S7 admission — joypad serial-read chain
+
+S7 receives `ReadJoypads`, `ReadPortBits`, `PortLoop` and `Save8Bits` at SMB1
+lines 2446–2476. It owns every feasible incident control relation: the NMI
+caller, first-port call, second-port fall-through, eight-bit loop, Select/Start
+mask branch and caller return. The shared owner is `frame_root.c`; adapters
+provide only decoded button images. The ROM route will exercise both ports,
+all eight serialized bits, first-frame latching and held Select/Start
+suppression before x86/x64 comparisons. A difference remains in S7 for repair
+and re-audit before S8 is admitted.
