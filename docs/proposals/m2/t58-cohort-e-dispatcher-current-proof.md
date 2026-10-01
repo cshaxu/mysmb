@@ -105,3 +105,11 @@ Current registry admission has 0 already-exact labels and 11 needing fresh evide
 ## S1 closure criteria
 
 Every S1 label and every feasible incident control relation is current-exact with static and controlled-route evidence. Any mismatch is repaired in the named shared `src/game` owner, then the same route is repeated before S2 admission.
+
+## S1 closure — game dispatcher and engine tail
+
+All 11 labels are current-equivalence exact: `GameMode`, `GameCoreRoutine`, `GameEngine`, `ProcELoop`, `NoChgMus`, `CycleTwo`, `ClrPlrPal`, `SaveAB`, `UpdScrollVar`, `RunParser` and `ExitEng`. The static contract verifies the four selector targets; controller-byte selection/reload gate; GameEngine actor, OAM, block, cannon, whirlpool, flagpole, timer, palette and parser order; the six-slot/dual-block loop; and palette/music/parser branch semantics.
+
+The original-ROM/current matrix has four selector fixtures, both GameCoreRoutine post-child outcomes, two 600-frame normal routes and fifteen engine-tail routes. It compares declared persistent RAM and full recorded output without output exclusions; x86 and x64 records are byte-identical. The focused x86/x64 dispatcher, caller, slot and environment tests and platform-purity test pass. No product source mismatch was found, so no executable refresh is due. The 70 feasible incident relations are exact; 58 received fresh S1 evidence and 12 retain compatible prior exact evidence.
+
+S2 may now be admitted for `ScrollHandler -> GetScreenPosition`.

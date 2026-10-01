@@ -368524,7 +368524,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t58-cohort-e-dispatcher-current-proof.md",
-      "state": "admitted",
+      "state": "closed-current-equivalence-exact",
       "romRoute": "Source-reachable GameMode selector-3 GameEngine frame route, plus GameMode selector matrix and controlled x86/x64 comparison."
     }
   ]

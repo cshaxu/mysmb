@@ -1858,3 +1858,7 @@ platform-purity and the shared DOS16 link pass. The registry remains **499
 exact nodes**, **1,493 needing evidence**, **888 exact feasible controls**,
 18 infeasible raw controls and zero mismatches; historical conformance remains
 **1,992 / 1,992**.
+
+### T58 S1 dispatcher and engine-tail result
+
+All eleven labels from `GameMode` through `ExitEng` are current-equivalence exact. The static contract locks the four-vector selector, controller-byte selection and post-child task reload, GameEngine call order, six-slot actor loop, two block slots, palette/music predicate, input partition and parser tail. Four controlled entry routes cover all selector vectors and both post-child outcomes; two ordinary 600-frame routes and fifteen engine-tail routes compare declared persistent RAM and full output on current x86 and x64. The native records are byte-identical. The registry advances from **499 to 510 exact labels** and from **888 to 946 exact feasible control relations**; historical conformance remains **1,992 / 1,992**. Child semantics remain assigned to their later source-order cohorts.

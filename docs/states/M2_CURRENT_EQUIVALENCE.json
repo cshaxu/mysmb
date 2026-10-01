@@ -20253,13 +20253,16 @@
       "label": "GameMode",
       "asmLine": 5315,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
@@ -20269,13 +20272,16 @@
       "label": "GameCoreRoutine",
       "asmLine": 5326,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
@@ -20285,13 +20291,16 @@
       "label": "GameEngine",
       "asmLine": 5336,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine.c",
@@ -20303,13 +20312,16 @@
       "label": "ProcELoop",
       "asmLine": 5339,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -20319,13 +20331,16 @@
       "label": "NoChgMus",
       "asmLine": 5371,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -20335,13 +20350,16 @@
       "label": "CycleTwo",
       "asmLine": 5377,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -20351,13 +20369,16 @@
       "label": "ClrPlrPal",
       "asmLine": 5380,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -20367,13 +20388,16 @@
       "label": "SaveAB",
       "asmLine": 5381,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine.c"
@@ -20383,13 +20407,16 @@
       "label": "UpdScrollVar",
       "asmLine": 5385,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -20399,13 +20426,16 @@
       "label": "RunParser",
       "asmLine": 5398,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -20415,13 +20445,16 @@
       "label": "ExitEng",
       "asmLine": 5399,
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -45496,10 +45529,12 @@
       "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
       "semanticEvidence": [
         "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
-        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Preserves RunDemo call relation RunDemo \u00e2\u2020\u2019 GameCoreRoutine and same-frame game-core/reset ordering.",
       "currentSourcePaths": [
@@ -46294,10 +46329,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_area_parser(game)",
       "semanticEvidence": [
         "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Original call DontWalk -> UpdScrollVar follows ScrollScreen and updates parser/scroll state before VictoryWalkControl is incremented.",
       "currentSourcePaths": [
@@ -59856,10 +59893,12 @@
       "status": "exact",
       "currentCounterpart": "mysmb_game_mode direct C switch models GameMode's four JumpEngine vector selections.",
       "semanticEvidence": [
-        "M2 T55 S6 P6: current source audit confirms ROM $AEDC GameMode's four inline JumpEngine words map in selector order to the shared dispatcher switch."
+        "M2 T55 S6 P6: current source audit confirms ROM $AEDC GameMode's four inline JumpEngine words map in selector order to the shared dispatcher switch.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P6: freshly built current x86/x64 recorders and the original ROM agree for all four controlled GameMode selector fixtures; x86/x64 records are byte-identical."
+        "M2 T55 S6 P6: freshly built current x86/x64 recorders and the original ROM agree for all four controlled GameMode selector fixtures; x86/x64 records are byte-identical.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
@@ -59874,12 +59913,15 @@
       "instruction": "jsr",
       "id": "control-00771",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source fallthrough relation GameMode -> GameCoreRoutine.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
@@ -59893,12 +59935,15 @@
       "instruction": "jsr",
       "id": "control-00772",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation GameCoreRoutine -> GameRoutines.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -59913,12 +59958,15 @@
       "instruction": "bcs",
       "id": "control-00773",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation GameCoreRoutine -> GameEngine.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -59935,12 +59983,15 @@
       "instruction": "jsr",
       "id": "control-00774",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation GameEngine -> ProcFireball_Bubble.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine.c",
@@ -59956,12 +60007,15 @@
       "instruction": "ldx",
       "id": "control-00775",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source fallthrough relation GameEngine -> ProcELoop.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine.c",
@@ -59977,12 +60031,15 @@
       "instruction": "jsr",
       "id": "control-00776",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> EnemiesAndLoopsCore.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60001,10 +60058,12 @@
       "semanticEvidence": [
         "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order."
+        "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass."
+        "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
@@ -60020,12 +60079,15 @@
       "instruction": "bne",
       "id": "control-00778",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> ProcELoop.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60039,12 +60101,15 @@
       "instruction": "jsr",
       "id": "control-00779",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> GetPlayerOffscreenBits.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60058,12 +60123,15 @@
       "instruction": "jsr",
       "id": "control-00780",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> RelativePlayerPosition.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60077,12 +60145,15 @@
       "instruction": "jsr",
       "id": "control-00781",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> PlayerGfxHandler.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60096,12 +60167,15 @@
       "instruction": "jsr",
       "id": "control-00782",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> BlockObjMT_Updater.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60115,12 +60189,15 @@
       "instruction": "jsr",
       "id": "control-00783",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> BlockObjectsCore.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60134,12 +60211,15 @@
       "instruction": "jsr",
       "id": "control-00784",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> BlockObjectsCore.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60153,12 +60233,15 @@
       "instruction": "jsr",
       "id": "control-00785",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> MiscObjectsCore.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60172,12 +60255,15 @@
       "instruction": "jsr",
       "id": "control-00786",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> ProcessCannons.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60191,12 +60277,15 @@
       "instruction": "jsr",
       "id": "control-00787",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> ProcessWhirlpools.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60210,12 +60299,15 @@
       "instruction": "jsr",
       "id": "control-00788",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> FlagpoleRoutine.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60229,12 +60321,15 @@
       "instruction": "jsr",
       "id": "control-00789",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> RunGameTimer.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -60251,10 +60346,12 @@
       "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> ColorRotation.",
       "semanticEvidence": [
-        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
@@ -60270,12 +60367,15 @@
       "instruction": "bpl",
       "id": "control-00791",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> NoChgMus.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -60290,12 +60390,15 @@
       "instruction": "beq",
       "id": "control-00792",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> ClrPlrPal.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -60310,12 +60413,15 @@
       "instruction": "bne",
       "id": "control-00793",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> NoChgMus.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -60330,12 +60436,15 @@
       "instruction": "bne",
       "id": "control-00794",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation ProcELoop -> NoChgMus.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -60350,12 +60459,15 @@
       "instruction": "jsr",
       "id": "control-00795",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ProcELoop -> GetAreaMusic.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -60370,12 +60482,15 @@
       "instruction": "jsr",
       "id": "control-00796",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source fallthrough relation ProcELoop -> NoChgMus.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -60390,12 +60505,15 @@
       "instruction": "bcs",
       "id": "control-00797",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation NoChgMus -> CycleTwo.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -60409,12 +60527,15 @@
       "instruction": "lsr",
       "id": "control-00798",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source fallthrough relation NoChgMus -> CycleTwo.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -60428,12 +60549,15 @@
       "instruction": "jsr",
       "id": "control-00799",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation CycleTwo -> CyclePlayerPalette.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c",
@@ -60448,12 +60572,15 @@
       "instruction": "jmp",
       "id": "control-00800",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source jump relation CycleTwo -> SaveAB.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine.c",
@@ -60468,12 +60595,15 @@
       "instruction": "jsr",
       "id": "control-00801",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation ClrPlrPal -> ResetPalStar.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c",
@@ -60488,12 +60618,15 @@
       "instruction": "jsr",
       "id": "control-00802",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source fallthrough relation ClrPlrPal -> SaveAB.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine.c",
@@ -60508,12 +60641,15 @@
       "instruction": "sta",
       "id": "control-00803",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source fallthrough relation SaveAB -> UpdScrollVar.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine.c",
@@ -60528,12 +60664,15 @@
       "instruction": "beq",
       "id": "control-00804",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation UpdScrollVar -> ExitEng.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -60547,12 +60686,15 @@
       "instruction": "bne",
       "id": "control-00805",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation UpdScrollVar -> RunParser.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -60566,12 +60708,15 @@
       "instruction": "bmi",
       "id": "control-00806",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source branch relation UpdScrollVar -> ExitEng.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -60585,12 +60730,15 @@
       "instruction": "sta",
       "id": "control-00807",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source fallthrough relation UpdScrollVar -> RunParser.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -60607,11 +60755,13 @@
       "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation RunParser -> AreaParserTaskHandler.",
       "semanticEvidence": [
-        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
         "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
-        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
@@ -60627,12 +60777,15 @@
       "instruction": "jsr",
       "id": "control-00809",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source fallthrough relation RunParser -> ExitEng.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/engine_tail.c"
@@ -112898,10 +113051,12 @@
       "currentCounterpart": "src/game/frame_root.c mysmb_frame_root_step title-demo GameCore call",
       "semanticEvidence": [
         "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
-        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Preserves RunDemo return relation GameCoreRoutine \u00e2\u2020\u2019 RunDemo and same-frame game-core/reset ordering.",
       "currentSourcePaths": [
@@ -113104,10 +113259,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_area_parser completion before VictoryWalkControl increment",
       "semanticEvidence": [
         "Td S9 A7 PlayerVictoryWalk independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Original return UpdScrollVar -> DontWalk increments VictoryWalkControl only after the parser/scroll update completes.",
       "currentSourcePaths": [
@@ -115467,10 +115624,12 @@
       "status": "exact",
       "currentCounterpart": "mysmb_game_mode direct switch and mysmb_game_core_routine preserve the selected child return continuation.",
       "semanticEvidence": [
-        "M2 T55 S6 P6: source audit pairs the ROM JumpEngine stack-return continuation with the direct shared-C call/return sequence after each GameMode switch arm."
+        "M2 T55 S6 P6: source audit pairs the ROM JumpEngine stack-return continuation with the direct shared-C call/return sequence after each GameMode switch arm.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P6: all four original-ROM/current x86/x64 GameMode records agree at the post-child NMI boundary, covering both GameCoreRoutine post-child outcomes."
+        "M2 T55 S6 P6: all four original-ROM/current x86/x64 GameMode records agree at the post-child NMI boundary, covering both GameCoreRoutine post-child outcomes.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Preserves the original return continuation JumpEngine \u00e2\u2020\u2019 GameMode: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
       "currentSourcePaths": [
@@ -115485,12 +115644,15 @@
       "instruction": "rts/rti",
       "id": "control-03617",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves the original return continuation GameRoutines \u00e2\u2020\u2019 GameCoreRoutine: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -115505,12 +115667,15 @@
       "instruction": "rts/rti",
       "id": "control-03618",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/bubble call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation ProcFireball_Bubble -> GameEngine with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine.c",
@@ -115526,12 +115691,15 @@
       "instruction": "rts/rti",
       "id": "control-03619",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation EnemiesAndLoopsCore -> ProcELoop with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115549,10 +115717,12 @@
       "currentCounterpart": "src/game/engine_slots.c:mysmb_game_engine_actors per-slot continuation",
       "semanticEvidence": [
         "Td S9 A7 Floatey independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
-        "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order."
+        "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass."
+        "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Original FloateyNumbersRoutine -> ProcELoop returns to the slot loop without changing its current-object scheduling.",
       "currentSourcePaths": [
@@ -115568,12 +115738,15 @@
       "instruction": "rts/rti",
       "id": "control-03621",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "The source return relation GetPlayerOffscreenBits \u00e2\u2020\u2019 ProcELoop exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115587,12 +115760,15 @@
       "instruction": "rts/rti",
       "id": "control-03622",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "The source return relation RelativePlayerPosition \u00e2\u2020\u2019 ProcELoop restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115606,12 +115782,15 @@
       "instruction": "rts/rti",
       "id": "control-03623",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_render_player control flow and selection/rendering helpers",
       "semanticEvidence": [
-        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required."
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "The source return relation PlayerGfxHandler \u00e2\u2020\u2019 ProcELoop exposes the same completed handler state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115625,12 +115804,15 @@
       "instruction": "rts/rti",
       "id": "control-03624",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation BlockObjMT_Updater -> ProcELoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115644,12 +115826,15 @@
       "instruction": "rts/rti",
       "id": "control-03625",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation BlockObjectsCore -> ProcELoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115663,12 +115848,15 @@
       "instruction": "rts/rti",
       "id": "control-03626",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation BlockObjectsCore -> ProcELoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115682,12 +115870,15 @@
       "instruction": "rts/rti",
       "id": "control-03627",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared coin/misc branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation MiscObjectsCore -> ProcELoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115701,12 +115892,15 @@
       "instruction": "rts/rti",
       "id": "control-03628",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation ProcessCannons -> ProcELoop with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115720,12 +115914,15 @@
       "instruction": "rts/rti",
       "id": "control-03629",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation ProcessWhirlpools -> ProcELoop with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115739,12 +115936,15 @@
       "instruction": "rts/rti",
       "id": "control-03630",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation FlagpoleRoutine -> ProcELoop with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115758,12 +115958,15 @@
       "instruction": "rts/rti",
       "id": "control-03631",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves original return relation RunGameTimer -> ProcELoop with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/engine_slots.c"
@@ -115780,10 +115983,12 @@
       "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
-        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Original ColorRotation -> ProcELoop return relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
@@ -115799,12 +116004,15 @@
       "instruction": "rts/rti",
       "id": "control-03633",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_game_get_area_music -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves the original return continuation GetAreaMusic \u00e2\u2020\u2019 ProcELoop: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/engine_slots.c",
@@ -115819,12 +116027,15 @@
       "instruction": "rts/rti",
       "id": "control-03634",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves the original return continuation CyclePlayerPalette \u00e2\u2020\u2019 CycleTwo: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/engine_tail.c",
@@ -115839,12 +116050,15 @@
       "instruction": "rts/rti",
       "id": "control-03635",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves the original return continuation ResetPalStar \u00e2\u2020\u2019 ClrPlrPal: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/engine_tail.c",
@@ -115862,11 +116076,13 @@
       "status": "exact",
       "currentCounterpart": "mysmb_area_parser_task_step -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
       "operationalEvidence": [
         "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
-        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
       ],
       "semanticContract": "Preserves the original return continuation AreaParserTaskHandler \u00e2\u2020\u2019 RunParser: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
       "currentSourcePaths": [
@@ -125065,12 +125281,15 @@
       "selector": 1,
       "id": "control-04097",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Original jump-engine-dispatch relation OperModeExecutionTree -> GameMode at source line 956 (jsr JumpEngine) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -127115,12 +127334,15 @@
       "selector": 0,
       "id": "control-04185",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_area_initialize",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves the original JumpEngine selector 0 dispatch GameMode \u00e2\u2020\u2019 InitializeArea, including the selected target and continuation convention.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -127136,12 +127358,15 @@
       "selector": 1,
       "id": "control-04186",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/dispatcher.c:mysmb_game_mode screen-task routing",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Original GameMode -> ScreenRoutines selector dispatch reaches the shared screen task handler only at its screen vector.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -127157,12 +127382,15 @@
       "selector": 2,
       "id": "control-04187",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_secondary_setup",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves the original JumpEngine selector 2 dispatch GameMode \u00e2\u2020\u2019 SecondaryGameSetup, including the selected target and continuation convention.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -127178,12 +127406,15 @@
       "selector": 3,
       "id": "control-04188",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+      ],
       "semanticContract": "Preserves the original JumpEngine selector 3 dispatch GameMode \u00e2\u2020\u2019 GameCoreRoutine, including the selected target and continuation convention.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
