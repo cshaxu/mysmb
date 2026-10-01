@@ -2254,3 +2254,7 @@ Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with
 ### T63 S22 star-flag, timer-score and end-area result
 
 All 19 labels are current-exact. Static `$D2CD-$D3AE`, 1,024 x86/x64 batch replays with zero differences, focused C90, platform purity and DOS16 link cover tables, all task paths and score/draw tails. The live registry is **1,172 exact nodes** and **2,333 exact feasible control relations**.
+
+### T63 S23 star-flag terminal exit result
+
+StarFlagExit2 is current-exact through static `$D3A2-$D3AF` and the reused 1,024-record x86/x64 manifest, zero differences. The live registry is **1,173 exact nodes** and **2,333 exact feasible control relations**.

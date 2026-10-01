@@ -33622,13 +33622,16 @@
       "label": "StarFlagExit2",
       "asmLine": 10596,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/star_flag.c",
       "currentCounterpart": "mysmb_objects_step_star_flags_slot return path",
       "semanticEvidence": [
-        "Td S9 K43 StarFlagExit2 node audit: SMB1 line 10596 compared with shared src/game/enemy/star_flag.c task return; controlled flag route remains required."
+        "Td S9 K43 StarFlagExit2 node audit: SMB1 line 10596 compared with shared src/game/enemy/star_flag.c task return; controlled flag route remains required.",
+        "M2 T63 S23 static original-ROM audit: SMB1 $D3A2-$D3AF against shared enemy/star_flag.c confirms the shared return after nonzero interval timer or nonempty event-music buffer."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S23 reused current-source x86/x64 1,024-record star-flag manifest, zero differences; identical shared source also passed S22 focused C90, purity and OpenNT DOS16 link."
+      ],
       "semanticContract": "Returns while interval timer or event music blocks advancement of the star-flag task.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
