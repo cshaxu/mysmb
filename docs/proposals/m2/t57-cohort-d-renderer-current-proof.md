@@ -456,3 +456,15 @@ core. Refresh all three target artifacts only for a product-source repair.
 
 **Exit.** Every scoped node must have static and controlled-route proof. Any
 feasible mismatch is repaired and re-audited inside S7 before T57 closure.
+
+
+## S7 closure — area-object stream data and decoder chain
+
+All 34 scoped labels are current-equivalence exact. Static binding compares 3,372
+object-stream bytes, headers, `$fd` terminators and every adjacent-label boundary
+with the generated owner-local PRG and shared `area_data.c` / `area.c` decoder
+chain. The 36 controlled original-ROM/current x86/x64 routes consume every byte
+and 3,955 samples across castle, ground, underground and water areas; persistent
+state and visible output match, while x86/x64 records are byte-identical. Focused
+parser tests and platform purity pass in both widths; OpenNT relinked the
+unchanged shared DOS16 core. No product source mismatch was found.

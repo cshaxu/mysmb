@@ -366419,7 +366419,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t57-cohort-d-renderer-current-proof.md",
-      "state": "admitted-area-object-stream-current-equivalence-audit",
+      "state": "closed-area-object-stream-current-equivalence-audit",
       "romRoute": "Controlled owner-local original-ROM/current x86/x64 area-object stream matrix covering ordinary, large, special, loop, offset-wrap and terminal records."
     }
   ]

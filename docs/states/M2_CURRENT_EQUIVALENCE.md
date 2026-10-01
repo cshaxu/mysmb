@@ -1832,3 +1832,15 @@ historical conformance remains 1,992 / 1,992.
 ### T57 S6 enemy-area stream result
 
 The 34 labels from `E_CastleArea1` through `E_WaterArea3` and `material-00075` are current-exact. The static audit bound all 1,087 stream bytes, pointer targets, `$ff` terminators and the `E_GroundArea9` / `E_GroundArea10` alias to the generated local PRG and shared stream decoder. All 80 controlled original-ROM/current x86/x64 stream fixtures enter `ProcessEnemyData` at `$c144`, cover record/page/row/suppression/group/fallback paths, have zero compared persistent-state differences, and produce byte-identical x86/x64 records. The registry is **465 exact nodes**, **1,527 nodes needing evidence**, **888 exact feasible controls**, 18 infeasible raw controls and zero mismatches; historical conformance remains **1,992 / 1,992**.
+
+
+### T57 S7 area-object stream result
+
+The 34 labels from `L_CastleArea1` through `L_WaterArea3` are current-exact.
+Static audit binds all 3,372 level-object stream bytes, headers, `$fd` terminators
+and adjacent-label boundaries to the generated local PRG and shared area decoder.
+The complete 36-route original-ROM/current x86/x64 scene matrix consumes every
+stream byte over 3,955 samples and matches persistent state plus visible output;
+x86 and x64 records are byte-identical. The registry is **499 exact nodes**,
+**1,493 nodes needing evidence**, **888 exact feasible controls**, 18 infeasible
+raw controls and zero mismatches; historical conformance remains **1,992 / 1,992**.

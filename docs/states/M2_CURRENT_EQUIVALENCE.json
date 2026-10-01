@@ -9691,8 +9691,8 @@
     }
   ],
   "nodeCounts": {
-    "exact": 465,
-    "needs-evidence": 1527
+    "exact": 499,
+    "needs-evidence": 1493
   },
   "controlEdgeCounts": {
     "exact": 888,
@@ -19607,14 +19607,16 @@
       "label": "L_CastleArea1",
       "asmLine": 4799,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19624,14 +19626,16 @@
       "label": "L_CastleArea2",
       "asmLine": 4814,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19641,14 +19645,16 @@
       "label": "L_CastleArea3",
       "asmLine": 4832,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19658,14 +19664,16 @@
       "label": "L_CastleArea4",
       "asmLine": 4849,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19675,14 +19683,16 @@
       "label": "L_CastleArea5",
       "asmLine": 4865,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19692,14 +19702,16 @@
       "label": "L_CastleArea6",
       "asmLine": 4884,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19709,14 +19721,16 @@
       "label": "L_GroundArea1",
       "asmLine": 4900,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19726,14 +19740,16 @@
       "label": "L_GroundArea2",
       "asmLine": 4915,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19743,14 +19759,16 @@
       "label": "L_GroundArea3",
       "asmLine": 4931,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19760,14 +19778,16 @@
       "label": "L_GroundArea4",
       "asmLine": 4944,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19777,14 +19797,16 @@
       "label": "L_GroundArea5",
       "asmLine": 4963,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19794,14 +19816,16 @@
       "label": "L_GroundArea6",
       "asmLine": 4980,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19811,14 +19835,16 @@
       "label": "L_GroundArea7",
       "asmLine": 4995,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19828,14 +19854,16 @@
       "label": "L_GroundArea8",
       "asmLine": 5009,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19845,14 +19873,16 @@
       "label": "L_GroundArea9",
       "asmLine": 5027,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19862,14 +19892,16 @@
       "label": "L_GroundArea10",
       "asmLine": 5042,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19879,14 +19911,16 @@
       "label": "L_GroundArea11",
       "asmLine": 5048,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19896,14 +19930,16 @@
       "label": "L_GroundArea12",
       "asmLine": 5059,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19913,14 +19949,16 @@
       "label": "L_GroundArea13",
       "asmLine": 5066,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19930,14 +19968,16 @@
       "label": "L_GroundArea14",
       "asmLine": 5081,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19947,14 +19987,16 @@
       "label": "L_GroundArea15",
       "asmLine": 5096,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19964,14 +20006,16 @@
       "label": "L_GroundArea16",
       "asmLine": 5113,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19981,14 +20025,16 @@
       "label": "L_GroundArea17",
       "asmLine": 5123,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -19998,14 +20044,16 @@
       "label": "L_GroundArea18",
       "asmLine": 5143,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20015,14 +20063,16 @@
       "label": "L_GroundArea19",
       "asmLine": 5160,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20032,14 +20082,16 @@
       "label": "L_GroundArea20",
       "asmLine": 5177,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20049,14 +20101,16 @@
       "label": "L_GroundArea21",
       "asmLine": 5191,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20066,14 +20120,16 @@
       "label": "L_GroundArea22",
       "asmLine": 5200,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20083,14 +20139,16 @@
       "label": "L_UndergroundArea1",
       "asmLine": 5210,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20100,14 +20158,16 @@
       "label": "L_UndergroundArea2",
       "asmLine": 5231,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20117,14 +20177,16 @@
       "label": "L_UndergroundArea3",
       "asmLine": 5252,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20134,14 +20196,16 @@
       "label": "L_WaterArea1",
       "asmLine": 5271,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20151,14 +20215,16 @@
       "label": "L_WaterArea2",
       "asmLine": 5282,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
@@ -20168,14 +20234,16 @@
       "label": "L_WaterArea3",
       "asmLine": 5299,
       "cohort": "D",
-      "status": "needs-evidence",
-      "currentOwner": "owner-local area_prg through shared core",
-      "currentCounterpart": "shared enemy or area stream parser",
+      "status": "exact",
+      "currentOwner": "src/game/area/area_data.c + src/game/area.c",
+      "currentCounterpart": "source-bound generated local PRG stream consumed by mysmb_area_process_object_state",
       "semanticEvidence": [
-        "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
+        "M2 T57 S7 static audit: SMB1 lines 4799-5304 and all 34 bounded level-stream spans were compared byte-for-byte with generated owner-local PRG and src/game/area.c; headers, two/three-byte records, $fd terminators, adjacent-label boundaries, object-length/loop and byte-width offset semantics match."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "operationalEvidence": [
+        "M2 T57 S7 controlled original-ROM/current x86/x64 scene matrix: 36 routes across castle, ground, underground and water consume all 3,372 stream bytes and 3,955 samples; persistent state and visible output match the ROM, and x86/x64 records are byte-identical."
+      ],
+      "semanticContract": "Preserves every selected level-object stream byte, header, record framing, terminator and byte-width decoder handoff.",
       "currentSourcePaths": [
         "src/game/area/area_data.c",
         "src/game/area.c"
